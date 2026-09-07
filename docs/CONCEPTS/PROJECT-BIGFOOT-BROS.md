@@ -23,7 +23,8 @@ A relentless cartoon park ranger cryptid-hunter: khaki uniform, big ranger hat, 
 
 ### Pitch images
 - v1: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V1.png (no villain)
-- v2: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V2.png (THE RANGER on his watchtower platform, caged squirrel, blue portal behind him) — CANON PITCH
+- v2: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V2.png (Ranger near the portal — SUPERSEDED by Big's call)
+- v3: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V3.png — CANON PITCH (Sept 7: Big — Ranger at the START, not near the portal). Layout law: level reads left-to-right — Ranger chasing at the start, Bigfoot mid-leap fleeing, blue portal exit at the far end. The Ranger is the persistent chaser from behind, never the gatekeeper at the goal.
 
 ### Rejected villain pitches (archive)
 1. THE LUMBER BARON — clear-cuts the forest world by world; giant mech-logger bosses
