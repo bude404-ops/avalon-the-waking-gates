@@ -96,3 +96,14 @@ All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remna
 **ROSTER STYLE LAW:** ALL Hollow-affected enemies carry this same style — ordinary realm-thing at first glance + ONE absence + Void Black + mist-in-void + zero glow + de-coloration. Restyle rolls run ONE AT A TIME through BudE404's approval gate, each anchored to its canon approved art. Embermere order: T2 Unmade Champion, T3 Furnace Brute.
 
 **PRODUCTION:** v7 Meshy re-roll submitted Sept 7 (no outpaint, 30cr — the pre-v7 chest-cavity model HOLLOW-T1-UNDONE-GAME.glb is RETIRED as source-canon; void gets no baked glow — mist + shader live in-engine).
+
+## RUNE ORIGIN LAW (Sept 7 2026, Big: 'make sure any runes in stuff is Avalon type not from any old lore')
+
+ALL runes, sigils, and inscriptions in ANY Avalon art — backgrounds, architecture, props, gear, armor, weapons, enemies, colossi, UI — use the AVALON glyph language ONLY:
+
+- The canon grammar: the Gate Rune (Mark of the Waking Gates) family — trilithon arch geometry (two standing stones + lintel), the single rising flame, straight megalithic strokes, angular invented glyphs, elemental flame-tongue accents. Original geometry, invented for this world.
+- NEVER real-world historical scripts: no Elder Futhark or Norse runes, no ogham, no hieroglyphs, no cuneiform, no tengwar or any recognizable alphabet.
+- NEVER old-lore faction runes: the pre-Avalon Norse/Egyptian-era glyph sets live only in the archive and stay dead.
+- Background/prop runes read as weathered AVALON gate-rune inscriptions — invented angular megalithic script in the Gate grammar, never legible real writing.
+- Every art prompt that includes inscriptions specifies 'Avalon gate-rune script, invented angular megalithic glyphs' and never references historical or fantasy-franchise runes.
+- PRE-SEND CHECK: eyeball any art containing glyphs against the Gate Rune grammar before sending to Big.
