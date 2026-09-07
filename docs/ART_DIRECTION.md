@@ -44,6 +44,9 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 
 **SUPERSEDES the per-unit absence map below.** EVERY Hollow — T1 trash through T3 boss, every realm — has exactly ONE absence: a VOID BLACK FACE (cold-violet charcoal cavity, breathing near-black mist inside the absence only, never reflecting, never glowing — light lands ON it). Chest cavities, throat holes, breastplate windows, furnace bellies, skull piercings: ALL RETIRED. Never again in any future art roll. What still differentiates units: silhouette, scale (SIZE LAW), clothing/armor, remnant, and routine — never the location of the absence.
 
+### CRAFT IS UNTOUCHABLE LAW (Sept 7 2026, Big on the Champion: 'The unmade champion need to not have hollow effects in armor or clothes per lore')
+Hollow effects NEVER touch armor or clothes — erasure eats only what IS (the person), never what was MADE (the craft). Armor, cloth, tools, remnants render 100% real and intact: zero void, zero mist, zero wisps, zero hollow effect anywhere on made things. The ONE absence stays the void-black face; mist stays strictly inside that absence. The plates are the only color left in the frame — untouched craft.
+
 | Unit | The Remnant | The Routine |
 |---|---|---|
 | T1 Undone | — (it has nothing left) | wanders, searching pockets |
