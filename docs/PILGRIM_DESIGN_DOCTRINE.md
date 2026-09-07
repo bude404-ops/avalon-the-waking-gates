@@ -50,3 +50,11 @@ Female variants of the six Orders wear the SAME class-material grammar (leathers
 - Elegance over exposure: pin-up fantasy heroine energy (JRPG leading-lady standard) — attractive and confident, never explicit
 - Per class flavor: Wayfarer-F = fitted leathers + laced bodice; Cantor-F = flowing robe with slit skirt + bare-shoulder mantle; Keeper-F = lamellar over a fitted underlayer; Vigil-F = ranger leathers + thigh boots; Warden-F = form-fitted plate with feminine linework; Smith-F = fitted apron-plate over curves
 - Faces stay living, human, full-color. Body types per class stay SIZE-LAW compliant.
+
+## NO-LANTERN-PROP LAW (Sept 7 2026, Big: 'Remember the luminaries are also the relic so they shouldn't have a lantern in their art Canon')
+
+The Luminary IS the Cold Lantern relic (ONE COMPANION, TWO LIGHTS). It is a living being, never a tool or prop — so pilgrim canon art NEVER shows a carried/held metal lantern.
+
+- In art, the Luminary reads as LIVING LIGHT: a small warm flame-mote or ember-wisp hovering near the pilgrim's shoulder (companion, not equipment), or an ambient warm glow with no visible lamp
+- The flame's color mirrors the pilgrim's Mark element; it never touches or attaches to the gear
+- The Keeper's flail stays; the lantern is NOT a hand prop for any Order — the light is always the companion
