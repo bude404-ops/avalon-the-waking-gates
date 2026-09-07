@@ -13,3 +13,9 @@
 - Game version: HOLLOW-T1-UNDONE-ALT-GAME.glb (291KB, prune + resize 1024 + webp + draco)
 - Status: archived as alternate take (earlier input). CANON = the main GAME.glb from task 01a07a82.
 - Meshy credit ledger: 60 (outpaint run) + 30 (this run) = 90 spent total → balance 1,595.
+
+## V7 RE-ROLL (Sept 7 2026 — face-void canon, post-v7 approval)
+- Source: art/production/3d-inputs/3DINPUT-HOLLOW-T1-UNDONE-V7-APOSE.png (= v7 approved canon)
+- Meshy task: 01a07cd4-f1e3-7677-8c48-d14d1337131b (api.meshy.ai/v1/image-to-3d — NOTE: API base moved from /openapi/api/v1 to /v1; response wraps task id in "result")
+- Cost: 30 credits (should_outpaint false) → balance 1,565
+- The Sept 7 morning model (task 01a07a82, chest-cavity) is RETIRED as source-canon — v7 face void supersedes. Game GLB pending download; void glow never baked — mist particle + near-zero-albedo shader live in Unity.
