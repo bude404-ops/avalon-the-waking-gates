@@ -3,6 +3,7 @@
 Last synced: Sept 7 2026 ~3:50 PM ET
 
 ## VERDICTS (Big's word is final; newest message wins)
+- NEW (Sept 7, Big): non-Hollow dungeon enemies per region — THE LIVING SCOURGE drafted (docs/LIVING_SCOURGE_BESTIARY.md): 3 families (REMNANT FOLK living humans / FAUNA living beasts / CONSTRUCTS made things) x 6 realms; dungeon pacing Folk→Fauna→Hollows→Construct→boss. Awaiting Big's verdict before art rolls.
 - T1 UNDONE — ✅ APPROVED, canon locked (V8 scene master, commit a1c0e8e1)
 - T2 UNMADE CHAMPION — ✅ APPROVED ('Approved' ~7:20 PM), canon locked (art/approved/HOLLOW-T2-UNMADE-CHAMPION-CANON-V8-FACELAW.png, commit f808ec72). DO NOT re-roll or re-send.
 - T3 CRUCIBLE-BEARER — ✅ canon at art/approved/HOLLOW-T3-CRUCIBLE-BEARER-CANON.png (18:06, Big liked the redesign)
