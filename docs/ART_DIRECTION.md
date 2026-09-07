@@ -50,7 +50,6 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 | T1 Mutefolk (lantern-lighter) | pristine COLD lantern | raises lantern to a lamp post that isn't there |
 | T2 Unmade Champion | immaculate polished sword | guards a gate that leads nowhere |
 | T3 Furnace Brute | a keeper's tiny hammer on its belt | works a furnace that has been dead forever |
-| Still Choir | blank sheet music | heads tilted in silence mid-song |
 | Erased Drake | a horse's bridle it still wears | circles a roost like it still guards eggs |
 | Echo | a copy of your own lantern, cold | copies the pilgrim's last gesture a half-second late |
 | Gate Worm | the gate key shape grown into its back | coils around a Gate, counting the stones |
