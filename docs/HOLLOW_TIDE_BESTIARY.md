@@ -85,3 +85,50 @@ All five remaining realm sets rolled on the locked redo grammar (regional Drake 
 - **MARENVALE:** tide-drake breathing stillness (waves freezing to dead glass mid-fall) / tide-counter choir on a stilled shore / TIDE BRUTE — dead tide-god, sunken-shrine crown, sea gone glass-flat.
 - **STONEFELL:** stone-drake breathing crumbling (solid rock goes soft and powdery) / vow-keeper choir around a leaning standing-stone / STONE BRUTE — dead stone-god, standing-stone trilithon crown, crystal veins gone dark, promise-lines smoothed unreadable.
 Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + SHEET-HOLLOW-REDO-REALM-SETS-5-v1.png. p-hash clean across all 24 redo units. PER-UNIT VERDICTS PENDING.
+
+---
+
+## THE REGIONAL HOLLOW ROSTERS (Sept 7 2026 — BudE404 directive: regional-specific dungeon monsters, not just town-folk)
+
+**LAW: A HOLLOW'S HOME IS ITS SHAPE.** Every realm's dungeons spawn that realm's ERASED **and** that realm's SHADE-BEASTS — the local fauna gone hollow. REGIONAL ≠ recolor: region lives in the FAUNA (what got taken), the VOICE (the routine being walked), and the DECOLOR RING (which color drains). A dungeon roster = the story of how that region fell.
+
+**MASH MAPPING (per Big: hollow are built for the dungeon masher):** every realm dungeon runs SWARM → PACK TRASH → ELITE → BOSS. The realm's FAUNA carries the speed identity — each region's beasts attack with different verbs (see below), so every realm FEELS different in the hands, not just on the eyes.
+
+### EMBERMERE (kiln-voice — forge country, ash wastes, kiln-catacombs)
+- **Erased:** forgemasters re-heating cold forges; ash-winnowers sifting dead cinders. Strikers — slow, heavy, slag-cleaver arcs.
+- **Shade-beasts:** ASH-HOUNDS (eyeless, silent pack-coursers — they CHARGE, the realm's speed verb); FORGE-SPIDERS (metal legs from stolen tools — they POUNCE from ceiling cracks); EMBERMITES (swarm-dimers, the realm's T0).
+- **Elite:** THE UNMADE CHAMPION (canon — stolen Embermere First Pilgrim plate; guard-slab parry/bash law).
+- **Boss:** THE FURNACE BRUTE (canon dead-god shape).
+
+### GALEMARCH (oath-voice — storm-crag highlands, bell-towers, drowned marches)
+- **Erased:** oath-wardens pacing dead battlements; bell-hollowers pulling silent ropes.
+- **Shade-beasts:** MOORHOUNDS (canon outline-hounds — pack CHARGES at storm-gust speed); RAIN-HERONS (flocks flying BACKWARDS — divebomb swarms); FALLEN SKY-SERPIENTS (eels that fell and never landed — arc-ambush trash).
+- **Elite:** THE STILL CHOIR (canon — stolen Galemarch plate; ring-break zone-denial).
+- **Boss:** THE STORMLESS (the region's dead-god shape — a storm-cell with the lightning hollowed out).
+
+### BLOOMWEALD (growth-voice — orchard country, canopy dungeons, root-roads)
+- **Erased:** orchardists pruning dead trees; seed-sorters sorting ash.
+- **Shade-beasts:** THISTLEDEER (canon, eyeless — they FLEE-STAMP, herding the player into packs); STRANGLER-WALKS (hollowed topiary — WRAP and root the pilgrim, the realm's CC verb); SPORE-HARES (fast skittish trash — they BOLT).
+- **Elite:** THE ERASED DRAKE (canon — cold-absence breath, grounded roost-queen).
+- **Boss:** THE GRIEF-BOUGH (dead bloom-god shape — a blossom-tree god with every bloom hollowed).
+
+### GLOAMBARROW (lantern-voice — dusk country, lantern-roads, tomb-vales)
+- **Erased:** lamplighters raising lanterns to posts that aren't there (the Mutefolk law, home region); pall-bearers carrying nothing, forever.
+- **Shade-beasts:** PALE MOTHS (hand-sized — they LAND on the Luminary and dim it, the realm's pressure verb); GLOAM-FOXES (they WATCH from distance and only move when unobserved — the double-take unit); HOLLOW GULLS (perfect silent formations — crowd-wrongness in the sky).
+- **Elite:** THE LONG PROCESSION (Still Choir's home form — a funeral line that circles, zone-denial).
+- **Boss:** THE SNUFFED (dead dusk-god shape — a colossus whose crown-lighter died; it reaches for the player's Luminary).
+
+### MARENV ALE (ledger-voice — drowned coast, kelp-forests, harbor catacombs)
+- **Erased:** drowned fisherfolk hauling empty nets; tide-readers reading a dead tide.
+- **Shade-beasts:** KELP-LURKERS (ambush PULL from the deep — the realm's CC verb); BEACHED-LEVITHAN CALVES (slow T1 bruisers — they CRUSH); DRIFT-GULLS (surface-swarm).
+- **Elite:** THE NET-CHOIR (ring of fisherfolk fused by one net — break the net, not the ring).
+- **Boss:** THE BEACHED ONE (dead tide-god shape — a sea-god who died on the sand and keeps drowning).
+
+### STONEFELL (strata-voice — crystal deeps, delve-mines, the under-road)
+- **Erased:** delvers counting dead veins; masons building nothing, wall by wall.
+- **Shade-beasts:** STONE-CENTIPEDES (segment-by-segment hollowed — CUT and split into two trash when hit, the realm's swarm verb); GLOAM-BATS (ceiling-swarm); CRYSTAL-DEER (silent herds walking through the veins — the deep's thistledeer).
+- **Elite:** THE LEDGER-KNIGHT (a delver-elite in stolen strata plate — counts the player's dodges out loud in reverse).
+- **Boss:** THE UNMINED (dead stone-god shape — a mountain that was never allowed to finish becoming).
+
+### PRODUCTION RULE
+Regional units are NEW art rolls through THE UNDONE STANDARD checklist (docs/ART_DIRECTION.md) + the realm's fauna map above. Existing canon units (Mutefolk, Undone, Champion, Drake, Choir, Brute, Gate-Worm, Echo, Grimlights) remain GLOBAL staples; region rosters RESKIN the tiers with local fauna + local erased. Every dungeon's first wave tells you where you are before the UI does.
