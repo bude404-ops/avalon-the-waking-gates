@@ -18,7 +18,16 @@
 - OWL SENTRY — lakitu analog, dive-bombs from off-screen
 - MOOSE MINI-BOSS — per-world gatekeeper, charge patterns
 
-## MAIN BADGUY — OPEN (Big undecided). Three pitches on the table:
+## MAIN BADGUY — DECIDED: THE RANGER (Big's pick, Sept 7 ~3:45 PM: 'need the ranger and stuff as bad guy')
+A relentless cartoon park ranger cryptid-hunter: khaki uniform, big ranger hat, binoculars, comically oversized tranquilizer-dart blaster, kidnaps the woodland creatures to bait Bigfoot out of hiding (caged squirrel in the pitch art). Bowser function — the recurring stalker in every world. The escape-portal win state reads perfectly against him: you're EVIDENCE trying to disappear.
+
+### Pitch images
+- v1: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V1.png (no villain)
+- v2: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V2.png (THE RANGER on his watchtower platform, caged squirrel, blue portal behind him) — CANON PITCH
+
+### Rejected villain pitches (archive)
+1. THE LUMBER BARON — clear-cuts the forest world by world; giant mech-logger bosses
+2. THE RIVAL CRYPTID — smug Chupacabra turf war
 1. **THE RANGER** — a relentless cryptid-hunter who kidnaps the woodland creatures to bait Bigfoot out of hiding; Bowser function, recurring stalker across every world, tranquilizer-dart projectiles, chase-setpiece levels
 2. **THE LUMBER BARON** — clear-cuts the forest world by world; every world ends with a giant mech-logger boss; machines vs forest = big readable boss variety
 3. **THE RIVAL CRYPTID** — a smug Chupacabra (or greedy leprechaun hoarding the forest's gold) contesting Bigfoot's territory; cryptid vs cryptid
