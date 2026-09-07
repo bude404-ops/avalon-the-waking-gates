@@ -19,3 +19,8 @@
 - Meshy task: 01a07cd4-f1e3-7677-8c48-d14d1337131b (api.meshy.ai/v1/image-to-3d — NOTE: API base moved from /openapi/api/v1 to /v1; response wraps task id in "result")
 - Cost: 30 credits (should_outpaint false) → balance 1,565
 - The Sept 7 morning model (task 01a07a82, chest-cavity) is RETIRED as source-canon — v7 face void supersedes. Game GLB pending download; void glow never baked — mist particle + near-zero-albedo shader live in Unity.
+
+## CHAMPION ROLL (Sept 7 2026 — 2D approved by Big same day)
+- T2 UNMADE CHAMPION v7 3D roll: task 01a07ce4-58ea (api.meshy.ai/v1, 30cr, outpaint off) → balance 1,535
+- Source: art/approved/HOLLOW-T2-UNMADE-CHAMPION-V7STYLE-CANON.png (Big approved 'Keep the unmade champion')
+- Pending download → compress (1024/webp/draco) → Mixamo rig → Unity wire for APK
