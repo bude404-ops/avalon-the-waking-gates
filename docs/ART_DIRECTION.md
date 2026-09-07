@@ -2,11 +2,16 @@
 
 **Locked Sept 4 2026 by BudE404 — 'lets go with the lotr style.'** Supersedes the Style-A hand-painted/Warcraft direction entirely (v1 retained in git history).
 
-## 1. THE LOOK — LOTR-CINEMATIC
-Photorealistic FILMIC realism: every image reads as a frame from a fantasy epic film shot on location. Grounded cinematic lighting, atmospheric depth haze, Weta Workshop practical-grit textures, IMAX widescreen composition, film grain, anamorphic framing. NOT cartoon, NOT painterly, NOT stylized-low-poly.
+## 1. THE LOOK — THE CARVED WORLD (locked Sept 7 2026, Big: 'I like our as the carved world'; supersedes the LOTR-cinematic base, which was retired as drift-prone and derivative)
+Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five laws:
+- PAINTERLY OIL-RENDER: visible brush texture in fog and cloth; sculpted forms; no photoreal pore detail.
+- THE CHISEL SIGNATURE: every stone/metal surface carries etched chisel-work — the world was SHAPED by dead gods, so the whole world reads as carved; ties to the gate-rune script.
+- TWO-LAYER LIGHT: cold desaturated ambient world; warm light exists ONLY from lantern sources (in-engine: the Luminary). Blue-hour is law, not mood.
+- COLOR AS GAMEPLAY: saturated world, fully drained Hollows, void black pops (see Color-Absence Law).
+- SILHOUETTE-FIRST: strong simple readable forms that survive phone-scale screens and keep enemy telegraphs readable.
 
 **Base prompt frame:**
-> EPIC CINEMATIC FANTASY ART in the style of a LORD OF THE RINGS live-action film still — photorealistic filmic realism, Weta Workshop practical-grit realism, IMAX widescreen composition. NOT cartoon, NOT stylized.
+> HAND-PAINTED DARK-FANTASY GAME ART in a stylized painterly oil-render — visible brushwork, etched chisel-carved surfaces, cold blue-hour two-layer light, silhouette-first composition. NOT photoreal, NOT cartoon, NOT film still.
 
 ## 2. THE GIANTS — PRIMORDIAL-MAX ANATOMY
 Deities render as colossal RAW ELEMENTAL GIANTS (100 ft): zero armor, pure living element. 'Never made — the element that decided to stand': half-conceived asymmetric anatomy (mountain-range mid-formation, zero human symmetry), eon-layered crust strata flaking to reveal the molten/elemental core, violent elemental arteries, constant element-shed, face half-emerged from the element, movement like geology. Awe-not-fear; worship declares divinity. Weapons per Gender-Role Binding: male = element-forged GREATSWORD, female = element-forged STAFF.
