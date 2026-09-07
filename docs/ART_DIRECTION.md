@@ -13,6 +13,9 @@ Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five
 **Base prompt frame:**
 > HAND-PAINTED DARK-FANTASY GAME ART in a stylized painterly oil-render — visible brushwork, etched chisel-carved surfaces, cold blue-hour two-layer light, silhouette-first composition. NOT photoreal, NOT cartoon, NOT film still.
 
+### NO ARTIFACT-MIMICRY LAW (Sept 7 2026, Big: 'I dont like when weapons or armor look like another artifact')
+Weapons and armor NEVER imitate the relic. The Luminary (Cold Lantern) is the ONE artifact in a pilgrim's frame — craft is craft, relic is relic. No lantern-shaped weapon heads, no cage-frame ornaments, no hollow light-waiting hoops, no relic-like trinkets anywhere on gear. Armor = honest corded metalwork, wool, leather; weapons read unmistakably as weapons. Canonized after the armor-grammar V1 proof's light-waiting hoop read as a second artifact (hoop concept RETIRED; Keeper flail re-rolled with a solid chiseled striking head, cage head retired).
+
 ## 2. THE GIANTS — PRIMORDIAL-MAX ANATOMY
 Deities render as colossal RAW ELEMENTAL GIANTS (100 ft): zero armor, pure living element. 'Never made — the element that decided to stand': half-conceived asymmetric anatomy (mountain-range mid-formation, zero human symmetry), eon-layered crust strata flaking to reveal the molten/elemental core, violent elemental arteries, constant element-shed, face half-emerged from the element, movement like geology. Awe-not-fear; worship declares divinity. Weapons per Gender-Role Binding: male = element-forged GREATSWORD, female = element-forged STAFF.
 
