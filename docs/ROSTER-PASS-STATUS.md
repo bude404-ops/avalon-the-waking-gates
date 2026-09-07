@@ -1,6 +1,6 @@
 # HOLLOW ROSTER CANON PASS — LIVE STATUS (sync file; update BEFORE any roll/send)
 
-Last synced: Sept 7 2026 ~3:50 PM ET
+Last synced: Sept 7 2026 ~4:00 PM ET
 
 ## VERDICTS (Big's word is final; newest message wins)
 - NEW (Sept 7, Big): non-Hollow dungeon enemies per region — THE LIVING SCOURGE drafted (docs/LIVING_SCOURGE_BESTIARY.md): 3 families (REMNANT FOLK living humans / FAUNA living beasts / CONSTRUCTS made things) x 6 realms; dungeon pacing Folk→Fauna→Hollows→Construct→boss. Awaiting Big's verdict before art rolls.
@@ -10,7 +10,8 @@ Last synced: Sept 7 2026 ~3:50 PM ET
 - STILL CHOIR — ❌ RETIRED as an enemy entirely (Big: 'I don't like the still choir as an enemy at all'). Never roll, never send.
 - ERASED DRAKE — ✅ APPROVED ('Drake approved' ~3:40 PM), canon locked at art/approved/HOLLOW-ERASED-DRAKE-CANON.png. Final spec: wild gearless wyvern (no saddle/harness/bridle — never ridden), teeth on both jaws, void-black face (mist inside only), COLOR-DRAINED ash-grey hide (world keeps saturation), empty stone nest. DO NOT re-roll or re-send.
 - T3 ECHO — ✅ APPROVED ('Keepn echo' ~3:50 PM), canon locked at art/approved/HOLLOW-T3-ECHO-CANON.png (commit 685bb890). Final spec: mirror-hollow pilgrim at a still black pool, road-worn repair-plate 100% real, ash-drained body, ONE absence = void-black face on figure AND reflection (reflection one heartbeat late), polished hand-mirror remnant floating face-down. DO NOT re-roll or re-send.
-- T3 GATE WORM — 📤 LAST PIECE (rolling now)
+- T3 GATE WORM — 📤 SENT Sept 7 ~4:00 PM (art/pending/HOLLOW-T3-GATE-WORM-CANON-V8STYLE.png, commit eb2e3e2c). Mouthless head (NO teeth — first roll grew a toothy maw, corrected), void-black face absence, color-drained pale body grown through the real stone gate, warm lantern. DO NOT re-send; AWAIT verdict only.
+- ⏳ WHEN GATE WORM IS APPROVED: THE ENTIRE HOLLOW ROSTER IS CANON — art re-config pass COMPLETE → next phase per Big's directive: re-roll 2D-to-3D reference sheets from the improved canon, then resume 3D (Meshy).
 
 ## STANDING LAWS (apply to every roll)
 - THE ABSENCE IS ALWAYS THE FACE (FACE-LAW, commit 618375a3)
