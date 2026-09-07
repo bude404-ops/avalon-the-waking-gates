@@ -42,14 +42,15 @@ First canon proof: art/approved/PILGRIM-WARDEN-CINDERROADS-MARK-ENGRAVED-CANON.p
 ## STYLE LANE — CINDER ROADS (locked Sept 5 2026, BudE404 'I like B')
 All pilgrim ladder armor = rugged road-worn smith-craft repair-plate: layered plates from different generations of repair, hand-hammered mismatched ceramic segments, riveted seams, patched pauldrons, worn leather straps and buckles, chipped edges, road dust. Palette: charcoal + ash-brown, faint ember underlight. Rejected lane: Cathedral Forged (grand master-grade plate). The pilgrim looks like they have WALKED the roads.
 
-## FEMALE ATTIRE LAW (Sept 7 2026, Big: 'we still need make the females sexy and seductive with their attire')
+## FEMALE ATTIRE LAW v2 (Sept 7 2026, Big: 'With seductive and sexy we want the females to be realistic not fake type boobs and some what modest depending on class')
 
-Female variants of the six Orders wear the SAME class-material grammar (leathers / robes / plate) but CUT for allure — the seductive read comes from the tailoring, never from breaking the class armor law:
+Female variants of the six Orders are seductive and sexy through NATURAL BEAUTY and tailoring — never through fake or exaggerated anatomy:
 
-- Form-fitting silhouettes: nipped bodices, laced corsetry, bare midriff accents, thigh-high cuts, asymmetric slits
-- Elegance over exposure: pin-up fantasy heroine energy (JRPG leading-lady standard) — attractive and confident, never explicit
-- Per class flavor: Wayfarer-F = fitted leathers + laced bodice; Cantor-F = flowing robe with slit skirt + bare-shoulder mantle; Keeper-F = lamellar over a fitted underlayer; Vigil-F = ranger leathers + thigh boots; Warden-F = form-fitted plate with feminine linework; Smith-F = fitted apron-plate over curves
-- Faces stay living, human, full-color. Body types per class stay SIZE-LAW compliant.
+- REALISTIC BODIES: natural, believable female proportions — no exaggerated or artificial-looking chests, no fantasy-implant reads. Real-athlete / real-woman anatomy, class-SIZE-LAW compliant
+- MODEST SCALES BY CLASS: coverage follows the class grammar — seduction comes from FIT (tailored silhouettes, cinched waists, flattering cuts) and confident presence, not bare skin
+- Per class flavor: Wayfarer-F = fitted road-scout leathers + laced bodice, athletic, tastefully fitted (she's a scout — practical, alluring); Cantor-F = flowing slit robe, elegant; Keeper-F = lamellar over fitted underlayer; Vigil-F = ranger leathers + boots; Warden-F = form-fitted plate, feminine linework; Smith-F = fitted apron-plate. The armored classes (Warden, Smith, Keeper) read MOST modest; the road classes (Wayfarer, Vigil) show the most shape but stay road-practical
+- Elegance over exposure: attractive and confident, never explicit
+- Faces stay living, human, full-color
 
 ## NO-LANTERN-PROP LAW (Sept 7 2026, Big: 'Remember the luminaries are also the relic so they shouldn't have a lantern in their art Canon')
 
