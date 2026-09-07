@@ -59,3 +59,16 @@ The Luminary IS the Cold Lantern relic (ONE COMPANION, TWO LIGHTS). It is a livi
 - In art, the Luminary reads as LIVING LIGHT: a small warm flame-mote or ember-wisp hovering near the pilgrim's shoulder (companion, not equipment), or an ambient warm glow with no visible lamp
 - The flame's color mirrors the pilgrim's Mark element; it never touches or attaches to the gear
 - The Keeper's flail stays; the lantern is NOT a hand prop for any Order — the light is always the companion
+
+## BODY-TYPE LAW (Sept 7 2026, Big: 'for sizes with classes I want different body types not just heights')
+
+Class identity reads from BUILD, not height alone. Each Order has a distinct body type — silhouette, mass, proportions, posture — and armor tailoring follows the build:
+
+- **WAYFARER** — SMALL & WIRY: lean whipcord frame, narrow shoulders, quick-twitch lightness, youthful road-scout energy
+- **KEEPER** — MEDIUM & STOCKY: barrel chest, thick forearms, low center of gravity, weathered years, immovable-protector build
+- **CANTOR** — TALL & GAUNT: long limbs, ascetic thinness, straight ceremonial posture, robe-drape silhouette
+- **VIGIL** — TALL & RANGY: sinewy hunter build, long-limbed lean muscle, watchful forward lean
+- **WARDEN** — MEDIUM & BROAD: classic knight V-taper, heavy shoulders, solid planted stance
+- **SMITH** — HEAVYSET & MASSIVE: the giant of the six — barrel-chested forge mass, thick neck, plate-carrier build
+
+Female variants: same body-type grammar per class, cut for allure per the Female Attire Law. No class shares a silhouette at a glance — height AND build both separate them.

@@ -77,7 +77,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 4. Mark re-attunement (camp/shrine) + first 2 reactions (ember+storm, ember+tide); Luminary flame mirrors the Mark; Luminary tether-REVEAL + pilgrim-sever loop
 5. TRIBUTE economy (Unity): TributeMeter (notable-kill drops), ShrineVendor (spend: tree nodes / relic tiers / re-attunement), Depths drop-tables
 
-## SIZE LAW — weight classes as role language (BudE404, Sept 7 2026)
+## SIZE LAW (+ BODY-TYPE LAW: distinct builds per class, not just heights — see PILGRIM_DESIGN_DOCTRINE.md) — weight classes as role language (BudE404, Sept 7 2026)
 Weapon role = silhouette. Size is readable depth: you SEE what a unit does before it swings.
 
 ### Pilgrim weight classes
