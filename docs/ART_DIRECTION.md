@@ -58,7 +58,13 @@ All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remna
 
 ## V7 UNDONE CANON + HOLLOW STYLE LAW (Sept 7 2026 — BudE404: 'Yes keep, then make the artwork match that style for reference art and we want to keep this same kind of style for other enemies effected by the hollow')
 
-**T1 UNDONE v7 = CANON** (art/approved/HOLLOW-T1-UNDONE-V7-CANON.png — approved after 7 iterations):
+**T1 UNDONE CANON = V8 SCENE — MASTER LOCKED (Sept 7 2026, Big: 'Approve the Canon art of the undone')** (art/approved/HOLLOW-T1-UNDONE-CANON-V8-SCENE.png — built from new-lore laws after Big ruled the old village scene OLD CANON and ordered a new creation; old canon + mislabeled A-pose duplicate purged in commit 7a8f154e):
+- Blue-hour village square: loom worker, chanting trio (all facing one way), two carriers — evenly spaced, frozen mid-routine
+- Void-black FACES (cold-violet charcoal, mist inside the absence only), intact weathered clothes, ZERO glow — light lands ON them
+- One pristine remnant: cold lantern at the stone shrine; stone kilns, smoke haze, broken caldera behind
+- The v7 A-pose sheets remain valid DESIGN SHEETS for the 3D pipeline; the V8 SCENE is the canon MASTER for all art + roster style-lock checks
+
+**v7 design (superseded as canon art, retained as design law):**
 - THE ONE ABSENCE = the FACE: the entire front-of-head region where eyes/nose/mouth should be is a smooth void — skin ends in clean edges, skull silhouette stays fully human (head shape, ears, hair, jawline, listening tilt). Chest fully closed; body carries NO absence. RIBCAGE/CAVITY RETIRED (reads zombie/undead — banned).
 - First glance: villager with his face in shadow. Second look: the shadow has no face in it.
 - Lore upgrade: the absence = the SELF, not the heart. A man with no face still walking his routine.
