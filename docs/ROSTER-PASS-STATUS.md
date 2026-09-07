@@ -46,3 +46,16 @@ A drake candidate from a stray champion-roll drift sits vaulted by session drift
 - CANTOR M CANON LOCKED Sept 7 ~8:05 PM ET (Big: 'Keep') — art/approved/PILGRIM-ORDER-CANTOR-CANON.png. Pilgrim canon now: Wayfarer-F, Keeper, Cantor. NEXT: Vigil M rolls under the full kit (tall/rangy, ranger leathers, greatbow, watch-ridge environment).
 - VIGIL M CANON V1 SENT Sept 7 ~8:10 PM ET: full locked kit, first-pass clean — tall/rangy sinewy hunter per Body-Type Law, waxed ranger leathers + light cord-lashed forearm/sleeve accents per Class Armor Law, greatbow of horn and heartwood + grey-fletched quiver (pure weapon), watch-overlook staging per Environment-Typing (broken watch-tower arc, signal cairn, way-marker with invented chevron glyphs), cold two-layer palette, neutral start. Eyeball verified: no glow, no relic-mimicry, no real-script runes. Awaiting Big's verdict. On lock: Smith (M) rolls last — heavy plate + apron, forge-town staging.
 - VIGIL M CANON LOCKED Sept 7 ~8:15 PM ET (Big: 'Keep vigil') — art/approved/PILGRIM-ORDER-VIGIL-CANON.png. Pilgrim canon: Wayfarer-F, Keeper, Cantor, Vigil. SMITH M rolls now (heavyset/massive, heavy plate + apron, Rite Hammer, forge-town staging) — last Order of the pass.
+## CARVED-WORLD CANON RE-ROLL PASS (Sept 7 ~7:55 PM ET, Big: 'We will need to re roll all the other Canon as well so the 3d models will fit our style')
+All previously-approved canon was rendered in the retired filmic style — full re-roll queue under The Carved World, one at a time through Big's gate. 3D rolls stay PAUSED until this pass completes (canon feeds 3D).
+- [ ] 1. T1 UNDONE (master style-lock) — CARVEDWORLD V1 SENT Sept 7 night: painterly oil re-render of the V8 scene, all Hollow laws held (face-void, craft-intact, color-absence, zero glow-on-them), composition anchored to approved V8. Awaiting verdict.
+- [ ] 2. T2 Unmade Champion
+- [ ] 3. T3 Crucible-Bearer
+- [ ] 4. Erased Drake
+- [ ] 5. T3 Echo
+- [ ] 6. T3 Gate Worm
+- [ ] 7. Wayfarer-F (approved v8 is old-style)
+- [ ] 8. Warden M (old-style, feeds existing GLB kit)
+- [ ] 9. Smith M (first-time roll under new kit — completes male Orders)
+- [ ] 10. Props: Oathblade, Gateshield, RelicLantern, RiteHammer, WayDaggers, Bellstaff
+- [ ] 11. World-consistency pass: deity emergences, sprites, stage2 scenes (after 3D-feeding canon locks)
