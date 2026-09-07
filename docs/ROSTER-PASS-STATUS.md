@@ -33,3 +33,4 @@ Last synced: Sept 7 2026 ~4:25 PM ET
 
 ## NOTE
 A drake candidate from a stray champion-roll drift sits vaulted by session drift (commit 2b723591) — the SENT drake is the b80e11ce file above. Champion re-roll work is COMPLETE — stop.
+- KEEPER CANON V1 SENT Sept 7 ~7:30 PM ET (next in queue after Wayfarer-F lock): fresh generation at his waystation shrine — stocky barrel-chested build per BODY-TYPE LAW, bronze lamellar + harness per CLASS ARMOR LAW, lantern-cage FLAIL with cold hollow unlit head (Luminary light absent per NEUTRAL-START — no flame, no mote, natural eyes, empty dark shrine niche, zero fires in scene), Avalon glyph standing stone, misty dusk ridgelines. Two prior rolls bounced at eyeball (carried lit lanterns — generator kept lighting things; solved by stripping all fire/light cues). Awaiting verdict.
