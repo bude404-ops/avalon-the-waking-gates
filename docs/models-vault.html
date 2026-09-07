@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>AVALON — 3D Model Vault</title>
+<style>
+  :root{--bg:#0b0a09;--panel:#141210;--ember:#e8722a;--ember-hi:#ffb46b;--text:#d8cfc4;--dim:#7a7065;--gold:#c9a86a}
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+  header{padding:18px 16px 10px;text-align:center;border-bottom:1px solid #241f1a}
+  header h1{font-size:19px;letter-spacing:4px;color:var(--gold);font-weight:400}
+  header p{font-size:11px;color:var(--dim);letter-spacing:2px;margin-top:5px;text-transform:uppercase}
+  #stage-wrap{position:relative;width:100%;height:56vh;background:radial-gradient(ellipse at 50% 35%, #1c1712 0%, #0b0a09 75%);touch-action:none}
+  #stage-wrap canvas{display:block}
+  #plate{position:absolute;top:10px;left:14px;z-index:5;pointer-events:none}
+  #plate .name{font-size:17px;letter-spacing:3px;color:var(--ember-hi)}
+  #plate .role{font-size:11px;letter-spacing:2px;color:var(--dim);margin-top:3px;text-transform:uppercase}
+  #loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;color:var(--dim);font-size:12px;letter-spacing:2px;pointer-events:none}
+  #hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:#4d443c;letter-spacing:2px;pointer-events:none}
+  #tabs{display:flex;gap:8px;padding:12px 12px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .tab{flex:0 0 auto;background:var(--panel);border:1px solid #241f1a;color:var(--dim);padding:9px 14px;font-size:12px;letter-spacing:2px;font-family:inherit;cursor:pointer;text-transform:uppercase}
+  .tab.on{border-color:var(--ember);color:var(--ember-hi);background:#1a130d}
+  .tab.god.on{color:var(--gold);border-color:var(--gold)}
+  #poses{display:flex;gap:7px;padding:4px 12px 14px;overflow-x:auto;-webkit-overflow-scrolling:touch;min-height:44px}
+  .pose{flex:0 0 auto;background:#181410;border:1px solid #2a241d;color:var(--text);padding:8px 12px;font-size:11px;letter-spacing:1.5px;font-family:inherit;cursor:pointer;text-transform:uppercase}
+  .pose.on{background:var(--ember);color:#140c06;border-color:var(--ember);font-weight:700}
+  #info{padding:0 18px 8px;color:var(--dim);font-size:11.5px;line-height:1.7;letter-spacing:.5px}
+  #info b{color:var(--text)}
+  footer{margin-top:8px;padding:14px 18px 26px;border-top:1px solid #241f1a;color:#5a5148;font-size:10.5px;letter-spacing:1px;line-height:1.8;text-align:center}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/"}}
+</script>
+</head>
+<body>
+<header>
+  <h1>AVALON — 3D MODEL VAULT</h1>
+  <p>The finished kits — rotate &amp; inspect</p>
+</header>
+
+<div id="stage-wrap">
+  <div id="plate"><div class="name"></div><div class="role"></div></div>
+  <div id="loader">SUMMONING…</div>
+  <div id="hint">DRAG TO ROTATE · PINCH TO ZOOM</div>
+</div>
+
+<div id="tabs"></div>
+<div id="poses"></div>
+<div id="info"></div>
+
+<footer>
+  WARDEN · ARDEN · AELTHORN — first pilgrim &amp; elite kits, production-ready<br>
+  VAELTHORN, the Sleeping King — the Furnace-King rises<br>
+  More kits, Hollow waves &amp; the remaining pilgrim rolls are next in the pipeline.
+</footer>
+
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+
+const MODELS = {
+  warden:  {name:'WARDEN-M', role:'Blade Pilgrim — Frontline Duelist', god:false, info:'The blade pilgrim kit — all 9 combat poses finished: triple combo, heavy, parry, shield bash, i-frame dodge, hit reactions, knockdown, walk cycle. This is the exact kit shipping in the first APK.', poses:['IDLE','COMBO','HEAVY','PARRY','SHIELDBASH','DODGE','HITREACTION','KNOCKDOWN','WALK']},
+  arden:   {name:'ARDEN-M', role:'Pilgrim Base Kit — Second Roll', god:false, info:'The second pilgrim base produced through the 2D-to-3D canon pipeline. Idle pose shown — full combat pose kit rolls next.', poses:['IDLE']},
+  ael:     {name:'AELTHORN', role:'Elite Kit', god:false, info:'Elite-tier kit from the canon pipeline. Idle pose shown — full elite move set rolls next.', poses:['IDLE']},
+  vael:    {name:'VAELTHORN', role:'The Sleeping King — the Furnace-King', god:true, info:'The first risen god — colossus scale. Per Emergence Law he wakes from Embermere itself. Idle breath, the rising SLAM, and the STOMP quake. This is the god you fight.', poses:['IDLE','SLAM','STOMP']}
+};
+
+const wrap=document.getElementById('stage-wrap');
+const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+renderer.setSize(wrap.clientWidth,wrap.clientHeight);
+renderer.outputColorSpace=THREE.SRGBColorSpace;
+wrap.appendChild(renderer.domElement);
+
+const scene=new THREE.Scene();
+scene.fog=new THREE.FogExp2(0x0b0a09,0.016);
+const camera=new THREE.PerspectiveCamera(46,wrap.clientWidth/wrap.clientHeight,0.1,300);
+camera.position.set(0,1.7,5.2);
+
+const controls=new OrbitControls(camera,renderer.domElement);
+controls.enableDamping=true;controls.dampingFactor=0.08;
+controls.minDistance=1.4;controls.maxDistance=14;
+controls.target.set(0,1.0,0);
+controls.autoRotate=true;controls.autoRotateSpeed=0.9;
+controls.enablePan=false;
+
+scene.add(new THREE.HemisphereLight(0xffe3c2,0x1a120c,1.15));
+const key=new THREE.DirectionalLight(0xffb46b,2.4);key.position.set(4,7,3);scene.add(key);
+const rim=new THREE.DirectionalLight(0x9db4ff,0.8);rim.position.set(-5,3,-4);scene.add(rim);
+const fill=new THREE.PointLight(0xe8722a,1.1,30);fill.position.set(0,2.2,4);scene.add(fill);
+
+const ground=new THREE.Mesh(new THREE.CircleGeometry(9,64),new THREE.MeshStandardMaterial({color:0x14100c,roughness:1}));
+ground.rotation.x=-Math.PI/2;scene.add(ground);
+const ring=new THREE.Mesh(new THREE.RingGeometry(2.05,2.2,80),new THREE.MeshBasicMaterial({color:0xe8722a,transparent:true,opacity:0.55,side:THREE.DoubleSide}));
+ring.rotation.x=-Math.PI/2;ring.position.y=0.01;scene.add(ring);
+
+const loader=new GLTFLoader();
+const draco=new DRACOLoader();draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+loader.setDRACOLoader(draco);
+
+const cache=new Map();let current=null;let activeTab='warden';
+const $tabs=document.getElementById('tabs'),$poses=document.getElementById('poses'),$plate=document.getElementById('plate'),$info=document.getElementById('info'),$loader=document.getElementById('loader');
+
+function fit(obj,god){
+  const box=new THREE.Box3().setFromObject(obj);
+  const size=box.getSize(new THREE.Vector3()),ctr=box.getCenter(new THREE.Vector3());
+  obj.position.sub(ctr);obj.position.y+=size.y/2;
+  const targetH=god?4.2:1.75;
+  const scale=targetH/(size.y||1);obj.scale.setScalar(scale);
+  const box2=new THREE.Box3().setFromObject(obj);const c2=box2.getCenter(new THREE.Vector3());
+  obj.position.x-=c2.x;obj.position.z-=c2.z;
+  const b3=new THREE.Box3().setFromObject(obj);
+  controls.target.set(0,b3.getCenter(new THREE.Vector3()).y,0);
+  camera.position.set(0,b3.max.y*0.7,b3.max.y*2.1+0.9);
+  controls.minDistance=b3.max.y*0.5;controls.maxDistance=b3.max.y*6;
+}
+function show(tab,pose){
+  const m=MODELS[tab];activeTab=tab;
+  $plate.querySelector('.name').textContent=m.name;
+  $plate.querySelector('.role').textContent=m.role;
+  $plate.querySelector('.name').style.color=m.god?'var(--gold)':'var(--ember-hi)';
+  $info.innerHTML='<b>'+m.name+'</b> — '+m.info;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.k===tab));
+  const file='models/'+(tab==='vael'?'VAELTHORN':tab==='arden'?'ARDEN-M':tab==='ael'?'AELTHORN':'WARDEN-M')+'-'+pose+'.glb';
+  $loader.style.display='flex';$loader.textContent='SUMMONING…';
+  const done=()=>{$loader.style.display='none';};
+  if(cache.has(file)){swap(cache.get(file),tab);done();return;}
+  loader.load(file,gltf=>{
+    const root=gltf.scene;
+    root.traverse(o=>{if(o.isMesh){o.castShadow=true;if(o.material){o.material.envMapIntensity=1.2;}}});
+    cache.set(file,root);if(activeTab===tab){swap(root,tab);done();}
+  },undefined,()=>{$loader.textContent='FAILED TO SUMMON — RETRY';});
+}
+function swap(root,tab){
+  if(current)scene.remove(current);
+  scene.add(root);current=root;
+  fit(root,MODELS[tab].god);
+}
+function renderTabs(){
+  $tabs.innerHTML='';
+  for(const k in MODELS){const m=MODELS[k];
+    const b=document.createElement('button');b.className='tab'+(m.god?' god':'')+(k===activeTab?' on':'');b.dataset.k=k;b.textContent=m.name;
+    b.onclick=()=>{renderPoses(k);show(k,MODELS[k].poses[0]);};
+    $tabs.appendChild(b);}
+}
+function renderPoses(k){
+  $poses.innerHTML='';const m=MODELS[k];
+  m.poses.forEach((p,i)=>{
+    const b=document.createElement('button');b.className='pose'+(i===0?' on':'');b.textContent=p;
+    b.onclick=()=>{document.querySelectorAll('.pose').forEach(x=>x.classList.remove('on'));b.classList.add('on');show(k,p);};
+    $poses.appendChild(b);});
+}
+renderTabs();renderPoses('warden');show('warden','IDLE');
+
+addEventListener('resize',()=>{renderer.setSize(wrap.clientWidth,wrap.clientHeight);camera.aspect=wrap.clientWidth/wrap.clientHeight;camera.updateProjectionMatrix();});
+(function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
+</script>
+</body>
+</html>
