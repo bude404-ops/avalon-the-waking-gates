@@ -76,3 +76,11 @@ Class identity reads from BUILD, not height alone. Each Order has a distinct bod
 Female variants: same body-type grammar per class, cut for allure per the Female Attire Law. No class shares a silhouette at a glance — height AND build both separate them.
 
 FACE-DISTINCTNESS LAW (Sept 7 2026, Big: 'make sure they arent the same for males or females and the classes'): every pilgrim canon face is UNIQUE — no face templates shared across genders, no face shared across the six Orders. Twelve distinct faces (6 Orders x M/F), each with its own bone structure, age-read, skin tone, and character. Faces stay SEEABLE (Big agreed) and realistic-living.
+
+## AVALON CRAFT GRAMMAR — ARMOR LAW (locked Sept 7 2026, Big: 'I like that except for the shoulder thing')
+Proprietary armor system for all pilgrim Orders; no real-world armor terms in canon art.
+1. LASH-PLATE JOINERY: small chiseled plates lashed with waxed cord through carved channels; the visible cord-cross weave is the Avalon signature.
+2. CHISELED PLATES: every plate carries shallow gate-rune etchwork — armor as wearable waymarkers (etch only, never glowing).
+3. REALM MATERIALS: kiln-bronze (Embermere), moor-iron (Galemarch), bloom-steel (Bloomweald), dusk-iron (Gloambarrow), tide-brass (Marenvale), strata-steel (Stonefell).
+4. CLOAK GRAMMAR: heavy woven road-cloaks with woven geometric glyph-border, pinned with a round order-brooch.
+5. RETIRED: the shoulder-mounted hollow lantern-frame hoop — Big rejected ('except for the shoulder thing'). Light-waiting elements must not be visible worn cages; the Luminary's light manifests in-engine only. Do not re-pitch worn cage pieces.
