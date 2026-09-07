@@ -1,6 +1,6 @@
 # HOLLOW ROSTER CANON PASS — LIVE STATUS (sync file; update BEFORE any roll/send)
 
-Last synced: Sept 7 2026 ~3:45 PM ET
+Last synced: Sept 7 2026 ~3:50 PM ET
 
 ## VERDICTS (Big's word is final; newest message wins)
 - T1 UNDONE — ✅ APPROVED, canon locked (V8 scene master, commit a1c0e8e1)
@@ -8,8 +8,8 @@ Last synced: Sept 7 2026 ~3:45 PM ET
 - T3 CRUCIBLE-BEARER — ✅ canon at art/approved/HOLLOW-T3-CRUCIBLE-BEARER-CANON.png (18:06, Big liked the redesign)
 - STILL CHOIR — ❌ RETIRED as an enemy entirely (Big: 'I don't like the still choir as an enemy at all'). Never roll, never send.
 - ERASED DRAKE — ✅ APPROVED ('Drake approved' ~3:40 PM), canon locked at art/approved/HOLLOW-ERASED-DRAKE-CANON.png. Final spec: wild gearless wyvern (no saddle/harness/bridle — never ridden), teeth on both jaws, void-black face (mist inside only), COLOR-DRAINED ash-grey hide (world keeps saturation), empty stone nest. DO NOT re-roll or re-send.
-- T3 ECHO — 📤 next in queue (rolling now)
-- T3 GATE WORM — ⏳ not yet rolled
+- T3 ECHO — ✅ APPROVED ('Keepn echo' ~3:50 PM), canon locked at art/approved/HOLLOW-T3-ECHO-CANON.png (commit 685bb890). Final spec: mirror-hollow pilgrim at a still black pool, road-worn repair-plate 100% real, ash-drained body, ONE absence = void-black face on figure AND reflection (reflection one heartbeat late), polished hand-mirror remnant floating face-down. DO NOT re-roll or re-send.
+- T3 GATE WORM — 📤 LAST PIECE (rolling now)
 
 ## STANDING LAWS (apply to every roll)
 - THE ABSENCE IS ALWAYS THE FACE (FACE-LAW, commit 618375a3)
