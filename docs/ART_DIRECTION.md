@@ -32,7 +32,7 @@ All environment art draws from MYTHOS_WORLD_BIBLE.md locations only (Embermarch,
 The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC ABSENCE + NEAR-HUMAN WRONGNESS. Every Hollow gets the same DNA with a unique absence. This grammar supersedes generic "scary monster" reads for all Hollow art.
 
 ### THE SEVEN LAWS
-1. **EVERY HOLLOW HAS A HOLE** — each unit has ONE specific through-the-body absence where their self used to be. T1 Undone = chest cavity (the heart). The cavity is a TRUE void — background reads through it or pure black. Never gore, never organs.
+1. **EVERY HOLLOW HAS ONE ABSENCE** — each unit has ONE specific absence where their self used to be. T1 Undone = THE FACE (the self — v7 canon, Sept 7: Big retired the chest cavity, 'looks like a zombie'; the face void reads ERASED, never undead). The absence is filled with VOID BLACK (see law 8). Never gore, never organs, never exposed ribs (zombie read is banned).
 2. **NEAR-HUMAN PROPORTIONS, SLIGHTLY WRONG** — too thin, arms a touch too long, head tilted at a listening angle, knees slightly off. UNCANNY beats huge. Hollow are the erased, not beasts.
 3. **THE REMNANT** — each carries exactly ONE pristine, well-kept object from their life — the only un-worn thing in frame (the Mutefolk's cold lantern, the Champion's polished sword). Care in decay = wrongness.
 4. **NO GLOW, NO LIGHT OF THEIR OWN** — Hollow hold zero light. Any light in frame comes from OUTSIDE (pilgrim's Luminary, a distant Gate). They are things the light lands ON.
@@ -43,7 +43,7 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 ### PER-UNIT ABSENCE MAP (Embermere roster)
 | Unit | The Hole | The Remnant | The Routine |
 |---|---|---|---|
-| T1 Undone | chest cavity (heart) | — (it has nothing left) | wanders, searching pockets |
+| T1 Undone | face void (the self) | — (it has nothing left) | wanders, searching pockets |
 | T1 Mutefolk (lantern-lighter) | hollow hood (no face) | pristine COLD lantern | raises lantern to a lamp post that isn't there |
 | T2 Unmade Champion | see-through breastplate — body entirely gone | immaculate polished sword | guards a gate that leads nowhere |
 | T3 Furnace Brute | furnace-belly cavity, cold + sooted | a keeper's tiny hammer on its belt | works a furnace that has been dead forever; face = furnace door, welded shut |
@@ -54,3 +54,21 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 
 ### PRODUCTION RULE
 All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remnant + pause + no-glow + de-coloration ring + Cinder Roads cloth/armor + near-human scale). Meshy 3D conversions add the ember/void glow IN-ENGINE (Unity dynamic light), never baked.
+
+
+## V7 UNDONE CANON + HOLLOW STYLE LAW (Sept 7 2026 — BudE404: 'Yes keep, then make the artwork match that style for reference art and we want to keep this same kind of style for other enemies effected by the hollow')
+
+**T1 UNDONE v7 = CANON** (art/approved/HOLLOW-T1-UNDONE-V7-CANON.png — approved after 7 iterations):
+- THE ONE ABSENCE = the FACE: the entire front-of-head region where eyes/nose/mouth should be is a smooth void — skin ends in clean edges, skull silhouette stays fully human (head shape, ears, hair, jawline, listening tilt). Chest fully closed; body carries NO absence. RIBCAGE/CAVITY RETIRED (reads zombie/undead — banned).
+- First glance: villager with his face in shadow. Second look: the shadow has no face in it.
+- Lore upgrade: the absence = the SELF, not the heart. A man with no face still walking his routine.
+
+**VOID BLACK (the absence color law):** the void is NEVER flat #000 (reads as a sticker/cutout). Void Black = deepest charcoal with a faint cold-violet bias (~#0E0B12), darker than any shadow on the figure. Edges of the opening catch scene light like a well's rim; the interior NEVER reflects or speculars. Mist wisps inside sit ONE step lighter than the core black (2-3 layered near-black values) so the dark reads as DEPTH, not paint. KILL-TEST: the void stays dark even when the scene brightens — it doesn't obey light. A shadow is where light hasn't reached; the void is the place light forgot. In-engine: near-zero albedo shader + the wisp particle.
+
+**MIST-IN-VOID (the Hollow effect law):** the Hollow effect = faint black-grey shadow mist breathing ONLY INSIDE the absence — never a body aura (reads generic wraith, kills the first-glance double-take, costs phone perf at crowd scale). Mist = anti-light (obeys no-glow law), reads at gameplay distance (a clean hole reads as a modeling error from 20ft), can stir on the all-at-once turn as a free horror signal, costs one cheap particle per unit in Unity.
+
+**CLOTHES-INTACT:** erasure cannot eat what was MADE — clothing/armor stays fully whole and worn (v4's dissolving-clothes render was REJECTED). The erasure takes the self, never the garment.
+
+**ROSTER STYLE LAW:** ALL Hollow-affected enemies carry this same style — ordinary realm-thing at first glance + ONE absence + Void Black + mist-in-void + zero glow + de-coloration. Restyle rolls run ONE AT A TIME through BudE404's approval gate, each anchored to its canon approved art. Embermere order: T2 Unmade Champion, T3 Furnace Brute.
+
+**PRODUCTION:** v7 Meshy re-roll submitted Sept 7 (no outpaint, 30cr — the pre-v7 chest-cavity model HOLLOW-T1-UNDONE-GAME.glb is RETIRED as source-canon; void gets no baked glow — mist + shader live in-engine).

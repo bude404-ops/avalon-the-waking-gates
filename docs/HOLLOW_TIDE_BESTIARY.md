@@ -132,3 +132,7 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 
 ### PRODUCTION RULE
 Regional units are NEW art rolls through THE UNDONE STANDARD checklist (docs/ART_DIRECTION.md) + the realm's fauna map above. Existing canon units (Mutefolk, Undone, Champion, Drake, Choir, Brute, Gate-Worm, Echo, Grimlights) remain GLOBAL staples; region rosters RESKIN the tiers with local fauna + local erased. Every dungeon's first wave tells you where you are before the UI does.
+
+
+## CANON LOCK v7 (Sept 7 2026 — BudE404 'Yes keep')
+T1 UNDONE v7 = canon (face void, Void Black, mist-in-void, clothes intact — art/approved/HOLLOW-T1-UNDONE-V7-CANON.png). The chest-cavity design is RETIRED (zombie read). This style is now the law for ALL Hollow-affected enemies — restyle rolls one at a time through BudE404's gate; Embermere next: T2 Unmade Champion, then T3 Furnace Brute. See ART_DIRECTION.md 'V7 UNDONE CANON + HOLLOW STYLE LAW'.
