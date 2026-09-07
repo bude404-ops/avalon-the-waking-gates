@@ -107,3 +107,18 @@ ALL runes, sigils, and inscriptions in ANY Avalon art — backgrounds, architect
 - Background/prop runes read as weathered AVALON gate-rune inscriptions — invented angular megalithic script in the Gate grammar, never legible real writing.
 - Every art prompt that includes inscriptions specifies 'Avalon gate-rune script, invented angular megalithic glyphs' and never references historical or fantasy-franchise runes.
 - PRE-SEND CHECK: eyeball any art containing glyphs against the Gate Rune grammar before sending to Big.
+
+## ENVIRONMENT-TYPING LAW (Sept 7 2026, Big: 'with the Canon art they need be in their type of environment')
+
+Every canon art piece stages its character IN CHARACTER — in the environment their way of life belongs to. Never a generic backdrop, never a void studio:
+
+- **WAYFARER** — the Cinder Roads themselves: mountain passes, milestone gates, switchback trails (current rolls comply)
+- **KEEPER** — shrine ground: lantern shrines, waystations, reliquary niches, tended paths
+- **CANTOR** — rite sites: chanting circles, bell niches, wayside altars
+- **SMITH** — forge country: kiln towns, smithies, workshop ruins, forge-road stations
+- **VIGIL** — the watch: ridgelines, overlooks, broken watchtowers, high moor roads
+- **WARDEN** — held points: gates, oath-bridges, crossing waypoints, gatehouses
+- **Hollows** — their dead-settlement settings (Undone = village square, Gate Worm = the gate itself, Drake = the empty nest) — already the standing pattern
+- **Realm-native characters** (ERASED, shade-beasts, regional elites, dead-god bosses) — staged in their realm's landscape per the land-is-the-gods doctrine
+
+Environment carries the realm palette (blue-hour for quiet pieces, realm element accents) and stays lore-true — no environment that contradicts the doctrine.
