@@ -17,7 +17,8 @@
   #plate .name{font-size:17px;letter-spacing:3px;color:var(--ember-hi)}
   #plate .role{font-size:11px;letter-spacing:2px;color:var(--dim);margin-top:3px;text-transform:uppercase}
   #loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:4;color:var(--dim);font-size:12px;letter-spacing:2px;pointer-events:none}
-  #hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:#4d443c;letter-spacing:2px;pointer-events:none}
+  #hint{position:absolute;bottom:8px;left:0;right:0;text-align:center;font-size:10px;color:#4d443c;letter-spacing:2px;pointer-events:none;transition:opacity .5s}
+  #hint.demo{color:#ffb46b}
   #tabs{display:flex;gap:8px;padding:12px 12px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
   .tab{flex:0 0 auto;background:var(--panel);border:1px solid #241f1a;color:var(--dim);padding:9px 14px;font-size:12px;letter-spacing:2px;font-family:inherit;cursor:pointer;text-transform:uppercase}
   .tab.on{border-color:var(--ember);color:var(--ember-hi);background:#1a130d}
@@ -36,13 +37,13 @@
 <body>
 <header>
   <h1>AVALON — 3D MODEL VAULT</h1>
-  <p>The finished kits — rotate &amp; inspect</p>
+  <p>The finished kits — auto-demos every stance · rotate &amp; inspect</p>
 </header>
 
 <div id="stage-wrap">
   <div id="plate"><div class="name"></div><div class="role"></div></div>
   <div id="loader">SUMMONING…</div>
-  <div id="hint">DRAG TO ROTATE · PINCH TO ZOOM</div>
+  <div id="hint" class="demo">AUTO-DEMO RUNNING — TAP ANY STANCE TO TAKE CONTROL</div>
 </div>
 
 <div id="tabs"></div>
@@ -51,7 +52,8 @@
 
 <footer>
   WARDEN · ARDEN · AELTHORN — first pilgrim &amp; elite kits, production-ready<br>
-  VAELTHORN, the Sleeping King — the Furnace-King rises<br>
+  Weapons are separate swappable hand-meshes (canon swappability law) — Warden's blade rolls next<br>
+  VAELTHORN, the Sleeping King — rises merged from Embermere itself, terrain-mid-formation<br>
   More kits, Hollow waves &amp; the remaining pilgrim rolls are next in the pipeline.
 </footer>
 
@@ -62,10 +64,10 @@ import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
 
 const MODELS = {
-  warden:  {name:'WARDEN-M', role:'Blade Pilgrim — Frontline Duelist', god:false, info:'The blade pilgrim kit — all 9 combat poses finished: triple combo, heavy, parry, shield bash, i-frame dodge, hit reactions, knockdown, walk cycle. This is the exact kit shipping in the first APK.', poses:['IDLE','COMBO','HEAVY','PARRY','SHIELDBASH','DODGE','HITREACTION','KNOCKDOWN','WALK']},
+  warden:  {name:'WARDEN-M', role:'Blade Pilgrim — Frontline Duelist', god:false, weapon:'⚔️ BLADE — separate swappable hand-mesh, rolls next (canon: weapons never bake into the rig)', info:'The blade pilgrim kit — all 9 combat poses finished: triple combo, heavy, parry, shield bash, i-frame dodge, hit reactions, knockdown, walk cycle. This is the exact kit shipping in the first APK.', poses:['IDLE','COMBO','HEAVY','PARRY','SHIELDBASH','DODGE','HITREACTION','KNOCKDOWN','WALK']},
   arden:   {name:'ARDEN-M', role:'Pilgrim Base Kit — Second Roll', god:false, info:'The second pilgrim base produced through the 2D-to-3D canon pipeline. Idle pose shown — full combat pose kit rolls next.', poses:['IDLE']},
   ael:     {name:'AELTHORN', role:'Elite Kit', god:false, info:'Elite-tier kit from the canon pipeline. Idle pose shown — full elite move set rolls next.', poses:['IDLE']},
-  vael:    {name:'VAELTHORN', role:'The Sleeping King — the Furnace-King', god:true, info:'The first risen god — colossus scale. Per Emergence Law he wakes from Embermere itself. Idle breath, the rising SLAM, and the STOMP quake. This is the god you fight.', poses:['IDLE','SLAM','STOMP']}
+  vael:    {name:'VAELTHORN', role:'The Sleeping King — the Furnace-King', god:true, info:'The first risen god — colossus scale, terrain-mid-formation: he is OF Embermere, the land IS the god. The terrain below is him still becoming. Idle breath, the rising SLAM, and the STOMP quake. This is the god you fight.', poses:['IDLE','SLAM','STOMP']}
 };
 
 const wrap=document.getElementById('stage-wrap');
@@ -76,13 +78,11 @@ renderer.outputColorSpace=THREE.SRGBColorSpace;
 wrap.appendChild(renderer.domElement);
 
 const scene=new THREE.Scene();
-scene.fog=new THREE.FogExp2(0x0b0a09,0.016);
-const camera=new THREE.PerspectiveCamera(46,wrap.clientWidth/wrap.clientHeight,0.1,300);
-camera.position.set(0,1.7,5.2);
+scene.fog=new THREE.FogExp2(0x0b0a09,0.014);
+const camera=new THREE.PerspectiveCamera(46,wrap.clientWidth/wrap.clientHeight,0.1,400);
 
 const controls=new OrbitControls(camera,renderer.domElement);
 controls.enableDamping=true;controls.dampingFactor=0.08;
-controls.minDistance=1.4;controls.maxDistance=14;
 controls.target.set(0,1.0,0);
 controls.autoRotate=true;controls.autoRotateSpeed=0.9;
 controls.enablePan=false;
@@ -97,12 +97,44 @@ ground.rotation.x=-Math.PI/2;scene.add(ground);
 const ring=new THREE.Mesh(new THREE.RingGeometry(2.05,2.2,80),new THREE.MeshBasicMaterial({color:0xe8722a,transparent:true,opacity:0.55,side:THREE.DoubleSide}));
 ring.rotation.x=-Math.PI/2;ring.position.y=0.01;scene.add(ring);
 
+/* ---- TERRAIN MERGE for gods: a rocky mass the god rises out of ---- */
+function makeMound(){
+  const grp=new THREE.Group();
+  const rockMat=new THREE.MeshStandardMaterial({color:0x241a12,roughness:1,flatShading:true});
+  const cone=new THREE.ConeGeometry(1,1,44,7);
+  const pos=cone.attributes.position;
+  for(let i=0;i<pos.count;i++){
+    const y=pos.getY(i);
+    if(y<0.49){
+      pos.setX(i,pos.getX(i)*(0.82+Math.random()*0.5));
+      pos.setZ(i,pos.getZ(i)*(0.82+Math.random()*0.5));
+      pos.setY(i,y+(Math.random()-0.5)*0.12);
+    }
+  }
+  cone.computeVertexNormals();
+  const mass=new THREE.Mesh(cone,rockMat);grp.add(mass);
+  const bGeo=new THREE.IcosahedronGeometry(1,0);
+  for(let i=0;i<14;i++){
+    const a=i/14*Math.PI*2+Math.random()*0.4;
+    const r=1.05+Math.random()*0.3;
+    const s=0.09+Math.random()*0.13;
+    const b=new THREE.Mesh(bGeo,rockMat);
+    b.position.set(Math.cos(a)*r,Math.random()*0.06,Math.sin(a)*r);
+    b.scale.setScalar(s);b.rotation.set(Math.random()*3,Math.random()*3,Math.random()*3);
+    grp.add(b);
+  }
+  const glow=new THREE.PointLight(0xff7a2a,6,7);glow.position.set(0,0.32,0.9);grp.add(glow);
+  grp.visible=false;scene.add(grp);
+  return grp;
+}
+const mound=makeMound();
+
 const loader=new GLTFLoader();
 const draco=new DRACOLoader();draco.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
 loader.setDRACOLoader(draco);
 
 const cache=new Map();let current=null;let activeTab='warden';
-const $tabs=document.getElementById('tabs'),$poses=document.getElementById('poses'),$plate=document.getElementById('plate'),$info=document.getElementById('info'),$loader=document.getElementById('loader');
+const $tabs=document.getElementById('tabs'),$poses=document.getElementById('poses'),$plate=document.getElementById('plate'),$info=document.getElementById('info'),$loader=document.getElementById('loader'),$hint=document.getElementById('hint');
 
 function fit(obj,god){
   const box=new THREE.Box3().setFromObject(obj);
@@ -112,17 +144,36 @@ function fit(obj,god){
   const scale=targetH/(size.y||1);obj.scale.setScalar(scale);
   const box2=new THREE.Box3().setFromObject(obj);const c2=box2.getCenter(new THREE.Vector3());
   obj.position.x-=c2.x;obj.position.z-=c2.z;
+
+  let h=size.y*scale;
+  if(god){
+    const b=new THREE.Box3().setFromObject(obj);
+    h=b.max.y-b.min.y;
+    const sunk=h*0.30;
+    obj.position.y-=sunk;
+    mound.visible=true;
+    mound.scale.set(h*0.62,h*0.52,h*0.62);
+    mound.position.set(0,0,0);
+  } else { mound.visible=false; }
+
   const b3=new THREE.Box3().setFromObject(obj);
-  controls.target.set(0,b3.getCenter(new THREE.Vector3()).y,0);
-  camera.position.set(0,b3.max.y*0.7,b3.max.y*2.1+0.9);
-  controls.minDistance=b3.max.y*0.5;controls.maxDistance=b3.max.y*6;
+  const c3=b3.getCenter(new THREE.Vector3());
+  const sphereR=Math.max(b3.getSize(new THREE.Vector3()).length()/2, god?h*0.75:1);
+  const fovV=camera.fov*Math.PI/180;
+  const fovH=2*Math.atan(Math.tan(fovV/2)*camera.aspect);
+  const dist=Math.max(sphereR/Math.tan(fovV/2),sphereR/Math.tan(fovH/2))*1.32;
+  controls.target.copy(c3);
+  const elev=0.34;
+  camera.position.set(c3.x+dist*0.30, c3.y+dist*Math.sin(elev), c3.z+dist*Math.cos(elev)*0.97);
+  controls.minDistance=sphereR*0.55;controls.maxDistance=dist*2.6;
+  controls.update();
 }
 function show(tab,pose){
   const m=MODELS[tab];activeTab=tab;
   $plate.querySelector('.name').textContent=m.name;
   $plate.querySelector('.role').textContent=m.role;
   $plate.querySelector('.name').style.color=m.god?'var(--gold)':'var(--ember-hi)';
-  $info.innerHTML='<b>'+m.name+'</b> — '+m.info;
+  $info.innerHTML='<b>'+m.name+'</b> — '+m.info+(m.weapon?'<br><b>WEAPON</b> — '+m.weapon:'');
   document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.k===tab));
   const file='models/'+(tab==='vael'?'VAELTHORN':tab==='arden'?'ARDEN-M':tab==='ael'?'AELTHORN':'WARDEN-M')+'-'+pose+'.glb';
   $loader.style.display='flex';$loader.textContent='SUMMONING…';
@@ -143,19 +194,45 @@ function renderTabs(){
   $tabs.innerHTML='';
   for(const k in MODELS){const m=MODELS[k];
     const b=document.createElement('button');b.className='tab'+(m.god?' god':'')+(k===activeTab?' on':'');b.dataset.k=k;b.textContent=m.name;
-    b.onclick=()=>{renderPoses(k);show(k,MODELS[k].poses[0]);};
+    b.onclick=()=>{stopDemo();renderPoses(k);show(k,MODELS[k].poses[0]);};
     $tabs.appendChild(b);}
 }
-function renderPoses(k){
+function renderPoses(k,activePose){
   $poses.innerHTML='';const m=MODELS[k];
   m.poses.forEach((p,i)=>{
-    const b=document.createElement('button');b.className='pose'+(i===0?' on':'');b.textContent=p;
-    b.onclick=()=>{document.querySelectorAll('.pose').forEach(x=>x.classList.remove('on'));b.classList.add('on');show(k,p);};
+    const b=document.createElement('button');b.className='pose'+((activePose||m.poses[0])===p?' on':'');b.textContent=p;
+    b.onclick=()=>{stopDemo();document.querySelectorAll('.pose').forEach(x=>x.classList.remove('on'));b.classList.add('on');show(k,p);};
     $poses.appendChild(b);});
 }
-renderTabs();renderPoses('warden');show('warden','IDLE');
 
-addEventListener('resize',()=>{renderer.setSize(wrap.clientWidth,wrap.clientHeight);camera.aspect=wrap.clientWidth/wrap.clientHeight;camera.updateProjectionMatrix();});
+/* ---- AUTO-DEMO: cycles every stance so each kit demos itself ---- */
+let demo=true,demoTimer=null,demoIdx=0;
+function stopDemo(){
+  if(!demo)return;
+  demo=false;clearInterval(demoTimer);
+  $hint.classList.remove('demo');
+  $hint.textContent='DRAG TO ROTATE · PINCH TO ZOOM · TAP STANCES';
+}
+function startDemo(){
+  demoTimer=setInterval(()=>{
+    if(!demo)return;
+    const poses=MODELS[activeTab].poses;
+    if(poses.length<2)return;
+    demoIdx=(demoIdx+1)%poses.length;
+    const p=poses[demoIdx];
+    renderPoses(activeTab,p);
+    show(activeTab,p);
+  },2600);
+}
+renderer.domElement.addEventListener('pointerdown',stopDemo,{once:true});
+
+renderTabs();renderPoses('warden');show('warden','IDLE');startDemo();
+
+addEventListener('resize',()=>{
+  renderer.setSize(wrap.clientWidth,wrap.clientHeight);
+  camera.aspect=wrap.clientWidth/wrap.clientHeight;camera.updateProjectionMatrix();
+  if(current)fit(current,MODELS[activeTab].god);
+});
 (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
 </script>
 </body>
