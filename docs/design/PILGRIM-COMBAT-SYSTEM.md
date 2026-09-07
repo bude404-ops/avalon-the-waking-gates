@@ -61,3 +61,30 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 3. Void-tether severing (lantern toggle mid-fight)
 4. Mark re-attunement (camp/shrine) + first 2 reactions (ember+storm, ember+tide); Luminary flame mirrors the Mark; Luminary tether-REVEAL + pilgrim-sever loop
 5. TRIBUTE economy (Unity): TributeMeter (notable-kill drops), ShrineVendor (spend: tree nodes / relic tiers / re-attunement), Depths drop-tables
+
+## SIZE LAW — weight classes as role language (BudE404, Sept 7 2026)
+Weapon role = silhouette. Size is readable depth: you SEE what a unit does before it swings.
+
+### Pilgrim weight classes
+| Class | Weapon | Size class | Combat identity |
+|---|---|---|---|
+| Singer | twin daggers | SMALL | fastest TEMPO, faith builds in a stream of small hits, longest/fasted step-dodge |
+| Warden | sword + shield | MEDIUM | balanced read |
+| Keeper | flail + lantern | MEDIUM | mid |
+| Walker | staff | TALL/LEAN | reach advantage at pole length |
+| Vigil | greatbow | TALL | ranged reads |
+| Smith | greathammer | HEAVYSET (largest) | few huge hits, faith in bursts, every swing staggers |
+
+### Mechanic scaling (per weight class)
+1. TEMPO + dodge distance + i-frame window scale with size (small = far/fast dodge; heavy trades dodge for poise)
+2. Faith-per-hit tuned per class — SAME Macer's Loop economy, different rhythm (stream vs burst)
+3. Poise/stagger thresholds scale with size — big units shrug off hits that fold small ones
+
+### Hollow size variants
+Same-tier variants (elder-hunched vs broad-smith ERASED) = scale + speed verb + attack set.
+T1 trash comes in lean and broad flavors. Wave variety WITHOUT new models. Reads instantly in a mob.
+
+### Implementation notes
+- Hitboxes scale with size class (Unity capsule/collider sizing per kit)
+- Enemy variant spawn tables: per-realm bestiary units carry a sizeVariant field (lean | broad | standard)
+- Pilgrim kits: proportions land at model-roll time (remaining kits roll per the Canon-Reference Art Law)
