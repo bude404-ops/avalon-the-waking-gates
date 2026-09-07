@@ -5,7 +5,9 @@
 ## Core loop (Mario grammar mapped)
 - Run/jump platformer, stomps + power-ups, world 1-1 → flagpole finish
 - FLAGPOLE → PORTAL: every level ends with a shimmering portal Bigfoot dives into (escape = the win state)
-- Currency: acorns / shiny river stones (coin analog)
+- Currency: $BIG TOKENS — gleaming gold coins stamped BIG, collectible in Mario coin arcs (Big's idea Sept 7: 'could totally use big tokens aswell in that style of game'); ties the game into the BIG Chain / Bigfoot404 ecosystem
+- Pitch image: docs/CONCEPTS/PROJECT-BIGFOOT-BROS-PITCH-V1.png (v1, for MC pitch)
+- Legacy idea (superseded by BIG tokens): acorns / shiny river stones
 - Power-up path (draft): forest berries — Super Berry (grow), Ember Berry (fire stomps), Feather Berry (glide)
 
 ## Enemy sketches (woodland creatures)
