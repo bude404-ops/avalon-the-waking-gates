@@ -1,4 +1,19 @@
 # PILGRIM COMBAT SYSTEM v1 — The Avalon Fusion
+
+## CLASS ARMOR LAW (Sept 7 2026, Big: 'armors to fit their class aswell so assassin type is leathers casters are some armor but robes')
+
+Armor type follows class role — the Cinder Roads aesthetic (road-worn, riveted, ash-patina) stays, but the material grammar is fixed per class:
+
+| Class | Size | Weapon | Armor Grammar |
+|---|---|---|---|
+| Singer | SMALL | twin daggers | LEATHERS — hooded stitched leather, quiet cloth, zero metal clang. Assassin-type. |
+| Warden | MEDIUM | sword + shield | mid plate — the road-knight kit (existing GLB canon) |
+| Keeper | MEDIUM | flail + lantern | medium lamellar + harness — the wardener's rig |
+| Walker | TALL/LEAN | staff | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
+| Vigil | TALL | greatbow | ranger leathers + longcloth — hunter quiet |
+| Smith | HEAVYSET | greathammer | heavy plate + smith's apron — forge-built, stagger-built |
+
+Law: light classes wear quiet, heavy classes wear metal. No class wears armor outside its grammar. Pilgrim armor is Avalon human-craft: mortal smithing, road-worn repair-plate.
 BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own style, wrapped in Avalon lore, then fix combat + stats to match.
 
 ## The Three Layers
