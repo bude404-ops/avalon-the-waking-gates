@@ -18,14 +18,14 @@
 - MORTALS ARE HUMANS (Avalon Doctrine). All "hollowed mortal" units below are hollowed HUMAN folk. (Companion sprites — the pure-witness motes — cannot be hollowed: nothing to erase. Grimlights are the Hollow's answer to witnesses.)
 
 ## T1 — THE UNDONE (ants — one-tap, crowd; up to 40 pooled)
-- **MUTEFOLK:** hollowed humans walking the shapes of their old routines at mortal scale — lantern-lighters lighting dead lanterns, weavers weaving nothing, a choir humming in reverse. Smooth absence where faces were. Kill = release: they crumble to gray light that flows toward the nearest Gate (FAITH from mercy — hollowing is not death; the mercy loop is canon).
+- **MUTEFOLK:** hollowed humans walking the shapes of their old routines at mortal scale — lantern-lighters lighting dead lanterns, weavers weaving nothing, bell-ringers pulling dead bell-ropes. Smooth absence where faces were. Kill = release: they crumble to gray light that flows toward the nearest Gate (FAITH from mercy — hollowing is not death; the mercy loop is canon).
 - **SHADE-BEASTS:** hollowed world-fauna running in silent herds — the thistledeer with no eyes, moorhounds made of outline, drake-fledglings that cast no shadow. Ragdoll fodder at giant scale.
 - **GRIMLIGHTS:** fist-sized void-motes swarming like gnats. Alone harmless; in cloud they DIM element-light — lanterns gutter, ember-seams fade, crystal veins go dark. They are the anti-witness made small: where they swarm, light forgets itself.
 
 ## T2 — THE WRONGFUL (brutes — 3–6 hits, staggerable; up to 8)
 - **UNMADE CHAMPIONS:** hollowed pilgrims still wearing their REAL First Pilgrim armor — the armor survives because it is craft, not element (erasure cannot eat what was made, only what IS). The body inside is gone; the armor walks. The plates are the only color left in the frame — and they STAY BEHIND when it falls (loot + lore: every kill recovers a mortal thing). First look of the Hollow at champion grade: the vault's own First Pilgrim armor grammar worn by absence.
 - **ERASED DRAKES:** lesser dragon-fauna with the element INVERTED — a fire-drake breathing cold-absence, wings that are pure outline, roar that lands as silence. Dragons are world-fauna now; the Hollow takes them like any other beast. First sign a region is deep-hollowed.
-- **THE STILL CHOIR:** six MUTEFOLK fused in a ring, chanting in reverse, de-coloring the ground they stand on (zone-denial). Break the ring or it re-hollows the ground under the player's feet.
+- **THE STILL CHOIR: RETIRED (Sept 7 2026, Big: 'I don't like the still choir as an enemy at all').** Removed from all rosters; the T2 elite slot is OPEN for a new concept through Big's gate.
 
 ## T3 — THE AVATARS OF HUNGER (world bosses — full duels, 66%/33% phases)
 - **GATE-WORMS:** colossal serpentine masses of ERODED GATE-MASONRY pushing through fractures — living siege engines of stolen stone. Every Gate-fracture births them; Tower Wave sieges are Gate-Worm attacks. Phase 1: masonry shell (weak points at the old hinge-stones). Phase 2: shell breaks, the void-choir inside exposed.
@@ -37,7 +37,7 @@
 The Hollow does not reproduce; it SPREADS. Fractures in a Gate leak raw residue into the region; residue hollows what it touches (T1), accretes copies of the region's strongest things (T2), and where belief has already guttered out, rehearses whole dead gods (T3). Clear the fracture, the tide stops. The strategic layer is therefore GATE INTEGRITY — the FAITH loop is the war.
 
 ## CANON LOCK (Sept 5 2026 — BudE404 'Keep' on all three)
-The Hollow champion art is canonized: **THE ERASED DRAKE** (T2 champion — stolen Embermere armor, art/hollow -> art/approved/HOLLOW-ERASED-DRAKE-CANON.jpg), **THE STILL CHOIR** (T2 champion — stolen Galemarch plate, art/approved/HOLLOW-STILL-CHOIR-CANON.jpg), **THE FURNACE BRUTE** (T3 echo — the dead god's silhouette worn by the Hollow, art/approved/HOLLOW-FURNACE-BRUTE-CANON.jpg). Hollow doctrine stands: the Unmade steal the vault's own armor grammar and giant silhouettes — the Hollow wears our identity against us.
+The Hollow champion art is canonized: **THE ERASED DRAKE** (T2 champion — stolen Embermere armor, art/hollow -> art/approved/HOLLOW-ERASED-DRAKE-CANON.jpg), **THE FURNACE BRUTE** (T3 echo — the dead god's silhouette worn by the Hollow, art/approved/HOLLOW-FURNACE-BRUTE-CANON.jpg). Hollow doctrine stands: the Unmade steal the vault's own armor grammar and giant silhouettes — the Hollow wears our identity against us.
 
 ---
 
@@ -54,7 +54,7 @@ The Hollow canon files pre-date the style unification. The redo runs the whole b
 7. **SCALE ANCHORS everywhere:** T1/T2 carry a lantern or landmark for pilgrim-scale read; T3 carries a tiny pilgrim + lantern as the only light in frame.
 8. Standard prompt laws apply: solo subjects, zero text, no deity names, no banned vocabulary.
 
-**Redo order (one realm set at a time):** EMBERMERE SET FIRST — T1 MUTEFOLK, T2 UNMADE CHAMPION, T3 FURNACE BRUTE. On BudE404's per-unit verdicts: the remaining units (Shade-Beasts, Grimlights, Erased Drake, Still Choir, Gate-Worm, Echo of the Forgotten) + the five other realm sets roll on the kept grammar.
+**Redo order (one realm set at a time):** EMBERMERE SET FIRST — T1 MUTEFOLK, T2 UNMADE CHAMPION, T3 FURNACE BRUTE. On BudE404's per-unit verdicts: the remaining units (Shade-Beasts, Grimlights, Erased Drake, Gate-Worm, Echo of the Forgotten) + the five other realm sets roll on the kept grammar.
 
 ---
 
@@ -79,11 +79,11 @@ Two different properties, previously conflated. Split them:
 
 ## REALM SETS ROLLED (Sept 5 night, BudE404 'Gotcha I like it ol lets finish') — HOLLOW ART REDO COMPLETE 24/24
 All five remaining realm sets rolled on the locked redo grammar (regional Drake / Choir / Brute per realm):
-- **GALEMARCH:** storm-drake breathing dead calm (motionless air, seeds frozen mid-fall) / storm-shrine bell-ring choir around a cracked storm-bell / STORM BRUTE — dead storm-god, storm-bell monolith crown, cloud-mass drained to inert slate, zero lightning.
-- **BLOOMWEALD:** bloom-drake breathing wilt-absence (petals fall mid-bloom) / harvest-folk choir around a withered grove-sapling / BLOOM BRUTE — dead bloom-god, blossom-bough crown, every petal drained to ash.
-- **GLOAMBARROW:** dusk-drake breathing un-light (flames gutter to nothing) / lantern-tender choir among guttered grave-lanterns / DUSK BRUTE — dead dusk-god, lantern-grave monolith crown, wisp-lights gone dark.
-- **MARENVALE:** tide-drake breathing stillness (waves freezing to dead glass mid-fall) / tide-counter choir on a stilled shore / TIDE BRUTE — dead tide-god, sunken-shrine crown, sea gone glass-flat.
-- **STONEFELL:** stone-drake breathing crumbling (solid rock goes soft and powdery) / vow-keeper choir around a leaning standing-stone / STONE BRUTE — dead stone-god, standing-stone trilithon crown, crystal veins gone dark, promise-lines smoothed unreadable.
+- **GALEMARCH:** storm-drake breathing dead calm (motionless air, seeds frozen mid-fall)  / STORM BRUTE — dead storm-god, storm-bell monolith crown, cloud-mass drained to inert slate, zero lightning.
+- **BLOOMWEALD:** bloom-drake breathing wilt-absence (petals fall mid-bloom)  / BLOOM BRUTE — dead bloom-god, blossom-bough crown, every petal drained to ash.
+- **GLOAMBARROW:** dusk-drake breathing un-light (flames gutter to nothing)  / DUSK BRUTE — dead dusk-god, lantern-grave monolith crown, wisp-lights gone dark.
+- **MARENVALE:** tide-drake breathing stillness (waves freezing to dead glass mid-fall) / TIDE BRUTE — dead tide-god, sunken-shrine crown, sea gone glass-flat.
+- **STONEFELL:** stone-drake breathing crumbling (solid rock goes soft and powdery)  / STONE BRUTE — dead stone-god, standing-stone trilithon crown, crystal veins gone dark, promise-lines smoothed unreadable.
 Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + SHEET-HOLLOW-REDO-REALM-SETS-5-v1.png. p-hash clean across all 24 redo units. PER-UNIT VERDICTS PENDING.
 
 ---
@@ -103,7 +103,7 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 ### GALEMARCH (oath-voice — storm-crag highlands, bell-towers, drowned marches)
 - **Erased:** oath-wardens pacing dead battlements; bell-hollowers pulling silent ropes.
 - **Shade-beasts:** MOORHOUNDS (canon outline-hounds — pack CHARGES at storm-gust speed); RAIN-HERONS (flocks flying BACKWARDS — divebomb swarms); FALLEN SKY-SERPIENTS (eels that fell and never landed — arc-ambush trash).
-- **Elite:** THE STILL CHOIR (canon — stolen Galemarch plate; ring-break zone-denial).
+- **Elite:** OPEN SLOT (Still Choir retired Sept 7 by Big's verdict — new concept pending through his gate).
 - **Boss:** THE STORMLESS (the region's dead-god shape — a storm-cell with the lightning hollowed out).
 
 ### BLOOMWEALD (growth-voice — orchard country, canopy dungeons, root-roads)
@@ -115,13 +115,13 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 ### GLOAMBARROW (lantern-voice — dusk country, lantern-roads, tomb-vales)
 - **Erased:** lamplighters raising lanterns to posts that aren't there (the Mutefolk law, home region); pall-bearers carrying nothing, forever.
 - **Shade-beasts:** PALE MOTHS (hand-sized — they LAND on the Luminary and dim it, the realm's pressure verb); GLOAM-FOXES (they WATCH from distance and only move when unobserved — the double-take unit); HOLLOW GULLS (perfect silent formations — crowd-wrongness in the sky).
-- **Elite:** THE LONG PROCESSION (Still Choir's home form — a funeral line that circles, zone-denial).
+- **Elite:** OPEN SLOT (Long Procession retired with the Choir family — same singing-ring concept Big rejected).
 - **Boss:** THE SNUFFED (dead dusk-god shape — a colossus whose crown-lighter died; it reaches for the player's Luminary).
 
 ### MARENV ALE (ledger-voice — drowned coast, kelp-forests, harbor catacombs)
 - **Erased:** drowned fisherfolk hauling empty nets; tide-readers reading a dead tide.
 - **Shade-beasts:** KELP-LURKERS (ambush PULL from the deep — the realm's CC verb); BEACHED-LEVITHAN CALVES (slow T1 bruisers — they CRUSH); DRIFT-GULLS (surface-swarm).
-- **Elite:** THE NET-CHOIR (ring of fisherfolk fused by one net — break the net, not the ring).
+- **Elite:** OPEN SLOT (Net-Choir retired with the Choir family — same singing-ring concept Big rejected).
 - **Boss:** THE BEACHED ONE (dead tide-god shape — a sea-god who died on the sand and keeps drowning).
 
 ### STONEFELL (strata-voice — crystal deeps, delve-mines, the under-road)
@@ -131,7 +131,7 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 - **Boss:** THE UNMINED (dead stone-god shape — a mountain that was never allowed to finish becoming).
 
 ### PRODUCTION RULE
-Regional units are NEW art rolls through THE UNDONE STANDARD checklist (docs/ART_DIRECTION.md) + the realm's fauna map above. Existing canon units (Mutefolk, Undone, Champion, Drake, Choir, Brute, Gate-Worm, Echo, Grimlights) remain GLOBAL staples; region rosters RESKIN the tiers with local fauna + local erased. Every dungeon's first wave tells you where you are before the UI does.
+Regional units are NEW art rolls through THE UNDONE STANDARD checklist (docs/ART_DIRECTION.md) + the realm's fauna map above. Existing canon units (Mutefolk, Undone, Champion, Drake, Brute, Gate-Worm, Echo, Grimlights) remain GLOBAL staples; region rosters RESKIN the tiers with local fauna + local erased. Every dungeon's first wave tells you where you are before the UI does.
 
 
 ## CANON LOCK v7 (Sept 7 2026 — BudE404 'Yes keep')
