@@ -1,6 +1,6 @@
 # HOLLOW ROSTER CANON PASS — LIVE STATUS (sync file; update BEFORE any roll/send)
 
-Last synced: Sept 7 2026 ~4:05 PM ET
+Last synced: Sept 7 2026 ~4:25 PM ET
 
 ## VERDICTS (Big's word is final; newest message wins)
 - NEW (Sept 7, Big): non-Hollow dungeon enemies per region — THE LIVING SCOURGE drafted (docs/LIVING_SCOURGE_BESTIARY.md): 3 families (REMNANT FOLK living humans / FAUNA living beasts / CONSTRUCTS made things) x 6 realms; dungeon pacing Folk→Fauna→Hollows→Construct→boss. Awaiting Big's verdict before art rolls.
@@ -12,7 +12,8 @@ Last synced: Sept 7 2026 ~4:05 PM ET
 - T3 ECHO — ✅ APPROVED ('Keepn echo' ~3:50 PM), canon locked at art/approved/HOLLOW-T3-ECHO-CANON.png (commit 685bb890). Final spec: mirror-hollow pilgrim at a still black pool, road-worn repair-plate 100% real, ash-drained body, ONE absence = void-black face on figure AND reflection (reflection one heartbeat late), polished hand-mirror remnant floating face-down. DO NOT re-roll or re-send.
 - T3 GATE WORM — ✅ APPROVED ('Keep hollow worm' ~4:00 PM), canon locked at art/approved/HOLLOW-T3-GATE-WORM-CANON.png. Final spec: colossal MOUTHLESS worm (no eyes/teeth/mouth — one toothy-maw roll was corrected before send), ONE absence = void-black face, color-drained pale body grown through the 100%-real stone gate, warm lantern. DO NOT re-roll or re-send.
 - ✅ ROSTER PASS COMPLETE (Sept 7 ~4:00 PM): ALL Hollow units canon under the full law set (FACE-LAW + CRAFT-INTACT + COLOR-ABSENCE, V8 style master). Art re-config pass DONE.
-- ▶️ NEXT PHASE (Big's directive, Sept 7): re-roll 2D-to-3D reference sheets from the improved canon art (one at a time through his gate), THEN resume Meshy 3D. Order: T1 Undone first (ships in APK), then Champion, Drake, Echo, Gate Worm, Crucible-Bearer. 3D pause lifts only when each sheet is approved.
+- ▶️ NEXT PHASE REDIRECTED (Sept 7, Big: 'No we need to finish all the Canon artwork first and for what the new characters will look like cause we decided to change their sizes'): REFERENCE SHEETS ON HOLD. Canon artwork pass CONTINUES — first the SIZE-LAW character canon (the pilgrim size classes need art showing the new sizes). Roster canon sequence: Singer (SMALL) → Keeper (MEDIUM) → Walker (TALL/LEAN) → Vigil (TALL) → Smith (HEAVYSET) — Warden MEDIUM already has canon GLB kit. Hollow lean/broad variants = scale only, no new art per law. Living Scourge approach still awaiting verdict. After character canon: remaining realm/boss canon as needed. 3D resumes only when Big calls the canon pass done.
+- PILGRIM CANON ROLL 1 SENT Sept 7 ~4:25 PM: PILGRIM-CLASS-SINGER-SMALL-CANON-V1.png (art/pending/) — smallest/quickest class, youth-small frame read against a milestone arch, road-worn repair-plate, twin daggers, warm lantern companion at the shoulder, living human full-color face, blue-hour Cinder Roads scene. Awaiting verdict.
 
 ## STANDING LAWS (apply to every roll)
 - THE ABSENCE IS ALWAYS THE FACE (FACE-LAW, commit 618375a3)
