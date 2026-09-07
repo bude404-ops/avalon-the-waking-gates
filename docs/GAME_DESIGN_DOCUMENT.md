@@ -339,7 +339,7 @@ Power differences between Realms are shown through:
 
 | Aspect | Detail |
 |--------|--------|
-| Pilgrim scale | The hooded pilgrim (six Orders: Warden, Keeper, Walker, Singer, Smith, Vigil), Mark + Luminary, behind-back third-person camera |
+| Pilgrim scale | The hooded pilgrim (six Orders: Warden, Keeper, Wayfarer, Cantor, Smith, Vigil), Mark + Luminary, behind-back third-person camera |
 | God scale | The woken colossus itself, played directly at the Gate — stationary per the Emergence Law, front-view cinematic framing |
 | Power source | FAITH (the Macer's Loop — attacking/killing builds it, abilities spend it) + persistent TRIBUTE economy |
 | Progression | Class trees, relic tiers, Mark re-attunement — curated, zero random rolls |

@@ -11,7 +11,7 @@ Armor = CLEAN Avalon human-craft plate — matte kiln-cured ceramic, sweeping le
 The relic — black iron, single flame of the faction's element. Light = faith meter + Hollow protection; never sold. (Pet-relic fusion: the Luminary companion wears its lantern as attire.)
 
 ## THE ROLES (ladder pending verdicts)
-Warden / Keeper / Walker / Singer / Smith / Vigil — role kits over a shared base body (M + F), then faction skin, then weapon kits (hand props), then cosmetics. Identity = headgear silhouette + role kit; element = the rune.
+Warden / Keeper / Wayfarer / Cantor / Smith / Vigil — role kits over a shared base body (M + F), then faction skin, then weapon kits (hand props), then cosmetics. Identity = headgear silhouette + role kit; element = the rune.
 
 ## STACK ORDER (modular pilgrim system)
 base body (M/F) → role kit → faction skin → rune (element swap, not mesh) → weapon kit → cosmetics.

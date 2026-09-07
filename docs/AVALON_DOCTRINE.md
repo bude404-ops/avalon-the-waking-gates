@@ -110,7 +110,7 @@ Skill/ability law: every skill is a PRAYER or RITE in doctrine grammar (no sci-f
 Six layers, one rig. The same base human becomes any role, any region, any element:
 
 1. **BASE BODY** — one male + one female human base mesh (~30k tris, Mixamo-ready, weaponless T-pose per the locked base rules).
-2. **ROLE KIT** — armor silhouette per role (Warden plate, Keeper robes + lantern, Walker leathers, Singer vestments, Smith forge apron-plate, Vigil tower set).
+2. **ROLE KIT** — armor silhouette per role (Warden mid plate, Keeper lamellar + lantern, Wayfarer leathers, Cantor robes + light mantle, Smith forge apron-plate, Vigil ranger set) — CLASS ARMOR LAW (Sept 7, Big: 'assassin type is leathers casters are some armor but robes').
 3. **FACTION STYLE SKIN** — the six canon armor cultures applied to any role kit: Forge-Iron, Storm-Steel, Grow-Plate, Lantern-Plate, Tide-Mail, Quarry-Plate.
 4. **ELEMENT EMISSIVE LAYER** — the relic-gift glow (ember orange, storm blue, bloom gold, dusk white, tide teal, stone green) — SWAP THE GLOW, NOT THE MESH. The relic decides the element, so variation is a texture/emissive change, not new geometry.
 5. **WEAPON KITS** — role weapons × faction styles (modular props parented to the hand bone per the locked weapon rule).

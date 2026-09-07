@@ -6,10 +6,10 @@ Armor type follows class role — the Cinder Roads aesthetic (road-worn, riveted
 
 | Class | Size | Weapon | Armor Grammar |
 |---|---|---|---|
-| Singer | SMALL | twin daggers | LEATHERS — hooded stitched leather, quiet cloth, zero metal clang. Assassin-type. |
+| Wayfarer | SMALL | twin way-daggers | LEATHERS — hooded stitched leather, quiet cloth, zero metal clang. Assassin-type. |
 | Warden | MEDIUM | sword + shield | mid plate — the road-knight kit (existing GLB canon) |
 | Keeper | MEDIUM | flail + lantern | medium lamellar + harness — the wardener's rig |
-| Walker | TALL/LEAN | staff | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
+| Cantor | TALL/LEAN | bell-staff | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
 | Vigil | TALL | greatbow | ranger leathers + longcloth — hunter quiet |
 | Smith | HEAVYSET | greathammer | heavy plate + smith's apron — forge-built, stagger-built |
 
@@ -83,10 +83,10 @@ Weapon role = silhouette. Size is readable depth: you SEE what a unit does befor
 ### Pilgrim weight classes
 | Class | Weapon | Size class | Combat identity |
 |---|---|---|---|
-| Singer | twin daggers | SMALL | fastest TEMPO, faith builds in a stream of small hits, longest/fasted step-dodge |
+| Wayfarer | twin way-daggers | SMALL | fastest TEMPO, faith builds in a stream of small hits, longest/fasted step-dodge |
 | Warden | sword + shield | MEDIUM | balanced read |
 | Keeper | flail + lantern | MEDIUM | mid |
-| Walker | staff | TALL/LEAN | reach advantage at pole length |
+| Cantor | bell-staff | TALL/LEAN | reach advantage at pole length |
 | Vigil | greatbow | TALL | ranged reads |
 | Smith | greathammer | HEAVYSET (largest) | few huge hits, faith in bursts, every swing staggers |
 
