@@ -40,17 +40,30 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 6. **CROWD WRONGNESS** — in groups: too evenly spaced, all facing one direction, like furniture. Never milling.
 7. **THE DOUBLE-TAKE READ** — at a glance each reads as a villager going about their day. The horror lands on the second look.
 
-### PER-UNIT ABSENCE MAP (Embermere roster)
-| Unit | The Hole | The Remnant | The Routine |
-|---|---|---|---|
-| T1 Undone | face void (the self) | — (it has nothing left) | wanders, searching pockets |
-| T1 Mutefolk (lantern-lighter) | hollow hood (no face) | pristine COLD lantern | raises lantern to a lamp post that isn't there |
-| T2 Unmade Champion | see-through breastplate — body entirely gone | immaculate polished sword | guards a gate that leads nowhere |
-| T3 Furnace Brute | furnace-belly cavity, cold + sooted | a keeper's tiny hammer on its belt | works a furnace that has been dead forever; face = furnace door, welded shut |
-| Still Choir | open throat cavities (the voice) | blank sheet music | mouths moving in silence mid-song |
-| Erased Drake | one eye socket going clean through the skull | a horse's bridle it still wears | circles a roost like it still guards eggs |
-| Echo | mirror-silhouette of the pilgrim with the chest cavity in YOUR armor's shape | a copy of your own lantern, cold | copies the pilgrim's last gesture a half-second late |
-| Gate Worm | mouthless — the mouth hole is the ONLY absence on an otherwise solid bulk | the gate key shape grown into its back | coils around a Gate, counting the stones |
+### THE ABSENCE IS ALWAYS THE FACE — ROSTER-WIDE LAW (Sept 7 2026, Big: 'Their faces need the hollow effect, not chest or throat — we need to change that and make sure future changes dont do that')
+
+**SUPERSEDES the per-unit absence map below.** EVERY Hollow — T1 trash through T3 boss, every realm — has exactly ONE absence: a VOID BLACK FACE (cold-violet charcoal cavity, breathing near-black mist inside the absence only, never reflecting, never glowing — light lands ON it). Chest cavities, throat holes, breastplate windows, furnace bellies, skull piercings: ALL RETIRED. Never again in any future art roll. What still differentiates units: silhouette, scale (SIZE LAW), clothing/armor, remnant, and routine — never the location of the absence.
+
+| Unit | The Remnant | The Routine |
+|---|---|---|
+| T1 Undone | — (it has nothing left) | wanders, searching pockets |
+| T1 Mutefolk (lantern-lighter) | pristine COLD lantern | raises lantern to a lamp post that isn't there |
+| T2 Unmade Champion | immaculate polished sword | guards a gate that leads nowhere |
+| T3 Furnace Brute | a keeper's tiny hammer on its belt | works a furnace that has been dead forever |
+| Still Choir | blank sheet music | heads tilted in silence mid-song |
+| Erased Drake | a horse's bridle it still wears | circles a roost like it still guards eggs |
+| Echo | a copy of your own lantern, cold | copies the pilgrim's last gesture a half-second late |
+| Gate Worm | the gate key shape grown into its back | coils around a Gate, counting the stones |
+
+**(historical) pre-FACE-LAW absence map — RETIRED, kept for record only:**
+| Unit | The Hole (retired) |
+|---|---|
+| T2 Unmade Champion | see-through breastplate (banned) |
+| T3 Furnace Brute | furnace-belly cavity (banned) |
+| Still Choir | open throat cavities (banned — Big's Sept 7 ruling) |
+| Erased Drake | through-skull eye socket (banned) |
+| Echo | chest cavity mirror (banned) |
+| Gate Worm | mouthless mouth-hole (banned — face void applies) |
 
 ### PRODUCTION RULE
 All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remnant + pause + no-glow + de-coloration ring + Cinder Roads cloth/armor + near-human scale). Meshy 3D conversions add the ember/void glow IN-ENGINE (Unity dynamic light), never baked.
