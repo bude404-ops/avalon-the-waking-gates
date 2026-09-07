@@ -137,7 +137,7 @@ Player heroes keep their faces hidden — deep hood or helm, always (the First P
 
 A sleeping god's dream is vast — and sometimes the dream settles on ONE human: a person whose life matches the answer a wounded realm needs. A keeper of hearths. A walker of roads. A singer who will not stop. When the dream spots you, you are MARKED: relic-gifts light in your hands, the old roads open, and the pilgrimage calls. You are not chosen for being good — you are chosen for being THE SHAPE OF WHAT THE GOD NEEDS.
 
-- Each ROLE is the kind of answer the gods dream of (Warden = a shield for others, Keeper = a hearth that will not go out, Walker = the road itself made a person...).
+- Each ROLE is the kind of answer the gods dream of (Warden = a shield for others, Keeper = a hearth that will not go out, Cantor = the road itself made a person...).
 - THE FIRST PILGRIMS were the first Marked — the doctrine explains their elemental tells: anointed so long the god's dream stayed in their blood.
 - The Gate Rite works ONLY because the god has been dreaming of this person all along: the rite is not a spell, it is an ANSWERED DREAM.
 - Campaign hook: the antagonist logic — the Hollow/the Echo dreams too. A false waking wears a stolen dream.

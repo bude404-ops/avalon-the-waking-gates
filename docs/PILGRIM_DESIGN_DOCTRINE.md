@@ -41,3 +41,12 @@ First canon proof: art/approved/PILGRIM-WARDEN-CINDERROADS-MARK-ENGRAVED-CANON.p
 
 ## STYLE LANE — CINDER ROADS (locked Sept 5 2026, BudE404 'I like B')
 All pilgrim ladder armor = rugged road-worn smith-craft repair-plate: layered plates from different generations of repair, hand-hammered mismatched ceramic segments, riveted seams, patched pauldrons, worn leather straps and buckles, chipped edges, road dust. Palette: charcoal + ash-brown, faint ember underlight. Rejected lane: Cathedral Forged (grand master-grade plate). The pilgrim looks like they have WALKED the roads.
+
+## FEMALE ATTIRE LAW (Sept 7 2026, Big: 'we still need make the females sexy and seductive with their attire')
+
+Female variants of the six Orders wear the SAME class-material grammar (leathers / robes / plate) but CUT for allure — the seductive read comes from the tailoring, never from breaking the class armor law:
+
+- Form-fitting silhouettes: nipped bodices, laced corsetry, bare midriff accents, thigh-high cuts, asymmetric slits
+- Elegance over exposure: pin-up fantasy heroine energy (JRPG leading-lady standard) — attractive and confident, never explicit
+- Per class flavor: Wayfarer-F = fitted leathers + laced bodice; Cantor-F = flowing robe with slit skirt + bare-shoulder mantle; Keeper-F = lamellar over a fitted underlayer; Vigil-F = ranger leathers + thigh boots; Warden-F = form-fitted plate with feminine linework; Smith-F = fitted apron-plate over curves
+- Faces stay living, human, full-color. Body types per class stay SIZE-LAW compliant.
