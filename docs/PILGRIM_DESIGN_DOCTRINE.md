@@ -19,6 +19,8 @@ base body (M/F) → role kit → faction skin → rune (element swap, not mesh) 
 ## THE EYES (BudE404: 'The glowing eyes can also be only elemental effects they get')
 The glowing eyes complete the pilgrim's elemental package: exactly TWO elemental effects per pilgrim — the burning RUNE (the Mark) and the GLOWING EYES (faction-colored light points in the hood shadow). Nothing else glows. Amends the Armor + Rune Law.
 
+NEUTRAL-START LAW (Sept 7 2026, Big): glowing eyes and the Luminary's flame are WORSHIP REFLECTIONS — they only appear once a pilgrim worships/attunes a deity. Pilgrims start the game NEUTRAL, so the canon art now being made carries NO glowing eyes and NO Luminary flame effect at all — those are additive in-engine layers applied on attunement. Canon art = the neutral baseline: natural eyes, clean scene lighting, no mote. (Amends the flame-mote rendering rule: at game start the art shows no Luminary effect; the Luminary awakens its light with worship.)
+
 ## THE GATE RUNE — UNIVERSAL MARK (Sept 5 2026, BudE404)
 ONE rune symbol for the whole game: the Mark of the Waking Gates — a megalithic trilithon arch (two standing stones + lintel = the Gate) with a single vertical flame of light rising through the center (the pilgrim's light that wakes it). Element-neutral geometry. It is BOTH the game's brand logo AND the in-fiction pilgrim's Mark on the breastplate.
 FACTION = GLOW COLOR ONLY: Ashfall ember-orange · Skyrend ice-blue · Everbloom gold-green · Duskmourn lantern-violet · Marenth pearl-teal · Stoneheart geode white-violet.
@@ -72,3 +74,5 @@ Class identity reads from BUILD, not height alone. Each Order has a distinct bod
 - **SMITH** — HEAVYSET & MASSIVE: the giant of the six — barrel-chested forge mass, thick neck, plate-carrier build
 
 Female variants: same body-type grammar per class, cut for allure per the Female Attire Law. No class shares a silhouette at a glance — height AND build both separate them.
+
+FACE-DISTINCTNESS LAW (Sept 7 2026, Big: 'make sure they arent the same for males or females and the classes'): every pilgrim canon face is UNIQUE — no face templates shared across genders, no face shared across the six Orders. Twelve distinct faces (6 Orders x M/F), each with its own bone structure, age-read, skin tone, and character. Faces stay SEEABLE (Big agreed) and realistic-living.
