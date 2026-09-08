@@ -208,3 +208,5 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - ✅ CLERK CANON LOCKED (Big: 'Keep', Sept 8 ~1:36 AM) — art/approved/PILGRIM-CLERK-ARTHURIAN-GEAR-CANON.png. Fourth pilgrim locked under the heraldry grammar. Fifth (Forester) rolls next.
 
 - FORESTER V1 SENT Sept 8 ~1:42 AM (art/pending/PILGRIM-FORESTER-ARTHURIAN-GEAR-CANON-V1.png): fifth pilgrim under the heraldry grammar — tall & rangy sinewy hunter build, ranger leathers (no mail, camouflaged earth tones), forester-moss cloak w/ gate-rune brooch + faded glyph hem, yew longbow + back-hip quiver, high watch ridgeline (watchtower, watch-stone, moss pennant), neutral-start. NOTE: raw roll carried an artist signature bottom-right — cropped 5% off the bottom before send; clean version vaulted. Awaiting verdict — Smyth rolls next on his word.
+
+- ✅ FORESTER CANON LOCKED (Big: 'Keep', Sept 8 ~1:40 AM) — art/approved/PILGRIM-FORESTER-ARTHURIAN-GEAR-CANON.png. Fifth pilgrim locked under the heraldry grammar. Sixth and last male Order (Smyth) rolls next.
