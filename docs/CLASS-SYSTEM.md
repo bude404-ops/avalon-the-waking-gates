@@ -105,7 +105,7 @@ One male + one female of each class = **12 player-character models at launch. No
 
 **Why 12:** a tight roster leaves room for NEW characters and NEW classes with expansions — each future class ships as a complete pair (M+F) with its own kit, questline, god interactions, and origin-realm compatibility. Launch scope stays buildable; growth stays intentional.
 
-**Female models** follow Big's standing female canon rulings: seduction through fit and tailoring, natural realistic proportions, elegant never explicit — cut for the class's build grammar.
+**Female models** follow Big's standing female canon rulings — seduction through fit and tailoring, elegant never explicit — cut for the class's build grammar, with the BODY-FIGURE LAW (Sept 8): curvy hourglass anchor, full natural bust, narrow waist, rounded hips, realistic never exaggerated.
 
 **Pipeline note:** the 2D canon gate remains the six realm-neutral class key pieces (Sovereign first); the M/F split is realized at the 3D model phase (Meshy stays paused until 2D locks). Female 2D canon per class may follow if Big calls for it.
 

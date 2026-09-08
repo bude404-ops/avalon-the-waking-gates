@@ -24,7 +24,7 @@
 | WEAVER | long-limbed, spare | long hide robes, carved staff | verdigris |
 | WILDBORN | rangy, feral | furs, claw-frames, barefoot-quiet | deep moss |
 
-(Female variants, when they roll, keep Big's female canon rulings: seduction through fit and tailoring, natural realistic proportions, elegance never explicit — cut for the mythic grammar.)
+(Female variants, when they roll, keep Big's female canon rulings: seduction through fit and tailoring, natural realistic proportions, elegance never explicit — cut for the mythic grammar. BODY-FIGURE LAW (Sept 8, Big's ruling): all females shaped on the curvy hourglass anchor — full natural bust, defined narrow waist, rounded hips, realistic never exaggerated. Prompts describe the shape; no celebrity names or likenesses in generation.)
 
 NOTE (Sept 8 ~4:00 PM): the accent column is now the ORIGIN PAIRING per docs/ORIGIN-AND-ARMOR-STYLE.md amendment + ORIGIN-AND-DIVINE-PROGRESSION.md — Sovereign→Stoneheart (bone grey), Ravager→Ashfall (oxide red), Warden→Skyrend (storm slate), Veilborn→Duskmourn (dusk violet), Weaver→Marenth (tide teal), Wildborn→Everbloom (deep moss). Free-combo origins are retired; starts are lore-paired per Big's refinement.
 
