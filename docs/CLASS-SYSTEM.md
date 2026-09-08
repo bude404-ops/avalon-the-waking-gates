@@ -123,10 +123,11 @@ One male + one female of each class = **12 player-character models at launch. No
 - Prompts describe the SHAPE only — never any celebrity name or likeness.
 
 
-## FEMALE FACE LAW (Sept 8 2026, Big: 'Can we make them a little more pretty in the face? Not so rough but not fake and cheesy')
-- Female class faces render PRETTY and naturally beautiful — soft smooth features, youthful clean skin, appealing and striking.
-- NOT rough: no harsh weathering, no sun-scarring, no grit-caked faces on the female set (story-worn lives in the GEAR, not her face).
-- NOT fake/cheesy: natural skin texture and believable proportions — no airbrushed glamour, no plasticky AI-beauty sheen, no exaggerated doll features.
+## FEMALE FACE LAW v2 (Sept 8 2026, Big: 'I also did like the rough weathering on the females I just want them to still be feminine and not look like guys')
+- Female class faces render PRETTY and UNMISTAKABLY FEMININE — feminine facial structure, soft pretty features, clearly a woman's face at any distance.
+- ROUGH WEATHERING IS WELCOME and stays on the females (story-wear lives on faces too) — weathered, wind-marked, road-worn is GOOD, it just must sit on an obviously feminine face.
+- NOT fake/cheesy: natural skin texture, believable proportions — no airbrushed glamour, no plasticky AI-beauty sheen.
+- NEVER masculine: no male bone structure, no 'guy with long hair' reads, no square jaws on the female set.
 - Face-Distinctness law still holds: 12 unique faces, no templates shared across classes.
-- Male set unchanged (their weathered reads stay).
+- Male set unchanged.
 - REFINED (Sept 8 ~5:53 PM, Big on Ravager-F V2: 'No thats too much muscle and the face look anime or way too young'): (a) MUSCLE LIMIT — female strength reads through the hourglass SHAPE and posture, never through visible muscle mass; no bodybuilder definition, soft feminine physiques (broad classes read broader-framed and fuller-figured, not jacked). (b) ANTI-ANIME / AGE FLOOR — faces are MATURE ADULT women (late 20s-30s read), rendered in the painterly oil style with natural adult bone structure and realistic proportions; NO anime styling, NO oversized eyes, NO youthful doll-faces. Pretty = mature natural beauty, not youthfulness.
