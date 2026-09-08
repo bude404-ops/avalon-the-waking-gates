@@ -13,7 +13,7 @@ Bronze, dark iron, leather, engraved knotwork, spirals, torcs, cloaks, layered b
 Athletic, elegant, fitted armor emphasizing the waist and feminine silhouette; tasteful exposed shoulders/arms or upper back; layered battle-skirts, fitted leggings, ornate cloaks and jewelry.
 
 ### MALE SILHOUETTE
-Muscular, broad-shouldered, powerful silhouette; fitted chest armor emphasizing the torso; exposed or sleeveless arms; heavier shoulders, belts, battle-kilt panels, bracers, and large cloaks.
+Muscular, broad-shouldered, powerful silhouette; fitted SOLID chest armor emphasizing the torso (full-coverage breastplate, no chest cut per the SOLID-BREASTPLATE LAW); exposed or sleeveless arms; heavier shoulders, belts, battle-kilt panels, bracers, and large cloaks.
 
 ### WEAPONS
 Celtic-inspired swords, spears, greatswords, warhammers, axes, bows, and daggers. Distinctive LEAF-SHAPED BLADES, engraved bronze/dark iron, Celtic knotwork, spiral motifs, leather-wrapped grips, carved wood, clan symbols, ceremonial detailing. Weapons read: ancient, handcrafted, brutal, elegant, legendary.
