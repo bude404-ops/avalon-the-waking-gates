@@ -1,7 +1,11 @@
 # THE CAMELOT ORDERS (Sept 8 2026, Big approved 'Yes' on the Camelot set)
 The six Orders take Middle English romance names: KNIGHT (was Warden), PALMER (was Wayfarer), SEXTON (was Keeper), CLERK (was Cantor), FORESTER (was Vigil), SMYTH (was Smith). All standing laws carry over unchanged — same souls, true names. 'Sir' is the Knight's in-lore honorific. Elite enemy = THE OATHLESS.
 
-# PILGRIM DESIGN DOCTRINE v1.0 — The Human Lane
+# PILGRIM DESIGN DOCTRINE — RETIRED (player-character canon only) · Sept 8 2026
+
+> **RETIRED BY BIG'S ORDER (Sept 8, ~3:30 PM): 'we need to delete the old characters and their art as it won't fit this new overhaul.'** The pilgrim Order player-character roster (Knight/Palmer/Sexton/Clerk/Forester/Smyth + all female variants) is DELETED from canon — art purged from the vault (git history preserves it). THE SIX CLASSES (docs/CLASS-SYSTEM.md) are the player characters now. Universal laws in this file that still govern ALL characters — THE HOOD (put-away face), THE GATE RUNE (universal Mark), GAME NAME CANON, THE FLAME-COLOR RULE, MARK-INTEGRATION LAW, STYLE LANE, RUNE ORIGIN, ENVIRONMENT-TYPING, FACE-DISTINCTNESS, NEUTRAL-START, BODY-TYPE grammar (now applies to class archetypes) — REMAIN IN FORCE unless superseded by CLASS-SYSTEM.md. The pilgrim-specific sections (Orders, attire laws, Female Attire Laws v2/v3, BUSTY-SEXY, no-lantern-prop for pilgrim frames) apply only if a future character reuses pilgrim grammar.
+
+# (legacy header) PILGRIM DESIGN DOCTRINE v1.0 — The Human Lane
 
 > **CLASS SYSTEM v2 POINTER (Sept 8 2026):** the PLAYER combat classes are now THE SIX CLASSES (Sovereign/Ravager/Warden/Veilborn/Weaver/Wildborn — docs/CLASS-SYSTEM.md, Ancient Mythic Age archetypes). The Orders below remain canon as the world's pilgrimage institutions (mortal tier, NPC/world art). God empowerment lives in the God-Class Matrix.
 Sept 5, 2026. Governs all human/pilgrim concept art (the colossi live in COLOSSUS_DESIGN_DOCTRINE.md).

@@ -1,3 +1,19 @@
+# ROSTER / ART QUEUE STATUS — Sept 8 ~3:35 PM: PILGRIM ROSTER RETIRED, CLASS ART IS THE QUEUE
+
+**BIG'S PURGE ORDER (Sept 8 ~3:30 PM): 'we need to delete the old characters and their art as it won't fit this new overhaul.'** All 27 pilgrim character art files (approved + pending, male + female, Arthurian + legacy Order sets) DELETED from the vault — git history is the recovery path. The F-SET VERDICT COURT IS CLOSED: Forester-F, Palmer-F V2 muted, Sexton-F V5 muted, Smyth-F V1 are all MOOT — no verdicts needed, the roster they belonged to is retired.
+
+**ACTIVE QUEUE — THE SIX CLASS ARTWORK (mythic tier, one verdict at a time through Big's gate):**
+1. SOVEREIGN (spear) — V1 IN BIG'S COURT (art/pending/CLASS-SOVEREIGN-SPEAR-V1.png)
+2. RAVAGER (greatsword) — rolls on Sovereign's verdict
+3. WARDEN (warhammer) — queued
+4. VEILBORN (twin blades) — queued
+5. WEAVER (staff) — queued
+6. WILDBORN (claws) — closes the set
+
+**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, STAGE2 world scenes, sprites/pets, Maev/NPC canon pending Big's word on the old-tier world reads.
+
+---
+
 # HOLLOW ROSTER CANON PASS — LIVE STATUS (sync file; update BEFORE any roll/send)
 
 Last synced: Sept 7 2026 ~4:25 PM ET
