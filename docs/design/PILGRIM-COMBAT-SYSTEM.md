@@ -23,7 +23,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 ### Layer 1 — DIABLO IMMORTAL (the action foundation)
 - **Auto-face lock-on**: every attack auto-faces the nearest Hollow — no thumb gymnastics, joystick only for movement/exploration
 - **Skill bar**: 3 ability slots + ultimate on cooldowns (cooldown speed scales with TEMPO)
-- **Wave structure**: Thrall waves → elite (Warden Hollow) → boss (risen Echo/god-scale per Emergence Law)
+- **Wave structure**: Thrall waves → elite (THE OATHLESS — the oath-forsaken) → boss (risen Echo/god-scale per Emergence Law)
 - **Loot-lite**: tribute relics from the Depths (relic-gift altar already canon in Depths prototype)
 
 ### Layer 2 — GENSHIN (the reaction layer)
@@ -42,7 +42,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 - **FAITH ECONOMY LAW v2 — THE MACER'S LOOP** (BudE404, Sept 6: 'that Diablo dungeon masher feel so instead of mana we just have faith and abilities use faith and attacking and killing builds it back up'): FAITH is the ONLY resource — there is NO mana, NO passive regen bar. THE LOOP: attacking BUILDS faith (every landed hit feeds the flame), killing BUILDS it bigger (mote burst), the WARD converts caught damage INTO faith (the more you're sieged, the more you can answer — unchanged canon), and abilities SPEND it. The pilgrim is always swinging to afford the next miracle — aggression is the economy. This is the Diablo dungeon-masher loop transplanted whole: hatred/essence/fury/spirit -> FAITH.
 - **WEAPON/SKILL TREES FIT THE LOOP**: every weapon tree node and ability is either a BUILDER (more faith per hit/kill/parry — e.g. a Warden parry node that deepens the +12 catch bonus, a Smith node that adds burn-ticks that generate faith) or a SPENDER (faith-cost miracles — surges, reactions, relic verbs), gated by FAITH not long cooldowns. Cooldowns stay SHORT (TEMPO shrinks them) — the resource gate is the faith cost. Kill-burst values scale so chaining packs keeps the bar full (the masher's momentum high).
 - **FAITH DROPS** (BudE404, Sept 6 — the loot feel): defeated Hollow RELEASE their faith as golden motes that visibly float and stream INTO THE LUMINARY, as if the living lantern collects them — the Diablo-gold-drop satisfaction, but the "gold" is belief and the "purse" is your companion. The Luminary gathers; the FAITH lands when the motes arrive (bar ticks per mote, soft chime), not on the kill frame. Lore-perfect: the flame feeds on deeds.
-- **THE TRIBUTE SYSTEM — progression economy** (BudE404 canon, Sept 6 night: 'in-agree on the gear, the grind part sucks and stats would suck and we would be building more gear etc.'): NO stat-gear treadmill — zero random rolls, zero affix loot, zero gear power creep; there is NO drop RNG in AVALON. Kills drop TWO currencies: FAITH motes (in-run — unchanged) and TRIBUTE (persistent — occasional, tied to notable kills: elites, first-clears, Warden Hollows, siege waves; reads as physical offerings to the god, tribute-reef lore). TRIBUTE spends at SHRINES: class-tree nodes (builders/spenders), relic tiers (Cold Lantern line), Mark re-attunement rites, cosmetic rune colorways. Loadout is CURATED: WEAPON (swappable kits — SPATHA/SEAX/MAUL/MACE-AND-LANTERN/BELL-STAFF/LONGBOW class trees, period kits per the Arthurian Gear Law; weapons are separate hand-bone meshes for exactly this), ARMOR (one set per role per gender — the canon 12; faction = rune colorway), RELIC (deed-earned). Power curve = trees + relic tiers + Mark choices — never drops. The DEPTHS = the grind space where tribute flows richest (optional — never gates the story).
+- **THE TRIBUTE SYSTEM — progression economy** (BudE404 canon, Sept 6 night: 'in-agree on the gear, the grind part sucks and stats would suck and we would be building more gear etc.'): NO stat-gear treadmill — zero random rolls, zero affix loot, zero gear power creep; there is NO drop RNG in AVALON. Kills drop TWO currencies: FAITH motes (in-run — unchanged) and TRIBUTE (persistent — occasional, tied to notable kills: elites, first-clears, THE OATHLESS (oath-forsaken elite hollows), siege waves; reads as physical offerings to the god, tribute-reef lore). TRIBUTE spends at SHRINES: class-tree nodes (builders/spenders), relic tiers (Cold Lantern line), Mark re-attunement rites, cosmetic rune colorways. Loadout is CURATED: WEAPON (swappable kits — SPATHA/SEAX/MAUL/MACE-AND-LANTERN/BELL-STAFF/LONGBOW class trees, period kits per the Arthurian Gear Law; weapons are separate hand-bone meshes for exactly this), ARMOR (one set per role per gender — the canon 12; faction = rune colorway), RELIC (deed-earned). Power curve = trees + relic tiers + Mark choices — never drops. The DEPTHS = the grind space where tribute flows richest (optional — never gates the story).
 - **Debt economy** (canon from combat runtime): Hollow ACCRUE DEBT when struck; at threshold a Hollow REVENANTS (enrages) — kill fast or get swarmed by rage.
 - **Void tether**: Hollow are void-element, reaction-IMMUNE until their tether is SEVERED. CANON ROLES (per the ONE COMPANION TWO LIGHTS ruling): the LUMINARY REVEALS the tether — its glow is discovery/navigation light, NEVER combat power — and the PILGRIM severs what it reveals (strike the shown tether-point). The lantern's combat-adjacent role stays PROTECTIVE only: while the Luminary shines, void-chill does not drain VIGOR. The lantern never attacks.
 - **Emergence Law**: god-scale = stationary siege combat (unchanged canon).
@@ -64,7 +64,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 |---|---|---|
 | Thrall | swarm melee | low vigor, lunge telegraph |
 | Chorister | caster | applies VOID-TETHER (reaction immunity aura) |
-| Warden Hollow | elite blocker | parry-break or bash to open |
+| THE OATHLESS | elite blocker | parry-break or bash to open |
 | Revenant | any type enraged | debt threshold crossed: +speed +damage |
 
 ### Slice baseline numbers (Warden-M vs Hollow Thrall)
@@ -74,7 +74,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 
 ## Implementation order
 1. Auto-face lock-on + cooldown HUD (slice patch 2 — replaces free-joystick combat)
-2. TEMPO/GUARD stat wiring + elite Warden Hollow with guard-break
+2. TEMPO/GUARD stat wiring + elite THE OATHLESS with guard-break
 3. Void-tether severing (lantern toggle mid-fight)
 4. Mark re-attunement (camp/shrine) + first 2 reactions (ember+storm, ember+tide); Luminary flame mirrors the Mark; Luminary tether-REVEAL + pilgrim-sever loop
 5. TRIBUTE economy (Unity): TributeMeter (notable-kill drops), ShrineVendor (spend: tree nodes / relic tiers / re-attunement), Depths drop-tables

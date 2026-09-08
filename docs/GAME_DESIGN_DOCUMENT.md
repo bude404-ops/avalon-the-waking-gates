@@ -364,7 +364,7 @@ The legendary Hollow of the bestiary (T2/T3) surface through side quests — 'fo
 
 ### 10.5 The Tribute System (progression economy — canon per BudE404, Sept 6: 'in-agree on the gear, the grind part sucks and stats would suck and we would be building more gear etc.')
 - **NO stat-gear treadmill**: zero random rolls, zero affix loot, zero gear power creep. There is NO drop RNG in AVALON.
-- **Two drop currencies from kills**: FAITH motes (in-run resource, unchanged — the Macer's Loop) + **TRIBUTE** (persistent currency) — occasional, tied to notable kills (elites, first-clears, Warden Hollows, siege waves), reading as physical offerings to the god (tribute-reef lore: centuries of pilgrim offerings fused into the god's strata).
+- **Two drop currencies from kills**: FAITH motes (in-run resource, unchanged — the Macer's Loop) + **TRIBUTE** (persistent currency) — occasional, tied to notable kills (elites, first-clears, THE OATHLESS (oath-forsaken elite hollows), siege waves), reading as physical offerings to the god (tribute-reef lore: centuries of pilgrim offerings fused into the god's strata).
 - **Tribute spends at SHRINES**: class-tree nodes (builders/spenders), relic tiers (Cold Lantern line), Mark re-attunement rites, cosmetic rune flame colorways.
 - **Curated loadout, zero randomness**: WEAPON (swappable kits — the six class trees Blade/Dagger/Hammer/Lantern/Song/Tower; weapons are separate hand-bone meshes for exactly this), ARMOR (one set per role per gender — the canon 12; faction = rune colorway), RELIC (deed-earned), skill-tree branches.
 - **Power curve = trees + relic tiers + Mark choices — never drops.**
