@@ -131,3 +131,9 @@ One male + one female of each class = **12 player-character models at launch. No
 - Face-Distinctness law still holds: 12 unique faces, no templates shared across classes.
 - Male set unchanged.
 - REFINED (Sept 8 ~5:53 PM, Big on Ravager-F V2: 'No thats too much muscle and the face look anime or way too young'): (a) MUSCLE LIMIT — female strength reads through the hourglass SHAPE and posture, never through visible muscle mass; no bodybuilder definition, soft feminine physiques (broad classes read broader-framed and fuller-figured, not jacked). (b) ANTI-ANIME / AGE FLOOR — faces are MATURE ADULT women (late 20s-30s read), rendered in the painterly oil style with natural adult bone structure and realistic proportions; NO anime styling, NO oversized eyes, NO youthful doll-faces. Pretty = mature natural beauty, not youthfulness.
+
+
+## FEMALE AGE / SCENE / EXPRESSION LAWS (Sept 8 2026 ~6:00 PM, Big's three rulings)
+- AGE 25-50 LAW: female class ages span 25 to 50 — each class gets its own age read within that band (supersedes the early-30s floor; the anti-anime/no-doll-face rules stay).
+- SCENE-MATCH LAW: female pieces stage IDENTICALLY to the male canon staging — same cold desaturated two-layer light, same palette depth, same atmosphere. NEVER brighter, never lighter, never softer than the male pieces. The environment carries the scene exactly as the male class canon does.
+- EXPRESSION-TO-CLASS LAW: facial expressions match the class temperament — Ravager fierce and intense, Sovereign commanding calm, Warden unyielding, Veilborn cold watchful, Weaver distant serene, Wildborn feral alert. NEVER uniformly happy/pleasant smiles across the set.
