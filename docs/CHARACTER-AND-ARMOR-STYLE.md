@@ -15,7 +15,7 @@
 
 ## CLASS BUILD GRAMMAR (distinct bodies — the old body-type law, re-cut per class)
 
-| Class | Build | Gear read | Accent (proposed — one per class, used sparingly) |
+| Class | Build | Gear read | Home realm (origin pairing — accent = realm color) |
 |---|---|---|---|
 | SOVEREIGN | tall, statuesque | minimal wraps, single bronze band, the long spear | cold bronze |
 | RAVAGER | massive, heavyset | heavy hide harness, the greatsword's wide hang | oxide red |
@@ -25,6 +25,8 @@
 | WILDBORN | rangy, feral | furs, claw-frames, barefoot-quiet | deep moss |
 
 (Female variants, when they roll, keep Big's female canon rulings: seduction through fit and tailoring, natural realistic proportions, elegance never explicit — cut for the mythic grammar.)
+
+NOTE (Sept 8 ~4:00 PM): the accent column is now the ORIGIN PAIRING per docs/ORIGIN-AND-ARMOR-STYLE.md amendment + ORIGIN-AND-DIVINE-PROGRESSION.md — Sovereign→Stoneheart (bone grey), Ravager→Ashfall (oxide red), Warden→Skyrend (storm slate), Veilborn→Duskmourn (dusk violet), Weaver→Marenth (tide teal), Wildborn→Everbloom (deep moss). Free-combo origins are retired; starts are lore-paired per Big's refinement.
 
 ## WHAT DIES WITH THE PILGRIMS
 Heraldry — order cloaks, round brooches, banner poles, the Order colorways as identity. Polished mail. The pilgrim frame (Wayfarer/Keeper/etc. silhouettes).

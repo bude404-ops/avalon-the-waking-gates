@@ -1,4 +1,22 @@
-# ORIGIN & DIVINE PROGRESSION — The Realm-Origin System (Big's doctrine, Sept 8 2026)
+# ORIGIN & DIVINE PROGRESSION — The Realm-Origin System (Big's doctrine, Sept 8 2026 · AMENDED ~4:00 PM)
+
+**AMENDMENT (Big: 'each can start in a region that really represents its style lore and abilities but then still gets to go out and meet the other gods as that will tie in better with the lore'):** starts are PAIRED, not free — each class opens in its lore-native realm. The 36 free combos tighten to SIX lore-true origin starts (class choice determines the home realm); travel + learning other gods is unchanged.
+
+## THE ORIGIN PAIRING (class → home realm)
+
+| Class | Home Realm | Why it's the class's lore-native cradle |
+|---|---|---|
+| SOVEREIGN | STONEHEART | the standing stones, the weight of law, dominion carved in menhir — the statuesque order of the deep roads |
+| RAVAGER | ASHFALL | the furnace fury, the ember gorge — carnage born where the world burns |
+| WARDEN | SKYREND | the Watchtower, the Thundershield — the guardian stands where the storm tests all walls |
+| VEILBORN | DUSKMOURN | the Veiled Stair, the Quiet Vigil — twin blades move where light itself whispers |
+| WEAVER | MARENTH | the tide's currents, the moontide loom — the Weaver's first threads are the sea's own weaving |
+| WILDBORN | EVERBLOOM | the Verdant March, the deep bloom-wilds — the feral hunt runs where the world grows wildest |
+
+The realm accent (below) still whispers the origin — now fixed per class: every Sovereign carries a thread of bone grey, every Ravager a thread of oxide red, etc. Per-class accents from CHARACTER-AND-ARMOR-STYLE.md are fully superseded.
+
+First-god thread: opens with the home realm's patron deity (the class's Six Paths chapter roots there); the king/queen thread that best meets the class's story is a quest-design choice per campaign. Travel + learned gods: unchanged — every other realm's deities are out there to be met and earned.
+
 
 **Big's words:** each class carries hidden accents of the realm a character is from; that character pursues their region's deity through quests; everyone starts in a different place (player choice); as the player advances, they learn the other gods and can gain those abilities.
 
