@@ -1,3 +1,6 @@
+# THE CAMELOT ORDERS (Sept 8 2026, Big approved 'Yes' on the Camelot set)
+The six Orders take Middle English romance names: KNIGHT (was Warden), PALMER (was Wayfarer), SEXTON (was Keeper), CLERK (was Cantor), FORESTER (was Vigil), SMYTH (was Smith). All standing laws carry over unchanged — same souls, true names. 'Sir' is the Knight's in-lore honorific. Elite enemy = THE OATHLESS.
+
 # PILGRIM DESIGN DOCTRINE v1.0 — The Human Lane
 Sept 5, 2026. Governs all human/pilgrim concept art (the colossi live in COLOSSUS_DESIGN_DOCTRINE.md).
 

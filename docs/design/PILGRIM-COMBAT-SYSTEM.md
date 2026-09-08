@@ -4,14 +4,29 @@
 
 Armor type follows class role — the Cinder Roads aesthetic (road-worn, riveted, ash-patina) stays, but the material grammar is fixed per class:
 
-| Class | Size | Weapon | Armor Grammar (ARTHURIAN GEAR LAW) |
+## THE CAMELOT ORDERS (Sept 8 2026, Big approved 'Yes' on the Camelot set)
+
+The six Orders take their names from Middle English romance roles (Chaucer/Malory's world). Old names retire; mapping is canon:
+
+| OLD NAME (retired) | NEW ORDER | Role flavor |
+|---|---|---|
+| Warden | THE KNIGHT | the sir-and-oath class — 'Sir' is the Knight's in-lore honorific; the Oathless reads as his fallen brother |
+| Wayfarer | THE PALMER | the medieval wanderer-pilgrim — road-worn and holy |
+| Keeper | THE SEXTON | the church role: keeper of the sacred place and its light |
+| Cantor | THE CLERK | Chaucer's own pilgrim — bookish rites, bell-staff |
+| Vigil | THE FORESTER | the watcher of the woods, romance longbow role |
+| Smith | THE SMYTH | Middle English spelling of the same ancient word |
+
+Rationale: AVALON is already the Canterbury structure (a road company of orders between shrines); every name is instantly readable; PALMER literally means pilgrim — our protagonist's own identity. Historical reference for the set: Chaucer (Canterbury Tales) for the road-company, Malory (Le Morte d'Arthur) for the sir-knight language.
+
+| Order | Size | Weapon | Armor Grammar (ARTHURIAN GEAR LAW) |
 |---|---|---|---|
-| Wayfarer | SMALL | twin SEAX (Celtic single-edged way-knives) | LEATHERS — hooded stitched leather, hide, quiet cloth, zero metal clang. Assassin-type. |
-| Warden | MEDIUM | spatha (migration-era longsword) + round boss shield w/ gate-rune etch | MAIL HAUBERK + hide — sub-Roman road-knight kit; spangenhelm-style round-top helm |
-| Keeper | MEDIUM | MAUL-MACE (period iron mace, chiseled head) + the Luminary companion | SCALE over lashed leather harness — the wardener's rig; no lamellar |
-| Cantor | TALL/LEAN | bell-staff (Dark Age hand-bell craft) | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
-| Vigil | TALL | yew LONGBOW (Welsh/Celtic heritage) | ranger leathers + longcloth — hunter quiet |
-| Smith | HEAVYSET | forge MAUL (early blacksmith hammer, rough-hewn) | MAIL + padded cloth + hide smith's apron — the heaviest a Dark Age smith could wear |
+| PALMER | SMALL | twin SEAX (Celtic single-edged way-knives) | LEATHERS — hooded stitched leather, hide, quiet cloth, zero metal clang. Assassin-type. |
+| KNIGHT | MEDIUM | spatha (migration-era longsword) + round boss shield w/ gate-rune etch | MAIL HAUBERK + hide — sub-Roman road-knight kit; spangenhelm-style round-top helm |
+| SEXTON | MEDIUM | MAUL-MACE (period iron mace, chiseled head) + the Luminary companion | SCALE over lashed leather harness — the sexton's rig; no lamellar |
+| CLERK | TALL/LEAN | bell-staff (Dark Age hand-bell craft) | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
+| FORESTER | TALL | yew LONGBOW (Welsh/Celtic heritage) | ranger leathers + longcloth — hunter quiet |
+| SMYTH | HEAVYSET | forge MAUL (early blacksmith hammer, rough-hewn) | MAIL + padded cloth + hide smith's apron — the heaviest a Dark Age smith could wear |
 
 **ARTHURIAN GEAR LAW (Sept 8 2026, Big: 'We need to fix the armor and weapons and then make sure the combat and skill trees will match the new ones same with abilities')** — ALL mortal craft renders at Dark Age sub-Roman Celtic material culture (~5th-6th c.): mail hauberks, scale, hide/leather, padded cloth, bronze-iron fittings, spangenhelm-style helms, round boss shields carrying the gate-rune etch. BANNED forever: full plate, pauldrons, lamellar, kiln-ceramic armor segments, late-medieval warhammers, weaponized flails. The Cinder Roads aesthetic (road-worn, mismatched repair generations, riveted/lashed seams, ash-patina) transfers 1:1 onto the period materials — repair patches are now mismatched mail rings, lashed scale plates, re-stitched hide. Gods keep the Primordial Law (zero craft). WEAPON KITS rename in the tribute system: Blade/Dagger/Hammer/Lantern/Song/Tower trees become SPATHA/SEAX/MAUL/MACE-AND-LANTERN/BELL-STAFF/LONGBOW trees — gameplay verbs (builders/spenders, faith economy, reactions) unchanged; only the kit skins, move names, and tree flavor re-cut to period grammar. Unity impact: weapons are separate hand-bone meshes (already canon), FaithMeter/dodge/lock-on core is class-agnostic — no core code change, only kit meshes + tree data.
 
@@ -96,12 +111,12 @@ Weapon role = silhouette. Size is readable depth: you SEE what a unit does befor
 
 | Kit | Class tree | Builder identity | Spender identity (faith miracles) |
 |---|---|---|---|
-| SPATHA (longsword) | Warden | oath-stance parries (deepened catch), shield-boss counters | Oathcleave arcs, ward-bursts |
-| SEAX (twin way-knives) | Wayfarer | stream-combos, step-strike chains | Vein-Cut bleeds, shadow-steps |
-| MAUL (forge hammer) | Smith | stagger smashes, forge-heat ticks | Anvil Fall, slag bursts |
-| MACE-AND-LANTERN | Keeper | rite-blows (mace), tether-sever strikes | Lantern rites: reveal surges, faith-ward auras |
-| BELL-STAFF | Cantor | chant cadences (bell strikes build faith) | Hymn spends: elemental surges, reaction triggers |
-| LONGBOW | Vigil | aimed shots, volley builders | Skyfall volleys, storm-arrows |
+| SPATHA (longsword) | Knight | oath-stance parries (deepened catch), shield-boss counters | Oathcleave arcs, ward-bursts |
+| SEAX (twin way-knives) | Palmer | stream-combos, step-strike chains | Vein-Cut bleeds, shadow-steps |
+| MAUL (forge hammer) | Smyth | stagger smashes, forge-heat ticks | Anvil Fall, slag bursts |
+| MACE-AND-LANTERN | Sexton | rite-blows (mace), tether-sever strikes | Lantern rites: reveal surges, faith-ward auras |
+| BELL-STAFF | Clerk | chant cadences (bell strikes build faith) | Hymn spends: elemental surges, reaction triggers |
+| LONGBOW | Forester | aimed shots, volley builders | Skyfall volleys, storm-arrows |
 
 Verbs unchanged: every node is a BUILDER or SPENDER gated by FAITH; elemental reactions (STEAMVEIL etc.), the Macer's Loop, void-tether severing, and the tribute economy all carry over untouched — only kit skins, tree names, and ability flavor now speak Dark Age Celtic.
 
