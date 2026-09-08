@@ -89,3 +89,23 @@ PilgrimController's lock-on/dodge/triple-combo core survives as shared locomotio
 
 ## WHAT THIS DOES NOT CHANGE
 The Camelot Orders (Knight, Palmer, Sexton, Clerk, Forester, Smyth) remain canon as the pilgrimage institutions — mortal-tier world lore, NPC rosters, the 12-pilgrim art canon (six brothers, six sisters under the Camelot stack, all in Big's verdict court). The Arthurian Gear Law continues to govern all mortal world art. The Hollow roster, gods, realms, quests, campaigns: untouched.
+
+## THE 12-MODEL ROSTER LAW (Big's ruling, Sept 8 ~3:55 PM)
+
+One male + one female of each class = **12 player-character models at launch. No more.** The full roster:
+
+| Class | Models |
+|---|---|
+| SOVEREIGN | Sovereign-M, Sovereign-F |
+| RAVAGER | Ravager-M, Ravager-F |
+| WARDEN | Warden-M, Warden-F |
+| VEILBORN | Veilborn-M, Veilborn-F |
+| WEAVER | Weaver-M, Weaver-F |
+| WILDBORN | Wildborn-M, Wildborn-F |
+
+**Why 12:** a tight roster leaves room for NEW characters and NEW classes with expansions — each future class ships as a complete pair (M+F) with its own kit, questline, god interactions, and origin-realm compatibility. Launch scope stays buildable; growth stays intentional.
+
+**Female models** follow Big's standing female canon rulings: seduction through fit and tailoring, natural realistic proportions, elegant never explicit — cut for the class's build grammar.
+
+**Pipeline note:** the 2D canon gate remains the six realm-neutral class key pieces (Sovereign first); the M/F split is realized at the 3D model phase (Meshy stays paused until 2D locks). Female 2D canon per class may follow if Big calls for it.
+
