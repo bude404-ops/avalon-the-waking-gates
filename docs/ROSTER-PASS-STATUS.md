@@ -10,7 +10,9 @@
 5. WEAVER (staff) — queued
 6. WILDBORN (claws) — closes the set
 
-**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, STAGE2 world scenes, sprites/pets, Maev/NPC canon pending Big's word on the old-tier world reads.
+**QUEUED — STAGE2 WORLD-SCENE UPDATE PASS (Sept 8 ~3:38 PM, Big confirmed: 'stage 2 world scenes will need to be updated and changed aswell'):** all 24 approved STAGE2 realm scenes (Ashfall/Duskmourn/Everbloom/Marenth/Skyrend/Stoneheart) get re-rolled under the overhaul — retired pilgrim-NPC reads (warden/keeper/cantor-type figures) come OUT of the scenes; realms restage under the three-tier world visual law (mythic civilizations / primordial ruins / mortal tier). One scene at a time through Big's gate, REALM BY REALM, AFTER the six class pieces lock. Realm environments and the god-cameo scenes keep their canon beats.
+
+**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, sprites/pets, Maev/NPC canon still flagged for Big's word.
 
 ---
 
