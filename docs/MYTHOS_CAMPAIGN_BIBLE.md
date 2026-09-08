@@ -170,3 +170,59 @@ Per the Hollow Scope, three tiers, mapped at BOTH scales:
 
 ---
 *Companion docs: MYTHOS_CODEX.md (roster/doctrine law), COLOSSUS_COMBAT_SPEC.md (T1–T3 numbers + §7 Giant Rebase), GAMEFEEL_TOP3_SPEC.md (weight/impact), MYTHOS_WORLD_BIBLE.md (world + Sprite Law), QUEST_EXAMPLE_EMBERHOLLOW.md (worked quest loop).* FACTION-BASE-SPECS is superseded-era (archived at docs/lore/archive-old-era/).
+
+---
+
+# THE SIX-CAMPAIGN ARC — BIBLE v4.0 (Sept 8, 2026, Big's doctrine: PROGRESSION & PLAYER-RESPECT LAW §24-34)
+
+**THE NEW MACRO STRUCTURE.** The doctrine's six campaigns become the MACRO arc; the realm chapters (five-beat faction campaigns below) nest INSIDE it. Nothing below is discarded — the acts and realm chapters are RE-STAGED inside the six-campaign spine. Where this section conflicts with the old Act structure, THIS SECTION WINS.
+
+## CAMPAIGN I — AGE OF KINGS (mortal tier; gods distant)
+The world as mortals know it: kingdoms, gate-towns, oaths, succession, wars, monsters, political conflict, ancient ruins, strange legends. The Primordial Gods are mostly distant mysteries — worship-by-evidence, never manifestation. Player learns the world at CHARACTER SCALE only: the Orders, the roads, the first dungeons, the local threats (doctrine §26 early-game roster: monsters, corrupted creatures, human enemies, ancient guardians). Kingdom Quests + first Exploration/Mystery quests live here. The faith loop exists but the Gates have not flickered yet — the Pilgrim earns their Mark in a world that still mostly works.
+**Content:** gate-town politics, Order training arcs (Class Quest seeds), first dungeon adventures, regional legends that LATER turn out to be Primordial memories (doctrine: myths are memories).
+
+## CAMPAIGN II — THE FIRST RUIN
+The player discovers something SUBSTANTIALLY OLDER than the current civilizations — the discovery begins connecting the world to the Primordial Age. In our lore: the Heartland road — the outward-facing Walking-Age footprints (deep lore motif V) that walk toward a place no map holds and never arrive. The player reaches the FIRST RUIN: architecture that predates the six gods' craft — the first Gate, built before the Balancing, bearing the seventh smudged signature (deep lore Mystery 1+5+7). No god claims it. No kingdom remembers it. This is where the doctrine's "gradual discovery" spine plants its flag: the world the player learned in Campaign I is YOUNGER than it looks.
+**Content:** the Heartland expedition, Exploration Quests into buried temples/lost kingdoms, the Empty Pedestal region, first Primordial Quest fragments (the lullaby verse, the unlit lantern motif). Ends on the discovery that reframes everything: the footprints stop one step short of the Pedestal. IT WAITED TO BE INVITED.
+
+## CAMPAIGN III — THE AWAKENING (the old Act I-II content re-staged)
+Ancient structures and creatures begin responding to something. Magic becomes unstable. Old seals weaken. The Gods become increasingly relevant. THIS is where the Ember Gate flickers and the six faction chapters begin — the realm campaigns below (five-beat rhythm intact) unfold across Campaigns III-V, the player traveling Mythos gate by gate as fractures bloom and each realm's belief-crisis breaks.
+**Content:** the six faction flicker chapters (F1 Embermere first), fracture hunts, first Gate crossings, T3 world bosses (doctrine §27: mythological events, permanently matter), Witness Missions, mid-game doctrine §26 roster (broken seals, unexplained phenomena, primordial relics).
+
+## CAMPAIGN IV — THE SIX PATHS
+The player explores the deeper origins of their class and the six primordial philosophies. In our lore: the Vow Quests deepen — the Orders are revealed as inheritors of the Walking Age, each rite-tool a survivor of the Primordial Age carried hand-to-hand across the Balancing. Class Quests bloom here (doctrine §23): each Order's founding philosophy examined through its own pilgrimage — the Knight's oath-law traced to the first Gate's vigil, the Smyth's forge-law to the First Forge that built the Gates, etc.
+**Content:** deep-dungeon Vow Quests, Order origin arcs, the six philosophies as PLAYED rites (never lectured — quest doctrine law zero). Divine Quests open: the pilgrim's bond with their chosen god begins to deepen beyond duty.
+
+## CAMPAIGN V — THE DIVINE CONFLICT (the old Act II escalation)
+The player becomes increasingly connected to their chosen Primordial God. Ancient forces begin returning. World-scale encounters become possible. In our lore: the Forgotten's evidence mounts at every Gate (deep lore Act II thread), the fractures converge, and the six factions must begin preparing the FIRST GREAT CROSSING — all six Gates thrown wide together. Late-game doctrine §26 roster: ancient entities, colossal creatures, divine conflicts, primordial manifestations.
+**Content:** Divine Quests at full depth (the god-relationship arc), Relic Quests for the true artifacts, Monster Quests on the returning ancient fauna, the war-scale T3 duels, the god-control primordial battles (doctrine §34: the player channels the God — the Gate Rite colossal mode).
+
+## CAMPAIGN VI — THE PRIMORDIAL TRUTH (the old Act III finale, doctrine-locked)
+The player finally discovers the deeper truth behind the Primordial Age and the Fall. THE UNMAKING is revealed (see deep lore addendum): not a villain, not a grudge — the pre-creation state itself, the force the six gods' creation UNMADE, reaching back through the wound it was cut from. The Hollow is its skin; the Forgotten is its voice; the seventh signature is its invitation. The final conflict is NOT a kill-the-villain fight — it forces meaningful choices (doctrine §24): Restoration (the Forgotten given a home, the skin closes), Destruction (the Hollow emptied, Gates closed forever), Divine rule, Mortal independence, Rebirth, Sealing the ancient powers, a new world order — determined by the established lore and the player's accumulated choices.
+**Content:** the first Gate campaign, the endgame rite (THE NAMING — the melody recognized), the Unlit Lantern lit, the final Primordial Battle at true world-scale, the choice-branch endings, post-campaign live loop.
+
+## ESCALATION SPINE (doctrine §26, binds the whole arc)
+Early (CI): monsters, corrupted creatures, human enemies, ancient guardians, local threats → Mid (CII-III): strange creatures, ancient references, broken seals, unexplained phenomena, primordial relics → Late (CIV-V): ancient entities, colossal creatures, divine conflicts, primordial manifestations → Endgame (CVI): the player realizes the same ancient phenomenon behind the world's greatest catastrophe is returning — and it was never gone.
+
+## QUEST CATEGORY MAPPING (doctrine §23 → our quest systems)
+- **Kingdom Quests** → Campaign I politics/succession/oaths + ongoing realm politics in III-V (gate-town crises, wars, ancient claims)
+- **Exploration Quests** → buried temples, ancient roads, lost kingdoms, sealed chambers (Campaign II's spine; doctrine §22: the reward is often KNOWLEDGE)
+- **Primordial Quests** → the seven Mysteries, played as quests (deep lore delivery rule: assembled, never told)
+- **Class Quests** → the Orders' origins (Campaign IV)
+- **Divine Quests** → the god-bond arc (Campaign IV-V; faith loop)
+- **Relic Quests** → Vow Quests (tree-toppers) + true artifact recoveries (doctrine §18: meaningful, never disposable)
+- **Monster Quests** → regional fauna investigations + the returning ancient creatures (CAMELOT_BESTIARY stock)
+- **Mystery Quests** → unexplained events that clarify later (the seven Mysteries' surface hooks)
+- **Choice Quests** → realm-changing decisions with permanent consequences (doctrine §28: "the world is different because I did this")
+
+## THE UNMAKING — PRIMARY ANTAGONIST (doctrine §25, evaluated against lore — PASSED)
+Do NOT make one of the six gods the villain. The existing lore already carries the antagonist:
+- **Philosophy:** undoing existence toward pre-creation — not conquest, reversal. (Deep lore Mystery 5: SILENCE, the seventh tension, the pause before the Forge.)
+- **Reason for existing:** creation itself was its unmaking; the wound (the Hollow) is where it was cut away. (Mystery 4: the void is the Forgotten's SKIN.)
+- **Connection to the ancient world:** the seventh signature on the Balancing contract; the first Gate built before the six. (Mysteries 1, 6, 7.)
+- **Relationship to the Fall:** the Fracture is the system working as designed — a pressure valve, not a malfunction. (Mystery 6.)
+- **Reason to oppose the player:** the player is the Marked — a mortal carrying witnessed light; the one thing the Unmaking has never been able to erase is light with a witness. (Mystery 3.)
+- **Escalating manifestations:** Hollows (earliest mortal-scale manifestations — the Undone, the Unmade Champion), fractures, dead-god shapes, the Forgotten's shards, the Unmaking itself at the endgame threshold.
+- **Major revelations:** the melody is the name; the footprints waited to be invited; the Gates are dinner bells; the lullaby's other verse.
+- **Final confrontation:** the endgame rite + the choice — mythologically appropriate (an invitation, not an execution).
+**Hollow recontextualization (canon bridge):** the doctrine's Unmaking and our Hollow canon are ONE system. The Hollows ARE the Unmaking's earliest mortal-scale manifestations; erasure eats what IS, never what was MADE; the absence is the face. Nothing is retconned — the deep lore read this way all along. (Awaiting Big's final verdict word on the name THE UNMAKING as the canon term for what mortals call the Hollow.)
