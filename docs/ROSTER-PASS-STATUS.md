@@ -12,7 +12,9 @@
 
 **QUEUED — STAGE2 WORLD-SCENE UPDATE PASS (Sept 8 ~3:38 PM, Big confirmed: 'stage 2 world scenes will need to be updated and changed aswell'):** all 24 approved STAGE2 realm scenes (Ashfall/Duskmourn/Everbloom/Marenth/Skyrend/Stoneheart) get re-rolled under the overhaul — retired pilgrim-NPC reads (warden/keeper/cantor-type figures) come OUT of the scenes; realms restage under the three-tier world visual law (mythic civilizations / primordial ruins / mortal tier). One scene at a time through Big's gate, REALM BY REALM, AFTER the six class pieces lock. Realm environments and the god-cameo scenes keep their canon beats.
 
-**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, sprites/pets, Maev/NPC canon still flagged for Big's word.
+**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, sprites/pets, Maev + NPC roster.
+
+- MAEV CONFIRMED CANON (Sept 8 ~3:47 PM, Big: 'Maeve still works we will just update her when we decide attire styles'): the lorekeeper NPC SURVIVES the overhaul unchanged for now — her attire REFRESH is queued behind the Craft Grammar taste calls (updates when attire styles are decided). Same logic extends to the NPC roster generally: NPCs stay canon, attire updates ride with the style decision. The earlier 'old-tier NPC reads' flag is resolved.
 
 ---
 
