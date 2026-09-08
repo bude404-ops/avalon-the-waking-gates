@@ -121,3 +121,11 @@ One male + one female of each class = **12 player-character models at launch. No
   - Weaver-F: slim spare hourglass
   - Wildborn-F: athletic feral hourglass, agile build
 - Prompts describe the SHAPE only — never any celebrity name or likeness.
+
+
+## FEMALE FACE LAW (Sept 8 2026, Big: 'Can we make them a little more pretty in the face? Not so rough but not fake and cheesy')
+- Female class faces render PRETTY and naturally beautiful — soft smooth features, youthful clean skin, appealing and striking.
+- NOT rough: no harsh weathering, no sun-scarring, no grit-caked faces on the female set (story-worn lives in the GEAR, not her face).
+- NOT fake/cheesy: natural skin texture and believable proportions — no airbrushed glamour, no plasticky AI-beauty sheen, no exaggerated doll features.
+- Face-Distinctness law still holds: 12 unique faces, no templates shared across classes.
+- Male set unchanged (their weathered reads stay).
