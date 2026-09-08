@@ -38,11 +38,11 @@ The pilgrim's Gate Rune Mark on the breastplate follows four rules, ALL mandator
 1. GEOMETRY: the canon Gate Rune v3 RUGGED — trilithon arch (two standing stones + lintel), rough-hewn weathered megalithic grammar.
 2. MATERIAL: the Mark is ENGRAVED INTO the plate's own material — small, modest, fine incised lines, shallow recessed grooves, rendered in the same painterly brushwork as the armor itself. Never a sticker, decal, or emblem placed on top. Never large.
 3. GLOW DISCIPLINE: ONLY the flame emblem inside the arch glows — one small clean flame carrying the faction color. Zero elemental bleed: no drifting sparks, no molten cracks radiating into the plate, no glowing grooves. The carved arch lines are plain quiet engraving catching ordinary light. Nothing else on the armor glows (eyes excepted — per the Pilgrim Elemental Package).
-4. APPLICATION: every one of the 12 ladder sets gets the Mark engraved in its own plate material (ceramic, kiln clay, crystal, etc.).
+4. APPLICATION: every one of the 12 ladder sets gets the Mark engraved in its own plate material (iron, mail, scale, hide, bronze).
 First canon proof: art/approved/PILGRIM-WARDEN-CINDERROADS-MARK-ENGRAVED-CANON.png
 
 ## STYLE LANE — CINDER ROADS (locked Sept 5 2026, BudE404 'I like B')
-All pilgrim ladder armor = rugged road-worn smith-craft repair-plate: layered plates from different generations of repair, hand-hammered mismatched ceramic segments, riveted seams, patched pauldrons, worn leather straps and buckles, chipped edges, road dust. Palette: charcoal + ash-brown, faint ember underlight. Rejected lane: Cathedral Forged (grand master-grade plate). The pilgrim looks like they have WALKED the roads.
+All pilgrim ladder armor = rugged road-worn smith-craft repair gear at ARTHURIAN DARK AGE material culture (ARTHURIAN GEAR LAW, Sept 8 2026, Big): mail hauberks, scale, hide, padded cloth, bronze-iron fittings, spangenhelm-style round-top helms, round boss shields with gate-rune etch — layered gear from different generations of repair: mismatched mail rings, lashed scale plates, re-stitched hide panels, worn leather straps and buckles, chipped edges, road dust. BANNED: ceramic plate segments, pauldrons, lamellar, full plate of any kind. Palette: charcoal + ash-brown, faint ember underlight. Rejected lane: Cathedral Forged (grand master-grade plate). The pilgrim looks like they have WALKED the roads.
 
 ## FEMALE ATTIRE LAW v3 (Sept 7 night, Big: "We want the females to be seductive and sexy still") v2 (Sept 7 2026, Big: 'With seductive and sexy we want the females to be realistic not fake type boobs and some what modest depending on class')
 
@@ -50,7 +50,7 @@ Female variants of the six Orders are seductive and sexy through NATURAL BEAUTY 
 
 - REALISTIC BODIES: natural, believable female proportions — no exaggerated or artificial-looking chests, no fantasy-implant reads. Real-athlete / real-woman anatomy, class-SIZE-LAW compliant
 - MODEST SCALES BY CLASS: coverage follows the class grammar — seduction comes from FIT (tailored silhouettes, cinched waists, flattering cuts) and confident presence, not bare skin
-- Per class flavor: Wayfarer-F = fitted road-scout leathers + laced bodice, athletic, tastefully fitted (she's a scout — practical, alluring); Cantor-F = flowing slit robe, elegant; Keeper-F = lamellar over fitted underlayer; Vigil-F = ranger leathers + boots; Warden-F = form-fitted plate, feminine linework; Smith-F = fitted apron-plate. The armored classes (Warden, Smith, Keeper) read MOST modest; the road classes (Wayfarer, Vigil) show the most shape but stay road-practical
+- Per class flavor: Wayfarer-F = fitted road-scout leathers + laced bodice, athletic, tastefully fitted (she's a scout — practical, alluring); Cantor-F = flowing slit robe, elegant; Keeper-F = scale over lashed fitted underlayer; Vigil-F = ranger leathers + boots; Warden-F = form-fitted MAIL, feminine linework; Smith-F = fitted hide smith's apron over mail. The armored classes (Warden, Smith, Keeper) read MOST modest; the road classes (Wayfarer, Vigil) show the most shape but stay road-practical
 - Elegance over exposure: attractive and confident, never explicit
 - Faces stay living, human, full-color
 
@@ -79,7 +79,7 @@ FACE-DISTINCTNESS LAW (Sept 7 2026, Big: 'make sure they arent the same for male
 
 ## AVALON CRAFT GRAMMAR — ARMOR LAW (locked Sept 7 2026, Big: 'I like that except for the shoulder thing')
 Proprietary armor system for all pilgrim Orders; no real-world armor terms in canon art.
-1. LASH-PLATE JOINERY: small chiseled plates lashed with waxed cord through carved channels; the visible cord-cross weave is the Avalon signature.
+1. LASH-PLATE JOINERY: small chiseled plates lashed with waxed cord through carved channels; the visible cord-cross weave is the Avalon signature — period-true on scale, hide, and mail edging alike.
 2. CHISELED PLATES: every plate carries shallow gate-rune etchwork — armor as wearable waymarkers (etch only, never glowing).
 3. REALM MATERIALS: kiln-bronze (Embermere), moor-iron (Galemarch), bloom-steel (Bloomweald), dusk-iron (Gloambarrow), tide-brass (Marenvale), strata-steel (Stonefell).
 4. CLOAK GRAMMAR: heavy woven road-cloaks with woven geometric glyph-border, pinned with a round order-brooch.

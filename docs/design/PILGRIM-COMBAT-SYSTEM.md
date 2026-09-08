@@ -4,14 +4,16 @@
 
 Armor type follows class role — the Cinder Roads aesthetic (road-worn, riveted, ash-patina) stays, but the material grammar is fixed per class:
 
-| Class | Size | Weapon | Armor Grammar |
+| Class | Size | Weapon | Armor Grammar (ARTHURIAN GEAR LAW) |
 |---|---|---|---|
-| Wayfarer | SMALL | twin way-daggers | LEATHERS — hooded stitched leather, quiet cloth, zero metal clang. Assassin-type. |
-| Warden | MEDIUM | sword + shield | mid plate — the road-knight kit (existing GLB canon) |
-| Keeper | MEDIUM | flail + lantern | medium lamellar + harness — the wardener's rig |
-| Cantor | TALL/LEAN | bell-staff | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
-| Vigil | TALL | greatbow | ranger leathers + longcloth — hunter quiet |
-| Smith | HEAVYSET | greathammer | heavy plate + smith's apron — forge-built, stagger-built |
+| Wayfarer | SMALL | twin SEAX (Celtic single-edged way-knives) | LEATHERS — hooded stitched leather, hide, quiet cloth, zero metal clang. Assassin-type. |
+| Warden | MEDIUM | spatha (migration-era longsword) + round boss shield w/ gate-rune etch | MAIL HAUBERK + hide — sub-Roman road-knight kit; spangenhelm-style round-top helm |
+| Keeper | MEDIUM | MAUL-MACE (period iron mace, chiseled head) + the Luminary companion | SCALE over lashed leather harness — the wardener's rig; no lamellar |
+| Cantor | TALL/LEAN | bell-staff (Dark Age hand-bell craft) | ROBES + light armor — reinforced mantle, bracers over cloth. Caster-type. |
+| Vigil | TALL | yew LONGBOW (Welsh/Celtic heritage) | ranger leathers + longcloth — hunter quiet |
+| Smith | HEAVYSET | forge MAUL (early blacksmith hammer, rough-hewn) | MAIL + padded cloth + hide smith's apron — the heaviest a Dark Age smith could wear |
+
+**ARTHURIAN GEAR LAW (Sept 8 2026, Big: 'We need to fix the armor and weapons and then make sure the combat and skill trees will match the new ones same with abilities')** — ALL mortal craft renders at Dark Age sub-Roman Celtic material culture (~5th-6th c.): mail hauberks, scale, hide/leather, padded cloth, bronze-iron fittings, spangenhelm-style helms, round boss shields carrying the gate-rune etch. BANNED forever: full plate, pauldrons, lamellar, kiln-ceramic armor segments, late-medieval warhammers, weaponized flails. The Cinder Roads aesthetic (road-worn, mismatched repair generations, riveted/lashed seams, ash-patina) transfers 1:1 onto the period materials — repair patches are now mismatched mail rings, lashed scale plates, re-stitched hide. Gods keep the Primordial Law (zero craft). WEAPON KITS rename in the tribute system: Blade/Dagger/Hammer/Lantern/Song/Tower trees become SPATHA/SEAX/MAUL/MACE-AND-LANTERN/BELL-STAFF/LONGBOW trees — gameplay verbs (builders/spenders, faith economy, reactions) unchanged; only the kit skins, move names, and tree flavor re-cut to period grammar. Unity impact: weapons are separate hand-bone meshes (already canon), FaithMeter/dodge/lock-on core is class-agnostic — no core code change, only kit meshes + tree data.
 
 Law: light classes wear quiet, heavy classes wear metal. No class wears armor outside its grammar. Pilgrim armor is Avalon human-craft: mortal smithing, road-worn repair-plate.
 BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own style, wrapped in Avalon lore, then fix combat + stats to match.
@@ -40,7 +42,7 @@ BudE404 directive (Sept 6 2026): mix Diablo Immortal + Genshin into our own styl
 - **FAITH ECONOMY LAW v2 — THE MACER'S LOOP** (BudE404, Sept 6: 'that Diablo dungeon masher feel so instead of mana we just have faith and abilities use faith and attacking and killing builds it back up'): FAITH is the ONLY resource — there is NO mana, NO passive regen bar. THE LOOP: attacking BUILDS faith (every landed hit feeds the flame), killing BUILDS it bigger (mote burst), the WARD converts caught damage INTO faith (the more you're sieged, the more you can answer — unchanged canon), and abilities SPEND it. The pilgrim is always swinging to afford the next miracle — aggression is the economy. This is the Diablo dungeon-masher loop transplanted whole: hatred/essence/fury/spirit -> FAITH.
 - **WEAPON/SKILL TREES FIT THE LOOP**: every weapon tree node and ability is either a BUILDER (more faith per hit/kill/parry — e.g. a Warden parry node that deepens the +12 catch bonus, a Smith node that adds burn-ticks that generate faith) or a SPENDER (faith-cost miracles — surges, reactions, relic verbs), gated by FAITH not long cooldowns. Cooldowns stay SHORT (TEMPO shrinks them) — the resource gate is the faith cost. Kill-burst values scale so chaining packs keeps the bar full (the masher's momentum high).
 - **FAITH DROPS** (BudE404, Sept 6 — the loot feel): defeated Hollow RELEASE their faith as golden motes that visibly float and stream INTO THE LUMINARY, as if the living lantern collects them — the Diablo-gold-drop satisfaction, but the "gold" is belief and the "purse" is your companion. The Luminary gathers; the FAITH lands when the motes arrive (bar ticks per mote, soft chime), not on the kill frame. Lore-perfect: the flame feeds on deeds.
-- **THE TRIBUTE SYSTEM — progression economy** (BudE404 canon, Sept 6 night: 'in-agree on the gear, the grind part sucks and stats would suck and we would be building more gear etc.'): NO stat-gear treadmill — zero random rolls, zero affix loot, zero gear power creep; there is NO drop RNG in AVALON. Kills drop TWO currencies: FAITH motes (in-run — unchanged) and TRIBUTE (persistent — occasional, tied to notable kills: elites, first-clears, Warden Hollows, siege waves; reads as physical offerings to the god, tribute-reef lore). TRIBUTE spends at SHRINES: class-tree nodes (builders/spenders), relic tiers (Cold Lantern line), Mark re-attunement rites, cosmetic rune colorways. Loadout is CURATED: WEAPON (swappable kits — Blade/Dagger/Hammer/Lantern/Song/Tower class trees; weapons are separate hand-bone meshes for exactly this), ARMOR (one set per role per gender — the canon 12; faction = rune colorway), RELIC (deed-earned). Power curve = trees + relic tiers + Mark choices — never drops. The DEPTHS = the grind space where tribute flows richest (optional — never gates the story).
+- **THE TRIBUTE SYSTEM — progression economy** (BudE404 canon, Sept 6 night: 'in-agree on the gear, the grind part sucks and stats would suck and we would be building more gear etc.'): NO stat-gear treadmill — zero random rolls, zero affix loot, zero gear power creep; there is NO drop RNG in AVALON. Kills drop TWO currencies: FAITH motes (in-run — unchanged) and TRIBUTE (persistent — occasional, tied to notable kills: elites, first-clears, Warden Hollows, siege waves; reads as physical offerings to the god, tribute-reef lore). TRIBUTE spends at SHRINES: class-tree nodes (builders/spenders), relic tiers (Cold Lantern line), Mark re-attunement rites, cosmetic rune colorways. Loadout is CURATED: WEAPON (swappable kits — SPATHA/SEAX/MAUL/MACE-AND-LANTERN/BELL-STAFF/LONGBOW class trees, period kits per the Arthurian Gear Law; weapons are separate hand-bone meshes for exactly this), ARMOR (one set per role per gender — the canon 12; faction = rune colorway), RELIC (deed-earned). Power curve = trees + relic tiers + Mark choices — never drops. The DEPTHS = the grind space where tribute flows richest (optional — never gates the story).
 - **Debt economy** (canon from combat runtime): Hollow ACCRUE DEBT when struck; at threshold a Hollow REVENANTS (enrages) — kill fast or get swarmed by rage.
 - **Void tether**: Hollow are void-element, reaction-IMMUNE until their tether is SEVERED. CANON ROLES (per the ONE COMPANION TWO LIGHTS ruling): the LUMINARY REVEALS the tether — its glow is discovery/navigation light, NEVER combat power — and the PILGRIM severs what it reveals (strike the shown tether-point). The lantern's combat-adjacent role stays PROTECTIVE only: while the Luminary shines, void-chill does not drain VIGOR. The lantern never attacks.
 - **Emergence Law**: god-scale = stationary siege combat (unchanged canon).
@@ -83,12 +85,25 @@ Weapon role = silhouette. Size is readable depth: you SEE what a unit does befor
 ### Pilgrim weight classes
 | Class | Weapon | Size class | Combat identity |
 |---|---|---|---|
-| Wayfarer | twin way-daggers | SMALL | fastest TEMPO, faith builds in a stream of small hits, longest/fasted step-dodge |
+| Wayfarer | twin seax | SMALL | fastest TEMPO, faith builds in a stream of small hits, longest/fasted step-dodge |
 | Warden | sword + shield | MEDIUM | balanced read |
-| Keeper | flail + lantern | MEDIUM | mid |
+| Keeper | mace + lantern | MEDIUM | mid |
 | Cantor | bell-staff | TALL/LEAN | reach advantage at pole length |
 | Vigil | greatbow | TALL | ranged reads |
-| Smith | greathammer | HEAVYSET (largest) | few huge hits, faith in bursts, every swing staggers |
+| Smith | forge maul | HEAVYSET (largest) | few huge hits, faith in bursts, every swing staggers |
+
+## PERIOD WEAPON TREE MAP (Arthurian Gear Law — ability names re-cut to match period kits, Sept 8 2026)
+
+| Kit | Class tree | Builder identity | Spender identity (faith miracles) |
+|---|---|---|---|
+| SPATHA (longsword) | Warden | oath-stance parries (deepened catch), shield-boss counters | Oathcleave arcs, ward-bursts |
+| SEAX (twin way-knives) | Wayfarer | stream-combos, step-strike chains | Vein-Cut bleeds, shadow-steps |
+| MAUL (forge hammer) | Smith | stagger smashes, forge-heat ticks | Anvil Fall, slag bursts |
+| MACE-AND-LANTERN | Keeper | rite-blows (mace), tether-sever strikes | Lantern rites: reveal surges, faith-ward auras |
+| BELL-STAFF | Cantor | chant cadences (bell strikes build faith) | Hymn spends: elemental surges, reaction triggers |
+| LONGBOW | Vigil | aimed shots, volley builders | Skyfall volleys, storm-arrows |
+
+Verbs unchanged: every node is a BUILDER or SPENDER gated by FAITH; elemental reactions (STEAMVEIL etc.), the Macer's Loop, void-tether severing, and the tribute economy all carry over untouched — only kit skins, tree names, and ability flavor now speak Dark Age Celtic.
 
 ### Mechanic scaling (per weight class)
 1. TEMPO + dodge distance + i-frame window scale with size (small = far/fast dodge; heavy trades dodge for poise)
