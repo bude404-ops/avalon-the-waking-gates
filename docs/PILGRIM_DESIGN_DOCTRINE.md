@@ -44,7 +44,7 @@ First canon proof: art/approved/PILGRIM-WARDEN-CINDERROADS-MARK-ENGRAVED-CANON.p
 ## STYLE LANE — CINDER ROADS (locked Sept 5 2026, BudE404 'I like B')
 All pilgrim ladder armor = rugged road-worn smith-craft repair-plate: layered plates from different generations of repair, hand-hammered mismatched ceramic segments, riveted seams, patched pauldrons, worn leather straps and buckles, chipped edges, road dust. Palette: charcoal + ash-brown, faint ember underlight. Rejected lane: Cathedral Forged (grand master-grade plate). The pilgrim looks like they have WALKED the roads.
 
-## FEMALE ATTIRE LAW v2 (Sept 7 2026, Big: 'With seductive and sexy we want the females to be realistic not fake type boobs and some what modest depending on class')
+## FEMALE ATTIRE LAW v3 (Sept 7 night, Big: "We want the females to be seductive and sexy still") v2 (Sept 7 2026, Big: 'With seductive and sexy we want the females to be realistic not fake type boobs and some what modest depending on class')
 
 Female variants of the six Orders are seductive and sexy through NATURAL BEAUTY and tailoring — never through fake or exaggerated anatomy:
 
