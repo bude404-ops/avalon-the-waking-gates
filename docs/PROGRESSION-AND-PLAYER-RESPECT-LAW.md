@@ -174,3 +174,86 @@ The Ancient Mythic Age should feel: Ancient, Grand, Mythological, Dark when appr
 *Design note: this doctrine also locks monetization law — no energy systems, no F2P grind levers; monetization stays cosmetic/tip-based per the F2P decision pending Big's go.*
 
 *Lore-audit note (BIGagent404, Sept 8): The Unmaking framework aligns with existing Hollow canon — the Hollows are already "unmade" entities (the Undone, the Unmade Champion; erasure eats what IS, never what was MADE; the absence is the face). If The Unmaking is adopted, the Hollows read as its earliest mortal-scale manifestations — the doctrine does not need to be inserted blindly; the lore already speaks its language. Awaiting Big's evaluation verdict.*
+
+---
+
+# DOCTRINE PART 2 (Sept 8, 2026 — same transmission, Big's words)
+
+## WORLD VISUAL DISTINCTION LAW
+
+**Avoid making the entire world look like generic medieval Europe.**
+
+The visual design must distinguish:
+
+- **Ancient Mythic civilizations**
+- **Primordial ruins**
+- **later historical cultures**
+
+**The Primordial Gods must look fundamentally different from ordinary mortals. Their manifestations communicate ENORMOUS POWER and ANCIENT EXISTENCE.**
+
+(Design mapping: mortal culture = the Arthurian Dark Age tech level already locked in the Time-Period Law — that's the "later historical culture" tier. Ancient Mythic civilizations and Primordial ruins each get their OWN distinct visual language, separate from the mortal tier. Gods already carry the Primordial Law — torso-up, barely-face, pure element, zero craft — this law extends that separation to the world itself.)
+
+## 31. CINEMATIC STORYTELLING
+
+Cinematics used STRATEGICALLY. They introduce:
+
+- Major characters
+- Primordial revelations
+- World-changing events
+- God manifestations
+- World Boss awakenings
+- Major campaign transitions
+- Important choices
+
+**Never turn ordinary gameplay into excessive cutscenes. The player stays involved.**
+
+## 32. CORE GAME LOOP
+
+**Explore → Quest → Fight → Discover → Enter Dungeon → Master Class → Develop Divine Connection → Encounter Ancient Threat → Experience Primordial Battle → Change the World → Continue the Campaign**
+
+NOT: Farm → Grind → Replace Gear → Farm Again.
+
+## 33. DESIGN AROUND MEANINGFUL PROGRESSION
+
+Every major system must answer: **"What meaningful thing did the player gain from doing this?"**
+
+The answer must be more substantial than a slightly larger number. The player's power grows because:
+
+- They learned
+- They discovered
+- They mastered
+- They chose
+- They earned divine recognition
+- They uncovered ancient knowledge
+- They changed the world
+
+## 34. FINAL DESIGN PRINCIPLE — THE TWO SCALES
+
+**The game is an ancient mythological action RPG where the player explores a forgotten world as a powerful hero, develops a unique combat path, forms a relationship with one of six Primordial Gods, uncovers the truth of an ancient catastrophe, and eventually participates in battles so enormous that the player CONTROLS THE GOD ITSELF.**
+
+**CHARACTER SCALE**
+- Explore the world
+- Fight monsters
+- Complete quests
+- Master your class
+- Discover ancient secrets
+- Develop your God connection
+
+**PRIMORDIAL SCALE**
+- Face impossible threats
+- Channel the God
+- Control divine attacks
+- Battle colossal beings
+- Witness the world being reshaped
+- Make decisions that can change the future
+
+**THROUGHOUT THE ENTIRE EXPERIENCE:**
+- No mandatory loot treadmill
+- No endless grinding
+- No requirement to play constantly
+- No meaningless gear replacement cycle
+- Every major accomplishment moves the player's journey forward
+
+**The player should feel they are progressing through an EPIC MYTH, not maintaining a character on a treadmill.**
+
+(Fits existing canon: the Colossus combat spec + terrain-up god battle form already stage the Primordial Scale; the Pilgrim combat doctrine is the Character Scale. The two-scale structure is the game's final shape.)
