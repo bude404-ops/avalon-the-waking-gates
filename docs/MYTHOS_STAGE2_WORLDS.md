@@ -56,3 +56,16 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 - One-roll-one-file: every roll gets a unique filename (no overwrites — a "first one" verdict must never lose its file)
 - Dupe-purge discipline: perceptual-hash sweep before every batch send; near-identical rolls never reach review
 - No real-world place names in realm naming (no-real-culture law)
+
+
+## THE MYTHIC WORLD LAW (Sept 8 ~7:00 PM, Big: 'we make sure the world and building match the mythic look not just simple villages and stuff it needs magic and extraordinary environments as this is myth after all')
+
+The world is MYTH, and every environment renders at myth tier. Governs all world/scene/settlement art (STAGE2 realm scenes, structures, villages, interiors) — supersedes any ordinary-historical staging.
+
+1. **NEVER SIMPLE VILLAGES.** No plain medieval hamlets, no generic rustic cottages, no ordinary farmland staging. Human settlements are MYTHIC BUILDERS: megalithic city-terraces, carved-stone halls with knotwork lintels, bronze-doored hillforts fused into the living rock, standing-stone avenues, timber longhalls raised on carved god-pillars.
+2. **MAGIC AND THE EXTRAORDINARY.** Every scene carries wonder: floating stone, relic-lit shrines, god-scale monuments, gates that breathe, terrain that remembers the gods (chisel-signature everywhere — the world reads as shaped by dead gods). Environment laws hold: realm-native palettes, three-tier world doctrine, Arthurian-period craft at the MORTAL level but staged mythically.
+3. **SETTLEMENT = CIVILIZATION AGAINST MYTH.** Human craft (Mythic Celtic Human Style) is real but always dwarfed and framed by the primordial world — torch-warm tiny human light inside cold god-scale stone.
+4. **TWO-LAYER LIGHT HOLDS.** Cold desaturated world; warm light only from human/relic sources. Never bright, never flat.
+5. Carved World style, chisel signature, rune law, environment-typing — all unchanged and enforced.
+
+Applies to the STAGE2 24-realm scene pass (rolls after the 12-model class set completes).
