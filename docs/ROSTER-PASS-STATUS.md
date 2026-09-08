@@ -200,3 +200,5 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - ✅ PALMER CANON LOCKED (Big: 'Keep', Sept 8 ~1:29 AM) — art/approved/PILGRIM-PALMER-ARTHURIAN-GEAR-CANON.png. Second pilgrim under the Knight-V2 heraldry grammar: small & wiry road leathers, faded ochre cloak + gate-rune brooch, twin seax, milestone waypoint. Third pilgrim (Sexton) rolls next.
 
 - SEXTON V1 SENT Sept 8 ~1:35 AM (art/pending/PILGRIM-SEXTON-ARTHURIAN-GEAR-CANON-V1.png): third pilgrim under the heraldry grammar — medium & stocky build, mail hauberk over gambeson w/ hide harness + tribute-box, keep-bronze cloak w/ gate-rune brooch + glyph hem, flanged iron mace, lantern shrine waystation (unlit niches, rune stone, bronze pennant, cairn), neutral-start. Awaiting verdict — Clerk rolls next on his word.
+
+- ✅ SEXTON CANON LOCKED (Big: 'Keep', Sept 8 ~1:32 AM) — art/approved/PILGRIM-SEXTON-ARTHURIAN-GEAR-CANON.png. Third pilgrim locked under the heraldry grammar. Fourth (Clerk) rolls next.
