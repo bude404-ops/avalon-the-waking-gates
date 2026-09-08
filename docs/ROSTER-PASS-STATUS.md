@@ -12,9 +12,9 @@
 
 **QUEUED — STAGE2 WORLD-SCENE UPDATE PASS (Sept 8 ~3:38 PM, Big confirmed: 'stage 2 world scenes will need to be updated and changed aswell'):** all 24 approved STAGE2 realm scenes (Ashfall/Duskmourn/Everbloom/Marenth/Skyrend/Stoneheart) get re-rolled under the overhaul — retired pilgrim-NPC reads (warden/keeper/cantor-type figures) come OUT of the scenes; realms restage under the three-tier world visual law (mythic civilizations / primordial ruins / mortal tier). One scene at a time through Big's gate, REALM BY REALM, AFTER the six class pieces lock. Realm environments and the god-cameo scenes keep their canon beats.
 
-**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, sprites/pets, Maev + NPC roster.
+**PRESERVED (fits the overhaul):** all god-emergence canon, Hollow roster, the new class art, sprites/pets, Vera (formerly Maev) + NPC roster.
 
-- MAEV CONFIRMED CANON (Sept 8 ~3:47 PM, Big: 'Maeve still works we will just update her when we decide attire styles'): the lorekeeper NPC SURVIVES the overhaul unchanged for now — her attire REFRESH is queued behind the Craft Grammar taste calls (updates when attire styles are decided). Same logic extends to the NPC roster generally: NPCs stay canon, attire updates ride with the style decision. The earlier 'old-tier NPC reads' flag is resolved.
+- VERA (formerly MAEV) CONFIRMED CANON (renamed Sept 8 ~7:39 PM, Big: 'Maeve new name is also Vera'; originally Sept 8 ~3:47 PM, Big: 'Maeve still works we will just update her when we decide attire styles'): the lorekeeper NPC SURVIVES the overhaul unchanged for now — her attire REFRESH is queued behind the Craft Grammar taste calls (updates when attire styles are decided). Same logic extends to the NPC roster generally: NPCs stay canon, attire updates ride with the style decision. The earlier 'old-tier NPC reads' flag is resolved.
 
 ---
 
@@ -299,3 +299,5 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - WARDEN CANON LOCKED (Sept 8 ~4:41 PM, Big: 'Keep warden'): art/approved/CLASS-WARDEN-CANON.png — third of six class pieces. Stoneheart pairing + realm-native staging confirmed (standing-stone canyon, geode glimmer, river-stone warhammer, bone-grey whisper). Queue advances: Veilborn (Duskmourn) next.
 
 - VEILBORN V1 REJECTED (Sept 8 ~4:43 PM, Big: weapons don't match — mismatched pair + an extra belt blade that shouldn't exist). KIT-INTEGRITY LAW added to class art: the class kit renders EXACTLY as designed (Veilborn = matched twin blades and NOTHING else — matched pairs must match; no extra/backup weapons on the body). V2 re-rolled under the law; V3 re-rolled fresh (matched twin blades, one low + one sheathed, empty belt, stair's-foot composition) — CANON LOCKED Sept 8 ~5:20 PM (Big: 'Yeah I approved it earlier'): art/approved/CLASS-VEILBORN-CANON.png. Queue advances: WEAVER (Marenth) next, then Wildborn.
+
+- VERA RENAME (Sept 8 ~7:39 PM, Big: 'Maeve new name is also Vera'): the lorekeeper NPC Maev is now VERA — name updated across live docs (CAMELOT-CREATURES-AND-MAGIC.md, campaign lore); archives keep historical mentions. Pending V2 art file renamed art/pending/NPC-VERA-V2-MYTHIC-CELTIC-FROSTHALL.png. The V2 mythic-Celtic re-roll is still in his court awaiting its verdict.
