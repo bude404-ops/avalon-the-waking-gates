@@ -220,3 +220,5 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - ✅ PALMER-F CANON LOCKED (Big: 'Keep', Sept 8 ~1:52 AM) — art/approved/PILGRIM-PALMER-F-ARTHURIAN-GEAR-CANON.png. First female Order locked. Knight-F rolls next.
 
 - KNIGHT-F V1 SENT Sept 8 ~1:57 AM (art/pending/PILGRIM-KNIGHT-F-ARTHURIAN-GEAR-CANON-V1.png): second female Order — tailored mail hauberk belted at the waist (feminine through fit, honest mail), blue-grey cloak w/ gate-rune brooch + immaculate glyph hem, spatha at hip + round boss shield slung on back (pale gate-rune), braided hair + scar through eyebrow, megalithic trilithon gate waypoint + blue-grey pennant, neutral-start. Awaiting verdict — Sexton-F rolls next on his word.
+
+- ✅ KNIGHT-F CANON LOCKED (Big: 'Keep', Sept 8 ~1:56 AM) — art/approved/PILGRIM-KNIGHT-F-ARTHURIAN-GEAR-CANON.png. Second female Order locked. Sexton-F rolls next (mature sultry keeper per Big's Sept 7 'sexy mom' ruling).
