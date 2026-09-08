@@ -18,16 +18,29 @@ The realm accent (below) still whispers the origin — now fixed per class: ever
 First-god thread: opens with the home realm's patron deity (the class's Six Paths chapter roots there); the king/queen thread that best meets the class's story is a quest-design choice per campaign. Travel + learned gods: unchanged — every other realm's deities are out there to be met and earned.
 
 
-**Big's words:** each class carries hidden accents of the realm a character is from; that character pursues their region's deity through quests; everyone starts in a different place (player choice); as the player advances, they learn the other gods and can gain those abilities.
+**Big's words (clarified Sept 8 ~3:59 PM):** each class has ONE home realm — one of the six. That class starts there, carries the realm's hidden accent, pursues their regional deity's quests; players choose a class and that choice determines where they begin; as the player advances they learn the other gods and can gain those abilities.
 
-**Why it works:** six realms × six classes = **36 origins** — every playthrough starts with a different home, first-god thread, and questline, built entirely from content that already exists (the realms, the 12 gods, the god-class matrix). No new assets required; the system is pure structure.
+**Why it works:** SIX classes, SIX realms, ONE home each — six fixed origins, each a completely different opening experience (home, quests, first-god thread), built entirely from content that already exists (the realms, the 12 gods, the god-class matrix). No new assets required; the system is pure structure. Player choice happens at CLASS selection — every class opens the game somewhere else.
 
-## THE ORIGIN LAW
+## THE ORIGIN LAW (v2 — fixed class↔realm binding)
 
-1. **CLASS = how you fight** (silhouette, kit, build — unchanged, realm-neutral).
-2. **ORIGIN = where you're from** (one of the six realms, chosen at creation). Written into the character as HIDDEN ACCENTS — a cord thread, a toggle, a woven strip in the realm's quiet color. Never loud, never heraldry; a whisper another native might recognize.
-3. **STARTING PLACE = your realm.** Each origin opens in its own realm — different first quests, different first settlement, different first encounter with the world.
-4. **FIRST GOD = your regional deity** (each realm has its king and queen — the origin thread begins with them). The Campaign III "Six Paths" class-origin quests now root in the home realm: your first god-thread questline IS a Six Paths chapter staged where you're from.
+1. **CLASS = how you fight** (silhouette, kit, build).
+2. **HOME REALM = fixed per class** (the 1:1 binding below). Written into the character as HIDDEN ACCENTS — a cord thread, a toggle, a woven strip in the realm's quiet color. Never loud, never heraldry; a whisper another native might recognize.
+3. **STARTING PLACE = your class's home realm.** Each class opens in its own realm — different first quests, different first settlement, different first encounter with the world.
+4. **FIRST GOD = your home realm's deity** (each realm has its king and queen — the origin thread begins with them). The Campaign III "Six Paths" class-origin quests root in the home realm: your first god-thread questline IS a Six Paths chapter staged where you're from.
+
+## THE CLASS↔REALM BINDING (proposal — Big's verdict final)
+
+| Class | Home realm | Accent | Why |
+|---|---|---|---|
+| SOVEREIGN | SKYREND | storm slate | command from the storm — the sky-throne read |
+| RAVAGER | ASHFALL | oxide red | raw force from the ember badlands — furnace rage |
+| WARDEN | STONEHEART | bone grey | the unmovable — stone is the warden's grammar |
+| VEILBORN | DUSKMOURN | dusk violet | the veil realm itself — Veiled Stair home ground |
+| WEAVER | MARENTH | tide teal | the currents and threads — tides are woven water |
+| WILDBORN | EVERBLOOM | deep moss | the wild heart — the bloom realm is feral ground |
+
+(Alternate swap on the table if Big prefers: Sovereign→Stoneheart stone-throne / Warden→Skyrend storm-watch.)
 
 ## THE REALM ACCENTS (proposal — quiet colors, one per realm)
 
