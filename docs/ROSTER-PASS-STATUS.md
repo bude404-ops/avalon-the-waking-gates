@@ -7,7 +7,7 @@
 2. RAVAGER (greatsword) — rolls on Sovereign's verdict
 3. WARDEN (warhammer) — queued
 4. VEILBORN (twin blades) — ✅ CANON LOCKED (Big: 'Yeah I approved it earlier', Sept 8 ~5:20 PM ET)
-5. WEAVER (staff) — queued
+5. WEAVER (staff) — ✅ CANON LOCKED (Big: 'Keep', Sept 8 ~5:22 PM ET)
 6. WILDBORN (claws) — closes the set
 
 **QUEUED — STAGE2 WORLD-SCENE UPDATE PASS (Sept 8 ~3:38 PM, Big confirmed: 'stage 2 world scenes will need to be updated and changed aswell'):** all 24 approved STAGE2 realm scenes (Ashfall/Duskmourn/Everbloom/Marenth/Skyrend/Stoneheart) get re-rolled under the overhaul — retired pilgrim-NPC reads (warden/keeper/cantor-type figures) come OUT of the scenes; realms restage under the three-tier world visual law (mythic civilizations / primordial ruins / mortal tier). One scene at a time through Big's gate, REALM BY REALM, AFTER the six class pieces lock. Realm environments and the god-cameo scenes keep their canon beats.
@@ -287,6 +287,7 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 
 - RAVAGER CANON LOCKED (Sept 8 ~4:39 PM, Big: 'Keep ravager'): art/approved/CLASS-RAVAGER-CANON.png — second of six class pieces. Ashfall pairing + realm-native staging confirmed in canon (ember badlands, oxide-red whisper, gate-rune greatsword). Queue advances: Warden (Stoneheart) next.
 
+- WEAVER CANON LOCKED (Sept 8 ~5:22 PM, Big: 'Keep'): art/approved/CLASS-WEAVER-CANON.png — fifth of six class pieces. Spare wiry build, driftwood staff w/ cord-lashed unpolished bronze ring + bone toggles, tide-teal whisper, Marenth tide-shore staging. WILDBORN (Everbloom) rolls next — last of the six.
 - VEILBORN CANON LOCKED (Sept 8 ~5:20 PM, Big: 'Yeah I approved it earlier'): art/approved/CLASS-VEILBORN-CANON.png — fourth of six class pieces. V3 = matched twin dark-iron blades (one held low, twin sheathed), empty hide-pouch belt, veiled stair + shrine lantern + violet dusk staging (Duskmourn realm-native), dusk-violet whisper accent, kit-integrity law held. WEAVER (Marenth) rolls next.
 - WARDEN CANON LOCKED (Sept 8 ~4:41 PM, Big: 'Keep warden'): art/approved/CLASS-WARDEN-CANON.png — third of six class pieces. Stoneheart pairing + realm-native staging confirmed (standing-stone canyon, geode glimmer, river-stone warhammer, bone-grey whisper). Queue advances: Veilborn (Duskmourn) next.
 
