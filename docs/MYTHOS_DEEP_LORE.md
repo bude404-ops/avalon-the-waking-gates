@@ -54,3 +54,16 @@ Every item carries a 1–2 line description that is a FRAGMENT, never an explana
 1. Did Silence consent to becoming the pause? (DLC 1)
 2. What did the Forgotten sing its lullaby TO? (DLC 2 — the answer is in the song's other verse: it was not for a child.)
 3. Where do the outward-facing footprints go? (The endgame: toward the Empty Pedestal. They stop one step short of it. They have ALWAYS stopped one step short. Why did it stop? — the only question the whole game asks and never, ever answers: IT WAITED TO BE INVITED.)
+
+---
+
+# ADDENDUM — THE UNMAKING LAYER (Sept 8, 2026; doctrine §25 integration)
+The doctrine names the buried antagonist THE UNMAKING: an ancient force whose objective is not conquest but the undoing of existence itself — the return of reality toward a state before creation. Deep-lore integration (assembly rules apply — never told, only triangulated):
+
+- What mortals call THE HOLLOW is the Unmaking's wound in the world — the place cut away at the Forge. The void is not empty; it is the pre-creation state, still present, still real, pressing back.
+- The Hollows (the Undone, the Unmade Champion, the dead-god shapes) are the Unmaking's earliest MORTAL-SCALE manifestations — erasure eating what IS, never what was MADE; the absence is always the face. Craft survives; the self does not. (Unifying the full Hollow canon under one philosophy.)
+- SILENCE (Mystery 5, the seventh tension) is the seam where the Unmaking enters the cosmology: the pause before the Forge was the last moment of pre-creation, and it never ended — it became the pause.
+- The seventh signature's cold hand (Mysteries 1+6) is the Unmaking's clause in the Balancing contract — the pressure-valve was always its door.
+- The final layer (Mystery 4's lender-truth): to end the Unmaking is not to destroy it. It has never had a home. The choice-branch endings (doctrine §24) are all answers to one question: what do you do with the thing that existed before existence, when it asks to come back?
+
+**Canonicity note:** evaluated per doctrine §25 against existing lore — PASSED, no retcons required. Term "THE UNMAKING" as the canon deep-name pending Big's verdict word; in mortal-facing text it remains "the Hollow" (surface) — the Unmaking is the Campaign VI revelation layer.

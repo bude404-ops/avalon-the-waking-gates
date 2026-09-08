@@ -130,3 +130,11 @@ Every canon art piece stages its character IN CHARACTER — in the environment t
 - **Realm-native characters** (ERASED, shade-beasts, regional elites, dead-god bosses) — staged in their realm's landscape per the land-is-the-gods doctrine
 
 Environment carries the realm palette (blue-hour for quiet pieces, realm element accents) and stays lore-true — no environment that contradicts the doctrine.
+---
+
+## THE WORLD VISUAL DISTINCTION LAW (Sept 8, 2026 — doctrine §30 + Part 2; Big: 'Avoid making the entire world look like generic medieval Europe')
+Three visual tiers, ALWAYS distinct, never blended into generic medieval:
+1. **ANCIENT MYTHIC CIVILIZATIONS** — the Walking Age ruins and pre-Balancing cultures: megalithic scale, impossible joinery, architecture that remembers being shaped by gods; grander than anything mortal hands could raise.
+2. **PRIMORDIAL RUINS** — the First Ruin tier (Campaign II): structures older than the six gods' craft — the first Gate, the Heartland, the Empty Pedestal. Wrongness in the geometry: built by and for things that were never mortal; silence in the design; no mortal tooling marks at all.
+3. **LATER HISTORICAL CULTURES (the mortal tier)** — the Arthurian Dark Age law already locked (mail/hide/cloth, coracles, cogs, megalithic shrines): honest handwork, small scale, human warmth. Mortal craft NEVER reaches tier-1 or tier-2 grandeur — their echo of it is worship-by-evidence.
+**THE GODS** remain fundamentally other at all tiers (Primordial Law: torso-up, barely-face, pure element, zero craft, enormous power, ancient existence). Tier distinctness applies to every environment roll going forward; environment sheets get a TIER tag (MYTHIC / PRIMORDIAL / MORTAL) at commission time.
