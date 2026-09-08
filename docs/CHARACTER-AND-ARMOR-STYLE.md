@@ -1,3 +1,35 @@
+# CHARACTER & ARMOR STYLE v2 — THE MYTHIC CELTIC HUMAN STYLE (BIG'S LAW, Sept 8 ~6:55 PM)
+
+**Supersedes the First Crafts raw-only grammar for player-class gear.** Big's complete spec, locked verbatim as the governing craft law for the 12-model roster and all class weapons:
+
+## THE MYTHIC CELTIC HUMAN VISUAL STYLE
+
+Ancient human warrior craftsmanship inspired by Celtic and Arthurian fantasy — strictly human craft, never otherworldly refined. **Legendary through craftsmanship, symbols, and imposing silhouettes.**
+
+### MATERIALS
+Bronze, dark iron, leather, engraved knotwork, spirals, torcs, cloaks, layered battle cloth, practical articulated armor.
+
+### FEMALE SILHOUETTE
+Athletic, elegant, fitted armor emphasizing the waist and feminine silhouette; tasteful exposed shoulders/arms or upper back; layered battle-skirts, fitted leggings, ornate cloaks and jewelry.
+
+### MALE SILHOUETTE
+Muscular, broad-shouldered, powerful silhouette; fitted chest armor emphasizing the torso; exposed or sleeveless arms; heavier shoulders, belts, battle-kilt panels, bracers, and large cloaks.
+
+### WEAPONS
+Celtic-inspired swords, spears, greatswords, warhammers, axes, bows, and daggers. Distinctive LEAF-SHAPED BLADES, engraved bronze/dark iron, Celtic knotwork, spiral motifs, leather-wrapped grips, carved wood, clan symbols, ceremonial detailing. Weapons read: ancient, handcrafted, brutal, elegant, legendary.
+
+### UNIVERSAL READ
+Both genders: sexy, heroic, battle-ready, distinctly human, culturally consistent.
+
+### LAW RECONCILIATIONS
+- CLOAKS + JEWELRY ARE IN: the old no-cloak/no-brooch/no-jewelry ban on class art is superseded — ornate cloaks, torcs, jewelry are canon for classes.
+- FITTED ARMOR IS IN: the no-polished-metal / raw-only rule is superseded — bronze and dark iron armor pieces are canon; raw hide/cord stays as trim and under-layers.
+- CLAN SYMBOLS = knotwork/spiral motifs + Avalon gate-rune marks ONLY — Rune Origin Law holds, no real-world scripts (no ogham, no futhark).
+- Kit-Integrity, Fit-Body, hourglass sizing, Female Face/Expression/Scene laws all hold unchanged.
+- 70/30 functional-provocative split (Mythic Armor Doctrine) holds and is realized through this grammar.
+
+## THE OLD FIRST CRAFTS GRAMMAR (below — partially superseded)
+
 # CHARACTER & ARMOR STYLE — THE MYTHIC AGE CRAFT GRAMMAR (proposal for Big's gate · Sept 8 2026)
 
 **The question:** how do the new player characters — the six classes — and their armor look under the new lore?
