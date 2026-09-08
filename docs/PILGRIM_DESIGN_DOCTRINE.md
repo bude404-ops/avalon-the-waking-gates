@@ -2,6 +2,8 @@
 The six Orders take Middle English romance names: KNIGHT (was Warden), PALMER (was Wayfarer), SEXTON (was Keeper), CLERK (was Cantor), FORESTER (was Vigil), SMYTH (was Smith). All standing laws carry over unchanged — same souls, true names. 'Sir' is the Knight's in-lore honorific. Elite enemy = THE OATHLESS.
 
 # PILGRIM DESIGN DOCTRINE v1.0 — The Human Lane
+
+> **CLASS SYSTEM v2 POINTER (Sept 8 2026):** the PLAYER combat classes are now THE SIX CLASSES (Sovereign/Ravager/Warden/Veilborn/Weaver/Wildborn — docs/CLASS-SYSTEM.md, Ancient Mythic Age archetypes). The Orders below remain canon as the world's pilgrimage institutions (mortal tier, NPC/world art). God empowerment lives in the God-Class Matrix.
 Sept 5, 2026. Governs all human/pilgrim concept art (the colossi live in COLOSSUS_DESIGN_DOCTRINE.md).
 
 ## THE HOOD (Put-Away Face)
