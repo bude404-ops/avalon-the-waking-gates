@@ -288,3 +288,5 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - RAVAGER CANON LOCKED (Sept 8 ~4:39 PM, Big: 'Keep ravager'): art/approved/CLASS-RAVAGER-CANON.png — second of six class pieces. Ashfall pairing + realm-native staging confirmed in canon (ember badlands, oxide-red whisper, gate-rune greatsword). Queue advances: Warden (Stoneheart) next.
 
 - WARDEN CANON LOCKED (Sept 8 ~4:41 PM, Big: 'Keep warden'): art/approved/CLASS-WARDEN-CANON.png — third of six class pieces. Stoneheart pairing + realm-native staging confirmed (standing-stone canyon, geode glimmer, river-stone warhammer, bone-grey whisper). Queue advances: Veilborn (Duskmourn) next.
+
+- VEILBORN V1 REJECTED (Sept 8 ~4:43 PM, Big: weapons don't match — mismatched pair + an extra belt blade that shouldn't exist). KIT-INTEGRITY LAW added to class art: the class kit renders EXACTLY as designed (Veilborn = matched twin blades and NOTHING else — matched pairs must match; no extra/backup weapons on the body). V2 re-rolled under the law: identical twin dark-iron blades held one in each hand, empty sheaths, no other weapons anywhere — in Big's court (commit pending verdict).
