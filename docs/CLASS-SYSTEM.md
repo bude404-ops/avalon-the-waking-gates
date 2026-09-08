@@ -109,3 +109,15 @@ One male + one female of each class = **12 player-character models at launch. No
 
 **Pipeline note:** the 2D canon gate remains the six realm-neutral class key pieces (Sovereign first); the M/F split is realized at the 3D model phase (Meshy stays paused until 2D locks). Female 2D canon per class may follow if Big calls for it.
 
+
+
+## FEMALE FRAME SIZING LAW (Sept 8 2026, Big: 'Kat Dennings frame is example we just need different sizes for the classes')
+- ALL female class models render on the SAME curvy hourglass base frame: full natural bust, cinched narrow waist, rounded hips — realistic, never exaggerated, shape prominent and clearly readable (never athletic-flat, never slim-straight).
+- The ONLY thing that varies per class is the SIZE/SCALE of that hourglass frame, cut to the class build grammar:
+  - Sovereign-F: tall statuesque hourglass
+  - Ravager-F: tall broad hourglass, heavier build
+  - Warden-F: stocky strong hourglass, thickset
+  - Veilborn-F: lean compact hourglass, wiry
+  - Weaver-F: slim spare hourglass
+  - Wildborn-F: athletic feral hourglass, agile build
+- Prompts describe the SHAPE only — never any celebrity name or likeness.
