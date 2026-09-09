@@ -48,4 +48,4 @@ Render each from: front A-pose (match the ref plate), 3/4 hero view, side profil
 - Zero script/runes beyond the gate-rune mark.
 
 ## STEP 7 — WHEN DONE
-Push the Unity project (or export .fbx/.glb + textures) — I QC from here against the canon files, then we roll straight to Ravager M+F (the boar-head breastplate is the hero piece there; ref art/approved/REF-SHEET-CLASS-RAVAGER-M-CANON.png).
+Push the Unity project (or export .fbx/.glb + textures) — I QC from here against the canon files, then we roll straight to Ravager M+F (the boar-head breastplate is the hero piece there; ref art/approved/REF404-GEN-CLASS-RAVAGER-M-CANON.png).

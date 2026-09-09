@@ -55,3 +55,6 @@ Big: 'Lets go Path 3 you do the heavy lifting, and keep the names you generated.
 
 ## SEPT 9 ~4:50 PM — 3D ROUTE CORRECTED
 Big rejected the Blender base pass ('that is bad') and confirmed the AI-generation route: locked canon art -> AI 3D generation (404-GEN Stage C) -> Unity-ready GLB -> Unity (all tools in Unity, Blender retired). Runpod L40S rig armed; blocked only on Runpod balance top-up.
+
+## SEPT 9 ~5:15 PM — 3D REF SHEET PURGE (Big: 'the 3d reference sheets have weapons and different view angles that should have been fixed and delete old images')
+The 12 weaponless single-view V2 plates (REF404-GEN-CLASS-*-CANON.png) are THE ONLY canon 3D reference sheets. The old REF-SHEET-CLASS-* multi-view weapon sheets are DELETED from the working tree (preserved in git history only). All 12 generation inputs rebuilt from the corrected plates (no cropping needed — plates are already single front view, weaponless). Aedan's V1 GLB (generated from the wrong old sheet) is SUPERSEDED — regenerates from the corrected plate when free quota resets.

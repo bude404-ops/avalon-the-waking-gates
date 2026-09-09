@@ -1,6 +1,6 @@
 # UNITY 3D MODEL BUILD MANIFEST — THE 12 CLASS MODELS (Sept 9 2026)
 
-Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset Store (UModeler X for in-editor modeling/retopo/rig/skin)**, assembled on Big's seat (Unity Personal, free, commercial OK; Asset Store EULA = commercial use on all tiers). This manifest is the build order; the 404-GEN reference sheets (art/pending/REF404-GEN-CLASS-*-V2.png (weaponless plates per the Ref-Sheet Laws; V1 superseded)) are the modeling/QC reference plates; the locked class canon keys (art/approved/CLASS-*-CANON.png) are the art-direction bible and QC bar.
+Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset Store (UModeler X for in-editor modeling/retopo/rig/skin)**, assembled on Big's seat (Unity Personal, free, commercial OK; Asset Store EULA = commercial use on all tiers). This manifest is the build order; the 404-GEN reference sheets (art/approved/REF404-GEN-CLASS-*-V2.png (weaponless plates per the Ref-Sheet Laws; V1 superseded)) are the modeling/QC reference plates; the locked class canon keys (art/approved/CLASS-*-CANON.png) are the art-direction bible and QC bar.
 
 ## PIPELINE PER MODEL
 1. **Base** — rigged humanoid base from Asset Store (pick ONE consistent base for all 12: same skeleton = shared animation sets).
@@ -49,7 +49,7 @@ Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset
 ## V2 REVISION LAWS (Sept 9 2026, Big's review of the V1 plates)
 
 ### REF-SHEET WEAPONLESS LAW (Big: "make sure there arent weapons on them for the 3d reference sheets images")
-404-GEN reference plates are BODY/ARMOR reference only — ZERO weapons in frame (no held weapons, no sheathed weapons, no staves, no claw gauntlets). Hands relaxed and empty. Weapons are SEPARATE 3D PROPS in Unity (one per class kit, built from the canon key art; kit-integrity still governs the weapon prop itself). The weaponless plate keeps the modeling pass clean and lets the weapon asset be attached/detached independently. All 12 plates re-rolled V2 weaponless (art/pending/REF404-GEN-CLASS-*-V2.png); V1 superseded.
+404-GEN reference plates are BODY/ARMOR reference only — ZERO weapons in frame (no held weapons, no sheathed weapons, no staves, no claw gauntlets). Hands relaxed and empty. Weapons are SEPARATE 3D PROPS in Unity (one per class kit, built from the canon key art; kit-integrity still governs the weapon prop itself). The weaponless plate keeps the modeling pass clean and lets the weapon asset be attached/detached independently. All 12 plates re-rolled V2 weaponless (art/approved/REF404-GEN-CLASS-*-V2.png); V1 superseded.
 
 ### MALE CHESTPLATE-DISTINCTION LAW (Big: "the sovereign, ravager and wild one and weaver are good for the males the other two look too identical")
 The male kits must be silhouettes-first — no two chestplates read the same. Locked distinctions:
