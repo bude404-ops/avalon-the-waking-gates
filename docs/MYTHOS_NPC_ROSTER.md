@@ -3,32 +3,32 @@
 # MYTHOS — NPC ROSTER
 **Canon v1.0 — Sept 4 2026. Named mortals for campaign quests, shopkeeping, and town life. Companion to the town lore in MYTHOS_WORLD_BIBLE.md.**
 
-## EMBERMERE / EMBERWASTE
-- **CINDER-WARD EMMARA** — Forgefall's oathsmith-matriarch; keeper of the Crucible Core's first-ember shrine; quest-giver for the Embermere arc. Voice: banked fire — slow, certain, kind.
+## ASHFALL / EMBERWASTE
+- **CINDER-WARD EMMARA** — Forgefall's oathsmith-matriarch; keeper of the Crucible Core's first-ember shrine; quest-giver for the Ashfall arc. Voice: banked fire — slow, certain, kind.
 - **MASTER TALLOW** — Emberhollow's shrine-warden; keeps the lanterns lit inside the burned trees; sells blessings, trades in secrets whispered to charcoal.
-- **ASHPORT CAPTAIN BRENN** — the only Embermere sea-captain willing to sail the Warm Sea since the Fracture; ferryman for the campaign's coastal moves.
+- **ASHPORT CAPTAIN BRENN** — the only Ashfall sea-captain willing to sail the Warm Sea since the Fracture; ferryman for the campaign's coastal moves.
 
-## GALEMARCH / STORMSHARDS
+## SKYREND / STORMSHARDS
 - **WIND-ELDER HALDA** — Vanecliff's storm-namer; reads the sky from the vane-fields; her storm-namings gate the region's missions.
 - **SINGER RENN OF GAILESHOLLOW** — the youngest wind-singer ever to carry the Gale-tone; companion candidate.
 - **SMUGGLER-QUEEN ODDA** — Mistrift's fog-harbor master; sells safe-routes (and unsafe ones), buys anything, asks nothing.
 
-## BLOOMWEALD / BLOOMWARD
+## EVERBLOOM / BLOOMWARD
 - **GROVE-MOTHER SURI** — Petalfall's bloom-temple abbot; runs the Orchard Oath ceremonies; the campaign's conscience.
 - **WARDEN KELL OF THORNHEDGE** — GROW-PLATE warden-captain on the wild verge; first to see things come out of the deep bloom-forest that shouldn't.
 - **HEALER-ARCHIVIST POMM** — Rootmere's gentlest archivist; maps the meadow-moods (the meadows' color-shifts are the region's early-warning system).
 
-## GLOAMBARROW / DUSKMERE
+## DUSKMOURN / DUSKMERE
 - **LANTERN-JUDGE ORVYN** — Lanternhush's keeper of the Ledger; decides whose lantern is lit, whose is allowed to rest; lawful to the point of sorrow.
 - **GRAVE-HARE GIRL "PIP"** — orphan who leads lantern-processions with her hares; the region's heart (and its quiet boss-quest).
 - **ARCHIVE-MOTHER VELLE** — Vailcrest's head record-keeper; knows the Forgotten's true name but has never spoken it. THE endgame NPC.
 
-## MARENVALE / SALTREACH
+## MARENTH / SALTREACH
 - **TIDE-PRIEST DENN** — Mistrift's marker-keeper of the Deep Gate dive-line; holds the region's literal lifeline.
 - **REEF-MASTER SULLA** — Finspire's reef-city engineer; builds in fin-buttress grammar; trades pearl for lantern-glass.
 - **THE DIVER "TWO-BREATH"** — the only mortal who has seen the Deep Gate twice and returned both times; speaks rarely, always in tide-metaphor.
 
-## STONEFELL / QUAKEVEINS
+## STONEHEART / QUAKEVEINS
 - **QUARRY-ELDER BRAN** — Craghelm's snoring-mountain warden; feels tremors in his teeth; the region's seismograph and quest-hub.
 - **CRYSTAL-SMITH YARRA** — Geodefall's quartz-joint artisan; cuts the armor-joint crystals; the region's smith/upgrade vendor.
 - **DEEPFURROW'S FACTOTUM "GRUB"** — the undermarket's info-broker; named for the stone-grubs that warn of quakes; comic relief with a ledger.

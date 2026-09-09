@@ -1,4 +1,4 @@
-# QUEST EXAMPLE — "THE COLD LANTERN" (Emberhollow, Embermere)
+# QUEST EXAMPLE — "THE COLD LANTERN" (Emberhollow, Ashfall)
 **Worked example of the quest loop under THE AVALON DOCTRINE — swept Sept 5 2026 (mortals are humans; the player is a Marked pilgrim; the Gate Rite wakes the god through the pilgrim). Shows every system in play: dual-scale, the FAITH economy, Witness Zones, the Hollow Tide, and the Gate Rite handoff.**
 
 > **THE LOOP IN ONE LINE:** pilgrim-scale mystery builds FAITH by deed → FAITH fills the Gate → the GATE RITE wakes the god through the pilgrim for the Tower Wave climax.
@@ -24,7 +24,7 @@ The evacuation of Emberhollow begins (escort families along the ash-road to Forg
 
 *"Vaelthorn. The Furnace-King. First fire that stood. See us — we are still burning."*
 
-**The FAITH cap breaks.** The Ember Gate opens over the caldera-crown of Forgefall — and the pilgrim raises the Cold Lantern and speaks the Rite — and **THE GATE RITE WAKES THE GOD THROUGH YOU: the caldera splits, Vaelthorn rises, and for this one passage the pilgrim is the god's vessel** — the Marked hand on the condensed-magma greatsword, a hundred feet of the world's first fire, striding across the Embermere toward Emberhollow. The pilgrim was never the god; the pilgrim is the reason it wakes.
+**The FAITH cap breaks.** The Ember Gate opens over the caldera-crown of Forgefall — and the pilgrim raises the Cold Lantern and speaks the Rite — and **THE GATE RITE WAKES THE GOD THROUGH YOU: the caldera splits, Vaelthorn rises, and for this one passage the pilgrim is the god's vessel** — the Marked hand on the condensed-magma greatsword, a hundred feet of the world's first fire, striding across the Ashfall toward Emberhollow. The pilgrim was never the god; the pilgrim is the reason it wakes.
 
 ## ACT 4 — THE TOWER WAVE (giant mode climax)
 Classic Tower Wave defense, colossal rules: **the god holds; the mortals survive.**
@@ -38,7 +38,7 @@ Classic Tower Wave defense, colossal rules: **the god holds; the mortals survive
 ## RESOLUTION & REWARDS
 - **Faith ledger:** the quest pays out FAITH → worship-currency (temple upgrades, new Gate Rites unlocked), plus the town's recorded DEED on the region's ledger ("The Night Emberhollow Rekindled"). One GODSHARD — a splinter of cooled god-element from where the colossus shattered — a ONE-TIME story reward (no-grind guard: godshards come only from story milestones, never farmable trash).
 - **Reclamation:** one hollowed landmark (the kiln-shrine) is now reclaimable — rebuilt into a player-usable Wayshrine over the next in-game week.
-- **Progression hooks:** Mother Brackle's ledger hints the silence-siege came from Gloambarrow (cross-region campaign thread); VESSAMAINE's staff-shrine in Kilnreach has gone quiet too — the fire giantess's own Gate Rite is the next quest in the arc.
+- **Progression hooks:** Mother Brackle's ledger hints the silence-siege came from Duskmourn (cross-region campaign thread); VESSAMAINE's staff-shrine in Kilnreach has gone quiet too — the fire giantess's own Gate Rite is the next quest in the arc.
 - **Companion:** the recruited Emberhound pup matures into a full companion (levels, abilities, mimic-skin slot).
 
 ---

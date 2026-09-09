@@ -1,3 +1,5 @@
+> **⚠️ PANTHEON LAW SUPERSESSION (Sept 8 2026, Big: 'we only make 6 gods 3 male 3 females') — swept Sept 9.** The god roster is SIX PATRON GODS, one per realm, 3 male + 3 female: **ASHFALL — THE EMBER KING (Vaelthorn)** · **SKYREND — THE STORM QUEEN (Sylwenna)** · **STONEHEART — THE IRON KING (Grathwyn)** · **MARENTH — THE TIDE QUEEN (Ylsanne)** · **EVERBLOOM — THE LIFE MOTHER (Mirielle)** · **DUSKMOURN — THE DEATH KING (Morvaine)** — canon art: art/approved/GOD-<realm>-*-CANON.png. The retired second giant per faction (**Vessamaine, Haeldor, Thevraine, Senneth, Nerovane, Bergrune**) is RECAST as REALM TITANS — guardian colossi of the world sites (Avatar Doctrine cover: gate-crossing vessels and realm wardens, never worshipped, never pantheon). Sprite champions (Warden/Keeper cast) remain champion NPCs. All kits/numbers below apply unchanged — to the six playable god forms at giant scale, and to the titan guardians + champions as NPC units. Legacy 24-deity phrasing below is historical.
+
 # Mythos Gates: Ascension — Combat Balance Document
 
 **Version:** 1.0.0
@@ -9,7 +11,7 @@
 
 ## 1. Role Stat Templates
 
-All 28 deities are balanced across 4 combat roles. Each role has a distinct playstyle — no role is objectively "better."
+ROSTER NOTE (Sept 9 sweep): the deity roster is now SIX pantheon gods (3M+3F, Gender-Role Binding: kings = Warrior chassis, queens = Caster chassis) — the Warrior/Caster templates govern the six playable god forms; Archer/Assassin templates govern champion NPCs and titan guardians. All formulas, scaling, and enemy stats below are unchanged and inherited by the current roster. Each role has a distinct playstyle — no role is objectively "better."
 
 ### Warrior (7 deities)
 | Stat | Value | Design |

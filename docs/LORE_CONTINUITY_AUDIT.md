@@ -9,12 +9,12 @@ Previously the registry (Codex/Campaign) and the narrative layer (Stories/Env Sh
 
 | Faction | Gate (CANON) | Location in Mythos | Named in |
 |---|---|---|---|
-| Embermere 🔥 | THE CINDER GATE | caldera-crown above Forgefall, the Embermarch | Codex, Campaign, Env Sheets, Stories |
-| Galemarch 💨 | THE SQUALL GATE | highest sea-stack at Vanecliff, frozen north | Codex ✱, Campaign ✱, Env Sheets, Stories |
-| Bloomweald 🌱 | THE BLOOM GATE | Petalfall, sunlit peaks — GROWN, opens once a year | Codex, Campaign, Env Sheets, Stories |
-| Gloambarrow 💀 | THE DUSK GATE | shrine isles on black water | Codex, Campaign, Stories |
-| Marenvale 🌊 | THE DEEP GATE | beneath the Tidebellow whirlpool, drowned coast | Codex ✱, Campaign ✱, Env Sheets, Stories, Deep Lore |
-| Stonefell 🪨 | THE STONE GATE | inside the mountain, Craghelm's deepest vault | Codex ✱, Campaign ✱, Env Sheets, Deep Lore |
+| Ashfall 🔥 | THE CINDER GATE | caldera-crown above Forgefall, the Embermarch | Codex, Campaign, Env Sheets, Stories |
+| Skyrend 💨 | THE SQUALL GATE | highest sea-stack at Vanecliff, frozen north | Codex ✱, Campaign ✱, Env Sheets, Stories |
+| Everbloom 🌱 | THE BLOOM GATE | Petalfall, sunlit peaks — GROWN, opens once a year | Codex, Campaign, Env Sheets, Stories |
+| Duskmourn 💀 | THE DUSK GATE | shrine isles on black water | Codex, Campaign, Stories |
+| Marenth 🌊 | THE DEEP GATE | beneath the Tidebellow whirlpool, drowned coast | Codex ✱, Campaign ✱, Env Sheets, Stories, Deep Lore |
+| Stoneheart 🪨 | THE STONE GATE | inside the mountain, Craghelm's deepest vault | Codex ✱, Campaign ✱, Env Sheets, Deep Lore |
 
 ✱ = renamed this pass (was Storm/Abyss/Root Gate).
 
@@ -37,7 +37,7 @@ Previously the registry (Codex/Campaign) and the narrative layer (Stories/Env Sh
 ## III. FIXES APPLIED THIS PASS
 1. Gate names unified to Ember/Gale/Bloom/Dusk/Deep/Stone (Codex + Campaign registry rows renamed).
 2. STORIES: First Forge myth re-cast to giant-era canon (gods woke as elements, not armor-smiths); Balancing art scene de-winged; Vaelthorn saga rewritten to raw-magma anatomy; Sylwenna saga completed; 8 new giant sagas (Thevraine, Mirielle, Morvaine, Senneth, Nerovane, Ylsanne, Grathwyn, Bergrune).
-3. WORLD_BIBLE: 'Skywilds' → Galemarch (naming drift from the pre-lock era).
+3. WORLD_BIBLE: 'Skywilds' → Skyrend (naming drift from the pre-lock era).
 4. MYTHOS_WORLD_LORE: giant-era re-cast banner (colossi-remote-vessel framing superseded).
 5. ENVIRONMENT_SHEETS: 'barding-metal' → 'forge-iron' (dragon-era word).
 6. Old-era docs archived to docs/lore/archive-old-era/ (8-faction era + colossi-era cultural docs) with a README marking them non-canon.
@@ -47,9 +47,9 @@ Previously the registry (Codex/Campaign) and the narrative layer (Stories/Env Sh
 Laws ratified AFTER the v1.0 audit, swept across the whole vault this pass:
 
 1. **THE LANTERN IS THE LUMINARIES** (living being, never a tool/prop/fuel-swapped object): AVALON_DOCTRINE's four Lantern Rites reframed to living-flame grammar — PLANT became ALIGHT (the Luminary consents to anchor the Gate Rite; the god wakes THROUGH the rite, never a planted object); PASS became entrusting light to another's Luminary. All 6 questlines + both benchmark quests: ZERO tool/oil violations found ✔. Side quest 'The Emberling Brood' already uses correct grammar (a shrine Luminary with a cold flame) ✔.
-2. **FAITH ECONOMY v2 — THE MACER'S LOOP** (faith-only resource; hits/kills build, abilities spend): GDD resource line rewritten DE -> FAITH; 'Hollowed' debuff now costs +50% FAITH. Quest canon already loop-native: Q5 Embermere banks gathered FAITH for the Gate Rite finale (mechanical door) ✔; Quest loop doc's FAITH-fills-the-Gate grammar unchanged ✔. Old DE language survives only in archived docs.
+2. **FAITH ECONOMY v2 — THE MACER'S LOOP** (faith-only resource; hits/kills build, abilities spend): GDD resource line rewritten DE -> FAITH; 'Hollowed' debuff now costs +50% FAITH. Quest canon already loop-native: Q5 Ashfall banks gathered FAITH for the Gate Rite finale (mechanical door) ✔; Quest loop doc's FAITH-fills-the-Gate grammar unchanged ✔. Old DE language survives only in archived docs.
 3. **EMERGENCE LAW** (colossi rise/sink, never walk): Morvaine's saga 'the Bone Giant walks the Ossuary Plain' recast to a dusk-rise via shadow-road submergence (folk never see him move — the tale keeps its poetry, loses the legs). All other god-movement text checked: Walking Age = primordial myth-history (canon, untouched); Hooded Ways = human-scale aspect (canon, untouched) ✔.
-4. **QUESTLINE VERDICT — all 6 realms PASS the five-pillar doctrine audit** (Embermere pilot doc contains the full checklist; the other five run on the same template). The Embermere finale (Q6) matches the live vertical slice exactly: hold-the-rite defense, Vaelthorn wakes through the pilgrim's completed rite, male pilgrim -> the Furnace King per the gender-match law ✔.
+4. **QUESTLINE VERDICT — all 6 realms PASS the five-pillar doctrine audit** (Ashfall pilot doc contains the full checklist; the other five run on the same template). The Ashfall finale (Q6) matches the live vertical slice exactly: hold-the-rite defense, Vaelthorn wakes through the pilgrim's completed rite, male pilgrim -> the Furnace King per the gender-match law ✔.
 5. **Retired-pantheon residue FLAGGED** (Athena/Tsukuyomi/Gabriel-era names — pre-Avalon Mythos-Gates-Ascension lineage): FACTION_STAT_SHEETS.md + MYTHOLOGY_DEEP_DIVE.md were unambiguous old-era and are now ARCHIVED to docs/lore/archive-old-era/. Ambiguous docs still carrying retired names in reference sections — pending Big's verdict rewrite-vs-archive, do NOT treat as canon: ANIMATION_RIGGING_SPEC, CAMPAIGN_GAMEPLAY_DESIGN, DEITY_ABILITY_KITS, DEITY_UNLOCK_SYSTEM, LEVELING_SYSTEM, ROLE_IDENTITY_SYSTEM, TITAN_DESIGN_STANDARD, WEAPON_SYSTEM_SPEC, CAMPAIGN_VISUAL_LORE_AUDIT, and docs/lore/ numbered old-codex files (04-DEITIES, 07-BELIEF-SYSTEM, 10-*-REALM-CODEX, 23-OLYMPIAN, DEITY_ART_IDENTITY_AUDIT, SOURCE_CULTURE_*). Current canon supersessions: 6-faction ability trees + MYTHOS_DEEP_LORE + MYTHOS_DEITY_COMBAT_KITS + FACTION_BUFFS.
 
 ## III-C. v1.2 PURGE (Sept 6 2026 — BudE404 verdict: 'Yes, purge')

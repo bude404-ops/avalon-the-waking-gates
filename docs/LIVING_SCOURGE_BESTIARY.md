@@ -25,12 +25,12 @@ Shrine wards, golems, automata left by the faithful to guard what matters. 100% 
 
 | Realm | Remnant Folk | Living Fauna | Constructs |
 |---|---|---|---|
-| EMBERMERE (kiln) | CINDER-BRIGANDS — ash-cloaked scav clans stripping cold kilns with pry-bars and torch lines | ember-hounds, slag-rats | KILN-GOLEMS — welded-slag wardens still cooling forges that went cold |
-| GALEMARCH (oath) | OATH-BREAKERS — deserters of dead gods' watches in storm-slick mail, raiding the moor roads | moor-wolves, rain-herons (dive) | WARDEN-EFFIGIES — lightning-rod totem pillars that animate on approach |
-| BLOOMWEALD (growth) | SAP-THIEVES — briar-cult foragers harvesting living wood for sale | thistle-stags, strangle-creepers (vines that pull) | GARDENER-MARIONETTES — woven-wood greenhouse pupnets on pole-lines |
-| GLOAMBARROW (lantern) | GRAVE-LEVIES — tomb-spelunker gangs, lantern-tax robbers | gloam-bats, gloam-foxes | CRYPT-SENTINELS — brass lantern-post constructs; none pass unlit |
-| MARENVALE (tide) | SALT-REAVERS — tide-pirate clans raiding the drowned streets at low tide | reef-crawlers, gull-swarms | TIDE-BREAKERS — anchor-chain temple guards standing in the surf |
-| STONEFELL (strata) | MINE-SCRAG — tunnel clans chipping god-bone to sell | burrow-wyrms, cave-badgers | BELL-WARDENS — stone bell-golems sealing the deep shafts |
+| ASHFALL (kiln) | CINDER-BRIGANDS — ash-cloaked scav clans stripping cold kilns with pry-bars and torch lines | ember-hounds, slag-rats | KILN-GOLEMS — welded-slag wardens still cooling forges that went cold |
+| SKYREND (oath) | OATH-BREAKERS — deserters of dead gods' watches in storm-slick mail, raiding the moor roads | moor-wolves, rain-herons (dive) | WARDEN-EFFIGIES — lightning-rod totem pillars that animate on approach |
+| EVERBLOOM (growth) | SAP-THIEVES — briar-cult foragers harvesting living wood for sale | thistle-stags, strangle-creepers (vines that pull) | GARDENER-MARIONETTES — woven-wood greenhouse pupnets on pole-lines |
+| DUSKMOURN (lantern) | GRAVE-LEVIES — tomb-spelunker gangs, lantern-tax robbers | gloam-bats, gloam-foxes | CRYPT-SENTINELS — brass lantern-post constructs; none pass unlit |
+| MARENTH (tide) | SALT-REAVERS — tide-pirate clans raiding the drowned streets at low tide | reef-crawlers, gull-swarms | TIDE-BREAKERS — anchor-chain temple guards standing in the surf |
+| STONEHEART (strata) | MINE-SCRAG — tunnel clans chipping god-bone to sell | burrow-wyrms, cave-badgers | BELL-WARDENS — stone bell-golems sealing the deep shafts |
 
 ## DUNGEON PACING GRAMMAR (design intent)
 - Hollows = the dread pulse (routines, interrupts, the mournful wave).

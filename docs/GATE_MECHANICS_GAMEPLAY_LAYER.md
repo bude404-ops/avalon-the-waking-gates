@@ -85,7 +85,7 @@ ACTIVATE (rite) · DEFEND (structural waves) · PURGE (cleanse veins) · REPAIR 
 
 ## 10. GATE TRAVEL — pilgrimage, not teleport (the ruling)
 
-- Lore-safe travel: an ACTIVE gate leads to ITS deity's realm — the realm-threshold (Ember Gate → the Embermere). You walk THROUGH as a pilgrim, not teleport between mortal points
+- Lore-safe travel: an ACTIVE gate leads to ITS deity's realm — the realm-threshold (Ember Gate → the Ashfall). You walk THROUGH as a pilgrim, not teleport between mortal points
 - Threshold zones are instanced god-territory: earn ascension charges, meet your giant aspect, take relic quests
 - **Ruling: NO mortal-to-mortal fast travel through gates.** Mortal travel stays on pilgrim roads (keeps the world big, keeps gates sacred, honors "not a fast-travel mechanic")
 

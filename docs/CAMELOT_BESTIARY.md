@@ -9,11 +9,11 @@ Avalon is the dark mirror of Camelot: the king is dead, the knights are hollow, 
 ## II. THE ARTHURIAN ROSTER — realm mappings
 | Realm | Arthurian identity | Role |
 |---|---|---|
-| Galemarch (storm) | CŴN ANNWN — the hounds of the otherworld, white with ember-red eye-reads, heard before seen | storm-moor pack beasts |
-| Marenvale (tide) | THE AFANC — the giant lake-beast of Welsh myth | tide-realm apex; kelp-lurkers are its spawn |
-| Bloomweald (bloom) | THE QUESTING BEAST — Malory's bête glatisant, serpent-deer-leopard hybrid, the chase no knight finishes | bloom-realm legendary; dungeon draw |
-| Gloambarrow (dusk) | THE WHITE HART — the enchanted hart that lures knights off their quests | lure-beast; the hunt IS the trap |
-| Stonefell (stone) | STRATA GIANT — the giant of the shore, grown into the quarry itself | stone-realm colossus |
+| Skyrend (storm) | CŴN ANNWN — the hounds of the otherworld, white with ember-red eye-reads, heard before seen | storm-moor pack beasts |
+| Marenth (tide) | THE AFANC — the giant lake-beast of Welsh myth | tide-realm apex; kelp-lurkers are its spawn |
+| Everbloom (bloom) | THE QUESTING BEAST — Malory's bête glatisant, serpent-deer-leopard hybrid, the chase no knight finishes | bloom-realm legendary; dungeon draw |
+| Duskmourn (dusk) | THE WHITE HART — the enchanted hart that lures knights off their quests | lure-beast; the hunt IS the trap |
+| Stoneheart (stone) | STRATA GIANT — the giant of the shore, grown into the quarry itself | stone-realm colossus |
 | Wild zones | BARGHESTS (black dogs), WYVERNS (heraldic drakes) | roaming threats |
 All follow the Hollow design laws when hollow (face-void, color-absence, craft-intact); all follow the Arthurian Time-Period Law for the world around them.
 

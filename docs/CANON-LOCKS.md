@@ -4,3 +4,9 @@
 - **QUESTING BEAST — two takes in court (Sept 9):** V1 the Glatisant (first send, commit 1795f9a) + V2 mid-turn re-roll (commit 2fd4c13). Both pending; Big picks one or orders a fresh roll.
 
 - **BLANKET FINISH AUTHORIZATION (Sept 9 ~2:40 AM, Big: 'im going to give the go ahead for you to finish any artwork for creatures that are left and for the world just use the parameters we have set in place and the new lore updates')**: Big delegates verdict authority to BIGagent404 for (1) ALL remaining creature/fauna art and (2) the STAGE2 world pass. Standing laws govern: enemy-art laws (neutral staging, zero script, unlit lanterns, solid beast grammar) for creatures; Mythic World Law + realm palettes (Skyrend storm slate / Ashfall oxide red / Stoneheart bone grey / Duskmourn crimson+black / Marenth tide teal / Everbloom deep moss) + Lantern-Region Aura + Mythic Celtic chisel grammar for the world. The 24 realm compositions locked Sept 5 predate the new lore and get re-rolled under the updated stack. One-roll-one-file + dupe-purge discipline holds throughout. Big can veto-swap any piece with one word.
+
+## SEPT 9 LORE SWEEP — LEGACY GOD ART (Pantheon Law v4.1 enforcement)
+The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/QUEEN, GOD-GALEMARCH-KING/QUEEN, GOD-MARENVIALE-KING/QUEEN, GOD-STONEFELL-KING/QUEEN) moved to art/legacy/ — superseded by the locked six-patron pantheon (Storm Queen/Skyrend, Ember King/Ashfall, Iron King/Stoneheart, Death King/Duskmourn, Tide Queen/Marenth, Life Mother/Everbloom). The treant read carries into the Life Mother (living wood, bark, moss, blossom, sap-glow). Git history is the recovery path.
+
+## SEPT 9 CINEMATIC PASS
+7 pieces vaulted pending: teaser key art + six campaign cut-scene stills (art/pending/CINEMATIC-*). 2.39:1 cut-scene grade, full law stack, zero script. Awaiting verdicts — or Big's blanket 'Keep all'.

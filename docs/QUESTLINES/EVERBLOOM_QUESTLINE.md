@@ -1,4 +1,4 @@
-# BLOOMWEALD — THE HARVEST DEBT (Everbloom chapter questline)
+# EVERBLOOM — THE HARVEST DEBT (Everbloom chapter questline)
 
 **Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the harvest debt — every gift is borrowed; something is owed back to the Reach.
 **Chapter wound:** the orchard-oath is failing — trees that were promised tenders aren't growing, and the vale's seeds come back hollow.
@@ -7,7 +7,7 @@
 - **HOOK:** A farmer's trees won't take his offerings anymore. He asks the pilgrim to plant one seed for him — just one, to see if it's the trees or the man. *(Want: his grove. Lie: he sold his tender-years to pay a famine debt — the trees know. Cost: if the trees take the stranger's seed, the vale learns what he did.)*
 - **TRAIL:** Every tree in the vale wears a debt-token: twine, notches, a child's ring. The forest is a ledger (the world SHOWS the theology).
 - **RITE:** Planting the debt-seed with the farmer's own hands guided by the pilgrim's — the planting-oath, half-murmured by the row-folk.
-- **CHOICE (two goods):** Plant your own seed (YOUR debt now — Bloomweald tracks what the pilgrim owes, all game long) or refuse (his grove dies; the debt stays his).
+- **CHOICE (two goods):** Plant your own seed (YOUR debt now — Everbloom tracks what the pilgrim owes, all game long) or refuse (his grove dies; the debt stays his).
 - **ECHO:** The pilgrim's tree grows in the vale or the farmer's grove stands dead on the hill; row-folk count both.
 - **TRUTH-SLIVER:** Nothing here is a gift. The trees are ledger pages. (Learned by planting in one.)
 
@@ -46,4 +46,4 @@
 - **"The Flower Register"** — a Cantor keeps a registry of every bloom that ever opened; she asks the pilgrim to find the one flower missing from it (mystery in miniature).
 
 ## DEPTHS TIE-IN
-**The Bloomweald Depths** = the Bloom-King's dreamed orchards — layouts of root-vaults and petal-chambers. Depth fragments: a graft that grows both trees' memories (seen, not read).
+**The Everbloom Depths** = the Bloom-King's dreamed orchards — layouts of root-vaults and petal-chambers. Depth fragments: a graft that grows both trees' memories (seen, not read).

@@ -1,4 +1,4 @@
-# GALEMARCH — THE UNREAD SKY (Skyrend chapter questline)
+# SKYREND — THE UNREAD SKY (Skyrend chapter questline)
 
 **Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the storm-reading — truth is told to your face, and oaths are sworn in the open rain.
 **Chapter wound:** the storm-vanes have stopped turning. Haeldor's Circuit is broken — the sky is lying now, and every island reads the sky by what its roofline does.
@@ -47,4 +47,4 @@
 - **"The Rain-Scribe"** — a Cantor who records oaths by rain-shadow asks the pilgrim to witness a dying man's last promise (two-goods in miniature).
 
 ## DEPTHS TIE-IN
-**The Galemarch Depths** = the Storm-King's dreamed thunderheads — layouts of cloud-chambers solid enough to walk, lightning frozen mid-arc. Depth fragments: a weather-glass shard that shows tomorrow's grief (seen, not read).
+**The Skyrend Depths** = the Storm-King's dreamed thunderheads — layouts of cloud-chambers solid enough to walk, lightning frozen mid-arc. Depth fragments: a weather-glass shard that shows tomorrow's grief (seen, not read).

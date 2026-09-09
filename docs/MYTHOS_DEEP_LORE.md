@@ -35,7 +35,7 @@ Every faction's festival song shares the melody (the Forgotten's name). Buried d
 
 ## III. ITEM LORE SYSTEM (delivery mechanism)
 Every item carries a 1–2 line description that is a FRAGMENT, never an explanation:
-- **Unmade Champion's pauldron:** "Quarry-plate, made in Stonefell — sold, resold, worn by three soldiers and one liar. The lantern-niche was cut AFTER the third burial." (Why? Who lights it? Duskmere quest-line opens from an item.)
+- **Unmade Champion's pauldron:** "Quarry-plate, made in Stoneheart — sold, resold, worn by three soldiers and one liar. The lantern-niche was cut AFTER the third burial." (Why? Who lights it? Duskmere quest-line opens from an item.)
 - **Mutefolk's dry net:** "The knots are Ashport weave. The fisherman's hands remember the pattern. Something in the Hollow does the tying."
 - **Grimlight lantern-glass:** "Finspire pearl-glass, sandblasted opaque. It dims what it holds — and it holds nothing."
 - **The Forgefall first-ember shard (key item):** "Vessamaine's gift. It burns without fuel. Every hearth in Forgefall is its descendant. The mothers of the Embermarch tell children it will go out if ever no one is kind."

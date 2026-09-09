@@ -1,6 +1,6 @@
 # THE HOLLOW TIDE — ENEMY BESTIARY v2.0
 
-> **SEPT 9 RESYNC (canon-current layer):** realm names map to the locked six — Embermere→ASHFALL, Galemarch→SKYREND, Bloomweald→EVERBLOOM, Gloambarrow→DUSKMOURN (crimson/black colorway), Marenvale→MARENTH, Stonefell→STONEHEART. The player-facing armor grammar is now the MYTHIC CELTIC class kit (Sovereign/Ravager/Warden/Veilborn/Weaver/Wildborn) — the Unmade Champions steal THAT grammar. LANTERN LAW applies: the living flame consents and cannot be hollowed or stolen — a Hollow's lantern is a dead vessel, the flame simply gone (the vessel-without-flame read IS the wrongness). Hollow units carry no light of their own; color-drain rings drain the region colorways (Ashfall oxide-red grays out, Duskmourn crimson blacks out, etc.). **ENEMY-ART REALM-NEUTRAL STAGING LAW (Sept 9, Big: 'We also need to make them in a neutral background because we dont know where the players will choose to start'):** enemy/creature canon art stages on a NEUTRAL background — no realm colorway, no region landmarks, no region light. Units appear in every realm, so their canon keys are realm-agnostic: cold desaturated neutral stone-and-mist staging, unit grammar only. The color-drain ring reads only in realm-native marketing/scene art, not in the neutral canon keys. Alongside the global enemy-art no-script law (Big, Sept 9: 'Need to remove the script wording from image'). The enemy art pass (Sept 9, Big: 'next is the enemies and creatures') rolls through this roster one verdict at a time: T1 Mutefolk → T1 Shade-Beasts → T1 Grimlights → T2 Unmade Champion → T2 Erased Drake → T3 Gate-Worm → T3 Echo of the Forgotten → Camelot fauna (realm apex creatures), then per-realm sets.
+> **SEPT 9 RESYNC (canon-current layer):** realm names map to the locked six — Ashfall→ASHFALL, Skyrend→SKYREND, Everbloom→EVERBLOOM, Duskmourn→DUSKMOURN (crimson/black colorway), Marenth→MARENTH, Stoneheart→STONEHEART. The player-facing armor grammar is now the MYTHIC CELTIC class kit (Sovereign/Ravager/Warden/Veilborn/Weaver/Wildborn) — the Unmade Champions steal THAT grammar. LANTERN LAW applies: the living flame consents and cannot be hollowed or stolen — a Hollow's lantern is a dead vessel, the flame simply gone (the vessel-without-flame read IS the wrongness). Hollow units carry no light of their own; color-drain rings drain the region colorways (Ashfall oxide-red grays out, Duskmourn crimson blacks out, etc.). **ENEMY-ART REALM-NEUTRAL STAGING LAW (Sept 9, Big: 'We also need to make them in a neutral background because we dont know where the players will choose to start'):** enemy/creature canon art stages on a NEUTRAL background — no realm colorway, no region landmarks, no region light. Units appear in every realm, so their canon keys are realm-agnostic: cold desaturated neutral stone-and-mist staging, unit grammar only. The color-drain ring reads only in realm-native marketing/scene art, not in the neutral canon keys. Alongside the global enemy-art no-script law (Big, Sept 9: 'Need to remove the script wording from image'). The enemy art pass (Sept 9, Big: 'next is the enemies and creatures') rolls through this roster one verdict at a time: T1 Mutefolk → T1 Shade-Beasts → T1 Grimlights → T2 Unmade Champion → T2 Erased Drake → T3 Gate-Worm → T3 Echo of the Forgotten → Camelot fauna (realm apex creatures), then per-realm sets.
 **Canon v2.0 — Sept 5 2026. RE-SYNCED to THE AVALON DOCTRINE (mortals are humans). The Hollow's units: erased-things, thief's copies of what they consumed. Tiers map to the combat spec (T1 ants / T2 brutes / T3 bosses). The Hollow cannot create — it can only hollow.**
 
 ## WHAT THE HOLLOW IS (current canon lock)
@@ -11,7 +11,7 @@
 
 ## GLOBAL HOLLOW LOOK
 - Forms that read as "silhouette where substance should be": edges that don't quite hold, faces that are ABSENCE rather than features, movement like film run backwards.
-- DE-COLORED, never evil-colored. Where they stand, the region's element DRAINS in a radius — ember-gold grays out in Embermere, storm-blue flattens to slate in Galemarch, the green goes out of Bloomweald, lantern-violet dims to ash in Gloambarrow, tide-teal stills to dead glass in Marenvale, crystal-light goes dark in Stonefell. Environment tell = color-drain rings.
+- DE-COLORED, never evil-colored. Where they stand, the region's element DRAINS in a radius — ember-gold grays out in Ashfall, storm-blue flattens to slate in Skyrend, the green goes out of Everbloom, crimson dims to ash in Duskmourn, tide-teal stills to dead glass in Marenth, crystal-light goes dark in Stoneheart. Environment tell = color-drain rings.
 - The Hollow has NO light of its own. Where the gods ARE their element, the Hollow is the UN-thing: no glow, no shadow-cast, no sound of its own.
 
 ## SCALE LAW (dual-scale enemy read)
@@ -31,7 +31,7 @@
 
 ## T3 — THE AVATARS OF HUNGER (world bosses — full duels, 66%/33% phases)
 - **GATE-WORMS:** colossal serpentine masses of ERODED GATE-MASONRY pushing through fractures — living siege engines of stolen stone. Every Gate-fracture births them; Tower Wave sieges are Gate-Worm attacks. Phase 1: masonry shell (weak points at the old hinge-stones). Phase 2: shell breaks, the void-choir inside exposed.
-- **THE DEAD-GOD SHAPES:** each faction's Act-closer — the Hollow wearing the shape of a god mortals stopped believing in (first canon: the HOLLOW FURNACE BRUTE of Embermere, a dead furnace-god's silhouette re-hearsed in absence). They mirror the region's own giant grammar: fights that feel like dueling a memory of your own god.
+- **THE DEAD-GOD SHAPES:** each faction's Act-closer — the Hollow wearing the shape of a god mortals stopped believing in (first canon: the HOLLOW FURNACE BRUTE of Ashfall, a dead furnace-god's silhouette re-hearsed in absence). They mirror the region's own giant grammar: fights that feel like dueling a memory of your own god.
 - **THE ECHO OF THE FORGOTTEN:** mid-campaign titan — a titanic WRONG-SHAPED SILHOUETTE, vaster than any giant, made of the ABSENCE of the Forgotten's old form. It has no face because no one ever recorded one. It fights as the dark mirror of a giant god — element-shed in reverse (it sheds ABSENCE), same telegraph grammar as player giants, so the player learns giant-phase timings by fighting their own mirror. CANNOT cross a Gate while a Gate stands — it sends shapes and worms instead.
 - **THE NAMING (endgame event, not a unit):** at the Empty Pedestal the Hollow's advance stalls — because mortals begin to SAY THE NAME of the Forgotten. Naming is the one act the Hollow cannot hollow: to name a thing is to form it. The endgame's true weapon is a word. The Forgotten, finally named, is no longer absence — and absence was all it had.
 
@@ -39,7 +39,7 @@
 The Hollow does not reproduce; it SPREADS. Fractures in a Gate leak raw residue into the region; residue hollows what it touches (T1), accretes copies of the region's strongest things (T2), and where belief has already guttered out, rehearses whole dead gods (T3). Clear the fracture, the tide stops. The strategic layer is therefore GATE INTEGRITY — the FAITH loop is the war.
 
 ## CANON LOCK (Sept 5 2026 — BudE404 'Keep' on all three)
-The Hollow champion art is canonized: **THE ERASED DRAKE** (T2 champion — stolen Embermere armor, art/hollow -> art/approved/HOLLOW-ERASED-DRAKE-CANON.jpg), **THE FURNACE BRUTE** (T3 echo — the dead god's silhouette worn by the Hollow, art/approved/HOLLOW-FURNACE-BRUTE-CANON.jpg). Hollow doctrine stands: the Unmade steal the vault's own armor grammar and giant silhouettes — the Hollow wears our identity against us.
+The Hollow champion art is canonized: **THE ERASED DRAKE** (T2 champion — stolen Ashfall armor, art/hollow -> art/approved/HOLLOW-ERASED-DRAKE-CANON.jpg), **THE FURNACE BRUTE** (T3 echo — the dead god's silhouette worn by the Hollow, art/approved/HOLLOW-FURNACE-BRUTE-CANON.jpg). Hollow doctrine stands: the Unmade steal the vault's own armor grammar and giant silhouettes — the Hollow wears our identity against us.
 
 ---
 
@@ -56,7 +56,7 @@ The Hollow canon files pre-date the style unification. The redo runs the whole b
 7. **SCALE ANCHORS everywhere:** T1/T2 carry a lantern or landmark for pilgrim-scale read; T3 carries a tiny pilgrim + lantern as the only light in frame.
 8. Standard prompt laws apply: solo subjects, zero text, no deity names, no banned vocabulary.
 
-**Redo order (one realm set at a time):** EMBERMERE SET FIRST — T1 MUTEFOLK, T2 UNMADE CHAMPION, T3 FURNACE BRUTE. On BudE404's per-unit verdicts: the remaining units (Shade-Beasts, Grimlights, Erased Drake, Gate-Worm, Echo of the Forgotten) + the five other realm sets roll on the kept grammar.
+**Redo order (one realm set at a time):** ASHFALL SET FIRST — T1 MUTEFOLK, T2 UNMADE CHAMPION, T3 FURNACE BRUTE. On BudE404's per-unit verdicts: the remaining units (Shade-Beasts, Grimlights, Erased Drake, Gate-Worm, Echo of the Forgotten) + the five other realm sets roll on the kept grammar.
 
 ---
 
@@ -77,15 +77,15 @@ Two different properties, previously conflated. Split them:
 - **NAMED things shield the one BOUND to them.** A pilgrim's protection is not gear — it's the VOW: the Mark (the Gate's flame, carved and dedicated), the relic lantern (a piece of a named god's own light), the rite-tools (sanctified, purpose-named), the FAITH they carry. These aren't just finished — they're DEDICATED, and dedication is a naming with a person attached. To hollow a Marked pilgrim, the Hollow would have to unmake the vow itself — and it cannot unmake a naming.
 - **Why the villagers fell:** no Mark, no vow, no relic. Ordinary made things survive beside you, not over you.
 - **Why T2 Unmade Champions exist at all:** they are FALLEN PILGRIMS — and a vow ends at death. Death closes the vow, the protection ends, and the Hollow can finally take the person. It never gets the plate. That is why First Pilgrim armor still walks after ages: the armor outlived the vow that shielded it.
-- **The danger hook (gameplay law):** while the pilgrim lives and the vow holds, the Hollow cannot hollow them. BREAK the vow — and the door opens. (Ties to Stonefell theology: a vow made is terrain; break one and the ground — and the Hollow — remembers.) The Hollow's only path to a pilgrim runs through the pilgrim's own broken word.
+- **The danger hook (gameplay law):** while the pilgrim lives and the vow holds, the Hollow cannot hollow them. BREAK the vow — and the door opens. (Ties to Stoneheart theology: a vow made is terrain; break one and the ground — and the Hollow — remembers.) The Hollow's only path to a pilgrim runs through the pilgrim's own broken word.
 
 ## REALM SETS ROLLED (Sept 5 night, BudE404 'Gotcha I like it ol lets finish') — HOLLOW ART REDO COMPLETE 24/24
 All five remaining realm sets rolled on the locked redo grammar (regional Drake / Choir / Brute per realm):
-- **GALEMARCH:** storm-drake breathing dead calm (motionless air, seeds frozen mid-fall)  / STORM BRUTE — dead storm-god, storm-bell monolith crown, cloud-mass drained to inert slate, zero lightning.
-- **BLOOMWEALD:** bloom-drake breathing wilt-absence (petals fall mid-bloom)  / BLOOM BRUTE — dead bloom-god, blossom-bough crown, every petal drained to ash.
-- **GLOAMBARROW:** dusk-drake breathing un-light (flames gutter to nothing)  / DUSK BRUTE — dead dusk-god, lantern-grave monolith crown, wisp-lights gone dark.
-- **MARENVALE:** tide-drake breathing stillness (waves freezing to dead glass mid-fall) / TIDE BRUTE — dead tide-god, sunken-shrine crown, sea gone glass-flat.
-- **STONEFELL:** stone-drake breathing crumbling (solid rock goes soft and powdery)  / STONE BRUTE — dead stone-god, standing-stone trilithon crown, crystal veins gone dark, promise-lines smoothed unreadable.
+- **SKYREND:** storm-drake breathing dead calm (motionless air, seeds frozen mid-fall)  / STORM BRUTE — dead storm-god, storm-bell monolith crown, cloud-mass drained to inert slate, zero lightning.
+- **EVERBLOOM:** bloom-drake breathing wilt-absence (petals fall mid-bloom)  / BLOOM BRUTE — dead bloom-god, blossom-bough crown, every petal drained to ash.
+- **DUSKMOURN:** dusk-drake breathing un-light (flames gutter to nothing)  / DUSK BRUTE — dead dusk-god, lantern-grave monolith crown, wisp-lights gone dark.
+- **MARENTH:** tide-drake breathing stillness (waves freezing to dead glass mid-fall) / TIDE BRUTE — dead tide-god, sunken-shrine crown, sea gone glass-flat.
+- **STONEHEART:** stone-drake breathing crumbling (solid rock goes soft and powdery)  / STONE BRUTE — dead stone-god, standing-stone trilithon crown, crystal veins gone dark, promise-lines smoothed unreadable.
 Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + SHEET-HOLLOW-REDO-REALM-SETS-5-v1.png. p-hash clean across all 24 redo units. PER-UNIT VERDICTS PENDING.
 
 ---
@@ -96,25 +96,25 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 
 **MASH MAPPING (per Big: hollow are built for the dungeon masher):** every realm dungeon runs SWARM → PACK TRASH → ELITE → BOSS. The realm's FAUNA carries the speed identity — each region's beasts attack with different verbs (see below), so every realm FEELS different in the hands, not just on the eyes.
 
-### EMBERMERE (kiln-voice — forge country, ash wastes, kiln-catacombs)
+### ASHFALL (kiln-voice — forge country, ash wastes, kiln-catacombs)
 - **Erased:** forgemasters re-heating cold forges; ash-winnowers sifting dead cinders. Strikers — slow, heavy, slag-cleaver arcs.
 - **Shade-beasts:** ASH-HOUNDS (eyeless, silent pack-coursers — they CHARGE, the realm's speed verb); FORGE-SPIDERS (metal legs from stolen tools — they POUNCE from ceiling cracks); EMBERMITES (swarm-dimers, the realm's T0).
-- **Elite:** THE UNMADE CHAMPION (canon — stolen Embermere First Pilgrim plate; guard-slab parry/bash law).
+- **Elite:** THE UNMADE CHAMPION (canon — stolen Ashfall First Pilgrim plate; guard-slab parry/bash law).
 - **Boss:** THE FURNACE BRUTE (canon dead-god shape).
 
-### GALEMARCH (oath-voice — storm-crag highlands, bell-towers, drowned marches)
+### SKYREND (oath-voice — storm-crag highlands, bell-towers, drowned marches)
 - **Erased:** oath-wardens pacing dead battlements; bell-hollowers pulling silent ropes.
 - **Shade-beasts:** MOORHOUNDS (canon outline-hounds — pack CHARGES at storm-gust speed); RAIN-HERONS (flocks flying BACKWARDS — divebomb swarms); FALLEN SKY-SERPIENTS (eels that fell and never landed — arc-ambush trash).
 - **Elite:** OPEN SLOT (Still Choir retired Sept 7 by Big's verdict — new concept pending through his gate).
 - **Boss:** THE STORMLESS (the region's dead-god shape — a storm-cell with the lightning hollowed out).
 
-### BLOOMWEALD (growth-voice — orchard country, canopy dungeons, root-roads)
+### EVERBLOOM (growth-voice — orchard country, canopy dungeons, root-roads)
 - **Erased:** orchardists pruning dead trees; seed-sorters sorting ash.
 - **Shade-beasts:** THISTLEDEER (canon, eyeless — they FLEE-STAMP, herding the player into packs); STRANGLER-WALKS (hollowed topiary — WRAP and root the pilgrim, the realm's CC verb); SPORE-HARES (fast skittish trash — they BOLT).
 - **Elite:** THE ERASED DRAKE (canon — cold-absence breath, grounded roost-queen).
 - **Boss:** THE GRIEF-BOUGH (dead bloom-god shape — a blossom-tree god with every bloom hollowed).
 
-### GLOAMBARROW (lantern-voice — dusk country, lantern-roads, tomb-vales)
+### DUSKMOURN (lantern-voice — dusk country, lantern-roads, tomb-vales)
 - **Erased:** lamplighters raising lanterns to posts that aren't there (the Mutefolk law, home region); pall-bearers carrying nothing, forever.
 - **Shade-beasts:** PALE MOTHS (hand-sized — they LAND on the Luminary and dim it, the realm's pressure verb); GLOAM-FOXES (they WATCH from distance and only move when unobserved — the double-take unit); HOLLOW GULLS (perfect silent formations — crowd-wrongness in the sky).
 - **Elite:** OPEN SLOT (Long Procession retired with the Choir family — same singing-ring concept Big rejected).
@@ -126,7 +126,7 @@ Files: art/pending/HOLLOW-<REALM>-<DRAKE/CHOIR/BRUTE>-REDO-v1.png (15 units) + S
 - **Elite:** OPEN SLOT (Net-Choir retired with the Choir family — same singing-ring concept Big rejected).
 - **Boss:** THE BEACHED ONE (dead tide-god shape — a sea-god who died on the sand and keeps drowning).
 
-### STONEFELL (strata-voice — crystal deeps, delve-mines, the under-road)
+### STONEHEART (strata-voice — crystal deeps, delve-mines, the under-road)
 - **Erased:** delvers counting dead veins; masons building nothing, wall by wall.
 - **Shade-beasts:** STONE-CENTIPEDES (segment-by-segment hollowed — CUT and split into two trash when hit, the realm's swarm verb); GLOAM-BATS (ceiling-swarm); CRYSTAL-DEER (silent herds walking through the veins — the deep's thistledeer).
 - **Elite:** THE LEDGER-KNIGHT (a delver-elite in stolen strata plate — counts the player's dodges out loud in reverse).
@@ -137,4 +137,4 @@ Regional units are NEW art rolls through THE UNDONE STANDARD checklist (docs/ART
 
 
 ## CANON LOCK v7 (Sept 7 2026 — BudE404 'Yes keep')
-T1 UNDONE v7 = canon (face void, Void Black, mist-in-void, clothes intact — art/approved/HOLLOW-T1-UNDONE-V7-CANON.png). The chest-cavity design is RETIRED (zombie read). This style is now the law for ALL Hollow-affected enemies — restyle rolls one at a time through BudE404's gate; Embermere next: T2 Unmade Champion, then T3 Furnace Brute. See ART_DIRECTION.md 'V7 UNDONE CANON + HOLLOW STYLE LAW'.
+T1 UNDONE v7 = canon (face void, Void Black, mist-in-void, clothes intact — art/approved/HOLLOW-T1-UNDONE-V7-CANON.png). The chest-cavity design is RETIRED (zombie read). This style is now the law for ALL Hollow-affected enemies — restyle rolls one at a time through BudE404's gate; Ashfall next: T2 Unmade Champion, then T3 Furnace Brute. See ART_DIRECTION.md 'V7 UNDONE CANON + HOLLOW STYLE LAW'.

@@ -15,11 +15,11 @@ Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that 
 
 ## Tier 2 — The Dimming
 4. **SHADOW STEP** — 12 FAITH. Dash THROUGH enemies (phase — no collision); enemies passed through gain 1 Gloom.
-5. **WISP PALM** — 15 FAITH. Cone of cold violet wisp-light — terror: enemies flee or freeze in place 2s.
+5. **WISP PALM** — 15 FAITH. Cone of cold crimson wisp-light — terror: enemies flee or freeze in place 2s.
 6. **GRIEF MEND** — 10 FAITH. Consume all Gloom on one enemy; +2% damage per stack to you for 8s.
 
 ## Tier 3 — The Veil
-7. **UMBRA EDGE** — 18 FAITH. Weapon trailing soft lantern-violet light for 10s: +30% damage, melee applies 2 Gloom.
+7. **UMBRA EDGE** — 18 FAITH. Weapon trailing soft crimson light for 10s: +30% damage, melee applies 2 Gloom.
 8. **DUSK VEIL** — 14 FAITH. Shadow-form 3s — invisible, next attack from it is a guaranteed critical.
 9. **BARROW MARK** — 20 FAITH. Ground rune: a circle of gloom — enemies inside are slowed 30% and their attacks have a 20% miss chance.
 

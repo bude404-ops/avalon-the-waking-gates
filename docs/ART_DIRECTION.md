@@ -101,7 +101,7 @@ All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remna
 
 **CLOTHES-INTACT:** erasure cannot eat what was MADE — clothing/armor stays fully whole and worn (v4's dissolving-clothes render was REJECTED). The erasure takes the self, never the garment.
 
-**ROSTER STYLE LAW:** ALL Hollow-affected enemies carry this same style — ordinary realm-thing at first glance + ONE absence + Void Black + mist-in-void + zero glow + de-coloration. Restyle rolls run ONE AT A TIME through BudE404's approval gate, each anchored to its canon approved art. Embermere order: T2 Unmade Champion, T3 Furnace Brute.
+**ROSTER STYLE LAW:** ALL Hollow-affected enemies carry this same style — ordinary realm-thing at first glance + ONE absence + Void Black + mist-in-void + zero glow + de-coloration. Restyle rolls run ONE AT A TIME through BudE404's approval gate, each anchored to its canon approved art. Ashfall order: T2 Unmade Champion, T3 Furnace Brute.
 
 **PRODUCTION:** v7 Meshy re-roll submitted Sept 7 (no outpaint, 30cr — the pre-v7 chest-cavity model HOLLOW-T1-UNDONE-GAME.glb is RETIRED as source-canon; void gets no baked glow — mist + shader live in-engine).
 
@@ -185,7 +185,7 @@ The light inside THE LANTERN (the Luminary — the one relic) renders in the COL
 - SKYREND → storm slate
 - ASHFALL → oxide red
 - STONEHEART → bone grey
-- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes dusk violet realm-wide — staging, lanterns, gear accent language. Veilborn's class gear accent = CRIMSON (Big, Sept 8 ~11:49 PM: 'OK we will keep and go crimson') — the veil-whisper cloak and all Veilborn accent language shift from dusk violet to crimson; both locked Veilborn canon pieces get re-rolls under the new accent.
+- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes crimson realm-wide — staging, lanterns, gear accent language. Veilborn's class gear accent = CRIMSON (Big, Sept 8 ~11:49 PM: 'OK we will keep and go crimson') — the veil-whisper cloak and all Veilborn accent language shift from crimson to crimson; both locked Veilborn canon pieces get re-rolls under the new accent.
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 

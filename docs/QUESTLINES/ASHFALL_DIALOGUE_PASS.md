@@ -1,6 +1,6 @@
-# EMBERMERE — DIALOGUE PASS v1 (the pilot chapter speaks)
+# ASHFALL — DIALOGUE PASS v1 (the pilot chapter speaks)
 
-**Canon:** Sept 6 2026 · Gives voice to every named NPC in EMBERMERE_QUESTLINE.md (Q1–Q6 + side hooks) per the quest doctrine: want on the surface, lie underneath, cost spoken around — never stated flat. All lines are short, load-bearing, and performable at pilgrim-scale camera. Ashfall speech-grammar per the REALM VOICE GRAMMAR (this doc's header block below — promoted to its own file when the other realms' passes begin).
+**Canon:** Sept 6 2026 · Gives voice to every named NPC in ASHFALL_QUESTLINE.md (Q1–Q6 + side hooks) per the quest doctrine: want on the surface, lie underneath, cost spoken around — never stated flat. All lines are short, load-bearing, and performable at pilgrim-scale camera. Ashfall speech-grammar per the REALM VOICE GRAMMAR (this doc's header block below — promoted to its own file when the other realms' passes begin).
 
 **Ashfall voice (the grammar this chapter speaks in):** kiln-speech. Short declaratives. Fire and debt as the two sacred nouns. Oaths are spoken aloud to be real — a thing unsaid is a thing undone. Nobody says "please"; they say "if you will it." Nobody says "thank you"; they say "the fire remembers." The lie never comes out in words — it comes out as what a character WON'T look at.
 
@@ -44,8 +44,8 @@
 - **FIRST MEET** (the docks, book open, waiting): "You're the pilgrim people are whispering about. Good — you'll understand faster than the harbormaster did. This isn't a grievance. It's arithmetic. Ashport's first ships were built on borrowed pearl-lumber. The tide lent. The tide is owed. I'm just the book."
 - **QUEST-GIVE:** "The drowned ledger's in the old-water vault — the original signatures, the original shame. Read it before you decide anything. The sea keeps everything, pilgrim. EVERYTHING. That's not a threat. It's a filing system."
 - **TRAIL BEAT** (the vault, other realms' pages): "You see them? Every realm keeps pages in every other realm's book. The gods knew what your merchants pretend not to: nobody stands alone. Not ports. Not pantheons."
-- **CHOICE PROMPT:** "Pay, and the fishers ground a season and the harbor's blessing stands. Refuse, and the fleet sails fat and my book records your will — and my word travels ahead of you. I go to Marenvale next month. I'm ALWAYS in Marenvale next month."
-- **ECHO BARKS:** paid → "The tide is square with Ashport. I don't get to say that often. Enjoy it." / refused → "The book says what it says. The interest says it louder." *(she travels to Marenvale; her greeting there is warm or cold per the player's choice)*
+- **CHOICE PROMPT:** "Pay, and the fishers ground a season and the harbor's blessing stands. Refuse, and the fleet sails fat and my book records your will — and my word travels ahead of you. I go to Marenth next month. I'm ALWAYS in Marenth next month."
+- **ECHO BARKS:** paid → "The tide is square with Ashport. I don't get to say that often. Enjoy it." / refused → "The book says what it says. The interest says it louder." *(she travels to Marenth; her greeting there is warm or cold per the player's choice)*
 
 **Harbormaster Dace:**
 - **FIRST MEET:** "You see her? Standing on MY docks with her book? Deal with her, pilgrim. Whatever she wants, the harbor can't spare it, but deal with her."
@@ -67,9 +67,9 @@
 ## Q6 — "THE FURNACE-KING'S VIGIL" · The Mark (the pilgrim's own, at the Cinder Gate)
 *The Mark speaks the town's deed-ledger back to the Gate — the player re-reads their own story to the god. The Mark's voice is the pilgrim's own, one register deeper.*
 
-- **RITE OPENING:** "Embermere. Hear your ledger." *(the choices read back — tower lit or dark, debt paid or owed, forest sealed or hoarse — in the pilgrim's own deed-words from the chapter)*
+- **RITE OPENING:** "Ashfall. Hear your ledger." *(the choices read back — tower lit or dark, debt paid or owed, forest sealed or hoarse — in the pilgrim's own deed-words from the chapter)*
 - **THE INTERRUPTION** (the caldera splits; the Echo of the Forgotten rises): "That is not your king. That is the SHAPE of worship with the worship burned out. Hold the ground. The god-light holds the shell. The heart is yours — CLIMB."
-- **THE WAKING** (the ash falls upward; Vaelthorn rises through the completed rite): "...Embermere. Your god was never far. He was under everything the whole time. **Rise and receive your fire.**"
+- **THE WAKING** (the ash falls upward; Vaelthorn rises through the completed rite): "...Ashfall. Your god was never far. He was under everything the whole time. **Rise and receive your fire.**"
 
 ## SIDE-HOOK VOICES
 - **The Emberling Brood** (shrine Luminary, cold flame): speaks in single words and small phrases — "Cold." / "Again?" / *(when relit)* "Warm. GOOD. Stay."

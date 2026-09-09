@@ -1,3 +1,5 @@
+> **⚠️ PANTHEON LAW SUPERSESSION (Sept 8 2026, Big: 'we only make 6 gods 3 male 3 females') — swept Sept 9.** The god roster is SIX PATRON GODS, one per realm, 3 male + 3 female: **ASHFALL — THE EMBER KING (Vaelthorn)** · **SKYREND — THE STORM QUEEN (Sylwenna)** · **STONEHEART — THE IRON KING (Grathwyn)** · **MARENTH — THE TIDE QUEEN (Ylsanne)** · **EVERBLOOM — THE LIFE MOTHER (Mirielle)** · **DUSKMOURN — THE DEATH KING (Morvaine)** — canon art: art/approved/GOD-<realm>-*-CANON.png. The retired second giant per faction (**Vessamaine, Haeldor, Thevraine, Senneth, Nerovane, Bergrune**) is RECAST as REALM TITANS — guardian colossi of the world sites (Avatar Doctrine cover: gate-crossing vessels and realm wardens, never worshipped, never pantheon). Sprite champions (Warden/Keeper cast) remain champion NPCs. All kits/numbers below apply unchanged — to the six playable god forms at giant scale, and to the titan guardians + champions as NPC units. Legacy 24-deity phrasing below is historical.
+
 # MYTHOS GATES — DEITY COMBAT KITS v1.0 (Giant-Era Canon)
 **Sept 5 2026. The stats-and-abilities layer for all 24 deity units under the GIANTS & SPRITES doctrine. Companion to docs/COLOSSUS_COMBAT_SPEC.md (numeric contract), docs/MYTHOS_CODEX.md (lore), docs/HOLLOW_TIDE_BESTIARY.md (enemy side). All numbers inherit the combat spec: FAITH is the only resource; kits frozen per the feasibility audit; tap-to-move + auto-attack, no joystick.**
 
@@ -26,22 +28,22 @@
 ### FACTION ELEMENT TABLE (reskins — one shared frame, six identities)
 | Faction | Glow | Element Burst (SPECIAL) | Ult storm flavor |
 |---|---|---|---|
-| EMBERMERE | molten gold-white | magma line, ember-fall rain | crucible firestorm |
-| GALEMARCH | electric ice-blue | lightning bolt cone | thunderhead wall |
-| BLOOMWEALD | green-gold | petal gale + sap-glass shards | blooming overgrowth wave |
-| GLOAMBARROW | lantern-violet | gloom drain (steals light/color) | last-light tide |
-| MARENVALE | deep teal | scald torrent, undertow pull | tidal crush |
-| STONEFELL | pale gold-white crystal | stone hail, tremor faultline | geode eruption |
+| ASHFALL | molten gold-white | magma line, ember-fall rain | crucible firestorm |
+| SKYREND | electric storm slate | lightning bolt cone | thunderhead wall |
+| EVERBLOOM | green-gold | petal gale + sap-glass shards | blooming overgrowth wave |
+| DUSKMOURN | crimson | gloom drain (steals light/color) | last-light tide |
+| MARENTH | deep teal | scald torrent, undertow pull | tidal crush |
+| STONEHEART | pale gold-white crystal | stone hail, tremor faultline | geode eruption |
 
-### THE TWELVE GIANT DEITIES (names per Codex roster; canon art locked for Embermere/Galemarch/Bloomweald, pending verdicts for the rest)
+### THE TWELVE GIANT DEITIES (names per Codex roster; canon art locked for Ashfall/Skyrend/Everbloom, pending verdicts for the rest)
 | Faction | Warrior (greatsword) | Caster (staff) | Canon status |
 |---|---|---|---|
-| Embermere | VAELTHORN, the Furnace-King — Crucible Blade (condensed magma) | VESSAMAINE, the Kiln-Queen — Crucible Staff | CANON |
-| Galemarch | HAELDOR, the Thunder Oath — Skyfall Blade (frozen thundercloud) | SYLWENNA, the Stormsight — Weather-Glass Staff | CANON |
-| Bloomweald | THEVRAINE, the Evenhand — Living Scale | MIRIELLE, the Stillwater — Mirror Staff | CANON |
-| Gloambarrow | MORVAINE, the Last Warden — Dusk Blade (Duskscythe → chassis conversion) | SENNETH, the Lampkeeper — Lantern Staff | CANON (Stage 2 world kept Sept 5) |
-| Marenvale | NEROVANE, the Undertow — Tidal Greatblade | YLSANNE the Mirrorfin — Mirrorfin Staff (grown coral, pearl-lens; recast to caster per Gender-Role Binding) | CANON (Stage 2 world kept Sept 5) |
-| Stonefell | GRATHWYN, the Mountain Oath — Tectonic Blade (Maul → chassis conversion) | BERGRUNE, the Unmoved — Bulwark Staff (Garrotes → chassis conversion) | CANON (Stage 2 world kept Sept 5) |
+| Ashfall | VAELTHORN, the Furnace-King — Crucible Blade (condensed magma) | VESSAMAINE, the Kiln-Queen — Crucible Staff | CANON |
+| Skyrend | HAELDOR, the Thunder Oath — Skyfall Blade (frozen thundercloud) | SYLWENNA, the Stormsight — Weather-Glass Staff | CANON |
+| Everbloom | THEVRAINE, the Evenhand — Living Scale | MIRIELLE, the Stillwater — Mirror Staff | CANON |
+| Duskmourn | MORVAINE, the Last Warden — Dusk Blade (Duskscythe → chassis conversion) | SENNETH, the Lampkeeper — Lantern Staff | CANON (Stage 2 world kept Sept 5) |
+| Marenth | NEROVANE, the Undertow — Tidal Greatblade | YLSANNE the Mirrorfin — Mirrorfin Staff (grown coral, pearl-lens; recast to caster per Gender-Role Binding) | CANON (Stage 2 world kept Sept 5) |
+| Stoneheart | GRATHWYN, the Mountain Oath — Tectonic Blade (Maul → chassis conversion) | BERGRUNE, the Unmoved — Bulwark Staff (Garrotes → chassis conversion) | CANON (Stage 2 world kept Sept 5) |
 
 **Phase cues (T3 duels vs/with giants):** 66% = strata cracks brighten, element-shed doubles (activation lore); 33% = mantle core exposed, frenzy — double specials. Death state: essence departs, the elemental body dissipates; nothing remains but the discarded weapon-echo (lore-only).
 
@@ -51,12 +53,12 @@
 
 | Faction | Blade champion (warrior tree-topper) | Staff champion (caster tree-topper) | Signature headgear (silhouette law) |
 |---|---|---|---|
-| Embermere | KILN-WARDEN — forge-blade | HEARTH-KEEPER — ember-staff | embercowl / kiln-helm |
-| Galemarch | STORM-WARDEN — storm-blade | MATRIARCH — storm staff | deep cowl + watch-helm / cowl-veil + circlet |
-| Bloomweald | BLOOM-WARDEN — bloom-blade | BLOOM-KEEPER — living-bloom staff | Living Crown |
-| Gloambarrow | GLOAM-WARDEN — gloom-blade | VEIL-KEEPER — gloom-staff | lantern-cage |
-| Marenvale | TIDE-WARDEN — tide-blade | PEARL-KEEPER — pearl tide-staff | fin-crown |
-| Stonefell | CRYSTAL-WARDEN — deep-road blade | HEARTROOT-KEEPER — heartroot staff | crystal-crest |
+| Ashfall | KILN-WARDEN — forge-blade | HEARTH-KEEPER — ember-staff | embercowl / kiln-helm |
+| Skyrend | STORM-WARDEN — storm-blade | MATRIARCH — storm staff | deep cowl + watch-helm / cowl-veil + circlet |
+| Everbloom | BLOOM-WARDEN — bloom-blade | BLOOM-KEEPER — living-bloom staff | Living Crown |
+| Duskmourn | GLOAM-WARDEN — gloom-blade | VEIL-KEEPER — gloom-staff | lantern-cage |
+| Marenth | TIDE-WARDEN — tide-blade | PEARL-KEEPER — pearl tide-staff | fin-crown |
+| Stoneheart | CRYSTAL-WARDEN — deep-road blade | HEARTROOT-KEEPER — heartroot staff | crystal-crest |
 
 **Sprite kit frame (same numbers both champions, element reskins):** L1 chassis strike (0.35/0.45 s) / L2 element-laced combo (2-hit) / HEAVY champion-flourish AOE (8 m, stagger T2) / SPECIAL element verse (FAITH 15, 12 m, faction element per table above) / ULT CHAMPION RITE (FAITH 60, 15 m, faction storm — miniature Gate Rite). Sprite units fight Hollow T1 at eye height (bestiary horror read) and cannot fight T3 alone — T3 draws the giant through the Gate (dual-scale loop: quest in the small world, war in the big one).
 
@@ -64,7 +66,7 @@
 +1 ant kill / +5 brute / +25 boss phase / passive trickle in worship zones; actives 15–25, ults 60–100; no mana; cosmetics-only F2P. Mercy kills of Mutefolk pay FAITH (kill = release, bestiary law).
 
 ## D. SESSION LOCKS (Sept 5 2026 — vault-seal update)
-- ALL 24 deity kits are canon; every name is art-locked (Gloambarrow/Marenvale/Stonefell giant names confirmed via Stage 2 keeps).
-- REALM ANCHORS canon: every GATE RITE ult visually pulls its deity's canonized Stage 2 realm (docs/MYTHOS_STAGE2_WORLDS.md) — Vaelthorn's rite burns the Embermere, Sylwenna's stills the Calm Eye, etc.
+- ALL 24 deity kits are canon; every name is art-locked (Duskmourn/Marenth/Stoneheart giant names confirmed via Stage 2 keeps).
+- REALM ANCHORS canon: every GATE RITE ult visually pulls its deity's canonized Stage 2 realm (docs/MYTHOS_STAGE2_WORLDS.md) — Vaelthorn's rite burns the Ashfall, Sylwenna's stills the Calm Eye, etc.
 - HOLLOW side canon: 3 champions locked (HOLLOW-ERASED-DRAKE-CANON, HOLLOW-STILL-CHOIR-CANON, HOLLOW-FURNACE-BRUTE-CANON) — see HOLLOW_TIDE_BESTIARY.md.
-- Stonefell sprite champions renamed per Stage 2 canon: CRYSTAL-WARDEN (blade, The Deep Roads) + HEARTROOT-KEEPER (staff, The Heartroot) — supersede Quarry-Warden/Crystal-Keeper.
+- Stoneheart sprite champions renamed per Stage 2 canon: CRYSTAL-WARDEN (blade, The Deep Roads) + HEARTROOT-KEEPER (staff, The Heartroot) — supersede Quarry-Warden/Crystal-Keeper.

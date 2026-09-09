@@ -2,7 +2,7 @@
 
 All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026 (BudE404 verdict session — every world kept or re-rolled clean under the dupe-purge discipline). Style: LOTR-cinematic filmic hand; sprite-worlds follow the Sharp Sprite Foreground law; giant-worlds follow the empty-realm solo law (inert dark cities as scale anchors, all glow belongs to the deity).
 
-## EMBERMERE — The Embermere Region
+## ASHFALL — The Ashfall Region
 | Deity | Realm | Canon |
 |---|---|---|
 | VAELTHORN, Furnace-King (fire giant) | THE CINDERLANDS — the burning forge-country, ember-storm skies, furnace cities dark at his ankle | STAGE2-ASHFALL-CINDERLANDS-VHARKAR-WORLD-CANON.jpg |
@@ -10,7 +10,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 | KILN-WARDEN (blade champion) | THE KILN ROAD — the ember processional road through the forge-towns | STAGE2-ASHFALL-KILN-ROAD-KILN-WARDEN-WORLD-CANON.jpg |
 | HEARTH-KEEPER (staff champion) | THE EVERHEARTH — the great hearth-shrine where the family fires are kept | STAGE2-ASHFALL-EVERHEARTH-HEARTH-KEEPER-WORLD-CANON.jpg |
 
-## GALEMARCH — The Storm Realm
+## SKYREND — The Storm Realm
 | Deity | Realm | Canon |
 |---|---|---|
 | HAELDOR (storm giant) | THE THUNDERSHIELD — the ridge country under the eternal thunderhead | STAGE2-SKYREND-THUNDERSHIELD-HAELDIR-WORLD-CANON.jpg |
@@ -18,7 +18,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 | STORM-WARDEN (blade champion) | THE WATCHTOWER — the high coast watch over the storm sea | STAGE2-SKYREND-WATCHTOWER-STORM-WARDEN-WORLD-CANON.jpg |
 | MATRIARCH (staff champion) | THE SKY SHELF — the dawn cloud-sea at the shelf's lip, storm-cells bowing in an arc | STAGE2-SKYREND-SKY-SHELF-MATRIARCH-WORLD-CANON.jpg |
 
-## BLOOMWEALD — The Bloom Realm
+## EVERBLOOM — The Bloom Realm
 | Deity | Realm | Canon |
 |---|---|---|
 | THEVRAINE (bloom giant) | THE VERDANT MARCH — the great processional road through the bloom-plains | STAGE2-EVERBLOOM-VERDANT-MARCH-THEVRIL-WORLD-CANON.jpg |
@@ -26,7 +26,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 | BLOOM-WARDEN (blade champion) | THE SEEDKEEP GATE — the seed-vault gate in the great seed-cradle glade | STAGE2-EVERBLOOM-SEEDKEEP-BLOOM-WARDEN-WORLD-CANON.jpg |
 | BLOOM-KEEPER (staff champion) | THE PETAL SHRINE TERRACE — the hanging terrace shrines above the blooming falls | STAGE2-EVERBLOOM-PETAL-TERRACE-BLOOM-KEEPER-WORLD-CANON.jpg |
 
-## GLOAMBARROW — The Gloam Realm
+## DUSKMOURN — The Gloam Realm
 | Deity | Realm | Canon |
 |---|---|---|
 | MORVAINE, Dusk Blade (dusk giant) | THE OSSUARY PLAIN — the bone-flats at last light, ossuary spires in the gloom-mist | STAGE2-DUSKMOURN-OSSUARY-PLAIN-MORVAINE-WORLD-CANON.jpg |
@@ -34,7 +34,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 | GLOAM-WARDEN (blade champion) | THE LANTERN WAYS — the lantern-lit processional streets of the dusk-city | STAGE2-DUSKMOURN-LANTERN-WAYS-GLOAM-WARDEN-WORLD-CANON.jpg |
 | VEIL-KEEPER (staff champion) | THE VEILED STAIR — the great stair between worlds, descending into soft dark | STAGE2-DUSKMOURN-VEILED-STAIR-VEIL-KEEPER-WORLD-CANON.jpg |
 
-## MARENVALE — The Tide Realm
+## MARENTH — The Tide Realm
 | Deity | Realm | Canon |
 |---|---|---|
 | NEROVANE (tide giant) | THE TIDEGATE COAST — the drowned coast where the Deep Gate burns beneath the waves | STAGE2-MARENTH-TIDEGATE-COAST-NEROVAX-WORLD-CANON.jpg |
@@ -42,7 +42,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 | TIDE-WARDEN (blade champion) | THE FIRST LIGHT — the reef at dawn, gold rolling across the shallows | STAGE2-MARENTH-FIRST-LIGHT-TIDE-WARDEN-WORLD-CANON.jpg |
 | PEARL-KEEPER (staff champion) | THE MOONTIDE — the moonlit tide-flats, the moonglade path on the water | STAGE2-MARENTH-MOONTIDE-PEARL-KEEPER-WORLD-CANON.jpg |
 
-## STONEFELL — The Deep-Earth Realm
+## STONEHEART — The Deep-Earth Realm
 | Deity | Realm | Canon |
 |---|---|---|
 | GRATHWYN (stone giant) | THE ROOTSPINE — the gate of living roots and raw crystal in the mountain country | STAGE2-STONEHEART-ROOTSPINE-GROTHMAR-WORLD-CANON.jpg |

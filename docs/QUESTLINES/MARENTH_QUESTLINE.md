@@ -1,4 +1,4 @@
-# MARENVALE — THE TIDE'S ACCOUNTING (Marenth chapter questline)
+# MARENTH — THE TIDE'S ACCOUNTING (Marenth chapter questline)
 
 **Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the tide's accounting — everything lent returns, with interest, on the tide's schedule.
 **Chapter wound:** the tide has stopped returning things. Drowned gifts wash back un-given; the coast's arithmetic is breaking.
@@ -7,7 +7,7 @@
 - **HOOK:** A shipwright's daughter launches her first ship — Marenth launches are witnessed: the sea is loaned the hull and the sea gives it back. The sea refuses. She asks the pilgrim to witness anyway. *(Want: her launch. Lie: her father's timber came from a root-spine grove — Stoneheart wood, borrowed across realms. Cost: the sea knows the difference, and now so does a witness.)*
 - **TRAIL:** The returned timbers — each one grown, not cut (root-grain, not saw-grain; the world SHOWS the debt).
 - **RITE:** The launch-witness — the lending words spoken at the waterline, the pilgrim's Mark visible to the sea (launches are witnessed by the MARKED — why, the pilgrim doesn't know yet).
-- **CHOICE (two goods):** Return the timbers to the root-spine grove (her ship — her livelihood — becomes the debt's payment) or launch on the borrowed wood (the tide takes interest later; a debt-quest surfaces in Stonefell — cross-region door).
+- **CHOICE (two goods):** Return the timbers to the root-spine grove (her ship — her livelihood — becomes the debt's payment) or launch on the borrowed wood (the tide takes interest later; a debt-quest surfaces in Stoneheart — cross-region door).
 - **ECHO:** The ship sails or the grove gets its timber back; the daughter's yard stands busy or empty.
 - **TRUTH-SLIVER:** The sea keeps books. (Learned by getting refused by one.)
 
@@ -44,4 +44,4 @@
 - **"The Marker's Debt"** — if the pilgrim broke the wager: one Marenth door that only opens for broken markers (choice-echo sidequest).
 
 ## DEPTHS TIE-IN
-**The Marenvale Depths** = the Deep-Queen's drowned archive — layouts of ledger-vaults and coral law-courts. Depth fragments: a contract signed by a god (seen, not read).
+**The Marenth Depths** = the Deep-Queen's drowned archive — layouts of ledger-vaults and coral law-courts. Depth fragments: a contract signed by a god (seen, not read).

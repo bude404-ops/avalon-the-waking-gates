@@ -10,7 +10,7 @@ Supersedes: the Giants & Sprites Doctrine (Sept 4), the Dragon-Kin Law, and all 
 
 1. **HUMANS are the mortal realm.** Knights, pilgrims, villagers, smiths — the peoples of Mythos are human. No fey races, no dragon-kin, no sprite civilizations. Zero teaching cost: every player understands a human.
 
-2. **THE LAND IS THE GODS.** Each elemental deity lies sleeping AS the terrain. The fire god IS the great dormant mountain range of the Embermere; the storm god IS the ever-raging ridge of the Galeways; the bloom god is the flowering country itself; the dusk god is the grey moor; the tide god is the seafloor shelf; the stone god is the deep spine of the world. Villages sit on a god's shoulder. Mines run through a god's veins. Nobody lives more than a mile from a sleeping god — most never know it.
+2. **THE LAND IS THE GODS.** Each elemental deity lies sleeping AS the terrain. The fire god IS the great dormant mountain range of the Ashfall; the storm god IS the ever-raging ridge of the Galeways; the bloom god is the flowering country itself; the dusk god is the grey moor; the tide god is the seafloor shelf; the stone god is the deep spine of the world. Villages sit on a god's shoulder. Mines run through a god's veins. Nobody lives more than a mile from a sleeping god — most never know it.
 
 3. **THE COLOSSAL = THE GOD STANDING UP.** The giant form is not a monster appearing — it is a LANDMARK waking. When a god rouses, the terrain rises: mist peels from his shoulders, shore-stones cling to his arms, and a hundred feet of country stands up wearing its sleeping shape. All 24 canonized giant designs are the gods' waking forms.
 
@@ -155,22 +155,22 @@ The LUMINARY carries your faith beside you — ONE resource (LIGHT), three uses 
 
 Pets are no longer Luminarys — they are **DREAM-MOTES: tiny living fragments of the sleeping god's dream, drawn to the Marked.** Where the lantern goes, the dream follows. Each is a small real-animal shape made of the god's element (reverent, never mascot-cute):
 
-- **Embermere: EMBER-FOX** — fox kit of ember and soot, sparks trailing.
-- **Galemarch: STORM-OWLET** — round owl of storm-slate, lightning veins in the wings.
-- **Bloomweald: BLOOM-FAWN** — fawn of living petal and vine, pollen-light freckles.
-- **Gloambarrow: DUSK-MOTH** — velvet moth carrying its own soft lantern-glow.
-- **Marenvale: TIDE-OTTER** — otter of sea-sheen, wrapped in a ribbon of water.
-- **Stonefell: STONE-HEDGEHOG** — hedgehog of living geode, crystal-light quills.
+- **Ashfall: EMBER-FOX** — fox kit of ember and soot, sparks trailing.
+- **Skyrend: STORM-OWLET** — round owl of storm-slate, lightning veins in the wings.
+- **Everbloom: BLOOM-FAWN** — fawn of living petal and vine, pollen-light freckles.
+- **Duskmourn: DUSK-MOTH** — velvet moth carrying its own soft lantern-glow.
+- **Marenth: TIDE-OTTER** — otter of sea-sheen, wrapped in a ribbon of water.
+- **Stoneheart: STONE-HEDGEHOG** — hedgehog of living geode, crystal-light quills.
 
 Mechanics (carry over from the pet canon): motes grow through FIVE LIGHT TIERS fed by witnessing your deeds (brightness earned, never sold); the tier system and cosmetic reskin monetization survive. NEW RITE MOMENT: at the Gate Rite climax, the mote runs INTO the rising god — a piece of the dream coming home — and returns brighter (tier-up moment written into the rite itself).
 
-The Luminary/lantern-attire pet designs are retired from doctrine (kept in art history); the Emberling canon survives as Embermere's ember-fox lineage.
+The Luminary/lantern-attire pet designs are retired from doctrine (kept in art history); the Emberling canon survives as Ashfall's ember-fox lineage.
 
 
 ## THE GAME TITLE + THE GATE RUNE (canon v1.2, Sept 5, 2026)
 
 - **GAME TITLE: AVALON: THE WAKING GATES** (BudE404 pick; search-cleared — no existing game/app/film/trademark on the title). The repo name matches: avalon-the-waking-gates.
-- **THE GATE RUNE = THE MARK.** One universal rune represents the game and the Gates: a trilithon arch of RUGGED rough-hewn weathered megalith (cracks, chisel pitting, chipped edges, age-patina — never polished) with a single rising flame through the center. The stone never glows; ONLY the flame carries the faction color (ember / ice-blue / gold-green / lantern-violet / pearl-teal / geode). Every pilgrim wears it as the Mark on the breastplate.
+- **THE GATE RUNE = THE MARK.** One universal rune represents the game and the Gates: a trilithon arch of RUGGED rough-hewn weathered megalith (cracks, chisel pitting, chipped edges, age-patina — never polished) with a single rising flame through the center. The stone never glows; ONLY the flame carries the faction color (ember / storm slate / deep moss / crimson / pearl-teal / geode). Every pilgrim wears it as the Mark on the breastplate.
 - **ONE-ARMOR PRODUCTION LAW.** Armor sets are faction-neutral: one set per role per gender (6 roles x 2 genders = 12 total). Faction identity = the rune's glow color — a color swap, never an armor re-roll.
 - Logo canon: LOGO-AVALON-WAKING-GATES (sigil + Cinzel wordmark), 6 faction colorways. Doctrine: docs/PILGRIM_DESIGN_DOCTRINE.md (v1.4).
 

@@ -59,7 +59,7 @@ The line that governs all of it: **sell identity, never power.** The master ques
 - Death/dispersal effects, victory poses at verdicts
 
 ### PETS — EMBERLINGS (the mote companions)
-**The lore-perfect pet: a mote of YOUR OWN deity's element** — the god's own flame, small enough to sit on the warden's shoulder. Every faction's pets speak its element: Embermere emberlings, Galemarch static-wisps, Bloomweald seedlings, Gloambarrow lantern-motes, Marenvale brinelings, Stonefell pebble-sprites.
+**The lore-perfect pet: a mote of YOUR OWN deity's element** — the god's own flame, small enough to sit on the warden's shoulder. Every faction's pets speak its element: Ashfall emberlings, Skyrend static-wisps, Everbloom seedlings, Duskmourn lantern-motes, Marenth brinelings, Stoneheart pebble-sprites.
 
 - **Scale-dual by design**: at pilgrim scale it follows as a living lantern beside you; at manifestation/ascension it perches on the god's shoulder or circles the colossal head like a stray mote — your pet present at BOTH scales (monetization that reinforces the identity, not off-brand fluffy commerce).
 - **Utility = QoL only**: faith-mote vacuum radius, idle emotes, a soft chime near undiscovered secrets. NEVER combat: no damage, no buffs, no faith generation, no gate integrity effects. A pet cannot touch the economy, period.
@@ -95,7 +95,7 @@ The Emberlings are now **elemental Luminarys** — tiny kin of your deity's own 
 At pilgrim scale: circles you as a living lantern. At manifestation/ascension: a mote circling the COLOSSAL HEAD — your little flame riding on the god's shoulder. Same pet, both scales — monetization that reinforces the identity.
 
 ### Monetization — reskins only (light level never sold)
-- **PIXIE LINES per faction** (the base skins): Embermere emberling, Galemarch static-wisp, Bloomweald seedling, Gloambarrow lantern-mote, Marenvale brineling, Stonefell pebble-sprite
+- **PIXIE LINES per faction** (the base skins): Ashfall emberling, Skyrend static-wisp, Everbloom seedling, Duskmourn lantern-mote, Marenth brineling, Stoneheart pebble-sprite
 - **RESKINS**: seasonal variants (harvest-flame, frost-glow), deity-attuned colorways (Vaelthorn blue-flame Luminary), achievement lines (Verdict-rank exclusives, hunt-trophies), event editions
 - **AURA STYLES** (sellable, cosmetic-only): the SHAPE and character of the glow — sparkle patterns, ember-trail vs. steady-flame vs. pulse — while raw radius/brightness stays earned
 - Rare lines earnable through feats; standard + seasonal lines sold. Brightness tier NEVER purchasable — a day-one player and a whale with the same deeds have equally bright Luminarys. That's the trust contract, and it's the difference between a beloved companion system and a slot machine.

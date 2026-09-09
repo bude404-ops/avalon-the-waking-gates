@@ -5,24 +5,24 @@ Art law: "A herald is the element wearing the beast — the gods' primordial gra
 
 ---
 
-## 1. MOON STAG — Bloomweald
-- **Element:** gold-green bloom (sap-light)
+## 1. MOON STAG — Everbloom
+- **Element:** deep moss bloom (sap-light)
 - **Body:** bark-wood hide, moss, sap-light seams; antlers are living branches with blossoms sprouting from the body
 - **Omen:** seeing one at dusk = the forest consents to your passage. Guardian of the ancient groves.
-- **Behavior:** never attacks unless a Bloomweald shrine is profaned
+- **Behavior:** never attacks unless a Everbloom shrine is profaned
 - **3D ref:** `art/concepts/sacred-heralds/3D-MOON-STAG.png`
 - **3D notes:** quad-deer rig, idle graze + head-tilt omen animation; blossom sprites attach points along spine/antlers; emissive sap-seam mask
 
-## 2. MIST WOLF — Gloambarrow (the Gates)
-- **Element:** lantern-violet mist
-- **Body:** solid dark-smoke head/shoulders, haunches and tail dissolve into fog streams; eyes = two violet lights
+## 2. MIST WOLF — Duskmourn (the Gates)
+- **Element:** crimson mist
+- **Body:** solid dark-smoke head/shoulders, haunches and tail dissolve into fog streams; eyes = two crimson lights
 - **Omen:** walks beside the Marked = the land vouches for the vow
 - **Behavior:** guides through barrow-fog; never attacks pilgrims
 - **3D ref:** `art/concepts/sacred-heralds/3D-MIST-WOLF.png`
 - **3D notes:** wolf rig; rear fog = alpha-mapped particle trail (geometry solid through shoulders, dissolves via vertex alpha to tail); guide-path AI state
 
-## 3. STORM EAGLE — Galemarch
-- **Element:** ice-blue storm (thunderhead + lightning veins)
+## 3. STORM EAGLE — Skyrend
+- **Element:** storm slate storm (thunderhead + lightning veins)
 - **Body:** slate-grey solidified storm-cloud, cloud-packed feathers, lightning veins through wings
 - **Omen:** its cry answered by thunder = a god heard the prayer
 - **Behavior:** divine messenger; carries omens between storm-shrines
@@ -36,7 +36,7 @@ Art law: "A herald is the element wearing the beast — the gods' primordial gra
 - **3D notes:** horse rig (reuse pilgrim-mount skeleton); translucent glass shader + trailing mote particles; gallop + seam-crossing vanish animation
 - **3D ref:** `art/concepts/sacred-heralds/3D-FAEWILD-STEED.png`
 
-## 5. WORLD SERPENT — Marenvale (sacred lakes)
+## 5. WORLD SERPENT — Marenth (sacred lakes)
 - **Element:** pearl-teal tide (living water)
 - **Body:** dark flowing water shaped into coils, teal light within, foam-and-spray mane, shrine stones grown into the brow
 - **Omen:** when a lake goes quiet, the serpent is listening
@@ -44,15 +44,15 @@ Art law: "A herald is the element wearing the beast — the gods' primordial gra
 - **3D notes:** long-chain spine rig (S-coil pose ref); water-body = flowing-surface shader + foam crest particles; rise-from-lake event animation
 
 ## 6. SILVER SWAN — the meres
-- **Element:** radiant silver light (pearl-teal + violet)
+- **Element:** radiant silver light (pearl-teal + moon-silver)
 - **Body:** made of soft light, feather edges dissolve to motes, liquid light in its wake
 - **Omen:** a swan on the mere = the water can change you (transformation)
 - **3D ref:** `art/concepts/sacred-heralds/3D-SILVER-SWAN.png`
 - **3D notes:** swan rig, glide + wings-half-spread display; emissive-only material option (reads as pure light at distance)
 
-## 7. HORNED PRIMORDIAL — Stonefell
+## 7. HORNED PRIMORDIAL — Stoneheart
 - **Element:** bedrock + white-violet geode crystal
-- **Body:** ancient bedrock strata plates, cracks glow violet, geode-crystal antlers like mountain roots, moss and shrine ruins on shoulders
+- **Body:** ancient bedrock strata plates, cracks glow pale amethyst, geode-crystal antlers like mountain roots, moss and shrine ruins on shoulders
 - **Omen:** where it grazes, the wilderness is still wild
 - **Behavior:** the primordial wilderness walking; do not disturb
 - **3D ref:** `art/concepts/sacred-heralds/3D-HORNED-PRIMORDIAL.png`

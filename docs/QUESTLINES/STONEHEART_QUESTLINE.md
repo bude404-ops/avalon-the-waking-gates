@@ -1,4 +1,4 @@
-# STONEFELL — THE UNMOVED PROMISE (Stoneheart chapter questline)
+# STONEHEART — THE UNMOVED PROMISE (Stoneheart chapter questline)
 
 **Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the unmoved promise — a vow made is terrain; break one and the ground remembers.
 **Chapter wound:** broken vows have started to physically break — terrain cracking along old promise-lines, and the deep roads are closing.
@@ -26,10 +26,10 @@
 - **TRUTH-SLIVER:** "A wall is not a thing you build; it is a thing you are." (BERGRUNE — learned by standing it, one shift.)
 
 ### Q4 — "THE RUNE GATE'S ROOTS"
-- **HOOK:** The Rootspine Gate of living roots and raw crystal has stopped drinking. A root-warden asks the pilgrim to find what the roots are waiting for. *(Want: the Gate fed. Lie: the warden already knows — he watched the Marenth timber-debt sail past on borrowed wood (see MARENVALE Q1 — cross-region consequence). Cost: reporting it means war between two realm ledgers.)*
+- **HOOK:** The Rootspine Gate of living roots and raw crystal has stopped drinking. A root-warden asks the pilgrim to find what the roots are waiting for. *(Want: the Gate fed. Lie: the warden already knows — he watched the Marenth timber-debt sail past on borrowed wood (see MARENTH Q1 — cross-region consequence). Cost: reporting it means war between two realm ledgers.)*
 - **TRAIL:** The roots remember every promise made beside them — the Rootspine's rings read like minutes of meetings; the Marenth page is empty where the First Ship's timber should be repaid.
-- **CHOICE (two goods):** Pay Stonefell's owed page from Marenvale's ledger (cross-realm accounting: the Marenvale harvest pays — their doors close to the pilgrim) or leave the roots thirsty (the Rune Gate weakens — endgame stakes ride on it).
-- **ECHO:** The roots drink or wait; the Deep Gate's dive (Marenvale Q4) gets easier or harder on the pilgrim's earlier choice.
+- **CHOICE (two goods):** Pay Stoneheart's owed page from Marenth's ledger (cross-realm accounting: the Marenth harvest pays — their doors close to the pilgrim) or leave the roots thirsty (the Rune Gate weakens — endgame stakes ride on it).
+- **ECHO:** The roots drink or wait; the Deep Gate's dive (Marenth Q4) gets easier or harder on the pilgrim's earlier choice.
 - **TRUTH-SLIVER:** The gods keep each other's ledgers — and so do their debts to each other. (Pantheon depth, learned by cosigning one.)
 
 ### Q5 — "THE STONE GATE" (chapter finale)
@@ -44,9 +44,9 @@
 - **"The Cracked Bell"** — a Vigil shrine bell cracked the day a vow broke in Q1/Q2; repairing it means finding which promise (choice-echo mystery).
 
 ## DEPTHS TIE-IN
-**The Stonefell Depths** = the Stone-King's dreamed bedrock — layouts of vow-veins and fossilized promises. Depth fragments: a boundary stone from a realm that no longer exists (seen, not read).
+**The Stoneheart Depths** = the Stone-King's dreamed bedrock — layouts of vow-veins and fossilized promises. Depth fragments: a boundary stone from a realm that no longer exists (seen, not read).
 
 ---
 
 # ALL SIX REALMS COMPLETE — doctrine-compliant questlines 6/6
-Every chapter: 5-beat main line (HOOK/TRAIL/RITE/CHOICE/ECHO), one truth-sliver per quest, want/lie/cost quest-givers, two-goods door-closing choices, saga-sites walked not read, roll-call Gate Rite finales with T3 Echo interruptions and a pilgrim-scale final phase, Depths + Gate Cycle endgame tie-ins, side hooks in the same grammar. Cross-region consequences wired (Ashport tide-debt → Marenvale; First Ship timber → Stonefell Rootspine; both ledgers → both finales).
+Every chapter: 5-beat main line (HOOK/TRAIL/RITE/CHOICE/ECHO), one truth-sliver per quest, want/lie/cost quest-givers, two-goods door-closing choices, saga-sites walked not read, roll-call Gate Rite finales with T3 Echo interruptions and a pilgrim-scale final phase, Depths + Gate Cycle endgame tie-ins, side hooks in the same grammar. Cross-region consequences wired (Ashport tide-debt → Marenth; First Ship timber → Stoneheart Rootspine; both ledgers → both finales).

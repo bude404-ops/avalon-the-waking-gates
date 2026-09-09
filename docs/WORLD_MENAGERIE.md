@@ -14,12 +14,12 @@ The Hollow reads by contrast. The warmer, more alive, more COLORED the world is,
 
 ## I. ELEMENT-FAUNA (the wild — ambience, traversal, omens)
 Small, regional, subtle-tell. The texture of a realm; also dungeon traversal partners and environmental lore.
-- **EMBERMERE:** cinderfox (ember-tipped tail, dens near warm ground — a fox sunning on cold stone means a fever-shed vent below); kiln-salamanders (live in forge-cracks; a town's fortune reads in its salamander count — kiln-tenders feed them by hand); ashmoles (surface when the ground god dreams restlessly — surfacing swarms = omen); thistledeer (canon, bestiary).
-- **GALEMARCH:** storm-swallows (ride the squall-lines; grounded flocks = storm coming or worse); **bell-kites** (roost ONLY in ringing storm-bells — a silent bell-tower means no kites, and no kites means something silenced the bells: the world's Hollow early-warning, no text needed); static-beetles (harmless charge-flickers; your lantern sparks near fracture-lines because beetles flee them).
-- **BLOOMWEALD:** bloomdeer (antler-blossoms open with the season — poachers sell the horns; a poacher subplot writes itself); moss-harts; seed-finches (chain-nest in orchard terraces — their abandoned nests mark old harvest debts).
-- **GLOAMBARROW:** lantern-moths (drawn to grave-lanterns; grave-keepers read omens in their flight — a moth that won't land is doctrine: the grave it circles holds a lie); dusk-cats; wisp-toads (croak in unison, then all stop — when they stop, count your party).
-- **MARENVALE:** tide-runners (crab-folk of the flats); pearl-fish (school in promise-patterns — old tide-readers forecast weather from their shapes); kelp-striders.
-- **STONEFELL:** **promise-beetles** (gnaw oath-lines into standing-stones — 'the world's own scribes'; a stone with fresh lines is a kept vow, a worn stone is a broken one — lore you can READ off a rock, no text); gembeaks (nest in crystal veins); shale-goats; rubble-lizards.
+- **ASHFALL:** cinderfox (ember-tipped tail, dens near warm ground — a fox sunning on cold stone means a fever-shed vent below); kiln-salamanders (live in forge-cracks; a town's fortune reads in its salamander count — kiln-tenders feed them by hand); ashmoles (surface when the ground god dreams restlessly — surfacing swarms = omen); thistledeer (canon, bestiary).
+- **SKYREND:** storm-swallows (ride the squall-lines; grounded flocks = storm coming or worse); **bell-kites** (roost ONLY in ringing storm-bells — a silent bell-tower means no kites, and no kites means something silenced the bells: the world's Hollow early-warning, no text needed); static-beetles (harmless charge-flickers; your lantern sparks near fracture-lines because beetles flee them).
+- **EVERBLOOM:** bloomdeer (antler-blossoms open with the season — poachers sell the horns; a poacher subplot writes itself); moss-harts; seed-finches (chain-nest in orchard terraces — their abandoned nests mark old harvest debts).
+- **DUSKMOURN:** lantern-moths (drawn to grave-lanterns; grave-keepers read omens in their flight — a moth that won't land is doctrine: the grave it circles holds a lie); dusk-cats; wisp-toads (croak in unison, then all stop — when they stop, count your party).
+- **MARENTH:** tide-runners (crab-folk of the flats); pearl-fish (school in promise-patterns — old tide-readers forecast weather from their shapes); kelp-striders.
+- **STONEHEART:** **promise-beetles** (gnaw oath-lines into standing-stones — 'the world's own scribes'; a stone with fresh lines is a kept vow, a worn stone is a broken one — lore you can READ off a rock, no text); gembeaks (nest in crystal veins); shale-goats; rubble-lizards.
 
 ## II. DRAKE-KIN (the land's small dreams — world-fauna dragons)
 Canon already holds: dragons are world-fauna. Lore lock: **drakes are what the land makes when it dreams SMALL — the elements trying life at creature-size, the way the colossi are the elements at god-size.** They predate the Gates; they outdate human memory; they cannot be tamed — but a few are SWORN (ancient pact-beasts bound to shrines by First Pilgrim rites, sworn-beasts keep their oath like made things keep purpose).
@@ -41,9 +41,9 @@ Canon: the LUMINARIES (formerly 'Luminaries') are pure-witness motes; witnesses 
 
 ## V. RITE-BEASTS (the sacred economy)
 Creatures woven into pilgrimage law — harming them carries a FAITH cost, protecting them earns it:
-- **TITHE-CRANES** (Marenvale): carry pilgrim offerings up to sunken shrine-crowns on schedule older than memory. Killing one = the world remembers (FAITH penalty, shrines dim).
-- **BEDROCK-BULLS** (Stonefell): walk the old vow-roads in herds, tamping the earth so promises stay set. The vow-roads hold because the bulls walk them. Steal a bull's calf and the road through Stonefell softens (travel consequence — the map itself responds).
-- **VIGIL-HERONS** (Gloambarrow): stand one-legged on barrow-stones all night, keeping the grave-lantern company. A heron that abandons its stone is doctrine's early-warning: what's beneath that stone wants out.
+- **TITHE-CRANES** (Marenth): carry pilgrim offerings up to sunken shrine-crowns on schedule older than memory. Killing one = the world remembers (FAITH penalty, shrines dim).
+- **BEDROCK-BULLS** (Stoneheart): walk the old vow-roads in herds, tamping the earth so promises stay set. The vow-roads hold because the bulls walk them. Steal a bull's calf and the road through Stoneheart softens (travel consequence — the map itself responds).
+- **VIGIL-HERONS** (Duskmourn): stand one-legged on barrow-stones all night, keeping the grave-lantern company. A heron that abandons its stone is doctrine's early-warning: what's beneath that stone wants out.
 - Purpose: moral texture. Not every encounter is a fight; some are a test the player sets for themselves. The mercy loop (canon for the Hollow) gets a positive twin: the WORTHINESS loop for the living world.
 
 ## VI. FEVER-SHEDS (the god's small nightmares — NOT Hollow)
@@ -56,13 +56,13 @@ Pressure mobs for dungeons WITHOUT erasure grammar. When the Hollow presses a sl
 
 The creatures pilgrims tell stories about — the ones that make the world feel OLD. Rare, seen at thresholds (forests, gates, lakes, high crags). Never farmed, never common; each carries an omen-function. Colored and LIVING (feed-the-contrast): these glow with realm light, never gray.
 
-- **MOON STAGS** (Bloomweald) — sacred deer with antlers of living gold-green light, tiny blossoms grown into the velvet. Guardians of the ancient forests: they stand sentinel over groves where the Bloom still remembers the First Spring. Omens: seeing one at dusk means the forest consents to your passage.
-- **MIST WOLVES** (Gloambarrow — around the Gates) — dire wolves half-woven of fog, eyes two lantern-violet lights. They appear in the mist around the Gates and guide chosen (Marked) warriors through the barrow-fog — pilgrims say a mist wolf that walks beside you is the land vouching for your vow.
-- **STORM EAGLES** (Galemarch) — enormous raptors with lightning laced through slate feathers. Divine messengers: they carry omens between storm-shrines, and their cry answered by thunder is read as a god hearing a prayer.
+- **MOON STAGS** (Everbloom) — sacred deer with antlers of living deep moss light, tiny blossoms grown into the velvet. Guardians of the ancient forests: they stand sentinel over groves where the Bloom still remembers the First Spring. Omens: seeing one at dusk means the forest consents to your passage.
+- **MIST WOLVES** (Duskmourn — around the Gates) — dire wolves half-woven of fog, eyes two crimson lights. They appear in the mist around the Gates and guide chosen (Marked) warriors through the barrow-fog — pilgrims say a mist wolf that walks beside you is the land vouching for your vow.
+- **STORM EAGLES** (Skyrend) — enormous raptors with lightning laced through slate feathers. Divine messengers: they carry omens between storm-shrines, and their cry answered by thunder is read as a god hearing a prayer.
 - **FAEWILD STEEDS** (cross-realm; the seams) — supernatural horses that walk between realms along the thin places. Pearly, half-material manes. Mounts earned only by great deeds; they refuse riders the vow does not trust.
-- **WORLD SERPENTS** (Marenvale — beneath sacred lakes) — ancient elemental serpents coiled beneath the still meres. When a lake goes quiet, the serpent is listening. Some hold drowned shrines on their brows, tended for centuries.
-- **SILVER SWANS** (Marenvale meres / Gloambarrow mere-roads) — magical swans whose feathers shimmer pearl-teal and violet. Associated with transformation: swan-maiden myths are regional variants of a true thing — a Silver Swan at the mere means the water can change you.
-- **HORNED PRIMORDIALS** (Stonefell; in-world "Cernunnos Beasts" is NOT used in canon text — reserved as working title only) — enormous horned creatures of stone-barked hide and geode antlers, the primordial wilderness walking. Old growth and shrine ruins grown into their shoulders. Where one grazes, the wilderness is still wild.
+- **WORLD SERPENTS** (Marenth — beneath sacred lakes) — ancient elemental serpents coiled beneath the still meres. When a lake goes quiet, the serpent is listening. Some hold drowned shrines on their brows, tended for centuries.
+- **SILVER SWANS** (Marenth meres / Duskmourn mere-roads) — magical swans whose feathers shimmer pearl-teal and moon-silver. Associated with transformation: swan-maiden myths are regional variants of a true thing — a Silver Swan at the mere means the water can change you.
+- **HORNED PRIMORDIALS** (Stoneheart; in-world "Cernunnos Beasts" is NOT used in canon text — reserved as working title only) — enormous horned creatures of stone-barked hide and geode antlers, the primordial wilderness walking. Old growth and shrine ruins grown into their shoulders. Where one grazes, the wilderness is still wild.
 - **ELDER DRAGONS** (the Depths; realm-agnostic deep earth) — extremely rare primordial beings, possibly older than the gods themselves. The Depths' oldest dreamers. An Elder Dragon is not fought for loot; encountering one is an event.
 
 Doctrine fit: Heralds NEVER attack pilgrims unless a vow is broken or a sacred site is profaned. They are the living proof that the world was sacred before it was wounded.
@@ -71,7 +71,7 @@ ART LAW — ELEMENT-FORMED HERALDS (BudE404 verdict, Sept 5 2026): heralds rende
 
 ## VIII. THE LUMINARY LINE (pets — canon)
 
-Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the lantern it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/ice-blue/gold-green/lantern-violet/pearl-teal/geode) + lantern attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs lantern-donned = visible badge of progress.
+Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the lantern it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/storm slate/deep moss/crimson/pearl-teal/geode) + lantern attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs lantern-donned = visible badge of progress.
 
 ART LAW — ELEMENT-FORMED LUMINARIES (BudE404 verdict, Sept 5 2026): a Luminary is formed ENTIRELY of its element — glowing elemental skin with crack/mote texture, hair and wings of pure element, drift-motes at the edges — the same element-wearing-the-being grammar as the heralds and colossi. Faction reskins change the element itself (fire / lightning / bloom-light / mist / water / crystal). The worn bronze lantern stays human-craft — the relic contrast is the point: made thing, named flame.
 

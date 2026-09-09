@@ -30,4 +30,4 @@ Skyrend rites are about **charge as connection**: enemies carry STATIC CHARGES, 
 - Static Charge: no DoT — connection currency. Arc = 4 damage per linked charge pair, 0.5s tick.
 - FAITH pool 100 base +10/tier; ult = only hard-cooldown rite.
 - Synergies: Wayfarer (Bolt Step chains), Cantor (RINGING MARK overlaps bell resonance), Keeper (ARC MEND restores FAITH — lantern keeper economy).
-- Visual budget: arc = line particle (one shader), charges = small spark mote on enemy, aura = existing ember-aura recolored ice-blue. No new meshes/skeletons.
+- Visual budget: arc = line particle (one shader), charges = small spark mote on enemy, aura = existing ember-aura recolored storm slate. No new meshes/skeletons.

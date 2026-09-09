@@ -31,7 +31,7 @@ The fingerprint every frame must carry, drawn from ART_DIRECTION v2.0, ART_STYLE
 | **Pilgrims/sprites** | serious-fey war-priests; Cinder Roads armor — road-worn repair plate, riveted mismatched layers, ash-patina; faces hidden (hood/helm) |
 | **Hollow** | the Wasteland look — erased/unmade anatomy, dread by subtraction; T2 anchors on canon champions' armor, T3 echoes canon giant silhouettes |
 | **Composition** | half-zoom mid-shot for giants (chest-height, fills central 2/3, min 3 scale anchors); siege framing for god-vs-waves; side profile for god-vs-god |
-| **Environments** | the six Gate-named heartlands (Embermere, Galemarch, Bloomweald, Gloambarrow, Marenvale, Stonefell) — mortal architecture echoes its giant (crucible hearth towers, storm vanes, petal-crest rooflines, lantern-niche shrines, fin-buttressed harbors, crystal-crowned quake-villages) |
+| **Environments** | the six Gate-named heartlands (Ashfall, Skyrend, Everbloom, Duskmourn, Marenth, Stoneheart) — mortal architecture echoes its giant (crucible hearth towers, storm vanes, petal-crest rooflines, lantern-niche shrines, fin-buttressed harbors, crystal-crowned quake-villages) |
 | **Hard bans** | ZERO text in generated frames; zero emblems/sigils on giants; deity names never in generation prompts; the word 'elven' never in prompts |
 
 ### 2.1 Adaptive Generation Protocol

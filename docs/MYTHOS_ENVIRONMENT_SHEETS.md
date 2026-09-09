@@ -5,15 +5,15 @@
 
 ---
 
-## EMBERMERE / THE EMBERWASTE — art grammar
-**Palette:** black ash soil, ember-orange glow, bronze-and-charcoal architecture, white-gold divine fire.
+## ASHFALL / THE EMBERWASTE — art grammar
+**Palette:** black ash soil, oxide-red ember glow, bronze-and-charcoal architecture, white-gold divine fire.
 **Architecture grammar:** riveted FORGE-IRON kiln-plate roofs, crucible-core hearth towers (every tower built around an open furnace heart), forge-cathedrals with chimney-spire skylines, heat-shimmer haze, ember-motes in the air.
 - **THE CINDER GATE (Forgefall):** a colossal arch in the caldera-crown, its stone fused to bronze-black forge-iron at the seams, faint white-gold fire bleeding from its inner face; the gate-plaza is hammered bronze flagstone worn mirror-smooth by processions.
 - **FORGEFALL:** tiered caldera city — forge-cathedral at the crown, workshop terraces cascading down, kiln-light in every window, ash-storms on the horizon; the great hearth's Crucible Core visible from every street as a shared heartbeat.
 - **EMBERHOLLOW:** charcoal-forest spires (a burned forest preserved as black cathedral columns), shrine-lamps lit inside hollow trunks.
 - **SIGNATURE VISTA:** sunrise over the Warm Sea hitting the ash-plain — the ground smoking, cindercattle herds moving through heat-shimmer, Forgefall's hearth-towers on the ridge.
 
-## GALEMARCH / THE STORMSHARDS — art grammar
+## SKYREND / THE STORMSHARDS — art grammar
 **Palette:** slate sea, black cliffs, rain-slick steel, pale storm-blue lightning, green-gray pines.
 **Architecture grammar:** STORM-STEEL laminar wind-shed roofs angled like seabird wings, storm-vane weathervanes on every ridge, rope-bridges between sea-stacks, dragon-prow ships in every harbor, sea-fog rolls as daily weather.
 - **THE SQUALL GATE (Vanecliff):** a storm-worn arch on the highest sea-stack, laced with bronze vane-rods that turn in a wind only the Gate feels; lightning nests in the arch during storms.
@@ -21,7 +21,7 @@
 - **THUNDERMERE:** lakeside town where storms calve over the water — lightning reflected in the meres, storm-cellar architecture, quail-seasons festivals.
 - **SIGNATURE VISTA:** a named storm arriving across the archipelago — wall of weather on the horizon, every island's vanes turned the same way, a Storm Giant striding the cloud-head.
 
-## BLOOMWEALD / THE BLOOMWARD — art grammar
+## EVERBLOOM / THE BLOOMWARD — art grammar
 **Palette:** petal-red lacquer, living green, gold nectar-light, greened bronze, morning mist.
 **Architecture grammar:** GROW-PLATE living-wood buildings with petal-crest rooflines, bloom-temples shaped like unfurling flowers, orchard-roads in canopy tunnels, terraced hillsides, color-shifting bloom-meadows (the meadows change with the season's mood).
 - **THE BLOOM GATE (Petalfall):** two colossal petal-arches, GROWN not built — a living Gate that opens once a year; when closed it reads as a hill of sealed petals, when open as a cathedral of unfurling color.
@@ -29,7 +29,7 @@
 - **THORNHEDGE:** ward-town on the wild verge — thorn-wall ramparts, GROW-PLATE armored wardens, lantern-lit orchard gatehouses.
 - **SIGNATURE VISTA:** the Bloom Gate mid-opening over the orchard plaza — a wall of colossal petals, petals falling like snow, old enemies handing each other saplings.
 
-## GLOAMBARROW / THE DUSKMERE — art grammar
+## DUSKMOURN / THE DUSKMERE — art grammar
 **Palette:** black mirror-water, willow-fen green, bone-white stone, lantern-gold, low moon that never sets.
 **Architecture grammar:** LANTERN-PLATE pale stone with lantern-niche shrines cut into every wall — thousands of tiny votive windows; willow bridges, fen-causeways, mirror-lakes, mist.
 - **THE VEIL GATE (Lanternhush):** a bone-white arch on the mirror-lake isle, reflected perfectly in still water — the Gate and its twin.
@@ -37,7 +37,7 @@
 - **VAILCREST:** bone-white archive city — record-towers, scroll-bridges, the death-guilds' halls.
 - **SIGNATURE VISTA:** a lantern-procession crossing the fen at night — grave-hares leading, a Bone Giant's silhouette far out on the water, every window's niche burning.
 
-## MARENVALE / THE SALTREACH — art grammar
+## MARENTH / THE SALTREACH — art grammar
 **Palette:** drowned grey-blue, patinated sea-green bronze, pearl, storm surf, kelp-dark depths.
 **Architecture grammar:** TIDE-MAIL scale-shingle roofs, fin-buttressed harbor walls, gill-slit vented buildings (they breathe mist), stilt-street tide-towns, reef-cities in the shallows with pearl-inlay.
 - **THE DEEP GATE (Tidebellow):** beneath the Tidebellow whirlpool — from the surface: a spinning sea-eye with a faint cathedral-glow deep beneath it; the safe-line markers painted by the tide-priests.
@@ -45,7 +45,7 @@
 - **MISTRIFT:** stilt-city of tide-priests — rope-walks, marker-paint workshops, diver guildhalls.
 - **SIGNATURE VISTA:** the geode-clear moment after a storm — a diver at the whirlpool's edge, the Deep Gate's pressure-cathedral glow visible through the settling water, stilt-city lamps behind.
 
-## STONEFELL / THE QUAKEVEINS — art grammar
+## STONEHEART / THE QUAKEVEINS — art grammar
 **Palette:** grey iron, strata-brown, quartz-white glow, crystal-color accents, highland cloud.
 **Architecture grammar:** QUARRY-PLATE strata-plate buildings layered like the mountain, crystal-crowned spires, cliff-homes cut in load-bearing style, tremor-bell towers (Stone-grub tunnels wired as warning), quartz-terrace farms.
 - **THE STONE GATE (Craghelm):** inside the mountain — a hollowed cathedral of strata, the Gate itself a seam of raw Aetherium crystal in the deepest vault.

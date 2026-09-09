@@ -1,3 +1,9 @@
+# ⚠ WORLD-LORE LINEAGE NOTE (Sept 9 2026 lore sweep)
+
+The Orders (Knight / Palmer / Sexton / Clerk / Forester / Smyth) are canon as THE WORLD'S PILGRIMAGE INSTITUTIONS — NPC rosters, town lore, quest-giver flavor. They are NOT the player combat system; the canonical player classes are the Six (docs/CLASS-SYSTEM.md v2). All pilgrim PLAYER art was purged Sept 8 (Big's order); this doctrine governs world/NPC presentation only.
+
+---
+
 # THE CAMELOT ORDERS (Sept 8 2026, Big approved 'Yes' on the Camelot set)
 The six Orders take Middle English romance names: KNIGHT (was Warden), PALMER (was Wayfarer), SEXTON (was Keeper), CLERK (was Cantor), FORESTER (was Vigil), SMYTH (was Smith). All standing laws carry over unchanged — same souls, true names. 'Sir' is the Knight's in-lore honorific. Elite enemy = THE OATHLESS.
 
@@ -14,7 +20,7 @@ Sept 5, 2026. Governs all human/pilgrim concept art (the colossi live in COLOSSU
 The road is walked as no one. Pilgrims are deep-hooded or helmed — face lost in shadow, nothing visible except soft faction-glow eye points. No canon face renders.
 
 ## ARMOR + RUNE LAW (BudE404: 'lose the elemental effects and go with a rune with the elemental effects')
-Armor = CLEAN Avalon human-craft plate — matte kiln-cured ceramic, sweeping leaf-tip pauldrons, layered curves, fine dark mail, weathered artisan finish — the honest handwork of mortal smiths. ZERO pervasive elemental glow in the material: no ember seams, no fissures of light, no heat shimmer. The element lives in ONE PLACE: the pilgrim's RUNE — the Mark, an ancient glowing elemental sigil set into the breastplate, carrying all the faction element's light alone (fire = ember-orange mark, storm = ice-blue, etc.). Armor stays clean craft; the rune carries the element.
+Armor = CLEAN Avalon human-craft plate — matte kiln-cured ceramic, sweeping leaf-tip pauldrons, layered curves, fine dark mail, weathered artisan finish — the honest handwork of mortal smiths. ZERO pervasive elemental glow in the material: no ember seams, no fissures of light, no heat shimmer. The element lives in ONE PLACE: the pilgrim's RUNE — the Mark, an ancient glowing elemental sigil set into the breastplate, carrying all the faction element's light alone (fire = oxide-red ember mark, storm = storm slate, etc.). Armor stays clean craft; the rune carries the element.
 
 ## THE COLD LANTERN
 The relic — black iron, single flame of the faction's element. Light = faith meter + Hollow protection; never sold. (Pet-relic fusion: the Luminary companion wears its lantern as attire.)
@@ -32,14 +38,14 @@ NEUTRAL-START LAW (Sept 7 2026, Big): glowing eyes and the Luminary's flame are 
 
 ## THE GATE RUNE — UNIVERSAL MARK (Sept 5 2026, BudE404)
 ONE rune symbol for the whole game: the Mark of the Waking Gates — a megalithic trilithon arch (two standing stones + lintel = the Gate) with a single vertical flame of light rising through the center (the pilgrim's light that wakes it). Element-neutral geometry. It is BOTH the game's brand logo AND the in-fiction pilgrim's Mark on the breastplate.
-FACTION = GLOW COLOR ONLY: Ashfall ember-orange · Skyrend ice-blue · Everbloom gold-green · Duskmourn lantern-violet · Marenth pearl-teal · Stoneheart geode white-violet.
+FACTION = GLOW COLOR ONLY: Ashfall oxide-red ember · Skyrend storm slate · Everbloom deep moss · Duskmourn lantern-crimson · Marenth pearl-teal · Stoneheart geode bone-grey.
 PRODUCTION LAW (the one-armor rule): armor sets are FACTION-NEUTRAL — one armor set per role per gender (6 roles × 2 genders = 12 armor sets total). Faction identity is a rune-color swap, never an armor re-roll. Amends the STACK ORDER: base body (M/F) → role kit → armor (neutral) → rune glow (faction color) → weapon kit → cosmetics.
 
 ## GAME NAME CANON (Sept 5, 2026, BudE404)
 Title locked: **AVALON: THE WAKING GATES** (short brand: THE WAKING GATES). Search clearance done Sept 5 2026 — no existing game/app/film/book/trademark found for "Avalon: The Waking Gates" or "The Waking Gates" (nearest: "Tainted Grail: The Fall of Avalon", an unrelated title). Register the trademark when commercializing.
 
 ## THE FLAME-COLOR RULE (BudE404: 'just have the flame turn the color of the other elements when picking that faction')
-SHARPENED per BudE404 ('No only have the flame the different colors I liked the stone gate'): the standing-stone arch is PLAIN WEATHERED STONE — not glowing at all, zero color in the stone, and RUGGED: rough-hewn megalith texture with cracks, chisel pitting, chipped edges and age-patina (BudE404: 'I likes the more rugged gate look texture'). Never polished-smooth stone. ONLY THE RISING FLAME glows, and it alone carries the faction color (ember/ice-blue/gold-green/lantern-violet/pearl-teal/geode). Same rule on the breastplate Mark and every logo colorway. The gate is stone; the flame is the element.
+SHARPENED per BudE404 ('No only have the flame the different colors I liked the stone gate'): the standing-stone arch is PLAIN WEATHERED STONE — not glowing at all, zero color in the stone, and RUGGED: rough-hewn megalith texture with cracks, chisel pitting, chipped edges and age-patina (BudE404: 'I likes the more rugged gate look texture'). Never polished-smooth stone. ONLY THE RISING FLAME glows, and it alone carries the faction color (ember/storm slate/deep moss/crimson/pearl-teal/geode). Same rule on the breastplate Mark and every logo colorway. The gate is stone; the flame is the element.
 
 
 ## MARK-INTEGRATION LAW (Sept 5 2026, BudE404 — locked via Warden-M verdict chain)
@@ -90,6 +96,6 @@ FACE-DISTINCTNESS LAW (Sept 7 2026, Big: 'make sure they arent the same for male
 Proprietary armor system for all pilgrim Orders; no real-world armor terms in canon art.
 1. LASH-PLATE JOINERY: small chiseled plates lashed with waxed cord through carved channels; the visible cord-cross weave is the Avalon signature — period-true on scale, hide, and mail edging alike.
 2. CHISELED PLATES: every plate carries shallow gate-rune etchwork — armor as wearable waymarkers (etch only, never glowing).
-3. REALM MATERIALS: kiln-bronze (Embermere), moor-iron (Galemarch), bloom-steel (Bloomweald), dusk-iron (Gloambarrow), tide-brass (Marenvale), strata-steel (Stonefell).
+3. REALM MATERIALS: kiln-bronze (Ashfall), moor-iron (Skyrend), bloom-steel (Everbloom), dusk-iron (Duskmourn), tide-brass (Marenth), strata-steel (Stoneheart).
 4. CLOAK GRAMMAR: heavy woven road-cloaks with woven geometric glyph-border, pinned with a round order-brooch.
 5. RETIRED: the shoulder-mounted hollow lantern-frame hoop — Big rejected ('except for the shoulder thing'). Light-waiting elements must not be visible worn cages; the Luminary's light manifests in-engine only. Do not re-pitch worn cage pieces.

@@ -1,3 +1,11 @@
+# ⚠ v1 LINEAGE DOC — SUPERSEDED BY CLASS-SYSTEM v2 (Sept 9 2026 lore sweep)
+
+This weapon tree is preserved as LINEAGE: its ability verbs were remapped into the Six Class trees (docs/CLASS-SYSTEM.md v2), not discarded. Player kits are the six class kits (Spear/Greatsword/Warhammer/Twin Blades/Staff/Claws). Trees cost stamina/cooldowns, never FAITH.
+
+---
+
+> **LINEAGE DOC (v1) — superseded as the PLAYER system by CLASS-SYSTEM v2 (the Six Classes); abilities preserved and remapped per v2 lineage notes. The Orders survive as world/NPC lore (CLASS-SYSTEM Law 3).**
+
 # CLASS TREE — TOWER (Gate-Shield / Vigil) v1 CANON
 
 > Faction-neutral weapon discipline. Class = hands; god = flame. STAMINA/cooldowns, never FAITH.

@@ -13,12 +13,12 @@ When the gods walked Mythos in the Walking Age, their element POOLED behind them
 ## II. THE SIX BASE SPRITES (one per region — each echoes its faction signature in miniature)
 | Region | Sprite | Look | Temperament |
 |---|---|---|---|
-| EMBERMERE | CINDERWISP | a drifting ember with a tiny heat-haze body; bobs like a hearth-flame | warm, showoffy, warms hands on request |
-| GALEMARCH | GUSTLING | a knuckle of cloud with a spiral updraft tail; smells faintly of rain | mischievous, steals hats, delivers them later |
-| BLOOMWEALD | BLOOMLING | an unfurling bud whose petals open when pleased; trails nectar-light motes | shy, blooms for kindness (Deed Memory synergy) |
-| GLOAMBARROW | GLOAMLAMP | a thimble lantern with a soft pale flame; the flame IS the sprite | solemn, sits vigil at night, dims politely when you sleep |
-| MARENVALE | TIDEKIN | a finger-length ribbon of living tide with a pearl nucleus; always slightly damp | loyal, fetches Held Things faster |
-| STONEFELL | PEBBLEHEART | a fist of warm grey stone with a quartz heart that glows faintly (Quarry-plate grammar) | patient, naps for days, wakes for tremors |
+| ASHFALL | CINDERWISP | a drifting ember with a tiny heat-haze body; bobs like a hearth-flame | warm, showoffy, warms hands on request |
+| SKYREND | GUSTLING | a knuckle of cloud with a spiral updraft tail; smells faintly of rain | mischievous, steals hats, delivers them later |
+| EVERBLOOM | BLOOMLING | an unfurling bud whose petals open when pleased; trails nectar-light motes | shy, blooms for kindness (Deed Memory synergy) |
+| DUSKMOURN | GLOAMLAMP | a thimble lantern with a soft pale flame; the flame IS the sprite | solemn, sits vigil at night, dims politely when you sleep |
+| MARENTH | TIDEKIN | a finger-length ribbon of living tide with a pearl nucleus; always slightly damp | loyal, fetches Held Things faster |
+| STONEHEART | PEBBLEHEART | a fist of warm grey stone with a quartz heart that glows faintly (Quarry-plate grammar) | patient, naps for days, wakes for tremors |
 
 ## III. ABILITIES + LEVELING (levels 1–10; utility-first, never power creep)
 Base sprite earned via its region's festival questline (level 1). Levels via shared play (no sprite-specific grind — sprites grow by BEING WITH YOU, per the lore).

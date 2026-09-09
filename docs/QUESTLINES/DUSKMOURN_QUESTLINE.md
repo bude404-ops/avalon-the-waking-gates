@@ -1,4 +1,4 @@
-# GLOAMBARROW — THE LANTERN LEDGER (Duskmourn chapter questline)
+# DUSKMOURN — THE LANTERN LEDGER (Duskmourn chapter questline)
 
 **Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the lantern-honor — the dead are owed light, and carrying it is the price of passage.
 **Chapter wound:** a town's dead have stopped accepting light — lanterns gutter when carried to graves, and the unlit rows spread.
@@ -47,4 +47,4 @@
 - **"The Bell That Doesn't Toll"** — a Cantor asks why one barrow-bell stays silent (miniature mystery: a hero who asked to be unmourned).
 
 ## DEPTHS TIE-IN
-**The Gloambarrow Depths** = the Barrow-Queen's ledger of the unlamented — layouts of archive-vaults and drowned streets. Depth fragments: a lantern that burns names instead of oil (seen, not read).
+**The Duskmourn Depths** = the Barrow-Queen's ledger of the unlamented — layouts of archive-vaults and drowned streets. Depth fragments: a lantern that burns names instead of oil (seen, not read).

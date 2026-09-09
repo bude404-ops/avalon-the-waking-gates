@@ -1,3 +1,16 @@
+# ⚠ v4 SUPERSESSION NOTE (Sept 9 2026 lore sweep)
+
+**This bible is written in the pre-overhaul PILGRIM framing and is superseded where it conflicts with the locked canon:**
+- **PLAYER IDENTITY:** the canonical player characters are THE SIX CLASSES (Sovereign / Ravager / Warden / Veilborn / Weaver / Wildborn — docs/CLASS-SYSTEM.md v2 + the 12 locked class canon pieces). The 'You are the Pilgrim' frame is retired as the player identity; the Orders survive ONLY as the world's pilgrimage institutions (NPC/world lore).
+- **CAMPAIGNS:** the campaign structure is governed by the CAMPAIGN I–VI doctrine (Age of Kings → First Ruin → Awakening → Six Paths → Divine Conflict → Primordial Truth; docs/PROGRESSION-AND-PLAYER-RESPECT-LAW.md + AVALON_DOCTRINE.md).
+- **PANTHEON:** six patron gods only, 3M+3F (Pantheon Law v4.1 in ORIGIN-AND-DIVINE-PROGRESSION.md): Storm Queen (Skyrend), Ember King (Ashfall), Iron King (Stoneheart), Death King (Duskmourn), Tide Queen (Marenth), Life Mother (Everbloom). Old king+queen pairs per realm are legacy.
+- **ECONOMY:** class trees run on stamina/cooldowns, never FAITH (CLASS-SYSTEM v2). The pilgrimage beats (arrival → pilgrimage → relight Gates → Gate Rite) survive as QUEST GRAMMAR, not player identity.
+- Realm names + colorways normalized to the locked six (this sweep).
+
+Everything else (Hollow doctrine, Gate Rite spectacle, dual-scale colossal mode, five-beat rhythm) carries over as canon.
+
+---
+
 # THE MYTHOS CAMPAIGN BIBLE — Full Campaign, Story & Lore Integration v1.0
 
 **Owner:** BudE404
@@ -49,8 +62,8 @@ The campaign frames the player as a human pilgrim of the mortal world who is Mar
 
 ## IV. THE STORY — THREE ACTS
 
-### ACT I — THE FLICKERING (Embermere campaign)
-The Ember Gate above Forgefall, in the Embermere, flickers for the first time in an age. Embermere's kept pair — VAELTHORN the Furnace-King and VESSAMAINE the Kiln-Queen — their Gate flickers first. The player begins Marked to Ashfall (tutorial faction): first fractures in the ash-glass wastes, first T1 spawn swarms, first dungeon (see Faction Campaigns), first Gate thrown wide for the first giant crossing. Act I closes with the faction's first T3 world boss — THE HOLLOW FURNACE BRUTE, the first DEAD-GOD SHAPE: the Hollow wearing the shape of a dead furnace-god the mortals stopped believing in (canon: HOLLOW-T3-DEAD-GOD art line) — and the revelation: fractures are not random. Something inside the Hollow is choosing where to break through.
+### ACT I — THE FLICKERING (Ashfall campaign)
+The Ember Gate above Forgefall, in the Ashfall, flickers for the first time in an age. Ashfall's kept pair — VAELTHORN the Furnace-King and VESSAMAINE the Kiln-Queen — their Gate flickers first. The player begins Marked to Ashfall (tutorial faction): first fractures in the ash-glass wastes, first T1 spawn swarms, first dungeon (see Faction Campaigns), first Gate thrown wide for the first giant crossing. Act I closes with the faction's first T3 world boss — THE HOLLOW FURNACE BRUTE, the first DEAD-GOD SHAPE: the Hollow wearing the shape of a dead furnace-god the mortals stopped believing in (canon: HOLLOW-T3-DEAD-GOD art line) — and the revelation: fractures are not random. Something inside the Hollow is choosing where to break through.
 
 ### ACT II — THE SIX GATES
 Fractures bloom across every realm's Gate. The player travels Mythos unlocking factions (see Faction Campaigns): each faction chapter = its region's gate, its kept deity pair, its signature dungeons, its world boss, its belief-crisis. Recurring thread: at each Gate, the player finds evidence of the FORGOTTEN — the deity trapped in the void during the original imprisonment, resentful, patient, breaking its cage from inside. The Hollow is not a force. It is a GRUDGE.
@@ -67,7 +80,7 @@ Every faction chapter runs the same five-beat rhythm:
 1. **NARROW ENTRY (pilgrim scale):** Story quests in mortal spaces — the gate-town, its people, its dying shrine. Learn the belief-crisis. First faith missions.
 2. **FRACTURE HUNTS (pilgrim scale):** Dungeons at mortal scale. T1 trash, T2 elites, a dungeon boss. Each cleared fracture seals a seam and feeds the Gate.
 3. **THE THROWING OF THE GATE (giant mode):** First giant crossing of the chapter — a wave siege defending the Gate or the gate-town. T1 ant-swarms for scale contrast, T2 brutes, chapter mini-boss.
-4. **VOW QUESTS (pilgrim scale):** The chapter's deep dungeon — recover the named relic rite-tool (class-tree topper for its Order). E.g., Embermere: recover a lost Oathblade of the First Vigil and a Wayfarer's true-pair from Hollow-nested vaults.
+4. **VOW QUESTS (pilgrim scale):** The chapter's deep dungeon — recover the named relic rite-tool (class-tree topper for its Order). E.g., Ashfall: recover a lost Oathblade of the First Vigil and a Wayfarer's true-pair from Hollow-nested vaults.
 5. **THE WORLD BOSS (giant mode):** Chapter finale T3 — full phase duel (66%/33%). Beat = faction chapter complete, next realm opens, the realm's Order kits fully unlocked for free-play.
 
 **THE BUILT WORLD (Sept 4 2026, BudE404 — LOCKED):** Mortal Mythos is built in the gods' image — worship-by-evidence made permanent in architecture and craft. Every region's gate-towns, shrines, and monuments visibly echo their faction's deities — the raw elemental GIANTS — and the world's dragon fauna (kept as regional wild beasts): dragon-prow ships and storm-vane weathervanes in the Nordic fjord towns, crucible-core hearth towers in the kiln-cities, petal-crest rooflines on the bloom-temples, lantern-niche shrines on the black-water isles, fin-buttressed harbors on the drowned coast, crystal-crowned quake-villages in the mountain spine. Environment art carries the Divine Influence grammar everywhere mortals live.
@@ -92,34 +105,34 @@ Every faction chapter runs the same five-beat rhythm:
 
 ## VII. FACTION CAMPAIGNS (one per realm; kept pairs locked for F1, proposals for F2–F6 pending BudE404 cut calls)
 
-### F1 FIRE — EMBERMERE (LOCKED: Vaelthorn + Vessamaine; Sorvath & Ozruv = deferred identities — return as NEW characters when assassin/archer classes go live)
+### F1 FIRE — ASHFALL (LOCKED: Vaelthorn + Vessamaine; Sorvath & Ozruv = deferred identities — return as NEW characters when assassin/archer classes go live)
 - **Gate:** the Ember Gate, great desert. **Crisis:** the ash-glass kiln-cities cool; smiths' prayers go unanswered as the forge-faith fades.
 - **Dungeons:** THE GLASS KILN (first dungeon, Hollow spawn in a dead foundry-city), THE SUNKEN ANVIL (Vow Quest vault holding the Scale-Chain), THE EMBER WAKE (Vow Quest vault holding the Emberwake Bow).
 - **World boss:** THE COLD FURNACE — a shard wearing the shape of a forgotten forge-god, armor of frozen drips, cold where there should be heat.
 - **Kept-pair story:** Vaelthorn's sprite vessel walks as a furnace-judge restoring the kiln-cities' oaths; Vessamaine's walks as the kiln-mother midwifing new faith in the foundling shrines.
 
-### F2 AIR — GALEMARCH (LOCKED: Haeldor + Sylwenna; Yrdis & Naeria = deferred identities)
+### F2 AIR — SKYREND (LOCKED: Haeldor + Sylwenna; Yrdis & Naeria = deferred identities)
 - **Gate:** the Gale Gate, frozen fjord north. **Crisis:** the winds go silent — storms die mid-birth, and the north's weather-readers lose their gift.
 - **Dungeons:** THE STILL FJORD (frozen wave-harbors), THE WHISPER GALLERY (cliff-carved halls where the wind's voices are kept), THE VANESPIRE (Vow Quest: the Lightning-Thread Bow).
 - **World boss:** THE HELD BREATH — a shard that has stopped the storm; the sky over the fjord is one held inhale.
 - **Note:** Haeldor's colossal carries the SKYFALL BLADE (storm greatsword) per the Weapon Chassis Law reconciliation — his verdict still pending.
 
-### F3 LIFE — BLOOMWEALD (LOCKED: Thevraine + Mirielle; Corvan & Alveth = deferred identities)
+### F3 LIFE — EVERBLOOM (LOCKED: Thevraine + Mirielle; Corvan & Alveth = deferred identities)
 - **Gate:** the Bloom Gate, sunlit peaks. **Crisis:** terraces of eternal growth begin to WINTER — the first frost the realm has ever known creeps down the green sun's slopes.
 - **Dungeons:** THE FIRST WINTER (frozen bloom-terraces), THE STILL POOL (mirror-water caverns), THE DAWN LOOM (Vow Quest: the Dawnweave Bow).
 - **World boss:** THE UNRIPE — a shard that harvests growth before it can bloom; everything it touches is cut down green.
 
-### F4 DEATH — GLOAMBARROW (LOCKED: Morvaine + Senneth; Ferran & Uthrel = deferred identities)
+### F4 DEATH — DUSKMOURN (LOCKED: Morvaine + Senneth; Ferran & Uthrel = deferred identities)
 - **Gate:** the Barrow Gate, shrine isles on black water. **Crisis:** souls stop passing — the last light in the lanterns gutters, and the dead linger where they fell.
 - **Dungeons:** THE STRANDED SHORE (black-water isle where the ferry never came), THE LANTERN VAULT (Senneth's own reliquary, breached), THE BOUNDARY (Vow Quest: the Boundary Blades).
 - **World boss:** THE REFUSAL — a shard that will not let anything end; mortals it touches cannot die, and worse cannot heal.
 
-### F5 WATER — MARENVALE (LOCKED: Nerovane + Ylsanne; Maruvak & Thuveth = deferred identities)
+### F5 WATER — MARENTH (LOCKED: Nerovane + Ylsanne; Maruvak & Thuveth = deferred identities)
 - **Gate:** the Deep Gate, drowned coast. **Crisis:** the tide forgets its schedule; pearl-light gutters in the deep places, drowned cities surface whole.
 - **Dungeons:** THE SURFACED CITY, THE PRESSURE GARDENS (reef terraces gone wrong), THE SINGING CURRENT (Vow Quest: the Lancet Daggers).
 - **World boss:** THE DROWNED CHOIR — a shard of a thousand mouths singing the sea flat.
 
-### F6 EARTH — STONEFELL (LOCKED: Grathwyn + Bergrune; Dolvarr & Rhovarr = deferred identities)
+### F6 EARTH — STONEHEART (LOCKED: Grathwyn + Bergrune; Dolvarr & Rhovarr = deferred identities)
 - **Gate:** the Rune Gate, mountain spine. **Crisis:** the mountains stop growing — the world's oldest bones go still, and quake-villages lose their warning tremors.
 - **Dungeons:** THE STILL SPINE, THE FAULT CATHEDRAL (the breach-hall of the Quakecaller whose name the Quakeveins no longer speak), THE SEED VAULT (Vow Quest: the Seedstrike Bow).
 - **World boss:** THE STILLNESS — a shard that ends all motion; even the player's colossal moves slow in its radius (mechanical identity).
@@ -187,7 +200,7 @@ The player discovers something SUBSTANTIALLY OLDER than the current civilization
 
 ## CAMPAIGN III — THE AWAKENING (the old Act I-II content re-staged)
 Ancient structures and creatures begin responding to something. Magic becomes unstable. Old seals weaken. The Gods become increasingly relevant. THIS is where the Ember Gate flickers and the six faction chapters begin — the realm campaigns below (five-beat rhythm intact) unfold across Campaigns III-V, the player traveling Mythos gate by gate as fractures bloom and each realm's belief-crisis breaks.
-**Content:** the six faction flicker chapters (F1 Embermere first), fracture hunts, first Gate crossings, T3 world bosses (doctrine §27: mythological events, permanently matter), Witness Missions, mid-game doctrine §26 roster (broken seals, unexplained phenomena, primordial relics).
+**Content:** the six faction flicker chapters (F1 Ashfall first), fracture hunts, first Gate crossings, T3 world bosses (doctrine §27: mythological events, permanently matter), Witness Missions, mid-game doctrine §26 roster (broken seals, unexplained phenomena, primordial relics).
 
 ## CAMPAIGN IV — THE SIX PATHS
 The player explores the deeper origins of their class and the six primordial philosophies. In our lore: the Vow Quests deepen — the Orders are revealed as inheritors of the Walking Age, each rite-tool a survivor of the Primordial Age carried hand-to-hand across the Balancing. Class Quests bloom here (doctrine §23): each Order's founding philosophy examined through its own pilgrimage — the Knight's oath-law traced to the first Gate's vigil, the Smyth's forge-law to the First Forge that built the Gates, etc.

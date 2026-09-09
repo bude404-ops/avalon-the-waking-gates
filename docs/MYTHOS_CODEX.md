@@ -1,3 +1,5 @@
+> **⚠️ PANTHEON LAW SUPERSESSION (Sept 8 2026, Big: 'we only make 6 gods 3 male 3 females') — swept Sept 9.** The god roster is SIX PATRON GODS, one per realm, 3 male + 3 female: **ASHFALL — THE EMBER KING (Vaelthorn)** · **SKYREND — THE STORM QUEEN (Sylwenna)** · **STONEHEART — THE IRON KING (Grathwyn)** · **MARENTH — THE TIDE QUEEN (Ylsanne)** · **EVERBLOOM — THE LIFE MOTHER (Mirielle)** · **DUSKMOURN — THE DEATH KING (Morvaine)** — canon art: art/approved/GOD-<realm>-*-CANON.png. The retired second giant per faction (**Vessamaine, Haeldor, Thevraine, Senneth, Nerovane, Bergrune**) is RECAST as REALM TITANS — guardian colossi of the world sites (Avatar Doctrine cover: gate-crossing vessels and realm wardens, never worshipped, never pantheon). Sprite champions (Warden/Keeper cast) remain champion NPCs. All kits/numbers below apply unchanged — to the six playable god forms at giant scale, and to the titan guardians + champions as NPC units. Legacy 24-deity phrasing below is historical.
+
 # THE MYTHOS CODEX — Founding Roster v2.1 (Original Six-Element World)
 
 > ⚡ **ACTIVE DOCTRINE (Sept 5 2026): THE AVALON DOCTRINE — see docs/AVALON_DOCTRINE.md (the master law).** THE LAND IS THE SLEEPING GODS: each deity sleeps AS the terrain; the colossal = the god standing up (giant-design canon unchanged: raw elemental giants, element-forged greatsword/staff). MORTALS = HUMANS. Powers = relic-GIFTS from the gods. Pilgrimage = the campaign (Grail-quest grammar); Gates = the gods' pulse-points; the Gate Rite wakes the god (giant-mode trigger). The Hollow = the Wasteland (born where a god's dream dies; T3 Echo = false waking). The 12 Warden/Keeper designs = THE FIRST PILGRIMS (anointed legend-humans). Dragons = world-fauna only. All sprite-race / dragon-kin material is HISTORICAL unless restated under the new doctrine.
@@ -11,7 +13,7 @@
 ---
 
 # STAGE 2 WORLDS — CANON COMPLETE (Sept 5 2026)
-**All 24 realm compositions are canon** — every deity anchors a unique domain, tabled in docs/MYTHOS_STAGE2_WORLDS.md. Realm naming follows the locked Gate-name system: **Ember Gate (Embermere), Gale Gate (Galemarch), Bloom Gate (Bloomweald), Barrow Gate (Gloambarrow), Deep Gate (Marenvale), Rune Gate (Stonefell)** — each faction's mortal heartland sits before its Gate, and each deity's domain is a named place within it (GATE RITE ults draw their realm visually).
+**All 24 realm compositions are canon** — every deity anchors a unique domain, tabled in docs/MYTHOS_STAGE2_WORLDS.md. Realm naming follows the locked Gate-name system: **Ember Gate (Ashfall), Gale Gate (Skyrend), Bloom Gate (Everbloom), Barrow Gate (Duskmourn), Deep Gate (Marenth), Rune Gate (Stoneheart)** — each faction's mortal heartland sits before its Gate, and each deity's domain is a named place within it (GATE RITE ults draw their realm visually).
 
 # GIANT-ERA CANONICAL ROSTER v3.0 (Sept 5 2026 — supersedes all per-faction deity tables above, the Roster Gender Lock table, and every [SUPERSEDED] roster layer below)
 
@@ -19,7 +21,7 @@
 
 ## ROSTER OF THE 24
 
-**F1 — EMBERMERE** 🔥 (realm: the Embermere; glow: molten gold-white)
+**F1 — ASHFALL** 🔥 (realm: the Ashfall; glow: molten gold-white)
 | Unit | Form | Epithet | Weapon | Domain (Stage 2 world) |
 |---|---|---|---|---|
 | VAELTHORN ✦ | Fire Giant (M, warrior) | the Furnace-King | CRUCIBLE BLADE — condensed-magma greatsword | THE CINDERLANDS (basalt ranges, lava rivers, ember-city, pilgrimage road) |
@@ -27,7 +29,7 @@
 | THE KILN-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Forge-Country | LOTR-craft forge-blade, ember seams | THE KILN ROAD (dark forge-city below the rampart) |
 | THE HEARTH-KEEPER ✦ | Sprite Champion (F, staff) | Last Keeper of Every Fire | ember-staff | THE EVERHEARTH VAULT (cathedral of cold hearths) |
 
-**F2 — GALEMARCH** 💨 (realm: the Endless Gale; glow: pale storm-blue / ice-blue lightning)
+**F2 — SKYREND** 💨 (realm: the Endless Gale; glow: pale storm-blue / storm slate lightning)
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | HAELDOR ✦ | Storm Giant (M, warrior) | the Thunder Oath | SKYFALL BLADE — storm greatsword, frozen thundercloud core | THE THUNDERSHIELD RANGE (storm ranks, inert citadel) |
@@ -35,7 +37,7 @@
 | THE STORM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Gale | LOTR-craft storm-blade, watch-helm + cowl | THE WATCHTOWER COAST (sea-tower in the gale) |
 | THE MATRIARCH ✦ | Sprite Champion (F, staff) | Oracle of the High Air | storm staff, cowl-veil + circlet | THE SKY MOTHER'S SHELF (night cloud-sea shrine terrace) |
 
-**F3 — BLOOMWEALD** 🌱 (realm: the Verdant Deep; glow: soft green-gold)
+**F3 — EVERBLOOM** 🌱 (realm: the Verdant Deep; glow: soft green-gold)
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | THEVRAINE ✦ | Bloom Giant (M, warrior) | the Evenhand | LIVING SCALE — greatblade with two floating seeds at the guard | THE VERDANT MARCH (root-cathedral canopy ranks) |
@@ -43,7 +45,7 @@
 | THE BLOOM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Seedvaults | LOTR-craft bloom-blade, Living Crown | THE SEEDKEEP GATE (dark canopy-city) |
 | THE BLOOM-KEEPER ✦ | Sprite Champion (F, staff) | Keeper of Every Bloom | living-bloom staff | THE PETAL SHRINE TERRACE (hanging-garden cliff shrine) |
 
-**F4 — GLOAMBARROW** 💀 (realm: the Silent Isles; glow: pale violet ghost-light)
+**F4 — DUSKMOURN** 💀 (realm: the Silent Isles; glow: pale crimson ghost-light)
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | MORVAINE ✦ | Bone Giant (M, warrior) | the Last Warden | DUSK BLADE — greatsword converted from the Duskscythe per the Weapon Chassis Law | THE OSSUARY PLAIN (ribcage hills, skull-ossuary city) |
@@ -51,7 +53,7 @@
 | THE GLOAM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Last Road | gloom-blade, lantern-cage headgear | THE LANTERN WAYS (unlit lantern-processions) |
 | THE VEIL-KEEPER ✦ | Sprite Champion (F, staff) | Keeper of the Veil | gloom-staff | THE VEILED STAIR (stair-shrine into the gloom) |
 
-**F5 — MARENVALE** 🌊 (realm: the Drowned Deep; glow: deep teal)
+**F5 — MARENTH** 🌊 (realm: the Drowned Deep; glow: deep teal)
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | NEROVANE ✦ | Tide Giant (M, warrior) | the Undertow | TIDAL GREATBLADE — heavier than it looks, drags all near it down | THE TIDEGATE COAST (sea-stack gate-pillars, harbor-city) |
@@ -59,7 +61,7 @@
 | THE TIDE-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Night Watch | tide-blade, fin-crown | THE FIRST LIGHT HARBOR (pre-dawn breakwater) |
 | THE PEARL-KEEPER ✦ | Sprite Champion (F, staff) | Oracle of the Tides | pearl-crowned tide-staff | THE MOONTIDE SHRINE (tidal rings under the moon) |
 
-**F6 — STONEFELL** 🪨 (realm: the Mountain Spine; glow: pale gold-white crystal over deep umber)
+**F6 — STONEHEART** 🪨 (realm: the Mountain Spine; glow: pale gold-white crystal over deep umber)
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | GRATHWYN ✦ | Stone Giant (M, warrior) | the Mountain Oath | TECTONIC BLADE — greatsword of the world's first stone, converted from the Tectonic Maul per the Weapon Chassis Law | THE ROOTSPINE GATE (strata-cathedral cavern, crystal river) |
@@ -71,14 +73,14 @@
 1. **KEPT-PAIR INHERITANCE:** each faction's giant pair = the male Warden-role + female Caster-role deities of the founding roster (Vaelthorn/Vessamaine, Haeldor/Sylwenna, Thevraine/Mirielle, Morvaine/Senneth, Nerovane/Ylsanne, Grathwyn/Bergrune). Cut deities (Sorvath, Ozruv, Yrdis, Naeria, Corvan, Alveth, Uthrel, Ferran, Maruvak, Thuveth, Rhovarr, Dolvarr) are DEFERRED, not deleted — they return as NEW CHARACTERS when assassin/archer classes go live (Two-Role Lock).
 2. **SPRITE CHAMPIONS ARE TITLES, NOT BIRTH NAMES** — the greatest of each realm's sprite peoples, raised to exarch rank by their patron pair. Their true names are unwitnessed (lore-clean: titles only on all art, zero text law preserved).
 3. **SPRITE CHAMPION WEAPON LAW:** every Warden (male champion) wields the LOTR-craft BLADE; every Keeper (female champion) wields the elemental STAFF — mirroring the giant Gender-Role Binding at sprite scale. The PLAYER's sprite vessel keeps free class choice (blade/staff/twin blades/bow per the Weapon Chassis Law); champions are the fixed exemplars.
-4. **SPRITE HEADGEAR LAW (silhouette identity):** Embermere = embercowl/kiln-helm, Galemarch = deep watch-cowl + watch-helm, Bloomweald = Living Crown, Gloambarrow = lantern-cage, Marenvale = fin-crown, Stonefell = crystal-crest. Factions read by SHAPE before color.
+4. **SPRITE HEADGEAR LAW (silhouette identity):** Ashfall = embercowl/kiln-helm, Skyrend = deep watch-cowl + watch-helm, Everbloom = Living Crown, Duskmourn = lantern-cage, Marenth = fin-crown, Stoneheart = crystal-crest. Factions read by SHAPE before color.
 5. **GIANT LAWS carry as canon:** Primordial-Max anatomy ('never made — the element that decided to stand'), element-formed faces, Uniform Surface Law for giantesses (femininity by silhouette only), Empty Realm (inert dark cities; all light belongs to the god), element-forged weapons wielded bare-handed.
 6. **SPRITE ARMOR LAW:** Avalon human-craft (sweeping leaf-tip plates, fine mail, faction element-glow in the seams). Males: fey + manly. Females: mature high-priestess authority.
 7. **STAGE 2 WORLDS:** every deity has a personal domain (table above); all 24 world compositions rolled under the Stage 2 laws (locked anchor identity, wide frame, inert cities, distinct realm per deity).
 8. **SPRITES ARE NOT ELVES (Sept 5 2026, BudE404 'cause they aren't elves'):** Mythos sprites are their own fey race — never described as elves in canon, lore, or prompts. The armor/weapon craft grammar is AVALON HUMAN-CRAFT (sweeping leaf-tip plates — mortal smiths, never elf-work). The sprite anatomy is native Mythos fey:
 9. **SPRITE EAR LAW (MYTHOS SPRITE EAR):** short, thick, swept-back pointed fey ears with full 3D volume and a clear gap from the head; faction-colored inner-rim glow per faction. NOT long thin LOTR elf ears — the short swept ear is the sprite racial signature (the ear shape BudE404 kept). Never write 'elven ears' in a generation prompt; write 'short thick swept-back pointed fey ears.'
 10. **SPRITE ELEMENTAL BLOODLINE LAW (Sept 5 2026, BudE404):** the element lives inside the whole sprite — skin, hair, facial hair, ears all carry the faction tell. Unified grammar: 'solid form, living surface, dissolving edge' — solid sculptural core, element bleeding through the surface (molten cracks, storm-static, petal-freckles, shadow-lantern, tide-sheen, crystal-veins), dissolve only at tips/edges. Sprites are the purest bloodline of their patron element; effects are texture-level = 3D-pipeline safe.
-11. **SPRITE ARMOR LAW v2 — ELEMENTAL LOTR CRAFT, PER REGION (Sept 5 2026, BudE404):** armor keeps the LOTR human-craft grammar (sweeping leaf-tip pauldrons, layered plates, fine mail at joints, slender silhouettes) but is forged FROM each realm's own elemental materials, grows from the body at the collar/shoulder anchors (organic grown attachment, no straps or buckles) BUT the SKIN and ARMOR must read as TWO DISTINCT MATERIAL IDENTITIES (Sept 5 2026, BudE404 'armor needs to stand out different from skin'): SKIN = matte rough living realm-material (grown, organic, glow deep inside); ARMOR = polished mirror-sheen crafted plate (forged, jewel-like, brighter engraved glow, sharp rim highlights). The contrast is the story: the realm grew the body, the craft armored it. Embermere = obsidian + volcanic glass + kiln-fired clay, ember seams. Galemarch = storm-slate plates, lightning seams. Bloomweald = living bark-wood + petal-steel, bloom glow. Gloambarrow = shadow-iron, cold wisp-light seams. Marenvale = tide-sheen pearl-plate. Stonefell = crystal-grown armor, inner geode light.
+11. **SPRITE ARMOR LAW v2 — ELEMENTAL LOTR CRAFT, PER REGION (Sept 5 2026, BudE404):** armor keeps the LOTR human-craft grammar (sweeping leaf-tip pauldrons, layered plates, fine mail at joints, slender silhouettes) but is forged FROM each realm's own elemental materials, grows from the body at the collar/shoulder anchors (organic grown attachment, no straps or buckles) BUT the SKIN and ARMOR must read as TWO DISTINCT MATERIAL IDENTITIES (Sept 5 2026, BudE404 'armor needs to stand out different from skin'): SKIN = matte rough living realm-material (grown, organic, glow deep inside); ARMOR = polished mirror-sheen crafted plate (forged, jewel-like, brighter engraved glow, sharp rim highlights). The contrast is the story: the realm grew the body, the craft armored it. Ashfall = obsidian + volcanic glass + kiln-fired clay, ember seams. Skyrend = storm-slate plates, lightning seams. Everbloom = living bark-wood + petal-steel, bloom glow. Duskmourn = shadow-iron, cold wisp-light seams. Marenth = tide-sheen pearl-plate. Stoneheart = crystal-grown armor, inner geode light.
 12. **3D PIPELINE HOLD (Sept 5 2026, BudE404):** 3D models on hold — v4 giant read too neutral (elements lost in conversion; inputs must be element-saturated first) and the sprite read 'vampire bat' (dark cloak folds). 2D canon (armor + adaptation laws) locks BEFORE any further 3D conversion.
 
 
@@ -110,16 +112,16 @@ Under the GIANTS & SPRITES doctrine + Two-Role Lock + Gender-Role Binding, each 
 
 | Faction | Giant Warrior | Giant Caster | Blade Champion | Staff Champion | Signature headgear |
 |---|---|---|---|---|---|
-| EMBERMERE | VAELTHORN the Furnace-King (Crucible Blade) — domain: THE CINDERLANDS | VESSAMAINE the Kiln-Queen (Crucible Staff) — domain: THE EMBER GORGE | KILN-WARDEN — The Kiln Road | HEARTH-KEEPER — The Everhearth Vault | embercowl / kiln-helm |
-| GALEMARCH | HAELDOR the Thunder Oath (Skyfall Blade) — THE THUNDERSHIELD RANGE | SYLWENNA the Stormsight (Weather-Glass Staff) — THE CALM EYE | STORM-WARDEN — The Watchtower Coast | MATRIARCH — The Sky Mother's Shelf | deep cowl + watch-helm / cowl-veil |
-| BLOOMWEALD | THEVRAINE the Evenhand (Living Scale) — THE VERDANT MARCH | MIRIELLE the Stillwater (Mirror Staff) — THE FLOWERDALE | BLOOM-WARDEN — The Seedkeep Gate | BLOOM-KEEPER — The Petal Shrine Terrace | Living Crown |
-| GLOAMBARROW | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Lampkeeper (Lantern Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Lantern Ways | VEIL-KEEPER — The Veiled Stair | lantern-cage |
-| MARENVALE | NEROVANE the Undertow (Tidal Greatblade) — THE TIDEGATE COAST | YLSANNE the Mirrorfin (Mirrorfin Staff — grown coral, pearl-lens; recast to caster per the Gender-Role Binding) — THE DEEP HOLLOW | TIDE-WARDEN — The First Light Harbor | PEARL-KEEPER — The Moontide Shrine | fin-crown |
-| STONEFELL | GRATHWYN the Mountain Oath (Tectonic Blade) — THE ROOTSPINE GATE | BERGRUNE the Unmoved (Bulwark Staff, chassis conversion) — THE GEODE VAULTS | CRYSTAL-WARDEN — The Deep Roads | HEARTROOT-KEEPER — The Heartroot | crystal-crest |
+| ASHFALL | VAELTHORN the Furnace-King (Crucible Blade) — domain: THE CINDERLANDS | VESSAMAINE the Kiln-Queen (Crucible Staff) — domain: THE EMBER GORGE | KILN-WARDEN — The Kiln Road | HEARTH-KEEPER — The Everhearth Vault | embercowl / kiln-helm |
+| SKYREND | HAELDOR the Thunder Oath (Skyfall Blade) — THE THUNDERSHIELD RANGE | SYLWENNA the Stormsight (Weather-Glass Staff) — THE CALM EYE | STORM-WARDEN — The Watchtower Coast | MATRIARCH — The Sky Mother's Shelf | deep cowl + watch-helm / cowl-veil |
+| EVERBLOOM | THEVRAINE the Evenhand (Living Scale) — THE VERDANT MARCH | MIRIELLE the Stillwater (Mirror Staff) — THE FLOWERDALE | BLOOM-WARDEN — The Seedkeep Gate | BLOOM-KEEPER — The Petal Shrine Terrace | Living Crown |
+| DUSKMOURN | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Lampkeeper (Lantern Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Lantern Ways | VEIL-KEEPER — The Veiled Stair | lantern-cage |
+| MARENTH | NEROVANE the Undertow (Tidal Greatblade) — THE TIDEGATE COAST | YLSANNE the Mirrorfin (Mirrorfin Staff — grown coral, pearl-lens; recast to caster per the Gender-Role Binding) — THE DEEP HOLLOW | TIDE-WARDEN — The First Light Harbor | PEARL-KEEPER — The Moontide Shrine | fin-crown |
+| STONEHEART | GRATHWYN the Mountain Oath (Tectonic Blade) — THE ROOTSPINE GATE | BERGRUNE the Unmoved (Bulwark Staff, chassis conversion) — THE GEODE VAULTS | CRYSTAL-WARDEN — The Deep Roads | HEARTROOT-KEEPER — The Heartroot | crystal-crest |
 
-Name verdicts RESOLVED (Sept 5 2026): ALL giant names LOCKED via kept Stage 2 art. Sprite champion title-names canon with the sprite art; Stonefell pair renamed per Stage 2 canon (Crystal-Warden + Heartroot-Keeper). Sprite champions wield the Avalon human-craft armor language (Sprite Armor Law) — ember/storm/bloom/gloom/tide/crystal identity lives in the crafted seams; the hollow's Unmade Champions wear the same armor grammar (see HOLLOW_TIDE_BESTIARY v2.0).
+Name verdicts RESOLVED (Sept 5 2026): ALL giant names LOCKED via kept Stage 2 art. Sprite champion title-names canon with the sprite art; Stoneheart pair renamed per Stage 2 canon (Crystal-Warden + Heartroot-Keeper). Sprite champions wield the Avalon human-craft armor language (Sprite Armor Law) — ember/storm/bloom/gloom/tide/crystal identity lives in the crafted seams; the hollow's Unmade Champions wear the same armor grammar (see HOLLOW_TIDE_BESTIARY v2.0).
 
-## F1 — FIRE 🔥 Realm: **EMBERMERE** (the Embermarch — burning deserts of cinder-glass)
+## F1 — FIRE 🔥 Realm: **ASHFALL** (the Embermarch — burning deserts of cinder-glass)
 Glow: molten gold-white. Materials: ash-sandstone, obsidian glass, molten gold, ember-veined stone. Gate in Mythos: the Ember Gate, great desert.
 
 | Deity | Epithet | Role | Weapon (function made solid) | Armor Philosophy |
@@ -129,7 +131,7 @@ Glow: molten gold-white. Materials: ash-sandstone, obsidian glass, molten gold, 
 | Vessamaine | the Kiln-Queen | Caster | THE CRUCIBLE STAFF — a staff crowned with a suspended droplet of molten gold that never falls | Hearth-Band: smooth warm bands, each glowing faint at the seam |
 | Ozruv | the Ash Auditor | Striker | THE SCALE-CHAIN — twin ember blades joined by a burning chain; weighs, then executes | Weighted-Ash: ash-grey plate with counterweight spheres of solidified smoke |
 
-## F2 — AIR 💨 Realm: **GALEMARCH** (the Endless Gale — storm-country of cloud cliffs)
+## F2 — AIR 💨 Realm: **SKYREND** (the Endless Gale — storm-country of cloud cliffs)
 Glow: pale storm-blue. Materials: rain-slate, thundercloud-stone, pale ice, silver-blue vein-glass. Gate in Mythos: the SQUALL GATE, frozen fjord north.
 
 | Deity | Epithet | Role | Weapon | Armor Philosophy |
@@ -139,7 +141,7 @@ Glow: pale storm-blue. Materials: rain-slate, thundercloud-stone, pale ice, silv
 | Sylwenna | the Stormsight | Caster | THE WEATHER-GLASS STAFF — a staff crowned with an orb holding a miniature living storm she reads and unleashes | Vane-Work: rotating fin-plates turning in a wind only she feels |
 | Naeria | the Galeheart | Ranged | THE LIGHTNING-THREAD BOW — black rain-slate strung with a captured bolt | Rain-Edge: falling-line forms, every edge streaked downward like rain |
 
-## F3 — LIFE 🌱 Realm: **BLOOMWEALD** (the Verdant Deep — eternal-growth terraces under a green sun)
+## F3 — LIFE 🌱 Realm: **EVERBLOOM** (the Verdant Deep — eternal-growth terraces under a green sun)
 Glow: soft green-gold. Materials: bloom-marble, amber sap-glass, petal-agate, warm ivory stone. Gate in Mythos: the Bloom Gate, sunlit peaks.
 
 | Deity | Epithet | Role | Weapon | Armor Philosophy |
@@ -149,8 +151,8 @@ Glow: soft green-gold. Materials: bloom-marble, amber sap-glass, petal-agate, wa
 | Corvan | the Firstlight | Ranged | THE DAWNWEAVE BOW — a bow woven of first-light rays | Vein-Of-Dawn: white marble laced with thin gold morning-light veins |
 | Alveth | the Rootbond | Striker | THE THORN-TWIN — two curved thorn-blades grown from the world's own root | Root-Knit: interlocking living roots turned to stone mid-growth |
 
-## F4 — DEATH 💀 Realm: **GLOAMBARROW** (the Silent Isles — black-water archipelago of eternal last light)
-Glow: pale violet ghost-light. Materials: bone-pale granite, black-vein marble, dusk-vermilion inlay, tarnished silver. Gate in Mythos: the Barrow Gate, shrine isles.
+## F4 — DEATH 💀 Realm: **DUSKMOURN** (the Silent Isles — black-water archipelago of eternal last light)
+Glow: pale crimson ghost-light. Materials: bone-pale granite, black-vein marble, dusk-vermilion inlay, tarnished silver. Gate in Mythos: the Barrow Gate, shrine isles.
 
 | Deity | Epithet | Role | Weapon | Armor Philosophy |
 |-------|---------|------|--------|-------------------|
@@ -159,7 +161,7 @@ Glow: pale violet ghost-light. Materials: bone-pale granite, black-vein marble, 
 | Senneth | the Lampkeeper | Caster | THE LANTERN STAFF — a staff crowned with a lantern holding the final light of everyone who has passed; she carries them home | Ash-Relief: bone-pale plate with shallow niches, each holding a small ghost-flame |
 | Ferran | the Ferryman | Ranged | THE OAR-ARCS — paired crescent blades like oars; he rows souls across | Wake-Line: black water-lines flowing into pale stone, like a wake |
 
-## F5 — WATER 🌊 Realm: **MARENVALE** (the Drowned Deep — sunken world of pressure and pearl-light)
+## F5 — WATER 🌊 Realm: **MARENTH** (the Drowned Deep — sunken world of pressure and pearl-light)
 Glow: deep teal. Materials: abyssal basalt, coral-stone, pearl, wave-glass, barnacled marble. Gate in Mythos: the DEEP GATE, drowned coast.
 
 | Deity | Epithet | Role | Weapon | Armor Philosophy |
@@ -169,7 +171,7 @@ Glow: deep teal. Materials: abyssal basalt, coral-stone, pearl, wave-glass, barn
 | Maruvak | the Deepcall | Caster | THE ABYSS WELLSTAFF — a staff hollow through the middle, dropping into dark water without end | Downwell-Band: rings that fall away into depth-shadows at their lower edges |
 | Thuveth | the Reefsong | Striker | THE LANCET DAGGERS — thin wave-glass blades that sing at a frequency only prey hears | Current-Cut: sleek seamless plate shaped by flow, no beginning and no end |
 
-## F6 — EARTH 🪨 Realm: **STONEFELL** (the Mountain Spine — the world's oldest bones, still growing)
+## F6 — EARTH 🪨 Realm: **STONEHEART** (the Mountain Spine — the world's oldest bones, still growing)
 Glow: deep amber-green. Materials: root-marble, mountain granite, iron-vein stone, moss-agate, raw crystal. Gate in Mythos: the STONE GATE, mountain spine.
 
 | Deity | Epithet | Role | Weapon | Armor Philosophy |
@@ -194,12 +196,12 @@ Every faction runs exactly two male and two female colossi. Females follow the F
 
 | Faction | Male | Male | Female | Female |
 |---------|------|------|--------|--------|
-| F1 FIRE (Embermere) | Vaelthorn, the Furnace-King | Sorvath, the Wildfire Herald | Vessamaine, the Kiln-Queen | Ozruv, the Ash Auditor |
-| F2 AIR (Galemarch) | Haeldor, the Thunder Oath | Yrdis, the Whisperdrift | Sylwenna, the Stormsight | Naeria, the Galeheart |
-| F3 LIFE (Bloomweald) | Thevraine, the Evenhand | Corvan, the Firstlight | Mirielle, the Stillwater | Alveth, the Rootbond |
-| F4 DEATH ( Gloambarrow) | Morvaine, the Last Warden | Ferran, the Ferryman | Senneth, the Lampkeeper | Uthrel, the Quiet |
-| F5 WATER (Marenvale) | Nerovane, the Undertow | Maruvak, the Deepcall | Ylsanne, the Mirrorfin | Thuveth, the Reefsong |
-| F6 EARTH (Stonefell) | Grathwyn, the Mountain Oath | Rhovarr, the Quakecaller | Bergrune, the Unmoved | Dolvarr, the Deeproot |
+| F1 FIRE (Ashfall) | Vaelthorn, the Furnace-King | Sorvath, the Wildfire Herald | Vessamaine, the Kiln-Queen | Ozruv, the Ash Auditor |
+| F2 AIR (Skyrend) | Haeldor, the Thunder Oath | Yrdis, the Whisperdrift | Sylwenna, the Stormsight | Naeria, the Galeheart |
+| F3 LIFE (Everbloom) | Thevraine, the Evenhand | Corvan, the Firstlight | Mirielle, the Stillwater | Alveth, the Rootbond |
+| F4 DEATH ( Duskmourn) | Morvaine, the Last Warden | Ferran, the Ferryman | Senneth, the Lampkeeper | Uthrel, the Quiet |
+| F5 WATER (Marenth) | Nerovane, the Undertow | Maruvak, the Deepcall | Ylsanne, the Mirrorfin | Thuveth, the Reefsong |
+| F6 EARTH (Stoneheart) | Grathwyn, the Mountain Oath | Rhovarr, the Quakecaller | Bergrune, the Unmoved | Dolvarr, the Deeproot |
 
 
 ## WING DOCTRINE v2 (Sept 4 2026, BudE404) — wing type matches the faction's ELEMENT, not one global style
@@ -209,11 +211,11 @@ Every faction runs exactly two male and two female colossi. Females follow the F
 **THE AVATAR DOCTRINE (Sept 4 2026, BudE404 — LOCKED) [CARRIES OVER; dragon wording superseded — avatars are RAW ELEMENTAL GIANTS]:** All 24 deities are elemental giant gods — remote, unknowable elemental powers beyond their Gates. The colossi we design are NOT the deities themselves: each is a DRACONIAN AVATAR — the sole unit allowed to cross its Mythos Gate into the mortal realm on the deity's behalf. Retro-explains the First Forge: the shared five-piece Aetherium grammar is the standard construction of a Gate-crossing vessel, a lore fact, not a style choice. Avatar death = that deity's voice in Mythos goes silent until the vessel is re-forged. Seeing avatars in the mortal realm is canon — they are the only divine presence mortals ever witness.
 
 **THE DRAGON SPECIES TABLE [SUPERSEDED — becomes the GIANT ANATOMY TABLE: Fire Giant (fire-muscle), Storm Giant (storm-mass), Bloom Giant (petal-flesh), Bone Giant (bone-ash), Tide Giant (wave-mass), Stone Giant (stone-mass) — raw elemental, zero armor]:** each faction's avatar is built on its own elemental dragon species — the dragon is the chassis, the element is the identity:
-- F1 FIRE (Embermere): FIRE WYRM — armored draconic plate wings, ember-glow through the seams. (Canon conforms: Vaelthorn warden pair, Sorvath herald pair, Vessamaine hearth-bellows pair, Ozruv ember-fan.)
-- F2 AIR (Galemarch): STORM DRAKE — draconic wings of thundercloud-membrane on an armored frame, lightning arcs between the wingtips, gale-blade feather-scales.
-- F3 LIFE (Bloomweald): BLOOM DRAGON — petal-membrane wings that unfurl like flowers, amber sap-glass veining, drifting seed-motes. EXCEPTION: Alveth the Rootbond — a rooted bloom dragon, wingless, root-anchor architecture.
-- F4 DEATH (Gloambarrow): BONE DRAKE — bone-frame wings, tattered ash-membrane, ghost-flame niches trailing last-light motes. EXCEPTIONS: Uthrel the Quiet (stillness, no wings), Ferran the Ferryman (oar-blade architecture).
-- F5 WATER (Marenvale): SEA SERPENT — finned and flightless: crest-fins, fin-mantles, tail-blades; the swimming silhouette.
+- F1 FIRE (Ashfall): FIRE WYRM — armored draconic plate wings, ember-glow through the seams. (Canon conforms: Vaelthorn warden pair, Sorvath herald pair, Vessamaine hearth-bellows pair, Ozruv ember-fan.)
+- F2 AIR (Skyrend): STORM DRAKE — draconic wings of thundercloud-membrane on an armored frame, lightning arcs between the wingtips, gale-blade feather-scales.
+- F3 LIFE (Everbloom): BLOOM DRAGON — petal-membrane wings that unfurl like flowers, amber sap-glass veining, drifting seed-motes. EXCEPTION: Alveth the Rootbond — a rooted bloom dragon, wingless, root-anchor architecture.
+- F4 DEATH (Duskmourn): BONE DRAKE — bone-frame wings, tattered ash-membrane, ghost-flame niches trailing last-light motes. EXCEPTIONS: Uthrel the Quiet (stillness, no wings), Ferran the Ferryman (oar-blade architecture).
+- F5 WATER (Marenth): SEA SERPENT — finned and flightless: crest-fins, fin-mantles, tail-blades; the swimming silhouette.
 - F6 EARTH (Rootspine): STONE DRAGON — wingless, mountain-built: strata-plate armor, crystal growth along the spine, the walking-hill silhouette.
 
 **THE DUAL VESSEL DOCTRINE [SUPERSEDED — re-cast as DUAL-SCALE PLAY under the Giants & Sprites doctrine: the two scales are now (1) the 100-ft raw elemental GIANT and (2) the sprite-scale vessel among the fey] (Sept 4 2026, BudE404 — LOCKED 'K yes lets do it'):** Each deity deploys TWO vessels:
@@ -221,7 +223,7 @@ Every faction runs exactly two male and two female colossi. Females follow the F
 2. THE HUMAN-SIZED DRACONIAN ASPECT — a mortal-scale vessel with draconian features, for dungeon-scale events, separate wave runs, and small-arena bosses. The deity shapes its vessel to fit the Gate it enters.
 [SUPERSEDED — GIANT ERA: the GIANT form rolls first per deity; sprite vessels follow] PRODUCTION ORDER: the human aspect rolls FIRST for each kept deity. Each faction ships 4 ART MODELS: 2 colossal avatars + 2 human aspects.
 ROLES ARE REMOVED — weapon class is PLAYER CHOICE: warrior / caster / assassin / archer, chosen freely per faction. Weapon trees are built on WEAPON CLASS x FACTION; each deity's canon weapon survives as the signature tree-topper of its class.
-ROSTER TRIM: 2 deities per faction (1M + 1F) = 12 deities, 24 art models. Embermere cut call (BudE404): KEEP VAELTHORN + VESSAMAINE. The cut do not die — each faction's two cut deities convert to the SIGNATURE SKINS of the other two weapon-class trees, completing a named identity behind all 4 classes per faction:
+ROSTER TRIM: 2 deities per faction (1M + 1F) = 12 deities, 24 art models. Ashfall cut call (BudE404): KEEP VAELTHORN + VESSAMAINE. The cut do not die — each faction's two cut deities convert to the SIGNATURE SKINS of the other two weapon-class trees, completing a named identity behind all 4 classes per faction:
 - CINDERLANDS: Vaelthorn = warrior tree (Crucible Maul) + caster tree (Vessamaine's Crucible Staff are both kept avatars); SORVATH = ARCHER tree signature skin (Emberwake Bow); OZRUV = ASSASSIN tree signature skin (Scale-Chain). All four named identities cover the four classes — two playable avatars, two tree skins.
 
 **THE WEAPON CHASSIS LAW (Sept 4 2026, BudE404 — LOCKED):** Weapon types are LIMITED and uniform across all factions — one chassis per class:
@@ -237,12 +239,12 @@ Identity comes from FACTION (material, elemental philosophy, named relic lore) o
 **THE NO-TAIL RULE [MOOT — bipedal raw elemental giants are tailless by default] (Sept 4 2026, BudE404 — LOCKED 'no tails'):** Colossal avatars are tailless draconian HUMANOIDS. The draconic identity is carried by dragon-skull helms, fang collars, clawed gauntlets/sabatons, and wing relics — never a tail. The silhouette stays armored warrior, not beast.
 
 **THE FACTION SIGNATURE LAW (Sept 4 2026, BudE404 — LOCKED: 'we do need have something each colossal gets that different from other factions not just elemental effects'):** Every colossal carries its faction's SIGNATURE ARCHITECTURE — a structural relic system unique to the faction, present on EVERY colossal of that faction, reading instantly in silhouette beyond glow/color/element. Six signatures:
-- F1 EMBERMERE (Fire) — THE CRUCIBLE CORE: every fire colossal's chest is built around an open relic-furnace heart at the center of the breastplate — armor as furnace architecture around it (bellows-ribs, vent-fins glowing with breath).
-- F2 GALEMARCH (Air) — THE STORM VANES: rotating fin-vane spires on pauldrons and back-plate that turn in a wind only the deity feels, static arcing between them.
-- F3 BLOOMWEALD (Life) — THE LIVING CREST: a garden-crown of carved-unfurling petals and vines growing from helm, collar, and pauldrons — armor that visibly blooms.
-- F4 GLOAMBARROW (Death) — THE RELIQUARY NICHES: shallow lantern niches cut into the armor holding ghost-flames, trailing last-light motes — the armor is a reliquary for the lights of the dead.
-- F5 MARENVALE (Water) — THE FIN CROWN: crest-fins and fin-mantle architecture with gill-slit vents in the plate that vent mist — the pressure-born silhouette (fins were already canon; now the signature law formalizes them).
-- F6 STONEFELL (Earth) — THE CRYSTAL LOAD: raw crystal growths erupting from spine, shoulders, and helm — a geode-crown of living ore on strata-plate, the mountain's mineral made visible.
+- F1 ASHFALL (Fire) — THE CRUCIBLE CORE: every fire colossal's chest is built around an open relic-furnace heart at the center of the breastplate — armor as furnace architecture around it (bellows-ribs, vent-fins glowing with breath).
+- F2 SKYREND (Air) — THE STORM VANES: rotating fin-vane spires on pauldrons and back-plate that turn in a wind only the deity feels, static arcing between them.
+- F3 EVERBLOOM (Life) — THE LIVING CREST: a garden-crown of carved-unfurling petals and vines growing from helm, collar, and pauldrons — armor that visibly blooms.
+- F4 DUSKMOURN (Death) — THE RELIQUARY NICHES: shallow lantern niches cut into the armor holding ghost-flames, trailing last-light motes — the armor is a reliquary for the lights of the dead.
+- F5 MARENTH (Water) — THE FIN CROWN: crest-fins and fin-mantle architecture with gill-slit vents in the plate that vent mist — the pressure-born silhouette (fins were already canon; now the signature law formalizes them).
+- F6 STONEHEART (Earth) — THE CRYSTAL LOAD: raw crystal growths erupting from spine, shoulders, and helm — a geode-crown of living ore on strata-plate, the mountain's mineral made visible.
 Per-deity variation lives within each signature (scale, count, placement) — the signature itself never skips a colossal of that faction.
 
 **THE MORTAL REALM DIVINE INFLUENCE LAW (Sept 4 2026, BudE404 — LOCKED: 'the Mythos world for mortals needs to be influenced by the deities and dragons so even in a Nordic setting should see that influence'):** Mortal Mythos is BUILT in the gods' image. Every mortal region carries its faction's visible mark — architecture, craft, and culture imitate the deities and their dragon species (worship-by-evidence made permanent): gate-towns echo the First Forge (fused-plate buttresses, gouged-metal trim, fang-gable roofs), shrines are scaled-down imitations of the armor sets, monumental dragon-skull gateways and colossus-scale statuary flank the Great Gates, and faction signatures echo through mortal craft — Nordic fjord towns carve dragon-prow ships and storm-vane weathervanes after the STORM VANES, kiln-cities raise crucible-core hearth towers after the CRUCIBLE CORE, bloom-temples grow petal-crest rooflines after the LIVING CREST. Even at mortal scale, the world visibly remembers who made it. All environment/world art rolls include this grammar.
@@ -252,13 +254,13 @@ Per-deity variation lives within each signature (scale, count, placement) — th
 **THE TRUE DRAGON VESSEL LAW [SUPERSEDED by the Giants & Sprites Doctrine] (Sept 4 2026, BudE404 — LOCKED GO: 'dragon as colossal and human variants, we can figure out the 3d and rigging when we come to that part'):** The colossal avatar is an ACTUAL DRAGON — the deity's true draconic form crossing the Gate. The Dragon Species Table becomes the LITERAL model sheet: each faction's colossal is its species (Fire Wyrm, Storm Drake, Bloom Dragon, Bone Drake, Sea Serpent, Stone Dragon) in living elemental anatomy + the First Forge five-piece re-cut as DRAGON BARDING (skull-crown on the head, chest-plate, claw-sheaths on the talons, hip/fauld plates + tail-plate rings, paw-plates) in the same gouged primordial Aetherium, + the faction signature. **NO WEAPONS on colossi** — colossal gameplay is NATURAL DRAGON ATTACKS: claw swipes, bite, element breath (the special), wing-gust AOE, body slam, roar. The Weapon Chassis Law is now HUMAN-ASPECT-ONLY. TAILS RETURN (the no-tail rule was humanoid-frame-specific and retires with it); wings are the dragon's own elemental anatomy with Aetherium-armored wing-roots per the barding logic (Material Clause retires with the humanoid frame). Avatar death / dual vessels / Faith Loop / species table / signatures unchanged. 3D path for dragons: DEFERRED by BudE404 — solve rigging at pipeline time; humans keep the locked Meshy→Mixamo→engine flow. PRODUCTION: re-roll Vaelthorn + Vessamaine colossi as their dragons, then Haeldor; existing humanoid colossal canons are superseded on each dragon's keep and purged.
 
 **REGIONAL HUMAN ARMOR LAW [SUPERSEDED — sprite-scale faction-palette fey gear] (Sept 4 2026, BudE404 — LOCKED: 'different style of armor for each regions humans, none of them get the aetherium, theirs is the world's materials such as steel iron etc'):** AETHERIUM IS DIVINE-ONLY. Human aspects and all regional mortals wear armor of their region's WORLDLY materials — each faction's humans get a distinct armor STYLE, always echoing their deity's dragon (scale-work, fang ridges, fin/petal/crystal crests, the faction signature in mortal craft) but forged from mortal materials. Six styles:
-- F1 EMBERMERE — FORGE-IRON: blackened steel and fire-tempered bronze, riveted kiln-plate scaled like cooling lava, ember-painted sigil accents; the forge-town look.
-- F2 GALEMARCH — STORM-STEEL: blued rain-slick steel in laminar wind-shed plates angled to shed weather, rope-and-hardwood fittings, dragon-prow helms, storm-vane crest rods.
-- F3 BLOOMWEALD — GROW-PLATE: living-hardwood cuirasses lacquered in petal-red, greened bronze fittings, petal-crest helms, vining ironwork that imitates the Living Crest.
-- F4 GLOAMBARROW — LANTERN-PLATE: pale bone-white steel with tiny LANTERN-NICHE shrines cut into the pauldrons and breastplate — actual lit votive windows in the armor; willow-fiber underlay.
-- F5 MARENVALE — TIDE-MAIL: patinated sea-steel scale-mail, fin-crested helms with gill-slit breath vents, pearl and coral inlay, rope-warped harness.
-- F6 STONEFELL — QUARRY-PLATE: grey iron strata-plate layered like the mountain, raw quartz set into the joints so the armor windows glow faintly with crystal light, quake-braced articulation.
-**Supersedes:** the old human-aspect armor rule of 'humanlike re-forged Aetherium.' Existing human canons (VAELTHORN-HUMAN, VESSAMAINE-HUMAN) predate this law and get re-rolled in their region's style (Embermere FORGE-IRON) on BudE404's word. The rest of the Human Aspect Law (human face/body, wing-cape, draconic human boots, class-chassis relic weapon, sigil-only glyphs, ember-glow eyes) is unchanged — only the armor's material + style changes. Colossal dragon barding stays Aetherium (divine).
+- F1 ASHFALL — FORGE-IRON: blackened steel and fire-tempered bronze, riveted kiln-plate scaled like cooling lava, ember-painted sigil accents; the forge-town look.
+- F2 SKYREND — STORM-STEEL: blued rain-slick steel in laminar wind-shed plates angled to shed weather, rope-and-hardwood fittings, dragon-prow helms, storm-vane crest rods.
+- F3 EVERBLOOM — GROW-PLATE: living-hardwood cuirasses lacquered in petal-red, greened bronze fittings, petal-crest helms, vining ironwork that imitates the Living Crest.
+- F4 DUSKMOURN — LANTERN-PLATE: pale bone-white steel with tiny LANTERN-NICHE shrines cut into the pauldrons and breastplate — actual lit votive windows in the armor; willow-fiber underlay.
+- F5 MARENTH — TIDE-MAIL: patinated sea-steel scale-mail, fin-crested helms with gill-slit breath vents, pearl and coral inlay, rope-warped harness.
+- F6 STONEHEART — QUARRY-PLATE: grey iron strata-plate layered like the mountain, raw quartz set into the joints so the armor windows glow faintly with crystal light, quake-braced articulation.
+**Supersedes:** the old human-aspect armor rule of 'humanlike re-forged Aetherium.' Existing human canons (VAELTHORN-HUMAN, VESSAMAINE-HUMAN) predate this law and get re-rolled in their region's style (Ashfall FORGE-IRON) on BudE404's word. The rest of the Human Aspect Law (human face/body, wing-cape, draconic human boots, class-chassis relic weapon, sigil-only glyphs, ember-glow eyes) is unchanged — only the armor's material + style changes. Colossal dragon barding stays Aetherium (divine).
 
 **ENVIRONMENT ART LAW (Sept 4 2026, BudE404 — v2 of the Fire Wyrm REJECTED because 'his background art was old'):** All environment/background art MUST draw its setting from MYTHOS_WORLD_BIBLE.md locations (the original regions: Embermarch, Galeways, Bloomward, Duskmere, Saltreach, Quakeveins, Heartland). Old-world geography echoes (desert-Egypt style, Nordic fjords, etc.) are retired everywhere including backgrounds. Dragon rolls PAUSED while lore/game-side work continues; on resume, colossal compositions use the world-bible settings.
 
@@ -272,7 +274,7 @@ Per-deity variation lives within each signature (scale, count, placement) — th
 
 **DRAGON SCALE-ARMOR LAW [SUPERSEDED — dragons are fauna; giants are raw element] (Sept 4 2026, BudE404):** A dragon's armor IS its own natural SCALES — massive overlapping draconic scale banks grown from its own body, like cooled lava crust over living fire. NO metal barding, NO plates, NO relic armor on dragon forms. DEATH STATE (dragon): the dragon simply LOSES ALL LIGHT AND FLAMES — the fire departs and what remains is the dark inert scale husk — and LORE TRUTH (BudE404): the husk is only an EXTENSION of the deity, not really them. The true deity is the elemental essence/consciousness (the fire itself), which departs at death; the scales are shed vessel, like a skin. The remains are not the god — the god endures beyond the shell. (Human aspects keep their relic armor — read in lore as forged from the god's own shed scales, preserving the one-forge parity without plating the dragon.)
 
-**DRAGON-KIN LAW (Sept 4 2026, BudE404, LOCKED 'Yes'): NO HUMANS EXIST IN MYTHOS.** Mortals are dragon-kin humanoids — kin of the deities — with SUBTLE draconic tells (scale patches, horn nubs, slit-pupil glowing eyes, faction-tinted per patron dragon: Embermere ember-eyes, Galemarch storm-eyes, Bloomweald petal-fans, Gloambarrow lantern-eyes, Marenvale fin-crests/gill-slits, Stonefell crystal-nubs). Tells stay subtle — 'dragon's blood in them,' never mini-dragons. Deities' hooded vessels walk among their own kin (Narrow Ways strengthened); belief = family-weighted (kin honoring makers); humanoid-shape = standard rig/armor pipeline. Regional human armor styles apply to dragon-kin wearers unchanged.
+**DRAGON-KIN LAW (Sept 4 2026, BudE404, LOCKED 'Yes'): NO HUMANS EXIST IN MYTHOS.** Mortals are dragon-kin humanoids — kin of the deities — with SUBTLE draconic tells (scale patches, horn nubs, slit-pupil glowing eyes, faction-tinted per patron dragon: Ashfall ember-eyes, Skyrend storm-eyes, Everbloom petal-fans, Duskmourn lantern-eyes, Marenth fin-crests/gill-slits, Stoneheart crystal-nubs). Tells stay subtle — 'dragon's blood in them,' never mini-dragons. Deities' hooded vessels walk among their own kin (Narrow Ways strengthened); belief = family-weighted (kin honoring makers); humanoid-shape = standard rig/armor pipeline. Regional human armor styles apply to dragon-kin wearers unchanged.
 
 **THE HOLLOW SCOPE (Sept 4 2026, BudE404 — LOCKED):** The Hollow is ENEMY ECOLOGY, not a deity roster — no 24-unit pantheon. Because the Hollow has no true deities (only the Forgotten, trapped in the void), it expresses itself through spawn, and its unit list narrows to three tiers that map directly onto the locked combat spec:
 - BASIC ENEMIES (T1): trash-tier void spawn — ants that die in one tap, ragdoll, swarm for scale contrast against 30-foot avatars.
@@ -285,8 +287,8 @@ The 24 avatars remain the only divine-tier units in the game; the Hollow supplie
 **THE GLOBAL RULE (revised):** Wings are ELEMENT-NATIVE — each faction's wing type embodies its own element. Only the FIRE faction is draconic (dragons ARE the fire beast-language — this is why Vaelthorn and Sorvath wear dragon wings). The other winged factions carry wings built of their own element.
 
 **ELEMENT EXCEPTIONS — two factions never fly (unchanged):**
-- F5 WATER (Marenvale): ZERO wings. Fin architecture — crest-fins, fin-mantles, tail-blades; the swimming silhouette.
-- F6 EARTH (Stonefell): ZERO wings. Mountain architecture — cliff-ridge pauldrons, basalt spines, root-anchors. Stone does not leave the ground.
+- F5 WATER (Marenth): ZERO wings. Fin architecture — crest-fins, fin-mantles, tail-blades; the swimming silhouette.
+- F6 EARTH (Stoneheart): ZERO wings. Mountain architecture — cliff-ridge pauldrons, basalt spines, root-anchors. Stone does not leave the ground.
 
 **WINGED FACTIONS — one wing grammar per element:**
 
@@ -328,7 +330,7 @@ The True Dragon Vessel doctrine is RETIRED for deities and mortals. Same overall
 The 24 art models re-roll as colossal ELEMENTAL GIANTS/beings — living embodiments of their element. The Avatar Doctrine, Dual Vessel Doctrine, Two-Role Lock, Gender-Role Binding, and Female-Titan Laws all carry over unchanged. A colossal giant gripping a relic greatsword IS the warrior class; a giantess with a relic staff IS the caster class.
 
 ## 2. MORTALS = SPRITES
-THE HUMAN-TYPE SIDE IS SPRITES (BudE404 ruling): the mortal civilizations of Mythos are SPRITE-SIZE elemental beings, not humans or dragon-kin. Each faction's sprites mirror their patron giants' element (Embermere ember-wisps, Galemarch storm-sprites, Bloomweald petal-sprites, Gloambarrow lantern-motes, Marenvale pearl-finned sprites, Stonefell crystal-sprites — names TBD per faction). Dragon-Kin Law REPEALED. The Narrow Ways: each giant's small vessel walks among the sprites at THEIR scale — divine disguise among tiny worshippers.
+THE HUMAN-TYPE SIDE IS SPRITES (BudE404 ruling): the mortal civilizations of Mythos are SPRITE-SIZE elemental beings, not humans or dragon-kin. Each faction's sprites mirror their patron giants' element (Ashfall ember-wisps, Skyrend storm-sprites, Everbloom petal-sprites, Duskmourn lantern-motes, Marenth pearl-finned sprites, Stoneheart crystal-sprites — names TBD per faction). Dragon-Kin Law REPEALED. The Narrow Ways: each giant's small vessel walks among the sprites at THEIR scale — divine disguise among tiny worshippers.
 
 ## 3. DRAGONS STILL EXIST — AS WORLD-BEASTS
 Dragons and draconic creatures are NOT deities and NOT mortals — they survive as the WILD FAUNA of Mythos: drakes, wyrms, and greater dragon-beasts roam the realms as apex creatures (the existing fauna table already carries Bumblewyrms, Petal-Stags etc. — dragons join that category, some colossal-scale as world bosses/mounts/beasts of legend). They can never be deities again, but the world keeps its dragons.

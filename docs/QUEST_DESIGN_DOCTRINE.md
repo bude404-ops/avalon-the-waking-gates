@@ -28,7 +28,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 
 ### 2. THE HOOK IS A PERSON — the Witcher 3 pillar
 **Every quest starts as a mortal problem, never a mythology problem.**
-- "Mother Brackle's lanterns keep going out" — not "the Hollow is corrupting the belief-lattice of the Embermere." The mythology is what's UNDER the mortal problem, and it surfaces in the third act.
+- "Mother Brackle's lanterns keep going out" — not "the Hollow is corrupting the belief-lattice of the Ashfall." The mythology is what's UNDER the mortal problem, and it surfaces in the third act.
 - **THE THREE-BEAT NPC:** every quest-giver has a WANT (what they ask for), a LIE (what they're not telling), and a COST (what the truth will cost them). The quest is the player discovering the lie and deciding about the cost.
 - **THE TWO-GOODS RULE:** every quest's choice is two things that are both right (feed the Gate / feed the town; keep the rite / keep the witness) — or two evils. Never right vs wrong; players remember being forced, not corrected.
 - **Consequence delay:** the outcome of the lie surfaces one act later, or one visit later. Witcher quality = the quest you forgot about finding you again.
@@ -76,7 +76,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 
 ## WORKED MICRO-EXAMPLE — learning a saga without reading it
 
-**"THE KILN-TENDER'S DEBT" (Embermere, act-2 quest, teaches the Vessamaine saga with zero lore text):**
+**"THE KILN-TENDER'S DEBT" (Ashfall, act-2 quest, teaches the Vessamaine saga with zero lore text):**
 - **HOOK:** a Forgefall kiln-master won't light her kiln. She asks the pilgrim to fire it instead. (Want: the kiln must burn. Lie: she stopped because the Kiln-Queen's chevron appeared on her anvil and she's terrified she owes something. Cost: if the truth surfaces, her guild learns she's been underpaying the harvest-debt.)
 - **TRAIL:** the anvil's chevron leads to an oathsmiths' cellar of unmarked tribute — generations of the guild's promised first-pours, never delivered. (The player learns the Kiln-Queen collects oaths the way a mother collects chores — without being told anything.)
 - **RITE:** the player pours the owed first-pour themselves and speaks the guild's half-forgotten kiln-oath aloud. (Doctrine by doing.)
