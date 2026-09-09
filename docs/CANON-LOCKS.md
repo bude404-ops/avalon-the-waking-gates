@@ -30,3 +30,6 @@ The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/Q
 
 ## SEPT 9 ~12:21 PM — WEAPON PROP REFERENCE PLATES LOCKED + CLEAN-PLATE LAW
 **Verdict: Big 'OK keep but make sure they are clean for a good rendering'** — all six V2 weapon plates CANON-LOCKED as art/approved/REF-SHEET-WEAPON-{SOVEREIGN,RAVAGER,WARDEN,VEILBORN,WEAVER,WILDBORN}-CANON.png (painted canon style + wielder-scale silhouette laws). With the verdict comes the **CLEAN-PLATE LAW (rendering-readiness)**: every 3D reference plate stays CLEAN for a good render — single weapon, unobstructed and fully visible, plain flat dark-neutral background with zero scenery/props/noise, flat even light with zero glow or lens effects, crisp painterly surface detail legible at a glance, no text/script anywhere. The faint wielder silhouette is the ONE background element permitted (scale function, never overlapping the weapon's read). Any future plate (gods' colossi, Hollow Tide, fauna) rolls under this cleanliness bar.
+
+## SEPT 9 ~12:22 PM — TEASER KEYART LOCKED (Big: 'Keep')
+**Verdict on the re-shown keyart: Keep** — CINEMATIC-TEASER-KEYART-CANON.png vaulted to approved. THE FULL CINEMATIC SET IS NOW CANON-COMPLETE: teaser keyart + all six campaign cut-scene stills (2.39:1 cut-scene grade). The set backs the APK v0.2 teaser reel end to end.
