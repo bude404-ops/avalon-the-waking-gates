@@ -122,3 +122,11 @@ The from-scratch Blender build (Aedan V1 base pass) was REJECTED as the wrong ro
 
 ## 404-GEN STAGE C RESTORED (Sept 9 ~4:45 PM, Big: 'I thought we were going to use unity with the ai generations and 404-GEN?')
 The Blender from-scratch modeling route is DEMOTED to cleanup/QC/render tooling only. Stage C is AI 3D GENERATION from the locked canon ref plates, per the 404-GEN pipeline. Operating route: open-source Hunyuan3D-2/2.1 image-to-3D — free tier via the official HuggingFace Spaces API (ZeroGPU, quota-limited) or dedicated Runpod GPU pod for unlimited/high-res batches (L40S 48GB $0.79/hr). Input = the locked class ref plate (art/approved/REF-SHEET-CLASS-*-CANON.png). Output = textured GLB, Unity-ready. QC = headless Blender renders vs the canon key (models/wip/gen). First fruit: Aedan Stormcrown V1 (models/wip/gen/aedan_textured.glb, 40k faces) — pending Big's verdict.
+
+
+## 404—GEN APP LAW (Sept 9 ~5:15 PM, Big: 'there is the app called 404-GEN in the unity asset store you can install and we use that')
+**THE 3D GENERATION ENGINE = the 404—GEN 3D Generator, an official Unity Asset Store tool (assetstore.unity.com/packages/tools/generative-ai/404-gen-3d-generator-311107).** Big's explicit directive — supersedes the external Hunyuan/Runpod generation route (artifacts purged from the tree; kept in git history). It QUALIFIES under the Unity-Only Tool Law: it IS in the Asset Store (Verified Solution, free, v0.7.1 May 2026).
+
+**FLOW:** each hero's weaponless single-view canon ref plate (art/approved/REF404-GEN-CLASS-*-CANON.png, 12/12) goes into the app's 2D Image Prompt slot -> Generate (~1-2 min, decentralized network, no account setup) -> 3D Gaussian Splat lands in the Scene -> in-app Spatial Cutouts for cleanup -> Convert to Mesh = production FBX -> rig/assemble/animate in Unity (UModeler X + Asset Store). Blender remains QC/render tooling only.
+
+**REQUIREMENTS (Big's seat):** Unity 6 (6000.3.2) + DirectX 12 (Windows) / Metal (macOS) / Vulkan (Linux). Install: Asset Store page -> Add to My Assets -> Package Manager -> My Assets -> Download -> Import -> set graphics API -> restart Editor. Tool window: Window -> 404-GEN 3D Generator. Docs: guide.404.xyz. NOTE: 3.4 stars (27 reviews) — early-stage tool; retry/queue built in.
