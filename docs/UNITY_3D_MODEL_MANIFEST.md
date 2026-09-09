@@ -101,3 +101,7 @@ V1 superseded (studio-product-shot style + no scale read). V2 re-rolls fix both:
 | Wildborn | art/pending/REF-SHEET-WEAPON-WILDBORN-V2.png |
 
 QC: uniform light-neutral backgrounds across the set (matching character plates); shape-IoU check confirms distinct weapon silhouettes (upright trio shares only the standing scale-figure by design); tall-pole pair (spear/staff) broken by laying the staff horizontal. V1 preserved in git history.
+
+## ATTACH-TIME SCALE LAW (Sept 9 ~12:34 PM, Big: 'Are we able to resize them when they are a model to fit regardless of 2d art?')
+
+YES — codified as doctrine: the 2D weapon plates are ART REFERENCE (form, style, materials, detail); TRUE SCALE IS SET IN-ENGINE. Every weapon prop is imported at native size and then resized freely at attach time in Unity — per-class prop scale + hand-bone attach offsets tuned against the rigged character model in-engine, then locked as the class kit's attach preset. The wielder silhouettes in the 2D plates are INDICATIVE of intended proportions, never binding on the 3D transform. No 2D re-roll is required to solve a scale problem; scale is a free variable at the 3D layer. QC on attached props = visual side-by-side vs the canon key art in-engine, not vs the ref plate's silhouette.
