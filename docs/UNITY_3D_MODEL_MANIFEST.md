@@ -86,3 +86,18 @@ V1 superseded (studio-plate look, no scale read). V2 laws per Big's direction:
 2. **WIELDER-SCALE LAW** — every weapon plate carries a faint translucent featureless grey SILHOUETTE of its class's wielder build at TRUE relative scale (Sovereign tall statuesque / Ravager tall broad / Warden stocky strong / Veilborn lean compact / Weaver slim spare / Wildborn athletic) so Unity attachment gets correct proportions: spear = wielder height; greatsword = ground-to-chest; warhammer haft = to shoulder, head = chest width; dagger = forearm length; lantern-staff = a full head taller than wielder; claw gauntlet = forearm-and-hand size. Silhouette never holds the weapon, no face, no hands.
 
 Files (art/pending/REF-SHEET-WEAPON-{CLASS}-V2.png): Sovereign leaf-blade spear / Ravager battered greatsword / Warden block-head banded warhammer / Veilborn single leaf-blade dagger (twin kit, one model) / Weaver gnarled lantern-staff (unlit, Lantern Law) / Wildborn single claw gauntlet (paired kit, one model). Zero script holds (knotwork/spiral patterns only). P-hash QC: first Warden V2 roll drifted into the greatsword silhouette (18/256 + 1.8% pixel-diff) — re-rolled with the no-blade block-head lock; final set min hamming 24/256. Verdicts pending.
+
+## WEAPON PROP REFERENCE PLATES — V2 (Sept 9, Big: 'Weapon need to be in same art style... and make so it will be proper sizes for the characters when we attach')
+
+V1 superseded (studio-product-shot style + no scale read). V2 re-rolls fix both: (1) **SAME ART STYLE** — painted in the character-canon oil-paint style on the same light neutral background as the REF404-GEN character plates; (2) **TRUE-SCALE WIELDER SILHOUETTE** — each plate carries a faint featureless grey silhouette of the class's build at true relative scale, so Unity attachment gets proportions right (spear = tall as the Sovereign; greatsword = ground-to-chest on a tall broad build; warhammer = shoulder-height, head chest-wide; dagger = forearm-length; lantern-staff = taller than the slim figure's shoulder; gauntlet = knuckles-to-mid-forearm).
+
+| Class | Plate (pending verdict) |
+|---|---|
+| Sovereign | art/pending/REF-SHEET-WEAPON-SOVEREIGN-V2.png |
+| Ravager | art/pending/REF-SHEET-WEAPON-RAVAGER-V2.png |
+| Warden | art/pending/REF-SHEET-WEAPON-WARDEN-V2.png |
+| Veilborn | art/pending/REF-SHEET-WEAPON-VEILBORN-V2.png (horizontal lay) |
+| Weaver | art/pending/REF-SHEET-WEAPON-WEAVER-V2.png (horizontal lay, big cage lantern) |
+| Wildborn | art/pending/REF-SHEET-WEAPON-WILDBORN-V2.png |
+
+QC: uniform light-neutral backgrounds across the set (matching character plates); shape-IoU check confirms distinct weapon silhouettes (upright trio shares only the standing scale-figure by design); tall-pole pair (spear/staff) broken by laying the staff horizontal. V1 preserved in git history.
