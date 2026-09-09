@@ -20,6 +20,9 @@ _Master laws: AVALON_DOCTRINE.md · ART_DIRECTION.md · PIPELINES.md (toolchain)
 - **X ACCOUNT GAME LOGO V1** — in BudE404's court (Waking Gates trilithon emblem, living-flame lantern)
 - **Unity asset sourcing** — store assets matched per class/creature against locked canon keys
 
+## ✅ LOCKED — 3D REFERENCE LAYER COMPLETE (Sept 9 ~3 PM)
+- **12/12 class ref plates CANON** (Ravager M last, Big: 'Keep ravager') + 6/6 weapon plates canon — the modeling reference layer for the full class set is canon-complete. 3D assembly starts on Big's Unity seat: Sovereign M+F first per docs/3D-BUILD-SHEET-SOVEREIGN-PAIR.md.
+
 ## 📋 QUEUE (in order)
 1. Enemy pass: Erased Drake → Gate-Worm → Echo of the Forgotten → Camelot fauna (all under enemy-art laws)
 2. ~~STAGE2 24-realm mythic-world pass~~ ROLLED 24/24 (Sept 9, pending verdicts — contact sheet in BudE404's court)

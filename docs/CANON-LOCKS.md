@@ -33,3 +33,10 @@ The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/Q
 
 ## SEPT 9 ~12:22 PM — TEASER KEYART LOCKED (Big: 'Keep')
 **Verdict on the re-shown keyart: Keep** — CINEMATIC-TEASER-KEYART-CANON.png vaulted to approved. THE FULL CINEMATIC SET IS NOW CANON-COMPLETE: teaser keyart + all six campaign cut-scene stills (2.39:1 cut-scene grade). The set backs the APK v0.2 teaser reel end to end.
+
+## SEPT 9 ~3:01 PM — RAVAGER M REF PLATE V3 CANON-LOCKED + FULL 12-PLATE CLASS SET LOCKED
+**Verdict: Big 'Keep ravager'** — the boar-head Ashfall war-beast breastplate plate (V3) is canon: art/approved/REF-SHEET-CLASS-RAVAGER-M-CANON.png (V1+V2 superseded; the first V3 attempt was scrapped at p-hash QC before it ever reached court).
+
+Per Big's explicit condition, delivered and confirmed before the roll ("change the ravager male breast plate armor as well in the character reference sheets **and then all the art will be good and ready to lock to start the 3d models**"), the Keep completes the set: **ALL 12 CLASS REF PLATES CANON-LOCKED** as art/approved/REF-SHEET-CLASS-{SOVEREIGN,RAVAGER,WARDEN,VEILBORN,WEAVER,WILDBORN}-{M,F}-CANON.png — weaponless (empty hands), per-class chestplate distinctions, class hair signatures, clean neutral plates for rendering.
+
+**3D ERA STARTS:** Sovereign M+F assembly first per the build order — docs/3D-BUILD-SHEET-SOVEREIGN-PAIR.md cut and delivered. Remaining pending verdicts (world fauna batch, wyvern V2, STAGE2 world pass, X logo) are unaffected — they lock separately.
