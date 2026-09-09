@@ -1,6 +1,6 @@
 # UNITY 3D MODEL BUILD MANIFEST — THE 12 CLASS MODELS (Sept 9 2026)
 
-Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset Store (UModeler X for in-editor modeling/retopo/rig/skin)**, assembled on Big's seat (Unity Personal, free, commercial OK; Asset Store EULA = commercial use on all tiers). This manifest is the build order; the 404-GEN reference sheets (art/pending/REF404-GEN-CLASS-*-V1.png) are the modeling/QC reference plates; the locked class canon keys (art/approved/CLASS-*-CANON.png) are the art-direction bible and QC bar.
+Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset Store (UModeler X for in-editor modeling/retopo/rig/skin)**, assembled on Big's seat (Unity Personal, free, commercial OK; Asset Store EULA = commercial use on all tiers). This manifest is the build order; the 404-GEN reference sheets (art/pending/REF404-GEN-CLASS-*-V2.png (weaponless plates per the Ref-Sheet Laws; V1 superseded)) are the modeling/QC reference plates; the locked class canon keys (art/approved/CLASS-*-CANON.png) are the art-direction bible and QC bar.
 
 ## PIPELINE PER MODEL
 1. **Base** — rigged humanoid base from Asset Store (pick ONE consistent base for all 12: same skeleton = shared animation sets).
@@ -35,3 +35,11 @@ Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset
 - Vera + key NPC re-dresses (canon NPC roster governs; attire per Mythic Celtic doctrine).
 - Colossi/gods: NOT character models — scale-props + VFX (Primordial Law: torso-up, fused to terrain; Unity terrain/VFX work, not rigs).
 - Hollows: creature packs matched against bestiary canon keys.
+
+---
+
+## REF-SHEET LAWS — V2 UPDATE (Sept 9, Big's verdict feedback)
+
+1. **WEAPONLESS PLATE LAW (Big: 'make sure there arent weapons on them for the 3d reference sheets images'):** 404-GEN Stage B plates render the character ONLY — hands completely empty, zero weapon props, zero sheathed weapons, zero held/worn weapons (incl. Wildborn claw gauntlets and Weaver lantern-staff). Weapons are modeled as SEPARATE attachable 3D props per the class kit (kit-integrity still governs the canon key art — the keys keep their weapons; the plates don't).
+2. **MALE CHESTPLATE-DISTINCTION LAW (Big: Warden + Veilborn 'look too identical' to the others):** each male class carries an unmistakably distinct chest treatment — Sovereign: solid engraved ceremonial breastplate, high collar (unchanged) · Ravager: massive battered engraved plate, torn mantle (unchanged) · Wildborn: minimal hide-and-bronze harness, bare chest (unchanged) · Weaver: simple shoulder-plates + layered robes (unchanged) · **Warden M: NEW — double-thick bronze breastplate of overlapping horizontal reinforcing bands over mail, deep-stamped knotwork ridge lines, heavy shoulder yoke, mail skirt — the wall-of-defense read** · **Veilborn M: NEW — narrow light dark-bronze cuirass almost swallowed by layered cord-and-leather harness wraps, sparse stamps, cloth silhouette — the ghost read.** F-set carries the same distinction logic (Warden-F banded heavy, Veilborn-F wrapped minimal) for set consistency.
+3. **V1 superseded for the full set:** all twelve REF404-GEN-CLASS-*-V2.png replace V1 (V1 preserved in git history). The six female V2 plates + four approved male V2 plates are the SAME approved designs, weapons removed. Verdicts pending on the V2 batch.
