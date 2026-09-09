@@ -151,3 +151,17 @@ The world is MYTH, and every environment renders at myth tier. Governs all world
 5. Carved World style, chisel signature, rune law, environment-typing — all unchanged and enforced.
 
 Applies to the STAGE2 24-realm scene pass (rolls after the 12-model class set completes).
+
+
+## HAIRSTYLE-TO-CLASS LAW (Sept 8, 2026, Big: 'Lets make sure hairstyles are different and match class')
+
+Every class carries ONE signature hairstyle identity — hair reads as CLASS before gender. No two classes share a hair read; the M and F of a class share the class hair identity, cut for the frame. Governs all 12 class models; NPCs (Vera etc.) keep their own looks.
+
+1. SOVEREIGN — THE CROWN: controlled authority. M: long thick hair swept back, braided crown-lock bound with a bronze ring, groomed full beard. F: long thick hair in a high braided crown/braid, bronze ring-beads, regal kept look. Never loose or wild.
+2. RAVAGER — THE WAR-BRAID: savage aggression. M: wild mane half-braided in thick war-braids, heavy beard matted with ash. F: fierce war-shaved sides, thick braided top-knot/mane, ash-streaked, bronze hair-rings. Never tidy.
+3. WARDEN — THE STONE CUT: unyielding practicality. M: short cropped thick hair, heavy full beard. F: blunt jaw-length thick bob, or twin thick plaits pinned close — no loose flowing hair. Never decorated.
+4. VEILBORN — THE SHROUD: shadowed concealment. M: long straight dark hair half-hiding the face, thin beard shadow. F: sleek straight dark hair shadowing the face, often under hood or half-veil. Never bright, never bound up.
+5. WEAVER — THE TIDE STRAND: distant serene flow. M: long loose straight hair with a few woven cord-strands. F: very long flowing hair woven with cord-strands and small bronze beads, unbound. Never cropped.
+6. WILDBORN — THE LIVING MAT: feral untamed. M/F: matted dreads and wild braids with living moss, foliage, small twigs woven in. Never clean, never neat.
+
+ENFORCEMENT: every class art roll from now on specifies the class hair signature in the prompt. The pending RAVAGER-F V7 re-rolls as V8 under this law. The locked male set + Sovereign-F predate the law — hair-audit re-rolls only on Big's word, one at a time through his gate.
