@@ -26,6 +26,34 @@ Replacing a tool with a better one BEATS adding a second overlap.
 
 ---
 
+## BIG'S NARROWING RULING (Sept 9, ~1:37 AM ET): UNITY + ITS ASSETS ONLY
+
+'No only use if its part of unity and its assets and your actually able to use it and see if your unity game engine key allows it'
+
+THE LAW: a tool qualifies ONLY if (1) it is part of Unity or its Asset Store, (2) it can actually be used by us, (3) the Unity license permits it. Cloud services with external accounts/credits are OUT.
+
+**WHAT SURVIVES THE CUT (the whole stack):**
+- **Unity built-ins** (every license tier incl. free Personal): Terrain, Shader Graph, VFX Graph, Cinemachine/Timeline, NavMesh, Animation + Animator, HDRP lighting/skybox, URP — the core pipeline needs no plugins at all.
+- **UModeler X** — Asset Store package, 100% FREE (since Apr 22 2026), FULL commercial rights, LOCAL in-editor modeling/retopo/UV/rig/skin — no cloud, no account. THE in-editor 3D toolkit. LICENSE VERDICT: allowed on any Unity tier under the Asset Store EULA.
+- **Asset Store ASSETS** (models/rigs/animation/audio packs) — the source of our 3D per the Unity-first law. Standard Asset Store EULA = royalty-free commercial use inside builds on every tier. No special key required.
+- **glTFast (com.unity.cloud.gltfast)** — Unity's own official package, free, in scope if external GLBs are ever needed.
+
+**REMOVED BY THE RULING (do not install):**
+- PicoBerry AI — cloud credits + external account (the UModeler X *toolkit* stays; the cloud gen goes). Revisit only if Big ever grants one exception.
+- Mixamo — Adobe external, not Unity.
+- Skybox AI (Blockade) — Asset Store plugin exists but requires Blockade cloud subscription → fails the rule.
+- Convai, ElevenLabs, Scenario, Meshy, Layer AI, Genies — all external clouds/accounts.
+- 404-GEN mesh generation — already retired by the Unity-first ruling.
+
+**CAN-I-USE-IT HONESTY:** the Unity Editor itself cannot run in my sandbox — package installs + editor work happen on Big's Unity seat; I do the asset shortlists, the canon-matching, the C# scripts, and all repo/pipeline work. If hands-on editor automation is ever needed, a GPU pod with Unity headless is possible but needs his license activation — flagged, not set up.
+
+**LICENSE ANSWER:** Unity Personal (free) covers everything we need pre-revenue — Asset Store free packages and assets are commercial-legal on ALL tiers under the standard Asset Store EULA. No engine key gates any of this.
+
+**THE PRACTIONAL PIPELINE NOW:** canon 2D art (art direction + QC bar) → Asset Store models/rigs/anim packs (shortlisted by me against canon keys) → UModeler X in-editor customization (retint, restyle, kit edits) → Unity built-ins (lighting per Lantern-Region Aura Law, terrain, VFX, animation) → game.
+
+---
+
+## SUPERSEDED — earlier verdict (kept for the record)
 ## THE VERDICT — 404-GEN vs PicoBerry vs Meshy
 
 **WINNER: PicoBerry AI (inside UModeler X) — $12/mo commercial tier.**
