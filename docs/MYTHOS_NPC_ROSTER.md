@@ -45,7 +45,7 @@
 
 ### LAW
 - The LUMINARY-BEARERS — the beings that carry the relics (the Luminaries) — are THE RAVENKIN.
-- Form: SMALL raven-like humanoids. ALL RAVEN — full corvid read (black feathers, beaks, talons, bird posture), NEVER feathered humans; the only humanoid trait is ARMS — raven bodies with articulated arms below/beside the wings.
+- Form: SMALL PIXIE-SHAPED raven-beings (Big's refinement, Sept 8 ~11:14 PM: 'more shaped like pixies but all the raven features'). THE PIXIE IS THE SHAPE, THE RAVEN IS THE FLESH: delicate slender upright pixie body and proportions, standing on two legs, fine articulated arms and hands — rendered ENTIRELY in raven features: sleek black corvid feathers for skin, a raven's sharp beak for the face, darkly intelligent raven eyes, black talon-tips on fingers and toes, and great black-feathered CORVID WINGS folded at the back like a pixie's wings. Never a feathered human, never a plain bird.
 - Function: THEY CARRY THE RELICS. A Luminary is never seen unborne — it travels in a Ravenkin's arms. Ravenkin = the living reliquaries of the world; wherever a relic must be carried, guarded, delivered, or recovered, a Ravenkin bears it.
 - They are the third thing: not mortal, not god, not Hollow — part of the relic-ecology (the Luminary is the one true relic; the Ravenkin are its keepers).
 - Staging: small against the mythic world — a Ravenkin on a standing-stone avenue with a glowing relic in its arms reads as a tiny warm light inside the colossal carved cold.
