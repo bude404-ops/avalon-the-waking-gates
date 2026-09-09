@@ -165,3 +165,11 @@ Every class carries ONE signature hairstyle identity — hair reads as CLASS bef
 6. WILDBORN — THE LIVING MAT: feral untamed. M/F: matted dreads and wild braids with living moss, foliage, small twigs woven in. Never clean, never neat.
 
 ENFORCEMENT: every class art roll from now on specifies the class hair signature in the prompt. The pending RAVAGER-F V7 re-rolls as V8 under this law. The locked male set + Sovereign-F predate the law — hair-audit re-rolls only on Big's word, one at a time through his gate.
+
+---
+
+## GOD FACE LAW v2 — MOUTHS + HUMANOID FEATURES ALLOWED (Big, Sept 8 ~10:14 PM)
+
+**Big's words:** 'Feel we can also add mouth snd features as well just keep humanoid shaped but pure elementals.'
+
+SUPERSEDES the NO-MOUTH LAW and the barely-face reading of EXTENDED PRIMORDIAL LAW. Gods now render with HUMANOID-SHAPED FACES — clear features, a mouth, readable expression — but composed ENTIRELY of the god's pure element (a storm face of cloud mass with lightning veins; a magma face with molten seams; a tide face of living water). Feminine-Structure (goddesses), Element-Purity, Torso-Up (no legs — cinematic battle form), Zero-Craft (no weapons/tools), and Primordial Hands (elemental material, MATCHING FINGER COUNT per hand per Big's ~10:10 PM ruling) all hold unchanged. Governs all six god re-rolls.
