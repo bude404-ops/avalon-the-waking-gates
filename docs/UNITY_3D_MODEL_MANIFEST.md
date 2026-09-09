@@ -55,6 +55,7 @@ Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset
 The male kits must be silhouettes-first — no two chestplates read the same. Locked distinctions:
 - SOVEREIGN: solid closed ceremonial breastplate, FULL knotwork + La Tène engraving across the chest — the regal maximal plate.
 - RAVAGER: MASSIVE battered single-piece plate, heavy scarred knotwork — the biggest chestplate, war-worn brutal read.
+  - **RAVAGER M REF PLATE V2 (Sept 9, Big: 'change the ravager male breast plate armor as well in the character reference sheets'):** the Ravager M ref sheet re-rolled with the breastplate corrected — massive battered single-piece CLOSED plate, high collar, NO chest cutout (solid-breastplate law), heavy scarred knotwork, war-worn field-repair reads, unmistakably the biggest brutal chestplate. File: art/pending/REF-SHEET-CLASS-RAVAGER-M-V2.png (V1 superseded). Pending Big's Keep — on it, the 12 class plates lock complete and Sovereign-pair 3D assembly starts.
 - WARDEN: double-thick overlapping horizontal reinforcing BRONZE BANDS over mail, layered shoulder yoke, mail skirt — the wall-of-defense read (V2 fix).
 - VEILBORN: narrow light dark-bronze cuirass swallowed by cord-and-leather harness wraps, cloth-built silhouette — the ghost read (V2 fix).
 - WEAVER: simple engraved bronze shoulder-plates + layered robes — the minimal mystic read.
