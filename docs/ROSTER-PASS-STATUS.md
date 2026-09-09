@@ -307,3 +307,17 @@ Full pass order: 12 god-emergence re-rolls (6 realms x King+Queen) → Luminary 
 - WARDEN M V2 CANON LOCKED (Sept 8 ~8:02 PM, Big: 'Keep warden') — art/approved/CLASS-WARDEN-CANON.png swapped to the V2 mythic-world roll (solid engraved breastplate, bone-grey whisper cloak, warhammer head-down, god-scale Stoneheart). Male set now 3/6 locked: Sovereign ✓ Ravager ✓ Warden ✓. VEILBORN M rolls next (Duskmourn mythic world).
 - RAVAGER M V3 CANON LOCKED (Sept 8 ~7:45 PM, Big: 'ravager approved aswell') — art/approved/CLASS-RAVAGER-CANON.png swapped to the V3 mythic-world roll (solid engraved breastplate, oxide-red torn mantle, greatsword tip-down, god-scale Ashfall caldera). Male set queue advances: WARDEN M rolls next (Stoneheart mythic world).
 
+---
+
+## PANTHEON PASS — COMPLETE (Sept 8 2026, all six locked by Big's 'Keep')
+
+| God | Realm | Canon file | Commit |
+|---|---|---|---|
+| STORM QUEEN | Skyrend | art/approved/GOD-SKYREND-STORM-QUEEN-CANON.png | 777e7dd |
+| EMBER KING | Ashfall | art/approved/GOD-ASHFALL-EMBER-KING-CANON.png | 6e3046a |
+| IRON KING | Stoneheart | art/approved/GOD-STONEHEART-IRON-KING-CANON.png | ec30e7b |
+| DEATH KING | Duskmourn | art/approved/GOD-DUSKMOURN-DEATH-KING-CANON.png | 1e26fdd |
+| TIDE QUEEN | Marenth | art/approved/GOD-MARENTH-TIDE-QUEEN-CANON.png | 43ff5a7 |
+| LIFE MOTHER | Everbloom | art/approved/GOD-EVERBLOOM-LIFE-MOTHER-CANON.png | (this commit) |
+
+All six under the full god law stack: element purity, humanoid faces w/ mouth + readable expression, elemental beards on males (fire/ore/shadow), matched 4-finger hands, torso-up no legs, zero craft, mythic Celtic-only staging, gendered titan carvings (bearded male / feminine female). Next queue: RAVENKIN art set (Big's order), then STAGE2 24-realm world pass.
