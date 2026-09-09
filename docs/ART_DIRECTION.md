@@ -185,7 +185,7 @@ The light inside THE LANTERN (the Luminary — the one relic) renders in the COL
 - SKYREND → storm slate
 - ASHFALL → oxide red
 - STONEHEART → bone grey
-- DUSKMOURN → crimson red — the red/black Celtic death palette (Big, Sept 8 ~11:27 PM: 'for the death or darkness is red and black the Celtics colors so not the purple'; supersedes dusk violet)
+- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes dusk violet realm-wide — staging, lanterns, gear accent language. Open: Veilborn's class gear accent (dusk violet) — keep or shift to crimson, Big to rule.
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 
