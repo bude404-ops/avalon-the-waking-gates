@@ -21,12 +21,14 @@ LAW STACK → PROMPT → GENERATE → P-HASH CHECK → art/pending/ → BUD'S CO
 ## 2. 404-GEN — 2D → 3D PIPELINE (named by BudE404, Sept 9 2026)
 
 ```
-LOCKED 2D CANON ART → 404-GEN (image-to-3D: Meshy-class tooling) → FBX/GLB → UNITY
+LOCKED 2D CANON ART → 404-GEN (runner: tools/404gen/run_triposr.py) → GLB → UNITY
 ```
 
+- **ENGINE OF RECORD (Sept 9 test, Big-approved live run): TripoSR** — the working route. Front plate in → GLB out in ~5s, 112k faces, free. First mesh: models/404gen/SOVEREIGN-M-404GEN-TEST-V1.glb (commit e2063b2).
+- **RETIRED ROUTE (removed from the pipeline per Big): Hunyuan3D-2.1 public space** — blocked behind a paid GPU quota at anonymous tier; runner deleted (run_gen.py). Textured upgrade (Meshy-class or a paid GPU tier) is a DECISION for Big, not an installed route.
 - **Input:** only LOCKED canon art. The approved piece is the anchor — never a pending or superseded variant.
-- **Turnaround sheet first** (A-pose front/side/back, flat neutral gray background, weapon as separate prop, zero text) — clean input maximizes mesh quality.
-- **Output:** textured mesh, QC pass against the canon silhouette before it enters the engine.
+- **GEN INPUT = dedicated FRONT-VIEW PLATE** (single full-body subject, A-pose, clean background, zero text); the 3-view turnaround sheet = QC reference for side/back verification.
+- **Output:** shape mesh + QC pass against the canon silhouette before it enters the engine (current route is shape-only; texture pass pending Big's upgrade call).
 - **Rig + animate:** Mixamo auto-rig + combat animation set, or in-engine (Unity).
 - **Scale note:** gods render torso-up at cinematic scale in-engine; the 9m combat manifestation is set in Unity, not in the mesh.
 
