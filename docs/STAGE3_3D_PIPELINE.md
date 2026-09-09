@@ -26,3 +26,6 @@ Auto-rig the GLB, import the frozen combat-spec animation set: idle / walk 4 m/s
 
 ## ORDER (faction-by-faction, one verdict at a time — the compressed-iteration method)
 **PILOT: Embermere / Vaelthorn turnaround sheet → verdict → if clean, the full Embermere four, then Galemarch → Bloomweald → Gloambarrow → Marenvale → Stonefell, then the 3 Hollow champions (enemy rigs last).**
+
+---
+**> SUPERSEDED Sept 9 2026 by docs/PIPELINES.md** — the pipeline is now 404-GEN → Unity (Godot retired). This doc kept for history.
