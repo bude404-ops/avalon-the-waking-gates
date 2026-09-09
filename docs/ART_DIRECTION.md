@@ -173,3 +173,20 @@ ENFORCEMENT: every class art roll from now on specifies the class hair signature
 **Big's words:** 'Feel we can also add mouth snd features as well just keep humanoid shaped but pure elementals.'
 
 SUPERSEDES the NO-MOUTH LAW and the barely-face reading of EXTENDED PRIMORDIAL LAW. Gods now render with HUMANOID-SHAPED FACES — clear features, a mouth, readable expression — but composed ENTIRELY of the god's pure element (a storm face of cloud mass with lightning veins; a magma face with molten seams; a tide face of living water). Feminine-Structure (goddesses), Element-Purity, Torso-Up (no legs — cinematic battle form), Zero-Craft (no weapons/tools), and Primordial Hands (elemental material, MATCHING FINGER COUNT per hand per Big's ~10:10 PM ruling) all hold unchanged. Governs all six god re-rolls.
+
+---
+
+## LANTERN-REGION AURA LAW (Big, Sept 8 ~10:47 PM)
+
+**Big's words:** 'And the light in the lantern is the color aura for the region the character is in.'
+
+The light inside THE LANTERN (the Luminary — the one relic) renders in the COLOR AURA of whatever region the character is standing in. The lantern glow IS the region's signature:
+
+- SKYREND → storm slate
+- ASHFALL → oxide red
+- STONEHEART → bone grey
+- DUSKMOURN → dusk violet
+- MARENTH → tide teal
+- EVERBLOOM → deep moss
+
+TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the lantern) — the amendment: the lantern's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the lantern glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a lantern appears. Gods carry no lantern (zero craft) — god staging unaffected.
