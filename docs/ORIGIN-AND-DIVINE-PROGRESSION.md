@@ -20,7 +20,7 @@ First-god thread: opens with the home realm's patron deity (the class's Six Path
 
 **Big's words (clarified Sept 8 ~3:59 PM):** each class has ONE home realm — one of the six. That class starts there, carries the realm's hidden accent, pursues their regional deity's quests; players choose a class and that choice determines where they begin; as the player advances they learn the other gods and can gain those abilities.
 
-**Why it works:** SIX classes, SIX realms, ONE home each — six fixed origins, each a completely different opening experience (home, quests, first-god thread), built entirely from content that already exists (the realms, the 12 gods, the god-class matrix). No new assets required; the system is pure structure. Player choice happens at CLASS selection — every class opens the game somewhere else.
+**Why it works:** SIX classes, SIX realms, ONE home each — six fixed origins, each a completely different opening experience (home, quests, first-god thread), built entirely from content that already exists (the realms, the 6 gods (Pantheon Law v4), the god-class matrix). No new assets required; the system is pure structure. Player choice happens at CLASS selection — every class opens the game somewhere else.
 
 ## THE ORIGIN LAW (v2 — fixed class↔realm binding)
 
@@ -73,3 +73,31 @@ The six class key-art pieces (the current queue) stay REALM-NEUTRAL — the acce
 ## STATUS
 
 Doctrine per Big's proposal — mechanics above (one active bond, learned-is-permanent, shrine swapping) are my proposed implementation, his verdict final.
+
+---
+
+## PANTHEON LAW v4 — THE SIX, LOCKED (Big, Sept 8 ~9:41 PM)
+
+**Big's words:** 'we only make 6 gods 3 male 3 females' + 'Swap everbloom and Stoneheart and skyrend and duskmourn.'
+
+The 12-god-emergence roster is CUT to SIX patron gods — one per realm, 3 male + 3 female. All god artwork canon re-rolls under the current law stack (Primordial, torso-up, no weapons, no mouth, barely-face, pure element, primordial hands; goddesses feminine-read + elemental hair).
+
+### THE ROSTER (after Big's swap verdict)
+
+| Realm | God | Gender | Element / Concept | Patron of |
+|---|---|---|---|---|
+| SKYREND | THE DEATH MOTHER | F | the veil of endings — the sky rends as her passage | Sovereign |
+| ASHFALL | THE EMBER KING | M | pure magma — the war-furnace | Ravager |
+| STONEHEART | THE LIFE KING | M | living stone — growth through strata (the treant read; Big's 'life fits stone' instinct confirmed) | Warden |
+| DUSKMOURN | THE STORM KING | M | the dusk-storm — dark thunderheads, violet lightning | Veilborn |
+| MARENTH | THE TIDE QUEEN | F | pure ocean — the cycle itself, time and change | Weaver |
+| EVERBLOOM | THE IRON MOTHER | F | the iron beneath the bloom — ore veins under the wildwood | Wildborn |
+
+### THE CYCLE DOCTRINE
+The pantheon is THE CYCLE — six forces OF the world: life (Stoneheart), death (Skyrend), tide/time (Marenth), storm (Duskmourn), ember (Ashfall), iron (Everbloom). **THE UNMAKING stands OUTSIDE the cycle** — it does not guide endings, it ERASES the ending itself. Death (the Death Mother) is a natural force players can ally with; the Unmaking is the antagonist. The Hollows remain the Unmaking's mortal-scale manifestations — no god, no ally.
+
+### IMPLICATIONS
+- First-god thread per class = the home realm's single patron above (no more king+queen pairs per realm).
+- Learned-god verb layers, shrine-swap, ONE active bond — all unchanged; there are now six gods to learn, not twelve.
+- Divine Conflict campaign (IV) and the Two Scales finale play across these six; world-boss events are these gods' mythological events.
+- God art queue re-cuts to just these six, one at a time through Big's gate.
