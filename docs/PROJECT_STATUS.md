@@ -4,7 +4,7 @@ _Master laws: AVALON_DOCTRINE.md · ART_DIRECTION.md · PIPELINES.md (toolchain)
 
 ## ⚡ ENGINE + TOOLCHAIN (LOCKED)
 - **Engine: UNITY** (Godot retired → `legacy-godot/`)
-- **2D→3D: 404-GEN** (named by BudE404) — locked canon art in, FBX out, into Unity
+- **3D: UNITY-FIRST** (Big, Sept 9) — Unity Asset Store assets matched to locked canon art, customized in-engine; image-to-3D generation retired
 - **Canon art: BIGagent404** under the full law stack; verdict protocol governs all locks
 - Full detail: `docs/PIPELINES.md` + root `README.md`
 
@@ -18,12 +18,12 @@ _Master laws: AVALON_DOCTRINE.md · ART_DIRECTION.md · PIPELINES.md (toolchain)
 
 ## 🔄 IN FLIGHT (Sept 9, 2026)
 - **X ACCOUNT GAME LOGO V1** — in BudE404's court (Waking Gates trilithon emblem, living-flame lantern)
-- **404-GEN** — named; hero-class 3D conversions can start (roster 2D is complete)
+- **Unity asset sourcing** — store assets matched per class/creature against locked canon keys
 
 ## 📋 QUEUE (in order)
 1. Enemy pass: Erased Drake → Gate-Worm → Echo of the Forgotten → Camelot fauna (all under enemy-art laws)
 2. STAGE2 24-realm mythic-world pass (Mythic World Law: never simple villages)
-3. 404-GEN 3D conversions (classes first, then gods/NPCs/enemies)
+3. Unity asset sourcing + restyling (classes first, then gods/NPCs/enemies)
 4. God art re-rolls per outstanding rulings (Iron King next if still queued)
 
 ## 🔏 VERDICT PROTOCOL (standing law)

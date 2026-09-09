@@ -18,19 +18,16 @@ LAW STACK → PROMPT → GENERATE → P-HASH CHECK → art/pending/ → BUD'S CO
 6. **On lock:** promote to `art/approved/*-CANON.*`, commit + push to main, log in CANON-LOCKS.md + vault notes.
 7. **Superseded rolls** move to `art/superseded/` (never deleted — git history is the archive).
 
-## 2. 404-GEN — 2D → 3D PIPELINE (named by BudE404, Sept 9 2026)
+## 2. UNITY-FIRST 3D PIPELINE (Big's ruling, Sept 9 2026: 'Why are you not using Unity and its assets for the 3d model? Remove the old pipelines for that so you stop doing that')
 
-```
-LOCKED 2D CANON ART → 404-GEN (runner: tools/404gen/run_triposr.py) → GLB → UNITY
-```
+**The 404-GEN image-to-3D route (Meshy/TripoSR/Hunyuan3D) is RETIRED.** The generation pipeline is removed from the repo; no mesh generation from our art.
 
-- **ENGINE OF RECORD (Sept 9 test, Big-approved live run): TripoSR** — the working route. Front plate in → GLB out in ~5s, 112k faces, free. First mesh: models/404gen/SOVEREIGN-M-404GEN-TEST-V1.glb (commit e2063b2).
-- **RETIRED ROUTE (removed from the pipeline per Big): Hunyuan3D-2.1 public space** — blocked behind a paid GPU quota at anonymous tier; runner deleted (run_gen.py). Textured upgrade (Meshy-class or a paid GPU tier) is a DECISION for Big, not an installed route.
-- **Input:** only LOCKED canon art. The approved piece is the anchor — never a pending or superseded variant.
-- **GEN INPUT = dedicated FRONT-VIEW PLATE** (single full-body subject, A-pose, clean background, zero text); the 3-view turnaround sheet = QC reference for side/back verification.
-- **Output:** shape mesh + QC pass against the canon silhouette before it enters the engine (current route is shape-only; texture pass pending Big's upgrade call).
-- **Rig + animate:** Mixamo auto-rig + combat animation set, or in-engine (Unity).
-- **Scale note:** gods render torso-up at cinematic scale in-engine; the 9m combat manifestation is set in Unity, not in the mesh.
+**LOCKED 2D CANON ART (art direction bible) → UNITY ASSET STORE (source models/rigs/anims) → UNITY (retint, restyle, light, animate)**
+
+- **Source of models:** Unity Asset Store FIRST — rigged humanoid bases, modular armor + weapon packs, creature packs, environment kits. Canon characters now come from store assets matched to canon silhouettes; the locked 2D art is the art-direction reference for choosing + customizing them (silhouette, kit, palette).
+- **Customization in Unity:** materials + retints follow the standing laws — muted palette, per-Order/class accent colorways, weathering in materials; lighting follows the Lantern-Region Aura Law (cold ambient, lantern the only rich source, hue = regional).
+- **Animation:** Asset Store animation packs + Unity's animation tooling.
+- **QC:** every sourced asset is judged side-by-side against its locked canon key art before it goes in-game.
 
 ## 3. ENGINE — UNITY (the one engine)
 
@@ -48,7 +45,7 @@ LOCKED 2D CANON ART → 404-GEN (runner: tools/404gen/run_triposr.py) → GLB �
 ## 5. WHAT FEEDS WHAT (the dependency map)
 
 ```
-Canon art (approved) ──→ 404-GEN ──→ Unity (game)
+Canon art (approved, art direction) ──→ Unity Asset Store (source) ──→ Unity (restyle + animate) ──→ game
       │                        │
       └──→ STAGE2 world pass ──┴──→ in-engine staging/lighting
       └──→ docs/ law stack ──→ all future rolls (laws govern every prompt)

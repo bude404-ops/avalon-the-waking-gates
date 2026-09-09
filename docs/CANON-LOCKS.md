@@ -21,6 +21,6 @@
 - **T1 GRIMLIGHTS — CANON LOCKED** (Big: 'Keep') — art/approved/ENEMY-T1-GRIMLIGHTS-CANON.png (commit 26c4f97). Void-mote swarm, lightless; light forgets itself in their presence. **T1 TIER COMPLETE.**
 - **T2 UNMADE CHAMPION — CANON LOCKED** (Big: 'Keep unmade champion', hooded per his order) — art/approved/ENEMY-T2-UNMADE-CHAMPION-CANON.png (commit 6787083). Stolen Mythic Celtic armor fully colored, hood not helm, smooth-absence face, armor stays behind when it falls (loot = lore).
 - **X ACCOUNT GAME LOGO V1** — art/pending/X-ACCOUNT-GAME-LOGO-V1.png (commit d579152) — IN COURT.
-- **404-GEN** — 2D→3D pipeline NAMED by BudE404 (Sept 9). Pipeline doc: docs/PIPELINES.md.
+- **UNITY-FIRST 3D LAW** (Big, Sept 9) — 3D models come from Unity + its Asset Store, matched + customized against the locked 2D canon art. The 404-GEN image-to-3D pipeline is RETIRED and removed (Meshy/TripoSR route deleted Sept 9).
 
 _Note: earlier Hollow canon entries above predate the Sept 8-9 Mythic Celtic enemy pass; where they conflict, the Sept 8-9 pass + its laws supersede._

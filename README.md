@@ -13,13 +13,13 @@ A dark-fantasy action RPG set in the Ancient Mythic Age — a primordial world s
 | Stage | Tool | Role |
 |---|---|---|
 | Canon art | AI image generation (BIGagent404) | All 2D canon keys — classes, gods, NPCs, enemies, worlds |
-| 2D → 3D | **404-GEN** (image-to-3D, Meshy-class tooling) | Canon 2D art in → textured, rigged-ready mesh out (FBX/GLB) |
-| Rig + animation | Mixamo (+ in-engine) | Auto-rig, combat/idle/walk animation sets |
+| 3D models | **Unity Asset Store (Unity-first)** | Store assets matched to locked canon art → retint/restyle in-engine |
+| Rig + animation | Asset Store packs + in-engine | Rigged bases + animation sets from store assets |
 | Engine | **Unity** | World, lighting, VFX, abilities, cinematics, build target |
 | Version control | GitHub (this repo) | Everything committed + pushed on every milestone |
 
 **Pipeline, end to end:**
-`Locked 2D canon art → 404-GEN (FBX) → Unity (rig/animate/light/VFX) → play`
+`Locked 2D canon art (art direction) → Unity Asset Store (models/rigs/anims) → Unity (retint/light/animate/VFX) → play`
 
 **Engine doctrine:** Unity is THE engine (decided Sept 2026). Legacy Godot scaffolding is retired under `legacy-godot/` and stays for history only.
 
@@ -52,7 +52,7 @@ Full pipeline + prompt-law documentation: **`docs/PIPELINES.md`** (single source
 
 **World pass queued:** STAGE2 24-realm mythic-world pass (world renders at myth tier — never simple villages).
 
-**Branding:** X-account game logo V1 in court. 404-GEN named.
+**Branding:** X-account game logo V1 in court. Unity-first 3D ruling (404-GEN retired).
 
 ---
 
