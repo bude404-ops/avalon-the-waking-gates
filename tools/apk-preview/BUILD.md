@@ -22,3 +22,8 @@ APK ships as a GitHub Release asset on this repo (Base44 file storage blocks .ap
 - ELITE HOLLOWS FIXED: v0.2 build lost 3 of 4 elite images in a bad assets sync — all four now bundled (Champion V8-FACELAW, Erased Drake, Gate-Worm, Echo)
 - AVALON CREATURES: fauna section renamed + expanded to all seven canon fauna (Cwn Annwn, Afanc, Questing Beast, White Hart, Barghest, Wyvern, Strata Giant), each captioned 'AVALON CREATURE'
 - Keystore: v0.1-0.2 debug.keystore was lost with a staging wipe; v0.3 is signed by a NEW self-signed debug key (same DN). v0.3 does NOT update-install over v0.2 — uninstall the old build first. Keystore now committed at tools/apk-preview/debug.keystore so this never recurs.
+
+## v0.5 (Sept 9, Big's verdict: batch locks + character naming)
+- WORLD FAUNA 12/12 + WYVERN V2 + STAGE2 24/24 + X LOGO all canon-locked (see CANON-LOCKS.md)
+- THE TWELVE NAMED (Big: 'get them actual names based around their class and region and gender and then have what class they are'): docs/CHARACTER-NAMES.md — gallery now shows NAME + class line for all 12 heroes (Aedan/Seren Stormcrown — Sovereign of Skyrend, etc.)
+- versionCode 5 / versionName 0.5-test; same debug keystore (updates over v0.3/v0.4)

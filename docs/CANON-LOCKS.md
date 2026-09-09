@@ -40,3 +40,12 @@ The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/Q
 Per Big's explicit condition, delivered and confirmed before the roll ("change the ravager male breast plate armor as well in the character reference sheets **and then all the art will be good and ready to lock to start the 3d models**"), the Keep completes the set: **ALL 12 CLASS REF PLATES CANON-LOCKED** as art/approved/REF-SHEET-CLASS-{SOVEREIGN,RAVAGER,WARDEN,VEILBORN,WEAVER,WILDBORN}-{M,F}-CANON.png — weaponless (empty hands), per-class chestplate distinctions, class hair signatures, clean neutral plates for rendering.
 
 **3D ERA STARTS:** Sovereign M+F assembly first per the build order — docs/3D-BUILD-SHEET-SOVEREIGN-PAIR.md cut and delivered. Remaining pending verdicts (world fauna batch, wyvern V2, STAGE2 world pass, X logo) are unaffected — they lock separately.
+
+## SEPT 9 ~3:14 PM — BIG'S BATCH VERDICT: WORLD FAUNA + WYVERN V2 + STAGE2 WORLD PASS + X LOGO ALL CANON-LOCKED
+**Verdict: Big 'Keep the world batch, wyvern V2 and stage2 world pass, X logo.'**
+- **WORLD FAUNA BATCH 1 (12/12 CANON)** — Storm Tarbh, Slate Rook, Twrch, Cinder Salamander, Barrow Owl, Hollowhorn, Dullahan's Steed, Gloam Pooka, Kelpie, Tide Strider, Moss Stag, Briar Fox → art/approved/ENEMY-FAUNA-*-CANON.png.
+- **WYVERN V2 CANON** — the true-wyvern re-roll replaces the black-dog old canon: art/approved/ENEMY-FAUNA-WYVERN-CANON.png.
+- **STAGE2 24-REALM MYTHIC-WORLD PASS (24/24 CANON)** — all realm scenes locked: art/approved/STAGE2-*-CANON.png. The world layer is canon-complete.
+- **X ACCOUNT GAME LOGO V1 CANON** — the Waking Gates trilithon emblem w/ living-flame lantern: art/approved/X-ACCOUNT-GAME-LOGO-CANON.png.
+
+**CHARACTER NAMING DIRECTIVE (same verdict): 'the characters in the apk looks funny we need to get them actual names based around their class and region and gender and then have what class they are'** — the 12 class characters get proper mythic names (class + realm + gender construction) with class labels in the APK. Codified docs/CHARACTER-NAMES.md.
