@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>AVALON: THE WAKING GATES — Cinematic Teaser</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:100%; height:100%; background:#000; overflow:hidden; font-family:Georgia,'Times New Roman',serif; }
+  #stage { position:fixed; inset:0; background:#000; }
+  .shot { position:absolute; inset:-6%; background-size:cover; background-position:center; opacity:0; will-change:transform,opacity; }
+  /* letterbox */
+  .bar { position:fixed; left:0; right:0; height:11vh; background:#000; z-index:20; transition:transform 1.2s ease; }
+  #barTop { top:0; } #barBot { bottom:0; }
+    /* grain + vignette + flicker */
+  #grain { position:fixed; inset:-50%; width:200%; height:200%; z-index:12; opacity:.10; pointer-events:none; }
+  #vignette { position:fixed; inset:0; z-index:11; pointer-events:none;
+    background:radial-gradient(ellipse at center, transparent 46%, rgba(0,0,0,.55) 88%, rgba(0,0,0,.8) 100%); }
+  #flash { position:fixed; inset:0; z-index:18; background:#000; opacity:0; pointer-events:none; }
+  #embers { position:fixed; inset:0; z-index:13; pointer-events:none; }
+  /* narration cards */
+  #narr { position:fixed; inset:0; z-index:22; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+  #narr span { font-size:clamp(15px,2.6vw,34px); letter-spacing:.42em; text-indent:.42em; color:#e8dcc6;
+    text-transform:uppercase; opacity:0; transform:scale(1.04); filter:drop-shadow(0 2px 14px rgba(0,0,0,.9));
+    font-weight:400; }
+  /* studio card */
+  #studio { position:fixed; inset:0; z-index:25; background:#000; display:none; flex-direction:column;
+    align-items:center; justify-content:center; gap:2.6vh; opacity:0; transition:opacity 1.1s ease; }
+  #studio.on { display:flex; }
+  #studio img { max-width:min(46vw,520px); width:46vw; filter:drop-shadow(0 0 34px rgba(255,130,45,.14)); }
+  #studio .co { color:#8d8271; font-size:clamp(10px,1.1vw,13px); letter-spacing:.42em; text-indent:.42em; text-transform:uppercase; }
+  /* credits cards */
+  #credits { position:fixed; inset:0; z-index:27; display:none; flex-direction:column; align-items:center;
+    justify-content:center; pointer-events:none; }
+  #credits.on { display:flex; }
+  #credits .role { color:#8d8271; font-size:clamp(10px,1.1vw,13px); letter-spacing:.4em; text-indent:.4em; text-transform:uppercase; margin-bottom:1.6vh; }
+  #credits .name { color:#e8dcc6; font-size:clamp(18px,3vw,38px); letter-spacing:.34em; text-indent:.34em; text-transform:uppercase;
+    text-shadow:0 2px 18px rgba(0,0,0,.9); }
+  /* start screen */
+  #start { position:fixed; inset:0; z-index:40; background:radial-gradient(ellipse at 50% 60%, #16120c 0%, #000 70%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4vh; cursor:pointer; }
+  #start .sigil { width:min(20vh,140px); height:auto; opacity:.9; filter:drop-shadow(0 0 26px rgba(255,120,40,.35)); animation:sigilPulse 4s ease-in-out infinite; }
+  @keyframes sigilPulse { 0%,100%{ filter:drop-shadow(0 0 18px rgba(255,120,40,.22)); } 50%{ filter:drop-shadow(0 0 34px rgba(255,140,50,.5)); } }
+  #start h1 { color:#cdbd9c; font-size:clamp(22px,4.2vw,52px); letter-spacing:.5em; text-indent:.5em; font-weight:400; }
+  #start p { color:#8d8271; font-size:clamp(11px,1.3vw,15px); letter-spacing:.34em; text-indent:.34em; text-transform:uppercase; }
+  #start .play { margin-top:2vh; border:1px solid rgba(205,189,156,.4); color:#e8dcc6; padding:14px 44px;
+    font-size:15px; letter-spacing:.5em; text-indent:.5em; text-transform:uppercase; background:transparent;
+    transition:all .35s ease; font-family:inherit; }
+  #start .play:hover { border-color:#e8a15a; color:#ffcf9a; box-shadow:0 0 30px rgba(255,140,50,.25); }
+  /* title card */
+  #title { position:fixed; inset:0; z-index:24; display:none; flex-direction:column; align-items:center; justify-content:center; gap:3.2vh; }
+  #title .tlogo { max-width:min(64vw,560px); width:64vw; opacity:0; transition:opacity 2.6s ease; filter:drop-shadow(0 0 40px rgba(0,0,0,.9)); }
+  #title .sub { color:#cdbd9c; font-size:clamp(12px,1.8vw,20px); letter-spacing:.55em; text-indent:.55em; opacity:0; transition:opacity 1.8s ease .6s; text-transform:uppercase; }
+  #title.on { display:flex; } #title.on .tlogo { opacity:1; } #title.on .sub { opacity:.92; }
+  /* end card */
+  #end { position:fixed; inset:0; z-index:26; display:none; align-items:center; justify-content:flex-end; flex-direction:column; gap:2.4vh; padding-bottom:15vh; }
+  #end.on { display:flex; }
+  #end .again { border:1px solid rgba(205,189,156,.35); color:#cdbd9c; padding:12px 38px; letter-spacing:.4em; text-indent:.4em;
+    background:transparent; font-family:inherit; font-size:13px; text-transform:uppercase; cursor:pointer; transition:all .3s; }
+  #end .again:hover { color:#ffcf9a; border-color:#e8a15a; }
+  #hud { position:fixed; right:2.4vw; bottom:12.5vh; z-index:23; display:none; gap:7px; }
+  #hud.on { display:flex; }
+  #hud i { width:6px; height:6px; border-radius:50%; background:rgba(205,189,156,.22); transition:all .3s; }
+  #hud i.past { background:rgba(232,161,90,.75); }
+  #hud i.now { background:#ffcf9a; box-shadow:0 0 8px rgba(255,160,70,.9); transform:scale(1.35); }
+  @media (max-width:700px){ .bar{height:8vh;} #narr span{letter-spacing:.3em; text-indent:.3em;} }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<canvas id="embers"></canvas>
+<div id="vignette"></div>
+<canvas id="grain"></canvas>
+<div id="flash"></div>
+<div class="bar" id="barTop"></div>
+<div class="bar" id="barBot"></div>
+<div id="narr"><span id="narrText"></span></div>
+
+<div id="studio">
+  <img src="cinematic/STUDIO-LOGO.png" alt="">
+  <div class="co">A Bigfoot404 LLC Company</div>
+</div>
+
+<div id="credits">
+  <div class="role">Directed by</div>
+  <div class="name">BudE404</div>
+</div>
+
+<div id="title">
+  <img class="tlogo" id="titleLogo" src="cinematic/TITLE-LOGO.png" alt="">
+  <div class="sub">The Gates Are Waking</div>
+</div>
+
+<div id="end">
+  <div style="color:#6f6555; font-size:12px; letter-spacing:.4em; text-indent:.4em; text-transform:uppercase;">A BIG Entertainment Production</div>
+  <button class="again" onclick="location.reload()">Watch Again</button>
+</div>
+
+<div id="hud"></div>
+
+<div id="start">
+  <img class="sigil" src="cinematic/TITLE-SIGIL.jpg" alt="">
+  <h1>AVALON</h1>
+  <p>Cinematic Teaser — Headphones Recommended</p>
+  <button class="play">▶ Play</button>
+</div>
+
+<script>
+// ============ TIMELINE ============
+// [img, dur(s), kenburnsFrom{x,y,zoom}, kenburnsTo{x,y,zoom}, narr?, shake?]
+const SEQ = [
+  { img:'cinematic/SHOT-01-LONG-ROAD.jpg',    dur:7.5, from:{x:0,y:-4,z:1.02}, to:{x:0,y:4,z:1.14}, narr:'The roads remember.' },
+  { img:'cinematic/SHOT-02-PILGRIM-WALK.jpg',      dur:7.0, from:{x:-5,y:0,z:1.10}, to:{x:5,y:0,z:1.02} },
+  { img:'cinematic/SHOT-03-NIGHT-VIGIL.jpg',      dur:7.0, from:{x:0,y:2,z:1.16},  to:{x:0,y:-2,z:1.02}, narr:'Every step a prayer.' },
+  { img:'cinematic/SHOT-04-PROCESSION-GATE.jpg',   dur:7.0, from:{x:0,y:8,z:1.12},  to:{x:0,y:-6,z:1.03} },
+  { img:'cinematic/SHOT-05-GOD-REVEAL.jpg',dur:8.0,from:{x:0,y:0,z:1.00},  to:{x:0,y:-2,z:1.20}, narr:'The gates are waking.', boom:1 },
+  { img:'cinematic/SHOT-09-IMPACT-SLAM.jpg',         dur:3.4, from:{x:0,y:0,z:1.06},  to:{x:0,y:0,z:1.34}, shake:1 },
+  { img:'cinematic/SHOT-06-STORM-GOD.jpg',    dur:7.0, from:{x:4,y:0,z:1.03},  to:{x:-4,y:0,z:1.13} },
+  { img:'cinematic/SHOT-07-THE-HOLLOW.jpg',       dur:7.5, from:{x:0,y:0,z:1.02},  to:{x:0,y:0,z:1.22}, narr:'But something else woke first.' },
+  { img:'cinematic/SHOT-08-FINAL-STAND.jpg',        dur:8.0, from:{x:0,y:6,z:1.02},  to:{x:0,y:-4,z:1.15}, narr:'Stand at the gate.' },
+];
+const XFADE = 1.1, NARR_IN = 1.4, NARR_OUT = 1.2;
+
+// ============ DOM ============
+const stage = document.getElementById('stage');
+const narr = document.getElementById('narrText');
+const flash = document.getElementById('flash');
+const hud = document.getElementById('hud');
+
+// build shot layers
+const layers = SEQ.map(()=>{ const d=document.createElement('div'); d.className='shot'; stage.appendChild(d); return d; });
+SEQ.forEach((s,i)=> layers[i].style.backgroundImage = `url(${s.img})`);
+// hud dots
+SEQ.forEach(()=>{ const dot=document.createElement('i'); hud.appendChild(dot); });
+const dots=[...hud.children];
+
+// ============ AUDIO (WebAudio synth score) ============
+let AC=null, master=null, droneGain=null;
+function initAudio(){
+  AC = new (window.AudioContext||window.webkitAudioContext)();
+  master = AC.createGain(); master.gain.value=.9; master.connect(AC.destination);
+  // low drone: two detuned saws through a dark lowpass
+  droneGain = AC.createGain(); droneGain.gain.value=0;
+  const lp = AC.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=110; lp.Q.value=.6;
+  [55,55.6,110].forEach(f=>{ const o=AC.createOscillator(); o.type='sawtooth'; o.frequency.value=f; o.connect(lp); o.start(); });
+  lp.connect(droneGain); droneGain.connect(master);
+}
+function boom(power=1){
+  if(!AC) return;
+  const t=AC.currentTime;
+  const o=AC.createOscillator(); o.type='sine'; o.frequency.setValueAtTime(88,t); o.frequency.exponentialRampToValueAtTime(26,t+.9);
+  const g=AC.createGain(); g.gain.setValueAtTime(.001,t); g.gain.exponentialRampToValueAtTime(.9*power,t+.02); g.gain.exponentialRampToValueAtTime(.0001,t+1.6);
+  o.connect(g); g.connect(master); o.start(t); o.stop(t+1.7);
+  // noise thump
+  const nb=AC.createBuffer(1,AC.sampleRate*.4,AC.sampleRate); const ch=nb.getChannelData(0);
+  for(let i=0;i<ch.length;i++) ch[i]=(Math.random()*2-1)*Math.pow(1-i/ch.length,2.4);
+  const src=AC.createBufferSource(); src.buffer=nb;
+  const nf=AC.createBiquadFilter(); nf.type='lowpass'; nf.frequency.value=420;
+  const ng=AC.createGain(); ng.gain.setValueAtTime(.5*power,t); ng.gain.exponentialRampToValueAtTime(.0001,t+.5);
+  src.connect(nf); nf.connect(ng); ng.connect(master); src.start(t);
+}
+function riser(){
+  if(!AC) return;
+  const t=AC.currentTime, dur=3.2;
+  const o=AC.createOscillator(); o.type='sawtooth'; o.frequency.setValueAtTime(60,t); o.frequency.exponentialRampToValueAtTime(220,t+dur);
+  const f=AC.createBiquadFilter(); f.type='bandpass'; f.Q.value=2.2; f.frequency.setValueAtTime(200,t); f.frequency.exponentialRampToValueAtTime(2400,t+dur);
+  const g=AC.createGain(); g.gain.setValueAtTime(.001,t); g.gain.exponentialRampToValueAtTime(.34,t+dur); g.gain.exponentialRampToValueAtTime(.0001,t+dur+.15);
+  o.connect(f); f.connect(g); g.connect(master); o.start(t); o.stop(t+dur+.2);
+}
+function hitAndCutDrone(){
+  if(!AC) return;
+  boom(1.15);
+  const t=AC.currentTime;
+  droneGain.gain.setTargetAtTime(.05,t,.6); droneGain.gain.setTargetAtTime(0,t+3,1.4);
+}
+
+// ============ EMBERS ============
+const ec=document.getElementById('embers'), ex=ec.getContext('2d');
+let embers=[];
+function sizeCanvas(c){ c.width=innerWidth; c.height=innerHeight; }
+function resize(){ sizeCanvas(ec); } addEventListener('resize',resize);
+function spawnEm(n){ for(let i=0;i<n;i++) embers.push({ x:Math.random()*innerWidth, y:innerHeight+10+Math.random()*40,
+  r:.6+Math.random()*1.8, v:.35+Math.random()*1.1, sway:Math.random()*Math.PI*2, sw:.004+Math.random()*.012, a:.15+Math.random()*.5 }); }
+function drawEmbers(dt){
+  ex.clearRect(0,0,ec.width,ec.height);
+  if(embers.length<70 && Math.random()<.25) spawnEm(1);
+  embers.forEach(p=>{ p.y-=p.v*dt; p.sway+=p.sw*dt*60; const x=p.x+Math.sin(p.sway)*14;
+    const g=ex.createRadialGradient(x,p.y,0,x,p.y,p.r*3);
+    g.addColorStop(0,`rgba(255,170,80,${p.a})`); g.addColorStop(1,'rgba(255,120,40,0)');
+    ex.fillStyle=g; ex.beginPath(); ex.arc(x,p.y,p.r*3,0,7); ex.fill(); });
+  embers=embers.filter(p=>p.y>-30);
+}
+
+// ============ GRAIN ============
+const gc=document.getElementById('grain'), gx=gc.getContext('2d'); gc.width=240; gc.height=135; gc.width=240; gc.height=135;
+function drawGrain(){
+  const w=gc.width,h=gc.height;
+  gx.drawImage(gc,-(Math.random()*8),(Math.random()*8));
+  const img=gx.getImageData(0,0,w,h), d=img.data;
+  for(let i=3;i<d.length;i+=4){ d[i]=Math.min(255, d[i]+(Math.random()*54-24)); }
+  gx.putImageData(img,0,0);
+}
+
+// ============ KEN BURNS + SEQUENCER ============
+let idx=-1, t0=0, playing=false, shakeUntil=0;
+function kb(layer, from, to, k){ // k 0..1 eased
+  const e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+  const x=from.x+(to.x-from.x)*e, y=from.y+(to.y-from.y)*e, z=from.z+(to.z-from.z)*e;
+  layer.style.transform=`translate(${x}%,${y}%) scale(${z})`;
+}
+function showNarr(text, holdDur){
+  narr.style.transition='none'; narr.style.opacity=0; narr.style.transform='scale(1.05)';
+  narr.textContent=text;
+  requestAnimationFrame(()=>{ narr.style.transition=`opacity ${NARR_IN}s ease, transform ${NARR_IN}s ease`;
+    narr.style.opacity=1; narr.style.transform='scale(1)';
+    setTimeout(()=>{ narr.style.opacity=0; }, (holdDur-NARR_OUT)*1000); });
+}
+function cutFlash(strong){
+  flash.style.transition='none'; flash.style.opacity=strong? .85 : .38;
+  requestAnimationFrame(()=>{ flash.style.transition='opacity .7s ease'; flash.style.opacity=0; });
+}
+function startShot(i){
+  idx=i;
+  if(i>=SEQ.length){ enterTitle(); return; }
+  const s=SEQ[i];
+  layers.forEach((L,j)=>{ if(j!==i && j!==i+1) L.style.opacity=0; });
+  const L=layers[i];
+  L.style.transition='none'; kb(L,s.from,s.from,0); L.style.opacity=1;
+  dots.forEach((d,j)=>{ d.className = j<i?'past':(j===i?'now':''); });
+  t0=performance.now();
+  if(s.boom) boom(.8);
+  if(s.narr) setTimeout(()=>showNarr(s.narr, s.dur*0.8), 350);
+  if(s.shake){ shakeUntil=t0+700; boom(1.2); cutFlash(1); }
+  else cutFlash(i>0 ? .5 : 1);
+}
+function enterTitle(){
+  dots.forEach(d=>d.className='past');
+  layers.forEach(L=>L.style.opacity=0);
+  riser();
+  setTimeout(()=>{
+    hitAndCutDrone();
+    document.getElementById('title').classList.add('on');
+    cutFlash(1);
+    const cr=document.getElementById('credits');
+    const rollCredits = (role, name, delay, hold) => {
+      setTimeout(()=>{
+        cr.querySelector('.role').textContent=role;
+        cr.querySelector('.name').textContent=name;
+        cr.classList.add('on'); cr.style.opacity=0;
+        cr.style.transition='opacity 1.1s ease'; boom(.5);
+        requestAnimationFrame(()=>{ cr.style.opacity=1; });
+        setTimeout(()=>{ cr.style.opacity=0; }, (hold||2400));
+        setTimeout(()=>{ cr.classList.remove('on'); }, (hold||2400)+1200);
+      }, delay);
+    };
+    rollCredits('Directed by','BudE404', 3400, 3000);
+    rollCredits('A Bude404 Game','In Association With BIG Entertainment', 8000, 3000);
+    setTimeout(()=>{ document.getElementById('end').classList.add('on'); }, 12600);
+  }, 3000);
+}
+// ============ LOOP ============
+let last=performance.now();
+function loop(now){
+  const dt=Math.min(50,now-last)/1000; last=now;
+  if(playing){
+    drawEmbers(dt*60); drawGrain();
+    if(idx>=0 && idx<SEQ.length){
+      const s=SEQ[idx], k=Math.min(1,(now-t0)/(s.dur*1000));
+      kb(layers[idx], s.from, s.to, k);
+      // camera shake
+      if(now<shakeUntil){ const p=1-(shakeUntil-now)/700;
+        const sx=(Math.random()-.5)*26*(1-p), sy=(Math.random()-.5)*18*(1-p);
+        stage.style.transform=`translate(${sx}px,${sy}px)`; }
+      else stage.style.transform='';
+      // fade out near end (crossfade via next layer under)
+      if(k>1-(XFADE/s.dur) && idx+1<SEQ.length){
+        const nl=layers[idx+1], ns=SEQ[idx+1];
+        if(nl.style.opacity!=='1'){ nl.style.transition=`opacity ${XFADE}s ease`; kb(nl,ns.from,ns.from,0); nl.style.opacity=1; }
+        const kk=(k-(1-(XFADE/s.dur)))/(XFADE/s.dur);
+        kb(nl,ns.from,ns.to,kk);
+      }
+      if(k>=1) startShot(idx+1);
+    } else { drawEmbers(dt*60); drawGrain(); }
+  }
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+
+// ============ START ============
+resize();
+document.getElementById('start').addEventListener('click',()=>{
+  initAudio();
+  droneGain.gain.setTargetAtTime(.16, AC.currentTime, 2.2);
+  document.getElementById('start').style.transition='opacity 1.2s ease';
+  document.getElementById('start').style.opacity=0;
+  setTimeout(()=>document.getElementById('start').remove(),1300);
+  document.body.classList.add('playing');
+  hud.classList.add('on');
+  playing=true;
+  // studio pre-roll card
+  const st=document.getElementById('studio');
+  st.classList.add('on');
+  setTimeout(()=>{ st.style.opacity=1; boom(.7); }, 500);
+  setTimeout(()=>{ st.style.opacity=0; }, 3600);
+  setTimeout(()=>{ st.classList.remove('on'); boom(.55); startShot(0); }, 4800);
+});
+</script>
+</body>
+</html>
