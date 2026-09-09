@@ -43,3 +43,20 @@ Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset
 1. **WEAPONLESS PLATE LAW (Big: 'make sure there arent weapons on them for the 3d reference sheets images'):** 404-GEN Stage B plates render the character ONLY — hands completely empty, zero weapon props, zero sheathed weapons, zero held/worn weapons (incl. Wildborn claw gauntlets and Weaver lantern-staff). Weapons are modeled as SEPARATE attachable 3D props per the class kit (kit-integrity still governs the canon key art — the keys keep their weapons; the plates don't).
 2. **MALE CHESTPLATE-DISTINCTION LAW (Big: Warden + Veilborn 'look too identical' to the others):** each male class carries an unmistakably distinct chest treatment — Sovereign: solid engraved ceremonial breastplate, high collar (unchanged) · Ravager: massive battered engraved plate, torn mantle (unchanged) · Wildborn: minimal hide-and-bronze harness, bare chest (unchanged) · Weaver: simple shoulder-plates + layered robes (unchanged) · **Warden M: NEW — double-thick bronze breastplate of overlapping horizontal reinforcing bands over mail, deep-stamped knotwork ridge lines, heavy shoulder yoke, mail skirt — the wall-of-defense read** · **Veilborn M: NEW — narrow light dark-bronze cuirass almost swallowed by layered cord-and-leather harness wraps, sparse stamps, cloth silhouette — the ghost read.** F-set carries the same distinction logic (Warden-F banded heavy, Veilborn-F wrapped minimal) for set consistency.
 3. **V1 superseded for the full set:** all twelve REF404-GEN-CLASS-*-V2.png replace V1 (V1 preserved in git history). The six female V2 plates + four approved male V2 plates are the SAME approved designs, weapons removed. Verdicts pending on the V2 batch.
+
+---
+
+## V2 REVISION LAWS (Sept 9 2026, Big's review of the V1 plates)
+
+### REF-SHEET WEAPONLESS LAW (Big: "make sure there arent weapons on them for the 3d reference sheets images")
+404-GEN reference plates are BODY/ARMOR reference only — ZERO weapons in frame (no held weapons, no sheathed weapons, no staves, no claw gauntlets). Hands relaxed and empty. Weapons are SEPARATE 3D PROPS in Unity (one per class kit, built from the canon key art; kit-integrity still governs the weapon prop itself). The weaponless plate keeps the modeling pass clean and lets the weapon asset be attached/detached independently. All 12 plates re-rolled V2 weaponless (art/pending/REF404-GEN-CLASS-*-V2.png); V1 superseded.
+
+### MALE CHESTPLATE-DISTINCTION LAW (Big: "the sovereign, ravager and wild one and weaver are good for the males the other two look too identical")
+The male kits must be silhouettes-first — no two chestplates read the same. Locked distinctions:
+- SOVEREIGN: solid closed ceremonial breastplate, FULL knotwork + La Tène engraving across the chest — the regal maximal plate.
+- RAVAGER: MASSIVE battered single-piece plate, heavy scarred knotwork — the biggest chestplate, war-worn brutal read.
+- WARDEN: double-thick overlapping horizontal reinforcing BRONZE BANDS over mail, layered shoulder yoke, mail skirt — the wall-of-defense read (V2 fix).
+- VEILBORN: narrow light dark-bronze cuirass swallowed by cord-and-leather harness wraps, cloth-built silhouette — the ghost read (V2 fix).
+- WEAVER: simple engraved bronze shoulder-plates + layered robes — the minimal mystic read.
+- WILDBORN: bronze-and-hide harness over bare chest — the feral minimal read.
+QC GATE ADDITION: before any plate ships, its chestplate treatment must be unmistakable at silhouette distance vs the other five.
