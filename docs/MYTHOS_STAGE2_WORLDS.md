@@ -69,3 +69,10 @@ The world is MYTH, and every environment renders at myth tier. Governs all world
 5. Carved World style, chisel signature, rune law, environment-typing — all unchanged and enforced.
 
 Applies to the STAGE2 24-realm scene pass (rolls after the 12-model class set completes).
+
+---
+
+# STAGE2 MYTHIC-WORLD PASS (Sept 9 2026, Big's blanket go-ahead) — 24/24 ROLLED
+All 24 realms re-rolled under the NEW law stack: Mythic World Law (never simple villages — megalithic god-scale staging), Lantern-Region Aura Law (shrine-lantern glow = region accent: ember Ashfall, storm-slate Skyrend, deep-moss Everbloom, CRIMSON Duskmourn per red/black law, tide-teal Marenth, bone-grey Stoneheart), Arthurian Dark-Age mortal tier dwarfed by myth, two-layer light, zero script (knotwork patterns only), zero deities/monsters in frame (pure environment compositions — the old deity-anchored staging is superseded by the 6-god pantheon), p-hash dedup clean.
+
+Files: art/pending/STAGE2-<REGION>-<REALM>-MYTHICWORLD-V1.png (commit 5795392, contact sheet sent to BudE404's court). Verdicts pending per protocol — blanket 'Keep all' accepted per Big's batch authorization. Old deity-era STAGE2 canon preserved in git history + approved/ until verdicts land.

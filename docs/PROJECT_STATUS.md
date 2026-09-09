@@ -22,7 +22,7 @@ _Master laws: AVALON_DOCTRINE.md · ART_DIRECTION.md · PIPELINES.md (toolchain)
 
 ## 📋 QUEUE (in order)
 1. Enemy pass: Erased Drake → Gate-Worm → Echo of the Forgotten → Camelot fauna (all under enemy-art laws)
-2. STAGE2 24-realm mythic-world pass (Mythic World Law: never simple villages)
+2. ~~STAGE2 24-realm mythic-world pass~~ ROLLED 24/24 (Sept 9, pending verdicts — contact sheet in BudE404's court)
 3. Unity asset sourcing + restyling (classes first, then gods/NPCs/enemies)
 4. God art re-rolls per outstanding rulings (Iron King next if still queued)
 
