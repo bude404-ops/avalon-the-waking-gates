@@ -32,7 +32,7 @@ LAW STACK → PROMPT → GENERATE → P-HASH CHECK → art/pending/ → BUD'S CO
 ## 3. ENGINE — UNITY (the one engine)
 
 - Unity handles: world building, lighting, VFX, abilities, animation, terrain, cinematics, builds.
-- **Asset Store policy:** generic environment filler only (rocks, ruins, props, sound, base animation sets). NEVER canon characters — the 12 classes, 6 gods, NPCs, and the bestiary come from our locked art through 404-GEN, because no store asset matches the law stack.
+- **Asset Store policy (UNITY-FIRST, supersedes the filler-only policy):** store assets serve everything — environments, props, sound, animation, AND canon characters (matched to canon silhouettes + customized per the law stack). The locked 2D art stays the art-direction bible and the QC bar; no asset ships without matching its canon key.
 - **Lighting law in-engine:** two-layer light — cold desaturated ambient + one rich source (lantern flame / realm accent). Region colorways = Unity lighting + post-processing settings.
 - Godot is RETIRED. Legacy scaffolding lives in `legacy-godot/` for history only.
 
@@ -51,6 +51,6 @@ Canon art (approved, art direction) ──→ Unity Asset Store (source) ──�
       └──→ docs/ law stack ──→ all future rolls (laws govern every prompt)
 ```
 
-- Character roster (12 classes + 6 gods + Vera + Ravenkin): CANON-COMPLETE — 404-GEN can start on heroes.
+- Character roster (12 classes + 6 gods + Vera + Ravenkin): CANON-COMPLETE — Unity asset sourcing can start on heroes.
 - Enemy pass: T1 complete; T2 Unmade Champion in court; queue behind it.
 - STAGE2 24-realm world pass: queued after the enemy pass.
