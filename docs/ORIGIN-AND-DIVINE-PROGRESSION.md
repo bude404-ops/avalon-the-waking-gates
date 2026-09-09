@@ -36,7 +36,7 @@ First-god thread: opens with the home realm's patron deity (the class's Six Path
 | SOVEREIGN | SKYREND | storm slate | command from the storm — the sky-throne read |
 | RAVAGER | ASHFALL | oxide red | raw force from the ember badlands — furnace rage |
 | WARDEN | STONEHEART | bone grey | the unmovable — stone is the warden's grammar |
-| VEILBORN | DUSKMOURN | dusk violet | the veil realm itself — Veiled Stair home ground |
+| VEILBORN | DUSKMOURN | crimson red | the veil realm itself — Veiled Stair home ground |
 | WEAVER | MARENTH | tide teal | the currents and threads — tides are woven water |
 | WILDBORN | EVERBLOOM | deep moss | the wild heart — the bloom realm is feral ground |
 
@@ -47,7 +47,7 @@ First-god thread: opens with the home realm's patron deity (the class's Six Path
 | Realm | Accent | Origin deity thread |
 |---|---|---|
 | ASHFALL | oxide red | the Furnace gods (fire) |
-| DUSKMOURN | dusk violet | the Dusk gods (lantern/dark) |
+| DUSKMOURN | crimson red | the Dusk gods (lantern/dark) |
 | EVERBLOOM | deep moss | the Bloom gods |
 | MARENTH | tide teal | the Tide gods |
 | SKYREND | storm slate | the Storm gods |

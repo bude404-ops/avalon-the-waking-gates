@@ -185,7 +185,7 @@ The light inside THE LANTERN (the Luminary — the one relic) renders in the COL
 - SKYREND → storm slate
 - ASHFALL → oxide red
 - STONEHEART → bone grey
-- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes dusk violet realm-wide — staging, lanterns, gear accent language. Open: Veilborn's class gear accent (dusk violet) — keep or shift to crimson, Big to rule.
+- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes dusk violet realm-wide — staging, lanterns, gear accent language. Veilborn's class gear accent = CRIMSON (Big, Sept 8 ~11:49 PM: 'OK we will keep and go crimson') — the veil-whisper cloak and all Veilborn accent language shift from dusk violet to crimson; both locked Veilborn canon pieces get re-rolls under the new accent.
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 
