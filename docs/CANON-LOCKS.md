@@ -52,3 +52,6 @@ Per Big's explicit condition, delivered and confirmed before the roll ("change t
 
 ## SEPT 9 ~3:36 PM — NAMES CONFIRMED + PATH 3
 Big: 'Lets go Path 3 you do the heavy lifting, and keep the names you generated.' The Twelve's names are CONFIRMED CANON (docs/CHARACTER-NAMES.md). The Blender-bridge amendment is law (see UNITY_3D_MODEL_MANIFEST.md). 3D production begins: Aedan Stormcrown (Sovereign M) first per the build sheet.
+
+## SEPT 9 ~4:50 PM — 3D ROUTE CORRECTED
+Big rejected the Blender base pass ('that is bad') and confirmed the AI-generation route: locked canon art -> AI 3D generation (404-GEN Stage C) -> Unity-ready GLB -> Unity (all tools in Unity, Blender retired). Runpod L40S rig armed; blocked only on Runpod balance top-up.
