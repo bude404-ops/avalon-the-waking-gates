@@ -185,7 +185,7 @@ The light inside THE LANTERN (the Luminary — the one relic) renders in the COL
 - SKYREND → storm slate
 - ASHFALL → oxide red
 - STONEHEART → bone grey
-- DUSKMOURN → dusk violet
+- DUSKMOURN → crimson red — the red/black Celtic death palette (Big, Sept 8 ~11:27 PM: 'for the death or darkness is red and black the Celtics colors so not the purple'; supersedes dusk violet)
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 
