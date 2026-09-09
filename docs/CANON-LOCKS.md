@@ -10,3 +10,17 @@ The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/Q
 
 ## SEPT 9 CINEMATIC PASS
 7 pieces vaulted pending: teaser key art + six campaign cut-scene stills (art/pending/CINEMATIC-*). 2.39:1 cut-scene grade, full law stack, zero script. Awaiting verdicts — or Big's blanket 'Keep all'.
+
+---
+
+# LORE SWEEP — SEPT 9 2026 (Big's order: sweep the lore, then check quests/campaigns/gameplay/combat)
+
+**REALM NAME CANON normalized repo-wide:** the six locked realms (Ashfall · Skyrend · Everbloom · Duskmourn · Marenth · Stoneheart) now govern every doc — legacy working names RETIRED everywhere: Gloambarrow→Duskmourn, Embermere/Emberrealm→Ashfall, Galemarch→Skyrend, Bloomweald→Everbloom, Marevale→Marenth, Stonefell→Stoneheart (questline files renamed too). Git history preserves the old names.
+
+**RED/BLACK DUSKMOURN enforced repo-wide:** every live-canon violet reference in the death realm (faction color, ghost-light, wisps, catacombs, mist wolves) → CRIMSON. Veilborn accent = crimson. EXCEPTIONS preserved: the void-black shader spec's cold-violet bias (absence color law, all Hollows), Stoneheart's pale amethyst/geode tones, historical verdict logs.
+
+**PANTHEON LAW codified repo-wide:** SIX PATRON GODS (Ember King/Vaelthorn · Storm Queen/Sylwenna · Iron King/Grathwyn · Tide Queen/Ylsanne · Life Mother/Mirielle · Death King/Morvaine — art locked). The retired second giants (Vessamaine, Haeldor, Thevraine, Senneth, Nerovane, Bergrune) RECAST AS REALM TITANS (guardian colossi — never worshipped, never pantheon; Avatar Doctrine cover). Sprite champions (Warden/Keeper cast) remain champion NPCs. Supersession banners added to MYTHOS_CODEX / MYTHOS_DEITY_COMBAT_KITS / COMBAT_BALANCE_DOCUMENT; realm ability trees now name the single patron god per realm. 24/28-deity phrasing = historical only.
+
+**CLASS LAYER clean:** CLASS-SYSTEM v2 (the Six Classes) governs player combat; the six v1 weapon-tree docs re-headered as LINEAGE (abilities remapped, not discarded); Orders survive as world/NPC lore per Law 3.
+
+**CAMPAIGNS/QUESTS verified:** Six-Campaign Arc v4.0 (Age of Kings → First Ruin → Awakening → Six Paths → Divine Conflict → Primordial Truth) governs; quest doctrine five-beat grammar intact; faction questlines renamed to realm canon. COMBAT BALANCE role templates now mapped: kings = Warrior chassis, queens = Caster chassis, Archer/Assassin = champion/NPC templates — all formulas, scaling, enemy stats unchanged.

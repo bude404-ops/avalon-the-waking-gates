@@ -1,6 +1,6 @@
 # ASHFALL — Faction Ability Tree (Draft v1)
 
-> Unlocked by pledging the flame Mark to the Ashfall deity (Vaelthorn / Vessamaine).
+> Unlocked by pledging the flame Mark to THE ASHFALL PATRON GOD — THE EMBER KING (Vaelthorn).
 > Resource: FAITH. Free re-pledge — progress persists per faction tree.
 
 ## Ember Doctrine

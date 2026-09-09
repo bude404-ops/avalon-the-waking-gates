@@ -1,6 +1,6 @@
 # EVERBLOOM — Faction Ability Tree (v1 CANON)
 
-> Unlocked by pledging the flame Mark to the Everbloom deity (Thevraine / Mirielle).
+> Unlocked by pledging the flame Mark to THE EVERBLOOM PATRON GOD — THE LIFE MOTHER (Mirielle).
 > Resource: FAITH. Free re-pledge. Borrowed bloom — plain kit at rest.
 
 ## Bloom Doctrine

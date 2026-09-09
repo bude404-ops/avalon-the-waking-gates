@@ -1,6 +1,6 @@
 # MARENTH — Faction Ability Tree (v1 CANON)
 
-> Unlocked by pledging the flame Mark to the Marenth deity (Nerovane / Ylsanne).
+> Unlocked by pledging the flame Mark to THE MARENTH PATRON GOD — THE TIDE QUEEN (Ylsanne).
 > Resource: FAITH. Free re-pledge. Borrowed tide — plain kit at rest.
 
 ## Tide Doctrine
