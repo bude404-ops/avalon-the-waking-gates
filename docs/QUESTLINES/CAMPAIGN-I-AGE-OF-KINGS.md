@@ -7,7 +7,7 @@ Campaign I opens in the Ashfall's kiln-cities BEFORE the Ember Gate flickers: po
 ### KINGDOM QUEST 1 — "THE COLD HEARTH OATH" (the tutorial quest, ~20 min)
 - **What the quest makes you do:** A dying forge-judge (Vaelthorn's kept-pair arc seed) cannot pass sentence on an oath-breaking guild without a witness of standing. You carry the hearth-coal from the oath-hearth across the city — the walk IS the quest: three encounters (a bribe, a threat, a plea), each a CHOICE with visible consequences in the gate-town after.
 - **What the world shows:** the kiln-city's politics are shown through the three encounters — no exposition, the town changes based on who you crossed.
-- **What people ask of you:** the lore fragment wearing a job — the oath-hearth coal "burns without fuel" (item lore: first-ember shard lineage). First embermere-mystery seed planted.
+- **What people ask of you:** the lore fragment wearing a job — the oath-hearth coal "burns without fuel" (item lore: first-ember shard lineage). First ember-mystery seed planted.
 - **Reward:** the Mark ceremony (player becomes one of the Marked) + Faith system unlock. Nothing purchasable, nothing farmable.
 
 ### KINGDOM QUEST 2 — "THE SUCCESSION AT HIGHKILN" (~30 min, two sessions' worth)
