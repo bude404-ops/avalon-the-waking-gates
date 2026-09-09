@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bigfoot404.avalon"
     android:versionCode="2"
-    android:versionName="0.1.1-test">
+    android:versionName="0.2-test">
 
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"/>
 
