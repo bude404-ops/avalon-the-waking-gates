@@ -49,3 +49,6 @@ Per Big's explicit condition, delivered and confirmed before the roll ("change t
 - **X ACCOUNT GAME LOGO V1 CANON** — the Waking Gates trilithon emblem w/ living-flame lantern: art/approved/X-ACCOUNT-GAME-LOGO-CANON.png.
 
 **CHARACTER NAMING DIRECTIVE (same verdict): 'the characters in the apk looks funny we need to get them actual names based around their class and region and gender and then have what class they are'** — the 12 class characters get proper mythic names (class + realm + gender construction) with class labels in the APK. Codified docs/CHARACTER-NAMES.md.
+
+## SEPT 9 ~3:36 PM — NAMES CONFIRMED + PATH 3
+Big: 'Lets go Path 3 you do the heavy lifting, and keep the names you generated.' The Twelve's names are CONFIRMED CANON (docs/CHARACTER-NAMES.md). The Blender-bridge amendment is law (see UNITY_3D_MODEL_MANIFEST.md). 3D production begins: Aedan Stormcrown (Sovereign M) first per the build sheet.
