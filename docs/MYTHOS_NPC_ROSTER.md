@@ -36,3 +36,17 @@
 ## HEARTLAND / THE CONCORDE
 - **THE CONCORD-KEEPER** — the neutral city's speaker; wears no faction colors; carries the keys to the Empty Pedestal; the campaign's political spine.
 - **LAMPLIGHTER AUNE** — the girl who garlands the Pedestal every dusk (the folk-myth figure); her nightly rite becomes the endgame's key scene.
+
+---
+
+## THE RAVENKIN — LUMINARY-BEARERS (Big, Sept 8 ~10:47 PM)
+
+**Big's words:** 'for the luminaries we are making them ravenkin and they will be small raven like humanoids but all raven just with arms and they will carry the relics.'
+
+### LAW
+- The LUMINARY-BEARERS — the beings that carry the relics (the Luminaries) — are THE RAVENKIN.
+- Form: SMALL raven-like humanoids. ALL RAVEN — full corvid read (black feathers, beaks, talons, bird posture), NEVER feathered humans; the only humanoid trait is ARMS — raven bodies with articulated arms below/beside the wings.
+- Function: THEY CARRY THE RELICS. A Luminary is never seen unborne — it travels in a Ravenkin's arms. Ravenkin = the living reliquaries of the world; wherever a relic must be carried, guarded, delivered, or recovered, a Ravenkin bears it.
+- They are the third thing: not mortal, not god, not Hollow — part of the relic-ecology (the Luminary is the one true relic; the Ravenkin are its keepers).
+- Staging: small against the mythic world — a Ravenkin on a standing-stone avenue with a glowing relic in its arms reads as a tiny warm light inside the colossal carved cold.
+- Art grammar: Carved-World painterly oil-render, silhouette-first at phone scale; the held relic is the only warm light source on the bird (Two-Layer Light law); no craft on the Ravenkin themselves (no armor, no tools — the relic is the burden and the honor).
