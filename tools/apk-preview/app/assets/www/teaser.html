@@ -64,6 +64,13 @@
   #hud i.past { background:rgba(232,161,90,.75); }
   #hud i.now { background:#ffcf9a; box-shadow:0 0 8px rgba(255,160,70,.9); transform:scale(1.35); }
   @media (max-width:700px){ .bar{height:8vh;} #narr span{letter-spacing:.3em; text-indent:.3em;} }
+
+  @media (orientation: portrait) {
+    .shot { background-size: contain; }
+    .bar { height: 16vh; }
+    #title .tlogo { max-width:88vw; width:88vw; }
+    #studio img { width:min(70vw,520px); }
+  }
 </style>
 </head>
 <body>
