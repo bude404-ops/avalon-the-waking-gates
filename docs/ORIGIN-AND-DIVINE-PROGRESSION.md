@@ -76,25 +76,25 @@ Doctrine per Big's proposal — mechanics above (one active bond, learned-is-per
 
 ---
 
-## PANTHEON LAW v4 — THE SIX, LOCKED (Big, Sept 8 ~9:41 PM)
+## PANTHEON LAW v4.1 — THE SIX, LOCKED (Big, Sept 8 ~9:41 PM + ~9:51 PM name-fix clarification)
 
-**Big's words:** 'we only make 6 gods 3 male 3 females' + 'Swap everbloom and Stoneheart and skyrend and duskmourn.'
+**Big's words:** 'we only make 6 gods 3 male 3 females' + 'Swap everbloom and Stoneheart and skyrend and duskmourn' + CLARIFICATION: 'I ment swap the male and female roles i sent you so we need fix names.'
 
-The 12-god-emergence roster is CUT to SIX patron gods — one per realm, 3 male + 3 female. All god artwork canon re-rolls under the current law stack (Primordial, torso-up, no weapons, no mouth, barely-face, pure element, primordial hands; goddesses feminine-read + elemental hair).
+MEANING: the CONCEPTS stay anchored to their realms (storm at Skyrend, death at Duskmourn, iron at Stoneheart, life at Everbloom) — only the GENDERS swap at those four realms. The 12-god-emergence roster is CUT to SIX patron gods, one per realm, 3 male + 3 female. All god artwork canon re-rolls under the current law stack (Primordial, torso-up, no weapons, no mouth, barely-face, pure element, primordial hands; goddesses feminine-read + elemental hair).
 
-### THE ROSTER (after Big's swap verdict)
+### THE ROSTER (gender-swapped per Big's clarification)
 
 | Realm | God | Gender | Element / Concept | Patron of |
 |---|---|---|---|---|
-| SKYREND | THE DEATH MOTHER | F | the veil of endings — the sky rends as her passage | Sovereign |
+| SKYREND | THE STORM QUEEN | F | pure storm — thunder mass, storm-hair | Sovereign |
 | ASHFALL | THE EMBER KING | M | pure magma — the war-furnace | Ravager |
-| STONEHEART | THE LIFE KING | M | living stone — growth through strata (the treant read; Big's 'life fits stone' instinct confirmed) | Warden |
-| DUSKMOURN | THE STORM KING | M | the dusk-storm — dark thunderheads, violet lightning | Veilborn |
+| STONEHEART | THE IRON KING | M | raw ore — molten metal strata, the unmoving | Warden |
+| DUSKMOURN | THE DEATH KING | M | the veil — natural endings, moonlit dusk | Veilborn |
 | MARENTH | THE TIDE QUEEN | F | pure ocean — the cycle itself, time and change | Weaver |
-| EVERBLOOM | THE IRON MOTHER | F | the iron beneath the bloom — ore veins under the wildwood | Wildborn |
+| EVERBLOOM | THE LIFE MOTHER | F | living wood — the treant read (bark, moss, blossom, sap-glow) | Wildborn |
 
 ### THE CYCLE DOCTRINE
-The pantheon is THE CYCLE — six forces OF the world: life (Stoneheart), death (Skyrend), tide/time (Marenth), storm (Duskmourn), ember (Ashfall), iron (Everbloom). **THE UNMAKING stands OUTSIDE the cycle** — it does not guide endings, it ERASES the ending itself. Death (the Death Mother) is a natural force players can ally with; the Unmaking is the antagonist. The Hollows remain the Unmaking's mortal-scale manifestations — no god, no ally.
+The pantheon is THE CYCLE — six forces OF the world: life (Everbloom), death (Duskmourn), tide/time (Marenth), storm (Skyrend), ember (Ashfall), iron (Stoneheart). **THE UNMAKING stands OUTSIDE the cycle** — it does not guide endings, it ERASES the ending itself. Death (the Death King) is a natural force players can ally with; the Unmaking is the antagonist. The Hollows remain the Unmaking's mortal-scale manifestations — no god, no ally.
 
 ### IMPLICATIONS
 - First-god thread per class = the home realm's single patron above (no more king+queen pairs per realm).
