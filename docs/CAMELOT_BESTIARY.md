@@ -27,3 +27,26 @@ A wounded land, a pilgrim carrying the one living light, shrines that heal the w
 
 ## V. CANON REFERENCES (style anchors, not IP)
 Arthurian bestiary tradition: Malory's Le Morte d'Arthur (Questing Beast), Welsh otherworld canon (Cŵn Annwn, Afanc), romance hunt tradition (White Hart). We use the myth-type, never the trademarked version of any modern retelling.
+
+## AVALON CREATURES — PER-REALM FAUNA ROLL (Sept 9, Big: 'build more fauna art for different types of creatures... fit the lore and for regions')
+
+Twelve new Avalon creatures — two per realm, realm-native designs on the neutral stone-and-mist staging law (no realm colorway/landmarks, zero script, unlit lanterns only). Rolled as a batch, p-hash clean across all 12 (min hamming 31). VERDICTS PENDING per creature — gallery labels each as an Avalon Creature with its home realm.
+
+| Realm | Creature | File (pending verdict) |
+|---|---|---|
+| Skyrend | The Storm Tarbh — colossal slate storm-bull of the high passes | art/pending/ENEMY-FAUNA-SKYREND-STORM-TARBH-NEUTRAL-V1.png |
+| Skyrend | The Slate Rook — storm-grey omen corvid of the ridges | art/pending/ENEMY-FAUNA-SKYREND-SLATE-ROOK-NEUTRAL-V1.png |
+| Ashfall | The Twrch — legendary ember-tusked black boar (Twrch Trwyth nod) | art/pending/ENEMY-FAUNA-ASHFALL-TWRCH-BOAR-NEUTRAL-V1.png |
+| Ashfall | The Cinder Salamander — dog-sized living coal of the fissures | art/pending/ENEMY-FAUNA-ASHFALL-CINDER-SALAMANDER-NEUTRAL-V1.png |
+| Stoneheart | The Barrow Owl — pale death-omen owl of the burial cairns | art/pending/ENEMY-FAUNA-STONEHEART-BARROW-OWL-NEUTRAL-V1.png |
+| Stoneheart | The Hollowhorn — megalith-spiraled great ram of the cold high country | art/pending/ENEMY-FAUNA-STONEHEART-HOLLOWHORN-RAM-NEUTRAL-V1.png |
+| Duskmourn | The Dullahan's Steed — riderless black warhorse, dead unlit lantern on its harness | art/pending/ENEMY-FAUNA-DUSKMOURN-DULLAHAN-STEED-NEUTRAL-V1.png |
+| Duskmourn | The Gloam Pooka — smoky half-undone crossroads shape-shifter | art/pending/ENEMY-FAUNA-DUSKMOURN-GLOAM-POOKA-NEUTRAL-V1.png |
+| Marenth | The Kelpie — drowned-weed water-horse of the pooling shallows | art/pending/ENEMY-FAUNA-MARENTH-KELPIE-NEUTRAL-V1.png |
+| Marenth | The Tide Strider — twice-human-height heron-horror of the grey shallows | art/pending/ENEMY-FAUNA-MARENTH-TIDE-STRIDER-NEUTRAL-V1.png |
+| Everbloom | The Moss Stag — grove-crowned stag, blossoming living antlers | art/pending/ENEMY-FAUNA-EVERBLOOM-MOSS-STAG-NEUTRAL-V1.png |
+| Everbloom | The Briar Fox — vine-threaded fox with blossoms in its coat | art/pending/ENEMY-FAUNA-EVERBLOOM-BRIAR-FOX-NEUTRAL-V1.png |
+
+**WYVERN RE-ROLL (Big: 'the wyvern in the avalon creatures is showing as a black dog not a wyvern'):** the vaulted ENEMY-FAUNA-WYVERN-CANON.png was a bad roll (rendered as a black dog). V2 re-rolled as a true wyvern (bat-wings, barbed serpentine tail, two taloned hind legs, no forelegs, dragon head): art/pending/ENEMY-FAUNA-WYVERN-NEUTRAL-V2.png — swap into canon on Big's Keep. APK v0.4 shows the V2.
+
+**ELITE ART PURGE (Big: 'the T Hollow elites are still incorrect and using old art we need to delete old art so this doesnt happen'):** the APK had pulled stale pre-lock HOLLOW-* files (incl. the superseded V8-facelaw champion). v0.4 re-bundles the elites from the CURRENT approved canon — ENEMY-T2-UNMADE-CHAMPION (hooded lock), ENEMY-T2-ERASED-DRAKE, ENEMY-T3-GATE-WORM, ENEMY-T3-ECHO-OF-THE-FORGOTTEN — and the build pipeline now purges any www/art file not referenced by the gallery (v0.4 purge removed all stale files; zero broken refs verified).
