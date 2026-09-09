@@ -26,7 +26,7 @@ Both genders: sexy, heroic, battle-ready, distinctly human, culturally consisten
 - FITTED ARMOR IS IN: the no-polished-metal / raw-only rule is superseded — bronze and dark iron armor pieces are canon; raw hide/cord stays as trim and under-layers.
 - CLAN SYMBOLS = knotwork/spiral motifs + Avalon gate-rune marks ONLY — Rune Origin Law holds, no real-world scripts (no ogham, no futhark).
 - Kit-Integrity, Fit-Body, hourglass sizing, Female Face/Expression/Scene laws all hold unchanged.
-- 70/30 functional-provocative split (Mythic Armor Doctrine) holds and is realized through this grammar.
+- Split v2: FEMALES 50/50 functional-provocative (Sept 8 ~8:45 PM, Big's ratio order); males stay 70/30. Realized through this grammar.
 
 ## THE OLD FIRST CRAFTS GRAMMAR (below — partially superseded)
 
