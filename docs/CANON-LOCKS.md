@@ -24,3 +24,6 @@ The nine old-era god EMERGENCE files (GOD-BLOOMWEALD-KING, GOD-EMBERREALM-KING/Q
 **CLASS LAYER clean:** CLASS-SYSTEM v2 (the Six Classes) governs player combat; the six v1 weapon-tree docs re-headered as LINEAGE (abilities remapped, not discarded); Orders survive as world/NPC lore per Law 3.
 
 **CAMPAIGNS/QUESTS verified:** Six-Campaign Arc v4.0 (Age of Kings → First Ruin → Awakening → Six Paths → Divine Conflict → Primordial Truth) governs; quest doctrine five-beat grammar intact; faction questlines renamed to realm canon. COMBAT BALANCE role templates now mapped: kings = Warrior chassis, queens = Caster chassis, Archer/Assassin = champion/NPC templates — all formulas, scaling, enemy stats unchanged.
+
+## SEPT 9 ~11:57 AM — CINEMATIC CAMPAIGN SET LOCKED
+**Verdict: Big 'Keep the 6 campaigns stills'** — all six campaign cut-scene stills CANON-LOCKED: CINEMATIC-CAMPAIGN-I-AGE-OF-KINGS / II-FIRST-RUIN / III-AWAKENING / IV-SIX-PATHS / V-DIVINE-CONFLICT / VI-PRIMORDIAL-TRUTH (art/approved/*-CANON.png). 2.39:1 cut-scene grade, full law stack, zero script. The teaser key art (CINEMATIC-TEASER-KEYART-V1) was NOT in the verdict — remains pending. These six now back the APK v0.2 cinematic reel content.
