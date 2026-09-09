@@ -60,3 +60,18 @@ The male kits must be silhouettes-first — no two chestplates read the same. Lo
 - WEAVER: simple engraved bronze shoulder-plates + layered robes — the minimal mystic read.
 - WILDBORN: bronze-and-hide harness over bare chest — the feral minimal read.
 QC GATE ADDITION: before any plate ships, its chestplate treatment must be unmistakable at silhouette distance vs the other five.
+
+## WEAPON PROP REFERENCE PLATES — V1 (Sept 9, Big: 'we need to make the weapons 3d reference sheets aswell with same view and only one model of it so its visually read')
+
+Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-GEN discipline as the class plates, each class's kit rendered as a single readable model (Veilborn's twin leaf-blades = one blade; Wildborn's paired claw gauntlets = one gauntlet). Zero script (knotwork/spiral patterns only, rune-law compliant), unlit Weaver lantern (Lantern Law), quiet realm-accent whisper per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
+
+| Class | Weapon prop | Plate (pending verdict) |
+|---|---|---|
+| Sovereign | leaf-blade spear (engraved bronze head, leather grip, bronze collar band) | art/pending/REF-SHEET-WEAPON-SOVEREIGN-V1.png |
+| Ravager | massive battered greatsword (engraved dark iron, bronze crossguard, disc pommel) | art/pending/REF-SHEET-WEAPON-RAVAGER-V1.png |
+| Warden | heavy banded-bronze warhammer (knotwork faces, cord-wrapped haft) | art/pending/REF-SHEET-WEAPON-WARDEN-V1.png |
+| Veilborn | single leaf-blade dagger (dark bronze, cord grip, antler pommel) — twin kit, one model | art/pending/REF-SHEET-WEAPON-VEILBORN-V1.png |
+| Weaver | gnarled lantern-staff (twisted branch, round bronze lantern cage, unlit) | art/pending/REF-SHEET-WEAPON-WEAVER-V1.png |
+| Wildborn | single claw gauntlet (four curved iron claws over bronze-and-hide plate) — paired kit, one model | art/pending/REF-SHEET-WEAPON-WILDBORN-V1.png |
+
+P-hash QC: min hamming 28/256 across the set (Weaver V1 first roll was a near-dupe of the Sovereign spear at 8/256 — re-rolled with the twisted-branch silhouette; superseded roll not vaulted). Verdicts pending — on Keep, each plate becomes the modeling/QC reference for its Unity weapon prop.
