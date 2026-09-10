@@ -28,8 +28,8 @@ is the living mock — every screen below is staged there as the pipeline ships 
 
 ### 3. In-Game HUD
 - **Top-left crest:** class name (cream) + LEVEL line + realm.
-- **Health bar:** slate fill `#6b788c`, label in-panel.
-- **Stamina bar:** bronze fill `#a3895a`, under health.
+- **Health bar:** slate fill `#6b788c`, label in-panel. The Ravenkin companion carries the lantern vessel — the game's relic-carrier (stages in the HUD art as the companion system ships).
+- **Belief meter (PROPOSED — Big's verdict pending):** bronze fill `#a3895a`, under health. Abilities draw on BELIEF, not stamina — restored through shrines, story choices, divine bonds; never ground out. Health stays physical.
 - **Top-right:** THE LANTERN — UNLIT (flame state per Lantern Law; alights when entrusted).
 - **Quest tracker:** under lantern — QUEST — <campaign arc> (Roman numeral).
 - **Ability bar:** 4 slots bottom-center, SEALED until skill trees ship.
