@@ -50,6 +50,13 @@ The Lantern anchor is our signature HUD centerpiece (GoW has rage, we have BELIE
 - REGION TITLE CARDS (Tsushima law): entering a realm = a full-screen typographic moment — realm name in serif caps, one-line epigraph, region accent underline, 2.5s fade. This is our "wow" screen and it costs nothing.
 - Title screen: dark stage, title serif, ONE button. No menus on boot.
 
+## LAW 0 — MOBILE FIRST, PC SECOND (Big, Sept 10 2026)
+AVALON is a MOBILE-FIRST product; PC is a later layer on top of a touch-perfect core.
+- Landscape phone = the primary design target; every screen is composed for a ~6-inch phone held at arm's length.
+- Thumb-reach zones own primary actions (bottom corners/edges); passive info goes where thumbs never travel (top edge).
+- Touch targets minimum ~48dp; text sized to read on the phone BEFORE checking the desktop render.
+- The Unity shell IS the Android build — the APK is the product, not a preview. PC builds, keybinds, and higher-res scaling come after the mobile core is perfect.
+
 ## Screen flow
 TITLE (one button) → CLASS SELECT (cards, model live behind) → REALM TITLE CARD → IN-GAME (Law 1 HUD) → CHARACTER TAB (single-column skill paths, right preview).
 
