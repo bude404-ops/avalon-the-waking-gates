@@ -69,7 +69,7 @@ namespace AvalonShell
         GameObject BuildTitle(Transform parent)
         {
             var p = Panel(parent, "Title", new Color(0.051f, 0.055f, 0.063f, 0.97f));
-            Stretch(p.transform);
+            p.transform.Stretch();
             Label(p.transform, "AVALON", 64, Hex(0xe6ddca), TextAnchor.MiddleCenter).rect().Stretch(p.transform);
             var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
             sub.rect().anchorMin = new Vector2(0, 0.40f); sub.rect().anchorMax = new Vector2(1, 0.52f);
@@ -87,9 +87,9 @@ namespace AvalonShell
         GameObject BuildSelect(Transform parent)
         {
             var p = Panel(parent, "Select", new Color(0, 0, 0, 0));
-            Stretch(p.transform);
+            p.transform.Stretch();
             var dim = Panel(p.transform, "Dim", new Color(0, 0, 0, 0.35f));
-            Stretch(dim.transform);
+            dim.transform.Stretch();
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
             head.rect().anchorMin = new Vector2(0, 0.90f); head.rect().anchorMax = new Vector2(1, 0.99f);
 
@@ -138,7 +138,7 @@ namespace AvalonShell
         GameObject BuildGame(Transform parent)
         {
             var p = Panel(parent, "Game", new Color(0, 0, 0, 0));
-            Stretch(p.transform);
+            p.transform.Stretch();
 
             // HUD top-left: class crest panel
             var crest = Panel(p.transform, "Crest", new Color(0.039f, 0.043f, 0.051f, 0.88f));

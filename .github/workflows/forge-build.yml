@@ -140,6 +140,15 @@ jobs:
           fi
           echo "FORGE EXIT: $CODE"
           [ "$CODE" -eq 0 ] || exit 1
+      - name: Surface compile errors
+        if: failure()
+        run: grep -E "error CS[0-9]+" $GITHUB_WORKSPACE/unity-editor.log | head -40 || true
+      - name: Upload editor log
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-editor-log
+          path: ${{ github.workspace }}/unity-editor.log
       - name: Build AVALON shell APK
         run: |
           export AVALON_APK_OUT=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
