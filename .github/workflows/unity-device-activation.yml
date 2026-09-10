@@ -1,0 +1,51 @@
+name: Unity Device-Code Activation
+
+# Live activation: Unity 6 licensing client prints a sign-in URL + code.
+# Big opens it on his phone, signs in with his Unity ID, license activates
+# on this runner. We harvest the license files into an artifact for reuse.
+on:
+  workflow_dispatch:
+
+jobs:
+  activate:
+    name: Device-code license activation
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-6000.5.11f1-base-3.2.2
+    timeout-minutes: 20
+    steps:
+      - name: Help + activation attempt
+        run: |
+          LIC="/opt/unity/editor/Data/Resources/Licensing/Client/Unity.Licensing.Client"
+          echo "=== LICENSING CLIENT HELP ==="
+          "$LIC" --help 2>&1 | head -60 || true
+          echo "=== STARTING ACTIVATION ==="
+          nohup "$LIC" --activate-license > /tmp/act.log 2>&1 &
+          echo $! > /tmp/act.pid
+          sleep 20
+          echo "=== ACTIVATION OUTPUT (first 20s) ==="
+          cat /tmp/act.log || true
+          echo "=== POLLING UP TO 15 MIN FOR ACTIVATION ==="
+          for i in $(seq 1 90); do
+            if "$LIC" --show-license 2>/dev/null | grep -qiE "license|entitlement|Personal"; then
+              echo "=== LICENSE DETECTED AT LOOP $i ==="
+              break
+            fi
+            sleep 10
+          done
+          echo "=== SHOW LICENSE ==="
+          "$LIC" --show-license 2>&1 || true
+          kill $(cat /tmp/act.pid) 2>/dev/null || true
+      - name: Harvest license files
+        if: always()
+        run: |
+          mkdir -p /tmp/lic
+          for D in /home/unity/.local/share/unity3d /home/unity/.config/unity3d /root/.local/share/unity3d /root/.config/unity3d; do
+            [ -d "$D" ] && cp -r "$D" /tmp/lic/ 2>/dev/null
+          done
+          find /tmp/lic -type f | head -40
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: unity-device-license
+          path: /tmp/lic/
+          retention-days: 7
