@@ -37,7 +37,9 @@ bpy.ops.mesh.delete(type='FACE')
 print(f"LOOSE removed, faces={len(body.data.polygons)}", flush=True)
 # 3. smooth pass: Laplacian smooth, preserve shape (low repeat)
 bpy.ops.mesh.select_all(action='SELECT')
-bpy.ops.mesh.vertices_smooth(laplacian=False, factor=0.3, repeat=2)
+for _ in range(2):
+    bpy.ops.mesh.vertices_smooth(factor=0.3)
+    bpy.ops.mesh.select_all(action='SELECT')
 print(f"SMOOTH pass faces={len(body.data.polygons)}", flush=True)
 bpy.ops.object.mode_set(mode='OBJECT')
 # 4. shape stats + normals
@@ -45,5 +47,12 @@ bpy.ops.object.shade_smooth()
 if not body.data.uv_layers.active:
     body.data.uv_layers.new('UV')
 print(f"V6_MESH faces={len(body.data.polygons)} verts={len(body.data.vertices)} uv={len(body.data.uv_layers)}", flush=True)
+# 3b. decimate to game weight, shape-preserving
+bpy.ops.object.mode_set(mode='OBJECT')
+dm = body.modifiers.new('Decimate', 'DECIMATE')
+dm.ratio = 110000 / len(body.data.polygons)
+dg = bpy.context.evaluated_depsgraph_get()
+print(f"DECIMATE -> {len(body.evaluated_get(dg).data.polygons)} faces", flush=True)
+bpy.ops.object.modifier_apply(modifier='Decimate')
 bpy.ops.wm.save_as_mainfile(filepath="/tmp/aedan_v6_welded.blend")
 print("V6_STAGE_A_DONE", flush=True)
