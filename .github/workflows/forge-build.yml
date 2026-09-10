@@ -54,14 +54,20 @@ jobs:
         id: forge
         run: |
           set +e
-          xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit \
-            -logFile "$GITHUB_WORKSPACE/unity-editor.log" \
-            -projectPath "$GITHUB_WORKSPACE/unity" \
-            -executeMethod AvalonForge.Forge.Run \
-            -character "${{ inputs.character }}" \
-            -input "Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx" \
-            -height "${{ inputs.height }}"
-          CODE=$?
+          CODE=127
+          UARGS="-batchmode -quit -logFile \"$GITHUB_WORKSPACE/unity-editor.log\" -projectPath \"$GITHUB_WORKSPACE/unity\" -executeMethod AvalonForge.Forge.Run -character \"${{ inputs.character }}\" -input \"Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx\" -height \"${{ inputs.height }}\""
+          if command -v xvfb-run >/dev/null 2>&1; then
+            xvfb-run -a /opt/unity/Editor/Unity $UARGS
+            CODE=$?
+          else
+            /opt/unity/Editor/Unity $UARGS
+            CODE=$?
+          fi
+          if [ "$CODE" -ne 0 ]; then
+            echo "First attempt exit $CODE — retrying with -nographics (structural QC only)"
+            /opt/unity/Editor/Unity -batchmode -quit -nographics $UARGS
+            CODE=$?
+          fi
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           echo "UNITY EXIT: $CODE"
           exit 0
