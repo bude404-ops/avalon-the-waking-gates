@@ -349,6 +349,10 @@ namespace AvalonShell
     public static class UiExt
     {
         public static RectTransform rect(this Text t) { return t.transform as RectTransform; }
+        public static RectTransform rect(this GameObject go) { return go.transform as RectTransform; }
+        public static RectTransform rect(this Component c) { return c.transform as RectTransform; }
+        public static void Stretch(this Transform t)
+        { var r = t as RectTransform; if (r != null) { r.anchorMin = Vector2.zero; r.anchorMax = Vector2.one; r.offsetMin = Vector2.zero; r.offsetMax = Vector2.zero; } }
         public static void Stretch(this RectTransform r, Transform parent)
         { r.anchorMin = Vector2.zero; r.anchorMax = Vector2.one; r.offsetMin = Vector2.zero; r.offsetMax = Vector2.zero; r.transform.SetParent(parent, true); }
         public static RectTransform Stretch(this Text t)
