@@ -246,8 +246,28 @@ namespace AvalonForge
             {
                 Directory.CreateDirectory(QCShots);
                 go.transform.position = Vector3.zero;
+
+                // ---- FOUNDRY LIGHT RIG (canon: cold key + fill, dark neutral backdrop) ----
+                var qcMat = new UnityEngine.Material(Shader.Find("Universal Render Pipeline/Lit") ?? Shader.Find("Standard"));
+                qcMat.name = "QC-Foundry";
+                qcMat.color = ClassRead(character); // cold class primary — readable, never white
+                foreach (var rd in renderers) rd.sharedMaterial = qcMat;
+
+                var keyGo = new GameObject("QC-KeyLight");
+                var keyL = keyGo.AddComponent<Light>();
+                keyL.type = LightType.Directional; keyL.intensity = 1.15f;
+                keyL.color = new Color(0.85f, 0.90f, 1.00f); // cold white key
+                keyGo.transform.rotation = Quaternion.Euler(50f, -35f, 0f);
+                var fillGo = new GameObject("QC-FillLight");
+                var fillL = fillGo.AddComponent<Light>();
+                fillL.type = LightType.Directional; fillL.intensity = 0.38f;
+                fillL.color = new Color(0.55f, 0.62f, 0.72f); // cold slate fill
+                fillGo.transform.rotation = Quaternion.Euler(20f, 145f, 0f);
+
                 var camGo = new GameObject("ForgeQCCam");
                 var cam = camGo.AddComponent<Camera>();
+                cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
+                cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
                 cam.transform.position = new Vector3(0.6f * height, height * 0.62f, -height * 2.6f);
                 cam.transform.LookAt(new Vector3(0f, height * 0.55f, 0f));
                 cam.fieldOfView = 45f;
@@ -260,6 +280,8 @@ namespace AvalonForge
                 Log(log, "QC render captured: " + QCShots + "/" + character + "-idle.png");
                 cam.targetTexture = null; RenderTexture.active = null;
                 UnityEngine.Object.DestroyImmediate(camGo);
+                UnityEngine.Object.DestroyImmediate(keyGo);
+                UnityEngine.Object.DestroyImmediate(fillGo);
             }
             else Log(log, "QC render skipped (-nographics) — structural QC only");
 
@@ -286,6 +308,19 @@ namespace AvalonForge
         }
 
         // ---- helpers ----
+        // cold class primary read for QC foundry shots (canon palette, desaturated)
+        static Color ClassRead(string character)
+        {
+            string c = character.ToLowerInvariant();
+            if (c.Contains("ravager"))  return Hex("#8a6a52"); // ash bronze
+            if (c.Contains("warden"))  return Hex("#9aa0a8"); // stone grey
+            if (c.Contains("veilborn")) return Hex("#7c4a52"); // crimson-black
+            if (c.Contains("weaver"))   return Hex("#5f7a80"); // tide teal
+            if (c.Contains("wildborn")) return Hex("#6a7a5a"); // deep moss
+            if (c.Contains("sovereign")) return Hex("#5d6774"); // storm slate-bronze
+            return Hex("#8a8f98");
+        }
+        static Color Hex(string h) { ColorUtility.TryParseHtmlString(h, out var c); return c; }
         static float HeightFor(string character)
         {
             string c = character.ToLowerInvariant();
