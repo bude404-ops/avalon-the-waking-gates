@@ -1,0 +1,19 @@
+{
+  "class": "Sovereign",
+  "classes": [
+    {
+      "name": "Sovereign",
+      "source": "Assets/404GEN/Sovereign_M.fbx",
+      "maxTris": 60000,
+      "failOnDegenerate": false,
+      "targetHeightM": 0.9,
+      "faceYawDeg": 0,
+      "riggedBaseAsset": null,
+      "clips": [
+        { "name": "idle", "file": "Assets/AvalonForge/Clips/Sovereign_idle.fbx", "loop": true },
+        { "name": "walk", "file": "Assets/AvalonForge/Clips/Sovereign_walk.fbx", "loop": true }
+      ],
+      "weaponSocket": { "handBone": "RightHand", "offset": [0.05, 0.02, 0.0], "propAsset": "Assets/AvalonForge/Props/Spear_Sovereign.fbx" }
+    }
+  ]
+}
