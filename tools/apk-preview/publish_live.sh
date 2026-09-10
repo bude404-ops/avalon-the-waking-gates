@@ -5,17 +5,16 @@
 #   With apk     -> also bumps the shell pointer so installed apps one-tap-install the new shell
 set -e
 PAGES=/tmp/avalon-3d-viewer
-WWW="$(dirname "$0")/../app/assets/www"
+WWW="$(cd "$(dirname "$0")" && pwd)/app/assets/www"
 STAMP="$(date +%Y.%m.%d)-$(( $(date +%H) * 60 + $(date +%M) ))"
 
 [ -d "$PAGES/.git" ] || git clone "https://github.com/mcontwitter-glitch/avalon-3d-viewer.git" "$PAGES"
 cd "$PAGES" && git pull -q origin main
 
-rm -rf live && mkdir -p live
-for f in index.html model3d.html gallery.html overview.html teaser.html; do cp "$WWW/$f" live/; done
 mkdir -p live/ui live/models live/art
+for f in index.html model3d.html gallery.html overview.html teaser.html; do cp "$WWW/$f" live/; done
 cp "$WWW/ui/ui-index.html" live/ui/
-cp "$WWW/models/"*.glb live/models/
+cp "$WWW/models/"*.glb live/models/ 2>/dev/null || true
 cp "$WWW/art/"* live/art/
 
 APK_ARG=""
