@@ -13,6 +13,10 @@ permissions:
   issues: write
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   activate:
     name: Device-code license activation
