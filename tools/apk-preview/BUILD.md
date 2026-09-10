@@ -35,3 +35,20 @@ APK ships as a GitHub Release asset on this repo (Base44 file storage blocks .ap
 - versionCode 6 / versionName 0.6-test; same debug keystore (updates over v0.5)
 - v0.6 R2 FIX: model didn0027t load on device 2014 WebView blocks XHR/fetch from file:// origins, so GLTFLoader couldn0027t pull the GLB. MainActivity now sets setAllowFileAccessFromFileURLs(true) + setAllowUniversalAccessFromFileURLs(true). GLB itself verified healthy in-APK (skin 20 joints, 1 idle anim, JOINTS_0/WEIGHTS_0 present).
 - v0.6 R3 (still failing on device): file-origin flags insufficient 2014 shell now serves ALL assets via shouldInterceptRequest under loadDataWithBaseURL(https://avalon.local/) with full MIME map (glb = model/gltf-binary); model3d.html gains an on-screen diagnostic readout (window.onerror + vendor onerror + GLB fetch progress + loader error text) so any failure prints the exact reason mid-screen. Same versionCode 6, over-installs R1/R2.
+
+## BUILD CHANNELS DOCTRINE (Sept 9, Big's call: split dev vs demo APKs)
+
+Two channels from here on — never mixed:
+
+1. TEST channel (what ships today): AVALON-WAKING-GATES-TEST-vX.Y.apk
+   - Debug keystore, versionName suffix -test, diagnostic readouts ON (red error text, HUD stage lines)
+   - Carries experimental/in-flight content (pending verdicts, test models, broken-on-purpose probes)
+   - Audience: Big's device + inner circle only. Fast iteration — rebuild freely.
+
+2. DEMO channel (when the game is demo-ready): AVALON-WAKING-GATES-DEMO-vX.Y.apk
+   - Built ONLY from canon-locked content (approved/ art, locked bestiary, locked models) — no pending pieces
+   - Diagnostics OFF: debug HUD hidden via ?demo=1 flag / demo build constant in index.html (window.DEMO_MODE — build script swaps it), clean entry, polished nav
+   - Stable version bumps only; never ship a demo build same-day as its content lock
+   - Audience: outsiders, playtesters, potential partners. Third channel (Play Store release signing) deferred until commercial decision.
+
+Build rule: demo builds cut from the same repo but require an explicit "demo-ready" pass — I sweep assets for pending/ or non-canon entries and refuse the build if any are referenced.
