@@ -56,6 +56,7 @@ try {
   renderer.outputEncoding = THREE.sRGBEncoding;
   stage_el.appendChild(renderer.domElement);
   var scene = new THREE.Scene();
+  new THREE.TextureLoader().load('./art/STAGE2-SKYREND-CALM-EYE-WORLD-V2-CANON.png', function(t){ t.mapping = THREE.EquirectangularReflectionMapping; scene.background = t; });
   scene.background = new THREE.Color(0x4c4c4f);
   var camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.01, 100);
   var key = new THREE.DirectionalLight(0xfff4e2, 2.6); key.position.set(2, 3, 3); scene.add(key);
@@ -67,7 +68,7 @@ try {
   var mixer = null;
   var clock = new THREE.Clock();
   stage('FETCHING GLB\u2026');
-  new THREE.GLTFLoader().load('./models/AEDAN-RIGGED-V5.glb', function(gltf) {
+  new THREE.GLTFLoader().load('./models/AEDAN-ARMED-V1.glb', function(gltf) {
     try {
       stage('PARSE OK \u2022 STAGING');
       tipEl.style.display = 'none';
