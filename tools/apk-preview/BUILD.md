@@ -59,3 +59,11 @@ Build rule: demo builds cut from the same repo but require an explicit "demo-rea
 - art additions: teaser keyart, Campaign I still, 6 STAGE2 realm images (~2.5MB)
 - versionCode 7 / 0.7-test; published to web at mcontwitter-glitch.github.io/avalon-3d-viewer/ui/ (repo avalon-3d-viewer carries ui/ + art subset, 3D viewer root links to it)
 - mobile 3D still unfixed on device (R3 diagnostic readout shipped — awaiting the red line); web viewer + all UI pages confirmed working
+
+## v0.9.3 (Sept 10 — PIPELINE v2 EXECUTED: Big's verdicts C + MOCAP)
+- AEDAN V7 REBUILT under pipeline v2: 468K original -> weld+decimate 147K (silhouette-exact, NO voxel smoothing), normal+AO baked from the original sculpt (2048px), CMU skeleton refit to mesh joints, REAL MOCAP walk (CMU 07_01, in-place) + chest-led idle, GLB+FBX (models/generated/AEDAN-V7-MO.*)
+- SOVEREIGN SPEAR ATTACHED: leaf-blade spear built from the canon weapon plate, bone-parented to RightHand, holds through walk+idle (models/generated/AEDAN-V7-MO-ARMED.*)
+- TURNAROUND SHEETS: Sovereign M front/side/back rolled from canon (art/pending/TURNAROUND-SOVEREIGN-M.png) — template for the Twelve
+- CLEAN WEAPON PLATE: REF-SHEET-WEAPON-SOVEREIGN-V3-CLEAN.png (character stripped, weapon only) — Big flagged the old plate had the character in frame; V3 awaiting verdict, all 6 plates re-cut to clean standard if it reads right
+- MODEL VIEWER: loads AEDAN-V7-MO-ARMED.glb; IDLE + WALK buttons (real mocap)
+- versionCode 13 / versionName 0.9.3-test; same debug keystore

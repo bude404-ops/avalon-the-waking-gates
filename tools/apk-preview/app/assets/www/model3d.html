@@ -25,7 +25,7 @@
 <div class="top">
   <a href="index.html">&larr; BACK</a>
   <div>
-    <div class="name">AEDAN STORMCROWN</div>
+    <div class="name">AEDAN STORMCROWN — V7</div>
     <div class="sub">SOVEREIGN OF SKYREND &mdash; LIVE 3D MODEL</div>
   </div>
 </div>
@@ -71,7 +71,7 @@ try {
   var mixer = null;
   var clock = new THREE.Clock();
   stage('FETCHING GLB\u2026');
-  new THREE.GLTFLoader().load('./models/AEDAN-ARMED-V1.glb', function(gltf) {
+  new THREE.GLTFLoader().load('./models/AEDAN-V7-MO-ARMED.glb', function(gltf) {
     try {
       stage('PARSE OK \u2022 STAGING');
       tipEl.style.display = 'none';
@@ -112,7 +112,7 @@ try {
           }
         });
         play('idle');
-        stage(act.name.toUpperCase() + ' \u2022 PLAYING');
+        stage((current && current.name ? current.name.toUpperCase() : 'IDLE') + ' \u2022 REAL MOCAP \u2022 V7');
       } else { stage('STATIC \u2022 NO ANIM IN FILE'); }
     } catch (e) { fatal('staging: ' + e.message); }
   }, function(ev) {
