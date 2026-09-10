@@ -149,6 +149,26 @@ namespace AvalonShell
             var lvl = Label(crest.transform, "LEVEL 1 — SKYREND", 10, Hex(0x8a8578), TextAnchor.MiddleLeft);
             lvl.rect().anchorMin = Vector2.zero; lvl.rect().anchorMax = new Vector2(1, 0.5f); lvl.rect().offsetMin = new Vector2(14, 4); lvl.rect().offsetMax = new Vector2(-10, 0);
 
+            // HUD: health + stamina bars under the crest
+            var hpBack = Panel(p.transform, "HPBack", new Color(0.039f, 0.043f, 0.051f, 0.88f));
+            hpBack.rect().anchorMin = new Vector2(0.01f, 0.885f); hpBack.rect().anchorMax = new Vector2(0.38f, 0.935f);
+            var hpFill = Panel(hpBack.transform, "HPFill", new Color(0.42f, 0.47f, 0.55f, 0.95f));
+            hpFill.rect().anchorMin = new Vector2(0.02f, 0.25f); hpFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
+            var hpLbl = Label(hpBack.transform, "HEALTH", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            hpLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); hpLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); hpLbl.rect().offsetMin = new Vector2(8, 0);
+            var spBack = Panel(p.transform, "SPBack", new Color(0.039f, 0.043f, 0.051f, 0.88f));
+            spBack.rect().anchorMin = new Vector2(0.01f, 0.835f); spBack.rect().anchorMax = new Vector2(0.38f, 0.885f);
+            var spFill = Panel(spBack.transform, "SPFill", new Color(0.64f, 0.54f, 0.35f, 0.95f));
+            spFill.rect().anchorMin = new Vector2(0.02f, 0.25f); spFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
+            var spLbl = Label(spBack.transform, "STAMINA", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            spLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); spLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); spLbl.rect().offsetMin = new Vector2(8, 0);
+
+            // HUD: quest tracker under the lantern
+            var quest = Panel(p.transform, "Quest", new Color(0.039f, 0.043f, 0.051f, 0.82f));
+            quest.rect().anchorMin = new Vector2(0.62f, 0.885f); quest.rect().anchorMax = new Vector2(0.99f, 0.935f);
+            var qLbl = Label(quest.transform, "QUEST — THE GATES AWAKEN (I)", 10, Hex(0xa3895a), TextAnchor.MiddleRight);
+            qLbl.rect().Stretch(quest.transform); qLbl.rect().offsetMin = new Vector2(10, 0); qLbl.rect().offsetMax = new Vector2(-12, 0);
+
             // HUD top-right: lantern (unlit)
             var lantern = Panel(p.transform, "Lantern", new Color(0.039f, 0.043f, 0.051f, 0.88f));
             var lrt = lantern.rect();
