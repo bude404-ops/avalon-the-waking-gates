@@ -67,3 +67,20 @@ Build rule: demo builds cut from the same repo but require an explicit "demo-rea
 - CLEAN WEAPON PLATE: REF-SHEET-WEAPON-SOVEREIGN-V3-CLEAN.png (character stripped, weapon only) — Big flagged the old plate had the character in frame; V3 awaiting verdict, all 6 plates re-cut to clean standard if it reads right
 - MODEL VIEWER: loads AEDAN-V7-MO-ARMED.glb; IDLE + WALK buttons (real mocap)
 - versionCode 13 / versionName 0.9.3-test; same debug keystore
+
+## v0.10.0 (Sept 10 — LIVE SHELL: the APK now updates itself, per Big's request)
+- HOT CONTENT LAYER: on every launch the app fetches live/content.json from the Pages host
+  (mcontwitter-glitch.github.io/avalon-3d-viewer/live/). If content_version changed, it silently
+  mirrors the listed files into filesDir/live and reloads — new models/screens/art appear with
+  NO install. Interceptor serve order: filesDir/live -> bundled assets (www/ then flat).
+- SHELL SELF-UPDATE: content.json also carries an apk pointer (versionCode/versionName/url).
+  If the installed versionCode is older, the app downloads the new APK in the background and
+  fires the system install screen — ONE tap ("Install"). Requires the one-time
+  "install unknown apps" allowance for the AVALON app (Android asks on first prompt).
+- ApkProvider.java: minimal ContentProvider serving the downloaded APK to the package installer
+  (no androidx dependency — repo has no gradle, dex is built with R8 directly).
+- New permissions: INTERNET, REQUEST_INSTALL_PACKAGES.
+- PUBLISHING: tools/apk-preview/publish_live.sh [optional_apk] — content-only updates are one
+  command; shell updates = build new APK (bump versionCode) then publish with the apk path.
+- versionCode 14 / versionName 0.10.0-live; last manual install (this one). v0.9.3 had an
+  asset-path packaging bug (flattened assets -> ASSET READ FAIL) — superseded/fixed here.
