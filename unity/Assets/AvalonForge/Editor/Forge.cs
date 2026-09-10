@@ -291,6 +291,14 @@ namespace AvalonForge
                 Log(log, "QC render captured: " + QCShots + "/" + character + "-idle.png");
 
                 // ---- WALK FRAME (finish-quality: prove retargeted mocap mid-stride) ----
+                bool hasWalkState = false;
+                var actrl = animator.runtimeAnimatorController as AnimatorController;
+                if (actrl != null)
+                    foreach (var layer in actrl.layers)
+                        foreach (var st in layer.stateMachine.states)
+                            if (st.state.name == "walk") hasWalkState = true;
+                if (!hasWalkState) Log(log, "No walk state in animator — walk frame skipped (no fake shots)");
+                if (hasWalkState)
                 try
                 {
                     animator.Play("walk", 0, 0.35f);
@@ -382,9 +390,9 @@ namespace AvalonForge
             foreach (var path in AssetDatabase.FindAssets("t:AnimationClip", new[] { Mocap })
                 .Select(p => AssetDatabase.GUIDToAssetPath(p)))
             {
-                var clip = AssetDatabase.LoadAssetAtPath<AnimationClip>(path);
-                if (clip != null && clip.name.IndexOf(prefix, StringComparison.OrdinalIgnoreCase) >= 0)
-                    return clip;
+                foreach (var clip in AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>())
+                    if (clip != null && clip.name.IndexOf(prefix, StringComparison.OrdinalIgnoreCase) >= 0)
+                        return clip;
             }
             return null;
         }
