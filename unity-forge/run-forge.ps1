@@ -23,7 +23,9 @@ New-Item -ItemType Directory -Force -Path (Join-Path $ProjectPath "forge-artifac
 # pull the latest pipeline code + config
 git -C $ProjectPath pull origin main 2>$null
 
-$method = if ($Mode -eq "probes") { "AvalonForge.Editor.Gen404Probes.Run" } else { "AvalonForge.Editor.ForgePipeline.Run" }
+$method = if ($Mode -eq "probes") { "AvalonForge.Editor.Gen404Probes.Run" } else { "AvalonForge.RunClass" }
+if ($Mode -eq "pipeline" -and $Class -eq "") { $Class = "Sovereign-M" }
+$env:AVALON_CLASS = $Class
 $extra = if ($Class -ne "") { @("-class", $Class) } else { @() }
 
 Write-Host "== AVALON FORGE: $Mode $Class =="

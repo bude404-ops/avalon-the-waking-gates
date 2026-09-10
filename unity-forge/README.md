@@ -1,4 +1,10 @@
-# AVALON FORGE — Unity-Native Automated Character Pipeline (IMPLEMENTATION)
+# AVALON FORGE — Ops layer (probes + runner + converter)
+
+**Two folders, one flow:** the pipeline ENGINE lives at `tools/unity/AvalonForge.cs`
+(12 class canon specs in `tools/unity/AvalonForge/specs/`, entry `AvalonForge.RunClass`,
+class via `AVALON_CLASS` env var). THIS folder is the ops layer: verify probes,
+Task Scheduler runner, and the CMU root-lock converter. `run-forge.ps1 -Mode pipeline`
+drives the engine.
 
 Implements `docs/UNITY-AUTOMATED-CHARACTER-PIPELINE.md`. Big's seat never needs a
 person sitting in the Editor: the pipeline runs headless via batch mode, artifacts
