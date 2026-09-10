@@ -83,7 +83,7 @@ jobs:
           if [ "$CODE" = "0" ] && [ -n "$REPORT" ]; then
             { echo "FORGE BUILD COMPLETE ✅ (${{ inputs.character }})"; echo ""; tail -15 "$REPORT"; } | relay
           else
-            { echo "FORGE BUILD FAILED ❌ (${{ inputs.character }}) exit=$CODE"; echo ""; grep -aiE "error|exception|fail" "$GITHUB_WORKSPACE/unity-editor.log" 2>/dev/null | grep -av "0 error" | head -12; } | relay
+            echo "FORGE BUILD FAILED (exit=$CODE) — silent per Big's preference; errors handled in CI logs"
           fi
       - name: Harvest artifacts
         if: always()

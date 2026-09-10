@@ -24,6 +24,7 @@ using System.Text;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace AvalonForge
 {
@@ -179,7 +180,7 @@ namespace AvalonForge
             var importer = AssetImporter.GetAtPath(input) as ModelImporter;
             if (importer != null)
             {
-                importer.animationType = ModelImporterAnimationType.Humanoid;
+                importer.animationType = ModelImporterAnimationType.Human;
                 importer.SaveAndReimport();
             }
             var avatar = AssetDatabase.LoadAllAssetsAtPath(input).OfType<Avatar>().FirstOrDefault();
@@ -345,7 +346,7 @@ namespace AvalonForge
             args != null && args.Any(a => string.Equals(a, "-batchmode", StringComparison.OrdinalIgnoreCase));
 
         static float ParseFloat(string s, float dflt) =>
-            float.TryParse(s, System.Globalization.CultureInfo.InvariantCulture, out var v) ? v : dflt;
+            float.TryParse(s, System.Globalization.NumberStyles.Float, System.Globalization.CultureInfo.InvariantCulture, out var v) ? v : dflt;
 
         static void Fail(StringBuilder log, string msg)
         {
