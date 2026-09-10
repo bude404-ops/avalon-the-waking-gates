@@ -60,8 +60,7 @@ try {
   renderer.outputEncoding = THREE.sRGBEncoding;
   stage_el.appendChild(renderer.domElement);
   var scene = new THREE.Scene();
-  new THREE.TextureLoader().load('./art/STAGE2-SKYREND-CALM-EYE-WORLD-V2-CANON.png', function(t){ t.mapping = THREE.EquirectangularReflectionMapping; scene.background = t; });
-  scene.background = new THREE.Color(0x4c4c4f);
+  scene.background = new THREE.Color(0x0d0e10);
   var camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.01, 100);
   var key = new THREE.DirectionalLight(0xfff4e2, 2.6); key.position.set(2, 3, 3); scene.add(key);
   var fill = new THREE.DirectionalLight(0xc0c8dc, 0.9); fill.position.set(-2, 1.5, -2.5); scene.add(fill);

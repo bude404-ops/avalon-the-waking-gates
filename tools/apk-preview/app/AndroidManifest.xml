@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bigfoot404.avalon"
-    android:versionCode="10"
-    android:versionName="0.9.1-test">
+    android:versionCode="12"
+    android:versionName="0.9.2-test">
 
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"/>
 
