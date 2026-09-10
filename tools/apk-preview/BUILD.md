@@ -33,3 +33,4 @@ APK ships as a GitHub Release asset on this repo (Base44 file storage blocks .ap
 - AEDAN-RIGGED-V3.glb bundled (models/): manual distance-based vertex binding (top-4 inv-sq over 20 bones) — bone-heat auto-weights fail silently on non-manifold AI meshes, which was the root cause of every frozen idle render
 - GLB probe-verified: weighted arm vertex deforms 1.9% body height at breathe peak; render diff 61K pixels between rest and peak frames
 - versionCode 6 / versionName 0.6-test; same debug keystore (updates over v0.5)
+- v0.6 R2 FIX: model didn0027t load on device 2014 WebView blocks XHR/fetch from file:// origins, so GLTFLoader couldn0027t pull the GLB. MainActivity now sets setAllowFileAccessFromFileURLs(true) + setAllowUniversalAccessFromFileURLs(true). GLB itself verified healthy in-APK (skin 20 joints, 1 idle anim, JOINTS_0/WEIGHTS_0 present).
