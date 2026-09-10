@@ -1,0 +1,26 @@
+{
+  "class": "Warden",
+  "gender": "F",
+  "realm": "Stoneheart",
+  "accentHex": "#B8B2A6",
+  "armorPrimaryHex": "#7A6A4E",
+  "weaponProp": "warhammer",
+  "heightM": 1.68,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.03,
+    0.06,
+    0.01
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}

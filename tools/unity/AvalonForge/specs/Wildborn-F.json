@@ -1,0 +1,26 @@
+{
+  "class": "Wildborn",
+  "gender": "F",
+  "realm": "Everbloom",
+  "accentHex": "#3E5A2E",
+  "armorPrimaryHex": "#4A3826",
+  "weaponProp": "clawgauntlets",
+  "heightM": 1.7,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.01,
+    0.01,
+    -0.02
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}

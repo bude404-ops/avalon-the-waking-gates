@@ -1,0 +1,26 @@
+{
+  "class": "Sovereign",
+  "gender": "M",
+  "realm": "Skyrend",
+  "accentHex": "#5A6673",
+  "armorPrimaryHex": "#8C5A2E",
+  "weaponProp": "spear",
+  "heightM": 1.87,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.02,
+    0.03,
+    -0.06
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}

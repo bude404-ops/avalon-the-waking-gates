@@ -1,0 +1,26 @@
+{
+  "class": "Veilborn",
+  "gender": "F",
+  "realm": "Duskmourn",
+  "accentHex": "#8E1B1B",
+  "armorPrimaryHex": "#2E2420",
+  "weaponProp": "twinblades",
+  "heightM": 1.65,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.01,
+    0.02,
+    -0.04
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}

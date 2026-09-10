@@ -1,0 +1,26 @@
+{
+  "class": "Ravager",
+  "gender": "M",
+  "realm": "Ashfall",
+  "accentHex": "#B0451F",
+  "armorPrimaryHex": "#6E3A22",
+  "weaponProp": "greatsword",
+  "heightM": 1.9,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.02,
+    0.05,
+    0.02
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}

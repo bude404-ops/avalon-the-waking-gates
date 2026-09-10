@@ -1,0 +1,26 @@
+{
+  "class": "Weaver",
+  "gender": "F",
+  "realm": "Marenth",
+  "accentHex": "#2E8E8A",
+  "armorPrimaryHex": "#3E4A50",
+  "weaponProp": "lanternstaff",
+  "heightM": 1.62,
+  "faceAxisCorrection": 0,
+  "handBoneNames": [
+    "RightHand",
+    "Right_Hand",
+    "hand_r",
+    "Hand_R"
+  ],
+  "weaponSocketOffset": [
+    0.02,
+    0.04,
+    0.0
+  ],
+  "weaponSocketRotation": [
+    0,
+    0,
+    0
+  ]
+}
