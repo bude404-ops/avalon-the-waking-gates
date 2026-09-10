@@ -1,0 +1,28 @@
+name: Unity License Request (.alf)
+
+# One-time job: generates the Unity manual activation file (.alf) that Big
+# uploads at license.unity3d.com/manual. The returned .ulf gets stored in
+# repo secrets as UNITY_LICENSE and used by the AUTO-FORGE workflows.
+on:
+  workflow_dispatch:
+
+jobs:
+  generate-alf:
+    name: Generate manual activation file
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-6000.5.11f1-base-3.2.2
+    steps:
+      - name: Create manual activation file
+        run: |
+          cd /github/home 2>/dev/null || cd ~
+          unity-editor -batchmode -nographics -createManualActivationFile -logFile || true
+          ls -la
+          ALF=$(ls *.alf 2>/dev/null | head -n1)
+          if [ -z "$ALF" ]; then echo "NO ALF PRODUCED"; exit 1; fi
+          mkdir -p /tmp/alfout && cp "$ALF" /tmp/alfout/
+      - name: Upload activation file
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-license-request
+          path: /tmp/alfout/
+          retention-days: 7
