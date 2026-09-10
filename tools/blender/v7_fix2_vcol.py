@@ -16,10 +16,10 @@ body = max([o for o in bpy.context.scene.objects if o.type == 'MESH'], key=lambd
 print('body:', body.name, 'verts:', len(body.data.vertices), flush=True)
 
 # ---- region classify per vertex (object space) ----
-# glTF mesh local space: Y-up (height=+Y), forward=+Z, right=+X
-ys = [v.co.y for v in body.data.vertices]
-y0, y1 = min(ys), max(ys)
-H = y1 - y0
+# Blender local space after glTF import: Z-up (height=+Z), face points -Y
+zs = [v.co.z for v in body.data.vertices]
+z0, z1 = min(zs), max(zs)
+H = z1 - z0
 
 PAL = {
     'boot':  (0.055, 0.047, 0.040),
@@ -32,16 +32,16 @@ PAL = {
 }
 
 def region(co, n):
-    yn = (co.y - y0) / H          # 0=feet, 1=head
-    rad = math.sqrt(co.x*co.x + co.z*co.z)   # horizontal distance from spine axis
-    if yn < 0.17: return 'boot'
-    if yn < 0.47: return 'leg'
-    if yn < 0.585: return 'kilt'
-    if yn < 0.86:
+    zn = (co.z - z0) / H          # 0=feet, 1=head
+    rad = math.sqrt(co.x*co.x + co.y*co.y)   # horizontal distance from spine axis
+    if zn < 0.17: return 'boot'
+    if zn < 0.47: return 'leg'
+    if zn < 0.585: return 'kilt'
+    if zn < 0.86:
         if rad > 0.14: return 'skin'          # arms hang outside the torso column
-        return 'cloak' if n.z < -0.12 else 'bronze'
-    if yn < 0.90: return 'skin'               # neck
-    if yn < 0.94 and n.z > 0.25: return 'skin'  # face (forward-facing)
+        return 'cloak' if n.y > 0.12 else 'bronze'   # +Y = backward = cloak
+    if zn < 0.90: return 'skin'               # neck
+    if zn < 0.94 and n.y < -0.25: return 'skin'  # face points -Y
     return 'hair'
 
 # vertex color layer
