@@ -44,7 +44,7 @@ jobs:
           "$LIC" --activate-all --include-personal --username "${{ inputs.uuser }}" --password "${{ inputs.upass }}" > /tmp/act.log 2>&1 || true
           head -30 /tmp/act.log
           echo "=== SHOW LICENSE ==="
-          "$LIC" --show-license > /tmp/lic.txt 2>&1 || true
+          "$LIC" --showEntitlements > /tmp/lic.txt 2>&1 || true
           head -20 /tmp/lic.txt
           if grep -qiE "Personal|entitlement" /tmp/lic.txt; then
             { echo "UNITY LICENSE ACTIVATED ✅"; echo ""; head -12 /tmp/lic.txt; } | relay
@@ -58,6 +58,7 @@ jobs:
           for D in /home/unity/.local/share/unity3d /home/unity/.config/unity3d /root/.local/share/unity3d /root/.config/unity3d; do
             [ -d "$D" ] && cp -r "$D" /tmp/lic/ 2>/dev/null
           done
+          find / \( -name "UnityEntitlementLicense.xml" -o -name "*.ulf" \) -not -path "/proc/*" -not -path "/sys/*" -not -path "/tmp/lic/*" -exec cp --parents {} /tmp/lic/ \; 2>/dev/null || true
           cp /tmp/act.log /tmp/lic/ 2>/dev/null || true
           cp /tmp/seats.txt /tmp/lic/ 2>/dev/null || true
           find /tmp/lic -type f | head -40
