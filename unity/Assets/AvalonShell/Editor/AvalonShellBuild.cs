@@ -30,7 +30,7 @@ namespace AvalonShell
             // Copy forged prefabs into Resources (GUIDs preserved via .meta siblings)
             Directory.CreateDirectory("Assets/AvalonShell/Resources");
             int staged = 0;
-            foreach (var f in Directory.GetFiles("Assets/AvalonForge/Prefabs", "*-GAME.prefab"))
+            foreach (var f in Directory.GetFiles("Assets/AvalonForge/Prefabs", "*.prefab"))
             {
                 var name = Path.GetFileName(f);
                 File.Copy(f, "Assets/AvalonShell/Resources/" + name, true);
@@ -64,6 +64,7 @@ namespace AvalonShell
                 Debug.Log("[SHELL] signing with repo demo keystore: " + ksPath);
             }
             else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
 

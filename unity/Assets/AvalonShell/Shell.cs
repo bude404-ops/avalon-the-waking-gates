@@ -97,7 +97,7 @@ namespace AvalonShell
             for (int i = 0; i < CLASSES.Length; i++)
             {
                 var cd = CLASSES[i];
-                bool unlocked = Resources.Load<GameObject>(cd.name + "-GAME") != null;
+                bool unlocked = ModelPrefab(cd.name) != null;
                 var card = Panel(p.transform, "card-" + cd.name, new Color(0.07f, 0.08f, 0.10f, 0.92f));
                 var crt = card.rect();
                 crt.anchorMin = new Vector2(w * i + 0.008f, 0.26f); crt.anchorMax = new Vector2(w * (i + 1) - 0.008f, 0.80f);
@@ -247,12 +247,29 @@ namespace AvalonShell
         {
             foreach (var kv in loaded) kv.Value.SetActive(kv.Key == cls);
             if (loaded.ContainsKey(cls)) { BindModel(loaded[cls]); return; }
-            var prefab = Resources.Load<GameObject>(cls + "-GAME");
-            if (prefab == null) { model = null; animator = null; return; }
+            var prefab = ModelPrefab(cls);
+            if (prefab == null)
+            {
+                model = null; animator = null;
+                if (hudLine != null) hudLine.text = "NO MODEL STAGED — FORGE OUTPUT MISSING (" + cls.ToUpper() + ")";
+                return;
+            }
+            if (hudLine != null) hudLine.text = "LOADING " + prefab.name.ToUpper() + " • FORGE MODEL";
             var inst = Instantiate(prefab, stagePivot);
             inst.transform.localPosition = Vector3.zero;
             loaded[cls] = inst;
             BindModel(inst);
+        }
+
+        GameObject ModelPrefab(string cls)
+        {
+            var exact = Resources.Load<GameObject>(cls + "-GAME");
+            if (exact != null) return exact;
+            foreach (var go in Resources.LoadAll<GameObject>(""))
+                if (go.name.IndexOf("-GAME", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    go.name.IndexOf(cls, StringComparison.OrdinalIgnoreCase) >= 0)
+                    return go;
+            return null;
         }
 
         void BindModel(GameObject go)
@@ -312,6 +329,10 @@ namespace AvalonShell
         {
             var go = new GameObject("Canvas");
             var c = go.AddComponent<Canvas>(); c.renderMode = RenderMode.ScreenSpaceOverlay;
+            var cs = go.AddComponent<CanvasScaler>();
+            cs.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            cs.referenceResolution = new Vector2(1920, 1080);
+            cs.matchWidthOrHeight = 0.5f;
             go.AddComponent<GraphicRaycaster>();
             var es = new GameObject("EventSystem");
             es.AddComponent<EventSystem>();
