@@ -64,13 +64,35 @@ under the right-hand bone → QC render → `Prefabs/Ravager-GAME.prefab` →
 Exit code 0 = prefab shipped to `Prefabs/`. Exit 1 = the report says exactly
 which gate failed.
 
-### 4. HEADLESS VALIDATION GATES (no human)
+### 4. HEADLESS VALIDATION GATES (no human, no packages needed)
+In-Editor: **Avalon > Forge > Validate Prefabs** — every gate logs PASS/FAIL.
+Headless:
 ```
-Unity.exe -batchmode -projectPath "<YOUR PROJECT>" -runTests -testPlatform EditMode ^
-  -testResults forge-tests.xml
+Unity.exe -batchmode -quit -projectPath "<YOUR PROJECT>" ^
+  -executeMethod AvalonForge.Forge.ValidateAll
 ```
-Green = the prefab is legal to ship to the verdict queue (avatar valid, height
-in class band, centered, states built, weapon under hand, uniform scale).
+Exit 0 = legal to ship (avatar valid humanoid, height in class band, centered,
+states built, weapon under hand, uniform scale). Report lands in
+Assets/AvalonForge/Reports/validation-*.txt.
+
+---
+
+## TROUBLESHOOTING — "I click it and nothing happens"
+
+1. **Open the Console (Window > General > Console).** ANY red error kills the
+   whole AvalonForge menu. Most common: NUnit errors from the optional test file —
+   it ships DISABLED as .txt precisely so this can't happen; don't rename it
+   unless Test Framework is installed.
+2. **Menu click now always shows something:** Avalon > Forge > Run (pick model)
+   opens a file picker FIRST — pick the FBX you generated. Cancel = the only
+   silent exit, and that's by design.
+3. **"No valid humanoid rig"** = the 404-GEN mesh has no skeleton yet → UModeler X
+   auto-rig first (runbook step 2), then re-run.
+4. **Double-clicking run-forge.ps1 does nothing** — Windows blocks .ps1 on
+   double-click by default. Use `run-forge.bat` (same folder) or run the
+   PowerShell line from a terminal.
+5. **Still nothing?** Send a screenshot of the Console (or copy the red text)
+   — that output pinpoints the exact line to fix.
 
 ---
 
