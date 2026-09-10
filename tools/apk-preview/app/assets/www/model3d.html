@@ -25,7 +25,7 @@
 <div class="top">
   <a href="index.html">&larr; BACK</a>
   <div>
-    <div class="name">AEDAN STORMCROWN — V7</div>
+    <div class="name">MODEL LINE — REBUILDING ON AUTO-FORGE</div>
     <div class="sub">SOVEREIGN OF SKYREND &mdash; LIVE 3D MODEL</div>
   </div>
 </div>
@@ -71,56 +71,10 @@ try {
   var mixer = null;
   var clock = new THREE.Clock();
   stage('FETCHING GLB\u2026');
-  new THREE.GLTFLoader().load('./models/AEDAN-V7-MO-ARMED.glb', function(gltf) {
-    try {
-      stage('PARSE OK \u2022 STAGING');
-      tipEl.style.display = 'none';
-      var model = gltf.scene;
-      var box = new THREE.Box3().setFromObject(model);
-      var size = box.getSize(new THREE.Vector3()).length();
-      var center = box.getCenter(new THREE.Vector3());
-      model.position.sub(center);
-      camera.position.set(size*0.55, size*0.35, size*0.75);
-      controls.target.set(0, 0, 0);
-      scene.add(model);
-      if (gltf.animations && gltf.animations.length) {
-        mixer = new THREE.AnimationMixer(model);
-        var clips = gltf.animations;
-        var current = null;
-        var bar = document.getElementById('anims');
-        var ORDER = ['idle', 'walk', 'thrust', 'hit'];
-        clips.sort(function(a, b){ return (ORDER.indexOf(a.name.toLowerCase()) >= 0 ? ORDER.indexOf(a.name.toLowerCase()) : 9) - (ORDER.indexOf(b.name.toLowerCase()) >= 0 ? ORDER.indexOf(b.name.toLowerCase()) : 9); });
-        function play(name) {
-          var clip = null;
-          for (var c of clips) { var n = c.name.toLowerCase(); if (n.indexOf(name.toLowerCase()) >= 0 || n.indexOf(name.toLowerCase().replace(/[^a-z]/g,'')) >= 0) { clip = c; break; } }
-          if (!clip) return;
-          if (current) { var old = mixer.clipAction(current); old.fadeOut(0.25); }
-          var action = mixer.clipAction(clip);
-          action.reset().setEffectiveTimeScale(1).fadeIn(0.25).play();
-          current = clip;
-          var btns = bar.querySelectorAll('button');
-          for (var b of btns) b.classList.toggle('on', b.dataset.clip.toLowerCase() === name.toLowerCase());
-        }
-        clips.forEach(function(c){
-          var nm = c.name.toLowerCase();
-          if (nm.indexOf('idle')>=0 || nm.indexOf('walk')>=0 || nm.indexOf('thrust')>=0 || nm.indexOf('hit')>=0 || nm.indexOf('action')>=0) {
-            var label = nm.indexOf('idle')>=0||nm.indexOf('action')>=0 ? 'IDLE' : (nm.indexOf('thrust')>=0 ? 'THRUST' : (nm.indexOf('walk')>=0 ? 'WALK' : 'HIT'));
-            var btn = document.createElement('button');
-            btn.textContent = label; btn.dataset.clip = label.toLowerCase() === 'idle' ? 'idle' : label.toLowerCase();
-            btn.onclick = function(){ play(this.dataset.clip); };
-            bar.appendChild(btn);
-          }
-        });
-        play('idle');
-        stage((current && current.name ? current.name.toUpperCase() : 'IDLE') + ' \u2022 REAL MOCAP \u2022 V7');
-      } else { stage('STATIC \u2022 NO ANIM IN FILE'); }
-    } catch (e) { fatal('staging: ' + e.message); }
-  }, function(ev) {
-    if (ev.total) stage('FETCHING ' + ev.loaded + ' / ' + ev.total + ' bytes');
-    else if (ev.loaded) stage('FETCHING ' + ev.loaded + ' bytes');
-  }, function(err) {
-    fatal('loader: ' + (err && err.message ? err.message : JSON.stringify(err)) + ' \u2014 this line tells us exactly why');
-  });
+  stage('MODEL LINE IN REBUILD \u2022 NEW PIPELINE');
+  tipEl.innerHTML = 'The old model and its animation are retired \u2014 they did not survive the old pipeline. The first hero of the new AUTO-FORGE pipeline: the RAVAGER.';
+  camera.position.set(1.2, 1.0, 2.2);
+  controls.target.set(0, 0.6, 0);
   function tick() {
     requestAnimationFrame(tick);
     if (mixer) mixer.update(clock.getDelta());
