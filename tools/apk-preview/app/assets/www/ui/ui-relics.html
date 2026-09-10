@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avalon — Relics &amp; Deeds</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; min-height:100vh; padding:26px 16px 60px; }
+  .kicker { font-size:11px; letter-spacing:.34em; color:#8a8578; text-align:center; }
+  h1 { font-size:22px; letter-spacing:.24em; font-weight:normal; text-align:center; margin:6px 0 24px; }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:860px; margin:0 auto; }
+  @media (max-width:640px){ .cols{ grid-template-columns:1fr; } }
+  .panel { border:1px solid #33353d; background:rgba(23,24,28,.6); padding:16px; }
+  .panel h2 { font-size:12px; letter-spacing:.28em; color:#a3895a; font-weight:normal; margin-bottom:14px; }
+  .relic { display:flex; gap:14px; align-items:flex-start; padding:13px 0; border-bottom:1px solid #1c1e23; }
+  .relic:last-child { border-bottom:none; }
+  .relic .g { font-size:30px; color:#c9b995; line-height:1; }
+  .relic.rare .g { color:#e0c98f; text-shadow:0 0 14px rgba(224,201,143,.35); }
+  .relic h3 { font-size:13px; letter-spacing:.16em; font-weight:normal; color:#f0e8d4; }
+  .relic p { font-size:11.5px; line-height:1.65; color:#8a8578; margin-top:5px; }
+  .deed { display:flex; gap:10px; align-items:flex-start; padding:10px 0; border-bottom:1px solid #1c1e23; font-size:12px; line-height:1.6; }
+  .deed:last-child { border-bottom:none; }
+  .deed .m { color:#a3895a; }
+  .deed.new .m { color:#5d584e; }
+  .deed span { color:#c8c4bc; }
+  .deed.new span { color:#5d584e; font-style:italic; }
+  .crafts { margin-top:4px; }
+  .craft { display:flex; gap:10px; align-items:baseline; padding:9px 0; border-bottom:1px solid #1c1e23; }
+  .craft:last-child { border-bottom:none; }
+  .craft .n { font-size:12px; letter-spacing:.14em; color:#e6ddca; min-width:150px; }
+  .craft .d { font-size:10.5px; color:#8a8578; line-height:1.5; }
+  .law { max-width:860px; margin:16px auto 0; text-align:center; font-size:10px; letter-spacing:.22em; color:#5d584e; line-height:1.9; }
+  .law b { color:#8a8578; font-weight:normal; }
+  .back { display:block; text-align:center; margin-top:26px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
+  .back:hover { color:#a3895a; }
+</style>
+</head>
+<body>
+<div class="kicker">NOTHING IS EQUIPPED &mdash; EVERYTHING IS EARNED</div>
+<h1>RELICS &amp; DEEDS</h1>
+<div class="cols">
+  <div>
+    <div class="panel">
+      <h2>RELICS &mdash; MEANING, NEVER STATS</h2>
+      <div class="relic rare">
+        <div class="g">&#128367;</div>
+        <div>
+          <h3>THE LUMINARY</h3>
+          <p>The living flame. It consents to be carried, alights of its own will, cannot be crafted, looted, or bought &mdash; only entrusted. The light in the lantern is the color aura of the realm you walk.</p>
+        </div>
+      </div>
+      <div class="relic">
+        <div class="g">&#10018;</div>
+        <div>
+          <h3>BOND-RUNE</h3>
+          <p>The mark of your divine bond. One bond lives at a time, swappable at the shrines. The storm keeps its own counsel with Aedan.</p>
+        </div>
+      </div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <h2>DEEDS REMEMBERED &mdash; PERMANENT</h2>
+      <div class="deed"><span class="m">&#10003;</span><span>Spoke with Vera, the Lorekeeper of the frost-hall.</span></div>
+      <div class="deed"><span class="m">&#10003;</span><span>Reached the Skyrend terraces where the standing stones drink lightning.</span></div>
+      <div class="deed"><span class="m">&#10003;</span><span>Lit the way-gate lantern at the Calm Eye.</span></div>
+      <div class="deed new"><span class="m">&#10087;</span><span>An unwritten deed. The world is watching.</span></div>
+    </div>
+  </div>
+  <div>
+    <div class="panel">
+      <h2>THE FIRST CRAFTS &mdash; GEAR IS A STORY</h2>
+      <div class="crafts">
+        <div class="craft"><span class="n">ENGRAVED BREASTPLATE</span><span class="d">Solid bronze, high collar, knotwork cut by a dead smith&rsquo;s chisel. Carried since the first terrace &mdash; its every dent is a chapter.</span></div>
+        <div class="craft"><span class="n">HIGH-COLLAR MANTLE</span><span class="d">Storm-slate wool from the marches. It has never been traded, only inherited.</span></div>
+        <div class="craft"><span class="n">IRON TORC</span><span class="d">First Crafts metal, cord-lashed. Mark of the gate, worn open-throated as the old law holds.</span></div>
+        <div class="craft"><span class="n">LEAF-BLADE SPEAR</span><span class="d">Bronze leaf-blade, gate-rune band, carved wood. One weapon, one lineage &mdash; mastery grows in technique, not in drops.</span></div>
+      </div>
+      <div class="law" style="text-align:left; margin-top:12px;">AEDAN&rsquo;S KIT IS <b>HIS OWN HISTORY</b> &mdash; NO GEAR SLOTS, NO EQUIP SCREENS, NO STAT LOOT. CRAFTS CARRY MEMORY, NOT NUMBERS.</div>
+    </div>
+    <div class="panel" style="margin-top:14px;">
+      <h2>MASTERY</h2>
+      <div class="deed"><span class="m">&#10087;</span><span><b style="color:#e6ddca;font-weight:normal;">Kit Lineage &mdash; 3 gates open.</b> The banner, the gate, and the crown grow by deed.</span></div>
+      <div class="deed"><span class="m">&#10087;</span><span><b style="color:#e6ddca;font-weight:normal;">Weapon Mastery &mdash; 2 gates open.</b> The pike and the guard answer technique alone. <a href="ui-skills.html" style="color:#a3895a;text-decoration:none;">OPEN THE TREES &#9656;</a></span></div>
+    </div>
+  </div>
+</div>
+<a class="back" href="ui-index.html">&#9666; INTERFACE BUILD</a>
+</body>
+</html>

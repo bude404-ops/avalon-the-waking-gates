@@ -3,93 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Avalon — Kit Lineage</title>
+<title>Avalon — Lineage &amp; Weapon Mastery</title>
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; min-height:100vh; padding:26px 16px 60px; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; min-height:100vh; padding:24px 14px 60px; }
   .kicker { font-size:11px; letter-spacing:.34em; color:#8a8578; text-align:center; }
-  h1 { font-size:22px; letter-spacing:.22em; font-weight:normal; text-align:center; margin:6px 0 4px; }
-  .sub { text-align:center; font-size:11px; letter-spacing:.28em; color:#a3895a; margin-bottom:8px; }
-  .pts { text-align:center; font-size:10px; letter-spacing:.24em; color:#8a8578; margin-bottom:22px; }
-  .tree { max-width:740px; margin:0 auto; border:1px solid #33353d; background:rgba(23,24,28,.55); overflow:hidden; }
-  .tree svg { display:block; width:100%; height:auto; }
-  .legend { display:flex; justify-content:center; gap:26px; margin-top:16px; font-size:10px; letter-spacing:.2em; color:#8a8578; }
-  .legend i { display:inline-block; width:9px; height:9px; margin-right:7px; vertical-align:middle; }
-  .back { display:block; text-align:center; margin-top:28px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
+  h1 { font-size:21px; letter-spacing:.22em; font-weight:normal; text-align:center; margin:6px 0 4px; }
+  .sub { text-align:center; font-size:11px; letter-spacing:.28em; color:#a3895a; margin-bottom:16px; }
+  .tabs { display:flex; justify-content:center; gap:0; max-width:520px; margin:0 auto 16px; border:1px solid #33353d; }
+  .tab { flex:1; text-align:center; padding:11px 4px; font-size:12px; letter-spacing:.24em; color:#8a8578; text-decoration:none; cursor:pointer; }
+  .tab.on { color:#a3895a; background:#17181c; border-bottom:2px solid #8a6f3c; }
+  .treewrap { max-width:760px; margin:0 auto; border:1px solid #33353d; background:rgba(23,24,28,.55); overflow:hidden; position:relative; }
+  .treewrap svg { display:block; width:100%; height:auto; }
+  .tierlabel { font-size:8.5px; fill:#5d584e; letter-spacing:2px; font-family:Georgia,serif; }
+  .node { cursor:pointer; }
+  .node circle { fill:#101114; stroke:#33353d; stroke-width:1.3; }
+  .node text { fill:#5d584e; font-size:10px; }
+  .node.open circle { stroke:#8a6f3c; fill:#17181c; }
+  .node.open text { fill:#c9b995; }
+  .node.earned circle { stroke:#a3895a; fill:#241f14; }
+  .node.earned text { fill:#e8d9b0; }
+  .node.sel circle { stroke:#e0c98f; stroke-width:2; }
+  .bname { font-size:10px; fill:#8a8578; letter-spacing:3px; font-family:Georgia,serif; }
+  .link { stroke:#2c2e35; stroke-width:1.3; fill:none; }
+  .link.lit { stroke:#8a6f3c; opacity:.9; }
+  .detail { max-width:760px; margin:14px auto 0; border:1px solid #33353d; background:rgba(23,24,28,.92); padding:14px 18px; min-height:74px; }
+  .detail h2 { font-size:14px; letter-spacing:.2em; font-weight:normal; color:#f0e8d4; }
+  .detail h2 b { color:#a3895a; font-weight:normal; font-size:10px; letter-spacing:.28em; display:block; margin-bottom:5px; }
+  .detail p { font-size:12px; line-height:1.7; color:#c8c4bc; margin-top:6px; }
+  .legend { display:flex; justify-content:center; gap:22px; margin-top:12px; font-size:9.5px; letter-spacing:.2em; color:#8a8578; flex-wrap:wrap; }
+  .legend i { display:inline-block; width:9px; height:9px; margin-right:6px; vertical-align:middle; border-radius:50%; }
+  .law { text-align:center; margin-top:12px; font-size:9.5px; letter-spacing:.22em; color:#5d584e; }
+  .back { display:block; text-align:center; margin-top:24px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
   .back:hover { color:#a3895a; }
-  .law { text-align:center; margin-top:14px; font-size:10px; letter-spacing:.22em; color:#5d584e; }
 </style>
 </head>
 <body>
-<div class="kicker">GROWTH WITHOUT GRIND &mdash; MASTERY IS EARNED, NEVER FARMED</div>
-<h1>KIT LINEAGE &mdash; THE SOVEREIGN</h1>
-<div class="sub">AEDAN STORMCROWN &bull; SKYREND</div>
-<div class="pts">LINEAGE MARKS HELD: 3 &bull; NEXT GATE OPENS BY DEED, NOT BY REPEATED MARCH</div>
-<div class="tree">
-<svg viewBox="0 0 740 460" xmlns="http://www.w3.org/2000/svg">
-  <rect width="740" height="460" fill="none"/>
-  <g stroke="#2c2e35" stroke-width="1.4" fill="none">
-    <path d="M370 400 C370 340 370 330 370 300"/>
-    <path d="M370 300 C300 260 230 240 160 220"/>
-    <path d="M370 300 C370 240 370 200 370 170"/>
-    <path d="M370 300 C440 260 510 240 580 220"/>
-    <path d="M160 220 C120 190 90 160 70 120"/>
-    <path d="M160 220 C170 180 165 150 160 110"/>
-    <path d="M370 170 C320 130 290 110 260 80"/>
-    <path d="M370 170 C420 130 450 110 480 80"/>
-    <path d="M580 220 C620 190 650 160 670 120"/>
-    <path d="M580 220 C570 180 575 150 580 110"/>
-  </g>
-  <g stroke="#8a6f3c" stroke-width="1.4" fill="none" opacity=".9">
-    <path d="M370 400 C370 340 370 330 370 300"/>
-    <path d="M370 300 C370 240 370 200 370 170"/>
-    <path d="M370 300 C300 260 230 240 160 220"/>
-    <path d="M160 220 C170 180 165 150 160 110"/>
-  </g>
-  <g font-family="Georgia,serif" font-size="11" letter-spacing="3" text-anchor="middle">
-    <!-- root: gate rune -->
-    <circle cx="370" cy="425" r="24" fill="#141519" stroke="#8a6f3c" stroke-width="1.6"/>
-    <text x="370" y="430" fill="#a3895a" font-size="16">&#10018;</text>
-    <text x="370" y="460" fill="#6f6a5e" font-size="9" letter-spacing="2">THE GATE OPENS</text>
-    <!-- tier 1 hubs -->
-    <circle cx="160" cy="220" r="17" fill="#141519" stroke="#8a6f3c" stroke-width="1.6"/>
-    <text x="160" y="224" fill="#a3895a" font-size="12">&#9873;</text>
-    <text x="160" y="252" fill="#6f6a5e" font-size="9" letter-spacing="2">THE BANNER</text>
-    <circle cx="370" cy="160" r="17" fill="#141519" stroke="#8a6f3c" stroke-width="1.6"/>
-    <text x="370" y="164" fill="#a3895a" font-size="12">&#9876;</text>
-    <text x="370" y="192" fill="#6f6a5e" font-size="9" letter-spacing="2">THE SPEAR</text>
-    <circle cx="580" cy="220" r="17" fill="#141519" stroke="#33353d" stroke-width="1.4"/>
-    <text x="580" y="224" fill="#5d584e" font-size="12">&#10038;</text>
-    <text x="580" y="252" fill="#5d584e" font-size="9" letter-spacing="2">THE STORM</text>
-    <!-- banner branch -->
-    <circle cx="70" cy="115" r="13" fill="#101114" stroke="#33353d"/>
-    <text x="70" y="119" fill="#5d584e" font-size="10">&#10087;</text>
-    <text x="70" y="145" fill="#5d584e" font-size="8" letter-spacing="2">GATE III</text>
-    <circle cx="160" cy="100" r="13" fill="#141519" stroke="#8a6f3c" stroke-width="1.5"/>
-    <text x="160" y="104" fill="#c9b995" font-size="10">&#10087;</text>
-    <text x="160" y="130" fill="#8a8578" font-size="8" letter-spacing="2">GATE II</text>
-    <!-- spear branch -->
-    <circle cx="260" cy="70" r="13" fill="#141519" stroke="#8a6f3c" stroke-width="1.5"/>
-    <text x="260" y="74" fill="#c9b995" font-size="10">&#10087;</text>
-    <text x="260" y="100" fill="#8a8578" font-size="8" letter-spacing="2">GATE II</text>
-    <circle cx="480" cy="70" r="13" fill="#101114" stroke="#33353d"/>
-    <text x="480" y="74" fill="#5d584e" font-size="10">&#10087;</text>
-    <text x="480" y="100" fill="#5d584e" font-size="8" letter-spacing="2">GATE III</text>
-    <!-- storm branch -->
-    <circle cx="670" cy="115" r="13" fill="#101114" stroke="#33353d"/>
-    <text x="670" y="119" fill="#5d584e" font-size="10">&#10038;</text>
-    <text x="670" y="145" fill="#5d584e" font-size="8" letter-spacing="2">GATE IV</text>
-    <circle cx="580" cy="100" r="13" fill="#101114" stroke="#33353d"/>
-    <text x="580" y="104" fill="#5d584e" font-size="10">&#10038;</text>
-    <text x="580" y="130" fill="#5d584e" font-size="8" letter-spacing="2">GATE III</text>
-  </g>
-</svg>
+<div class="kicker">GROWTH WITHOUT GRIND &mdash; EVERY MARK IS A DEED REMEMBERED</div>
+<h1>AEDAN STORMCROWN</h1>
+<div class="sub">SOVEREIGN &bull; SKYREND &bull; LINEAGE MARKS: 3</div>
+<div class="tabs">
+  <div class="tab on" id="tabKit" onclick="showTree('kit')">KIT LINEAGE</div>
+  <div class="tab" id="tabWeap" onclick="showTree('weap')">WEAPON MASTERY</div>
 </div>
+<div class="treewrap"><svg id="tree" viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div class="detail" id="detail"></div>
 <div class="legend">
-  <span><i style="background:#a3895a;border:1px solid #8a6f3c;"></i>OPEN GATE</span>
-  <span><i style="background:#101114;border:1px solid #33353d;"></i>SEALED &mdash; EARNED BY DEED</span>
+  <span><i style="background:#241f14;border:1px solid #a3895a;"></i>EARNED</span>
+  <span><i style="background:#17181c;border:1px solid #8a6f3c;"></i>OPEN GATE</span>
+  <span><i style="background:#101114;border:1px solid #33353d;"></i>SEALED &mdash; BY DEED ONLY</span>
 </div>
 <a class="back" href="ui-index.html">&#9666; INTERFACE BUILD</a>
-<div class="law">NO GRIND &bull; NO DROPS &bull; EVERY MARK IS A DEED REMEMBERED</div>
+<div class="law">NO GRIND &bull; NO DROPS &bull; NO REPEATED MARCHES &bull; DEEDS OPEN GATES</div>
+<script>
+// trees: branch name, nodes [tier1..tier5]: [name, state, desc]
+var TREES = {
+  kit: {
+    hub: ['THE CLASS KIT', 'The Sovereign\u2019s own grammar \u2014 banner, gate, and crown. Grown by deed, never farmed.'],
+    branches: [
+      ['THE BANNER', [
+        ['Wayfare Banner','earned','Plant the gate-rune banner; allies within its wind cannot be scattered.'],
+        ['Rally of Stones','earned','A shout that reaches every standing stone \u2014 the terraces answer as one.'],
+        ['Oath-Wind','open','Your sworn carry your banner\u2019s wind into their own battles, wherever they march.'],
+        ['Sovereign\u2019s Word','sealed','A single command that even the Hollow must hesitate to cross.'],
+        ['Crown of the Gate','sealed','The banner becomes a way-gate beacon; the storm itself salutes it.']
+      ]],
+      ['THE GATE', [
+        ['Waylight Sense','earned','See the world through your lantern\u2019s light; hidden paths glimmer slate-blue.'],
+        ['Threshold Step','open','Cross a sealed threshold once per rite \u2014 where the gate remembers, you may pass.'],
+        ['Gate-Mark Rite','sealed','Enchant a way-shrine with the gate-rune; it becomes a permanent fast-road for your cause.'],
+        ['Bond-Ward','sealed','Your divine bond shields your companions as if each carried a shard of the lantern.'],
+        ['Storm-Communion','sealed','Stand in the tempest and speak with your patron\u2019s own thunder.']
+      ]],
+      ['THE CROWN', [
+        ['Steadfast Aura','earned','While you stand, none within your watch breaks formation.'],
+        ['Unbowed','open','Fear, oath-break, and fell whispers slide off your mantle.'],
+        ['Banner of Terraces','sealed','Claim ground as sovereign soil; enemies fight uphill even on flat stone.'],
+        ['The Long Watch','sealed','Needs no rest while a rite or battle endures \u2014 the crown keeps the hours.'],
+        ['First-Crowned','sealed','The first true Sovereign since the gates woke. The world remembers your name.']
+      ]]
+    ]
+  },
+  weap: {
+    hub: ['THE LEAF-BLADE SPEAR', 'The First Crafts spear \u2014 bronze leaf-blade, cord-lash grip, gate-rune band. Mastery is written in technique, not in drops.'],
+    branches: [
+      ['THE PIKE', [
+        ['Gateward Thrust','earned','The soldier\u2019s stroke \u2014 a measured thrust that guards the line while it kills.'],
+        ['Stone-Set Volley','earned','Brace, plant, drive \u2014 a set-spear charge-break that anchors like standing stone.'],
+        ['Skyfall Overhead','open','The full overhead fall; the leaf-blade drops like the mountain\u2019s judgment.'],
+        ['Stormpike Advance','sealed','A lunging advance that rides the storm-wind \u2014 three strides in one breath.'],
+        ['Sovereign\u2019s Reach','sealed','The spear\u2019s final gate: reach beyond the body\u2019s law for one perfect strike.']
+      ]],
+      ['THE GUARD', [
+        ['Tide Guard','earned','The low warding parry; turn a blade aside without giving a single step.'],
+        ['Anvil Brace','open','Set the haft like an anvil \u2014 charging foes break themselves upon it.'],
+        ['Bulwark Turn','sealed','A sweeping deflection that turns three strikes with one motion.'],
+        ['Riftward Sweep','sealed','Cut the space itself \u2014 a sweep that parts falling magics like a curtain.'],
+        ['Unbroken Line','sealed','While the spear stands planted, your line has never broken \u2014 and never will.']
+      ]]
+    ]
+  }
+};
+var svg = document.getElementById('svg-tree') || document.getElementById('tree');
+var detail = document.getElementById('detail');
+var curTab = 'kit', selNode = null;
+function nodeXY(branch, ti, nb) {
+  // nb branches, spread 760 wide, tiers bottom-up
+  var cx = 130 + (760 - 260) * (branch / Math.max(1, nb - 1));
+  var y = 430 - ti * 82;
+  return [cx, y];
+}
+function showTree(which) {
+  curTab = which; selNode = null;
+  document.getElementById('tabKit').className = 'tab' + (which === 'kit' ? ' on' : '');
+  document.getElementById('tabWeap').className = 'tab' + (which === 'weap' ? ' on' : '');
+  render();
+}
+function render() {
+  var T = TREES[curTab];
+  var nb = T.branches.length;
+  var s = '';
+  // hub
+  s += '<path class="link lit" d="M380 520 C380 495 380 485 380 470" fill="none"/>';
+  s += '<circle cx="380" cy="540" r="24" fill="#141519" stroke="#8a6f3c" stroke-width="1.6"/>';
+  s += '<text x="380" y="545" text-anchor="middle" font-size="15" fill="#a3895a" font-family="Georgia,serif">&#10018;</text>';
+  // tier labels
+  for (var t = 0; t < 5; t++) {
+    var y = 430 - t * 82;
+    s += '<text class="tierlabel" x="24" y="' + (y + 3) + '">GATE ' + (t + 1) + '</text>';
+  }
+  // branch connectors hub->tier1
+  for (var b = 0; b < nb; b++) {
+    var xy = nodeXY(b, 0, nb);
+    s += '<path class="link lit" d="M380 516 C380 470 ' + xy[0] + ' 480 ' + xy[0] + ' ' + (xy[1] + 14) + '" fill="none"/>';
+  }
+  // branches
+  for (var b = 0; b < nb; b++) {
+    var BR = T.branches[b];
+    var x0 = nodeXY(b, 0, nb)[0];
+    s += '<text class="bname" x="' + x0 + '" y="' + (430 + 34) + '" text-anchor="middle">' + BR[0] + '</text>';
+    for (var t = 0; t < 5; t++) {
+      var xy = nodeXY(b, t, nb);
+      if (t > 0) {
+        var py = nodeXY(b, t - 1, nb);
+        var lit = BR[1][t][1] === 'earned';
+        var open_ = BR[1][t][1] === 'open';
+        s += '<path class="link' + (lit || open_ ? ' lit' : '') + '" d="M' + xy[0] + ' ' + (py[1] - 13) + ' L' + xy[0] + ' ' + (xy[1] + 14) + '" fill="none"/>';
+      }
+      var st = BR[1][t][1];
+      s += '<g class="node ' + st + '" data-b="' + b + '" data-t="' + t + '" onclick="pick(' + b + ',' + t + ')">' +
+           '<circle cx="' + xy[0] + '" cy="' + xy[1] + '" r="13"/>' +
+           '<text x="' + xy[0] + '" y="' + (xy[1] + 4) + '" text-anchor="middle">&#10087;</text></g>';
+    }
+  }
+  svg.innerHTML = s;
+  showHub();
+}
+function pick(b, t) {
+  var T = TREES[curTab];
+  var n = T.branches[b][1][t];
+  selNode = n;
+  var stateTxt = n[1] === 'earned' ? 'EARNED' : (n[1] === 'open' ? 'OPEN GATE' : 'SEALED \u2014 BY DEED ONLY');
+  detail.innerHTML = '<h2><b>GATE ' + (t + 1) + ' \u2022 ' + T.branches[b][0] + ' \u2022 ' + stateTxt + '</b>' + n[0].toUpperCase() + '</h2><p>' + n[2] + '</p>';
+  // highlight selection
+  var nodes = svg.querySelectorAll('.node');
+  nodes.forEach(function(el) { el.classList.remove('sel'); });
+  var el = svg.querySelector('.node[data-b="' + b + '"][data-t="' + t + '"]');
+  if (el) el.classList.add('sel');
+}
+function showHub() {
+  var T = TREES[curTab];
+  detail.innerHTML = '<h2><b>ROOT &bull; ' + (curTab === 'kit' ? 'CLASS KIT' : 'CLASS WEAPON') + '</b>' + T.hub[0] + '</h2><p>' + T.hub[1] + '</p><p style="color:#8a8578;font-size:11px;">Tap any node to read its gate.</p>';
+}
+render();
+</script>
 </body>
 </html>
