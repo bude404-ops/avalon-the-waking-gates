@@ -391,7 +391,8 @@ namespace AvalonForge
                 .Select(p => AssetDatabase.GUIDToAssetPath(p)))
             {
                 foreach (var clip in AssetDatabase.LoadAllAssetsAtPath(path).OfType<AnimationClip>())
-                    if (clip != null && clip.name.IndexOf(prefix, StringComparison.OrdinalIgnoreCase) >= 0)
+                    if (clip != null && !clip.name.StartsWith("__preview__")
+                        && clip.name.IndexOf(prefix, StringComparison.OrdinalIgnoreCase) >= 0)
                         return clip;
             }
             return null;
