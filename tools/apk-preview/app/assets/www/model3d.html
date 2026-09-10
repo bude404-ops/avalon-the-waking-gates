@@ -14,7 +14,8 @@
   #hud { position:fixed; bottom:0; left:0; right:0; background:rgba(10,11,13,.85); padding:10px 18px; font-size:11px; color:#8a8578; letter-spacing:.1em; z-index:10; display:flex; justify-content:space-between; }
   #hud b { color:#a3895a; font-weight:normal; }
   #stage { position:fixed; top:0; left:0; width:100%; height:100%; }
-  #tip { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); color:#6f6a5e; font-size:13px; letter-spacing:.2em; z-index:5; }
+  #tip { position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); color:#6f6a5e; font-size:13px; letter-spacing:.2em; z-index:5; text-align:center; white-space:pre; }
+  #err { position:fixed; top:70px; left:12px; right:12px; background:#2a1114; color:#ff8a8a; font:12px/1.5 monospace; padding:12px; border:1px solid #55262b; z-index:20; display:none; white-space:pre-wrap; }
 </style>
 </head>
 <body>
@@ -27,60 +28,83 @@
 </div>
 <div id="stage"></div>
 <div id="tip">SUMMONING&hellip;</div>
-<div id="hud"><span>DRAG TO ROTATE &bull; PINCH TO ZOOM</span><span>IDLE <b>PLAYING</b></span></div>
-<script src="vendor/three.min.js"></script>
-<script src="vendor/GLTFLoader.js"></script>
-<script src="vendor/OrbitControls.js"></script>
+<div id="err"></div>
+<div id="hud"><span>DRAG TO ROTATE &bull; PINCH TO ZOOM</span><span id="stat">STARTING</span></div>
 <script>
-var stage = document.getElementById('stage');
-var renderer = new THREE.WebGLRenderer({ antialias:true });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.setSize(innerWidth, innerHeight);
-renderer.outputEncoding = THREE.sRGBEncoding;
-stage.appendChild(renderer.domElement);
-var scene = new THREE.Scene();
-scene.background = new THREE.Color(0x4c4c4f);
-var camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.01, 100);
-var key = new THREE.DirectionalLight(0xfff4e2, 2.6); key.position.set(2, 3, 3); scene.add(key);
-var fill = new THREE.DirectionalLight(0xc0c8dc, 0.9); fill.position.set(-2, 1.5, -2.5); scene.add(fill);
-scene.add(new THREE.AmbientLight(0x808088, 0.55));
-var controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true; controls.dampingFactor = 0.08;
-controls.minDistance = 0.5; controls.maxDistance = 5;
-var mixer = null;
-var clock = new THREE.Clock();
-new THREE.GLTFLoader().load('./models/AEDAN-RIGGED-V3.glb', function(gltf) {
-  document.getElementById('tip').style.display = 'none';
-  var model = gltf.scene;
-  var box = new THREE.Box3().setFromObject(model);
-  var size = box.getSize(new THREE.Vector3()).length();
-  var center = box.getCenter(new THREE.Vector3());
-  model.position.sub(center);
-  camera.position.set(size*0.55, size*0.35, size*0.75);
-  controls.target.set(0, 0, 0);
-  scene.add(model);
-  if (gltf.animations && gltf.animations.length) {
-    mixer = new THREE.AnimationMixer(model);
-    var act = gltf.animations[0];
-    mixer.clipAction(act).play();
-    document.querySelector('#hud b').textContent = act.name.toUpperCase() + ' \u2022 PLAYING';
-  }
-}, undefined, function(err) {
-  document.getElementById('tip').textContent = 'MODEL FAILED TO LOAD';
-  console.error(err);
-});
-function tick() {
-  requestAnimationFrame(tick);
-  if (mixer) mixer.update(clock.getDelta());
-  controls.update();
-  renderer.render(scene, camera);
+var statEl = document.getElementById('stat');
+var tipEl = document.getElementById('tip');
+var errEl = document.getElementById('err');
+function stage(t) { statEl.textContent = t; }
+function fatal(t) {
+  errEl.style.display = 'block';
+  errEl.textContent = 'ERROR \u2014 ' + t;
+  tipEl.textContent = 'MODEL FAILED';
 }
-tick();
-addEventListener('resize', function() {
-  camera.aspect = innerWidth/innerHeight;
-  camera.updateProjectionMatrix();
+window.onerror = function(msg, src, line) { fatal(msg + ' @' + (src||'?') + ':' + (line||'?')); };
+</script>
+<script src="vendor/three.min.js" onerror="fatal('three.min.js failed to load')"></script>
+<script src="vendor/GLTFLoader.js" onerror="fatal('GLTFLoader.js failed to load')"></script>
+<script src="vendor/OrbitControls.js" onerror="fatal('OrbitControls.js failed to load')"></script>
+<script>
+try {
+  if (typeof THREE === 'undefined') { fatal('THREE is undefined \u2014 vendor scripts did not execute'); throw new Error('no three'); }
+  stage('SCRIPTS OK \u2022 WEBGL ' + (function(){ try { var c=document.createElement('canvas'); return !!(window.WebGLRenderingContext && (c.getContext('webgl')||c.getContext('experimental-webgl'))); } catch(e){ return false; } })());
+  var stage_el = document.getElementById('stage');
+  var renderer = new THREE.WebGLRenderer({ antialias:true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   renderer.setSize(innerWidth, innerHeight);
-});
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  stage_el.appendChild(renderer.domElement);
+  var scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x4c4c4f);
+  var camera = new THREE.PerspectiveCamera(40, innerWidth/innerHeight, 0.01, 100);
+  var key = new THREE.DirectionalLight(0xfff4e2, 2.6); key.position.set(2, 3, 3); scene.add(key);
+  var fill = new THREE.DirectionalLight(0xc0c8dc, 0.9); fill.position.set(-2, 1.5, -2.5); scene.add(fill);
+  scene.add(new THREE.AmbientLight(0x808088, 0.55));
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.dampingFactor = 0.08;
+  controls.minDistance = 0.5; controls.maxDistance = 5;
+  var mixer = null;
+  var clock = new THREE.Clock();
+  stage('FETCHING GLB\u2026');
+  new THREE.GLTFLoader().load('./models/AEDAN-RIGGED-V3.glb', function(gltf) {
+    try {
+      stage('PARSE OK \u2022 STAGING');
+      tipEl.style.display = 'none';
+      var model = gltf.scene;
+      var box = new THREE.Box3().setFromObject(model);
+      var size = box.getSize(new THREE.Vector3()).length();
+      var center = box.getCenter(new THREE.Vector3());
+      model.position.sub(center);
+      camera.position.set(size*0.55, size*0.35, size*0.75);
+      controls.target.set(0, 0, 0);
+      scene.add(model);
+      if (gltf.animations && gltf.animations.length) {
+        mixer = new THREE.AnimationMixer(model);
+        var act = gltf.animations[0];
+        mixer.clipAction(act).play();
+        stage(act.name.toUpperCase() + ' \u2022 PLAYING');
+      } else { stage('STATIC \u2022 NO ANIM IN FILE'); }
+    } catch (e) { fatal('staging: ' + e.message); }
+  }, function(ev) {
+    if (ev.total) stage('FETCHING ' + ev.loaded + ' / ' + ev.total + ' bytes');
+    else if (ev.loaded) stage('FETCHING ' + ev.loaded + ' bytes');
+  }, function(err) {
+    fatal('loader: ' + (err && err.message ? err.message : JSON.stringify(err)) + ' \u2014 this line tells us exactly why');
+  });
+  function tick() {
+    requestAnimationFrame(tick);
+    if (mixer) mixer.update(clock.getDelta());
+    controls.update();
+    renderer.render(scene, camera);
+  }
+  tick();
+  addEventListener('resize', function() {
+    camera.aspect = innerWidth/innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(innerWidth, innerHeight);
+  });
+} catch (e) { fatal('init: ' + e.message); }
 </script>
 </body>
 </html>
