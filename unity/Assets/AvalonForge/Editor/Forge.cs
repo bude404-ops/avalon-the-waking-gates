@@ -249,7 +249,7 @@ namespace AvalonForge
                 // ---- FOUNDRY FRAME (Big's order: centered, FULL body feet-to-head, never cropped) ----
                 var frb = CombineBounds(renderers);
                 go.transform.position -= new Vector3(frb.center.x, frb.min.y, frb.center.z); // ground feet at y=0, center on axis
-                float frDist = (height / (2f * Mathf.Tan(22.5f * Mathf.Deg2Rad))) / 0.84f; // model fills ~84% of frame height
+                float frDist = (height / (2f * Mathf.Tan(22.5f * Mathf.Deg2Rad))) / 0.58f; // zoomed out per Big: full model ~58% of frame height, clear margin all around
                 var camGo = new GameObject("ForgeQCCam");
                 var cam = camGo.AddComponent<Camera>();
                 cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
@@ -275,6 +275,12 @@ namespace AvalonForge
                 fillL.color = new Color(0.55f, 0.62f, 0.72f); // cold slate fill
                 fillGo.transform.rotation = Quaternion.Euler(20f, 145f, 0f);
 
+                var rimGo = new GameObject("QC-RimLight");
+                var rimL = rimGo.AddComponent<Light>();
+                rimL.type = LightType.Directional; rimL.intensity = 0.55f;
+                rimL.color = new Color(0.45f, 0.55f, 0.70f); // cold rim, silhouette separation
+                rimGo.transform.rotation = Quaternion.Euler(35f, 160f, 0f);
+
 
                 var rt = new RenderTexture(720, 960, 24);
                 cam.targetTexture = rt; cam.Render();
@@ -283,10 +289,25 @@ namespace AvalonForge
                 tex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); tex.Apply();
                 File.WriteAllBytes($"{QCShots}/{character}-idle.png", tex.EncodeToPNG());
                 Log(log, "QC render captured: " + QCShots + "/" + character + "-idle.png");
+
+                // ---- WALK FRAME (finish-quality: prove retargeted mocap mid-stride) ----
+                try
+                {
+                    animator.Play("walk", 0, 0.35f);
+                    animator.Update(0.01f);
+                    cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
+                    var wtex = new Texture2D(720, 960, TextureFormat.RGBA32, false);
+                    wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
+                    File.WriteAllBytes($"{QCShots}/{character}-walk.png", wtex.EncodeToPNG());
+                    Log(log, "QC walk frame captured: " + QCShots + "/" + character + "-walk.png");
+                }
+                catch (System.Exception ex) { Log(log, "WARN walk frame failed: " + ex.Message); }
+
                 cam.targetTexture = null; RenderTexture.active = null;
                 UnityEngine.Object.DestroyImmediate(camGo);
                 UnityEngine.Object.DestroyImmediate(keyGo);
                 UnityEngine.Object.DestroyImmediate(fillGo);
+                UnityEngine.Object.DestroyImmediate(rimGo);
             }
             else Log(log, "QC render skipped (-nographics) — structural QC only");
 
