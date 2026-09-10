@@ -1,17 +1,16 @@
 name: Unity Device-Code Activation
 
-# Live activation: finds the Unity licensing client, starts activation,
-# DMs Big the sign-in URL/code via Telegram the moment it appears,
+# Unity 6 licensing client device-code activation.
+# The runner DMs the sign-in URL + code straight to Big via Telegram,
 # polls until the license activates, then harvests license files.
 on:
   workflow_dispatch:
-    inputs:
-      btok:
-        description: 'Telegram bot token'
-        required: true
   push:
     paths:
       - 'trigger/activate-license.txt'
+
+permissions:
+  contents: read
 
 jobs:
   activate:
@@ -20,43 +19,53 @@ jobs:
     container: unityci/editor:ubuntu-6000.5.11f1-base-3.2.2
     timeout-minutes: 20
     env:
-      BIG_CHAT: "7257834686"
-      BTOK: ${{ inputs.btok }}
+      CHAT: "7257834686"
+      GH_API: "https://api.github.com/repos/bude404-ops/avalon-the-waking-gates"
+      BTOK: ${{ github.event.inputs.btok }}
     steps:
-      - name: Find client, activate, relay to Telegram
+      - name: Locate licensing client + read token file if present
+        shell: bash
         run: |
-          relay() {
+          if [ -z "$BTOK" ] && [ -f "trigger/btok.txt" ]; then
+            BTOK=$(cat trigger/btok.txt)
+            echo "BTOK file loaded (len ${#BTOK})"
+            echo "BTOK=$BTOK" >> "$GITHUB_ENV"
+          fi
+      - name: Activation with Telegram relay
+        shell: bash
+        run: |
+          tg() {
             BODY=$(cat)
-            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" \
-              -d "chat_id=${BIG_CHAT}" \
-              --data-urlencode "text=${BODY}" || true
+            [ -n "$BTOK" ] && curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d chat_id="$CHAT" --data-urlencode "text=$BODY" >/dev/null || true
           }
-          echo "BTOK length: ${#BTOK}" | relay
-          LIC=$(find /opt/unity -type f -iname "*Licensing.Client*" 2>/dev/null | head -1)
-          echo "Found client: ${LIC}"
+          LIC=$(find /opt/unity /usr -type f -name "Unity.Licensing.Client" 2>/dev/null | head -1)
+          echo "LIC=$LIC"
           if [ -z "$LIC" ]; then
-            echo "Searching wider..."; find / -maxdepth 6 -type f -iname "*Licensing*Client*" 2>/dev/null | grep -v proc | head -10
-            { echo "NO LICENSING CLIENT BINARY FOUND — searched /opt/unity and wider. See run logs for search results."; } | relay
-            exit 1
+            { echo "Licensing client NOT FOUND in image. Searching wider..."; find / -xdev -type f -iname "*licensing*client*" 2>/dev/null | head -20; } | tee /tmp/licsearch.txt
+            { echo "UNITY LICENSE CLIENT SEARCH FAILED - no binary found. Widest search result:"; echo ""; cat /tmp/licsearch.txt; } | tg
+            exit 3
           fi
           "$LIC" --help > /tmp/help.txt 2>&1 || true
-          { echo "LICENSING CLIENT HELP:"; echo ""; head -60 /tmp/help.txt; } | relay
+          { echo "LICENSING CLIENT HELP:"; echo ""; head -60 /tmp/help.txt; } | tee -a "$GITHUB_STEP_SUMMARY"
           nohup "$LIC" --activate-license > /tmp/act.log 2>&1 &
           echo $! > /tmp/act.pid
-          sleep 25
-          { echo "ACTIVATION CLIENT OUTPUT:"; echo ""; cat /tmp/act.log 2>/dev/null; echo ""; echo "If there is a URL + code above: open the URL, sign in with the Unity account, enter the code, approve."; } | relay
-          for i in $(seq 1 85); do
+          sleep 30
+          { echo "UNITY SIGN-IN:"; echo ""; cat /tmp/act.log 2>/dev/null; echo ""; echo "If there is a URL + code above: open the URL, sign in with the Unity account, enter the code if asked, tap approve. This completes the license."; } | tee /tmp/relay1.txt
+          cat /tmp/relay1.txt | tg
+          for i in $(seq 1 80); do
             if "$LIC" --show-license 2>/dev/null | grep -qiE "Personal|entitlement"; then
-              echo "LICENSE ACTIVATED on runner (loop $i). Harvesting now." | relay
+              echo "LICENSE ACTIVATED on runner (loop $i)." | tg
               break
             fi
             sleep 10
           done
           "$LIC" --show-license > /tmp/lic.txt 2>&1 || true
-          { echo "SHOW-LICENSE RESULT:"; echo ""; head -30 /tmp/lic.txt 2>/dev/null; } | relay
+          { echo "SHOW-LICENSE RESULT:"; echo ""; head -30 /tmp/lic.txt 2>/dev/null; } | tee -a "$GITHUB_STEP_SUMMARY"
+          cat /tmp/lic.txt | head -30 | tg
           kill $(cat /tmp/act.pid) 2>/dev/null || true
       - name: Harvest license files
         if: always()
+        shell: bash
         run: |
           mkdir -p /tmp/lic
           for D in /home/unity/.local/share/unity3d /home/unity/.config/unity3d /root/.local/share/unity3d /root/.config/unity3d; do
