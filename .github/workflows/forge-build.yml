@@ -26,6 +26,10 @@ on:
         description: 'Class height in meters'
         required: false
         default: '1.85'
+      vcode:
+        description: 'APK bundleVersionCode'
+        required: false
+        default: '101'
 
 jobs:
   forge:
@@ -139,7 +143,8 @@ jobs:
       - name: Build AVALON shell APK
         run: |
           export AVALON_APK_OUT=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
-          export AVALON_VCODE=101
+          export AVALON_VCODE=${{ inputs.vcode || '101' }}
+          export AVALON_KEYSTORE=$GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore
           export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
           export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}
           export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}
