@@ -245,7 +245,18 @@ namespace AvalonForge
             if (hasGraphics)
             {
                 Directory.CreateDirectory(QCShots);
-                go.transform.position = Vector3.zero;
+
+                // ---- FOUNDRY FRAME (Big's order: centered, FULL body feet-to-head, never cropped) ----
+                var frb = CombineBounds(renderers);
+                go.transform.position -= new Vector3(frb.center.x, frb.min.y, frb.center.z); // ground feet at y=0, center on axis
+                float frDist = (height / (2f * Mathf.Tan(22.5f * Mathf.Deg2Rad))) / 0.84f; // model fills ~84% of frame height
+                var camGo = new GameObject("ForgeQCCam");
+                var cam = camGo.AddComponent<Camera>();
+                cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
+                cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
+                cam.transform.position = new Vector3(height * 0.22f, height * 0.5f, -frDist);
+                cam.transform.LookAt(new Vector3(0f, height * 0.5f, 0f));
+                cam.fieldOfView = 45f;
 
                 // ---- FOUNDRY LIGHT RIG (canon: cold key + fill, dark neutral backdrop) ----
                 var qcMat = new UnityEngine.Material(Shader.Find("Universal Render Pipeline/Lit") ?? Shader.Find("Standard"));
@@ -264,13 +275,7 @@ namespace AvalonForge
                 fillL.color = new Color(0.55f, 0.62f, 0.72f); // cold slate fill
                 fillGo.transform.rotation = Quaternion.Euler(20f, 145f, 0f);
 
-                var camGo = new GameObject("ForgeQCCam");
-                var cam = camGo.AddComponent<Camera>();
-                cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
-                cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
-                cam.transform.position = new Vector3(0.6f * height, height * 0.62f, -height * 2.6f);
-                cam.transform.LookAt(new Vector3(0f, height * 0.55f, 0f));
-                cam.fieldOfView = 45f;
+
                 var rt = new RenderTexture(720, 960, 24);
                 cam.targetTexture = rt; cam.Render();
                 RenderTexture.active = rt;
