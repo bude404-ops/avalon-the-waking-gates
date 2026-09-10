@@ -34,23 +34,20 @@ PAL = {
     'hair':  (0.09, 0.068, 0.055),
 }
 def region(co, n):
-    zn = (co.z - z0) / H
-    rad = math.sqrt(co.x*co.x + 0.35*co.y*co.y)
+    zn = (co.z - z0) / H          # 0=feet, 1=head
+    rad = math.sqrt(co.x*co.x + co.y*co.y)   # horizontal distance from spine axis
     if zn < 0.17: return 'boot'
     if zn < 0.47: return 'leg'
     if zn < 0.585: return 'kilt'
     if zn < 0.86:
-        if rad > 0.14: return 'skin'
-        return 'cloak' if n.y < -0.12 else 'bronze'
-    if zn < 0.935: return 'skin'
+        if rad > 0.14: return 'skin'          # arms hang outside the torso column
+        return 'cloak' if n.y > 0.12 else 'bronze'   # +Y = backward = cloak
+    if zn < 0.90: return 'skin'               # neck
+    if zn < 0.94 and n.y < -0.25: return 'skin'  # face points -Y
     return 'hair'
 
 attrs = body.data.color_attributes
-vcol = attrs.new('Col', 'FLOAT_COLOR', 'POINT')
-try:
-    attrs.active_color = vcol
-except Exception as e:
-    print('active_color warn:', e, flush=True)
+vcol = attrs.new('Col', 'BYTE_COLOR', 'POINT')
 random.seed(404)
 weath = [0.90 + 0.10*random.random() for _ in range(len(body.data.vertices))]
 for i, v in enumerate(body.data.vertices):
@@ -138,8 +135,28 @@ for act in bpy.data.actions:
             locked += 1
 print('Hips fcurves locked:', locked, flush=True)
 
+# re-paint AFTER the spear import (glTF import can clobber existing color attribute data)
+random.seed(404)
+weath2 = [0.90 + 0.10*random.random() for _ in range(len(body.data.vertices))]
+recovered = 0
+for i, v in enumerate(body.data.vertices):
+    c = PAL[region(v.co, v.normal)]
+    m = weath2[i]
+    vcol.data[i].color = (c[0]*m, c[1]*m, c[2]*m, 1.0)
+    recovered += 1
+print('repainted verts:', recovered, flush=True)
+ca = body.data.color_attributes
+idx = next((i for i, a in enumerate(ca) if a.name == 'Col'), -1)
+ca.render_color_index = idx
+ca.active_color_index = idx
+print('render_color_index set to Col:', idx, '->', ca.render_color_index, flush=True)
+print('attrs at export:', [(a.name, a.data_type, a.domain) for a in body.data.color_attributes], flush=True)
+print('readback [0],[50000],[150000]:', [tuple(round(q,3) for q in vcol.data[k].color) for k in (0, 50000, 150000)], flush=True)
+print('body is still mesh:', body.name, len(body.data.vertices), flush=True)
+
 bpy.ops.export_scene.gltf(
     filepath=OUT, export_format='GLB',
     export_animations=True, export_animation_mode='ACTIONS',
-    export_anim_single_armature=True, export_skins=True, export_apply=False)
+    export_anim_single_armature=True, export_skins=True, export_apply=False,
+    export_vertex_color='ACTIVE', export_all_vertex_colors=False)
 print('EXPORT_DONE', flush=True)
