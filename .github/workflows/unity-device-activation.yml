@@ -5,6 +5,9 @@ name: Unity Device-Code Activation
 # polls until the license activates, then harvests license files.
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'trigger/activate-license.txt'
 
 permissions:
   issues: write
