@@ -54,6 +54,16 @@ namespace AvalonShell
             PlayerSettings.companyName = "Bigfoot404";
             PlayerSettings.SetApplicationIdentifier(BuildTargetGroup.Android, "com.bigfoot404.avalon");
             PlayerSettings.Android.bundleVersionCode = vcode;
+            var ksPath = Environment.GetEnvironmentVariable("AVALON_KEYSTORE");
+            if (!string.IsNullOrEmpty(ksPath) && File.Exists(ksPath))
+            {
+                PlayerSettings.Android.keystoreName = ksPath;
+                PlayerSettings.Android.keystorePass = "bigfoot404-gates";
+                PlayerSettings.Android.keyaliasName = "avalon";
+                PlayerSettings.Android.keyaliasPass = "bigfoot404-gates";
+                Debug.Log("[SHELL] signing with repo demo keystore: " + ksPath);
+            }
+            else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
 
