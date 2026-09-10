@@ -34,7 +34,8 @@ jobs:
               -d "chat_id=${BIG_CHAT}" \
               --data-urlencode "text=${BODY}" || true
           }
-          LIC=$(find /opt/unity -type f -iname "*Licensing*Client*" 2>/dev/null | head -1)
+          LIC=$(find /opt/unity -type f -name "Unity.Licensing.Client" 2>/dev/null | head -1)
+          if [ -z "$LIC" ]; then LIC=$(find /opt/unity -type f -iname "*Licensing.Client*" ! -name "*.config" ! -name "*.dll" 2>/dev/null | head -1); fi
           echo "Found client: ${LIC}"
           echo "=== SEATS CHECK ==="
           "$LIC" --show-seats --username "${{ inputs.uuser }}" --password "${{ inputs.upass }}" > /tmp/seats.txt 2>&1 || true
