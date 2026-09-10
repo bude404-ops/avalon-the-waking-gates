@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avalon — Field HUD</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; overflow:hidden; }
+  .bg { position:fixed; inset:0; background:url('../art/CINEMATIC-CAMPAIGN-I-AGE-OF-KINGS-CANON.png') center/cover no-repeat; filter:brightness(.8); }
+  .vign { position:fixed; inset:0; background:radial-gradient(ellipse at center, transparent 55%, rgba(10,11,13,.7) 100%); }
+  /* --- vitals, top-left --- */
+  .vitals { position:fixed; top:14px; left:14px; display:flex; gap:10px; align-items:flex-start; }
+  .portrait { width:58px; height:58px; border:1px solid #8a6f3c; padding:2px; background:#0a0b0d; }
+  .portrait img { width:100%; height:100%; object-fit:cover; display:block; }
+  .barwrap { width:200px; display:flex; flex-direction:column; gap:5px; margin-top:4px; }
+  .bar { position:relative; height:11px; background:#101114; border:1px solid #33353d; }
+  .bar i { position:absolute; inset:1px auto 1px 1px; display:block; }
+  .bar.hp i { width:74%; background:linear-gradient(90deg,#7e2f22,#b5543f); }
+  .bar.st i { width:88%; background:linear-gradient(90deg,#5d6b52,#8a9a76); }
+  .bar.sp i { width:46%; background:linear-gradient(90deg,#4e6472,#7fa3b8); box-shadow:0 0 8px rgba(127,163,184,.5); }
+  .bar b { position:absolute; left:6px; top:-2px; font-size:8px; letter-spacing:.3em; color:#c8c4bc; font-weight:normal; line-height:14px; text-shadow:0 1px 2px #000; }
+  /* --- compass + location, top-center --- */
+  .compass { position:fixed; top:12px; left:50%; transform:translateX(-50%); text-align:center; }
+  .strip { width:150px; height:22px; margin:0 auto; border-bottom:1px solid #8a6f3c; font-size:10px; letter-spacing:.35em; color:#c9b995; display:flex; justify-content:center; gap:12px; padding-top:4px; }
+  .loc { margin-top:6px; font-size:10px; letter-spacing:.3em; color:#a9b4c2; text-shadow:0 1px 3px #000; }
+  /* --- quest tracker, top-right --- */
+  .quest { position:fixed; top:14px; right:14px; width:210px; background:rgba(10,11,13,.78); border:1px solid #33353d; border-left:2px solid #8a6f3c; padding:10px 12px; }
+  .quest h3 { font-size:10px; letter-spacing:.24em; color:#a3895a; font-weight:normal; margin-bottom:7px; }
+  .quest div { font-size:11px; line-height:1.9; color:#c8c4bc; }
+  .quest .done { color:#8a9a76; }
+  .quest .todo::before { content:'\2726 '; color:#a3895a; font-size:9px; }
+  .quest .done::before { content:'\2713 '; font-size:10px; }
+  /* --- ability bar, bottom-center --- */
+  .abil { position:fixed; bottom:44px; left:50%; transform:translateX(-50%); display:flex; gap:6px; align-items:flex-end; }
+  .slot { width:52px; height:52px; background:rgba(10,11,13,.85); border:1px solid #33353d; position:relative; }
+  .slot.lant { border-color:#8a6f3c; box-shadow:0 0 14px rgba(127,163,184,.35); }
+  .slot .g { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-size:19px; color:#c9b995; }
+  .slot .k { position:absolute; bottom:2px; right:4px; font-size:8px; color:#6f6a5e; letter-spacing:.1em; }
+  .slot.c1 { border-bottom:2px solid #6d7c8f; }
+  .bond { width:46px; height:46px; border-radius:50%; border:1px solid #6d7c8f; background:rgba(10,11,13,.85); margin-left:8px; display:flex; align-items:center; justify-content:center; font-size:17px; color:#a9b4c2; box-shadow:0 0 10px rgba(109,124,143,.4); }
+  /* --- xp + foot --- */
+  .xp { position:fixed; left:0; right:0; bottom:0; height:3px; background:#101114; }
+  .xp i { display:block; height:100%; width:38%; background:#8a6f3c; }
+  .foot { position:fixed; bottom:8px; left:14px; font-size:9px; letter-spacing:.28em; color:#6f6a5e; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="vign"></div>
+<div class="vitals">
+  <div class="portrait"><img src="../art/CLASS-SOVEREIGN-CANON.jpg" alt="Aedan"></div>
+  <div class="barwrap">
+    <div class="bar hp"><i></i><b>VITALITY</b></div>
+    <div class="bar st"><i></i><b>STAMINA</b></div>
+    <div class="bar sp"><i></i><b>SPIRIT</b></div>
+  </div>
+</div>
+<div class="compass">
+  <div class="strip"><span>W</span><span>N</span><span>E</span></div>
+  <div class="loc">SKYREND &mdash; THE CALM EYE</div>
+</div>
+<div class="quest">
+  <h3>CAMPAIGN I &mdash; AGE OF KINGS</h3>
+  <div class="done">Speak with Vera, the Lorekeeper</div>
+  <div class="todo">Reach the Skyrend terraces</div>
+  <div class="todo">Light the way-gate lantern</div>
+</div>
+<div class="abil">
+  <div class="slot c1"><span class="g">&#9876;</span><span class="k">1</span></div>
+  <div class="slot c1"><span class="g">&#10038;</span><span class="k">2</span></div>
+  <div class="slot c1"><span class="g">&#9873;</span><span class="k">3</span></div>
+  <div class="slot c1"><span class="g">&#10087;</span><span class="k">4</span></div>
+  <div class="slot"><span class="g">&#9854;</span><span class="k">L</span></div>
+  <div class="slot lant"><span class="g">&#128367;</span><span class="k">F</span></div>
+  <div class="bond">&#10018;</div>
+</div>
+<div class="xp"><i></i></div>
+<div class="foot">INTERFACE BUILD 0.7 &bull; HUD PRE-VISUAL &mdash; <a href="ui-index.html" style="color:#8a8578;text-decoration:none;">BUILD MENU</a></div>
+</body>
+</html>

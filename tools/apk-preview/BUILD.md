@@ -52,3 +52,10 @@ Two channels from here on — never mixed:
    - Audience: outsiders, playtesters, potential partners. Third channel (Play Store release signing) deferred until commercial decision.
 
 Build rule: demo builds cut from the same repo but require an explicit "demo-ready" pass — I sweep assets for pending/ or non-canon entries and refuse the build if any are referenced.
+
+## v0.7 (Sept 9, Big's ask: game UI/layout "as if it was the real game")
+- NEW: GAME UI — THE REAL THING menu card → ui/ui-index.html hub with 6 canon-styled game screens:
+  ui-title (teaser keyart bg, game menu), ui-charselect (the Twelve, tap for lore+kit), ui-hud (vitals/compass/quest tracker/ability bar with storm-slate lantern slot over Campaign I still), ui-map (Six Realms SVG map + location marker + realm art thumbs), ui-skills (Aedan kit lineage tree, anti-grind copy), ui-inventory (First Crafts loadout + materials)
+- art additions: teaser keyart, Campaign I still, 6 STAGE2 realm images (~2.5MB)
+- versionCode 7 / 0.7-test; published to web at mcontwitter-glitch.github.io/avalon-3d-viewer/ui/ (repo avalon-3d-viewer carries ui/ + art subset, 3D viewer root links to it)
+- mobile 3D still unfixed on device (R3 diagnostic readout shipped — awaiting the red line); web viewer + all UI pages confirmed working

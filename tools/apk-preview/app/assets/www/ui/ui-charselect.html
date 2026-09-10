@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avalon — Choose Your Hero</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; padding:24px 16px 60px; }
+  .kicker { font-size:11px; letter-spacing:.34em; color:#8a8578; text-align:center; }
+  h1 { font-size:22px; letter-spacing:.24em; font-weight:normal; text-align:center; margin:6px 0 22px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:12px; max-width:760px; margin:0 auto; }
+  .hero { position:relative; border:1px solid #22242b; background:#141519; overflow:hidden; text-decoration:none; display:block; }
+  .hero img { width:100%; display:block; aspect-ratio:3/4; object-fit:cover; filter:saturate(.82) brightness(.92); }
+  .hero .acc { position:absolute; top:0; left:0; right:0; height:3px; }
+  .hero .nm { position:absolute; left:0; right:0; bottom:0; padding:22px 10px 9px; background:linear-gradient(transparent, rgba(6,7,9,.94) 55%); }
+  .hero .nm .c { font-size:13px; letter-spacing:.2em; color:#f0e8d4; }
+  .hero .nm .r { font-size:9.5px; letter-spacing:.24em; color:#8a8578; margin-top:3px; }
+  .hero:active, .hero:hover { border-color:#8a6f3c; }
+  .hero:active img, .hero:hover img { filter:saturate(1) brightness(1.05); }
+  .detail { max-width:760px; margin:22px auto 0; border:1px solid #33353d; background:rgba(23,24,28,.92); padding:16px 18px; }
+  .detail h2 { font-size:15px; letter-spacing:.24em; font-weight:normal; color:#a3895a; }
+  .detail p { font-size:12.5px; line-height:1.75; color:#c8c4bc; margin-top:8px; }
+  .detail .kit { margin-top:10px; font-size:11px; letter-spacing:.18em; color:#8a8578; }
+  .detail .kit b { color:#c9b995; font-weight:normal; }
+  .back { display:block; text-align:center; margin-top:26px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
+  .back:hover { color:#a3895a; }
+</style>
+</head>
+<body>
+<div class="kicker">TWELVE HEROES &bull; SIX CLASSES &bull; SIX REALMS</div>
+<h1>CHOOSE YOUR HERO</h1>
+<div class="grid" id="grid"></div>
+<div class="detail" id="detail">
+  <h2>AEDAN STORMCROWN &mdash; SOVEREIGN (M) &bull; SKYREND</h2>
+  <p>Born under the storm marches where the standing stones drink lightning. The Sovereign does not beg the storm for permission &mdash; he plants his banner in the high terraces and the gate opens to him. First hero of the Twelve, keeper of the way-gate lantern.</p>
+  <div class="kit">KIT &mdash; <b>LEAF-BLADE SPEAR</b> &bull; ENGRAVED BREASTPLATE &bull; TORC &amp; MANTLE &bull; CLASS ACCENT: <b>STORM SLATE</b></div>
+</div>
+<a class="back" href="ui-index.html">&#9666; INTERFACE BUILD</a>
+<script>
+var heroes = [
+  ['SOVEREIGN','SKYREND','M','CLASS-SOVEREIGN-CANON.jpg','#6d7c8f','Aedan Stormcrown','Born under the storm marches where the standing stones drink lightning. He plants his banner in the high terraces and the gate opens to him. First hero of the Twelve, keeper of the way-gate lantern.','LEAF-BLADE SPEAR \u2022 ENGRAVED BREASTPLATE \u2022 STORM SLATE'],
+  ['SOVEREIGN','SKYREND','F','CLASS-SOVEREIGN-F-CANON.jpg','#6d7c8f','','The crown answers to her as it answered no king before. A tall statuesque bearer of the banner whose word carries the storm\u2019s own weight.','LEAF-BLADE SPEAR \u2022 ENGRAVED BREASTPLATE \u2022 STORM SLATE'],
+  ['RAVAGER','ASHFALL','M','CLASS-RAVAGER-CANON.jpg','#a4552f','','Where the calderas breathe, the Ravager breaks shield-walls like dry branches. Ash streaks his top-knot; the greatsword falls like the mountain\u2019s judgment.','GREATSWORD \u2022 BATTERED WAR-PLATE \u2022 OXIDE RED'],
+  ['RAVAGER','ASHFALL','F','CLASS-RAVAGER-F-CANON.jpg','#a4552f','','Fierce-eyed and ember-born, she carries the caldera in her scowl. The war-host parts where her blade points.','GREATSWORD \u2022 WAR-PLATE &amp; MANTLE \u2022 OXIDE RED'],
+  ['WARDEN','STONEHEART','M','CLASS-WARDEN-CANON.jpg','#9a9789','','The gate holds because he holds it. Stone-hearted, bone-grey cloaked, unbowed &mdash; the wall the Hollows break against.','WARHAMMER \u2022 DOUBLE-THICK BANDED BRONZE \u2022 BONE GREY'],
+  ['WARDEN','STONEHEART','F','CLASS-WARDEN-F-CANON.jpg','#9a9789','','Dense as the deep roads, strong as the standing stones. Her cinched belt is the last line, and it has never broken.','WARHAMMER \u2022 BANDED BRONZE \u2022 BONE GREY'],
+  ['VEILBORN','DUSKMOURN','M','CLASS-VEILBORN-CANON.jpg','#a93226','','He walks where the lantern-ways go dark. Crimson whisper at his shoulder, twin leaf-blades silent as the grave.','TWIN LEAF-BLADES \u2022 CORD-AND-LEATHER GHOST PLATE \u2022 CRIMSON'],
+  ['VEILBORN','DUSKMOURN','F','CLASS-VEILBORN-F-CANON.jpg','#a93226','','Cold-watchful, half-hidden in her own dark hair. The dusk lets her pass; the dead regret it.','TWIN LEAF-BLADES \u2022 GHOST PLATE \u2022 CRIMSON'],
+  ['WEAVER','MARENTH','M','CLASS-WEAVER-CANON.jpg','#3f8f8a','','He reads the tide-thread where others see only water. The lantern-staff lifts; the shore remembers.','LANTERN-STAFF \u2022 SHOULDER-PLATES &amp; ROBES \u2022 TIDE TEAL'],
+  ['WEAVER','MARENTH','F','CLASS-WEAVER-F-CANON.jpg','#3f8f8a','','Slim, spare, distant-serene &mdash; until the threads pull. Then the sea itself takes her side.','LANTERN-STAFF \u2022 ROBES \u2022 TIDE TEAL'],
+  ['WILDBORN','EVERBLOOM','M','CLASS-WILDBORN-CANON.jpg','#5a7a46','','Matted dreads, moss-worn, feral-alert. The deep forest does not tame him; it merely walks beside him.','CLAW GAUNTLETS \u2022 HIDE HARNESS \u2022 DEEP MOSS'],
+  ['WILDBORN','EVERBLOOM','F','CLASS-WILDBORN-F-CANON.jpg','#5a7a46','','She runs with the briar-foxes and the moss-stags. The wild keeps its own sovereigns; she is one of them.','CLAW GAUNTLETS \u2022 HIDE HARNESS \u2022 DEEP MOSS']
+];
+var grid = document.getElementById('grid');
+var detail = document.getElementById('detail');
+var known = { 'SOVEREIGN|SKYREND|M': 'AEDAN STORMCROWN \u2014 ' };
+heroes.forEach(function(h, i) {
+  var a = document.createElement('a');
+  a.className = 'hero';
+  a.href = '#h' + i;
+  a.innerHTML = '<div class="acc" style="background:' + h[4] + '"></div>' +
+    '<img src="../art/' + h[3] + '" alt="' + h[0] + '">' +
+    '<div class="nm"><div class="c">' + h[0] + ' (' + h[2] + ')</div><div class="r">' + h[1] + '</div></div>';
+  a.onclick = function() {
+    var nm = (h[5] ? h[5].toUpperCase() + ' \u2014 ' : '') + h[0] + ' (' + h[2] + ') \u2022 ' + h[1];
+    detail.innerHTML = '<h2>' + nm + '</h2><p>' + h[6] + '</p><div class="kit">KIT &mdash; <b>' + h[7] + '</b></div>';
+    return false;
+  };
+  grid.appendChild(a);
+});
+</script>
+</body>
+</html>

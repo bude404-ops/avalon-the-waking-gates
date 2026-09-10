@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avalon — The Six Realms</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; min-height:100vh; padding:26px 16px 60px; }
+  .kicker { font-size:11px; letter-spacing:.34em; color:#8a8578; text-align:center; }
+  h1 { font-size:22px; letter-spacing:.24em; font-weight:normal; text-align:center; margin:6px 0 26px; }
+  .map { position:relative; max-width:720px; margin:0 auto; border:1px solid #33353d; background:#0d0e11; overflow:hidden; }
+  .map svg { display:block; width:100%; height:auto; }
+  .here { position:absolute; width:14px; height:14px; border-radius:50%; background:#a3895a; box-shadow:0 0 0 4px rgba(163,137,90,.25), 0 0 18px rgba(163,137,90,.8); animation:pulse 2.2s infinite; }
+  @keyframes pulse { 0%,100%{ box-shadow:0 0 0 3px rgba(163,137,90,.25), 0 0 14px rgba(163,137,90,.8);} 50%{ box-shadow:0 0 0 7px rgba(163,137,90,.12), 0 0 24px rgba(163,137,90,1);} }
+  .thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; max-width:720px; margin:18px auto 0; }
+  .th { position:relative; border:1px solid #22242b; }
+  .th img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; filter:saturate(.8) brightness(.85); }
+  .th span { position:absolute; left:0; right:0; bottom:0; padding:16px 8px 6px; font-size:10px; letter-spacing:.24em; background:linear-gradient(transparent, rgba(6,7,9,.92)); color:#e6ddca; }
+  .th.here { border-color:#8a6f3c; }
+  .back { display:block; text-align:center; margin-top:28px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
+  .back:hover { color:#a3895a; }
+  .foot { text-align:center; margin-top:16px; font-size:10px; letter-spacing:.28em; color:#5d584e; }
+</style>
+</head>
+<body>
+<div class="kicker">THE WORLD OF AVALON</div>
+<h1>THE SIX REALMS</h1>
+<div class="map">
+  <svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg">
+    <rect width="720" height="420" fill="#0d0e11"/>
+    <g opacity=".13" stroke="#8a8578" stroke-width="1">
+      <path d="M0 60 Q180 40 360 70 T720 50" fill="none"/>
+      <path d="M0 150 Q240 120 480 160 T720 130" fill="none"/>
+      <path d="M0 260 Q200 300 420 240 T720 280" fill="none"/>
+      <path d="M0 360 Q300 320 540 370 T720 350" fill="none"/>
+      <path d="M120 0 Q150 210 90 420" fill="none"/>
+      <path d="M360 0 Q330 200 390 420" fill="none"/>
+      <path d="M600 0 Q630 180 570 420" fill="none"/>
+    </g>
+    <path d="M140 90 L340 70 L500 130 L590 110 L660 200 L560 300 L420 350 L250 330 L120 240 Z" fill="#121317" stroke="#33353d" stroke-width="1.2"/>
+    <g font-family="Georgia,serif" letter-spacing="4" fill="#e6ddca" font-size="13" text-anchor="middle">
+      <text x="255" y="150" fill="#a9b4c2">SKYREND</text>
+      <text x="555" y="170" fill="#c08a5a">ASHFALL</text>
+      <text x="470" y="290" fill="#9a9789">STONEHEART</text>
+      <text x="230" y="290" fill="#c25b4a">DUSKMOURN</text>
+      <text x="160" y="140" fill="#63b1ab">MARENTH</text>
+      <text x="520" y="120" fill="#7fa05a">EVERBLOOM</text>
+    </g>
+    <g font-family="Georgia,serif" fill="#6f6a5e" font-size="9" letter-spacing="2" text-anchor="middle">
+      <text x="255" y="166">THE STORM MARCHES</text>
+      <text x="555" y="186">THE CINDERLANDS</text>
+      <text x="470" y="306">THE DEEP ROADS</text>
+      <text x="230" y="306">THE LANTERN WAYS</text>
+      <text x="160" y="156">THE TIDE VERGES</text>
+      <text x="520" y="136">THE EVER-BLOOM</text>
+    </g>
+    <g stroke="#5d584e" stroke-width="1" stroke-dasharray="3 5" opacity=".7">
+      <path d="M270 155 Q400 120 540 165" fill="none"/>
+      <path d="M270 170 Q340 240 445 280" fill="none"/>
+      <path d="M255 175 Q240 230 235 280" fill="none"/>
+      <path d="M500 280 Q560 240 560 180" fill="none"/>
+      <path d="M175 160 Q210 120 240 140" fill="none"/>
+      <path d="M530 130 Q545 145 548 162" fill="none"/>
+    </g>
+    <circle cx="255" cy="182" r="5" fill="#a3895a" opacity=".9"/>
+  </svg>
+  <div class="here" style="left:calc(34.6% - 7px); top:calc(41.6% - 7px);"></div>
+</div>
+<div class="thumbs">
+  <div class="th here"><img src="../art/STAGE2-SKYREND-CALM-EYE-WORLD-V2-CANON.png" alt=""><span>SKYREND &mdash; HERE</span></div>
+  <div class="th"><img src="../art/STAGE2-ASHFALL-CINDERLANDS-WORLD-V2-CANON.png" alt=""><span>ASHFALL</span></div>
+  <div class="th"><img src="../art/STAGE2-STONEHEART-ROOTSPINE-MYTHICWORLD-V1-CANON.png" alt=""><span>STONEHEART</span></div>
+  <div class="th"><img src="../art/STAGE2-DUSKMOURN-LANTERN-WAYS-WORLD-V2-CANON.png" alt=""><span>DUSKMOURN</span></div>
+  <div class="th"><img src="../art/STAGE2-MARENTH-DEEP-HOLLOW-WORLD-V2-CANON.png" alt=""><span>MARENTH</span></div>
+  <div class="th"><img src="../art/STAGE2-EVERBLOOM-FLOWERDALE-WORLD-V2-CANON.png" alt=""><span>EVERBLOOM</span></div>
+</div>
+<a class="back" href="ui-index.html">&#9666; INTERFACE BUILD</a>
+<div class="foot">FOG LIFTS AS THE JOURNEY WAKES</div>
+</body>
+</html>

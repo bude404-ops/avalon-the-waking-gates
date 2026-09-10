@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avalon — Title</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; }
+  body { background:#0a0b0d; color:#e6ddca; font-family:Georgia,'Times New Roman',serif; overflow:hidden; }
+  .bg { position:fixed; inset:0; background:url('../art/CINEMATIC-TEASER-KEYART-CANON.png') center/cover no-repeat; filter:brightness(.55) saturate(.85); transform:scale(1.04); }
+  .veil { position:fixed; inset:0; background:radial-gradient(ellipse at 50% 40%, transparent 30%, rgba(10,11,13,.88) 100%); }
+  .wrap { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; }
+  .kicker { font-size:11px; letter-spacing:.5em; color:#a3895a; margin-bottom:14px; }
+  h1 { font-size:clamp(40px, 11vw, 74px); letter-spacing:.3em; font-weight:normal; text-indent:.3em; color:#f0e8d4; text-shadow:0 2px 24px rgba(0,0,0,.8); }
+  .sub { font-size:clamp(11px, 2.6vw, 15px); letter-spacing:.62em; text-indent:.62em; color:#c9b995; margin-top:8px; }
+  .sub-rule { width:min(64vw, 340px); height:1px; background:linear-gradient(90deg, transparent, #8a6f3c, transparent); margin:22px 0 30px; position:relative; }
+  .sub-rule::after { content:'\2726'; position:absolute; left:50%; top:-10px; transform:translateX(-50%); color:#a3895a; font-size:13px; background:transparent; }
+  nav { display:flex; flex-direction:column; gap:2px; width:min(78vw, 300px); }
+  a.item { display:flex; justify-content:space-between; align-items:center; text-decoration:none; color:#d8cdb4; font-size:15px; letter-spacing:.3em; padding:12px 18px; border:1px solid transparent; }
+  a.item .t { font-size:10px; color:#6f6a5e; letter-spacing:.14em; }
+  a.item:hover, a.item:active { color:#a3895a; border-color:#33353d; background:rgba(20,21,25,.72); }
+  a.item.off { color:#565249; pointer-events:none; }
+  a.item.off .t { color:#3d3a34; }
+  .foot { position:fixed; bottom:14px; left:0; right:0; text-align:center; font-size:10px; letter-spacing:.32em; color:#6f6a5e; }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="veil"></div>
+<div class="wrap">
+  <div class="kicker">THE GATES REMEMBER</div>
+  <h1>AVALON</h1>
+  <div class="sub">THE WAKING GATES</div>
+  <div class="sub-rule"></div>
+  <nav>
+    <a class="item off" href="#"><span>CONTINUE</span><span class="t">NO JOURNEY FOUND</span></a>
+    <a class="item" href="ui-charselect.html"><span>NEW JOURNEY</span><span class="t">BEGIN</span></a>
+    <a class="item" href="ui-map.html"><span>SIX REALMS</span><span class="t">THE WORLD</span></a>
+    <a class="item" href="ui-index.html"><span>CODEX</span><span class="t">THE VAULT</span></a>
+    <a class="item" href="ui-index.html"><span>OPTIONS</span><span class="t">PLACEHOLDER</span></a>
+  </nav>
+</div>
+<a class="foot" href="ui-index.html" style="position:fixed;text-decoration:none;">INTERFACE BUILD 0.7 &bull; PRE-VISUAL</a>
+</body>
+</html>
