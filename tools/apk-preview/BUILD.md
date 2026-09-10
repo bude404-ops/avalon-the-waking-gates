@@ -27,3 +27,9 @@ APK ships as a GitHub Release asset on this repo (Base44 file storage blocks .ap
 - WORLD FAUNA 12/12 + WYVERN V2 + STAGE2 24/24 + X LOGO all canon-locked (see CANON-LOCKS.md)
 - THE TWELVE NAMED (Big: 'get them actual names based around their class and region and gender and then have what class they are'): docs/CHARACTER-NAMES.md — gallery now shows NAME + class line for all 12 heroes (Aedan/Seren Stormcrown — Sovereign of Skyrend, etc.)
 - versionCode 5 / versionName 0.5-test; same debug keystore (updates over v0.3/v0.4)
+
+## v0.6 (Sept 9, Big's ask: view the live 3D model in the APK)
+- LIVE 3D MODELS menu item: model3d.html — three.js r147 (UMD build, offline in assets/vendor/) WebGL viewer, drag-rotate/pinch-zoom (OrbitControls), idle loop autoplay (AnimationMixer)
+- AEDAN-RIGGED-V3.glb bundled (models/): manual distance-based vertex binding (top-4 inv-sq over 20 bones) — bone-heat auto-weights fail silently on non-manifold AI meshes, which was the root cause of every frozen idle render
+- GLB probe-verified: weighted arm vertex deforms 1.9% body height at breathe peak; render diff 61K pixels between rest and peak frames
+- versionCode 6 / versionName 0.6-test; same debug keystore (updates over v0.5)
