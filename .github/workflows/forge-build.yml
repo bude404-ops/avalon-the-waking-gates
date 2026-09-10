@@ -55,7 +55,7 @@ jobs:
         run: |
           set +e
           CODE=127
-          UARGS="-batchmode -quit -logFile \"$GITHUB_WORKSPACE/unity-editor.log\" -projectPath \"$GITHUB_WORKSPACE/unity\" -executeMethod AvalonForge.Forge.Run -character \"${{ inputs.character }}\" -input \"Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx\" -height \"${{ inputs.height }}\""
+          UARGS="-batchmode -quit -logFile $GITHUB_WORKSPACE/unity-editor.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonForge.Forge.Run -character ${{ inputs.character }} -input Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx -height ${{ inputs.height }}"
           if command -v xvfb-run >/dev/null 2>&1; then
             xvfb-run -a /opt/unity/Editor/Unity $UARGS
             CODE=$?
