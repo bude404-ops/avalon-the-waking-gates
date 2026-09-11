@@ -27,6 +27,18 @@ The Reliquary is the ARCHETYPE of the Avalon Craft Grammar's LIGHT-WAITING HOOPS
 6. **SCALE** — one-hand carry, the bearer's burden. At god scale its motif repeats on megaliths and shrine crowns — the world remembers the shape of the thing that carried the flame.
 7. **HOLLOW INVERSION** — a dead reliquary renders the cage EMPTY and cold, glass dark. The absence IS the horror read.
 
+## THE PENDANT RELIQUARY (RAVENKIN'S NECK-VESSEL)
+
+Codified Sept 11 (Big's ruling, commit 1136a17): the Ravenkin carries THE RELIQUARY as a **pendant-sized unique vessel at the neck** — the archetype scaled down to its most intimate form.
+
+1. **PLACE** — worn at the Ravenkin's throat on a dark cord; the bearer and the vessel are never apart.
+2. **CHARGE** — it holds the deities' essence of belief (the quiet half of the Luminary's story: the flame entrusted, the gods remembered).
+3. **GLOW** — it radiates the deity essence color as the players' radiant light (cross-ref Reliquary-Region Aura Law: storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
+4. **FORM** — First Crafts miniatures of the archetype grammar: lash-plate cage, knotwork + gate-rune crown, smoke-glass heart chamber — all readable at pendant scale.
+5. **SILENCE** — the pendant never speaks, never explains; its glow IS the lore beat.
+
+In-game, ordinary lanterns stay what they are — the pendant is THE vessel's travel form; the hand-carried cage (vessel canon V1) is its resting form.
+
 ## ART QUEUE
 - RELIQUARY VESSEL CANON V1 (object piece, neutral cold staging) — rolled Sept 11, vaulted art/pending/RELIQUARY-VESSEL-CANON-V1.png, in Big's court
 - Any locked art whose lantern reads as THE vessel gets an audit pass on Big's word (class art shrine-lanterns = mortal props, stay).
