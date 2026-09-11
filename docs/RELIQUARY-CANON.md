@@ -17,7 +17,14 @@ Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliqua
 
 ## THE LANTERN BAN (Sept 11, Big: 'Well lanters need to be braziers or torches lanterns are too modern')
 
-- **Art audit queue (re-rolls on the ban):** Duskmourn Brazier-Ways world pieces (3) · Weaver brazier-staff weapon plate · Emberling LUMINARY-EMBERLING-LANTERN concepts (flame must appear in reliquary-form vessels, not lantern housings) · SCENE-GLOAMBARROW piece.
+- **Art audit queue (re-rolls on the ban) — ROLLED Sept 11 (Big: 'do a art sweep and reroll that art that needs fixed'), sent to Big's court, verdicts pending:**
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-WORLD-V3.png (waystation brazier road + torch pilgrims)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-V2.png (Gloam Warden at waystation brazier)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-V2.png (megalith avenue, votive brazier niches)
+  - WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit)
+  - LUMINARY-CANON-EMBERLING-V3.png + V4.png (flame in miniature reliquary-form vessels only)
+  - SCENE-GLOAMBARROW-BRAZIERLEDGER-V2.png (Brazierkeeper's ledger of grave-braziers)
+  Old lantern-showing pieces superseded on Keep; filenames above vaulted in art/pending/.
 - Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
 
 ## RENAMING LEDGER (repo-swept Sept 11)
