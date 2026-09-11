@@ -9,7 +9,7 @@ A single island continent, six realms around a central volcanic heartland:
 - **Northwest highlands — SKYREND** (storm crags, bell towers, the Vanes). Gate: **the Squall Gate** on the highest plateau.
 - **Central heartland — ASHFALL** (ash forest, cinder badlands around the great dormant volcano). Gate: **the Cinder Gate** on the far ridge. Settlements: Forgefall, Emberhollow, Kilnreach.
 - **Southern forests — EVERBLOOM** (ancient bloom forest, harvest orchards). Gate: **the Bloom Gate** in the sacred grove. Settlements: Seedkeep, Evenhand's Arbor.
-- **Northeast downs — DUSKMOURN** (barrow-downs, standing stones, lantern shrines). Gate: **the Dusk Gate**, half-sunk in mist.
+- **Northeast downs — DUSKMOURN** (barrow-downs, standing stones, brazier shrines). Gate: **the Dusk Gate**, half-sunk in mist.
 - **West coast — MARENTH** (sea-cliffs, port, sacred lakes, drowned ruins). Gate: **the Deep Gate**, half-submerged in the bay. Settlement: Ashport.
 - **Eastern highlands — STONEHEART** (bedrock strata, monolith fields, quarry canyons, the petrified Rootspine). Gate: **the Stone Gate**, carved into a cliff face. Sites: Rootspine, the Quakeveins.
 
@@ -22,8 +22,8 @@ Pilgrim-scale world art: each realm keyshot = terrain identity + settlement cult
 1. KEY-ASHFALL — ash-fall forest, kiln village (forge halls + smoke), cinder roads, ember dusk.
 2. KEY-SKYREND — storm crags, bell towers + wind-vanes, streaming cloud, storm slate lightning.
 3. KEY-EVERBLOOM — colossal bloom trees, terraced harvest fields, timber long-halls, deep moss dusk.
-4. KEY-DUSKMOURN — barrow mounds, lantern shrines in fog, crimson twilight.
-5. KEY-MARENTH — port town + lantern harbor, sacred lake, sea-stacks + drowned ruins, pearl-teal dusk.
+4. KEY-DUSKMOURN — barrow mounds, brazier shrines in fog, crimson twilight.
+5. KEY-MARENTH — port town + brazier harbor, sacred lake, sea-stacks + drowned ruins, pearl-teal dusk.
 6. KEY-STONEHEART — strata highlands, monolith grids, quarry terraces, petrified Rootspine, pale dawn.
 
 ## THE DEPTHS (dungeon reference — SHEET-DEPTHS-DUNGEONS-6-v1.jpg)
@@ -33,7 +33,7 @@ Procedural god-dream dungeons (Gate Cycle endgame tie-in). Doctrine: the Depths 
 1. DEPTHS-ASHFALL — fever-magma cavern-cathedral, dripping basalt forge ruins, too-gold sick light.
 2. DEPTHS-SKYREND — hollow thunder-cloud cavern, silent frozen storm-bells, suspended rain.
 3. DEPTHS-EVERBLOOM — fever-garden rot, over-bright bloom vines swallowing temple ruins, pollen snow.
-4. DEPTHS-DUSKMOURN — black catacombs of barrow-shelves, thousand sick-bright crimson votive lanterns, breathing mist.
+4. DEPTHS-DUSKMOURN — black catacombs of barrow-shelves, thousand sick-bright crimson votive braziers, breathing mist.
 5. DEPTHS-MARENTH — drowned sacred halls, luminous still water, mirror-fish swimming through air.
 6. DEPTHS-STONEHEART — quake-cracked strata cavern, sick geode light, abandoned vow-stone workshops.
 
@@ -41,5 +41,5 @@ Procedural god-dream dungeons (Gate Cycle endgame tie-in). Doctrine: the Depths 
 - Painterly LOTR-cinematic grammar, same hand as the vault.
 - Zero text/labels in art — names live in this doc.
 - Gates: rugged weathered megalithic stone, zero glow on the stone, faint element light DEEP INSIDE the arch (the flame carries the color).
-- Pilgrim anchors: tiny hooded figures with lanterns — scale and mood.
+- Pilgrim anchors: tiny hooded figures with torches — scale and mood.
 - Feed-the-contrast: living realm = colored; the Depths = colored-and-sick; the Hollow = gray-and-gone.

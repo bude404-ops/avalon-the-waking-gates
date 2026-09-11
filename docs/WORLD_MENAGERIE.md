@@ -15,7 +15,7 @@ The Hollow reads by contrast. The warmer, more alive, more COLORED the world is,
 ## I. ELEMENT-FAUNA (the wild — ambience, traversal, omens)
 Small, regional, subtle-tell. The texture of a realm; also dungeon traversal partners and environmental lore.
 - **ASHFALL:** cinderfox (ember-tipped tail, dens near warm ground — a fox sunning on cold stone means a fever-shed vent below); kiln-salamanders (live in forge-cracks; a town's fortune reads in its salamander count — kiln-tenders feed them by hand); ashmoles (surface when the ground god dreams restlessly — surfacing swarms = omen); thistledeer (canon, bestiary).
-- **SKYREND:** storm-swallows (ride the squall-lines; grounded flocks = storm coming or worse); **bell-kites** (roost ONLY in ringing storm-bells — a silent bell-tower means no kites, and no kites means something silenced the bells: the world's Hollow early-warning, no text needed); static-beetles (harmless charge-flickers; your lantern sparks near fracture-lines because beetles flee them).
+- **SKYREND:** storm-swallows (ride the squall-lines; grounded flocks = storm coming or worse); **bell-kites** (roost ONLY in ringing storm-bells — a silent bell-tower means no kites, and no kites means something silenced the bells: the world's Hollow early-warning, no text needed); static-beetles (harmless charge-flickers; your torch sparks near fracture-lines because beetles flee them).
 - **EVERBLOOM:** bloomdeer (antler-blossoms open with the season — poachers sell the horns; a poacher subplot writes itself); moss-harts; seed-finches (chain-nest in orchard terraces — their abandoned nests mark old harvest debts).
 - **DUSKMOURN:** grave-moths (drawn to grave-braziers; grave-keepers read omens in their flight — a moth that won't land is doctrine: the grave it circles holds a lie); dusk-cats; wisp-toads (croak in unison, then all stop — when they stop, count your party).
 - **MARENTH:** tide-runners (crab-folk of the flats); pearl-fish (school in promise-patterns — old tide-readers forecast weather from their shapes); kelp-striders.
@@ -27,7 +27,7 @@ Canon already holds: dragons are world-fauna. Lore lock: **drakes are what the l
 - Per-realm: ember-drakes (kiln-cave broods), storm-drakes (squall-reef spires), bloom-drakes (grove-wyrms, moss-backed), dusk-drakes (barrow-gliders, silent), tide-drakes (reef-serpents), stone-drakes (crystal-horned, sleep for decades).
 
 ## III. WROUGHT WARDENS (human-craft constructs — the un-hollowable)
-Built by the First Pilgrims in the same Cinder Roads grammar as their armor: iron, ceramic, lanterns, bell-gear. No magic — MADE-ness is the whole engine (Erasure Line payoff: craft cannot be hollowed, and a made thing keeps its purpose forever).
+Built by the First Pilgrims in the same Cinder Roads grammar as their armor: iron, ceramic, braziers, bell-gear. No magic — MADE-ness is the whole engine (Erasure Line payoff: craft cannot be hollowed, and a made thing keeps its purpose forever).
 - They still keep vigils nobody assigned anymore: a road-warden still guarding a crossroads the town abandoned two centuries ago; a bell-construct still ringing hours for a town of ash; a gate-golem still demanding the old watchword.
 - **The image the doctrine buys:** a fully hollowed town where the ONLY thing still standing at its heart is the wrought warden, still on duty, surrounded by gray — because the Hollow could not touch it and could not make it stop. The loneliest made thing in the world. (Lore-through-sight, on the Master Law.)
 - Dungeon roles: rite-gate bosses (answer the old watchword = pass; fight = hard construct duel, armor STAYS = rich loot), puzzle partners (wardens that respond to rite-fragments learned in quests).
@@ -71,7 +71,7 @@ ART LAW — ELEMENT-FORMED HERALDS (BudE404 verdict, Sept 5 2026): heralds rende
 
 ## VIII. THE LUMINARY LINE (pets — canon)
 
-Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the reliquary it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/storm slate/deep moss/crimson/pearl-teal/geode) + lantern attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs reliquary-donned = visible badge of progress.
+Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the reliquary it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/storm slate/deep moss/crimson/pearl-teal/geode) + reliquary attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs reliquary-donned = visible badge of progress.
 
 ART LAW — ELEMENT-FORMED LUMINARIES (BudE404 verdict, Sept 5 2026): a Luminary is formed ENTIRELY of its element — glowing elemental skin with crack/mote texture, hair and wings of pure element, drift-motes at the edges — the same element-wearing-the-being grammar as the heralds and colossi. Faction reskins change the element itself (fire / lightning / bloom-light / mist / water / crystal). The worn bronze lantern stays human-craft — the relic contrast is the point: made thing, named flame.
 

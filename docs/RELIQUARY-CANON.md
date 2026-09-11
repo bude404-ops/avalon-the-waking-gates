@@ -9,17 +9,6 @@ The vessel is henceforth **THE RELIQUARY** everywhere — art, quests, lore, UI,
 | **THE RELIQUARY** | THE vessel — the one true mortal-craft reliquary that holds the Luminary. Formerly "the Lantern." |
 | **THE LUMINARY** | The living flame — the true RELIC. It consents; it alights of its own will; it cannot be crafted or looted, only entrusted. |
 | **Braziers & torches** (ordinary) | Lesser mortal fire-holders — grave-braziers, waystation braziers, Brazierhush niches, carried torches. They hold mere fire, never the relic. Lore contrast: a thousand braziers and torches in the world, ONE Reliquary. |
-
-## THE LANTERN BAN (Sept 11 2026, Big: "lanterns need to be braziers or torches — lanterns are too modern")
-
-The closed glass-cage LANTERN is a MODERN object and does not exist in the primordial world. Repo-wide re-cast (Sept 11 sweep):
-
-- **FIXED fire** (shrines, niches, waystations, grave-sites, town posts) → **BRAZIERS**
-- **CARRIED fire** (processions, vigils, escorts, travel) → **TORCHES**
-- **THE RELIQUARY IS EXEMPT** — it is not a lantern; it is the one mortal cage-vessel archetype (the form the world remembers). The Pendant Reliquary likewise. The ban does NOT touch the Reliquary's cage form, the Luminary, or any relic art.
-- **Naming re-casts:** Lanternhush → **Brazierhush** · Lantern-Ways → **Brazier-Ways** · LANTERN-JUDGE → **BRAZIER-JUDGE** · Lampkeeper → **Brazierkeeper** · Lamplighter Aune → **Flamekeeper Aune** · GLOAMLAMP sprite → **GLOAMFLAME** · Senneth's Lantern Staff → **Brazier Staff** · Weaver's kit prop → **brazier-staff** · LANTERN/LANTERN-ARC/LANTERN-WARD/WAKING LANTERN abilities → RELIQUARY versions · Lantern-plate armor → **Brazier-plate** · the Unlit Lantern endgame motif → **THE UNLIT RELIQUARY**.
-- **Art audit queue (re-rolls on the ban):** Duskmourn Brazier-Ways world pieces (3) · Weaver brazier-staff weapon plate · Emberling LUMINARY-EMBERLING-LANTERN concepts (flame must appear in reliquary-form vessels, not lantern housings) · SCENE-GLOAMBARROW piece.
-- Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
 | **Hollow vessels** | Dead reliquaries — flame gone, rendered completely unlit. |
 
 Law line (unchanged, now under the true name): **THE FLAME IS NEVER SEEN UNVESSELLED.**
@@ -27,6 +16,11 @@ Law line (unchanged, now under the true name): **THE FLAME IS NEVER SEEN UNVESSE
 Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliquary-Region Aura Law (was Lantern-Region Aura; the Luminary's glow renders the region aura color) · Cold Reliquary (was Cold Lantern, the mission design test) · CLASS TREE — RELIQUARY (lineage Keeper tree) · dead-reliquary dark (Hollow sites).
 
 ## THE LANTERN BAN (Sept 11, Big: 'Well lanters need to be braziers or torches lanterns are too modern')
+
+- **Art audit queue (re-rolls on the ban):** Duskmourn Brazier-Ways world pieces (3) · Weaver brazier-staff weapon plate · Emberling LUMINARY-EMBERLING-LANTERN concepts (flame must appear in reliquary-form vessels, not lantern housings) · SCENE-GLOAMBARROW piece.
+- Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
+
+## RENAMING LEDGER (repo-swept Sept 11)
 
 Lanterns DO NOT EXIST in the world of Avalon — the closed glass-cage lantern reads as a modern object and is banned from all art, lore, scripts, dialog, and props. The re-cast:
 
@@ -68,7 +62,7 @@ Codified Sept 11 (Big's ruling, commit 1136a17): the Ravenkin carries THE RELIQU
 4. **FORM** — First Crafts miniatures of the archetype grammar: lash-plate cage, knotwork + gate-rune crown, smoke-glass heart chamber — all readable at pendant scale.
 5. **SILENCE** — the pendant never speaks, never explains; its glow IS the lore beat.
 
-In-game, ordinary lanterns stay what they are — the pendant is THE vessel's travel form; the hand-carried cage (vessel canon V1) is its resting form.
+Under the Lantern Ban the world's fire props are braziers and torches; the pendant is THE vessel's travel form; the hand-carried cage (vessel canon V1) is its resting form.
 
 ## ART QUEUE
 - RELIQUARY VESSEL CANON V1 (object piece, neutral cold staging) — rolled Sept 11, vaulted art/pending/RELIQUARY-VESSEL-CANON-V1.png, DELIVERED to Big's DM Sept 11 with the pendant set
@@ -78,7 +72,7 @@ In-game, ordinary lanterns stay what they are — the pendant is THE vessel's tr
 
 ## CODE / UI SWEEP (Sept 11 audit)
 - unity/Assets/AvalonShell/Shell.cs HUD relic widget still reads "THE LANTERN — UNLIT" — rename to "THE RELIQUARY — UNLIT" on next shell build (queued with v113+; cosmetic string, no install gate).
-- Weaver brazier-staff (weapon plates V1/V2, pending) stays an ORDINARY LANTERN per the law (lesser mortal vessel, rendered unlit) — no re-roll needed unless Big wants it relic-read.
+- Weaver brazier-staff (weapon plates V1/V2, pending) = lawful fire prop under the Lantern Ban (brazier-cage head, rendered unlit) — re-rolled from the lantern-staff read.
 - STAGE2 Duskmourn "Brazier-Ways" location name + art = lawful ordinary lanterns (waystation line of grave-braziers, NOT THE vessel) — stays.
 - Emberling concept pieces (art/concepts/sacred-heralds/LUMINARY-CANON-EMBERLING-LANTERN v1/v2) predate the Reliquary Law and show the flame carried in plain lantern housings — flag for audit re-roll on Big's word (the flame must be seen only in reliquary-form vessels).
 - Teaser v1/v2 + SHOT2-LANTERN superseded by teaser v3 (already reliquary-language).

@@ -8,7 +8,7 @@ Per the UNITY-ONLY TOOL LAW: every 3D asset comes from **Unity built-ins + Asset
 3. **Armor pass** — modular Celtic-bronze pieces matched to the canon key (solid closed breastplate, high collar, sleeveless arms, kilt panels, torc, cloak).
 4. **Material pass** — muted desaturated bronze palette; ONE whisper accent per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss); weathering on gear, never on faces (Female Face Law).
 5. **Hair pass** — class hairstyle signature (HAIRSTYLE-TO-CLASS LAW): Sovereign braided crown-lock w/ bronze rings, Ravager war-shaved + braided top-knot, Warden cropped/pinned plaits, Veilborn long straight half-covering, Weaver unbound w/ cord-strands + beads, Wildborn matted dreads w/ moss.
-6. **Weapon pass** — kit-integrity: exactly ONE signature kit, no extras (Spear / Greatsword / Warhammer / Twin leaf-blades / Staff w/ UNLIT lantern housing / Claw gauntlets).
+6. **Weapon pass** — kit-integrity: exactly ONE signature kit, no extras (Spear / Greatsword / Warhammer / Twin leaf-blades / Staff w/ UNLIT brazier housing / Claw gauntlets).
 7. **QC GATE** — side-by-side against canon key + ref sheet before it ships. Any mismatch = rework, never "close enough."
 
 ## BODY LAW STACK (applies to all 12)
@@ -64,7 +64,7 @@ QC GATE ADDITION: before any plate ships, its chestplate treatment must be unmis
 
 ## WEAPON PROP REFERENCE PLATES — V1 (Sept 9, Big: 'we need to make the weapons 3d reference sheets aswell with same view and only one model of it so its visually read')
 
-Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-GEN discipline as the class plates, each class's kit rendered as a single readable model (Veilborn's twin leaf-blades = one blade; Wildborn's paired claw gauntlets = one gauntlet). Zero script (knotwork/spiral patterns only, rune-law compliant), unlit Weaver lantern (Reliquary Law), quiet realm-accent whisper per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
+Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-GEN discipline as the class plates, each class's kit rendered as a single readable model (Veilborn's twin leaf-blades = one blade; Wildborn's paired claw gauntlets = one gauntlet). Zero script (knotwork/spiral patterns only, rune-law compliant), unlit Weaver brazier-cage (Reliquary Law), quiet realm-accent whisper per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
 
 | Class | Weapon prop | Plate (pending verdict) |
 |---|---|---|
@@ -72,13 +72,13 @@ Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-G
 | Ravager | massive battered greatsword (engraved dark iron, bronze crossguard, disc pommel) | art/pending/REF-SHEET-WEAPON-RAVAGER-V1.png |
 | Warden | heavy banded-bronze warhammer (knotwork faces, cord-wrapped haft) | art/pending/REF-SHEET-WEAPON-WARDEN-V1.png |
 | Veilborn | single leaf-blade dagger (dark bronze, cord grip, antler pommel) — twin kit, one model | art/pending/REF-SHEET-WEAPON-VEILBORN-V1.png |
-| Weaver | gnarled brazier-staff (twisted branch, round bronze lantern cage, unlit) | art/pending/REF-SHEET-WEAPON-WEAVER-V1.png |
+| Weaver | gnarled brazier-staff (twisted branch, round bronze brazier-cage, unlit) | art/pending/REF-SHEET-WEAPON-WEAVER-V1.png |
 | Wildborn | single claw gauntlet (four curved iron claws over bronze-and-hide plate) — paired kit, one model | art/pending/REF-SHEET-WEAPON-WILDBORN-V1.png |
 
 P-hash QC: min hamming 28/256 across the set (Weaver V1 first roll was a near-dupe of the Sovereign spear at 8/256 — re-rolled with the twisted-branch silhouette; superseded roll not vaulted). Verdicts pending — on Keep, each plate becomes the modeling/QC reference for its Unity weapon prop.
 
 ## WEAPON PROP REFERENCE SHEETS — V1 (Sept 9, Big: 'make the weapons 3d reference sheets aswell with same view and only one model of it so its visually read')
-Per the V2 Weaponless Plate Law (character plates carry zero weapons), each class kit's weapon now gets its OWN single-model 404-GEN Stage B plate: one weapon per plate, consistent side-profile view, neutral grey studio grade, flat lighting, Mythic Celtic craft grammar (bronze/dark iron, La Tène knotwork patterns, cord/leather/bone), realm accent whisper, unlit lanterns (Weaver staff), zero script. Rolled V1 (art/pending/REF-SHEET-WEAPON-*-V1.png), p-hash verified unique (all 6): Sovereign leaf-blade spear / Ravager greatsword / Warden warhammer / Veilborn leaf-blade dagger (twin kit = identical pair, single model shown) / Weaver brazier-staff / Wildborn claw gauntlet (pair = identical, single model shown). Pending Big's verdicts.
+Per the V2 Weaponless Plate Law (character plates carry zero weapons), each class kit's weapon now gets its OWN single-model 404-GEN Stage B plate: one weapon per plate, consistent side-profile view, neutral grey studio grade, flat lighting, Mythic Celtic craft grammar (bronze/dark iron, La Tène knotwork patterns, cord/leather/bone), realm accent whisper, unlit braziers (Weaver staff), zero script. Rolled V1 (art/pending/REF-SHEET-WEAPON-*-V1.png), p-hash verified unique (all 6): Sovereign leaf-blade spear / Ravager greatsword / Warden warhammer / Veilborn leaf-blade dagger (twin kit = identical pair, single model shown) / Weaver brazier-staff / Wildborn claw gauntlet (pair = identical, single model shown). Pending Big's verdicts.
 
 ## WEAPON PROP REFERENCE PLATES — V2 (Sept 9, Big: 'Weapon need to be in same art style I believe and make so it will be proper sizes for the characters when we attach')
 
@@ -98,7 +98,7 @@ V1 superseded (studio-product-shot style + no scale read). V2 re-rolls fix both:
 | Ravager | art/pending/REF-SHEET-WEAPON-RAVAGER-V2.png |
 | Warden | art/pending/REF-SHEET-WEAPON-WARDEN-V2.png |
 | Veilborn | art/pending/REF-SHEET-WEAPON-VEILBORN-V2.png (horizontal lay) |
-| Weaver | art/pending/REF-SHEET-WEAPON-WEAVER-V2.png (horizontal lay, big cage lantern) |
+| Weaver | art/pending/REF-SHEET-WEAPON-WEAVER-V2.png (horizontal lay, big cage brazier) |
 | Wildborn | art/pending/REF-SHEET-WEAPON-WILDBORN-V2.png |
 
 QC: uniform light-neutral backgrounds across the set (matching character plates); shape-IoU check confirms distinct weapon silhouettes (upright trio shares only the standing scale-figure by design); tall-pole pair (spear/staff) broken by laying the staff horizontal. V1 preserved in git history.

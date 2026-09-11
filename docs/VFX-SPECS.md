@@ -8,14 +8,14 @@
 
 ## Aedan Stormcrown (Sovereign, Skyrend) — flagship VFX set
 1. AURA: faint slate-grey shimmer on armor edges at low health/rage — shader: fresnel edge glow, storm-slate, 0.15 intensity floor.
-2. LANTERN GLOW: his belt-lantern (prop, attach-time) emits the only warm-point light — slate, not gold.
+2. BRAZIER GLOW: his belt-brazier (prop, attach-time) emits the only warm-point light — slate, not gold.
 3. SKILL VFX (Sovereign = command/storm): rally banner-call (knotwork ring pulse at feet), spear-strike (slate arc trail, no glow particles), crown-lock hair wisps pick up ambient static in storms.
 4. WEATHER TIE: in Skyrend scenes, his cloak responds to storm wind (cloth sim, subtle).
 
 ## Per-class effect grammar (for the remaining Eleven — rolled after rigging standard locks)
 - Ravager/Ashfall: oxide-red ember drift on weapon impacts, ash kick-up.
 - Warden/Stoneheart: bone-grey dust shockwaves, glyph-carve ground rings.
-- Veilborn/Duskmourn: crimson mist step-trail, lantern light dies where he walks (Reliquary Law inverse — Hollow adjacency).
+- Veilborn/Duskmourn: crimson mist step-trail, brazier light dies where he walks (Reliquary Law inverse — Hollow adjacency).
 - Weaver/Marenth: tide-teal thread ribbons on casts, wet-sheen reflections.
 - Wildborn/Everbloom: deep-moss spore motes, foliage regrowth footprint (anti-grind: cosmetic only).
 

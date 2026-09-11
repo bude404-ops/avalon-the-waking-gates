@@ -147,7 +147,7 @@ The world is MYTH, and every environment renders at myth tier. Governs all world
 1. **NEVER SIMPLE VILLAGES.** No plain medieval hamlets, no generic rustic cottages, no ordinary farmland staging. Human settlements are MYTHIC BUILDERS: megalithic city-terraces, carved-stone halls with knotwork lintels, bronze-doored hillforts fused into the living rock, standing-stone avenues, timber longhalls raised on carved god-pillars.
 2. **MAGIC AND THE EXTRAORDINARY.** Every scene carries wonder: floating stone, relic-lit shrines, god-scale monuments, gates that breathe, terrain that remembers the gods (chisel-signature everywhere — the world reads as shaped by dead gods). Environment laws hold: realm-native palettes, three-tier world doctrine, Arthurian-period craft at the MORTAL level but staged mythically.
 3. **SETTLEMENT = CIVILIZATION AGAINST MYTH.** Human craft (Mythic Celtic Human Style) is real but always dwarfed and framed by the primordial world — torch-warm tiny human light inside cold god-scale stone.
-4. **TWO-LAYER LIGHT HOLDS.** Cold desaturated world; warm light only from human/relic sources. Never bright, never flat.
+4. **TWO-LAYER LIGHT HOLDS.** Cold desaturated world; rich light only from the three lawful families — relic (the Reliquary), mortal fire (braziers/torches), and world magic light (runes, crystals, glyph-light; Magic-Light Sources Law). Never bright, never flat.
 5. Carved World style, chisel signature, rune law, environment-typing — all unchanged and enforced.
 
 Applies to the STAGE2 24-realm scene pass (rolls after the 12-model class set completes).

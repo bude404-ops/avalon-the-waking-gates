@@ -76,7 +76,7 @@ Faith · relics · progression · world-state · gate integrity · anything affe
 ## Each pet = an elemental Luminary that lights the character in dungeons; it levels for a brighter aura; reskins monetize.
 
 ### The concept
-The Emberlings are now **elemental Luminarys** — tiny kin of your deity's own element, drawn to the Warden like moths to a god's flame. Their signature role: **THE LIVING LANTERN** — your light companion in the dark places (death crypts, the Ember Depths, night regions).
+The Emberlings are now **elemental Luminarys** — tiny kin of your deity's own element, drawn to the Warden like moths to a god's flame. Their signature role: **THE LIVING FLAME** — your light companion in the dark places (death crypts, the Ember Depths, night regions).
 
 ### The leveling ruling (the part that protects the anti-grind doctrine)
 **Brightness is EARNED through deeds, never bought, never farmed.** The Luminary has 5 LIGHT TIERS — and it feeds on your deeds, not on pet-XP: discoveries found, rescues completed, hunts won, verdict waves survived. No pet-XP bar exists; the Luminary simply glows brighter as your legend grows. Lore-perfect: belief is what burns in Mythos — your deeds are literally its fuel. The tiers CAP — no infinite pet grind, ever.

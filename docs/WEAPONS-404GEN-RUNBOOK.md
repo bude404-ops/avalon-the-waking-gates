@@ -52,8 +52,8 @@ friendly, PBR textures
 ```
 3D game asset: mythic Celtic ritual staff, tall gnarled dark wood with natural
 twists, bronze collar rings engraved with knotwork spirals, cord lashings with
-small bronze beads, empty unlit iron lantern cradle mounted at the top with dark
-cold glass, lantern completely unlit, weathered ancient wood and bronze, cold
+small bronze beads, empty unlit iron brazier-cradle mounted at the top with dark
+cold glass, brazier completely unlit, weathered ancient wood and bronze, cold
 desaturated palette, single staff only, no flame no glow, no extra parts, no
 script or runes, low-poly friendly, PBR textures
 ```
