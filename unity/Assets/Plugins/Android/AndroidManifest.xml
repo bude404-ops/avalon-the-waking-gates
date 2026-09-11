@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- AVALON permissions-only overlay.
-     DO NOT declare any <activity> here — Unity 6's gradle plugin disables its stock
-     launcher whenever the custom main manifest declares one (even the stock name),
-     which shipped an APK with android:enabled="false" and no homescreen icon (v107-v109).
-     Unity injects a working MAIN/LAUNCHER UnityPlayerActivity itself when the
-     custom manifest stays out of the <application> node. -->
+<!-- AVALON v111 launcher manifest — UNITY 6 PATTERN (fixes the v107-v110 ghost-install war).
+     Empirical record:
+     - v110 permissions-only overlay: Unity 6 warns "Unable to find Unity activity in manifest",
+       injects NOTHING -> APK shipped with ZERO <activity> nodes (no icon, no Open button).
+     - v108/v109 custom activity + tools:replace / Java plugin: post-processor disabled them.
+     THE FIX: declare the EXACT Unity 6 stock launcher name UnityPlayerGameActivity (present in
+     classes.dex; Unity 5's UnityPlayerActivity does NOT exist in Unity 6 builds). When Unity's
+     post-processor finds the stock-named activity in the custom main manifest it configures and
+     enables it instead of fighting it. CI additionally re-verifies the built binary and patches
+     it deterministically if Unity still misbehaves (see forge-build.yml "Launcher guarantee"). -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
     <uses-feature android:glEsVersion="0x00030000" />
     <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <application>
+        <activity android:name="com.unity3d.player.UnityPlayerGameActivity"
+                  android:label="AVALON"
+                  android:exported="true"
+                  android:launchMode="singleTask"
+                  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+                  android:resizeableActivity="false">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+        </activity>
+    </application>
 </manifest>
