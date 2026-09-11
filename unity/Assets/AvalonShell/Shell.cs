@@ -277,7 +277,7 @@ namespace AvalonShell
                 b.onClick.AddListener(() => SelectCard(captured));
             }
 
-            var enter = Btn(p.transform, "ENTER THE GATES", 14);
+            var enter = Btn(p.transform, "BEGIN THE WAKENING", 14);
             var ert = enter.transform as RectTransform;
             ert.anchorMin = new Vector2(0.5f, 0.08f); ert.anchorMax = new Vector2(0.5f, 0.08f);
             ert.sizeDelta = new Vector2(240, 48);

@@ -24,7 +24,7 @@ is the living mock — every screen below is staged there as the pipeline ships 
   Sovereign→Skyrend, Ravager→Ashfall, Warden→Stoneheart, Veilborn→Duskmourn, Weaver→Marenth, Wildborn→Everbloom.
 - Live model on the Unity stage behind the cards; card tap swaps the model instantly.
 - Selected card reads bronze-tinted.
-- ENTER THE GATES → In-Game view.
+- BEGIN THE WAKENING → In-Game view (Big's button ruling, Sept 11: the Character Select button reads BEGIN THE WAKENING).
 
 ### 3. In-Game HUD
 - **Top-left crest:** class name (cream) + LEVEL line + realm.
