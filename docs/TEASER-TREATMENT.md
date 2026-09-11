@@ -49,3 +49,14 @@ The old gods sleep in the land itself. One flame answers them.
 - SB-04 six silhouettes on storm ridge (SPECTACLE)
 - SB-05 traveler before the sealed gate (BREATH)
 - SB-06 the seam cracks (CLOSE)
+
+---
+
+## v2 REVISION (Sept 11, 2026 — Big's verdict on v1)
+Verdict: "too fast and zooms into the artwork so everything looks wonky, the script is cheesy, the voice still sounds off."
+Fixes codified:
+1. PACING LAW — 61s -> 79s; every beat holds 20-30% longer; fades breathe.
+2. ZOOM LAW — sources pre-cropped to 2.39:1 BEFORE zoompan (v1 squashed square art = distortion); 2x lanczos upscale first; zoom capped at 1.06, drift-led (pan >> zoom). The god-reveal beat uses the real-motion clip (slowed 5.0->9.2s) instead of a zoom.
+3. SCRIPT v2 — "Before kingdoms, there was the mountain." / "The world forgot what it buried." / (whisper, over black) "The lantern remembers."
+4. VOICE v2 — Andrew Neural, -10% rate, low-end EQ + cold hall reverb; whisper line deeper space (-18% rate).
+New runtime 79s. Master: teaser/AVALON-TEASER-v2.mp4.
