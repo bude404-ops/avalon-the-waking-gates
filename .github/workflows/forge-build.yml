@@ -177,6 +177,15 @@ jobs:
             (cd /tmp && unzip -q -o bt.zip -d bt)
             APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
           fi
+          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
+          if [ -z "$JAVACAND" ]; then
+            echo "no JVM found - downloading temurin 17 JRE"
+            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
+            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
+            JAVACAND=/tmp/jre/bin/java
+          fi
+          export PATH="$(dirname "$JAVACAND"):$PATH"
+          echo "java: $(which java || echo missing)"
           echo "apksigner: $APKS"
           APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
           [ -f "$APK" ] || { echo "no apk"; exit 1; }
@@ -206,6 +215,15 @@ jobs:
             (cd /tmp && unzip -q -o bt.zip -d bt)
             APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
           fi
+          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
+          if [ -z "$JAVACAND" ]; then
+            echo "no JVM found - downloading temurin 17 JRE"
+            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
+            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
+            JAVACAND=/tmp/jre/bin/java
+          fi
+          export PATH="$(dirname "$JAVACAND"):$PATH"
+          echo "java: $(which java || echo missing)"
           echo "apksigner: $APKS"
           APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
           "$APKS" sign \
