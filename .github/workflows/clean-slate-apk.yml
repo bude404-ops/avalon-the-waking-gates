@@ -64,14 +64,22 @@ jobs:
           export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}
           export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}
           set +e
-          xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit -logFile $GITHUB_WORKSPACE/bare-build.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonShell.BareBuild.Run
+          ls -la /opt/unity/Editor/Unity || echo "UNITY BINARY MISSING"
+          xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit -logFile $GITHUB_WORKSPACE/bare-build.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonShell.BareBuild.Run 2>/tmp/unity-stderr.log
           CODE=$?
           set -e
           echo "BARE BUILD EXIT: $CODE"
+          echo "=== unity stderr ==="
+          head -50 /tmp/unity-stderr.log || echo "(no stderr)"
+          echo "=== bare-build.log (all matches) ==="
+          grep -E "\[BARE\]|error CS|Exception" $GITHUB_WORKSPACE/bare-build.log | head -30 || true
+          echo "=== bare-build.log head (first 30 lines) ==="
+          head -30 $GITHUB_WORKSPACE/bare-build.log || echo "(no bare-build.log)"
+          echo "=== bare-build.log tail (last 60 lines) ==="
+          tail -60 $GITHUB_WORKSPACE/bare-build.log || echo "(no bare-build.log)"
+          echo "=== log file stats ==="
+          ls -la $GITHUB_WORKSPACE/bare-build.log || echo "(log file missing)"
           if [ "$CODE" -ne 0 ]; then
-            grep -E "\[BARE\]|error CS|Exception" $GITHUB_WORKSPACE/bare-build.log | head -30 || true
-            echo "=== bare-build.log tail (last 60 lines) ==="
-            tail -60 $GITHUB_WORKSPACE/bare-build.log || echo "(no bare-build.log)"
             exit 1
           fi
           ls -la $GITHUB_WORKSPACE/build/
