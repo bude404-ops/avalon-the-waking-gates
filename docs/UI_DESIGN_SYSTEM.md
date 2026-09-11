@@ -43,3 +43,14 @@ Camera: wide establishing, low hero portrait, profile, free orbit. Loaders say S
 
 ## CONTINUITY
 Characters → environments → creatures → architecture → weapons → effects → cinematics → gameplay. Equipment shown in UI must be the same geometry that swings in the field. New UI art follows the ART STYLE BIBLE fingerprint — same art department, same game.
+
+
+## TITLE MENU LAW v1 — LOCKED (Big, Sept 11 2026: 'The title menu i like and want that to be how ours will be')
+The approved canon plate is `art/approved/UI-MAIN-MENU-CANON.png`. The real title menu is built to this plate:
+- **Title block:** "AVALON" in engraved Celtic knotwork lettering, subtitle "THE WAKING GATES" beneath.
+- **Scene behind the menu:** the colossal megalithic Gate standing in cold storm-fog mountains, a processional stone path leading to it, amber braziers lining the path — the braziers are the ONLY warm light in frame (Fire-Color Law holds: natural amber-orange, never the region hue).
+- **Palette:** cold desaturated slate; the brazier flames are the single saturated source.
+- **Option list (lower third):** CONTINUE, NEW JOURNEY, GATES, SETTINGS — rendered as carved stone buttons with bronze knotwork borders; no modern flat-glass UI anywhere.
+- **Atmosphere:** mist drifts over the UI edges — the menu sits INSIDE the world, never floats on top of it (The One Rule).
+- **Orientation:** 9:16 portrait first (S22 Ultra is the reference device), horizontal reflow per the orientation law.
+This plate governs the actual Unity title menu build (scene layout, lighting, camera drift, button styling). The class-select and gameplay-HUD concept plates are NOT yet locked — verdicts pending.
