@@ -189,4 +189,6 @@ The light inside THE LANTERN (the Luminary — the one relic) renders in the COL
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 
+**RELIQUARY PENDANT (vessel form, Big, Sept 11 ~1:54 AM):** the lantern-vessel is a PENDANT-SIZED reliquary, unique (one-of-a-kind mortal craft), holding the ESSENCE OF BELIEF from the deities, worn hanging from the Ravenkin's neck — and its glow IS the radiant light for players, rendered in the deity's essence color per the region table above. Full law in docs/MYTHOS_NPC_ROSTER.md (THE RAVENKIN).
+
 TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the lantern) — the amendment: the lantern's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the lantern glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a lantern appears. Gods carry no lantern (zero craft) — god staging unaffected.
