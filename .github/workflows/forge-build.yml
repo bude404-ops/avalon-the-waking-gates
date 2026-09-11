@@ -169,7 +169,7 @@ jobs:
         run: |
           APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
           [ -f "$APK" ] || { echo "no apk"; exit 1; }
-          pip install -q androguard 2>/dev/null || pip3 install -q androguard
+          python3 -m pip install -q androguard 2>/dev/null || pip install -q androguard 2>/dev/null || pip3 install -q androguard 2>/dev/null || true
           if python3 tools/apk-preview/verify_launcher.py "$APK"; then
             echo "LAUNCHER PASS - shipping stock build"
           else
