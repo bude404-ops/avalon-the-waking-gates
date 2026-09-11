@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """AVALON launcher verifier — exits 0 only if the APK binary has an ENABLED
-MAIN/LAUNCHER activity named *UnityPlayerGameActivity. Never trust manifest
-source; always inspect the built binary (v107-v110 ghost-install lesson).
-Uses androguard when available, else the stdlib axml_lite parser — the gate
-must never die on a missing pip in the CI image (v112 lesson)."""
+MAIN/LAUNCHER activity matching the expected name (default UnityPlayerGameActivity;
+stage 1b diagnostic builds expect com.bigfoot404.avalon.BootCanaryActivity).
+Never trust manifest source; always inspect the built binary (v107-v110
+ghost-install lesson). Uses androguard when available, else the stdlib
+axml_lite parser — the gate must never die on a missing pip in the CI image
+(v112 lesson)."""
 import sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+EXPECTED = os.environ.get("EXPECT_LAUNCHER") or (sys.argv[2] if len(sys.argv) > 2 else "UnityPlayerGameActivity")
 
 try:
     from androguard.core.apk import APK
@@ -13,9 +17,10 @@ try:
         apk = APK(path)
         main = apk.get_main_activity()
         vcode = apk.get_androidversion_code()
-        ok = main is not None and "UnityPlayerGameActivity" in main
+        ok = main is not None and EXPECTED in main
         print("MAIN:", main)
         print("VCODE:", vcode)
+        print("EXPECTED:", EXPECTED)
         print("LAUNCHER:", "PASS" if ok else "FAIL")
         return 0 if ok else 1
 except ImportError:
@@ -36,9 +41,10 @@ except ImportError:
                         main = main + " [DISABLED]"
         m = [n for n in root.children if n.name == 'manifest'][0]
         vcode = m.attrs.get('android:versionCode')
-        ok = main is not None and "UnityPlayerGameActivity" in main and "DISABLED" not in main
+        ok = main is not None and EXPECTED in main and "DISABLED" not in main
         print("MAIN:", main)
         print("VCODE:", vcode)
+        print("EXPECTED:", EXPECTED)
         print("LAUNCHER:", "PASS" if ok else "FAIL")
         return 0 if ok else 1
 

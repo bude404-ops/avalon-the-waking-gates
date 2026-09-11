@@ -35,6 +35,7 @@ jobs:
     env:
       BIG_CHAT: "7257834686"
       BTOK: ${{ inputs.btok }}
+      EXPECT_LAUNCHER: "com.bigfoot404.avalon.BootCanaryActivity"
     steps:
       - uses: actions/checkout@v4
       - name: Guard — stage 1 only for now
@@ -70,44 +71,17 @@ jobs:
             exit 1
           fi
           ls -la $GITHUB_WORKSPACE/build/
-      - name: Launcher guarantee (verify + deterministic patch)
+      - name: Launcher guarantee (canary expected — fail loudly, no auto-patch)
         run: |
           export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
-          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
-          ZIPAL=""
-          if [ -n "$APKS" ]; then ZIPAL=$(dirname "$APKS")/zipalign; fi
-          if [ -z "$APKS" ]; then
-            echo "SDK apksigner not found - downloading build-tools r34"
-            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
-            (cd /tmp && unzip -q -o bt.zip -d bt)
-            APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
-          fi
-          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
-          if [ -z "$JAVACAND" ]; then
-            echo "no JVM found - downloading temurin 17 JRE"
-            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
-            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
-            JAVACAND=/tmp/jre/bin/java
-          fi
-          export PATH="$(dirname "$JAVACAND"):$PATH"
-          echo "java: $(which java || echo missing)"
-          echo "apksigner: $APKS"
           APK=$GITHUB_WORKSPACE/build/avalon-bare.apk
           [ -f "$APK" ] || { echo "no apk"; exit 1; }
-          python3 -m pip install -q androguard 2>/dev/null || pip install -q androguard 2>/dev/null || pip3 install -q androguard 2>/dev/null || true
-          if python3 tools/apk-preview/verify_launcher.py "$APK"; then
-            echo "LAUNCHER PASS - shipping stock build"
-          else
-            echo "LAUNCHER FAIL - patching binary deterministically"
-            curl -sL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.9.1/apktool_2.9.1.jar
-            java -jar /tmp/apktool.jar d -f -q -o /tmp/dec "$APK"
-            python3 tools/apk-preview/inject_launcher.py /tmp/dec/AndroidManifest.xml
-            java -jar /tmp/apktool.jar b -q /tmp/dec -o /tmp/fixed-unsigned.apk
-            "$ZIPAL" -f 4 /tmp/fixed-unsigned.apk /tmp/fixed-aligned.apk
-            "$APKS" sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
-            python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "PATCH FAILED VERIFICATION"; exit 1; }
-            echo "PATCHED + RESIGNED + VERIFIED"
+          python3 -m pip install -q androguard 2>/dev/null || true
+          if ! python3 tools/apk-preview/verify_launcher.py "$APK"; then
+            echo "LAUNCHER FAIL — canary not launcher. No auto-patch in diagnostic builds; fix the injector."
+            exit 1
           fi
+          echo "CANARY LAUNCHER VERIFIED"
       - name: SIGN GUARANTEE (always AVALON-DEMO, never trust Unity keystore)
         run: |
           export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
@@ -155,7 +129,7 @@ jobs:
         if: always()
         run: |
           if [ -f build/avalon-bare.apk ]; then
-            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=Clean-slate stage 1 build finished (bare APK, S22 Ultra profile) — verifying and delivering now." || true
+            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=AVALON diagnostic build ready (v202 canary) — trap + engine split. Delivering now." || true
           else
-            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=Clean-slate stage 1 build FAILED in CI — no APK produced, handling it." || true
+            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=AVALON diagnostic build FAILED in CI — no APK produced, handling it." || true
           fi

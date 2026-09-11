@@ -1,14 +1,17 @@
-// AVALON CLEAN-SLATE BUILD — stage 1: BARE
-// Empty scene (camera + light only), ZERO game code, ZERO custom manifest.
-// Device-locked profile: Samsung Galaxy S22 Ultra (SM-S908U) — Big's test bench.
-// Env overrides: AVALON_APK_OUT (path), AVALON_VCODE (bundleVersionCode), AVALON_KEYSTORE (repo AVALON-DEMO.keystore)
-// Layer plan (one layer added per build, Big tests each):
-//   stage 1 = bare   (this file)      stage 2 = + 3D scene
-//   stage 3 = + shell HUD             stage 4 = + self-updater
+// AVALON CLEAN-SLATE BUILD — stage 1b: BARE + BOOT CANARY (diagnostic)
+// Same bare scene as stage 1 (zero game code) but the launcher is a PURE JAVA
+// canary activity that: (1) proves the Android layer boots, (2) starts the
+// Unity engine on demand, (3) traps any Java crash and shows the stack on
+// screen for a screenshot, (4) infers native crashes via launch stamps.
+// Why: v201 bare APK crashed on launch on SM-S908U while the old Java-shell
+// APK ran fine → the fault is in the ENGINE layer; this build captures the
+// exact cause without logcat access.
 using System;
 using System.IO;
+using System.Text;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEditor.Build;
 using UnityEngine;
 
 namespace AvalonShell
@@ -63,5 +66,292 @@ namespace AvalonShell
                 EditorApplication.Exit(1);
             EditorApplication.Exit(0);
         }
+    }
+
+    // Injects the BootCanary source + launcher manifest patch into the gradle
+    // project after Unity generates it, before gradle assembles the APK.
+    public class CanaryInjector : IPostGenerateGradleAndroidProject
+    {
+        public int callbackOrder { get { return 1000; } }
+
+        public void OnPostGenerateGradleAndroidProject(string gradlePath)
+        {
+            string act = "com.unity3d.player.UnityPlayerGameActivity";
+
+            string[] manifests = Directory.GetFiles(gradlePath, "AndroidManifest.xml", SearchOption.AllDirectories);
+            foreach (var mf in manifests)
+            {
+                string xml = File.ReadAllText(mf);
+                if (!xml.Contains(act)) continue;
+
+                string patched = StripLauncherIntentFilter(xml, act);
+                patched = AddCanaryActivity(patched);
+
+                File.WriteAllText(mf, patched);
+                Debug.Log($"[CANARY] patched manifest: {mf}");
+
+                // drop the Java source into the module that owns the manifest (src/main/java)
+                string moduleMain = Directory.GetParent(mf).FullName; // .../src/main
+                string javaDir = Path.Combine(moduleMain, "java", "com", "bigfoot404", "avalon");
+                Directory.CreateDirectory(javaDir);
+                string javaPath = Path.Combine(javaDir, "BootCanaryActivity.java");
+                File.WriteAllText(javaPath, CanarySource);
+                Debug.Log($"[CANARY] injected: {javaPath}");
+            }
+        }
+
+        // Removes every <intent-filter> that contains android.intent.action.MAIN
+        // inside the <activity ...UnityPlayerGameActivity...> element.
+        private string StripLauncherIntentFilter(string xml, string activityName)
+        {
+            int aIdx = xml.IndexOf("android:name=\"" + activityName + "\"");
+            if (aIdx < 0) return xml;
+            int start = xml.LastIndexOf("<activity", aIdx, StringComparison.Ordinal);
+            int end = xml.IndexOf("</activity>", aIdx, StringComparison.Ordinal);
+            if (start < 0 || end < 0) return xml;
+            string head = xml.Substring(0, start);
+            string body = xml.Substring(start, end + "</activity>".Length - start);
+            string tail = xml.Substring(end + "</activity>".Length);
+
+            StringBuilder sb = new StringBuilder();
+            int i = 0;
+            while (true)
+            {
+                int f = body.IndexOf("<intent-filter", i, StringComparison.Ordinal);
+                if (f < 0) { sb.Append(body.Substring(i)); break; }
+                int fe = body.IndexOf("</intent-filter>", f, StringComparison.Ordinal);
+                if (fe < 0) { sb.Append(body.Substring(i)); break; }
+                string block = body.Substring(f, fe + "</intent-filter>".Length - f);
+                sb.Append(body.Substring(i, f - i));
+                if (!block.Contains("android.intent.action.MAIN"))
+                    sb.Append(block); // keep non-launcher filters
+                i = fe + "</intent-filter>".Length;
+            }
+            return head + sb.ToString() + tail;
+        }
+
+        private string AddCanaryActivity(string xml)
+        {
+            if (xml.Contains("BootCanaryActivity")) return xml;
+            string block =
+                "<activity android:name=\"com.bigfoot404.avalon.BootCanaryActivity\" " +
+                "android:exported=\"true\" " +
+                "android:theme=\"@android:style/Theme.Black.NoTitleBar.Fullscreen\" " +
+                "android:screenOrientation=\"fullSensor\">" +
+                "<intent-filter>" +
+                "<action android:name=\"android.intent.action.MAIN\"/>" +
+                "<category android:name=\"android.intent.category.LAUNCHER\"/>" +
+                "</intent-filter>" +
+                "</activity>";
+            int appEnd = xml.LastIndexOf("</application>");
+            if (appEnd < 0) return xml;
+            return xml.Substring(0, appEnd) + block + xml.Substring(appEnd);
+        }
+
+        private const string CanarySource = @"
+package com.bigfoot404.avalon;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.FileInputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class BootCanaryActivity extends Activity {
+    private static final String CRASH_FILE = ""unity-crash.txt"";
+    private static final String LAUNCH_FILE = ""unity-launch.txt"";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+            @Override public void uncaughtException(Thread t, Throwable e) {
+                try {
+                    File f = new File(getExternalFilesDir(null), CRASH_FILE);
+                    FileWriter w = new FileWriter(f, false);
+                    w.write(""TIME: "" + new Date() + ""\nTHREAD: "" + t + ""\n\n"");
+                    w.write(e.toString() + ""\n\n"");
+                    Throwable r = e;
+                    while (r != null) {
+                        for (StackTraceElement el : r.getStackTrace()) w.write(""    at "" + el + ""\n"");
+                        r = r.getCause();
+                        if (r != null) w.write(""CAUSED BY: "" + r + ""\n"");
+                    }
+                    w.close();
+                } catch (Throwable ignored) {}
+                try {
+                    Intent i = new Intent(BootCanaryActivity.this, BootCanaryActivity.class);
+                    i.putExtra(""show_crash"", true);
+                    i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(i);
+                } catch (Throwable ignored) {}
+                Runtime.getRuntime().exit(10);
+            }
+        });
+
+        if (getIntent() != null && getIntent().getBooleanExtra(""show_crash"", false)) {
+            setContentView(crashScreen());
+        } else {
+            setContentView(mainScreen());
+        }
+    }
+
+    private View mainScreen() {
+        LinearLayout root = panel();
+        root.addView(label(""AVALON"", 34, Color.WHITE, true));
+        root.addView(label(""BASE OK — Android layer healthy"", 17, 0xFF7CFC9B, true));
+        root.addView(label(deviceInfo(), 12, 0xFFAAAAAA, false));
+        root.addView(gap(28));
+        Button start = button(""START UNITY ENGINE →"");
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                writeStamp(LAUNCH_FILE);
+                try {
+                    Class<?> unity = Class.forName(""com.unity3d.player.UnityPlayerGameActivity"");
+                    Intent i = new Intent(BootCanaryActivity.this, unity);
+                    startActivity(i);
+                } catch (Throwable e) {
+                    statusScreen(""Could not even load the Unity activity class:\n\n"" + e);
+                }
+            }
+        });
+        root.addView(start);
+        root.addView(gap(12));
+        Button view = button(""VIEW LAST CRASH / STATUS"");
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) { setContentView(statusScreen()); }
+        });
+        root.addView(view);
+        root.addView(gap(20));
+        root.addView(label(""If the app dies after START, reopen it and tap VIEW LAST CRASH"", 11, 0xFF888888, false));
+        ScrollView sc = new ScrollView(this);
+        sc.setFillViewport(true);
+        sc.addView(root);
+        return sc;
+    }
+
+    private View crashScreen() {
+        LinearLayout root = panel();
+        root.addView(label(""UNITY CRASH CAPTURED"", 20, 0xFFFF6B6B, true));
+        root.addView(label(""SCREENSHOT THIS WHOLE SCREEN AND SEND IT TO THE BOT"", 13, Color.WHITE, true));
+        root.addView(gap(8));
+        String txt = read(CRASH_FILE, ""(no crash file text)"");
+        root.addView(label(txt, 11, 0xFFDDDDDD, false));
+        root.addView(gap(12));
+        Button back = button(""← BACK"");
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) { setContentView(mainScreen()); }
+        });
+        root.addView(back);
+        ScrollView sc = new ScrollView(this);
+        sc.setFillViewport(true);
+        sc.addView(root);
+        return sc;
+    }
+
+    private View statusScreen() { return statusScreen(null); }
+
+    private View statusScreen(String preface) {
+        LinearLayout root = panel();
+        if (preface != null) {
+            root.addView(label(preface, 14, 0xFFDDDDDD, false));
+            root.addView(gap(8));
+        }
+        String crash = read(CRASH_FILE, null);
+        if (crash != null) {
+            root.addView(label(""JAVA CRASH ON FILE:"", 16, 0xFFFF6B6B, true));
+            root.addView(gap(6));
+            root.addView(label(crash, 11, 0xFFDDDDDD, false));
+            root.addView(gap(6));
+            root.addView(label(""SCREENSHOT THIS AND SEND IT TO THE BOT"", 13, Color.WHITE, true));
+        } else {
+            String stamp = read(LAUNCH_FILE, null);
+            if (stamp != null) {
+                root.addView(label(""Unity was started at "" + stamp + "" and died with NO Java crash."", 15, 0xFFFFB84D, true));
+                root.addView(gap(6));
+                root.addView(label(""That means a NATIVE engine crash (libunity/libil2cpp). SCREENSHOT THIS AND SEND IT TO THE BOT."", 13, Color.WHITE, true));
+            } else {
+                root.addView(label(""No crash data yet. Tap START UNITY ENGINE and see what happens."", 14, 0xFFAAAAAA, false));
+            }
+        }
+        root.addView(gap(12));
+        Button back = button(""← BACK"");
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) { setContentView(mainScreen()); }
+        });
+        root.addView(back);
+        ScrollView sc = new ScrollView(this);
+        sc.setFillViewport(true);
+        sc.addView(root);
+        return sc;
+    }
+
+    // ---- helpers ----
+    private LinearLayout panel() {
+        LinearLayout p = new LinearLayout(this);
+        p.setOrientation(LinearLayout.VERTICAL);
+        p.setBackgroundColor(Color.rgb(8, 10, 14));
+        p.setPadding(40, 60, 40, 40);
+        return p;
+    }
+    private TextView label(String t, float sp, int color, boolean bold) {
+        TextView tv = new TextView(this);
+        tv.setText(t);
+        tv.setTextSize(sp);
+        tv.setTextColor(color);
+        if (bold) tv.setTypeface(Typeface.DEFAULT_BOLD);
+        tv.setLineSpacing(2f, 1f);
+        return tv;
+    }
+    private Button button(String t) {
+        Button b = new Button(this);
+        b.setText(t);
+        b.setTextSize(16);
+        return b;
+    }
+    private View gap(int px) {
+        View v = new View(this);
+        v.setLayoutParams(new LinearLayout.LayoutParams(1, px));
+        return v;
+    }
+    private String deviceInfo() {
+        String abi = Build.SUPPORTED_ABIS != null && Build.SUPPORTED_ABIS.length > 0 ? Build.SUPPORTED_ABIS[0] : ""?"";
+        return Build.MANUFACTURER + "" "" + Build.MODEL + "" — Android "" + Build.VERSION.RELEASE
+            + "" (API "" + Build.VERSION.SDK_INT + "")\n""
+            + ""ABI: "" + abi + "" | Device: "" + Build.DEVICE;
+    }
+    private void writeStamp(String name) {
+        try {
+            File f = new File(getExternalFilesDir(null), name);
+            FileWriter w = new FileWriter(f, false);
+            w.write(new SimpleDateFormat(""HH:mm:ss"").format(new Date()));
+            w.close();
+        } catch (Throwable ignored) {}
+    }
+    private String read(String name, String fallback) {
+        try {
+            File f = new File(getExternalFilesDir(null), name);
+            if (!f.exists()) return fallback;
+            byte[] b = new byte[(int) f.length()];
+            FileInputStream in = new FileInputStream(f);
+            int n = in.read(b);
+            in.close();
+            return new String(b, 0, n).trim();
+        } catch (Throwable t) { return fallback; }
+    }
+}
+";
     }
 }
