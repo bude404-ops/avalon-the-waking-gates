@@ -345,17 +345,17 @@ namespace AvalonShell
             var spLbl = Label(spBack.transform, "BELIEF", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             spLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); spLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); spLbl.rect().offsetMin = new Vector2(8, 0);
 
-            // HUD: quest tracker under the lantern
+            // HUD: quest tracker under the reliquary
             var quest = Panel(p.transform, "Quest", new Color(0.039f, 0.043f, 0.051f, 0.82f));
             quest.rect().anchorMin = new Vector2(0.62f, 0.885f); quest.rect().anchorMax = new Vector2(0.99f, 0.935f);
             var qLbl = Label(quest.transform, "QUEST — THE GATES AWAKEN (I)", 10, Hex(0xa3895a), TextAnchor.MiddleRight);
             qLbl.rect().Stretch(quest.transform); qLbl.rect().offsetMin = new Vector2(10, 0); qLbl.rect().offsetMax = new Vector2(-12, 0);
 
-            // HUD top-right: lantern (unlit)
+            // HUD top-right: reliquary (unlit)
             var lantern = Panel(p.transform, "Lantern", new Color(0.039f, 0.043f, 0.051f, 0.88f));
             var lrt = lantern.rect();
             lrt.anchorMin = new Vector2(0.62f, 0.94f); lrt.anchorMax = new Vector2(0.99f, 0.99f);
-            Label(lantern.transform, "THE LANTERN — UNLIT", 11, Hex(0x8a8578), TextAnchor.MiddleRight).rect().Stretch(lantern.transform);
+            Label(lantern.transform, "THE RELIQUARY — UNLIT", 11, Hex(0x8a8578), TextAnchor.MiddleRight).rect().Stretch(lantern.transform);
 
             // ability bar bottom-center: 4 sealed slots
             for (int i = 0; i < 4; i++)
