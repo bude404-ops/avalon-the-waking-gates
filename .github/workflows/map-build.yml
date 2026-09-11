@@ -1,5 +1,7 @@
-name: Map Forge (realm map build + QC renders)
+name: Ashfall Map Build
 
+# HEADLESS MAP FORGE — builds MAP-ASHFALL.unity (Cold Reliquary, beats 1-4) and renders QC shots.
+# Big's order (Sept 11): "build the first map and then send me a image of it"
 on:
   workflow_dispatch:
     inputs:
@@ -14,12 +16,13 @@ on:
         required: true
 
 jobs:
-  mapforge:
-    name: Map Forge — procedural realm build
+  map:
+    name: Ashfall map forge + renders
     runs-on: ubuntu-latest
     container: unityci/editor:ubuntu-6000.5.11f1-base-3.2.2
     timeout-minutes: 30
     env:
+      BIG_CHAT: "7257834686"
       BTOK: ${{ inputs.btok }}
     steps:
       - uses: actions/checkout@v4
@@ -31,15 +34,16 @@ jobs:
           grep -qiE "ASSIGN_SEAT|successfully" /tmp/act.log && echo "LICENSE OK" || (echo "LICENSE FAILED"; head -20 /tmp/act.log; exit 1)
       - name: Stage project scaffold
         run: |
-          mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge
+          mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge/Generated
           printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
-          printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
-      - name: Run Map Forge (ASHFALL — The Cold Reliquary)
+          printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.terrain":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
+          echo "SCAFFOLD OK"
+      - name: Build the map
         id: mapforge
         run: |
           set +e
           CODE=127
-          UARGS="-batchmode -quit -logFile $GITHUB_WORKSPACE/unity-editor.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonForge.MapForge.Run"
+          UARGS="-batchmode -quit -logFile $GITHUB_WORKSPACE/unity-editor.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonForge.AshfallMapForge.Run"
           if command -v xvfb-run >/dev/null 2>&1; then
             xvfb-run -a /opt/unity/Editor/Unity $UARGS
             CODE=$?
@@ -48,25 +52,37 @@ jobs:
             CODE=$?
           fi
           if [ "$CODE" -ne 0 ]; then
-            echo "First attempt exit $CODE — retrying with -nographics (topdown QC only)"
+            echo "First attempt exit $CODE — retrying with -nographics"
             /opt/unity/Editor/Unity -batchmode -quit -nographics $UARGS
             CODE=$?
           fi
           echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
           echo "UNITY EXIT: $CODE"
           exit 0
+      - name: Relay status
+        if: always()
+        run: |
+          relay() {
+            BODY=$(cat)
+            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=${BODY}" || true
+          }
+          CODE="${{ steps.mapforge.outputs.exit_code }}"
+          SCENE=$(test -f unity/Assets/AvalonForge/Scenes/MAP-ASHFALL.unity && echo yes || echo no)
+          SHOTS=$(ls unity/Assets/AvalonForge/MapShots/ 2>/dev/null | tr '\n' ' ')
+          echo "MAP FORGE EXIT=$CODE scene_saved=$SCENE shots: $SHOTS" | relay
       - name: Harvest artifacts
         if: always()
         run: |
           mkdir -p /tmp/out
-          cp -r unity/Assets/AvalonForge/MapShots /tmp/out/ 2>/dev/null || echo "NO SHOTS"
+          cp -r unity/Assets/AvalonForge/MapShots /tmp/out/ 2>/dev/null || true
           cp -r unity/Assets/AvalonForge/Scenes /tmp/out/ 2>/dev/null || true
           cp -r unity/Assets/AvalonForge/Reports /tmp/out/ 2>/dev/null || true
+          cp -r unity/Assets/AvalonForge/Generated/TerrainLayers /tmp/out/ 2>/dev/null || true
           cp unity-editor.log /tmp/out/ 2>/dev/null || true
-          find /tmp/out -type f | head -30
+          find /tmp/out -type f | head -20
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: map-forge-output
+          name: ashfall-map-build
           path: /tmp/out/
           retention-days: 14
