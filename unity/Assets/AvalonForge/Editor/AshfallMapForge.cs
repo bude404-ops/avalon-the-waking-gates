@@ -147,9 +147,9 @@ namespace AvalonForge
                 float wz = (z / (float)(AM - 1)) * SIZE - SIZE / 2f;
                 float px = PathX(Mathf.Clamp(wz, -256f, 256f));
                 float d = Mathf.Abs(wx - px);
-                float road = (wz > -20f && wz < 310f) ? Mathf.Clamp01(1f - (d - 5f) / 5f) : 0f;
-                alpha[z, x, 1] = road;
-                alpha[z, x, 0] = 1f - road;
+                float roadPaint = (wz > -20f && wz < 310f) ? Mathf.Clamp01(1f - (d - 5f) / 5f) : 0f;
+                alpha[z, x, 1] = roadPaint;
+                alpha[z, x, 0] = 1f - roadPaint;
             }
             td.alphamapResolution = AM;
             td.SetAlphamaps(0, 0, alpha);
