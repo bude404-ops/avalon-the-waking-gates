@@ -1,5 +1,12 @@
 # AUTO-FORGE RUNBOOK — Operating the Pipeline (Big's seat)
 
+**FORGE PRIORITY LAW (Sept 11 ~6:35 PM ET, Big: 'Hold on the other class models until the sovereign is completed to final finish game quality'):**
+THE SOVEREIGN IS THE SINGLE ACTIVE FORGE TARGET. Bring the Sovereign (Aedan) to FINAL, FINISHED GAME QUALITY —
+mesh QC, rig polish, root-locked idle/walk mocap, materials, weapon socket, QC render, GAMED prefab, in-shell integration.
+ALL other class models (Ravager, Warden, Veilborn, Weaver, Wildborn — any batch already started) are HELD until Big
+rules the Sovereign done. Do not generate, rig, or forge any other class until then.
+
+
 **Doctrine:** docs/AVALON-UNITY-AUTOMATED-PIPELINE.md. Big generates + verdicts.
 Forge does everything else. Weapons are separate props (Weaponless Plate Law).
 
