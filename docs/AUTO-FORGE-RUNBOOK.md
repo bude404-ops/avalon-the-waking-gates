@@ -20,9 +20,19 @@ Forge does everything else. Weapons are separate props (Weaponless Plate Law).
 
 ---
 
-## PER-MODEL FLOW — the only three things that touch a human
+## PER-MODEL FLOW — ZERO HUMAN STEPS (Sept 11, Big: nobody has seat access; BIGagent404 owns the whole chain)
 
-### 1. GENERATE (404-GEN GUI, ~3 min)
+**LAW (Sept 11 2026, Big):** no step of the class pipeline requires a human or the Unity GUI.
+The seat-runbook below is RETIRED — the CI seat + sandbox tooling own everything:
+
+1. **GENERATE (headless 404-GEN API)** — `python3 tools/gen404/gen404_mesh.py <turnaround-plate> <out_dir> detailed`
+   (API replica of the plugin's own calls, public MIT source, plugin-shipped key)
+2. **RIG (headless Blender)** — `python3 tools/blender/rig_humanoid.py <mesh.glb> <out_prefix>` (bpy module)
+   QC: bone names + CMU ROOT LOCK law (Hips locked to bind on all axes)
+3. **FORGE (CI, headless Unity)** — commit the rigged FBX to `models/generated/`, dispatch forge-build.yml
+4. **SIGN + VERIFY + PUBLISH** — SIGN GUARANTEE step (apksigner re-sign, DN check, launcher verify) → vault + live channel
+
+### 1. GENERATE (legacy GUI route — RETIRED, kept for reference)
 Window > 404-GEN 3D Generator → 2D Image Prompt slot → feed the class turnaround
 plate → paste the class prompt → Generate → **Convert to Mesh** → save FBX to:
 `Assets/AvalonForge/Generated/<CLASS>-M.fbx`
