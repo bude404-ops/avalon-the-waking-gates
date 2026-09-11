@@ -1,0 +1,72 @@
+name: Map Forge (realm map build + QC renders)
+
+on:
+  workflow_dispatch:
+    inputs:
+      btok:
+        description: 'Telegram bot token'
+        required: true
+      uuser:
+        description: 'Unity account email'
+        required: true
+      upass:
+        description: 'Unity account password'
+        required: true
+
+jobs:
+  mapforge:
+    name: Map Forge — procedural realm build
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-6000.5.11f1-base-3.2.2
+    timeout-minutes: 30
+    env:
+      BTOK: ${{ inputs.btok }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Activate license
+        run: |
+          LIC=$(find /opt/unity -type f -name "Unity.Licensing.Client" 2>/dev/null | head -1)
+          if [ -z "$LIC" ]; then LIC=$(find /opt/unity -type f -iname "*Licensing.Client*" ! -name "*.config" ! -name "*.dll" 2>/dev/null | head -1); fi
+          "$LIC" --activate-all --include-personal --username "${{ inputs.uuser }}" --password "${{ inputs.upass }}" > /tmp/act.log 2>&1 || true
+          grep -qiE "ASSIGN_SEAT|successfully" /tmp/act.log && echo "LICENSE OK" || (echo "LICENSE FAILED"; head -20 /tmp/act.log; exit 1)
+      - name: Stage project scaffold
+        run: |
+          mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge
+          printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
+          printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
+      - name: Run Map Forge (ASHFALL — The Cold Reliquary)
+        id: mapforge
+        run: |
+          set +e
+          CODE=127
+          UARGS="-batchmode -quit -logFile $GITHUB_WORKSPACE/unity-editor.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonForge.MapForge.Run"
+          if command -v xvfb-run >/dev/null 2>&1; then
+            xvfb-run -a /opt/unity/Editor/Unity $UARGS
+            CODE=$?
+          else
+            /opt/unity/Editor/Unity $UARGS
+            CODE=$?
+          fi
+          if [ "$CODE" -ne 0 ]; then
+            echo "First attempt exit $CODE — retrying with -nographics (topdown QC only)"
+            /opt/unity/Editor/Unity -batchmode -quit -nographics $UARGS
+            CODE=$?
+          fi
+          echo "exit_code=$CODE" >> "$GITHUB_OUTPUT"
+          echo "UNITY EXIT: $CODE"
+          exit 0
+      - name: Harvest artifacts
+        if: always()
+        run: |
+          mkdir -p /tmp/out
+          cp -r unity/Assets/AvalonForge/MapShots /tmp/out/ 2>/dev/null || echo "NO SHOTS"
+          cp -r unity/Assets/AvalonForge/Scenes /tmp/out/ 2>/dev/null || true
+          cp -r unity/Assets/AvalonForge/Reports /tmp/out/ 2>/dev/null || true
+          cp unity-editor.log /tmp/out/ 2>/dev/null || true
+          find /tmp/out -type f | head -30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: map-forge-output
+          path: /tmp/out/
+          retention-days: 14
