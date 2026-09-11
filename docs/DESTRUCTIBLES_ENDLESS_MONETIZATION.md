@@ -59,9 +59,9 @@ The line that governs all of it: **sell identity, never power.** The master ques
 - Death/dispersal effects, victory poses at verdicts
 
 ### PETS — EMBERLINGS (the mote companions)
-**The lore-perfect pet: a mote of YOUR OWN deity's element** — the god's own flame, small enough to sit on the warden's shoulder. Every faction's pets speak its element: Ashfall emberlings, Skyrend static-wisps, Everbloom seedlings, Duskmourn lantern-motes, Marenth brinelings, Stoneheart pebble-sprites.
+**The lore-perfect pet: a mote of YOUR OWN deity's element** — the god's own flame, small enough to sit on the warden's shoulder. Every faction's pets speak its element: Ashfall emberlings, Skyrend static-wisps, Everbloom seedlings, Duskmourn ember-motes, Marenth brinelings, Stoneheart pebble-sprites.
 
-- **Scale-dual by design**: at pilgrim scale it follows as a living lantern beside you; at manifestation/ascension it perches on the god's shoulder or circles the colossal head like a stray mote — your pet present at BOTH scales (monetization that reinforces the identity, not off-brand fluffy commerce).
+- **Scale-dual by design**: at pilgrim scale it follows as a living flame beside you; at manifestation/ascension it perches on the god's shoulder or circles the colossal head like a stray mote — your pet present at BOTH scales (monetization that reinforces the identity, not off-brand fluffy commerce).
 - **Utility = QoL only**: faith-mote vacuum radius, idle emotes, a soft chime near undiscovered secrets. NEVER combat: no damage, no buffs, no faith generation, no gate integrity effects. A pet cannot touch the economy, period.
 - **Earnable AND purchasable**: rare pet lines come from achievements (Endless Verdict ranks, discovery milestones, hunts) and seasonal events; standard lines are sold. Collection/growth is cosmetic (pets evolve visually through achievements you perform WITH them).
 
@@ -84,18 +84,18 @@ The Emberlings are now **elemental Luminarys** — tiny kin of your deity's own 
 | TIER | LIGHT | WHAT IT DOES |
 |---|---|---|
 | 1 — Kindled | companion glow | follows you, idle emotes, picks up faith motes |
-| 2 — Lantern | dungeon light radius | lights the dark path, reveals corruption veins on surfaces |
+| 2 — Brazierheart | dungeon light radius | lights the dark path, reveals corruption veins on surfaces |
 | 3 — Seeking | secret-sense | soft chime + drifts toward undiscovered lore/secrets |
 | 4 — Truth | reveals the hidden | glows over illusion-walls and false paths in dungeons |
 | 5 — Beacon | full aura | radiant presence, reactive emotes, signals rare events |
 
-**ONE COMPANION, TWO LIGHTS — PIXIE AND RELIC ARE ONE (BudE404 ruling, Sept 5):** The Luminary and the Cold Reliquary relic are the SAME being — the Luminary WEARS the reliquary as its attire. The relic gave the flame a house; the flame gave the relic a soul. Mechanically the roles stay distinct: **the flame illuminates** (the Luminary's own glow — deed-fed light tiers, navigation/discovery only, never combat power) and **the reliquary it wears protects** (the death-crypt safe-zone light, earned with the relic in-game). The fusion also fixes a real redundancy — one companion, one silhouette in the dungeon instead of two floating lights. GUARDRAIL, non-negotiable: the reliquary attire arrives ONLY when the Cold Reliquary relic is earned in-game — never sold, never bundled, never granted by any purchase. Pet sales = Luminary reskins + lantern STYLE variants for players who already earned it (cosmetic only). Protection stays unpurchasable; brightness stays deed-fed. A bare-flame Luminary (no relic yet) vs a lantern-donned Luminary is now a VISIBLE BADGE of pilgrimage progress — deeds you can wear. Day-one player and whale: identical function, different fashion. This keeps the pet on the right side of "sell identity, never power" even inside light-based dungeon mechanics.
+**ONE COMPANION, TWO LIGHTS — PIXIE AND RELIC ARE ONE (BudE404 ruling, Sept 5):** The Luminary and the Cold Reliquary relic are the SAME being — the Luminary WEARS the reliquary as its attire. The relic gave the flame a house; the flame gave the relic a soul. Mechanically the roles stay distinct: **the flame illuminates** (the Luminary's own glow — deed-fed light tiers, navigation/discovery only, never combat power) and **the reliquary it wears protects** (the death-crypt safe-zone light, earned with the relic in-game). The fusion also fixes a real redundancy — one companion, one silhouette in the dungeon instead of two floating lights. GUARDRAIL, non-negotiable: the reliquary attire arrives ONLY when the Cold Reliquary relic is earned in-game — never sold, never bundled, never granted by any purchase. Pet sales = Luminary reskins + lantern STYLE variants for players who already earned it (cosmetic only). Protection stays unpurchasable; brightness stays deed-fed. A bare-flame Luminary (no relic yet) vs a reliquary-donned Luminary is now a VISIBLE BADGE of pilgrimage progress — deeds you can wear. Day-one player and whale: identical function, different fashion. This keeps the pet on the right side of "sell identity, never power" even inside light-based dungeon mechanics.
 
 ### Dual-scale presence
-At pilgrim scale: circles you as a living lantern. At manifestation/ascension: a mote circling the COLOSSAL HEAD — your little flame riding on the god's shoulder. Same pet, both scales — monetization that reinforces the identity.
+At pilgrim scale: circles you as a living flame. At manifestation/ascension: a mote circling the COLOSSAL HEAD — your little flame riding on the god's shoulder. Same pet, both scales — monetization that reinforces the identity.
 
 ### Monetization — reskins only (light level never sold)
-- **PIXIE LINES per faction** (the base skins): Ashfall emberling, Skyrend static-wisp, Everbloom seedling, Duskmourn lantern-mote, Marenth brineling, Stoneheart pebble-sprite
+- **PIXIE LINES per faction** (the base skins): Ashfall emberling, Skyrend static-wisp, Everbloom seedling, Duskmourn ember-mote, Marenth brineling, Stoneheart pebble-sprite
 - **RESKINS**: seasonal variants (harvest-flame, frost-glow), deity-attuned colorways (Vaelthorn blue-flame Luminary), achievement lines (Verdict-rank exclusives, hunt-trophies), event editions
 - **AURA STYLES** (sellable, cosmetic-only): the SHAPE and character of the glow — sparkle patterns, ember-trail vs. steady-flame vs. pulse — while raw radius/brightness stays earned
 - Rare lines earnable through feats; standard + seasonal lines sold. Brightness tier NEVER purchasable — a day-one player and a whale with the same deeds have equally bright Luminarys. That's the trust contract, and it's the difference between a beloved companion system and a slot machine.
@@ -126,7 +126,7 @@ Same combat verbs underneath (so mastery transfers) — different games on top (
 The Trials are no longer one ladder — they are THREE, because players who just want to fight should pick their scale:
 
 ### 1. THE WARDEN'S TRIAL (sprite lane)
-Pure pilgrim-combat floors: precision waves, dodge/parry mastery, elite duels, lantern-vs-darkness pressure floors, pilgrim-scale bosses. For players who love the tight combat and never want to grow.
+Pure pilgrim-combat floors: precision waves, dodge/parry mastery, elite duels, torch-vs-darkness pressure floors, pilgrim-scale bosses. For players who love the tight combat and never want to grow.
 Score grammar: no-hit streaks, parry counts, style multipliers, wave count.
 
 ### 2. THE COLOSSUS TRIAL (giant lane)

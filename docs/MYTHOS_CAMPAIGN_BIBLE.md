@@ -31,7 +31,7 @@ Ages passed. The six grew into their realms — and forgot the Hollow. Its priso
 
 No god may cross a Gate. But a god may shape a VESSEL that can — and that is the game.
 
-**You are the Pilgrim.** A mortal human Marked by the flame — hooded, lantern-carrying, walking the wounded roads among the real human folk of Mythos — gathering belief, hunting fractures, doing the work only someone mortal-scale can do. And when the FAITH cap breaks, the GATE RITE wakes the god THROUGH you: for one shining passage you are the vessel of a hundred-foot primordial colossus of raw living element.
+**You are the Pilgrim.** A mortal human Marked by the flame — hooded, reliquary-carrying, walking the wounded roads among the real human folk of Mythos — gathering belief, hunting fractures, doing the work only someone mortal-scale can do. And when the FAITH cap breaks, the GATE RITE wakes the god THROUGH you: for one shining passage you are the vessel of a hundred-foot primordial colossus of raw living element.
 
 Two scales. One road. The power is borrowed, never owned.
 
@@ -123,7 +123,7 @@ Every faction chapter runs the same five-beat rhythm:
 - **World boss:** THE UNRIPE — a shard that harvests growth before it can bloom; everything it touches is cut down green.
 
 ### F4 DEATH — DUSKMOURN (LOCKED: Morvaine + Senneth; Ferran & Uthrel = deferred identities)
-- **Gate:** the Barrow Gate, shrine isles on black water. **Crisis:** souls stop passing — the last light in the lanterns gutters, and the dead linger where they fell.
+- **Gate:** the Barrow Gate, shrine isles on black water. **Crisis:** souls stop passing — the last light in the braziers gutters, and the dead linger where they fell.
 - **Dungeons:** THE STRANDED SHORE (black-water isle where the ferry never came), THE RELIQUARY VAULT (Senneth's own reliquary, breached), THE BOUNDARY (Vow Quest: the Boundary Blades).
 - **World boss:** THE REFUSAL — a shard that will not let anything end; mortals it touches cannot die, and worse cannot heal.
 
@@ -196,7 +196,7 @@ The world as mortals know it: kingdoms, gate-towns, oaths, succession, wars, mon
 
 ## CAMPAIGN II — THE FIRST RUIN
 The player discovers something SUBSTANTIALLY OLDER than the current civilizations — the discovery begins connecting the world to the Primordial Age. In our lore: the Heartland road — the outward-facing Walking-Age footprints (deep lore motif V) that walk toward a place no map holds and never arrive. The player reaches the FIRST RUIN: architecture that predates the six gods' craft — the first Gate, built before the Balancing, bearing the seventh smudged signature (deep lore Mystery 1+5+7). No god claims it. No kingdom remembers it. This is where the doctrine's "gradual discovery" spine plants its flag: the world the player learned in Campaign I is YOUNGER than it looks.
-**Content:** the Heartland expedition, Exploration Quests into buried temples/lost kingdoms, the Empty Pedestal region, first Primordial Quest fragments (the lullaby verse, the unlit lantern motif). Ends on the discovery that reframes everything: the footprints stop one step short of the Pedestal. IT WAITED TO BE INVITED.
+**Content:** the Heartland expedition, Exploration Quests into buried temples/lost kingdoms, the Empty Pedestal region, first Primordial Quest fragments (the lullaby verse, the unlit reliquary motif). Ends on the discovery that reframes everything: the footprints stop one step short of the Pedestal. IT WAITED TO BE INVITED.
 
 ## CAMPAIGN III — THE AWAKENING (the old Act I-II content re-staged)
 Ancient structures and creatures begin responding to something. Magic becomes unstable. Old seals weaken. The Gods become increasingly relevant. THIS is where the Ember Gate flickers and the six faction chapters begin — the realm campaigns below (five-beat rhythm intact) unfold across Campaigns III-V, the player traveling Mythos gate by gate as fractures bloom and each realm's belief-crisis breaks.
@@ -212,7 +212,7 @@ The player becomes increasingly connected to their chosen Primordial God. Ancien
 
 ## CAMPAIGN VI — THE PRIMORDIAL TRUTH (the old Act III finale, doctrine-locked)
 The player finally discovers the deeper truth behind the Primordial Age and the Fall. THE UNMAKING is revealed (see deep lore addendum): not a villain, not a grudge — the pre-creation state itself, the force the six gods' creation UNMADE, reaching back through the wound it was cut from. The Hollow is its skin; the Forgotten is its voice; the seventh signature is its invitation. The final conflict is NOT a kill-the-villain fight — it forces meaningful choices (doctrine §24): Restoration (the Forgotten given a home, the skin closes), Destruction (the Hollow emptied, Gates closed forever), Divine rule, Mortal independence, Rebirth, Sealing the ancient powers, a new world order — determined by the established lore and the player's accumulated choices.
-**Content:** the first Gate campaign, the endgame rite (THE NAMING — the melody recognized), the Unlit Lantern lit, the final Primordial Battle at true world-scale, the choice-branch endings, post-campaign live loop.
+**Content:** the first Gate campaign, the endgame rite (THE NAMING — the melody recognized), the Unlit Reliquary lit, the final Primordial Battle at true world-scale, the choice-branch endings, post-campaign live loop.
 
 ## ESCALATION SPINE (doctrine §26, binds the whole arc)
 Early (CI): monsters, corrupted creatures, human enemies, ancient guardians, local threats → Mid (CII-III): strange creatures, ancient references, broken seals, unexplained phenomena, primordial relics → Late (CIV-V): ancient entities, colossal creatures, divine conflicts, primordial manifestations → Endgame (CVI): the player realizes the same ancient phenomenon behind the world's greatest catastrophe is returning — and it was never gone.

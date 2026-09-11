@@ -35,7 +35,7 @@ The deities drew their original power from the cultures that worshipped them. Wh
 
 | Chapter | Location | Visual Description |
 |---------|----------|-------------------|
-| Ch1 | Coastal Shrine Village | wooden fishing village with thatched roofs, torii gates standing in the surf, cherry trees cracking with void-energy, stone lanterns flickering with anti-light |
+| Ch1 | Coastal Shrine Village | wooden fishing village with thatched roofs, torii gates standing in the surf, cherry trees cracking with void-energy, stone braziers flickering with anti-light |
 | Ch2 | Bamboo Forest Temple | lacquered pagodas among towering bamboo now blackened with void-mist, meditation gardens where raked sand boils with Gate-fractures |
 | Ch3 | Mountain Pass | misty trails through ancient cedars, waterfall shrines where water runs black with void-taint, moss-covered torii gates leaning at impossible angles |
 | Ch4 | Imperial Shrine | grand corridor of vermilion torii gates now streaked with void-cracks, sacred mirror halls where reflections show the Hollow, bronze ceremonial bells cracked by Gate pressure |
@@ -103,7 +103,7 @@ The deities drew their original power from the cultures that worshipped them. Wh
 
 | Chapter | Location | Visual Description |
 |---------|----------|-------------------|
-| Ch1 | Coastal Shrine Village | wooden fishing village with thatched roofs, torii gates standing in the surf, cherry trees cracking with void-energy, stone lanterns flickering with anti-light |
+| Ch1 | Coastal Shrine Village | wooden fishing village with thatched roofs, torii gates standing in the surf, cherry trees cracking with void-energy, stone braziers flickering with anti-light |
 | Ch2 | Bamboo Forest Temple | lacquered pagodas among towering bamboo now blackened with void-mist, meditation gardens where raked sand boils with Gate-fractures |
 | Ch3 | Mountain Pass | misty trails through ancient cedars, waterfall shrines where water runs black with void-taint, moss-covered torii gates leaning at impossible angles |
 | Ch4 | Imperial Shrine | grand corridor of vermilion torii gates now streaked with void-cracks, sacred mirror halls where reflections show the Hollow, bronze ceremonial bells cracked by Gate pressure |

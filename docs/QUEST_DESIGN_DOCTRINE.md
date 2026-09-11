@@ -28,7 +28,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 
 ### 2. THE HOOK IS A PERSON — the Witcher 3 pillar
 **Every quest starts as a mortal problem, never a mythology problem.**
-- "Mother Brackle's lanterns keep going out" — not "the Hollow is corrupting the belief-lattice of the Ashfall." The mythology is what's UNDER the mortal problem, and it surfaces in the third act.
+- "Mother Brackle's braziers keep going out" — not "the Hollow is corrupting the belief-lattice of the Ashfall." The mythology is what's UNDER the mortal problem, and it surfaces in the third act.
 - **THE THREE-BEAT NPC:** every quest-giver has a WANT (what they ask for), a LIE (what they're not telling), and a COST (what the truth will cost them). The quest is the player discovering the lie and deciding about the cost.
 - **THE TWO-GOODS RULE:** every quest's choice is two things that are both right (feed the Gate / feed the town; keep the rite / keep the witness) — or two evils. Never right vs wrong; players remember being forced, not corrected.
 - **Consequence delay:** the outcome of the lie surfaces one act later, or one visit later. Witcher quality = the quest you forgot about finding you again.
@@ -56,7 +56,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 **The dungeon loop IS the endgame spine, and it never stops telling fragments of story.**
 - **THE DEPTHS:** braided procedural fracture-dungeons under each realm, seeded with the region's mythology — layouts drawn from the god's dream (Ashfall Depths = the Furnace King's fever of the forge; Duskmourn Depths = the Barrow-Queen's ledger of the unlamented). Each depth-run yields one witnessable fragment: a Tidal Greatblade half-buried in the floor, a shrine to a god nobody names.
 - **THE GATE CYCLE (endgame):** the six regions' Gates wake in sequence on a world-tick — a realm whose Gate stays unfed slides toward Hollow; the endgame is the eternal duty of the Marked: feed all six, ascend world-tiers, go deeper. The Hollow Tide escalates with each tier (bestiary canon).
-- **LOOT = RELIC-GIFTS, not stat sticks:** every named drop carries a story-tag that a quest or NPC can cash in later ("the Rite Hammer of the Kiln-Warden who never slept"). Cosmetics, lantern styles, and Order relic-skins ride the existing monetization canon.
+- **LOOT = RELIC-GIFTS, not stat sticks:** every named drop carries a story-tag that a quest or NPC can cash in later ("the Rite Hammer of the Kiln-Warden who never slept"). Cosmetics, reliquary styles, and Order relic-skins ride the existing monetization canon.
 
 ---
 
@@ -70,7 +70,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 | 4 | **CHOICE** | Two goods / two evils, door-closing, tracked | The choice IS the mythology test (what do you believe about the god?) |
 | 5 | **ECHO** | The world changes visibly; the ledger records it; an NPC reflects it back | The player re-reads their own story in the world |
 
-**Cold Reliquary audit against this grammar: HOOK (Mother Brackle's cold hearth) → TRAIL (the ash-road, the Erased Drake) → RITE (the Rite of Rekindling, performed) → CHOICE (evacuate the town or hold the lanterns; Brackle's last-lantern speech as the two-goods moment) → ECHO (the ledger records "The Night Emberhollow Rekindled"; the shrine rebuilds; the Kiln-Queen's silence hooks the next quest). ✔ The benchmark quest already runs the grammar — the doctrine codifies what made it work.**
+**Cold Reliquary audit against this grammar: HOOK (Mother Brackle's cold hearth) → TRAIL (the ash-road, the Erased Drake) → RITE (the Rite of Rekindling, performed) → CHOICE (evacuate the town or hold the braziers; Brackle's last-flame speech as the two-goods moment) → ECHO (the ledger records "The Night Emberhollow Rekindled"; the shrine rebuilds; the Kiln-Queen's silence hooks the next quest). ✔ The benchmark quest already runs the grammar — the doctrine codifies what made it work.**
 
 ---
 
@@ -108,6 +108,6 @@ Combat is a lore vehicle like any other — **the Hollow bestiary is the mytholo
 
 **Boss cadence per chapter:** T2 duel mid-chapter (the Depths vow-quest), T3 at the Gate Rite finale — three phases, final phase drops to pilgrim scale inside the wound (god-fight and climb are one encounter; Master Architecture law).
 
-**Scale law:** quest TRAIL/RITE combat runs at pilgrim scale (the EMBER DEPTHS chassis: isometric, lantern-light, i-frame rolls, loot vacuum). The Gate Rite finale opens giant-scale (WAKING SIEGE chassis: wake stages, FAITH ultimates, palm slams) and closes pilgrim-scale. One world, two scales — the transition IS the drama.
+**Scale law:** quest TRAIL/RITE combat runs at pilgrim scale (the EMBER DEPTHS chassis: isometric, brazier-light, i-frame rolls, loot vacuum). The Gate Rite finale opens giant-scale (WAKING SIEGE chassis: wake stages, FAITH ultimates, palm slams) and closes pilgrim-scale. One world, two scales — the transition IS the drama.
 
 **Build law:** quests never gate on build. Any of the 36 (class × faction) plays any quest — but the faction tree's economy changes the FEEL of each quest's combat (Ashfall Cinder Stacks make the forge-quests burn differently than Stoneheart shards do).

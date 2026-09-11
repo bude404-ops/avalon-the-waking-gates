@@ -6,7 +6,7 @@
 Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five laws:
 - PAINTERLY OIL-RENDER: visible brush texture in fog and cloth; sculpted forms; no photoreal pore detail.
 - THE CHISEL SIGNATURE: every stone/metal surface carries etched chisel-work — the world was SHAPED by dead gods, so the whole world reads as carved; ties to the gate-rune script.
-- TWO-LAYER LIGHT: cold desaturated ambient world; warm light exists ONLY from lantern sources (in-engine: the Luminary). Blue-hour is law, not mood.
+- TWO-LAYER LIGHT: cold desaturated ambient world; warm light exists ONLY from reliquary sources (in-engine: the Luminary). Blue-hour is law, not mood.
 - COLOR AS GAMEPLAY: saturated world, fully drained Hollows, void black pops (see Color-Absence Law).
 - SILHOUETTE-FIRST: strong simple readable forms that survive phone-scale screens and keep enemy telegraphs readable.
 
@@ -14,7 +14,7 @@ Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five
 > HAND-PAINTED DARK-FANTASY GAME ART in a stylized painterly oil-render — visible brushwork, etched chisel-carved surfaces, cold blue-hour two-layer light, silhouette-first composition. NOT photoreal, NOT cartoon, NOT film still.
 
 ### NO ARTIFACT-MIMICRY LAW (Sept 7 2026, Big: 'I dont like when weapons or armor look like another artifact')
-Weapons and armor NEVER imitate the relic. The Luminary (Cold Reliquary) is the ONE artifact in a pilgrim's frame — craft is craft, relic is relic. No lantern-shaped weapon heads, no cage-frame ornaments, no hollow light-waiting hoops, no relic-like trinkets anywhere on gear. Armor = honest corded metalwork, wool, leather; weapons read unmistakably as weapons. Canonized after the armor-grammar V1 proof's light-waiting hoop read as a second artifact (hoop concept RETIRED; Keeper flail re-rolled with a solid chiseled striking head, cage head retired).
+Weapons and armor NEVER imitate the relic. The Luminary (Cold Reliquary) is the ONE artifact in a pilgrim's frame — craft is craft, relic is relic. No reliquary-shaped weapon heads, no cage-frame ornaments, no hollow light-waiting hoops, no relic-like trinkets anywhere on gear. Armor = honest corded metalwork, wool, leather; weapons read unmistakably as weapons. Canonized after the armor-grammar V1 proof's light-waiting hoop read as a second artifact (hoop concept RETIRED; Keeper flail re-rolled with a solid chiseled striking head, cage head retired).
 
 ## 2. THE GIANTS — PRIMORDIAL-MAX ANATOMY
 Deities render as colossal RAW ELEMENTAL GIANTS (100 ft): zero armor, pure living element. 'Never made — the element that decided to stand': half-conceived asymmetric anatomy (mountain-range mid-formation, zero human symmetry), eon-layered crust strata flaking to reveal the molten/elemental core, violent elemental arteries, constant element-shed, face half-emerged from the element, movement like geology. Awe-not-fear; worship declares divinity. PRIMORDIAL LAW (Big, Sept 7 ~10:14 PM: 'Do they need weapons? Also lets make them more primordial'): gods carry NO weapons, NO tools, NO made objects of any kind — craft is mortal, the god never made a thing; the element IS the weapon. SUPersedes the Gender-Role weapon binding (greatsword/staff retired). Gods render MORE PRIMORDIAL: barely-conceived forms, more mountain than man, mass fused with the ridge, crude half-fused stone club-hands, face barely surfaced, legs dissolving back into terrain, zero human symmetry. EXTENDED PRIMORDIAL LAW (Big, Sept 7 ~10:18 PM: 'make the faces less human and primordial aswell also they shouldnt have legs only torso and up from the ground as that is how the cinematic fights will be'): (1) GOD FACES are BARELY FACES — more crag than countenance: overhanging crag brow, ember-seam eye sockets, no clear nose, NO MOUTH, no expression, zero human facial proportions. NO-MOUTH LAW (Big, Sept 7 ~10:34 PM: 'I also like no mouth on them'): gods have NO mouth — ever. (3) HANDS LAW (Big, same msg: 'they need need hands tho but they should elemental like and primordial hands'): gods DO have hands — but PRIMORDIAL ELEMENTAL hands, never human: hand masses of raw strata and living element, fingers half-fused and incomplete, fewer than five, thick as fallen menhirs, molten seams in the knuckle cracks — geology that suggests a hand, not anatomy. Replaces the earlier crude club-stump arm-ends. (2) NO LEGS — gods render TORSO-AND-UP ONLY, rising straight out of the ground; the lower body IS the terrain (folded strata, scree, cliff-face). The god does not walk — this is the CINEMATIC BATTLE FORM: god fights are staged as terrain-up torsos, never full standing bodies. ELEMENT-PURITY LAW (Big, Sept 7 ~10:34 PM: 'I want them to be more pure form of their element so they are clearly distinct from other elements'): every god renders as the PURE FORM of their element — fire = pure molten lava/magma, storm = pure storm, tide = pure sea, etc. — unmistakably distinct from every other element at a glance; stone bodies are retired (a god of fire is not a rock giant with a glowing chest, he IS the fire). GODDESS FEMININE-STRUCTURE LAW (same ruling: 'the females all need a feminine structure with chest and hair'): goddesses keep the primordial law but their elemental mass reads FEMININE — distinct chest structure and elemental HAIR (flame-hair for fire, storm-hair, tide-hair, bloom-hair) — never humanized, the element shaped feminine. Governs all 6 goddess re-rolls.
@@ -61,7 +61,7 @@ A Hollow creature is drained of ALL color — body, hide, scales, hair, cloth re
 | Unit | The Remnant | The Routine |
 |---|---|---|
 | T1 Undone | — (it has nothing left) | wanders, searching pockets |
-| T1 Mutefolk (lantern-lighter) | pristine COLD reliquary | raises reliquary to a lamp post that isn't there |
+| T1 Mutefolk (brazier-lighter) | pristine COLD reliquary | raises reliquary to a brazier post that isn't there |
 | T2 Unmade Champion | immaculate polished sword | guards a gate that leads nowhere |
 | T3 Furnace Brute | a keeper's tiny hammer on its belt | works a furnace that has been dead forever |
 | Erased Drake | a horse's bridle it still wears | circles a roost like it still guards eggs |
@@ -121,7 +121,7 @@ ALL runes, sigils, and inscriptions in ANY Avalon art — backgrounds, architect
 Every canon art piece stages its character IN CHARACTER — in the environment their way of life belongs to. Never a generic backdrop, never a void studio:
 
 - **WAYFARER** — the Cinder Roads themselves: mountain passes, milestone gates, switchback trails (current rolls comply)
-- **KEEPER** — shrine ground: lantern shrines, waystations, reliquary niches, tended paths
+- **KEEPER** — shrine ground: brazier shrines, waystations, reliquary niches, tended paths
 - **CANTOR** — rite sites: chanting circles, bell niches, wayside altars
 - **SMITH** — forge country: kiln towns, smithies, workshop ruins, forge-road stations
 - **VIGIL** — the watch: ridgelines, overlooks, broken watchtowers, high moor roads
@@ -180,7 +180,7 @@ SUPERSEDES the NO-MOUTH LAW and the barely-face reading of EXTENDED PRIMORDIAL L
 
 **Big's words:** 'And the light in the reliquary is the color aura for the region the character is in.'
 
-The light inside THE RELIQUARY (the Luminary — the one relic) renders in the COLOR AURA of whatever region the character is standing in. The lantern glow IS the region's signature:
+The light inside THE RELIQUARY (the Luminary — the one relic) renders in the COLOR AURA of whatever region the character is standing in. The reliquary glow IS the region's signature:
 
 - SKYREND → storm slate
 - ASHFALL → oxide red

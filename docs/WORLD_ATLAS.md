@@ -13,7 +13,7 @@ A single island continent, six realms around a central volcanic heartland:
 - **West coast — MARENTH** (sea-cliffs, port, sacred lakes, drowned ruins). Gate: **the Deep Gate**, half-submerged in the bay. Settlement: Ashport.
 - **Eastern highlands — STONEHEART** (bedrock strata, monolith fields, quarry canyons, the petrified Rootspine). Gate: **the Stone Gate**, carved into a cliff face. Sites: Rootspine, the Quakeveins.
 
-Realm palettes: oxide-red ember / storm slate / deep moss / lantern-crimson / pearl-teal / geode bone-grey.
+Realm palettes: oxide-red ember / storm slate / deep moss / crimson / pearl-teal / geode bone-grey.
 
 ## REALM KEYSHOT REFERENCE (SHEET-REALM-KEYSHOTS-6-v1.jpg)
 

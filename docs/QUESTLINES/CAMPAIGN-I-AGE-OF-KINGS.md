@@ -11,10 +11,10 @@ Campaign I opens in the Ashfall's kiln-cities BEFORE the Ember Gate flickers: po
 - **Reward:** the Mark ceremony (player becomes one of the Marked) + Faith system unlock. Nothing purchasable, nothing farmable.
 
 ### KINGDOM QUEST 2 — "THE SUCCESSION AT HIGHKILN" (~30 min, two sessions' worth)
-- Succession dispute between two heirs of the Highkiln forge-lords; both claims rest on OLD documents. The player verifies the documents — the archaeology IS the quest: the older claim is written in a script nobody in Ashfall can read. The only person who can read it: the shrine-mad lamplighter who "speaks with the gates."
+- Succession dispute between two heirs of the Highkiln forge-lords; both claims rest on OLD documents. The player verifies the documents — the archaeology IS the quest: the older claim is written in a script nobody in Ashfall can read. The only person who can read it: the shrine-mad flamekeeper who "speaks with the gates."
 - **The lore assembled:** the old script is gate-rune — the first time the player sees the script the GATES are written in, on a MORTAL document. Nobody comments. The seed for Campaign II is planted in a political quest nobody will connect until the First Ruin.
 - **Choice:** either heir can win, and the kiln-cities' quest-board changes based on it (doctrine §28 permanent consequence, town-scale).
-- **Reward:** Kingdom standing + the lamplighter's mark on your map (unlocks Mystery Quest 1).
+- **Reward:** Kingdom standing + the flamekeeper's mark on your map (unlocks Mystery Quest 1).
 
 ### MYSTERY QUEST 1 — "THE SEVENTH FOOTPRINT" (knowledge-as-reward)
 - The Walking-Age footprints preserved in stone outside Highkiln — the local legend says six founders walked out of the wastes. A child asks you to count them for a school rite. You count. There are seven.
@@ -23,7 +23,7 @@ Campaign I opens in the Ashfall's kiln-cities BEFORE the Ember Gate flickers: po
 
 ### EXPLORATION QUEST 1 — "THE ROAD THAT FORGETS ITSELF" (~25 min)
 - An ancient road under the ash-glass that mapmakers keep "correcting" — it always leads somewhere the map says isn't there. First dungeon-adventure: a buried WAYSTATION of Walking-Age make (MYTHIC tier art — impossible joinery, no tooling marks), guarded by ancient guardians that do not attack unless the player attacks first (early-game doctrine §26 roster: ancient guardians, local threats).
-- **Environmental storytelling:** the waystation's lantern-niche is empty — one lantern unlit, the motif. Something waited here. The player can light it (nothing happens... yet — it matters in Campaign VI).
+- **Environmental storytelling:** the waystation's brazier-niche is empty — one brazier unlit, the motif. Something waited here. The player can light it (nothing happens... yet — it matters in Campaign VI).
 - **Reward:** Exploration unlock + the waystation becomes a permanent fast-travel/faith site. Permanent world change at town scale.
 
 ### CLASS QUEST 1 — "THE HANDS THE ORDERS TEACH" (the Order origin seed, ~20 min)

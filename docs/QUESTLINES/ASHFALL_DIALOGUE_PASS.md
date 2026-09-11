@@ -18,12 +18,12 @@
 - **ECHO BARKS:** keepers' tower dark → "Cold night up on the keep. We say your name warm, anyway." / forges dark → "Guilds are proud. They'll come around. Pride keeps a fire too, in its way."
 
 ## Q2 — "THE COLD RELIQUARY" · Mother Brackle (Emberhollow)
-*Canon benchmark quest (QUEST_EXAMPLE_EMBERHOLLOW.md). The town elder who relit one lantern against the dark and won't say why she was the only one who knew how.*
+*Canon benchmark quest (QUEST_EXAMPLE_EMBERHOLLOW.md). The town elder who relit one brazier against the dark and won't say why she was the only one who knew how.*
 
-- **FIRST MEET** (Emberhollow, one lit lantern in a street of dead ones): "Don't blow it out. Everyone who comes through wants to blow it out or ask about it, and I'm tired of both. You want to know why the hearths are cold and the reliquary's lit? Then do something about the hearths."
+- **FIRST MEET** (Emberhollow, one lit brazier in a street of dead ones): "Don't blow it out. Everyone who comes through wants to blow it out or ask about it, and I'm tired of both. You want to know why the hearths are cold and the reliquary's lit? Then do something about the hearths."
 - **QUEST-GIVE:** "Something ate our fires. Not stole — ATE. Fires don't go out leaving this little ash. You're Marked. You go down to the vaults and you find what's hungry, and you come tell me. I'll be here. I'm always here."
 - **THE RITE (Rekindling, she leads):** "Fingers in the wax like my mother taught and her mother before. Now the oath — after me: *kept light, kept faith, kept flame.* Say it like you're being watched by someone who's deciding whether you mean it. You are."
-- **CHOICE PROMPT (evacuate or hold the lanterns):** "I held. Thirty years alone, I held. But I'm old now, and holding is a young town's game. You choose for us — and whatever you pick, I light one lantern for the other road. That's mine. That one I keep."
+- **CHOICE PROMPT (evacuate or hold the braziers):** "I held. Thirty years alone, I held. But I'm old now, and holding is a young town's game. You choose for us — and whatever you pick, I light one brazier for the other road. That's mine. That one I keep."
 - **COMPLETION:** "The ledger will say the night Emberhollow rekindled. It won't say who. It doesn't need to. The fire remembers."
 - **ROLL-CALL LINE (Q6, at the Gate):** "You see? I TOLD you I'd be here. Now watch an old woman show a god how it's done." *(She relights the reliquary at the Gate's foot.)*
 

@@ -22,7 +22,7 @@
 | L1 | Staff strike | 6 m arc, same timing as L1 swing |
 | L2 | Element volley | 18 m lock-on projectile, 3-round burst |
 | HEAVY | Element well | 12 m placed AOE, 2 s eruption delay, zone denial |
-| SPECIAL | ELEMENT STORM (FAITH 20) | 18 m channel: fire rain / lightning fall / bloom spores / lantern-drain / tide crush / crystal shards |
+| SPECIAL | ELEMENT STORM (FAITH 20) | 18 m channel: fire rain / lightning fall / bloom spores / flame-drain / tide crush / crystal shards |
 | ULT | GATE RITE (FAITH 80) | as warrior — each faction's storm reads its element |
 
 ### FACTION ELEMENT TABLE (reskins — one shared frame, six identities)
@@ -41,7 +41,7 @@
 | Ashfall | VAELTHORN, the Furnace-King — Crucible Blade (condensed magma) | VESSAMAINE, the Kiln-Queen — Crucible Staff | CANON |
 | Skyrend | HAELDOR, the Thunder Oath — Skyfall Blade (frozen thundercloud) | SYLWENNA, the Stormsight — Weather-Glass Staff | CANON |
 | Everbloom | THEVRAINE, the Evenhand — Living Scale | MIRIELLE, the Stillwater — Mirror Staff | CANON |
-| Duskmourn | MORVAINE, the Last Warden — Dusk Blade (Duskscythe → chassis conversion) | SENNETH, the Lampkeeper — Lantern Staff | CANON (Stage 2 world kept Sept 5) |
+| Duskmourn | MORVAINE, the Last Warden — Dusk Blade (Duskscythe → chassis conversion) | SENNETH, the Brazierkeeper — Brazier Staff | CANON (Stage 2 world kept Sept 5) |
 | Marenth | NEROVANE, the Undertow — Tidal Greatblade | YLSANNE the Mirrorfin — Mirrorfin Staff (grown coral, pearl-lens; recast to caster per Gender-Role Binding) | CANON (Stage 2 world kept Sept 5) |
 | Stoneheart | GRATHWYN, the Mountain Oath — Tectonic Blade (Maul → chassis conversion) | BERGRUNE, the Unmoved — Bulwark Staff (Garrotes → chassis conversion) | CANON (Stage 2 world kept Sept 5) |
 

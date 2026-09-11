@@ -26,8 +26,8 @@
 - **TRUTH-SLIVER:** YLSANNE's wager keeps honesty as infrastructure. (Learned by being inside it.)
 
 ### Q4 — "THE DEEP GATE BENEATH"
-- **HOOK:** Lantern-diving the Deep Gate's underwater approach — the Gate that burns beneath the waves. A diver-keeper asks the pilgrim to hold the light line while she checks the Gate's burn. *(Want: the Gate seen. Lie: she's been checking it alone for years and it's dimming. Cost: a dimming Deep Gate is the Hollow's best opportunity in the realm.)*
-- **TRAIL:** The drowned approach — lantern-attire Luminary needed (pet-relic canon: the Luminary's light protects the dive); Hollow nests inside the un-returned things on the approach floor.
+- **HOOK:** Flame-diving the Deep Gate's underwater approach — the Gate that burns beneath the waves. A diver-keeper asks the pilgrim to hold the light line while she checks the Gate's burn. *(Want: the Gate seen. Lie: she's been checking it alone for years and it's dimming. Cost: a dimming Deep Gate is the Hollow's best opportunity in the realm.)*
+- **TRAIL:** The drowned approach — reliquary-attire Luminary needed (pet-relic canon: the Luminary's light protects the dive); Hollow nests inside the un-returned things on the approach floor.
 - **CHOICE (two goods):** Seal the approach with the season's first-pearls (the harvest's wealth — the realm pays for its Gate) or dive deeper past the nests (riches and fragments — but the Echo wakes early: the finale comes weaker).
 - **ECHO:** The approach glows or the harvest pays; the finale's strength carries the choice.
 - **TRUTH-SLIVER:** The Deep Gate burns beneath the waves — and it is a FIRE that is dimming. (Learned by holding its light-line.)

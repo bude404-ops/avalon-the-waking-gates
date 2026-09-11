@@ -7,15 +7,15 @@
 You play in a fantasy world called MYTHOS, where the gods are colossal primordial GIANTS — each one raw living element, a hundred feet tall, that was never "made" but simply the first fire, storm, or stone that decided to stand up. The mortals of the world are HUMANS — real folk who build real towns, forge real armor, and worship the sleeping gods, most never knowing the land they live on IS the god. You play BOTH scales — most of the time you're a Marked pilgrim walking the wounded roads with a Cold Reliquary; in big moments, the GATE RITE wakes the god through you and you become its vessel, the GIANT. (What the reliquary-flame really is? That's the story's secret.)
 
 ## THE QUEST: "THE COLD RELIQUARY"
-Your home is EMBERHOLLOW, a shrine town in a charcoal forest in the fire region of Ashfall. Its perpetual hearth-flame — the fire every home lights its lanterns from — has gone cold. Not burned out: *hollowed*. The flame is still there, but it gives no light and no warmth, and the ash falls UPWARD out of it. Something in the world is being erased.
+Your home is EMBERHOLLOW, a shrine town in a charcoal forest in the fire region of Ashfall. Its perpetual hearth-flame — the fire every home lights its braziers from — has gone cold. Not burned out: *hollowed*. The flame is still there, but it gives no light and no warmth, and the ash falls UPWARD out of it. Something in the world is being erased.
 
-**You investigate as a pilgrim** — a lantern-sworn of the town, hooded, Marked. Nobody looks at you twice, though your eyes hold the flame a shade too steady. You question the townsfolk, walk families to the safety of the town's blessed lanterns, and fight off small hollowed ash-creatures. Protecting people and performing rites builds FAITH — the gods' power is literally worship, and worship is what mortals SEE you do.
+**You investigate as a pilgrim** — a flame-sworn of the town, hooded, Marked. Nobody looks at you twice, though your eyes hold the flame a shade too steady. You question the townsfolk, walk families to the safety of the town's blessed braziers, and fight off small hollowed ash-creatures. Protecting people and performing rites builds FAITH — the gods' power is literally worship, and worship is what mortals SEE you do.
 
 **The trail leads to a monster.** An Erased Drake — a wild fire-drake whose flame has been inverted into cold-absence — has been damming the town's faith. You fight it at your own scale: a real duel, two feet of fey warrior against a beast that breathes silence. Then you relight the ruined shrine by performing the Rite of Rekindling — hold the ember, name the flame's deeds aloud, and don't let the silence in.
 
 **Then the twist.** The faith meter is full, but the god's Gate won't open — something is EATING the town's worship before it arrives. And the treeline breaks: an ECHO OF THE FORGOTTEN — the Hollow's false waking, a god-shaped colossus with no god inside — wading toward your town. You cannot fight it. Not yet.
 
-**The evacuation.** You escort the families of Emberhollow down the ash-road while the lanterns die one by one behind you. When the last lantern is about to go out, the old lantern-keeper — not knowing what she's really doing — hands YOU the last lantern and speaks the words the silence had been eating, to your face:
+**The evacuation.** You escort the families of Emberhollow down the ash-road while the braziers die one by one behind you. When the last brazier is about to go out, the old brazier-keeper — not knowing what she's really doing — hands YOU the last brazier and speaks the words the silence had been eating, to your face:
 
 > *"Vaelthorn. The Furnace-King. First fire that stood. See us — we are still burning."*
 

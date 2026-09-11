@@ -14,7 +14,7 @@
 | 1 | ESTABLISH (atmosphere) | Dawn over a mortal heartland — terraced fields, a croft, smoke. It looks like any land. | **NEW ART A** — heartland wide with hidden anatomy | slow push, smoke drift |
 | 2 | journey | A lone pilgrim walks the road before first light. Hood up. Lantern dark. | canon: STAGE2-ASHFALL-KILN-ROAD | lateral pan |
 | 3 | discovery | The pilgrim's hand touches a waystone — and the stone is warm. Veins of ember light under the crust. | **NEW ART B** — terrain close-up, faint anatomy (knuckle ridge, ember vein) | tilt down to macro |
-| 4 | QUIET (character) | Night. The pilgrim kneels at a lantern-niche shrine and lights the Reliquary. One small flame in a very large dark. | **NEW ART C** — pilgrim lighting shrine at night | near-still, breathing glow |
+| 4 | QUIET (character) | Night. The pilgrim kneels at a brazier-niche shrine and lights the Reliquary. One small flame in a very large dark. | **NEW ART C** — pilgrim lighting shrine at night | near-still, breathing glow |
 | 5 | revelation | Pull back: the shrine sits on a shoulder. The ridge line is a collarbone. The mountain beyond is not a mountain. | re-frame of NEW ART A (zoom-out reversal of shot 1) | slow zoom OUT, recontextualize |
 | 6 | SPECTACLE | The ground splits with light. A god begins to rise — the land standing up, wearing its own centuries. | canon: VAELTHORN-FURNACEKING-EMERGENCE | tilt reveal + rumble |
 | 7 | QUIET (awe) | The pilgrim, small as a coin, does not run. Looks up. Hood back. | canon: PILGRIM-WARDEN (Mark detail) | hold, ember drift |

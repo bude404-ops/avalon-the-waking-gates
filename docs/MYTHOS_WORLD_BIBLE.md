@@ -46,10 +46,10 @@ Each faction holds a REALM (beyond its Gate) and a MORTAL REGION (the Mythos lan
 
 ### F4 — DUSKMOURN (Death)
 - **Realm:** THE STILL — the quiet country: pale meadows under a moon that never sets, where everything finished waits politely.
-- **Mortal region:** THE DUSKMERE — black-water isles and willow-fens; undertakers, record-keepers, lantern-makers who believe light is a promise.
-- **Gate:** THE VEIL GATE — on the mirror-lake isle of Lanternhush.
-- **Towns:** LANTERNHUSH (gate-capital, reliquary-niche shrines on every wall), LASTLIGHT (town of the death-guilds), VAILCREST (bone-white city of archives), HUSHFIELD (the quiet farms).
-- **Deities:** two Bone Giant colossi (raw bone-ash element; male = greatsword, female = staff). Mortals: humans (the Duskmourn lantern-folk).
+- **Mortal region:** THE DUSKMERE — black-water isles and willow-fens; undertakers, record-keepers, brazier-makers who believe light is a promise.
+- **Gate:** THE VEIL GATE — on the mirror-lake isle of Brazierhush.
+- **Towns:** BRAZIERHUSH (gate-capital, reliquary-niche shrines on every wall), LASTLIGHT (town of the death-guilds), VAILCREST (bone-white city of archives), HUSHFIELD (the quiet farms).
+- **Deities:** two Bone Giant colossi (raw bone-ash element; male = greatsword, female = staff). Mortals: humans (the Duskmourn brazier-folk).
 
 ### F5 — MARENTH (Water)
 - **Realm:** THE DOWNDEEP — an ocean with a floor and a sky of its own; pressure-cathedrals, current-roads, trenches that breathe.
@@ -79,7 +79,7 @@ Mythos fauna are Aetherium-stable natural beings — not Hollow, not divine. Eac
 
 **Everbloom:** PETAL-STAG (antlers bloom each spring; hunted only by permit), BUMBLEWYRMS (fist-sized pollinator drakes, farmers' blessing), MEADOW-HULK (gentle six-ton grazers), MOTH-OF-THE-ARCH (silk-moths read as omens).
 
-**Duskmere:** PALEFIN HERONS (footprints glow briefly), GRAVE-HARES (lead lantern-processions), CANDLE-MOTHS (a moth in your shrine is a visit), QUIET OX (funerary beast, never whipped).
+**Duskmere:** PALEFIN HERONS (footprints glow briefly), GRAVE-HARES (lead torch-processions), CANDLE-MOTHS (a moth in your shrine is a visit), QUIET OX (funerary beast, never whipped).
 
 **Marenth:** TIDE-WOLVES (coastal pack hunters, swim like otters), REEF-DRUMMERS (breeding song heard in tide-towns), GLASS-EELS (migrate up the Saltreach rivers), SALT-BEAR (coast apex predator).
 

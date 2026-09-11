@@ -18,8 +18,8 @@ Official canon: "Mythos itself raised the Gates." But: the tooling marks on the 
 The Forgotten has no name in any hymn. Buried truth: it had one — and it ASKED for its name to be struck when it realized no region would ever sing the song it wrote. (The song survives, unattributed: every faction hums a version at festivals. The melody is the name. Velle of Vailcrest recognized it in the archive one night and has not slept well since.) The Empty Pedestal's underside — never seen, it has never been moved — bears the name carved by the Forgotten's own claw.
 **Game use:** the endgame's THE NAMING is not learning a word; it's RECOGNIZING a melody the player has heard in every region's ambient music since the tutorial. The whole game teaches you the answer without telling you.
 
-### MYSTERY 3 — THE SIXTH LANTERN
-The Reliquary Ledger says a lantern burns for every buried soul, lit at death. But Lanternhush's ledger-keepers privately count one extra: a lantern that has burned since BEFORE THE LEDGER BEGAN, in a niche older than the town, cut by no known guild. Buried truth: it is not FOR a soul — it is one. The first thing the Hollow ever tried to consume was a single lantern-flame, and it failed. Light with a witness cannot be fully erased. This is why the Hollow hunts lanterns, why the Duskmere armor carries lit niches, and why the endgame key is Lamplighter Aune's rite: she is not garlanding a monument; she is KEEPING A WITNESS. The Pedestal garlands are one continuous unbroken act of watching, older than the Concorde.
+### MYSTERY 3 — THE SIXTH BRAZIER
+The Reliquary Ledger says a brazier burns for every buried soul, lit at death. But Brazierhush's ledger-keepers privately count one extra: a brazier that has burned since BEFORE THE LEDGER BEGAN, in a niche older than the town, cut by no known guild. Buried truth: it is not FOR a soul — it is one. The first thing the Hollow ever tried to consume was a single brazier-flame, and it failed. Light with a witness cannot be fully erased. This is why the Hollow hunts braziers, why the Duskmere armor carries lit niches, and why the endgame key is Flamekeeper Aune's rite: she is not garlanding a monument; she is KEEPING A WITNESS. The Pedestal garlands are one continuous unbroken act of watching, older than the Concorde.
 
 ### MYSTERY 4 — THE ECHO PARADOX
 Hollow units are copies of consumed things. But the ECHO OF THE FORGOTTEN has no original — nothing like its shape was ever consumed. Buried truth: the Hollow cannot copy. It RELEASES. Everything it "erases" is held in the void, still real, compressed. The Hollow is not a garbage disposal; it is a LENDER. The Echo is the Forgotten's original shape, pushed back through the seam — meaning the Forgotten is not outside the Hollow. The Hollow is INSIDE the Forgotten. The void did not curdle from its resentment. The void is its SKIN. (This recontextualizes the entire enemy faction on discovery and is the sequel's foundation: the way to end the Hollow is not to destroy it. It is to give the Forgotten a home — the thing it has literally never had — so its skin can close.)
@@ -35,17 +35,17 @@ Every faction's festival song shares the melody (the Forgotten's name). Buried d
 
 ## III. ITEM LORE SYSTEM (delivery mechanism)
 Every item carries a 1–2 line description that is a FRAGMENT, never an explanation:
-- **Unmade Champion's pauldron:** "Quarry-plate, made in Stoneheart — sold, resold, worn by three soldiers and one liar. The lantern-niche was cut AFTER the third burial." (Why? Who lights it? Duskmere quest-line opens from an item.)
+- **Unmade Champion's pauldron:** "Quarry-plate, made in Stoneheart — sold, resold, worn by three soldiers and one liar. The brazier-niche was cut AFTER the third burial." (Why? Who lights it? Duskmere quest-line opens from an item.)
 - **Mutefolk's dry net:** "The knots are Ashport weave. The fisherman's hands remember the pattern. Something in the Hollow does the tying."
-- **Grimlight lantern-glass:** "Finspire pearl-glass, sandblasted opaque. It dims what it holds — and it holds nothing."
+- **Grimlight votive-glass:** "Finspire pearl-glass, sandblasted opaque. It dims what it holds — and it holds nothing."
 - **The Forgefall first-ember shard (key item):** "Vessamaine's gift. It burns without fuel. Every hearth in Forgefall is its descendant. The mothers of the Embermarch tell children it will go out if ever no one is kind."
-- **Pedestal garland (Aune's):** "The Concorde's oldest continuous act. The garlands are replaced nightly. No lamplighter has ever missed a night. There is no punishment for missing one." (The scariest line in the game: no punishment. No one would.)
+- **Pedestal garland (Aune's):** "The Concorde's oldest continuous act. The garlands are replaced nightly. No flamekeeper has ever missed a night. There is no punishment for missing one." (The scariest line in the game: no punishment. No one would.)
 - **Contract fragment (Rune Gate vault):** "Six signatures in god-claw. One smudge. The stone remembers the seventh hand was COLD."
 **Rule:** no item description ever states a Mystery's answer; each adds one triangulation point. Answers land in 3+ fragments across 2+ regions minimum.
 
 ## IV. RECURRING MOTIFS (rewards for attention)
-- **SEVENS:** six of everything... except where a seventh hides (footprints, signatures, tensions, lantern niches per Lantern-plate breastplate = seven).
-- **THE UNLIT LANTERN:** every region's art contains exactly one lantern deliberately unlit — the one that will be lit in the endgame rite.
+- **SEVENS:** six of everything... except where a seventh hides (footprints, signatures, tensions, brazier niches per Brazier-plate breastplate = seven).
+- **THE UNLIT RELIQUARY:** every region's art contains exactly one dead reliquary deliberately unlit — the one that will be lit in the endgame rite.
 - **"HOME":** the word appears in every faction's oldest text, always in the same grammatical construction, always describing somewhere no map shows.
 - **THE PAUSE:** music drops one beat of silence before every boss phase — the seventh tension, audible, unnoticed, from the first tutorial fight to the last.
 - **FOOTPRINTS:** regions preserve Walking-Age footprints in stone. Careful players notice the seven styles don't all point the same direction. One set walks OUT of every region, toward the Heartland, never arriving.

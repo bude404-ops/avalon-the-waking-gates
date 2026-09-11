@@ -13,8 +13,8 @@ Promises are measured against weather. Every commitment is spoken with its term 
 ## EVERBLOOM (Everbloom) — GROWTH-SPEECH
 Everything spoken is planted — words have seasons, patience is grammar. "Come back when that's taken root." Prune-tenders talk about people as gardens; anger is "blight"; a kindness is "good soil." They lie by CHANGING THE SEASON — "not now, it's winter for that talk."
 
-## DUSKMOURN (Duskmourn) — LANTERN-SPEECH
-Quiet, ceremonial, funeral-adjacent. Names are sacred: spoken when alive, KEPT when dead (lantern-honor recitation canon — the Q5 rite is a Duskmourn rite performed in Ashfall). Greetings acknowledge the dead first ("the barrow is calm; and you?"). They lie by SAYING NOTHING — silence is their lie, and it reads as respect.
+## DUSKMOURN (Duskmourn) — BRAZIER-SPEECH
+Quiet, ceremonial, funeral-adjacent. Names are sacred: spoken when alive, KEPT when dead (flame-honor recitation canon — the Q5 rite is a Duskmourn rite performed in Ashfall). Greetings acknowledge the dead first ("the barrow is calm; and you?"). They lie by SAYING NOTHING — silence is their lie, and it reads as respect.
 
 ## MARENTH (Marenth) — LEDGER-SPEECH
 Arithmetic as intimacy. Feelings are recorded as debts, tides, and interests ("I'm fond of you; the tide knows what that costs"). Ledger-keeper Nereen (Q4) is the exemplar: pleasant, professional, immovable. They lie by PRECISION — an exactly-true sentence that points the wrong way.

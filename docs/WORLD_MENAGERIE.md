@@ -17,7 +17,7 @@ Small, regional, subtle-tell. The texture of a realm; also dungeon traversal par
 - **ASHFALL:** cinderfox (ember-tipped tail, dens near warm ground — a fox sunning on cold stone means a fever-shed vent below); kiln-salamanders (live in forge-cracks; a town's fortune reads in its salamander count — kiln-tenders feed them by hand); ashmoles (surface when the ground god dreams restlessly — surfacing swarms = omen); thistledeer (canon, bestiary).
 - **SKYREND:** storm-swallows (ride the squall-lines; grounded flocks = storm coming or worse); **bell-kites** (roost ONLY in ringing storm-bells — a silent bell-tower means no kites, and no kites means something silenced the bells: the world's Hollow early-warning, no text needed); static-beetles (harmless charge-flickers; your lantern sparks near fracture-lines because beetles flee them).
 - **EVERBLOOM:** bloomdeer (antler-blossoms open with the season — poachers sell the horns; a poacher subplot writes itself); moss-harts; seed-finches (chain-nest in orchard terraces — their abandoned nests mark old harvest debts).
-- **DUSKMOURN:** lantern-moths (drawn to grave-lanterns; grave-keepers read omens in their flight — a moth that won't land is doctrine: the grave it circles holds a lie); dusk-cats; wisp-toads (croak in unison, then all stop — when they stop, count your party).
+- **DUSKMOURN:** grave-moths (drawn to grave-braziers; grave-keepers read omens in their flight — a moth that won't land is doctrine: the grave it circles holds a lie); dusk-cats; wisp-toads (croak in unison, then all stop — when they stop, count your party).
 - **MARENTH:** tide-runners (crab-folk of the flats); pearl-fish (school in promise-patterns — old tide-readers forecast weather from their shapes); kelp-striders.
 - **STONEHEART:** **promise-beetles** (gnaw oath-lines into standing-stones — 'the world's own scribes'; a stone with fresh lines is a kept vow, a worn stone is a broken one — lore you can READ off a rock, no text); gembeaks (nest in crystal veins); shale-goats; rubble-lizards.
 
@@ -43,7 +43,7 @@ Canon: the LUMINARIES (formerly 'Luminaries') are pure-witness motes; witnesses 
 Creatures woven into pilgrimage law — harming them carries a FAITH cost, protecting them earns it:
 - **TITHE-CRANES** (Marenth): carry pilgrim offerings up to sunken shrine-crowns on schedule older than memory. Killing one = the world remembers (FAITH penalty, shrines dim).
 - **BEDROCK-BULLS** (Stoneheart): walk the old vow-roads in herds, tamping the earth so promises stay set. The vow-roads hold because the bulls walk them. Steal a bull's calf and the road through Stoneheart softens (travel consequence — the map itself responds).
-- **VIGIL-HERONS** (Duskmourn): stand one-legged on barrow-stones all night, keeping the grave-lantern company. A heron that abandons its stone is doctrine's early-warning: what's beneath that stone wants out.
+- **VIGIL-HERONS** (Duskmourn): stand one-legged on barrow-stones all night, keeping the grave-brazier company. A heron that abandons its stone is doctrine's early-warning: what's beneath that stone wants out.
 - Purpose: moral texture. Not every encounter is a fight; some are a test the player sets for themselves. The mercy loop (canon for the Hollow) gets a positive twin: the WORTHINESS loop for the living world.
 
 ## VI. FEVER-SHEDS (the god's small nightmares — NOT Hollow)
@@ -71,7 +71,7 @@ ART LAW — ELEMENT-FORMED HERALDS (BudE404 verdict, Sept 5 2026): heralds rende
 
 ## VIII. THE LUMINARY LINE (pets — canon)
 
-Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the reliquary it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/storm slate/deep moss/crimson/pearl-teal/geode) + lantern attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs lantern-donned = visible badge of progress.
+Pets are called **LUMINARIES**. Pet-relic fusion stands: one companion, two lights — the flame illuminates, the reliquary it wears protects. Luminaries are the Witness class embodied: pure-witness motes that cannot be hollowed. Cosmetic variants = faction reskins (ember/storm slate/deep moss/crimson/pearl-teal/geode) + lantern attire styles; brightness tiers EARNED through pilgrimage deeds, never sold. Bare-flame vs reliquary-donned = visible badge of progress.
 
 ART LAW — ELEMENT-FORMED LUMINARIES (BudE404 verdict, Sept 5 2026): a Luminary is formed ENTIRELY of its element — glowing elemental skin with crack/mote texture, hair and wings of pure element, drift-motes at the edges — the same element-wearing-the-being grammar as the heralds and colossi. Faction reskins change the element itself (fire / lightning / bloom-light / mist / water / crystal). The worn bronze lantern stays human-craft — the relic contrast is the point: made thing, named flame.
 

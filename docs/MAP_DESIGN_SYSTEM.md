@@ -237,14 +237,14 @@ Every map consists of two layers:
 | Property | Value |
 |----------|-------|
 | **Faction** | Kami |
-| **Environment** | Vermilion torii gates in surf, cherry trees cracking with void-energy, stone lanterns flickering anti-light |
+| **Environment** | Vermilion torii gates in surf, cherry trees cracking with void-energy, stone braziers flickering anti-light |
 | **Gate State** | Active (reflection distortion) |
 | **Rooms** | 8 (3 deity challenges + elite + shrine + boss) |
 | **Hazards** | Mirror corridors (reflections attack), boiling sand (50 ATK/s) |
 | **Enemies** | Oni Echoes (heavy melee), Yurei (floating, phase through walls), Kitsune (illusion, teleport) |
 | **Boss** | The Mirror-Self (Hollow that copies your deity's abilities) |
 | **Art Status** | ⚠️ Needs tactical map art |
-| **Art Direction** | Vermilion red, lacquer black, cherry pink, cedar green. Thatched shrine village, lacquered pagodas, torii gates in surf. Stone lanterns flickering anti-light. Cherry trees cracking with void-energy. Bamboo forest. |
+| **Art Direction** | Vermilion red, lacquer black, cherry pink, cedar green. Thatched shrine village, lacquered pagodas, torii gates in surf. Stone braziers flickering anti-light. Cherry trees cracking with void-energy. Bamboo forest. |
 
 **Room Layout:**
 ```

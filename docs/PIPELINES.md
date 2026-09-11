@@ -25,7 +25,7 @@ LAW STACK → PROMPT → GENERATE → P-HASH CHECK → art/pending/ → BUD'S CO
 **LOCKED 2D CANON ART (art direction bible) → UNITY ASSET STORE (source models/rigs/anims) → UNITY (retint, restyle, light, animate)**
 
 - **Source of models:** Unity Asset Store FIRST — rigged humanoid bases, modular armor + weapon packs, creature packs, environment kits. Canon characters now come from store assets matched to canon silhouettes; the locked 2D art is the art-direction reference for choosing + customizing them (silhouette, kit, palette).
-- **Customization in Unity:** materials + retints follow the standing laws — muted palette, per-Order/class accent colorways, weathering in materials; lighting follows the Reliquary-Region Aura Law (cold ambient, lantern the only rich source, hue = regional).
+- **Customization in Unity:** materials + retints follow the standing laws — muted palette, per-Order/class accent colorways, weathering in materials; lighting follows the Reliquary-Region Aura Law (cold ambient, reliquary the only rich source, hue = regional).
 - **Animation:** Asset Store animation packs + Unity's animation tooling.
 - **QC:** every sourced asset is judged side-by-side against its locked canon key art before it goes in-game.
 
@@ -33,7 +33,7 @@ LAW STACK → PROMPT → GENERATE → P-HASH CHECK → art/pending/ → BUD'S CO
 
 - Unity handles: world building, lighting, VFX, abilities, animation, terrain, cinematics, builds.
 - **Asset Store policy (UNITY-FIRST, supersedes the filler-only policy):** store assets serve everything — environments, props, sound, animation, AND canon characters (matched to canon silhouettes + customized per the law stack). The locked 2D art stays the art-direction bible and the QC bar; no asset ships without matching its canon key.
-- **Lighting law in-engine:** two-layer light — cold desaturated ambient + one rich source (lantern flame / realm accent). Region colorways = Unity lighting + post-processing settings.
+- **Lighting law in-engine:** two-layer light — cold desaturated ambient + one rich source (reliquary flame / realm accent). Region colorways = Unity lighting + post-processing settings.
 - Godot is RETIRED. Legacy scaffolding lives in `legacy-godot/` for history only.
 
 ## 4. GITHUB FLOW (house rule)

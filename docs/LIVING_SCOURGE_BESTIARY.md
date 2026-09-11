@@ -28,7 +28,7 @@ Shrine wards, golems, automata left by the faithful to guard what matters. 100% 
 | ASHFALL (kiln) | CINDER-BRIGANDS — ash-cloaked scav clans stripping cold kilns with pry-bars and torch lines | ember-hounds, slag-rats | KILN-GOLEMS — welded-slag wardens still cooling forges that went cold |
 | SKYREND (oath) | OATH-BREAKERS — deserters of dead gods' watches in storm-slick mail, raiding the moor roads | moor-wolves, rain-herons (dive) | WARDEN-EFFIGIES — lightning-rod totem pillars that animate on approach |
 | EVERBLOOM (growth) | SAP-THIEVES — briar-cult foragers harvesting living wood for sale | thistle-stags, strangle-creepers (vines that pull) | GARDENER-MARIONETTES — woven-wood greenhouse pupnets on pole-lines |
-| DUSKMOURN (lantern) | GRAVE-LEVIES — tomb-spelunker gangs, lantern-tax robbers | gloam-bats, gloam-foxes | CRYPT-SENTINELS — brass lantern-post constructs; none pass unlit |
+| DUSKMOURN (brazier) | GRAVE-LEVIES — tomb-spelunker gangs, brazier-tax robbers | gloam-bats, gloam-foxes | CRYPT-SENTINELS — brass brazier-post constructs; none pass unlit |
 | MARENTH (tide) | SALT-REAVERS — tide-pirate clans raiding the drowned streets at low tide | reef-crawlers, gull-swarms | TIDE-BREAKERS — anchor-chain temple guards standing in the surf |
 | STONEHEART (strata) | MINE-SCRAG — tunnel clans chipping god-bone to sell | burrow-wyrms, cave-badgers | BELL-WARDENS — stone bell-golems sealing the deep shafts |
 
@@ -41,6 +41,6 @@ Shrine wards, golems, automata left by the faithful to guard what matters. 100% 
 
 ## ART RULES
 - Living enemies: FULL COLOR, real faces, real craft — under no circumstances drained or voided.
-- Remnant Folk gear follows each realm's cultural craft (kiln-slag patchwork, storm mail, briar-weave, lantern-brass, salt-rusted iron, strata-stone).
+- Remnant Folk gear follows each realm's cultural craft (kiln-slag patchwork, storm mail, briar-weave, brazier-brass, salt-rusted iron, strata-stone).
 - Constructs render as beloved old machines: worn, repaired, quietly dutiful — never menacing-horror.
 - One absence per art piece still applies ONLY to Hollows; the Living have zero absences.

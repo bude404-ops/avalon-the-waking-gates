@@ -10,7 +10,7 @@
 **Architecture grammar:** riveted FORGE-IRON kiln-plate roofs, crucible-core hearth towers (every tower built around an open furnace heart), forge-cathedrals with chimney-spire skylines, heat-shimmer haze, ember-motes in the air.
 - **THE CINDER GATE (Forgefall):** a colossal arch in the caldera-crown, its stone fused to bronze-black forge-iron at the seams, faint white-gold fire bleeding from its inner face; the gate-plaza is hammered bronze flagstone worn mirror-smooth by processions.
 - **FORGEFALL:** tiered caldera city — forge-cathedral at the crown, workshop terraces cascading down, kiln-light in every window, ash-storms on the horizon; the great hearth's Crucible Core visible from every street as a shared heartbeat.
-- **EMBERHOLLOW:** charcoal-forest spires (a burned forest preserved as black cathedral columns), shrine-lamps lit inside hollow trunks.
+- **EMBERHOLLOW:** charcoal-forest spires (a burned forest preserved as black cathedral columns), shrine-braziers lit inside hollow trunks.
 - **SIGNATURE VISTA:** sunrise over the Warm Sea hitting the ash-plain — the ground smoking, cindercattle herds moving through heat-shimmer, Forgefall's hearth-towers on the ridge.
 
 ## SKYREND / THE STORMSHARDS — art grammar
@@ -26,16 +26,16 @@
 **Architecture grammar:** GROW-PLATE living-wood buildings with petal-crest rooflines, bloom-temples shaped like unfurling flowers, orchard-roads in canopy tunnels, terraced hillsides, color-shifting bloom-meadows (the meadows change with the season's mood).
 - **THE BLOOM GATE (Petalfall):** two colossal petal-arches, GROWN not built — a living Gate that opens once a year; when closed it reads as a hill of sealed petals, when open as a cathedral of unfurling color.
 - **PETALFALL:** gate-capital of petal-roofed terraces, bloom-temple at the center, sapling-exchange plaza (the Orchard Oath).
-- **THORNHEDGE:** ward-town on the wild verge — thorn-wall ramparts, GROW-PLATE armored wardens, lantern-lit orchard gatehouses.
+- **THORNHEDGE:** ward-town on the wild verge — thorn-wall ramparts, GROW-PLATE armored wardens, brazier-lit orchard gatehouses.
 - **SIGNATURE VISTA:** the Bloom Gate mid-opening over the orchard plaza — a wall of colossal petals, petals falling like snow, old enemies handing each other saplings.
 
 ## DUSKMOURN / THE DUSKMERE — art grammar
-**Palette:** black mirror-water, willow-fen green, bone-white stone, lantern-gold, low moon that never sets.
-**Architecture grammar:** LANTERN-PLATE pale stone with reliquary-niche shrines cut into every wall — thousands of tiny votive windows; willow bridges, fen-causeways, mirror-lakes, mist.
-- **THE VEIL GATE (Lanternhush):** a bone-white arch on the mirror-lake isle, reflected perfectly in still water — the Gate and its twin.
-- **LANTERNHUSH:** isle-capital of niches — the walls are a ledger of lit lights; the reliquary-makers' quarter glows all night; new niches being cut beside extinguished ones (the Reliquary Ledger made architecture).
+**Palette:** black mirror-water, willow-fen green, bone-white stone, brazier-gold, low moon that never sets.
+**Architecture grammar:** BRAZIER-PLATE pale stone with reliquary-niche shrines cut into every wall — thousands of tiny votive windows; willow bridges, fen-causeways, mirror-lakes, mist.
+- **THE VEIL GATE (Brazierhush):** a bone-white arch on the mirror-lake isle, reflected perfectly in still water — the Gate and its twin.
+- **BRAZIERHUSH:** isle-capital of niches — the walls are a ledger of lit lights; the reliquary-makers' quarter glows all night; new niches being cut beside extinguished ones (the Reliquary Ledger made architecture).
 - **VAILCREST:** bone-white archive city — record-towers, scroll-bridges, the death-guilds' halls.
-- **SIGNATURE VISTA:** a lantern-procession crossing the fen at night — grave-hares leading, a Bone Giant's silhouette far out on the water, every window's niche burning.
+- **SIGNATURE VISTA:** a torch-procession crossing the fen at night — grave-hares leading, a Bone Giant's silhouette far out on the water, every window's niche burning.
 
 ## MARENTH / THE SALTREACH — art grammar
 **Palette:** drowned grey-blue, patinated sea-green bronze, pearl, storm surf, kelp-dark depths.
@@ -56,4 +56,4 @@
 ## HEARTLAND / THE CONCORDE — art grammar
 **Palette:** neutral plains gold, six faction accent-colors at the banners, dawn light.
 **Architecture grammar:** the neutral city at the crossing of the six great roads — six banner-quarters radiating from a central plaza, each built in its faction's grammar but scaled to peace; the EMPTY PEDESTAL at the center, garlanded, maintained, never worshiped.
-- **SIGNATURE VISTA:** dusk at the Empty Pedestal — six banners unmoving, lamplighters garlanding the stone, six roads going out into six different colors of country.
+- **SIGNATURE VISTA:** dusk at the Empty Pedestal — six banners unmoving, flamekeepers garlanding the stone, six roads going out into six different colors of country.

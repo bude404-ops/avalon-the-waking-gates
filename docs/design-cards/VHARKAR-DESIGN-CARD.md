@@ -21,7 +21,7 @@
 - Molten gold-white fire through carved seams, brightest at a captive sun-core in the chest
 - Heat shimmer off shoulders and crown; ember particles drifting
 - Lower edges of the kilt-carve dissolve into embers and flowing cinder-sand
-- LAMP EYES: solid burning gold-white, no pupils, glow touching the cheekbones
+- EMBER EYES: solid burning gold-white, no pupils, glow touching the cheekbones
 
 **REALM IDENTITY (Cinderlands):**
 - Materials: ash-sandstone flesh and plate as one continuous carved mass, obsidian glass accents, molten gold inlay linework

@@ -7,7 +7,7 @@ Created September 4, 2026. Proposal pending BudE404 approval.
 
 ## THE PROBLEM
 
-One hero image is being asked to hold 12+ doctrine rules at once (self-grown anatomy-fused armor, master-craft design, god-shaped world, Mythos Gate, grimdark tone, sigils ≤3, lamp eyes, material unity, scale anchors, composition). The generator trades wins for regressions every roll — Arashido is 17 versions deep. Scene elements (camera, world, weather) and character design (anatomy, armor, weapon) are fighting each other for the model's attention in a single generation.
+One hero image is being asked to hold 12+ doctrine rules at once (self-grown anatomy-fused armor, master-craft design, god-shaped world, Mythos Gate, grimdark tone, sigils ≤3, ember eyes, material unity, scale anchors, composition). The generator trades wins for regressions every roll — Arashido is 17 versions deep. Scene elements (camera, world, weather) and character design (anatomy, armor, weapon) are fighting each other for the model's attention in a single generation.
 
 ## THE FIX — 3-STAGE ART PIPELINE, PER DEITY
 
@@ -30,7 +30,7 @@ One hero image is being asked to hold 12+ doctrine rules at once (self-grown ana
 - **Anatomy-fused armor = one continuous mesh.** No separate plate meshes, no attachment/physics overhead, cleaner topology, easier rigging and skinning. The hardest art rule is the best possible 3D rule.
 - **Turnaround sheets are exactly what image-to-3D wants** — clean orthogonal views of a consistent design beat a cinematic hero shot every time.
 - **Weapons as separate props** (locked workflow fix) — generate, attach to hand bone in engine, swap easily.
-- **Glow system = emissive maps + bloom.** Lamp eyes, sigils, power-light all live in the emissive texture channel — cheap, and intensity can be driven by the FAITH resource in-engine (faith feeds the god = the god burns brighter).
+- **Glow system = emissive maps + bloom.** Ember eyes, sigils, power-light all live in the emissive texture channel — cheap, and intensity can be driven by the FAITH resource in-engine (faith feeds the god = the god burns brighter).
 - **Scale = 9m per combat spec**, exaggerated proportions carry over directly from the Warcraft-legendary stance.
 
 ## PILOT

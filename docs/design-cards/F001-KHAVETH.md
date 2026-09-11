@@ -17,7 +17,7 @@ Status: Stage 1 in progress. TONE LOCKED: GRIMDARK (BudE404, Sept 4). Source of 
 
 ## Glow
 - GRIMDARK **amber-gold** inner light: ominous, wrathful, dangerous — a smoldering sun-heart at the core bleeding through the carved seams and facet cracks like embers under skin. F001 tone = GRIMDARK (locked by BudE404).
-- **Lamp eyes:** solid glowing amber, casting light onto the cheekbones.
+- **Ember eyes:** solid glowing amber, casting light onto the cheekbones.
 - Sigils (hieroglyph-essence, MAX 3): (1) sun-disc at the heart — largest, brightest; (2) eye-of-verdict glyph on the brow; (3) scale glyph inscribed on the Amber Verdict blade.
 
 ## Pose (Stage 1)
@@ -26,4 +26,4 @@ Status: Stage 1 in progress. TONE LOCKED: GRIMDARK (BudE404, Sept 4). Source of 
 - Colossal scale reading: 9m+ presence, 10-heads-tall proportions.
 
 ## Locked rules inherited
-Self-grown colossi (no civilization carved them) / deities-walked hidden lore / Mythos Gate = Stage 2 only / anatomy-fused armor / regional material unity / sigils ≤3 / lamp eyes / classical Hellenistic face realism / LOTR-cinematic light / WoW monumental proportions.
+Self-grown colossi (no civilization carved them) / deities-walked hidden lore / Mythos Gate = Stage 2 only / anatomy-fused armor / regional material unity / sigils ≤3 / ember eyes / classical Hellenistic face realism / LOTR-cinematic light / WoW monumental proportions.

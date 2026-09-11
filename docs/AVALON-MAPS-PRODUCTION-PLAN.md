@@ -42,7 +42,7 @@ Same doctrine as the model viewer: he reviews in the APK, not GIFs. The live she
 gets a **walkable pilgrim-scale scene** of the Emberhollow stretch:
 - WASD + touch controls, third-person camera behind the character GLB
 - Procedural three.js terrain + megalithic props staged per the beat spec
-- Reliquary-Region Aura lighting (cold desaturated ambient, oxide-red lantern glow as
+- Reliquary-Region Aura lighting (cold desaturated ambient, oxide-red reliquary glow as
   the only rich source — Reliquary-Region Aura Law)
 - Loads the current Aedan/Ravager model so the character pipeline output has a world
   to walk in

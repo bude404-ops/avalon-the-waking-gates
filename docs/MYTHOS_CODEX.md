@@ -49,8 +49,8 @@
 | Unit | Form | Epithet | Weapon | Domain |
 |---|---|---|---|---|
 | MORVAINE ✦ | Bone Giant (M, warrior) | the Last Warden | DUSK BLADE — greatsword converted from the Duskscythe per the Weapon Chassis Law | THE OSSUARY PLAIN (ribcage hills, skull-ossuary city) |
-| SENNETH ✦ | Bone Giantess (F, caster) | the Lampkeeper | LANTERN STAFF — holds the last lights of the passed | THE QUIET VIGIL (bone-spire canyon, mirror-still lake) |
-| THE GLOAM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Last Road | gloom-blade, reliquary-cage headgear | THE RELIQUARY WAYS (unlit lantern-processions) |
+| SENNETH ✦ | Bone Giantess (F, caster) | the Brazierkeeper | BRAZIER STAFF — holds the last lights of the passed | THE QUIET VIGIL (bone-spire canyon, mirror-still lake) |
+| THE GLOAM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Last Road | gloom-blade, reliquary-cage headgear | THE RELIQUARY WAYS (unlit torch-processions) |
 | THE VEIL-KEEPER ✦ | Sprite Champion (F, staff) | Keeper of the Veil | gloom-staff | THE VEILED STAIR (stair-shrine into the gloom) |
 
 **F5 — MARENTH** 🌊 (realm: the Drowned Deep; glow: deep teal)
@@ -66,7 +66,7 @@
 |---|---|---|---|---|
 | GRATHWYN ✦ | Stone Giant (M, warrior) | the Mountain Oath | TECTONIC BLADE — greatsword of the world's first stone, converted from the Tectonic Maul per the Weapon Chassis Law | THE ROOTSPINE GATE (strata-cathedral cavern, crystal river) |
 | BERGRUNE ✦ | Stone Giantess (F, caster) | the Unmoved | HEARTROOT STAFF — sheer cliff-stone crowned with a geode cluster holding a mote of living light | THE GEODE VAULTS (hollow geode cathedral, mirror pool) |
-| THE CRYSTAL-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Deep Roads | deep-road blade, crystal-crest | THE DEEP ROADS (delving road below the world, lantern-lit carved stone) |
+| THE CRYSTAL-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Deep Roads | deep-road blade, crystal-crest | THE DEEP ROADS (delving road below the world, brazier-lit carved stone) |
 | THE HEARTROOT-KEEPER ✦ | Sprite Champion (F, staff) | Keeper of the Mountain's Heart | heartroot staff, crystal-crest | THE HEARTROOT (the world-tree of stone, roots singing to her staff) |
 
 ## ROSTER RULINGS (locked)
@@ -115,7 +115,7 @@ Under the GIANTS & SPRITES doctrine + Two-Role Lock + Gender-Role Binding, each 
 | ASHFALL | VAELTHORN the Furnace-King (Crucible Blade) — domain: THE CINDERLANDS | VESSAMAINE the Kiln-Queen (Crucible Staff) — domain: THE EMBER GORGE | KILN-WARDEN — The Kiln Road | HEARTH-KEEPER — The Everhearth Vault | embercowl / kiln-helm |
 | SKYREND | HAELDOR the Thunder Oath (Skyfall Blade) — THE THUNDERSHIELD RANGE | SYLWENNA the Stormsight (Weather-Glass Staff) — THE CALM EYE | STORM-WARDEN — The Watchtower Coast | MATRIARCH — The Sky Mother's Shelf | deep cowl + watch-helm / cowl-veil |
 | EVERBLOOM | THEVRAINE the Evenhand (Living Scale) — THE VERDANT MARCH | MIRIELLE the Stillwater (Mirror Staff) — THE FLOWERDALE | BLOOM-WARDEN — The Seedkeep Gate | BLOOM-KEEPER — The Petal Shrine Terrace | Living Crown |
-| DUSKMOURN | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Lampkeeper (Lantern Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Reliquary Ways | VEIL-KEEPER — The Veiled Stair | reliquary-cage |
+| DUSKMOURN | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Brazierkeeper (Brazier Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Reliquary Ways | VEIL-KEEPER — The Veiled Stair | reliquary-cage |
 | MARENTH | NEROVANE the Undertow (Tidal Greatblade) — THE TIDEGATE COAST | YLSANNE the Mirrorfin (Mirrorfin Staff — grown coral, pearl-lens; recast to caster per the Gender-Role Binding) — THE DEEP HOLLOW | TIDE-WARDEN — The First Light Harbor | PEARL-KEEPER — The Moontide Shrine | fin-crown |
 | STONEHEART | GRATHWYN the Mountain Oath (Tectonic Blade) — THE ROOTSPINE GATE | BERGRUNE the Unmoved (Bulwark Staff, chassis conversion) — THE GEODE VAULTS | CRYSTAL-WARDEN — The Deep Roads | HEARTROOT-KEEPER — The Heartroot | crystal-crest |
 
@@ -158,7 +158,7 @@ Glow: pale crimson ghost-light. Materials: bone-pale granite, black-vein marble,
 |-------|---------|------|--------|-------------------|
 | Morvaine | the Last Warden | Warden | THE DUSKSCYTHE — cuts the last thread of light; never parried | Still-Form: edges blurred like a figure seen at last light |
 | Uthrel | the Quiet | Striker | TWIN BOUNDARY BLADES — one for each side of the line between here and after | Threshold-Plate: split down the middle into pale and dark halves, never touching |
-| Senneth | the Lampkeeper | Caster | THE RELIQUARY STAFF — a staff crowned with a lantern holding the final light of everyone who has passed; she carries them home | Ash-Relief: bone-pale plate with shallow niches, each holding a small ghost-flame |
+| Senneth | the Brazierkeeper | Caster | THE RELIQUARY STAFF — a staff crowned with a brazier-cage holding the final light of everyone who has passed; she carries them home | Ash-Relief: bone-pale plate with shallow niches, each holding a small ghost-flame |
 | Ferran | the Ferryman | Ranged | THE OAR-ARCS — paired crescent blades like oars; he rows souls across | Wake-Line: black water-lines flowing into pale stone, like a wake |
 
 ## F5 — WATER 🌊 Realm: **MARENTH** (the Drowned Deep — sunken world of pressure and pearl-light)
@@ -199,7 +199,7 @@ Every faction runs exactly two male and two female colossi. Females follow the F
 | F1 FIRE (Ashfall) | Vaelthorn, the Furnace-King | Sorvath, the Wildfire Herald | Vessamaine, the Kiln-Queen | Ozruv, the Ash Auditor |
 | F2 AIR (Skyrend) | Haeldor, the Thunder Oath | Yrdis, the Whisperdrift | Sylwenna, the Stormsight | Naeria, the Galeheart |
 | F3 LIFE (Everbloom) | Thevraine, the Evenhand | Corvan, the Firstlight | Mirielle, the Stillwater | Alveth, the Rootbond |
-| F4 DEATH ( Duskmourn) | Morvaine, the Last Warden | Ferran, the Ferryman | Senneth, the Lampkeeper | Uthrel, the Quiet |
+| F4 DEATH ( Duskmourn) | Morvaine, the Last Warden | Ferran, the Ferryman | Senneth, the Brazierkeeper | Uthrel, the Quiet |
 | F5 WATER (Marenth) | Nerovane, the Undertow | Maruvak, the Deepcall | Ylsanne, the Mirrorfin | Thuveth, the Reefsong |
 | F6 EARTH (Stoneheart) | Grathwyn, the Mountain Oath | Rhovarr, the Quakecaller | Bergrune, the Unmoved | Dolvarr, the Deeproot |
 
@@ -242,7 +242,7 @@ Identity comes from FACTION (material, elemental philosophy, named relic lore) o
 - F1 ASHFALL (Fire) — THE CRUCIBLE CORE: every fire colossal's chest is built around an open relic-furnace heart at the center of the breastplate — armor as furnace architecture around it (bellows-ribs, vent-fins glowing with breath).
 - F2 SKYREND (Air) — THE STORM VANES: rotating fin-vane spires on pauldrons and back-plate that turn in a wind only the deity feels, static arcing between them.
 - F3 EVERBLOOM (Life) — THE LIVING CREST: a garden-crown of carved-unfurling petals and vines growing from helm, collar, and pauldrons — armor that visibly blooms.
-- F4 DUSKMOURN (Death) — THE RELIQUARY NICHES: shallow lantern niches cut into the armor holding ghost-flames, trailing last-light motes — the armor is a reliquary for the lights of the dead.
+- F4 DUSKMOURN (Death) — THE RELIQUARY NICHES: shallow brazier niches cut into the armor holding ghost-flames, trailing last-light motes — the armor is a reliquary for the lights of the dead.
 - F5 MARENTH (Water) — THE FIN CROWN: crest-fins and fin-mantle architecture with gill-slit vents in the plate that vent mist — the pressure-born silhouette (fins were already canon; now the signature law formalizes them).
 - F6 STONEHEART (Earth) — THE CRYSTAL LOAD: raw crystal growths erupting from spine, shoulders, and helm — a geode-crown of living ore on strata-plate, the mountain's mineral made visible.
 Per-deity variation lives within each signature (scale, count, placement) — the signature itself never skips a colossal of that faction.
@@ -257,7 +257,7 @@ Per-deity variation lives within each signature (scale, count, placement) — th
 - F1 ASHFALL — FORGE-IRON: blackened steel and fire-tempered bronze, riveted kiln-plate scaled like cooling lava, ember-painted sigil accents; the forge-town look.
 - F2 SKYREND — STORM-STEEL: blued rain-slick steel in laminar wind-shed plates angled to shed weather, rope-and-hardwood fittings, dragon-prow helms, storm-vane crest rods.
 - F3 EVERBLOOM — GROW-PLATE: living-hardwood cuirasses lacquered in petal-red, greened bronze fittings, petal-crest helms, vining ironwork that imitates the Living Crest.
-- F4 DUSKMOURN — LANTERN-PLATE: pale bone-white steel with tiny LANTERN-NICHE shrines cut into the pauldrons and breastplate — actual lit votive windows in the armor; willow-fiber underlay.
+- F4 DUSKMOURN — BRAZIER-PLATE: pale bone-white steel with tiny BRAZIER-NICHE shrines cut into the pauldrons and breastplate — actual lit votive windows in the armor; willow-fiber underlay.
 - F5 MARENTH — TIDE-MAIL: patinated sea-steel scale-mail, fin-crested helms with gill-slit breath vents, pearl and coral inlay, rope-warped harness.
 - F6 STONEHEART — QUARRY-PLATE: grey iron strata-plate layered like the mountain, raw quartz set into the joints so the armor windows glow faintly with crystal light, quake-braced articulation.
 **Supersedes:** the old human-aspect armor rule of 'humanlike re-forged Aetherium.' Existing human canons (VAELTHORN-HUMAN, VESSAMAINE-HUMAN) predate this law and get re-rolled in their region's style (Ashfall FORGE-IRON) on BudE404's word. The rest of the Human Aspect Law (human face/body, wing-cape, draconic human boots, class-chassis relic weapon, sigil-only glyphs, ember-glow eyes) is unchanged — only the armor's material + style changes. Colossal dragon barding stays Aetherium (divine).
@@ -297,7 +297,7 @@ The 24 avatars remain the only divine-tier units in the game; the Hollow supplie
 | F1 FIRE | DRACONIC — the only draconic wing faction. Armored plate-membrane dragon wings w/ clawed wing-fingers, ember-glow through the seams | ALL FOUR. Vaelthorn: massive half-spread warden wings (canon). Sorvath: lean swept banking-dives herald wings. Vessamaine: broad slow hearth-bellows caster wings. Ozruv: sharp angular ember-fan striker wings. |
 | F2 AIR | WIND-BORN — living storm wings: thundercloud-membrane, gale-blade feathers of hardened wind, lightning arcs between the tips; they churn and stream, never fold flat | ALL FOUR. Haeldor: towering thundercloud banners. Yrdis: blade-slim whisper-wings, nearly invisible. Sylwenna: vane-curved weather-vanes. Naeria: full-spread gale-wings, widest of all 24. |
 | F3 LIFE | BLOOM-BORN — petal-membrane wings that UNFURL like flowers opening; leaf-blade primaries, amber sap-glass veining, drifting seed-motes at the edges | THREE. Thevraine: unfurling scale-beam wings. Mirielle: closed-petal folded-flower wings. Corvan: firstlight-spread dawn wings. EXCEPTION: Alveth the Rootbond — NO wings, rooted to the world; root-anchor architecture. |
-| F4 DEATH | RELIQUARY — bone-frame wings, tattered ash-membrane, each niche holding a small ghost-flame; they trail last-light motes when they move | TWO. Morvaine: bone-frame last-light wings. Senneth: lantern-pane wings carrying the last lights home. EXCEPTIONS: Uthrel the Quiet (stillness needs no wings) and Ferran the Ferryman (oar-blade architecture — he poles the black water). |
+| F4 DEATH | RELIQUARY — bone-frame wings, tattered ash-membrane, each niche holding a small ghost-flame; they trail last-light motes when they move | TWO. Morvaine: bone-frame last-light wings. Senneth: votive-pane wings carrying the last lights home. EXCEPTIONS: Uthrel the Quiet (stillness needs no wings) and Ferran the Ferryman (oar-blade architecture — he poles the black water). |
 | F5 WATER | NO WINGS — fin architecture | Ylsanne: mirror-fin crest + fin-mantle. Thuveth: reef-fin crown + coral-blade fins. Maruvak: deep-fin mantle. Nerovane: current-fins down the spine. |
 | F6 EARTH | NO WINGS — mountain architecture | Grathwyn: cliff-ridge pauldrons + basalt spine-crest. Rhovarr: quake-spine fracture ridges. Bergrune: sheer bulwark wall-back. Dolvarr: deeproot anchor-crests like inverted spires. |
 
@@ -330,7 +330,7 @@ The True Dragon Vessel doctrine is RETIRED for deities and mortals. Same overall
 The 24 art models re-roll as colossal ELEMENTAL GIANTS/beings — living embodiments of their element. The Avatar Doctrine, Dual Vessel Doctrine, Two-Role Lock, Gender-Role Binding, and Female-Titan Laws all carry over unchanged. A colossal giant gripping a relic greatsword IS the warrior class; a giantess with a relic staff IS the caster class.
 
 ## 2. MORTALS = SPRITES
-THE HUMAN-TYPE SIDE IS SPRITES (BudE404 ruling): the mortal civilizations of Mythos are SPRITE-SIZE elemental beings, not humans or dragon-kin. Each faction's sprites mirror their patron giants' element (Ashfall ember-wisps, Skyrend storm-sprites, Everbloom petal-sprites, Duskmourn lantern-motes, Marenth pearl-finned sprites, Stoneheart crystal-sprites — names TBD per faction). Dragon-Kin Law REPEALED. The Narrow Ways: each giant's small vessel walks among the sprites at THEIR scale — divine disguise among tiny worshippers.
+THE HUMAN-TYPE SIDE IS SPRITES (BudE404 ruling): the mortal civilizations of Mythos are SPRITE-SIZE elemental beings, not humans or dragon-kin. Each faction's sprites mirror their patron giants' element (Ashfall ember-wisps, Skyrend storm-sprites, Everbloom petal-sprites, Duskmourn ember-motes, Marenth pearl-finned sprites, Stoneheart crystal-sprites — names TBD per faction). Dragon-Kin Law REPEALED. The Narrow Ways: each giant's small vessel walks among the sprites at THEIR scale — divine disguise among tiny worshippers.
 
 ## 3. DRAGONS STILL EXIST — AS WORLD-BEASTS
 Dragons and draconic creatures are NOT deities and NOT mortals — they survive as the WILD FAUNA of Mythos: drakes, wyrms, and greater dragon-beasts roam the realms as apex creatures (the existing fauna table already carries Bumblewyrms, Petal-Stags etc. — dragons join that category, some colossal-scale as world bosses/mounts/beasts of legend). They can never be deities again, but the world keeps its dragons.

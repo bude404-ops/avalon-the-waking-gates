@@ -12,7 +12,7 @@ Khaveth weighs the verdict. Djekhur carries the sentence. Shemris delivers it fr
 - Female-Titan Laws 1-5: size parity + feminine shape (Warcraft female-hero logic); voluptuous build (full proud bust, most dramatic curve); NO six-pack abs (smooth classical-goddess torso); unisex over-exaggerated armor; hearts absolute-banned (angular storm-script sigils, max 3)
 - Anatomy-fused sandstone (zero separate plates, ornament as relief, gold inlay WITHIN the stone)
 - Weathered golden desert sandstone, chiseled facets, cracks, patina
-- Grimdark activation: faint ember seams, 3 sigils, lamp eyes, no bloom
+- Grimdark activation: faint ember seams, 3 sigils, ember eyes, no bloom
 - Invented divine iconography — NO historical replicas (no nemes, no real cobras/scarabs, no museum pieces)
 
 ## Body

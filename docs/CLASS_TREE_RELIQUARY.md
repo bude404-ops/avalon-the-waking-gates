@@ -19,7 +19,7 @@ The Reliquary is not a weapon — it is a reservoir. The Keeper fights with the 
 3. **STEADY GLOW** — Passive. You and nearby allies regenerate slowly while the reliquary is raised.
 
 ## Tier 2 — The Focus
-4. **LANTERN ARC** — 10s cd. Sweep the reliquary: a line of light that blinds enemies 1.5s.
+4. **RELIQUARY ARC** — 10s cd. Sweep the reliquary: a line of light that blinds enemies 1.5s.
 5. **DRAWMOAT** — 25 stamina. Pull the light inward — taunt all enemies in a radius toward you (they hate the flame).
 6. **CALM HAND** — Passive. Palm actives cost 20% less stamina while a charge is banked.
 

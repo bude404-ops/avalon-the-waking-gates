@@ -13,7 +13,7 @@ Shemris is the goddess of PRECISION — the shot loosed before the target knows 
 - Female colossus — sexy AND titanic: statuesque athletic goddess silhouette, long powerful legs, sculpted waist, proud posture, FULL VOLUPTUOUS BUST (dramatic curvaceous carved chest, classical fertility-goddess energy in sandstone); seductive in presence and styling but unmistakably divine and monumental in anatomy (never mortal softness, never humanized)
 - SIZE PARITY, FEMININE SHAPE (BudE404, v4 directive — Warcraft female-hero logic): female titans stand in the SAME size tier as the males — same height class, same hero-scale presence, same scale anchors. But the BUILD stays feminine: athletic toned muscle, hourglass curves, sculpted waist, wide hips, powerful thighs, elegant power (think WoW female draenei next to the males). NOT male bulk, NOT slimmed-down daintiness — full size, feminine shape
 - Weathered ancient patina, fine chiseled facets, cracks, gold-inlay linework
-- Grimdark activation: faint molten ember seams, exactly 3 sigils (heart-sigil largest, brow glyph, weapon glyph), tight lamp eyes (solid light, no pupils)
+- Grimdark activation: faint molten ember seams, exactly 3 sigils (heart-sigil largest, brow glyph, weapon glyph), tight ember eyes (solid light, no pupils)
 
 ## Standing Female-Titan Laws (BudE404, v5)
 1. SIZE PARITY + FEMININE SHAPE (Warcraft female-hero logic): same size tier/height class/presence as male colossi; athletic toned feminine hourglass build. Not male bulk, not dainty.
@@ -38,5 +38,5 @@ An absurdly oversized divine greatbow — a one-of-one invented form:
 ## Stage 1 Composition Rules
 - Neutral dais, character-only (no world, no Gate, no environment)
 - Full figure, heroic readable pose
-- Effects as accents — restrained ember seams, 3 sigils, lamp eyes, the light string
+- Effects as accents — restrained ember seams, 3 sigils, ember eyes, the light string
 - LOTR-cinematic rendering quality, WoW scale reading

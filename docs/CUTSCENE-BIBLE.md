@@ -24,7 +24,7 @@ Cutscenes fire only at the mythic beats: god encounters, gate/seal events, realm
 Reliquary hum, wind, stone, breath — the ambience carries cutscenes. **No orchestral score until a god or a gate appears.** When the music finally hits, it is earned. Silence stays the sharpest tool.
 
 ## LAW 8 — THE LIGHT LAW HOLDS
-Cold desaturated base; the **lantern the only warm source** (Reliquary-Region Aura hue per realm). Duskmourn beats alone may burn crimson. Cutscenes get no lighting exceptions — the two-layer law is the cinema.
+Cold desaturated base; the **reliquary the only warm source** (Reliquary-Region Aura hue per realm). Duskmourn beats alone may burn crimson. Cutscenes get no lighting exceptions — the two-layer law is the cinema.
 
 ## LAW 9 — SUBTITLE-FIRST TEXT
 Lore text and dialog read clean without VO. Voice acting lives only at the highest beats (gods, campaign openers); subtitles default on everywhere.

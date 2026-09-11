@@ -47,7 +47,7 @@ matching blades only, no sheaths, no extra parts, no script or runes, low-poly
 friendly, PBR textures
 ```
 
-## 4. Weaver — Lantern-Staff (plate: WEAPON-WEAVER-LANTERN-STAFF-V1.png)
+## 4. Weaver — Brazier-Staff (plate: WEAPON-WEAVER-BRAZIER-STAFF-V1.png)
 
 ```
 3D game asset: mythic Celtic ritual staff, tall gnarled dark wood with natural

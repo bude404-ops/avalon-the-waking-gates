@@ -39,14 +39,14 @@ The problem: current concepts read as large humans / pin-up goddesses. A titan m
 
 ### 6. Female titans — sexy AND titanic (both, always)
 - Seduction lives in the PRESENCE and styling (gowns, poses, sultry gazes), NOT in humanized soft flesh.
-- Female titans keep the same monumental material flesh, inhuman proportions, lamp eyes.
+- Female titans keep the same monumental material flesh, inhuman proportions, ember eyes.
 - A titan can be alluring — she cannot be mistaken for a human model.
 
 ## Amendment chain (current)
 - A1: Cultural armor/weapons + one-of-one silhouettes + scale conveyed
 - A3: Weapons = registry canon, never redesigned
 - A4: Visual design resembles the faction's real-world cultural origin
-- A5 (this doc): TITAN ANATOMY STANDARD — inhuman proportions, monumental godflesh, lamp eyes, scale anchors, anti-portrait framing, sexy-and-titanic females
+- A5 (this doc): TITAN ANATOMY STANDARD — inhuman proportions, monumental godflesh, ember eyes, scale anchors, anti-portrait framing, sexy-and-titanic females
 
 ## Rollout
 Sample first (Halmarr v2) → BudE404 verdict → re-roll all current titans to standard → standard applies to all future factions.
@@ -89,7 +89,7 @@ All male titans are POWERFULLY MUSCLED — broad, heavy, godlike mass. NEVER thi
 - GREEK TITANS READ GREEK: faces modeled on classical Hellenistic statuary (Zeus of Artemision, kore, Aphrodite types) — heavy brows, aquiline noses, realistic features. NO anime stylization: no elongated faces, no oversized shiny eyes, no spiky hair.
 
 ## FACTION INNER-LIGHT CODEX (Sept 3 2026, BudE404, LOCKED)
-All inner light, vein glow, molten seams and lamp eyes are coded by FACTION, not by deity — one light color per faction, shared by all four titans:
+All inner light, vein glow, molten seams and ember eyes are coded by FACTION, not by deity — one light color per faction, shared by all four titans:
 - F001 Meridian Court (Egyptian desert): SUN-GOLD — locked by BudE404
 - F002 Stormmoot (Norse storm): STORM-BLUE — locked by BudE404
 - F003 Laurel Agon (Greek arena): WHITE victory light — locked by BudE404
@@ -102,7 +102,7 @@ All inner light, vein glow, molten seams and lamp eyes are coded by FACTION, not
 ---
 
 ## AMENDMENT A6 — ELEMENTAL MANIFESTATION (Sept 3, 2026, BudE404)
-Supersedes the shared godflesh material as the primary body standard. Titans remain HUMANOID IN SHAPE (10 heads tall, inhuman proportions, lamp eyes, 30ft scale anchors, anti-portrait framing, sexy-and-titanic females — all other A5 rules hold), but the BODY IS NO LONGER flesh/godflesh — **each titan is an elemental manifestation of their faction's realm and their own divine domain.** They are the element, wearing a titan's silhouette.
+Supersedes the shared godflesh material as the primary body standard. Titans remain HUMANOID IN SHAPE (10 heads tall, inhuman proportions, ember eyes, 30ft scale anchors, anti-portrait framing, sexy-and-titanic females — all other A5 rules hold), but the BODY IS NO LONGER flesh/godflesh — **each titan is an elemental manifestation of their faction's realm and their own divine domain.** They are the element, wearing a titan's silhouette.
 
 ### Faction element cores
 - F001 MERIDIAN COURT (sun-desert): living sun-fire, molten gold, sandstorm, solar corona
@@ -118,7 +118,7 @@ One sample per faction rolls first → BudE404 verdict → then faction re-roll.
 
 ### F004 The Thousand Torii — CANON (Sept 3, 2026, KEEP)
 - GODFLESH: living sacred CYPRESS wood (torii cypress), grain flowing like water, weathered knots at joints, bark only at calves/forearms. Per-deity tint: Arashido storm-cypress, Yoruka moon-bleached pale, Hikarune sun-gold patina, Mukage bone-pale living side / translucent ghost-wood spirit side.
-- VEINS: ghostly SPIRIT-ENERGY drifting beneath the wood grain (NOT solid paint-cracks) — wispy translucent tendrils, wisps curling off grain splits and trailing from lamp eyes. Tints: vermilion / moon-silver / sun-gold / boundary vermilion (living side only).
+- VEINS: ghostly SPIRIT-ENERGY drifting beneath the wood grain (NOT solid paint-cracks) — wispy translucent tendrils, wisps curling off grain splits and trailing from ember eyes. Tints: vermilion / moon-silver / sun-gold / boundary vermilion (living side only).
 - HAIR: elemental per deity — storm-cloud (Arashido), moon-mist (Yoruka), woven sunlight (Hikarune), spirit-smoke from a needle-bound wood braid (Mukage).
 - ATTIRE: Japanese silhouettes (war robes, graded indigo vestments, kariginu + hakama, shroud-robes) in living elemental material (light-silk, woven mist, light-thread fabric, spirit-mist). Solid anchors small: vermilion lacquer, cypress gold, jade, bone, black lacquer.
 - WEAPONS (registry locked): Kazenagi naginata, Phase Bow, Sunwoven Mirror, Boundary Blades.

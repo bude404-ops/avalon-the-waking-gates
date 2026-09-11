@@ -13,9 +13,9 @@ Order of chapters (matches questline docs; cross-region consequence wiring noted
 Each chapter = 5-6 quests + the Gate Rite finale (roll-call rite, T3 Echo duel, pilgrim-scale final phase). After all six: THE GATE CYCLE endgame in the Depths (procedural god-dream dungeons, relic-gift loot).
 
 ## DEPTHS DUNGEON LAYOUTS (SHEET-DUNGEON-LAYOUTS-6-v1.jpg)
-Shared layout grammar (Diablo lane per Quest Doctrine): entrance stair from the realm surface → branching corridor network with TWO loop routes → side chambers (fever mobs = pressure lane) → mini-boss hall on one wing → central HEART chamber (relic altar; sworn-drake territory lane) → deepest end drains to GREY de-coloration (Hollow lane — the nightmare's edge). Pilgrim lantern dots mark the golden path. Procedural build: the loops and wing chambers reshuffle; the heart chamber + grey end are fixed poles.
+Shared layout grammar (Diablo lane per Quest Doctrine): entrance stair from the realm surface → branching corridor network with TWO loop routes → side chambers (fever mobs = pressure lane) → mini-boss hall on one wing → central HEART chamber (relic altar; sworn-drake territory lane) → deepest end drains to GREY de-coloration (Hollow lane — the nightmare's edge). Pilgrim torch dots mark the golden path. Procedural build: the loops and wing chambers reshuffle; the heart chamber + grey end are fixed poles.
 
-Per-realm set dressing: Ashfall forge-cathedral/magma heart · Skyrend sky-bell chambers/bell-chain bridges · Everbloom root corridors/rot gardens · Duskmourn barrow-shelf catacombs/votive lantern heart · Marenth flooded halls/tidal dais · Stoneheart tilted strata slabs/half-carved vow-stone heart.
+Per-realm set dressing: Ashfall forge-cathedral/magma heart · Skyrend sky-bell chambers/bell-chain bridges · Everbloom root corridors/rot gardens · Duskmourn barrow-shelf catacombs/votive brazier heart · Marenth flooded halls/tidal dais · Stoneheart tilted strata slabs/half-carved vow-stone heart.
 
 ## DEPTHS CONTENT MODEL — one BIOME per realm, infinite dungeons
 The six layout maps are NOT six single levels — each is its realm's dungeon GRAMMAR (the biome kit the procedural builder constructs from). The Depths are an ENDLESS DESCENT per realm:

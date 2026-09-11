@@ -23,7 +23,7 @@ All follow the Hollow design laws when hollow (face-void, color-absence, craft-i
 3. PROPHECY — the lore layer: the gods dreamed their own deaths; the gates foretell. OPEN SEED: a lorekeeper NPC who speaks in half-truths (the Merlin-role) — separate design pass pending Big's call.
 
 ## IV. THE LUMINARY IS OUR GRAIL
-A wounded land, a pilgrim carrying the one living light, shrines that heal the world quest by quest — the whole game is structurally a Grail quest. Framing law: the Luminary is never described as a tool or a lamp in lore text — it is the QUESTED LIGHT, the relic the world is dying for. (In-engine it already plays this way via the Faith/tribute economy.)
+A wounded land, a pilgrim carrying the one living light, shrines that heal the world quest by quest — the whole game is structurally a Grail quest. Framing law: the Luminary is never described as a tool in lore text — it is the QUESTED LIGHT, the relic the world is dying for. (In-engine it already plays this way via the Faith/tribute economy.)
 
 ## V. CANON REFERENCES (style anchors, not IP)
 Arthurian bestiary tradition: Malory's Le Morte d'Arthur (Questing Beast), Welsh otherworld canon (Cŵn Annwn, Afanc), romance hunt tradition (White Hart). We use the myth-type, never the trademarked version of any modern retelling.

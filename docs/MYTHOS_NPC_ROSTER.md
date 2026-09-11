@@ -5,7 +5,7 @@
 
 ## ASHFALL / EMBERWASTE
 - **CINDER-WARD EMMARA** — Forgefall's oathsmith-matriarch; keeper of the Crucible Core's first-ember shrine; quest-giver for the Ashfall arc. Voice: banked fire — slow, certain, kind.
-- **MASTER TALLOW** — Emberhollow's shrine-warden; keeps the lanterns lit inside the burned trees; sells blessings, trades in secrets whispered to charcoal.
+- **MASTER TALLOW** — Emberhollow's shrine-warden; keeps the braziers lit inside the burned trees; sells blessings, trades in secrets whispered to charcoal.
 - **ASHPORT CAPTAIN BRENN** — the only Ashfall sea-captain willing to sail the Warm Sea since the Fracture; ferryman for the campaign's coastal moves.
 
 ## SKYREND / STORMSHARDS
@@ -19,13 +19,13 @@
 - **HEALER-ARCHIVIST POMM** — Rootmere's gentlest archivist; maps the meadow-moods (the meadows' color-shifts are the region's early-warning system).
 
 ## DUSKMOURN / DUSKMERE
-- **LANTERN-JUDGE ORVYN** — Lanternhush's keeper of the Ledger; decides whose lantern is lit, whose is allowed to rest; lawful to the point of sorrow.
-- **GRAVE-HARE GIRL "PIP"** — orphan who leads lantern-processions with her hares; the region's heart (and its quiet boss-quest).
+- **BRAZIER-JUDGE ORVYN** — Brazierhush's keeper of the Ledger; decides whose brazier is lit, whose is allowed to rest; lawful to the point of sorrow.
+- **GRAVE-HARE GIRL "PIP"** — orphan who leads torch-processions with her hares; the region's heart (and its quiet boss-quest).
 - **ARCHIVE-MOTHER VELLE** — Vailcrest's head record-keeper; knows the Forgotten's true name but has never spoken it. THE endgame NPC.
 
 ## MARENTH / SALTREACH
 - **TIDE-PRIEST DENN** — Mistrift's marker-keeper of the Deep Gate dive-line; holds the region's literal lifeline.
-- **REEF-MASTER SULLA** — Finspire's reef-city engineer; builds in fin-buttress grammar; trades pearl for lantern-glass.
+- **REEF-MASTER SULLA** — Finspire's reef-city engineer; builds in fin-buttress grammar; trades pearl for votive-glass.
 - **THE DIVER "TWO-BREATH"** — the only mortal who has seen the Deep Gate twice and returned both times; speaks rarely, always in tide-metaphor.
 
 ## STONEHEART / QUAKEVEINS

@@ -34,4 +34,4 @@ Lore is original; the aesthetic is authentic Greek. No historical god names — 
 30-foot titans: stadium tiers packed with finger-sized mortal spectators at their feet, marble colonnades ankle-height, bronze tripods like cups, low-angle storm light over the arena rim, forced perspective.
 
 ## Living Godflesh — F003 Bronze Family
-Living warm bronze flesh with WHITE victory light flowing beneath ALL four titans (per Faction Inner-Light Codex, Sept 3 2026). Lamp eyes: solid glowing WHITE across the faction. Per TITAN_DESIGN_STANDARD: alive, never statues — warm godflesh, inner light, aura-warped air.
+Living warm bronze flesh with WHITE victory light flowing beneath ALL four titans (per Faction Inner-Light Codex, Sept 3 2026). Ember eyes: solid glowing WHITE across the faction. Per TITAN_DESIGN_STANDARD: alive, never statues — warm godflesh, inner light, aura-warped air.

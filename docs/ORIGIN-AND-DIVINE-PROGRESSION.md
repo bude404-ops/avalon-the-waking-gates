@@ -47,7 +47,7 @@ First-god thread: opens with the home realm's patron deity (the class's Six Path
 | Realm | Accent | Origin deity thread |
 |---|---|---|
 | ASHFALL | oxide red | the Furnace gods (fire) |
-| DUSKMOURN | crimson red | the Dusk gods (lantern/dark) |
+| DUSKMOURN | crimson red | the Dusk gods (flame/dark) |
 | EVERBLOOM | deep moss | the Bloom gods |
 | MARENTH | tide teal | the Tide gods |
 | SKYREND | storm slate | the Storm gods |

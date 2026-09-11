@@ -12,7 +12,7 @@ Djekhur is the god of ENDURANCE — the unbreakable stance, the wall that does n
 - Weathered golden desert sandstone, anatomy-fused (muscle IS armor, zero separate plates, ornament as relief carved into the stone skin)
 - Warcraft-exaggerated proportions: even broader than Khaveth — a walking fortress. Shoulder span like a canyon wall, chest like a temple facade, arms thicker than obelisks, short massive neck, head small against the mass
 - Weathered ancient patina, fine chiseled facets, cracks, gold-inlay linework within the stone
-- Grimdark activation: faint molten ember traces through carved seams, inner core smoldering at the chest, exactly 3 sigils (chest warden-anchor largest, brow glyph, weapon glyph), tight lamp eyes (solid light, no pupils, small clean glow)
+- Grimdark activation: faint molten ember traces through carved seams, inner core smoldering at the chest, exactly 3 sigils (chest warden-anchor largest, brow glyph, weapon glyph), tight ember eyes (solid light, no pupils, small clean glow)
 
 ## Invented Divine Iconography (no historical replicas)
 - TWIN CANYON PAULDRONS: shoulder masses carved as sheer invented cliff-face geometry — layered weight-blocks and avalanche chevrons, NOT museum lion replicas
@@ -30,5 +30,5 @@ An absurdly oversized blunt-block greatmaul — a one-of-one invented form:
 ## Stage 1 Composition Rules
 - Neutral dais, character-only (no world, no Gate, no environment)
 - Full figure, heroic readable pose
-- Effects as accents — restrained ember seams, 3 sigils, lamp eyes
+- Effects as accents — restrained ember seams, 3 sigils, ember eyes
 - LOTR-cinematic rendering quality, WoW scale reading

@@ -31,7 +31,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 |---|---|---|
 | MORVAINE, Dusk Blade (dusk giant) | THE OSSUARY PLAIN — the bone-flats at last light, ossuary spires in the gloom-mist | STAGE2-DUSKMOURN-OSSUARY-PLAIN-MORVAINE-WORLD-CANON.jpg |
 | SENNETH (dusk giantess) | THE QUIET VIGIL — the vigil-hollow, candles lit below her in the blue hour | STAGE2-DUSKMOURN-QUIET-VIGIL-SENNETH-WORLD-CANON.jpg |
-| GLOAM-WARDEN (blade champion) | THE RELIQUARY WAYS — the reliquary-lit processional streets of the dusk-city | STAGE2-DUSKMOURN-LANTERN-WAYS-GLOAM-WARDEN-WORLD-CANON.jpg |
+| GLOAM-WARDEN (blade champion) | THE RELIQUARY WAYS — the reliquary-lit processional streets of the dusk-city | STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-CANON.jpg |
 | VEIL-KEEPER (staff champion) | THE VEILED STAIR — the great stair between worlds, descending into soft dark | STAGE2-DUSKMOURN-VEILED-STAIR-VEIL-KEEPER-WORLD-CANON.jpg |
 
 ## MARENTH — The Tide Realm
@@ -47,7 +47,7 @@ All 24 deities anchor a unique, canonized realm composition. Locked Sept 5, 2026
 |---|---|---|
 | GRATHWYN (stone giant) | THE ROOTSPINE — the gate of living roots and raw crystal in the mountain country | STAGE2-STONEHEART-ROOTSPINE-GROTHMAR-WORLD-CANON.jpg |
 | BERGRUNE (stone giantess) | THE GEODE VAULTS — the crystal cathedral deep in the world's root | STAGE2-STONEHEART-GEODE-VAULTS-BERGRUN-WORLD-CANON.jpg |
-| CRYSTAL-WARDEN (blade champion) | THE DEEP ROADS — the delving road below the world, lantern-light on carved stone | STAGE2-STONEHEART-DEEP-ROADS-CRYSTAL-WARDEN-WORLD-CANON.jpg |
+| CRYSTAL-WARDEN (blade champion) | THE DEEP ROADS — the delving road below the world, brazier-light on carved stone | STAGE2-STONEHEART-DEEP-ROADS-CRYSTAL-WARDEN-WORLD-CANON.jpg |
 | HEARTROOT-KEEPER (staff champion) | THE HEARTROOT — the world-tree of stone, roots singing to her staff | STAGE2-STONEHEART-HEARTROOT-HEARTROOT-KEEPER-WORLD-CANON.jpg |
 
 ## Standing Laws (locked this session)
@@ -73,6 +73,6 @@ Applies to the STAGE2 24-realm scene pass (rolls after the 12-model class set co
 ---
 
 # STAGE2 MYTHIC-WORLD PASS (Sept 9 2026, Big's blanket go-ahead) — 24/24 ROLLED
-All 24 realms re-rolled under the NEW law stack: Mythic World Law (never simple villages — megalithic god-scale staging), Reliquary-Region Aura Law (shrine-lantern glow = region accent: ember Ashfall, storm-slate Skyrend, deep-moss Everbloom, CRIMSON Duskmourn per red/black law, tide-teal Marenth, bone-grey Stoneheart), Arthurian Dark-Age mortal tier dwarfed by myth, two-layer light, zero script (knotwork patterns only), zero deities/monsters in frame (pure environment compositions — the old deity-anchored staging is superseded by the 6-god pantheon), p-hash dedup clean.
+All 24 realms re-rolled under the NEW law stack: Mythic World Law (never simple villages — megalithic god-scale staging), Reliquary-Region Aura Law (shrine-brazier glow = region accent: ember Ashfall, storm-slate Skyrend, deep-moss Everbloom, CRIMSON Duskmourn per red/black law, tide-teal Marenth, bone-grey Stoneheart), Arthurian Dark-Age mortal tier dwarfed by myth, two-layer light, zero script (knotwork patterns only), zero deities/monsters in frame (pure environment compositions — the old deity-anchored staging is superseded by the 6-god pantheon), p-hash dedup clean.
 
 Files: art/pending/STAGE2-<REGION>-<REALM>-MYTHICWORLD-V1.png (commit 5795392, contact sheet sent to BudE404's court). Verdicts pending per protocol — blanket 'Keep all' accepted per Big's batch authorization. Old deity-era STAGE2 canon preserved in git history + approved/ until verdicts land.

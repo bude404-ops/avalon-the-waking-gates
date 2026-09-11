@@ -84,9 +84,9 @@ Each faction's campaign takes place in a different time period, geographic regio
 | **Time Period** | 700 CE — Asuka/Nara period |
 | **Geographic Region** | Coastal Japan, bamboo forests, mountain shrines, Mount Fuji |
 | **Visual Palette** | Vermilion red, lacquer black, cherry pink, cedar green, void-black |
-| **Architecture** | Wooden shrine villages, lacquered pagodas, torii gates, stone lanterns, meditation gardens |
+| **Architecture** | Wooden shrine villages, lacquered pagodas, torii gates, stone braziers, meditation gardens |
 | **Chapter Environments** | |
-| Ch1 | Coastal Shrine Village — thatched roofs, torii gates in surf, cherry trees cracking with void-energy, stone lanterns flickering anti-light |
+| Ch1 | Coastal Shrine Village — thatched roofs, torii gates in surf, cherry trees cracking with void-energy, stone braziers flickering anti-light |
 | Ch2 | Bamboo Forest Temple — lacquered pagodas among towering bamboo blackened with void-mist, meditation gardens with boiling sand |
 | Ch3 | Mountain Pass — misty trails through ancient cedars, waterfall shrines with black water, moss-covered torii at impossible angles |
 | Ch4 | Imperial Shrine — vermilion torii corridor streaked with void-cracks, sacred mirror halls showing Hollow reflections, cracked bronze bells |

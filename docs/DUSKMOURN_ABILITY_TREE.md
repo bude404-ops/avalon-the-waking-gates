@@ -10,8 +10,8 @@ Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that 
 
 ## Tier 1 — The Wick
 1. **GLOAM TOUCH** — 5 FAITH. Melee applies 1 Gloom stack (max 5): enemy deals 4% less damage per stack.
-2. **LANTERN WARD** — 8 FAITH. Ghost-light shell for 6s; on break, releases 3 wisps that terrify adjacent enemies (flee 2s).
-3. **CANDLE'S MEMORY** — Passive. Regenerate slowly near lanterns, graves, and shrines.
+2. **RELIQUARY WARD** — 8 FAITH. Ghost-light shell for 6s; on break, releases 3 wisps that terrify adjacent enemies (flee 2s).
+3. **CANDLE'S MEMORY** — Passive. Regenerate slowly near braziers, graves, and shrines.
 
 ## Tier 2 — The Dimming
 4. **SHADOW STEP** — 12 FAITH. Dash THROUGH enemies (phase — no collision); enemies passed through gain 1 Gloom.
@@ -24,7 +24,7 @@ Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that 
 9. **BARROW MARK** — 20 FAITH. Ground rune: a circle of gloom — enemies inside are slowed 30% and their attacks have a 20% miss chance.
 
 ## Tier 4 — Capstone
-10. **WAKING LANTERN** — 35 FAITH, ultimate, 90s cooldown. 12s as the god's vessel: you become the reliquary — all Gloom in a wide radius is pulled toward you (enemies dragged), enemies feared, allies wreathed in protective wisp-light. Ends with the light flaring — knockback + all consumed Gloom dealt as damage.
+10. **WAKING RELIQUARY** — 35 FAITH, ultimate, 90s cooldown. 12s as the god's vessel: you become the reliquary — all Gloom in a wide radius is pulled toward you (enemies dragged), enemies feared, allies wreathed in protective wisp-light. Ends with the light flaring — knockback + all consumed Gloom dealt as damage.
 
 ## Stat pins (engine source of truth)
 - Gloom: -4% enemy damage per stack, max 5; no DoT — erosion currency.

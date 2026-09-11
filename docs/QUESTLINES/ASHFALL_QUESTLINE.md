@@ -17,7 +17,7 @@
 - **TRUTH-SLIVER:** The Gate doesn't give flame — it gives SEEDS. What the city does with them is the city's answer. (The FAITH economy, learned by carrying it.)
 
 ### Q2 — "THE COLD RELIQUARY" (Emberhollow)
-- **The benchmark quest, canon already** (docs/QUEST_EXAMPLE_EMBERHOLLOW.md, doctrine-audited ✔): cold hearth mystery → the Erased Drake (T2) → the Rite of Rekindling → evacuate or hold the lanterns → the ledger records "The Night Emberhollow Rekindled" → the Gate Rite passage.
+- **The benchmark quest, canon already** (docs/QUEST_EXAMPLE_EMBERHOLLOW.md, doctrine-audited ✔): cold hearth mystery → the Erased Drake (T2) → the Rite of Rekindling → evacuate or hold the braziers → the ledger records "The Night Emberhollow Rekindled" → the Gate Rite passage.
 - **TRUTH-SLIVER:** Worship can be EATEN before it reaches a god. (The Hollow, learned by being its target.)
 
 ### Q3 — "THE KILN-TENDER'S DEBT" (Kilnreach)
@@ -25,7 +25,7 @@
 - **TRUTH-SLIVER:** The Kiln-Queen collects oaths the way a mother collects chores. (Vessamaine, learned by paying her dues.)
 
 ### Q4 — "ASH ON THE WATER" (Ashport)
-- **HOOK:** The one Ashfall harbor's lantern-fleet won't sail. A Marenth ledger-keeper stands on the docks with a tide-worn book: Ashport's first ships were built on borrowed pearl-lumber, and the tide has come to collect. The harbormaster asks the pilgrim to "deal with her." *(Want: sail the fleet. Lie: the harbormaster's grandmother signed the debt away — he's the reason it's unpayable. Cost: the truth breaks his family's name in the harbor.)*
+- **HOOK:** The one Ashfall harbor's torch-fleet won't sail. A Marenth ledger-keeper stands on the docks with a tide-worn book: Ashport's first ships were built on borrowed pearl-lumber, and the tide has come to collect. The harbormaster asks the pilgrim to "deal with her." *(Want: sail the fleet. Lie: the harbormaster's grandmother signed the debt away — he's the reason it's unpayable. Cost: the truth breaks his family's name in the harbor.)*
 - **TRAIL:** The drowned ledger in the harbor's old-water vault; an Erased Drake strafes the approach (T2, threat pacing). The vault shows other pages: every realm keeps pages in each other's books.
 - **RITE:** The tide-ledger read aloud on the seawall at slack water — the Marenth recitation rite, performed by an Ashfall pilgrim (cross-faction rite lore by doing).
 - **CHOICE (two goods):** Pay the tide-debt — the fisher fleet grounds a season, the harbor's blessing stands — or refuse — the fleet sails fat, and the tide's interest rides on Marenth's ledger against the player. **The Marenth ledger-keeper's word travels ahead of the pilgrim to Marenth (cross-region door, BG3).**
@@ -41,14 +41,14 @@
 - **TRUTH-SLIVER:** The Hollow hates being named. (The enemy, learned by fighting its diet.)
 
 ### Q6 — "THE FURNACE-KING'S VIGIL" (the Cinder Gate + caldera · chapter finale)
-- **THE ROLL CALL:** The pilgrimage up the caldera passes through the scorched vigil circle — the place where nothing grows in the shape of standing feet (**Vaelthorn's saga-site; the ash remembers him**). At the Gate, everyone the pilgrim's choices left standing gathers: Mother Brackle with the re-lit lantern, the kiln-master and her guild's first-pour, the tide-ledger keeper or the fleet's harbormaster, the relieved road-warden. **The finale is a roll call of the player's consequences.**
+- **THE ROLL CALL:** The pilgrimage up the caldera passes through the scorched vigil circle — the place where nothing grows in the shape of standing feet (**Vaelthorn's saga-site; the ash remembers him**). At the Gate, everyone the pilgrim's choices left standing gathers: Mother Brackle with the re-lit brazier, the kiln-master and her guild's first-pour, the tide-ledger keeper or the fleet's harbormaster, the relieved road-warden. **The finale is a roll call of the player's consequences.**
 - **THE RITE:** The pilgrim's Mark speaks the town's own deed-ledger lines back to the Gate. (The player re-reads their own story to the god — the ECHO beat at campaign scale.)
 - **THE INTERRUPTION:** Mid-rite, the caldera splits: **the ECHO OF THE FORGOTTEN** rises — a god-shaped colossus with no god inside (T3 canon). Three phases at 66%/33%; **the final phase drops to pilgrim scale** — the pilgrim climbs the wound to strike the hollow heart while the god-light holds the shell (Master Architecture law: god vs god outside, pilgrim vs heart inside).
 - **THE WAKING:** The Echo shatters; the ash falls upward; **the Gate Rite completes and VAELTHORN WAKES THROUGH THE PILGRIM** — the colossal passage (siege-mode moment), the Hollow burns off the Ashfall, the realm cleanses.
 - **TRUTH-SLIVER:** The god was never far. It was under everything the whole chapter. (The land IS the sleeping gods — learned by standing on him at the end.)
 
 ## SIDE HOOKS (one-liners, same grammar)
-- **"The Emberling Brood"** — a shrine Luminary with a cold flame asks the pilgrim to relight its shrine; reward = lantern-attire style variant (pet cosmetic canon).
+- **"The Emberling Brood"** — a shrine Luminary with a cold flame asks the pilgrim to relight its shrine; reward = reliquary-attire style variant (pet cosmetic canon).
 - **"The Smiths' Grievance"** — the Smiths petition the Gate to bless a new rite-hammer over Warden objections; the pilgrim's ruling changes which Order trainers hold court in Forgefall (Order politics, door-closing).
 - **"The Kiln Road"** — escort Kilnreach's kiln-road procession; PROTECTION stream at festival weight.
 

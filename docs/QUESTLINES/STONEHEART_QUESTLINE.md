@@ -4,7 +4,7 @@
 **Chapter wound:** broken vows have started to physically break — terrain cracking along old promise-lines, and the deep roads are closing.
 
 ### Q1 — "THE BOUNDARY STONE"
-- **HOOK:** A mine-foreman's new shaft won't go: pickaxes dull, lamps gutter, the mountain resists at an old vow-line nobody can see. He asks the pilgrim to walk it with a lantern — the Marked see lines, or so his grandmother said. *(Want: the shaft. Lie: the surveyor's map shows the line and he erased it — the ore is that rich. Cost: the erasure is written in his own hand.)*
+- **HOOK:** A mine-foreman's new shaft won't go: pickaxes dull, braziers gutter, the mountain resists at an old vow-line nobody can see. He asks the pilgrim to walk it with a torch — the Marked see lines, or so his grandmother said. *(Want: the shaft. Lie: the surveyor's map shows the line and he erased it — the ore is that rich. Cost: the erasure is written in his own hand.)*
 - **TRAIL:** The vow-line's markers — an unbroken row of waystones older than the mine-town; the TECTONIC BLADE planted at the line's end (the world's first boundary stone — Grathwyn's saga-site, walked before anyone explains it).
 - **RITE:** The vow re-standing — the pilgrim learns the vow's words from the Quakeveins' tremor-songs (the mountain's memory is sung, and the pilgrim sings it back — rite participation, doctrine absorbed by doing).
 - **CHOICE (two goods):** Move the mine around the line (the foreman's ruin; the town's ore stays buried) or AMEND the vow at the Blade (the line bends for the first time in an age; the ground remembers both the bending and the bender).
@@ -15,7 +15,7 @@
 - **HOOK:** The tremor-choir predicts a quake — and it doesn't come. First wrong prediction in living memory. The choir's elder asks the pilgrim to help them find out if the SONG failed or the quake was moved. *(Want: the song's authority restored. Lie: the elder already suspects it was moved — by people, with a road. Cost: the truth indicts the order that saved a town.)*
 - **TRAIL:** The diverted quake's path — an artificial deep-road, new-cut, draining the tremor into empty strata. It was built by VIGILS to save a cliff-town from the forecast (a promise made TO the mountain, unauthorized, paid in labor).
 - **CHOICE (two goods):** Legitimize the Vigils' promise (the song must learn a new verse — the choir's authority bends; the cliff-town stands) or unmake the road (the song is right forever; the cliff-town stands in the quake's path next season).
-- **ECHO:** The choir sings the new verse or the old one; the cliff-town's lanterns burn in a straight line or a curve.
+- **ECHO:** The choir sings the new verse or the old one; the cliff-town's braziers burn in a straight line or a curve.
 - **TRUTH-SLIVER:** The deep roads are promises, not tunnels. (Learned by walking a broken one.)
 
 ### Q3 — "THE UNMOVED"

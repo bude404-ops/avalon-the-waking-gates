@@ -71,7 +71,7 @@ If belief dies everywhere, every god wakes as an Echo. The player's reliquary is
 | Lesser drakes (proof of the Walking Age) | Unchanged — relics of the Walking Age, when gods walked openly. |
 | Aetherium | Unchanged as matter-substrate — now also understood as the gods' DREAM made substance. |
 | Relic system (Cold Reliquary etc.) | Unchanged — now the primary power economy (gifts, not gear). |
-| Luminary pets (Emberling, lantern attire) | Unchanged — living bits of god-light given form; the pet-relic fusion canon stands. |
+| Luminary pets (Emberling, reliquary attire) | Unchanged — living bits of god-light given form; the pet-relic fusion canon stands. |
 | Faction names, deity names, Gate names | UNCHANGED — they fit the doctrine as-is. |
 
 ## STORYLINE SHAPE (campaign grammar)
@@ -97,7 +97,7 @@ The whole game is one loop, six times over, rising in scale — with the Forgott
 | Role | Silhouette | Weapon kit | Skills (doctrine grammar) |
 |---|---|---|---|
 | **WARDEN** | blade pilgrim — frontline duelist | straight relic-coated blade | Ember Edge (god-fire coats the blade), Parry-Rite (perfect block stores faith), Vow Strike (charge attack vs Hollow elites) |
-| **KEEPER** | reliquary-bearer — support/area control | shrine lantern + short blade | Light Radius (Hollow will not spawn in true light — the Witness mechanic), Hearth Blessing (heals + faith regen), Reliquary Rite (portable relight — rekindles dead shrines/Gates) |
+| **KEEPER** | reliquary-bearer — support/area control | shrine brazier + short blade | Light Radius (Hollow will not spawn in true light — the Witness mechanic), Hearth Blessing (heals + faith regen), Reliquary Rite (portable relight — rekindles dead shrines/Gates) |
 | **WALKER** | scout of the old roads — speed/traversal | paired daggers or short bow | Mist-Read (sees thin places on the map), Road Dash (traversal burst), First-Footstep (backstrike opener) |
 | **SINGER** | faith-caster — hymns of the old roads | song-relic (bell/harp) or staff | Hymn of the Road (party buff), Verses of Waking (charges the Gate Rite faster), Silence-Break (stuns Hollow — their nightmare cannot hold a true song) |
 | **SMITH** | forge-prayer crafter — tank/utility | great hammer | Molten Strike (heavy AoE), Anvil Prayer (repairs/reinforces gear mid-pilgrimage), Bulwark Forge (deploys shrine-cover) |
@@ -114,7 +114,7 @@ Six layers, one rig. The same base human becomes any role, any region, any eleme
 3. **FACTION STYLE SKIN** — the six canon armor cultures applied to any role kit: Forge-Iron, Storm-Steel, Grow-Plate, Reliquary-Plate, Tide-Mail, Quarry-Plate.
 4. **ELEMENT EMISSIVE LAYER** — the relic-gift glow (ember orange, storm blue, bloom gold, dusk white, tide teal, stone green) — SWAP THE GLOW, NOT THE MESH. The relic decides the element, so variation is a texture/emissive change, not new geometry.
 5. **WEAPON KITS** — role weapons × faction styles (modular props parented to the hand bone per the locked weapon rule).
-6. **COSMETICS** — cloaks, heraldry, weathering, hair, lantern styles — the identity layer (monetization lives HERE: sell identity, never power). 7. **WEAPON GATE-BLESSING** — per THE WEAPON-FACTION BOND law: every weapon carries its forging Gate (the god's temper); weapon-skill element = the weapon's faction, character-ability element = the pilgrim's pledged faction. See the Weapon-Faction Bond law below.
+6. **COSMETICS** — cloaks, heraldry, weathering, hair, reliquary styles — the identity layer (monetization lives HERE: sell identity, never power). 7. **WEAPON GATE-BLESSING** — per THE WEAPON-FACTION BOND law: every weapon carries its forging Gate (the god's temper); weapon-skill element = the weapon's faction, character-ability element = the pilgrim's pledged faction. See the Weapon-Faction Bond law below.
 
 Output math: 1 base rig × 6 role kits × 6 faction skins × 6 glow layers = 216 readable human variations from ~7 armor sets + emissive swaps — plus unlimited cosmetics.
 
@@ -158,13 +158,13 @@ Pets are no longer Luminarys — they are **DREAM-MOTES: tiny living fragments o
 - **Ashfall: EMBER-FOX** — fox kit of ember and soot, sparks trailing.
 - **Skyrend: STORM-OWLET** — round owl of storm-slate, lightning veins in the wings.
 - **Everbloom: BLOOM-FAWN** — fawn of living petal and vine, pollen-light freckles.
-- **Duskmourn: DUSK-MOTH** — velvet moth carrying its own soft lantern-glow.
+- **Duskmourn: DUSK-MOTH** — velvet moth carrying its own soft ember-glow.
 - **Marenth: TIDE-OTTER** — otter of sea-sheen, wrapped in a ribbon of water.
 - **Stoneheart: STONE-HEDGEHOG** — hedgehog of living geode, crystal-light quills.
 
 Mechanics (carry over from the pet canon): motes grow through FIVE LIGHT TIERS fed by witnessing your deeds (brightness earned, never sold); the tier system and cosmetic reskin monetization survive. NEW RITE MOMENT: at the Gate Rite climax, the mote runs INTO the rising god — a piece of the dream coming home — and returns brighter (tier-up moment written into the rite itself).
 
-The Luminary/lantern-attire pet designs are retired from doctrine (kept in art history); the Emberling canon survives as Ashfall's ember-fox lineage.
+The Luminary/reliquary-attire pet designs are retired from doctrine (kept in art history); the Emberling canon survives as Ashfall's ember-fox lineage.
 
 
 ## THE GAME TITLE + THE GATE RUNE (canon v1.2, Sept 5, 2026)

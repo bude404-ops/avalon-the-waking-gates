@@ -38,7 +38,7 @@ NEUTRAL-START LAW (Sept 7 2026, Big): glowing eyes and the Luminary's flame are 
 
 ## THE GATE RUNE — UNIVERSAL MARK (Sept 5 2026, BudE404)
 ONE rune symbol for the whole game: the Mark of the Waking Gates — a megalithic trilithon arch (two standing stones + lintel = the Gate) with a single vertical flame of light rising through the center (the pilgrim's light that wakes it). Element-neutral geometry. It is BOTH the game's brand logo AND the in-fiction pilgrim's Mark on the breastplate.
-FACTION = GLOW COLOR ONLY: Ashfall oxide-red ember · Skyrend storm slate · Everbloom deep moss · Duskmourn lantern-crimson · Marenth pearl-teal · Stoneheart geode bone-grey.
+FACTION = GLOW COLOR ONLY: Ashfall oxide-red ember · Skyrend storm slate · Everbloom deep moss · Duskmourn crimson · Marenth pearl-teal · Stoneheart geode bone-grey.
 PRODUCTION LAW (the one-armor rule): armor sets are FACTION-NEUTRAL — one armor set per role per gender (6 roles × 2 genders = 12 armor sets total). Faction identity is a rune-color swap, never an armor re-roll. Amends the STACK ORDER: base body (M/F) → role kit → armor (neutral) → rune glow (faction color) → weapon kit → cosmetics.
 
 ## GAME NAME CANON (Sept 5, 2026, BudE404)
@@ -98,4 +98,4 @@ Proprietary armor system for all pilgrim Orders; no real-world armor terms in ca
 2. CHISELED PLATES: every plate carries shallow gate-rune etchwork — armor as wearable waymarkers (etch only, never glowing).
 3. REALM MATERIALS: kiln-bronze (Ashfall), moor-iron (Skyrend), bloom-steel (Everbloom), dusk-iron (Duskmourn), tide-brass (Marenth), strata-steel (Stoneheart).
 4. CLOAK GRAMMAR: heavy woven road-cloaks with woven geometric glyph-border, pinned with a round order-brooch.
-5. RETIRED: the shoulder-mounted hollow lantern-frame hoop — Big rejected ('except for the shoulder thing'). Light-waiting elements must not be visible worn cages; the Luminary's light manifests in-engine only. Do not re-pitch worn cage pieces.
+5. RETIRED: the shoulder-mounted hollow reliquary-frame hoop — Big rejected ('except for the shoulder thing'). Light-waiting elements must not be visible worn cages; the Luminary's light manifests in-engine only. Do not re-pitch worn cage pieces.

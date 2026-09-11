@@ -49,7 +49,7 @@ The brief is 90% right. Six honest critiques:
 
 ## 4. THE COLD RELIQUARY — MISSION ARCHITECTURE
 
-**Premise:** The lantern-flame of Emberhollow has gone cold. Hollow corruption creeps down from the Ember Gate's battlefield. You — a lantern-sworn pilgrim — must carry the last Cold Reliquary to the Gate, evacuate the town, and wake the sleeping fire: Vaelthorn, the god beneath the mountain.
+**Premise:** The brazier-flame of Emberhollow has gone cold. Hollow corruption creeps down from the Ember Gate's battlefield. You — a flame-sworn pilgrim — must carry the last Cold Reliquary to the Gate, evacuate the town, and wake the sleeping fire: Vaelthorn, the god beneath the mountain.
 
 | # | BEAT | SCALE | SPACE | OBJECTIVE | WORLD-CHANGE | LANDMARK |
 |---|---|---|---|---|---|---|
