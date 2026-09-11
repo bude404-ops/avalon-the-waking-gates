@@ -53,4 +53,22 @@ The approved canon plate is `art/approved/UI-MAIN-MENU-CANON.png`. The real titl
 - **Option list (lower third):** CONTINUE, NEW JOURNEY, GATES, SETTINGS — rendered as carved stone buttons with bronze knotwork borders; no modern flat-glass UI anywhere.
 - **Atmosphere:** mist drifts over the UI edges — the menu sits INSIDE the world, never floats on top of it (The One Rule).
 - **Orientation:** 9:16 portrait first (S22 Ultra is the reference device), horizontal reflow per the orientation law.
-This plate governs the actual Unity title menu build (scene layout, lighting, camera drift, button styling). The class-select and gameplay-HUD concept plates are NOT yet locked — verdicts pending.
+This plate governs the actual Unity title menu build (scene layout, lighting, camera drift, button styling).
+
+
+## CLASS SELECT LAW v1 — LOCKED (Big, Sept 11 2026: 'Nic yeah I like thay')
+The approved canon plate is `art/approved/UI-CLASS-SELECT-CANON.png`. The real character select is built to this plate:
+- **Frame style:** eclectic Celtic knotwork carved into weathered dark slate stone — knotwork-stone borders around every class niche and button; no flat/modern UI surfaces anywhere (Big's explicit ruling: he wants the knotwork-in-stone look).
+- **The characters:** the SIX CLASS NICHES show the ACTUAL approved canon class art (Sovereign, Ravager, Warden, Veilborn, Weaver, Wildborn) — never approximations. When the 3D class prefabs ship, the live model stands in the niche, but the plate's framing governs.
+- **Layout:** 9:16-portrait-first 2-column x 3-row niche grid (portrait reference device S22 Ultra; horizontal reflow per orientation law).
+- **Card read:** class name (cream serif ALL-CAPS) + realm pairing line (bronze) over a dark gradient at the niche base: SOVEREIGN/SKYREND, RAVAGER/ASHFALL, WARDEN/STONEHEART, VEILBORN/DUSKMOURN, WEAVER/MARENTH, WILDBORN/EVERBLOOM.
+- **Selected state:** bronze-tinted niche lip.
+- **Primary button:** carved stone slab with bronze border + knot-dot corners, reading **BEGIN THE WAKENING** (Big's button text ruling — Shell.cs already carries it). Secondary: BACK.
+- **Palette:** cold desaturated slate + muted bronze accents; knotwork bronze highlights, niches deep dark voids.
+- **Forge status read:** FORGED (bronze) / IN THE FORGE (dim grey) under the realm line.
+
+## GAMEPLAY HUD LAW v1 — LOCKED (Big, Sept 11 2026: '#3 is good')
+The approved canon plate is `art/approved/UI-GAMEPLAY-HUD-CANON.png`. The real in-game HUD is built to this plate:
+- Sovereign in Skyrend staging; cold slate panels at 88% with bronze/cream type per the canon UI palette.
+- Carved stone + knotwork treatment carries into HUD frame edges and the ability bar — same art department as the title menu and class select (CONTINUITY holds).
+- Spec details (crest, health, quest tracker, ability slots, relic corner) per docs/GAME-UI-LAYOUT.md §3; BELIEF meter verdict still pending.

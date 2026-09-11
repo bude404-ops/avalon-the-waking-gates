@@ -18,8 +18,9 @@ is the living mock — every screen below is staged there as the pipeline ships 
 - Tag: REVIEW BUILD — UNITY STAGE.
 - Future: SETTINGS + CREDITS stubs when audio/options exist.
 
-### 2. Character Select
-- Six class cards, grid strip, locked classes show "IN THE FORGE".
+### 2. Character Select — CLASS SELECT LAW v1 (LOCKED, Big Sept 11)
+- Six class niches in a carved stone-knotwork frame (UI-CLASS-SELECT-CANON.png governs): portrait-first 2-col x 3-row grid, actual canon class art in the niches, selected niche bronze-lipped.
+- Locked classes show "IN THE FORGE"; forged classes show "FORGED" (bronze).
 - Card: class name / role line (bronze) / lore blurb (grey) / realm pairing:
   Sovereign→Skyrend, Ravager→Ashfall, Warden→Stoneheart, Veilborn→Duskmourn, Weaver→Marenth, Wildborn→Everbloom.
 - Live model on the Unity stage behind the cards; card tap swaps the model instantly.
