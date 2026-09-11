@@ -73,8 +73,9 @@ namespace AvalonShell
             }
             else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
-            PlayerSettings.Android.customMainManifest = true;   // Assets/Plugins/Android/AndroidManifest.xml (install-permission for self-update)
-            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
+            // customMainManifest API removed in Unity 6000.x — Assets/Plugins/Android/AndroidManifest.xml
+            // (install-permission for self-update) is picked up automatically when present.
+            PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
 
             var scenes = new[] { scenePath };
