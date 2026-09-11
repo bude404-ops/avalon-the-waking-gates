@@ -33,6 +33,8 @@ namespace AvalonShell
         Text hudLine;
         readonly Dictionary<string, GameObject> loaded = new Dictionary<string, GameObject>();
         readonly List<Image> cardTints = new List<Image>();
+        readonly List<RectTransform> cardRects = new List<RectTransform>();
+        bool wasPortrait;
 
         void Start()
         {
@@ -46,11 +48,19 @@ namespace AvalonShell
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.42f, 0.42f, 0.45f);
 
+            Screen.orientation = ScreenOrientation.AutoRotation;
+            Screen.autorotateToPortrait = true;
+            Screen.autorotateToLandscapeLeft = true;
+            Screen.autorotateToLandscapeRight = true;
+            Screen.autorotateToPortraitUpsideDown = false;
+            wasPortrait = Screen.height > Screen.width;
+
             var canvas = MakeCanvas();
             panelTitle = BuildTitle(canvas.transform);
             panelSelect = BuildSelect(canvas.transform);
             panelGame = BuildGame(canvas.transform);
             panelSkills = BuildSkills(canvas.transform);
+            LayoutCards();
             SetState(State.Title);
         }
 
@@ -93,14 +103,13 @@ namespace AvalonShell
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
             head.rect().anchorMin = new Vector2(0, 0.90f); head.rect().anchorMax = new Vector2(1, 0.99f);
 
-            float w = 1f / CLASSES.Length;
             for (int i = 0; i < CLASSES.Length; i++)
             {
                 var cd = CLASSES[i];
                 bool unlocked = ModelPrefab(cd.name) != null;
                 var card = Panel(p.transform, "card-" + cd.name, new Color(0.07f, 0.08f, 0.10f, 0.92f));
                 var crt = card.rect();
-                crt.anchorMin = new Vector2(w * i + 0.008f, 0.26f); crt.anchorMax = new Vector2(w * (i + 1) - 0.008f, 0.80f);
+                cardRects.Add(crt);
                 var nm = Label(card.transform, cd.name.ToUpper(), 16, unlocked ? Hex(0xe6ddca) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
                 nm.rect().anchorMin = new Vector2(0, 0.78f); nm.rect().anchorMax = Vector2.one;
                 var ro = Label(card.transform, cd.role, 10, Hex(0xa3895a), TextAnchor.MiddleCenter);
@@ -132,6 +141,25 @@ namespace AvalonShell
             for (int i = 0; i < CLASSES.Length; i++)
                 cardTints[i].color = (CLASSES[i] == cd) ? new Color(0.16f, 0.14f, 0.09f, 0.96f) : new Color(0.07f, 0.08f, 0.10f, 0.92f);
             LoadClass(cd.name);
+        }
+
+        // Responsive layout: portrait = 2 rows of 3 cards; landscape = 1 row of 6. Relayout on rotate.
+        void LayoutCards()
+        {
+            bool portrait = Screen.height > Screen.width;
+            for (int i = 0; i < cardRects.Count && i < CLASSES.Length; i++)
+            {
+                var crt = cardRects[i];
+                int row, col;
+                if (portrait) { row = i / 3; col = i % 3; }
+                else { row = 0; col = i; }
+                float cw = 1f / (portrait ? 3 : CLASSES.Length);
+                float yMax = portrait ? (row == 0 ? 0.94f : 0.44f) : 0.80f;
+                float yMin = portrait ? (row == 0 ? 0.50f : 0.02f) : 0.26f;
+                crt.anchorMin = new Vector2(cw * col + 0.008f, yMin);
+                crt.anchorMax = new Vector2(cw * (col + 1) - 0.008f, yMax);
+            }
+            if (cam != null) camDist = portrait ? 3.4f : 2.8f;   // pull camera back in portrait to frame the model
         }
 
         // ================= GAME =================

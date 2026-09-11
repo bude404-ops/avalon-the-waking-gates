@@ -64,7 +64,7 @@ namespace AvalonShell
                 Debug.Log("[SHELL] signing with repo demo keystore: " + ksPath);
             }
             else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
-            PlayerSettings.defaultInterfaceOrientation = UIOrientation.LandscapeLeft;
+            PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
 
