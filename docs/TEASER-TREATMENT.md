@@ -3,7 +3,7 @@
 
 > Engine: the proven house style (Ken Burns drift, parallax depth layers, breathing light, synth score, letterbox, minimal VO — Christopher Neural, −5Hz).
 > Doctrine: CINEMATIC_PRODUCTION_SYSTEM v1.0 — beat grammar `ESTABLISH → SPECTACLE → QUIET → TENSION → SPECTACLE → BREATH → CLOSE`, quiet between spectacles, close on a question.
-> Dispositions cite canon files per shot (traceability gate §7). "SB-xx" = new storyboard frames rolled for this teaser under §2.1 (vaulted art/pending, pending verdicts).
+> Dispositions cite canon files per shot (traceability gate §7). "SB-xx" = storyboard frames for this teaser — ALL SIX APPROVED (Sept 11 blanket verdict: 'I already approved the verdicts'), vaulted art/approved/teaser/.
 
 ---
 
