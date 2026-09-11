@@ -40,8 +40,17 @@ Codified Sept 11 (Big's ruling, commit 1136a17): the Ravenkin carries THE RELIQU
 In-game, ordinary lanterns stay what they are — the pendant is THE vessel's travel form; the hand-carried cage (vessel canon V1) is its resting form.
 
 ## ART QUEUE
-- RELIQUARY VESSEL CANON V1 (object piece, neutral cold staging) — rolled Sept 11, vaulted art/pending/RELIQUARY-VESSEL-CANON-V1.png, in Big's court
+- RELIQUARY VESSEL CANON V1 (object piece, neutral cold staging) — rolled Sept 11, vaulted art/pending/RELIQUARY-VESSEL-CANON-V1.png, DELIVERED to Big's DM Sept 11 with the pendant set
+- RELIQUARY PENDANT CANON V1 (pendant object piece, neutral cold staging) — rolled Sept 11, vaulted art/pending/RELIQUARY-PENDANT-CANON-V1.png, DELIVERED to Big's DM Sept 11, in his court
+- RAVENKIN RELIQUARY BEARER V5 (audit re-render: the Ravenkin canon + THE pendant worn at the throat) — art/pending/RAVENKIN-RELIQUARY-BEARER-V5.png, DELIVERED Sept 11; on Keep it swaps the Ravenkin canon (V4 preserved in git history)
 - Any locked art whose lantern reads as THE vessel gets an audit pass on Big's word (class art shrine-lanterns = mortal props, stay).
+
+## CODE / UI SWEEP (Sept 11 audit)
+- unity/Assets/AvalonShell/Shell.cs HUD relic widget still reads "THE LANTERN — UNLIT" — rename to "THE RELIQUARY — UNLIT" on next shell build (queued with v113+; cosmetic string, no install gate).
+- Weaver lantern-staff (weapon plates V1/V2, pending) stays an ORDINARY LANTERN per the law (lesser mortal vessel, rendered unlit) — no re-roll needed unless Big wants it relic-read.
+- STAGE2 Duskmourn "Lantern-Ways" location name + art = lawful ordinary lanterns (waystation line of grave-lanterns, NOT THE vessel) — stays.
+- Emberling concept pieces (art/concepts/sacred-heralds/LUMINARY-CANON-EMBERLING-LANTERN v1/v2) predate the Reliquary Law and show the flame carried in plain lantern housings — flag for audit re-roll on Big's word (the flame must be seen only in reliquary-form vessels).
+- Teaser v1/v2 + SHOT2-LANTERN superseded by teaser v3 (already reliquary-language).
 
 ## TEASER NOTE
 Teaser v2's closing whisper line is now canon as "The reliquary remembers." — the v2 render still says "The lantern remembers"; one-beat re-render queued pending Big's verdict on the swap.
