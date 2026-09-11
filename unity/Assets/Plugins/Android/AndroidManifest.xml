@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         tools:targetApi="31">
 
-        <activity android:name="AvalonShell.AvalonLauncherActivity"
+        <activity android:name="com.bigfoot404.avalon.AvalonLauncherActivity"
                   android:theme="@style/UnityThemeSelector"
                   android:launchMode="singleTask"
                   android:exported="true"
