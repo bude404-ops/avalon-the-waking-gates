@@ -239,4 +239,4 @@ Re-pledging is **FREE and unlimited** — no token-gating, no cost, no cooldown 
 
 
 ### 7. THE ORDER NAMES — FINAL (Sept 5 2026, BudE404: 'I like wayfarer and cantor')
-The six classes are THE ORDERS: **Warden** (Oathblade), **Keeper** (Reliquary), **Wayfarer** (Way-Daggers), **Cantor** (Bell-Staff), **Smith** (Rite Hammer), **Vigil** (Gate-Shield). Every class is a vocation on the road; the weapon is the named rite-tool of that vocation. The rejected generic discipline names (Blade/Lantern/Dagger/Song/Hammer/Tower) are retired everywhere — ladder captions, prop names, UI, docs.
+The six classes are THE ORDERS: **Warden** (Oathblade), **Keeper** (Reliquary), **Wayfarer** (Way-Daggers), **Cantor** (Bell-Staff), **Smith** (Rite Hammer), **Vigil** (Gate-Shield). Every class is a vocation on the road; the weapon is the named rite-tool of that vocation. The rejected generic discipline names (Blade/Lantern/Dagger/Song/Hammer/Tower — the Lantern name itself is now doubly-dead under the brazier law) are retired everywhere — ladder captions, prop names, UI, docs.

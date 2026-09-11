@@ -43,7 +43,7 @@
 - **THE DEEP GATE (Tidebellow):** beneath the Tidebellow whirlpool — from the surface: a spinning sea-eye with a faint cathedral-glow deep beneath it; the safe-line markers painted by the tide-priests.
 - **TIDEBELLOW:** gate-capital on the whirlpool's rim — fin-buttressed, sea-steel, harbors that drain at low tide.
 - **MISTRIFT:** stilt-city of tide-priests — rope-walks, marker-paint workshops, diver guildhalls.
-- **SIGNATURE VISTA:** the geode-clear moment after a storm — a diver at the whirlpool's edge, the Deep Gate's pressure-cathedral glow visible through the settling water, stilt-city lamps behind.
+- **SIGNATURE VISTA:** the geode-clear moment after a storm — a diver at the whirlpool's edge, the Deep Gate's pressure-cathedral glow visible through the settling water, stilt-city glow-crystals behind.
 
 ## STONEHEART / THE QUAKEVEINS — art grammar
 **Palette:** grey iron, strata-brown, quartz-white glow, crystal-color accents, highland cloud.

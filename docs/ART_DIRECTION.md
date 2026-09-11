@@ -6,7 +6,7 @@
 Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five laws:
 - PAINTERLY OIL-RENDER: visible brush texture in fog and cloth; sculpted forms; no photoreal pore detail.
 - THE CHISEL SIGNATURE: every stone/metal surface carries etched chisel-work — the world was SHAPED by dead gods, so the whole world reads as carved; ties to the gate-rune script.
-- TWO-LAYER LIGHT: cold desaturated ambient world; warm light exists ONLY from reliquary sources (in-engine: the Luminary). Blue-hour is law, not mood.
+- TWO-LAYER LIGHT: cold desaturated ambient world; warm/rich light exists from the three lawful source families — THE RELIQUARY (the Luminary), mortal fire (braziers/torches), and MAGIC LIGHT (flowing runes, crystals, glyph-light; MAGIC-LIGHT SOURCES LAW, Sept 11). Blue-hour is law, not mood.
 - COLOR AS GAMEPLAY: saturated world, fully drained Hollows, void black pops (see Color-Absence Law).
 - SILHOUETTE-FIRST: strong simple readable forms that survive phone-scale screens and keep enemy telegraphs readable.
 
@@ -191,4 +191,4 @@ The light inside THE RELIQUARY (the Luminary — the one relic) renders in the C
 
 **RELIQUARY PENDANT (vessel form, Big, Sept 11 ~1:54 AM):** the reliquary-vessel is a PENDANT-SIZED reliquary, unique (one-of-a-kind mortal craft), holding the ESSENCE OF BELIEF from the deities, worn hanging from the Ravenkin's neck — and its glow IS the radiant light for players, rendered in the deity's essence color per the region table above. Full law in docs/MYTHOS_NPC_ROSTER.md (THE RAVENKIN).
 
-TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the reliquary) — the amendment: the reliquary's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the reliquary glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a lantern appears. Gods carry no lantern (zero craft) — god staging unaffected.
+TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the reliquary) — the amendment: the reliquary's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the reliquary glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a vessel appears. Gods carry no fire-vessel (zero craft) — god staging unaffected.

@@ -26,6 +26,26 @@ Law line (unchanged, now under the true name): **THE FLAME IS NEVER SEEN UNVESSE
 
 Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliquary-Region Aura Law (was Lantern-Region Aura; the Luminary's glow renders the region aura color) · Cold Reliquary (was Cold Lantern, the mission design test) · CLASS TREE — RELIQUARY (lineage Keeper tree) · dead-reliquary dark (Hollow sites).
 
+## THE LANTERN BAN (Sept 11, Big: 'Well lanters need to be braziers or torches lanterns are too modern')
+
+Lanterns DO NOT EXIST in the world of Avalon — the closed glass-cage lantern reads as a modern object and is banned from all art, lore, scripts, dialog, and props. The re-cast:
+
+- **Fixed fire-holders = BRAZIERS** — grave-braziers, waystation braziers, votive brazier-niches, shrine braziers, brazier posts. (Lanternhush is now **BRAZIERHUSH**; Lantern-Ways is now **BRAZIER-WAYS**; the Lantern-Judge is the **BRAZIER-JUDGE**; the Lampkeeper is the **BRAZIERKEEPER**; the Lamplighter rite-keeper is the **FLAMEKEEPER**.)
+- **Carried fire = TORCHES** — torch-processions, torch-vigils, torch-escorts.
+- **THE RELIQUARY** is NOT a lantern and is unaffected — it is the one true cage-vessel, the archetype, not a member of the banned class.
+- The lore contrast line updates: a thousand braziers and torches in the world, ONE Reliquary.
+
+## THE MAGIC-LIGHT SOURCES LAW (Sept 11, Big: 'we can also have flowing runes and crystals and other lighting objects as the lighting source throughout the game aswell not just fire light since it the world should feel like there is magic in it')
+
+Fire is not the only light in the world. World light now comes in THREE families:
+
+1. **THE RELIQUARY** — the one relic flame; hue renders the region aura color (Reliquary-Region Aura Law unchanged).
+2. **Mortal fire** — braziers and torches: warm, story-worn, the craft-tier of light.
+3. **MAGIC LIGHT** — flowing rune-glow, crystals, glyph-light, and other lit magical objects woven through the world: rune-veins in megaliths, crystal seams in stone, shrine-glyph light, talisman glow, relic-adjacent god-craft. The world must READ as a magical place — every region carries its magic-light signature alongside its braziers.
+   - Magic light carries the REGION COLORWAY (storm slate / oxide red / bone grey / crimson / tide teal / deep moss); Ashfall may also burn ember-warm.
+   - The two-layer law is amended, not broken: cold desaturated ambient base holds; rich sources = reliquary flame + mortal fire + magic light together paint the region's palette. No flat dark world — a living, magical one.
+   - In-engine: magic light = emissive materials + bloom (same cheap channel as god-power light), per COLOSSUS_PRODUCTION_PIPELINE.
+
 ## VESSEL DESIGN (First Crafts + Avalon Craft Grammar + Mythic Celtic)
 
 The Reliquary is the ARCHETYPE of the Avalon Craft Grammar's LIGHT-WAITING HOOPS — the reliquary-frame cage concept, perfected in one object:

@@ -36,7 +36,7 @@ Dialogue remains restrained, mythic, tactical, and lore-bound. NPCs interpret an
 - **MG-CHAPTER-011 — Sacred Sun Temple**: 6 mission beats
 - **MG-CHAPTER-012 — River of Light Stronghold**: 6 mission beats
 - **MG-CHAPTER-013 — The Mythos Gate**: 6 mission beats
-- **MG-CHAPTER-014 — Lanterns That Lie**: 6 mission beats
+- **MG-CHAPTER-014 — Braziers That Lie**: 6 mission beats
 - **MG-CHAPTER-015 — Mirror Lake Oath**: 6 mission beats
 - **MG-CHAPTER-016 — Storm Behind the Torii**: 6 mission beats
 - **MG-CHAPTER-017 — First Harmonic Step**: 6 mission beats
