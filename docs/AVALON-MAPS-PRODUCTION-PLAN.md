@@ -22,6 +22,8 @@ playable map with the **RAVAGER**, the first class through the character pipelin
 **First playable demo = the Ravager walking the Cold Reliquary map.** The two tracks
 converge on one vertical slice.
 
+**MAP 1 EXAMPLE VERDICT: KEEP** (Sept 11, Big: 'Keep,' on the cartographic plate sent to his DM). MAP1-COLD-RELIQUARY-ASHFALL-CANON.png is the locked realm-map template — the five remaining realm starter layouts roll from it in the same style, one verdict loop as always.
+
 ## 2. PRODUCTION ROUTES (Unity-Only Law compliant, verified)
 
 | Layer | Tool | Status |
