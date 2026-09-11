@@ -73,6 +73,12 @@ namespace AvalonShell
             }
             else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
+            // v113 LAUNCH-CRASH FIX: Unity 6 defaults to Vulkan-first on Android; devices with
+            // broken/absent Vulkan drivers crash at GfxDevice init (splash flash -> "keeps stopping").
+            // Force GLES3-only — universal on Android 8+ — until proven otherwise on Big's device.
+            PlayerSettings.SetUseDefaultGraphicsAPIs(BuildTarget.Android, false);
+            PlayerSettings.SetGraphicsAPIs(BuildTarget.Android, new[] { UnityEngine.Rendering.GraphicsDeviceType.OpenGLES3 });
+            Debug.Log("[SHELL] graphics APIs forced: OpenGLES3 only (Vulkan crash fix)");
             // customMainManifest API removed in Unity 6000.x — Assets/Plugins/Android/AndroidManifest.xml
             // (install-permission for self-update) is picked up automatically when present.
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
