@@ -180,10 +180,23 @@ jobs:
             java -jar /tmp/apktool.jar b -q /tmp/dec -o /tmp/fixed-unsigned.apk
             BT=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
             $ANDROID_SDK_ROOT/build-tools/$BT/zipalign -f 4 /tmp/fixed-unsigned.apk /tmp/fixed-aligned.apk
-            $ANDROID_SDK_ROOT/build-tools/$BT/apksigner sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
+            $ANDROID_SDK_ROOT/build-tools/$BT/apksigner sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
             python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "PATCH FAILED VERIFICATION"; exit 1; }
             echo "PATCHED + RESIGNED + VERIFIED"
           fi
+      - name: SIGN GUARANTEE (always AVALON-DEMO, never trust Unity keystore)
+        run: |
+          APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
+          BT=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
+          $ANDROID_SDK_ROOT/build-tools/$BT/apksigner sign \
+            --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore \
+            --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates \
+            "$APK"
+          DN=$($ANDROID_SDK_ROOT/build-tools/$BT/apksigner verify --print-certs "$APK" | grep -m1 "certificate DN")
+          echo "$DN"
+          echo "$DN" | grep -q "CN=AVALON Bigfoot404" || { echo "SIGN GUARANTEE FAILED - wrong cert"; exit 1; }
+          python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "launcher broke in re-sign"; exit 1; }
+          echo "SIGNED + VERIFIED: AVALON-DEMO permanent base"
       - name: Harvest APK
         if: always()
         run: |
