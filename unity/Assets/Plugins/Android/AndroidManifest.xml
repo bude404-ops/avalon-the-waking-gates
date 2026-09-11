@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- AVALON v111 launcher manifest — UNITY 6 PATTERN (fixes the v107-v110 ghost-install war).
+<!-- AVALON v203 manifest — THEME FIX: UnityPlayerGameActivity extends AppCompatActivity (via GameActivity)
+     and requires an AppCompat theme. Without it, setContentView() throws IllegalStateException.
+     Fix: android:theme="@style/Theme.Avalon" on the activity.
+     Canary v202 proved this — BootCanaryActivity (plain Activity) launched fine, UnityPlayerGameActivity crashed.
+     --
+     AVALON v111 launcher manifest — UNITY 6 PATTERN (fixes the v107-v110 ghost-install war).
      Empirical record:
      - v110 permissions-only overlay: Unity 6 warns "Unable to find Unity activity in manifest",
        injects NOTHING -> APK shipped with ZERO <activity> nodes (no icon, no Open button).
@@ -21,6 +26,7 @@
                   android:label="AVALON"
                   android:exported="true"
                   android:launchMode="singleTask"
+                  android:theme="@style/Theme.AppCompat.NoActionBar"
                   android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
                   android:resizeableActivity="false">
             <intent-filter>
