@@ -71,7 +71,7 @@ If belief dies everywhere, every god wakes as an Echo. The player's reliquary is
 | Lesser drakes (proof of the Walking Age) | Unchanged — relics of the Walking Age, when gods walked openly. |
 | Aetherium | Unchanged as matter-substrate — now also understood as the gods' DREAM made substance. |
 | Relic system (Cold Reliquary etc.) | Unchanged — now the primary power economy (gifts, not gear). |
-| Luminary pets (Emberling, reliquary attire) | Unchanged — living bits of god-light given form; the pet-relic fusion canon stands. |
+| Luminary pets (relic attire) | EMBERLING FORM RETIRED (Sept 11, Big) — companions render as pure stark flame-in-vessel, never creature-ified; Ravenkin is the sole unique creature. |
 | Faction names, deity names, Gate names | UNCHANGED — they fit the doctrine as-is. |
 
 ## STORYLINE SHAPE (campaign grammar)
@@ -164,7 +164,7 @@ Pets are no longer Luminarys — they are **DREAM-MOTES: tiny living fragments o
 
 Mechanics (carry over from the pet canon): motes grow through FIVE LIGHT TIERS fed by witnessing your deeds (brightness earned, never sold); the tier system and cosmetic reskin monetization survive. NEW RITE MOMENT: at the Gate Rite climax, the mote runs INTO the rising god — a piece of the dream coming home — and returns brighter (tier-up moment written into the rite itself).
 
-The Luminary/reliquary-attire pet designs are retired from doctrine (kept in art history); the Emberling canon survives as Ashfall's ember-fox lineage.
+The Luminary/reliquary-attire pet designs are retired from doctrine (kept in art history); the Emberling creature form is RETIRED (Sept 11, Big — stark grim dark world; the Ravenkin is the only one).
 
 
 ## THE GAME TITLE + THE GATE RUNE (canon v1.2, Sept 5, 2026)

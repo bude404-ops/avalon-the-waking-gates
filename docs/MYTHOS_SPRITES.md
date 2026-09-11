@@ -1,5 +1,6 @@
 # MYTHOS — SPRITES: THE SMALL TRUTH (Companion System)
 
+> **EMBERLING RETIREMENT (Sept 11 2026, Big):** the Emberling CREATURE design is retired — companions never render as cute flame-beings. The Luminary stays pure stark flame-in-vessel; the Ravenkin is the sole unique creature in the canon and the only creature that bears a Reliquary. Companion mechanics below survive with the non-creature flame form.
 > **DOCTRINE UPDATE (Sept 5 2026 — THE AVALON DOCTRINE, supersedes the Giants & Sprites update):** mortals of Mythos are HUMANS (see WORLD_BIBLE Human Law + AVALON_DOCTRINE.md). The companion system in this doc SURVIVES UNCHANGED as the companion layer — sprites here are tiny living motes of god-light (the Emberling pet canon), born from the pooled element of the Walking Age, that follow HUMAN pilgrims and hooded wanderers alike. Mimic skins still reflect each region's GIANT patron. The mortal RACES formerly called sprites are retired; the 12 canonized Warden/Keeper designs are re-keyed as THE FIRST PILGRIMS (legend-humans anointed by relic-light).
 **Canon v1.0 — Sept 4 2026, BudE404 directive: pets/sprites of each elemental region for the human side, with abilities, levels, and skin monetization. Companion to GAMEPLAY_DOCTRINE.**
 

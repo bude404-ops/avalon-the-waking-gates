@@ -6,7 +6,7 @@
 Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five laws:
 - PAINTERLY OIL-RENDER: visible brush texture in fog and cloth; sculpted forms; no photoreal pore detail.
 - THE CHISEL SIGNATURE: every stone/metal surface carries etched chisel-work — the world was SHAPED by dead gods, so the whole world reads as carved; ties to the gate-rune script.
-- TWO-LAYER LIGHT: cold desaturated ambient world; warm/rich light exists from the three lawful source families — THE RELIQUARY (the Luminary), mortal fire (braziers/torches), and MAGIC LIGHT (glowing runes, crystals, glyph-light; MAGIC-LIGHT SOURCES LAW, Sept 11). Blue-hour is law, not mood.
+- TWO-LAYER LIGHT: cold desaturated ambient world; warm/rich light exists from the three lawful source families — THE RELIQUARY (the Luminary), mortal fire (braziers/torches), and MAGIC LIGHT (glowing runes, crystals, glyph-light; MAGIC-LIGHT SOURCES LAW, Sept 11). FIRE-COLOR LAW (Sept 11, Big: 'with fire it needs to be fire color not the realms flame color'): MORTAL FIRE ALWAYS BURNS NATURAL FIRE COLOR — amber/orange flame in braziers and torches in every realm, never the region hue. The realm aura color belongs ONLY to magic light — glowing runes, crystals, glyph-light — and the Luminary's reliquary glow. Fire that has gone region-colored is a re-roll. Blue-hour is law, not mood.
 - COLOR AS GAMEPLAY: saturated world, fully drained Hollows, void black pops (see Color-Absence Law).
 - SILHOUETTE-FIRST: strong simple readable forms that survive phone-scale screens and keep enemy telegraphs readable.
 

@@ -33,7 +33,7 @@ Built by the First Pilgrims in the same Cinder Roads grammar as their armor: iro
 - Dungeon roles: rite-gate bosses (answer the old watchword = pass; fight = hard construct duel, armor STAYS = rich loot), puzzle partners (wardens that respond to rite-fragments learned in quests).
 - They are not your enemies by default. They are just... not done yet.
 
-## IV. WITNESSES (un-erasable light-beings — the emberling class)
+## IV. WITNESSES (un-erasable light-beings — pure flame motes, NON-CREATURE per the Sept 11 Emberling retirement)
 Canon: the LUMINARIES (formerly 'Luminaries') are pure-witness motes; witnesses cannot be hollowed, and the Grimlights are the Hollow's counter to them. The pet line is named LUMINARIES across all docs, UI, and shop. Expand the class:
 - Wild witnesses: mote-swarms that gather where deeds happen (battlefields, vigils, oaths) — they feed on recorded meaning. Brighten the Codex: a place where witnesses swarm is a place where something WAS done.
 - Shrine witnesses: anchored motes that remember what they've seen — a dungeon's witness can replay a scene (the lore-dispenser that never lies and never editorializes; what it shows is the Codex's trophy case in motion).

@@ -22,7 +22,6 @@ Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliqua
   - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-V2.png (Gloam Warden at waystation brazier)
   - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-V2.png (megalith avenue, votive brazier niches)
   - WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit)
-  - LUMINARY-CANON-EMBERLING-V3.png + V4.png (flame in miniature reliquary-form vessels only)
   - SCENE-GLOAMBARROW-BRAZIERLEDGER-V2.png (Brazierkeeper's ledger of grave-braziers)
   Old lantern-showing pieces superseded on Keep; filenames above vaulted in art/pending/.
 - Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
@@ -37,6 +36,13 @@ Lanterns DO NOT EXIST in the world of Avalon — the closed glass-cage lantern r
 - The lore contrast line updates: a thousand braziers and torches in the world, ONE Reliquary.
 
 ## THE MAGIC-LIGHT SOURCES LAW (Sept 11, Big: 'we can also have glowing runes and crystals and other lighting objects as the lighting source throughout the game aswell not just fire light since it the world should feel like there is magic in it')
+
+## THE FIRE-COLOR LAW (Sept 11, Big: 'I think with fire it needs to be fire color not the realms flame color, only runes and other light type should be the realms glow effect')
+MORTAL FIRE IS FIRE-COLORED — braziers and torches burn natural amber/orange flame in EVERY realm. The region aura hue lives ONLY on magic light: glowing runes, crystal veins, glyph-light — and the Luminary's reliquary glow. Crimson braziers in Duskmourn art are re-rolled to natural fire color (crimson stays on the runes/crystals).
+
+## THE EMBERLING RETIREMENT + RAVENKIN EXCLUSIVITY (Sept 11, Big: 'the emberling dont match our stark of grim dark type creatures the ravenkin is the only one also allowed to hold the reliquary')
+- THE EMBERLING IS RETIRED — no cute flame-creature beings anywhere in the world; the concept pieces (LUMINARY-CANON-EMBERLING v1-v4) are cut from canon and moved to art/retired/. The Luminary stays THE FLAME — pure stark flame in its reliquary vessel, never creature-ified (no face, no wings, no cute form).
+- THE RAVENKIN IS THE ONE — the sole unique/otherworldly herald-creature in the canon, and the ONLY creature permitted to bear a Reliquary (the Pendant). No other creature ever holds, wears, or bears a reliquary.
 
 Fire is not the only light in the world. World light now comes in THREE families:
 
