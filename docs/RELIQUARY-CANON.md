@@ -17,13 +17,12 @@ Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliqua
 
 ## THE LANTERN BAN (Sept 11, Big: 'Well lanters need to be braziers or torches lanterns are too modern')
 
-- **Art audit queue (re-rolls on the ban) — ROLLED Sept 11 (Big: 'do a art sweep and reroll that art that needs fixed'), sent to Big's court, verdicts pending:**
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-WORLD-V4-FIRECOLOR.png (waystation brazier road + torch pilgrims)
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-V3-FIRECOLOR.png (Gloam Warden at waystation brazier)
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-V3-FIRECOLOR.png (megalith avenue, votive brazier niches)
-  - WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit)
-  - SCENE-GLOAMBARROW-BRAZIERLEDGER-V3-FIRECOLOR.png (Brazierkeeper's ledger of grave-braziers)
-  Old lantern-showing pieces superseded on Keep; filenames above vaulted in art/pending/. Sept 11 FIRE-COLOR re-rolls: the first crimson-fire batch is retired (natural amber fire rolled in its place per Big's ruling); Emberling V3/V4 cut from the queue entirely per the Emberling Retirement.
+- **Art audit (LANTERN BAN re-rolls) — FIRE-COLOR BATCH CANON-LOCKED (Sept 11 ~1:15 PM, Big: 'Keep'):** all four FIRE-COLOR pieces locked into art/approved/ (superseded versions to art/retired/):
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-WORLD-CANON.png (waystation brazier road + torch pilgrims, natural amber fire)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-CANON.png (Gloam Warden at waystation brazier)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-CANON.png (megalith avenue, votive brazier niches, crimson rune-glow)
+  - SCENE-GLOAMBARROW-BRAZIERLEDGER-CANON.png (Brazierkeeper's ledger of grave-braziers, one gone dark)
+  Still pending Big's verdict: WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit).
 - Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
 
 ## RENAMING LEDGER (repo-swept Sept 11)
