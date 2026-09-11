@@ -3,7 +3,10 @@
 > "Big pause on the apk file, what ever you keep trying isnt working need a new approach or start over with its build" →
 > "Ok ya we just need to get that apk fixed so its viewable to see whats being made"
 
-**Target device (Big's, confirmed Sept 11):** Samsung Galaxy S23, Android 14 (API 34), ARM64.
+**Target device (Big's, LATEST confirmation, supersedes any earlier device info):** Samsung Galaxy S22 Ultra SM-S908U (Android 14, ARM64).
+
+NOTE: an S23-targeted duplicate pipeline (clean-apk.yml + AvalonClean/CleanApkBuild.cs) was
+removed Sept 11 — the ONLY live pipeline is clean-slate-apk.yml (BareBuild.cs, vcode 201 series).
 
 ## Doctrine
 
