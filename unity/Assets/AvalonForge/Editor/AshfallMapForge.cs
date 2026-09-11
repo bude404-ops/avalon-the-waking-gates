@@ -30,7 +30,7 @@ namespace AvalonForge
 
                 var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
                 BuildWorld();
-                Directory.CreateDirectory("Assets/AvalonForge/Scenes");
+                Directory.CreateDirectory(System.IO.Path.Combine(Application.dataPath, "AvalonForge", "Scenes"));
                 bool saved = EditorSceneManager.SaveScene(scene, "Assets/AvalonForge/Scenes/MAP-ASHFALL.unity");
                 Log("Scene saved: " + saved + " -> Assets/AvalonForge/Scenes/MAP-ASHFALL.unity");
 
@@ -192,8 +192,8 @@ namespace AvalonForge
             }
 
             // ================= BEAT 2 — THE ROAD (charcoal forest, THREAT) =================
-            var road = new GameObject("B2-THE-ROAD");
-            Prim(PrimitiveType.Cylinder, new Vector3(PathX(120f), 1.15f, 120f), new Vector3(0.8f, 11f, 0.8f), mWood, "FallenLogBridge", new Vector3(0, 0, 90f)).transform.SetParent(road.transform);
+            var roadGo = new GameObject("B2-THE-ROAD");
+            Prim(PrimitiveType.Cylinder, new Vector3(PathX(120f), 1.15f, 120f), new Vector3(0.8f, 11f, 0.8f), mWood, "FallenLogBridge", new Vector3(0, 0, 90f)).transform.SetParent(roadGo.transform);
             var rng = new System.Random(404);
             for (int i = 0; i < 70; i++)
             {
