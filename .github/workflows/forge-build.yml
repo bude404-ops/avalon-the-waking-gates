@@ -52,7 +52,7 @@ jobs:
         run: |
           mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge/Generated
           printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
-          printf '{"dependencies":{"com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0"}}\n' > unity/Packages/manifest.json
+          printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.androidjni":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
           cp "${{ inputs.inputf }}" "unity/Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx" && echo "STAGED: ${{ inputs.inputf }}"
       - name: Run Forge
         id: forge
