@@ -18,12 +18,12 @@ Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliqua
 ## THE LANTERN BAN (Sept 11, Big: 'Well lanters need to be braziers or torches lanterns are too modern')
 
 - **Art audit queue (re-rolls on the ban) — ROLLED Sept 11 (Big: 'do a art sweep and reroll that art that needs fixed'), sent to Big's court, verdicts pending:**
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-WORLD-V3.png (waystation brazier road + torch pilgrims)
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-V2.png (Gloam Warden at waystation brazier)
-  - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-V2.png (megalith avenue, votive brazier niches)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-WORLD-V4-FIRECOLOR.png (waystation brazier road + torch pilgrims)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-V3-FIRECOLOR.png (Gloam Warden at waystation brazier)
+  - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-V3-FIRECOLOR.png (megalith avenue, votive brazier niches)
   - WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit)
-  - SCENE-GLOAMBARROW-BRAZIERLEDGER-V2.png (Brazierkeeper's ledger of grave-braziers)
-  Old lantern-showing pieces superseded on Keep; filenames above vaulted in art/pending/.
+  - SCENE-GLOAMBARROW-BRAZIERLEDGER-V3-FIRECOLOR.png (Brazierkeeper's ledger of grave-braziers)
+  Old lantern-showing pieces superseded on Keep; filenames above vaulted in art/pending/. Sept 11 FIRE-COLOR re-rolls: the first crimson-fire batch is retired (natural amber fire rolled in its place per Big's ruling); Emberling V3/V4 cut from the queue entirely per the Emberling Retirement.
 - Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
 
 ## RENAMING LEDGER (repo-swept Sept 11)
