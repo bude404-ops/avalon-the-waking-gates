@@ -68,6 +68,8 @@ jobs:
           echo "BARE BUILD EXIT: $CODE"
           if [ "$CODE" -ne 0 ]; then
             grep -E "\[BARE\]|error CS|Exception" $GITHUB_WORKSPACE/bare-build.log | head -30 || true
+            echo "=== bare-build.log tail (last 60 lines) ==="
+            tail -60 $GITHUB_WORKSPACE/bare-build.log || echo "(no bare-build.log)"
             exit 1
           fi
           ls -la $GITHUB_WORKSPACE/build/
