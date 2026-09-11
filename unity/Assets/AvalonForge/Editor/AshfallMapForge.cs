@@ -201,7 +201,7 @@ namespace AvalonForge
                 float side = (rng.Next(2) == 0) ? -1f : 1f;
                 float off = 12f + rng.Next(0, 60);
                 float x = PathX(z) + side * off;
-                var tree = new GameObject("DeadTree-" + i); tree.transform.SetParent(road.transform);
+                var tree = new GameObject("DeadTree-" + i); tree.transform.SetParent(roadGo.transform);
                 float hT = 5.5f + rng.Next(0, 30) / 10f;
                 Prim(PrimitiveType.Cylinder, new Vector3(x, hT / 2f, z), new Vector3(0.35f, hT / 2f, 0.35f), mWood, "Trunk", new Vector3(rng.Next(-4, 5), rng.Next(0, 180), rng.Next(-4, 5))).transform.SetParent(tree.transform);
                 Prim(PrimitiveType.Cylinder, new Vector3(x + side * 0.7f, hT * 0.82f, z), new Vector3(0.18f, 1.7f, 0.18f), mWood, "BranchA", new Vector3(0, 0, 55f * side)).transform.SetParent(tree.transform);
@@ -213,7 +213,7 @@ namespace AvalonForge
                 float side = (rng.Next(2) == 0) ? -1f : 1f;
                 Prim(PrimitiveType.Cube, new Vector3(PathX(z) + side * (8f + rng.Next(0, 70)), 0.4f + rng.Next(0, 10) / 10f, z),
                     new Vector3(1.2f + rng.Next(0, 20) / 10f, 0.9f + rng.Next(0, 12) / 10f, 1.4f + rng.Next(0, 20) / 10f), mStone, "Rock-" + i,
-                    new Vector3(rng.Next(0, 20), rng.Next(0, 90), rng.Next(0, 12))).transform.SetParent(road.transform);
+                    new Vector3(rng.Next(0, 20), rng.Next(0, 90), rng.Next(0, 12))).transform.SetParent(roadGo.transform);
             }
 
             // ================= BEAT 3 — RUINED SHRINE (DISCOVERY) =================
