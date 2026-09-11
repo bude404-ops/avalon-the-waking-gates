@@ -36,7 +36,7 @@ The old gods sleep in the land itself. One flame answers them.
 - End title sits on silence.
 
 ## CONTINUITY NOTES
-- The lantern = THE image of the game (Lantern Law: the flame is never seen unvesselled; the Luminary alights of its own will — Shot 3 shows exactly that).
+- The lantern = THE image of the game (Reliquary Law: the flame is never seen unvesselled; the Luminary alights of its own will — Shot 3 shows exactly that).
 - Gate arch stays ZERO-glow weathered stone in every frame; color lives only in flame and in light from beyond the threshold.
 - Six silhouettes = the six classes; silhouettes only (kit details stay in canon key art).
 - Zero readable text or glyphs in any frame; knotwork/spray patterns only.
@@ -60,3 +60,13 @@ Fixes codified:
 3. SCRIPT v2 — "Before kingdoms, there was the mountain." / "The world forgot what it buried." / (whisper, over black) "The lantern remembers."
 4. VOICE v2 — Andrew Neural, -10% rate, low-end EQ + cold hall reverb; whisper line deeper space (-18% rate).
 New runtime 79s. Master: teaser/AVALON-TEASER-v2.mp4.
+
+---
+
+## v3 REVIEW PACKET (Sept 11 ~2 AM, Big's verdict on v2)
+Verdict: "using old art... generate new artwork specifically for it"; sound/voice still off; wants voice menu + script choice + images.
+Delivered to DM:
+- ART: 6 new teaser-specific frames (teaser/art/TEASER-V3-FRAME-1..6.png), one coherent flow: Long Road → Traveler → Waking Gate → Sleeping Colossus → Living Flame → Six Lights Finale. Generated fresh 2.39:1 cinematic grade, cold world / lantern-only warmth.
+- VOICES: 5-option menu (same test line): 1 Connor Irish / 2 Ryan British / 3 Thomas British / 4 Guy deep US / 5 Eric US (teaser/voices/).
+- SCRIPTS: 3 full-dialogue options — A "The Long Dark" (prophecy), B "The Unfinished Song" (bardic), C "The Warning" (cold direct). Each 4 beats incl. whispered title line.
+Awaiting: voice number + script letter. v3 = full rebuild: new art, chosen voice, chosen script, slow pacing locked.
