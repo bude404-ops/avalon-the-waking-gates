@@ -65,6 +65,7 @@ namespace AvalonShell
             }
             else Debug.LogWarning("[SHELL] no keystore — debug-signed (updates may conflict)");
             PlayerSettings.defaultInterfaceOrientation = UIOrientation.AutoRotation;
+            PlayerSettings.Android.customMainManifest = true;   // Assets/Plugins/Android/AndroidManifest.xml (install-permission for self-update)
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel24;
             PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
 

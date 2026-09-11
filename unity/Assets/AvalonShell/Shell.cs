@@ -2,9 +2,12 @@
 // TITLE -> CHARACTER SELECT -> IN-GAME (HUD + skill tab over the stage).
 // All UI built at runtime; bootstrapped headless by AvalonShellBuild.
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Networking;
 using UnityEngine.UI;
 
 namespace AvalonShell
@@ -12,6 +15,10 @@ namespace AvalonShell
     public class Shell : MonoBehaviour
     {
         const int CANON_BG = 0x0d0e10;
+        // SELF-UPDATE — Big's order: on open, the app checks for a newer build and installs it.
+        const string UPDATE_MANIFEST_URL = "https://mcontwitter-glitch.github.io/avalon-3d-viewer/live/game.json";
+        [Serializable] class ApkMeta { public int versionCode; public string url; }
+        [Serializable] class GameManifest { public ApkMeta apk; }
         enum State { Title, Select, Game }
 
         class ClassDef { public string name, realm, role, accent; public string blurb;
@@ -31,6 +38,7 @@ namespace AvalonShell
         Camera cam; float camDist = 2.8f; float camYaw = 25f;
         Animator animator; GameObject model; Transform stagePivot;
         Text hudLine;
+        Transform canvasT;
         readonly Dictionary<string, GameObject> loaded = new Dictionary<string, GameObject>();
         readonly List<Image> cardTints = new List<Image>();
         readonly List<RectTransform> cardRects = new List<RectTransform>();
@@ -56,12 +64,125 @@ namespace AvalonShell
             wasPortrait = Screen.height > Screen.width;
 
             var canvas = MakeCanvas();
+            canvasT = canvas.transform;
             panelTitle = BuildTitle(canvas.transform);
             panelSelect = BuildSelect(canvas.transform);
             panelGame = BuildGame(canvas.transform);
             panelSkills = BuildSkills(canvas.transform);
             LayoutCards();
             SetState(State.Title);
+            StartCoroutine(CheckForUpdate());
+        }
+
+        // ================= SELF-UPDATE =================
+        IEnumerator CheckForUpdate()
+        {
+#if UNITY_ANDROID && !UNITY_EDITOR
+            var toast = Label(canvasT, "", 12, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            var trt = toast.transform as RectTransform;
+            trt.anchorMin = new Vector2(0, 0.955f); trt.anchorMax = new Vector2(1, 1.0f); trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero;
+            toast.gameObject.SetActive(false);
+
+            // step 1 — manifest fetch (yields only inside using = try/finally, legal in iterators)
+            UnityWebRequest req = null;
+            try { req = UnityWebRequest.Get(UPDATE_MANIFEST_URL); req.timeout = 10; }
+            catch (Exception e) { Debug.LogWarning("[SHELL] self-update: " + e.Message); yield break; }
+
+            GameManifest manifest = null;
+            using (req)
+            {
+                yield return req.SendWebRequest();
+                if (req.result == UnityWebRequest.Result.Success)
+                {
+                    try { manifest = JsonUtility.FromJson<GameManifest>(req.downloadHandler.text); }
+                    catch (Exception e) { Debug.LogWarning("[SHELL] manifest parse: " + e.Message); }
+                }
+            }
+            if (manifest == null || manifest.apk == null || string.IsNullOrEmpty(manifest.apk.url)) yield break;
+
+            // step 2 — compare with installed build
+            int installed = -1;
+            try { installed = InstalledVersionCode(); }
+            catch (Exception e) { Debug.LogWarning("[SHELL] vc: " + e.Message); }
+            if (installed <= 0 || manifest.apk.versionCode <= installed) yield break;   // already newest
+
+            // step 3 — download the new APK
+            toast.text = "NEW BUILD FOUND — DOWNLOADING…";
+            toast.gameObject.SetActive(true);
+            byte[] data = null;
+            var dl = new UnityWebRequest(manifest.apk.url, "GET", new DownloadHandlerBuffer(), null);
+            using (dl)
+            {
+                dl.timeout = 300;
+                var op = dl.SendWebRequest();
+                while (!op.isDone) yield return null;
+                if (dl.result == UnityWebRequest.Result.Success)
+                {
+                    try { data = dl.downloadHandler.data; }
+                    catch (Exception e) { Debug.LogWarning("[SHELL] download read: " + e.Message); }
+                }
+            }
+            if (data == null || data.Length == 0)
+            {
+                toast.text = "UPDATE DOWNLOAD FAILED";
+                yield return new WaitForSeconds(2.5f);
+                toast.gameObject.SetActive(false);
+                yield break;
+            }
+
+            // step 4 — hand to the system installer
+            try
+            {
+                string apkPath = Path.Combine(Application.persistentDataPath, "avalon-update.apk");
+                File.WriteAllBytes(apkPath, data);
+                toast.text = "UPDATE READY — CONFIRM INSTALL";
+                InstallApk(apkPath);
+            }
+            catch (Exception e) { Debug.LogWarning("[SHELL] install: " + e.Message); }
+#endif
+        }
+
+        int InstalledVersionCode()
+        {
+            try
+            {
+                using (var up = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+                using (var act = up.GetStatic<AndroidJavaObject>("currentActivity"))
+                using (var pm = act.Call<AndroidJavaObject>("getPackageManager"))
+                using (var info = pm.Call<AndroidJavaObject>("getPackageInfo", act.Call<string>("getPackageName"), 0))
+                    return info.Get<int>("versionCode");
+            }
+            catch (Exception e) { Debug.LogWarning("[SHELL] vc: " + e.Message); return -1; }
+        }
+
+        void InstallApk(string path)
+        {
+            try
+            {
+                AndroidJavaObject session = null;
+                using (var up = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+                using (var act = up.GetStatic<AndroidJavaObject>("currentActivity"))
+                using (var pm = act.Call<AndroidJavaObject>("getPackageManager"))
+                using (var installer = pm.Call<AndroidJavaObject>("getPackageInstaller"))
+                {
+                    var pars = new AndroidJavaObject("android.content.pm.PackageInstaller$SessionParams", 1 /* MODE_FULL_INSTALL */);
+                    int sid = installer.Call<int>("createSession", pars);
+                    session = installer.Call<AndroidJavaObject>("openSession", sid);
+                    using (var outs = session.Call<AndroidJavaObject>("openWrite", "avalon-update.apk", 0L, -1L))
+                    {
+                        byte[] bytes = File.ReadAllBytes(path);
+                        outs.Call("write", bytes);
+                        outs.Call("flush");
+                        outs.Call("close");
+                    }
+                    var intent = new AndroidJavaObject("android.content.Intent", "com.bigfoot404.avalon.UPDATE_DONE");
+                    var pending = new AndroidJavaClass("android.app.PendingIntent").CallStatic<AndroidJavaObject>(
+                        "getBroadcast", act, 0, intent, 0x0C000000 /* UPDATE_CURRENT | IMMUTABLE */);
+                    session.Call("commit", pending.Call<AndroidJavaObject>("getIntentSender"));
+                    Debug.Log("[SHELL] update session committed — system install dialog should appear");
+                }
+            }
+            catch (Exception e) { Debug.LogWarning("[SHELL] install: " + e.Message); }
         }
 
         void SetState(State s)
