@@ -8,7 +8,7 @@
 ## ACT 1 — THE HOOK (pilgrim mode)
 **Location:** EMBERHOLLOW, the shrine town in the charcoal forest. Player is a Marked pilgrim (hooded human craft, Cinder Roads plate, the hand-carved flame Mark on the breastplate, element-touched ember eyes, an emberling Luminary companion wearing the Cold Reliquary attire).
 
-The town's hearth-shrine — the perpetual flame every home lights its brazier from — has gone **cold**. Not burned out: *hollowed*. The flame is still there but casts no light and no warmth; ash falls UP from it. Old Mother Brackle (brazier-keeper NPC) won't say the god's name out loud anymore — when she tries, the sound goes missing. The pilgrim investigates at mortal scale: questioning the congregation, tracking ash that falls upward to its source, escorting frightened families to the town's Witness lanterns.
+The town's hearth-shrine — the perpetual flame every home lights its brazier from — has gone **cold**. Not burned out: *hollowed*. The flame is still there but casts no light and no warmth; ash falls UP from it. Old Mother Brackle (brazier-keeper NPC) won't say the god's name out loud anymore — when she tries, the sound goes missing. The pilgrim investigates at mortal scale: questioning the congregation, tracking ash that falls upward to its source, escorting frightened families to the town's Witness braziers.
 
 **Mechanics on display:** NPC dialogue at mortal scale; T1 hollowed-ash-vermin fights (one-tap, teaches weight); escorting civilians = PROTECTION faith (zero-loss bonus); first look at a dead Witness Zone — an extinguished brazier whose watcher vanished, Grimlights breeding in the dark pool around it.
 

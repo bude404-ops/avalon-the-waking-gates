@@ -29,7 +29,7 @@ Lanterns DO NOT EXIST in the world of Avalon — the closed glass-cage lantern r
 - **THE RELIQUARY** is NOT a lantern and is unaffected — it is the one true cage-vessel, the archetype, not a member of the banned class.
 - The lore contrast line updates: a thousand braziers and torches in the world, ONE Reliquary.
 
-## THE MAGIC-LIGHT SOURCES LAW (Sept 11, Big: 'we can also have flowing runes and crystals and other lighting objects as the lighting source throughout the game aswell not just fire light since it the world should feel like there is magic in it')
+## THE MAGIC-LIGHT SOURCES LAW (Sept 11, Big: 'we can also have glowing runes and crystals and other lighting objects as the lighting source throughout the game aswell not just fire light since it the world should feel like there is magic in it')
 
 Fire is not the only light in the world. World light now comes in THREE families:
 
