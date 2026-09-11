@@ -84,3 +84,6 @@ Build rule: demo builds cut from the same repo but require an explicit "demo-rea
   command; shell updates = build new APK (bump versionCode) then publish with the apk path.
 - versionCode 14 / versionName 0.10.0-live; last manual install (this one). v0.9.3 had an
   asset-path packaging bug (flattened assets -> ASSET READ FAIL) — superseded/fixed here.
+
+## v107+ — UNITY SIGNING BASE (Sept 11, 2026)
+Unity CI builds (forge-build.yml) sign with `unity/AVALON-DEMO.keystore` — this is now the PERMANENT signing base for all AVALON Unity APKs. It does NOT match the old web-shell debug.keystore (v0.10.0 vcode 14): Android will silently fail to install v107 over the old shell. Owners must uninstall the old app ONCE before installing the first Unity build. All future Unity builds share this keystore → one-tap self-updates, no more uninstalls. Never rotate this key.
