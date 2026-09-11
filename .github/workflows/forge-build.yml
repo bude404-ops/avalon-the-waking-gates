@@ -167,6 +167,17 @@ jobs:
           ls -la $GITHUB_WORKSPACE/build/
       - name: Launcher guarantee (verify + deterministic patch)
         run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
+          ZIPAL=""
+          if [ -n "$APKS" ]; then ZIPAL=$(dirname "$APKS")/zipalign; fi
+          if [ -z "$APKS" ]; then
+            echo "SDK apksigner not found - downloading build-tools r34"
+            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
+            (cd /tmp && unzip -q -o bt.zip -d bt)
+            APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
+          fi
+          echo "apksigner: $APKS"
           APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
           [ -f "$APK" ] || { echo "no apk"; exit 1; }
           python3 -m pip install -q androguard 2>/dev/null || pip install -q androguard 2>/dev/null || pip3 install -q androguard 2>/dev/null || true
@@ -178,21 +189,30 @@ jobs:
             java -jar /tmp/apktool.jar d -f -q -o /tmp/dec "$APK"
             python3 tools/apk-preview/inject_launcher.py /tmp/dec/AndroidManifest.xml
             java -jar /tmp/apktool.jar b -q /tmp/dec -o /tmp/fixed-unsigned.apk
-            BT=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-            $ANDROID_SDK_ROOT/build-tools/$BT/zipalign -f 4 /tmp/fixed-unsigned.apk /tmp/fixed-aligned.apk
-            $ANDROID_SDK_ROOT/build-tools/$BT/apksigner sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
+            "$ZIPAL" -f 4 /tmp/fixed-unsigned.apk /tmp/fixed-aligned.apk
+            "$APKS" sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
             python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "PATCH FAILED VERIFICATION"; exit 1; }
             echo "PATCHED + RESIGNED + VERIFIED"
           fi
       - name: SIGN GUARANTEE (always AVALON-DEMO, never trust Unity keystore)
         run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
+          ZIPAL=""
+          if [ -n "$APKS" ]; then ZIPAL=$(dirname "$APKS")/zipalign; fi
+          if [ -z "$APKS" ]; then
+            echo "SDK apksigner not found - downloading build-tools r34"
+            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
+            (cd /tmp && unzip -q -o bt.zip -d bt)
+            APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
+          fi
+          echo "apksigner: $APKS"
           APK=$GITHUB_WORKSPACE/build/avalon-unity-shell.apk
-          BT=$(ls $ANDROID_SDK_ROOT/build-tools | sort -V | tail -1)
-          $ANDROID_SDK_ROOT/build-tools/$BT/apksigner sign \
+          "$APKS" sign \
             --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore \
             --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates \
             "$APK"
-          DN=$($ANDROID_SDK_ROOT/build-tools/$BT/apksigner verify --print-certs "$APK" | grep -m1 "certificate DN")
+          DN=$("$APKS" verify --print-certs "$APK" | grep -m1 "certificate DN")
           echo "$DN"
           echo "$DN" | grep -q "CN=AVALON Bigfoot404" || { echo "SIGN GUARANTEE FAILED - wrong cert"; exit 1; }
           python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "launcher broke in re-sign"; exit 1; }
