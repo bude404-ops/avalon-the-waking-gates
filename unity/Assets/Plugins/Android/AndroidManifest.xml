@@ -15,9 +15,7 @@
         android:supportsRtl="true"
         tools:targetApi="31">
 
-        <activity android:name="com.unity3d.player.UnityPlayerActivity"
-                  android:enabled="true"
-                  tools:replace="android:enabled"
+        <activity android:name="AvalonShell.AvalonLauncherActivity"
                   android:theme="@style/UnityThemeSelector"
                   android:launchMode="singleTask"
                   android:exported="true"
