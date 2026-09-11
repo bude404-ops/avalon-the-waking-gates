@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- AVALON v203 manifest — THEME FIX: UnityPlayerGameActivity extends AppCompatActivity (via GameActivity)
      and requires an AppCompat theme. Without it, setContentView() throws IllegalStateException.
-     Fix: android:theme="@style/Theme.Avalon" on the activity.
+     Fix: android:theme="@style/Theme.AppCompat.NoActionBar" on the activity.
      Canary v202 proved this — BootCanaryActivity (plain Activity) launched fine, UnityPlayerGameActivity crashed.
      --
      AVALON v111 launcher manifest — UNITY 6 PATTERN (fixes the v107-v110 ghost-install war).
