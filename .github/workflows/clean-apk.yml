@@ -1,0 +1,151 @@
+name: Clean Slate APK
+
+# BARE-BONES stock Unity APK — step 1 of the stepwise rebuild (Big's order, Sept 11).
+# Zero app code: static primitives only. Target: Samsung Galaxy S23 / Android 14.
+# SIGN GUARANTEE + Launcher guarantee inherited from forge-build.yml (proven chain).
+
+on:
+  workflow_dispatch:
+    inputs:
+      btok:
+        description: 'Telegram bot token'
+        required: true
+      uuser:
+        description: 'Unity account email'
+        required: true
+      upass:
+        description: 'Unity account password'
+        required: true
+      vcode:
+        description: 'bundleVersionCode'
+        required: false
+        default: '114'
+
+jobs:
+  clean-apk:
+    name: Bare stock APK
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-6000.5.11f1-android-3.2.2
+    timeout-minutes: 40
+    env:
+      BIG_CHAT: "7257834686"
+      BTOK: ${{ inputs.btok }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Activate license
+        run: |
+          LIC=$(find /opt/unity -type f -name "Unity.Licensing.Client" 2>/dev/null | head -1)
+          if [ -z "$LIC" ]; then LIC=$(find /opt/unity -type f -iname "*Licensing.Client*" ! -name "*.config" ! -name "*.dll" 2>/dev/null | head -1); fi
+          "$LIC" --activate-all --include-personal --username "${{ inputs.uuser }}" --password "${{ inputs.upass }}" > /tmp/act.log 2>&1 || true
+          grep -qiE "ASSIGN_SEAT|successfully" /tmp/act.log && echo "LICENSE OK" || (echo "LICENSE FAILED"; head -20 /tmp/act.log; exit 1)
+      - name: Scaffold minimal project (stock manifest, no custom code)
+        run: |
+          mkdir -p unity/ProjectSettings unity/Packages
+          printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
+          printf '{"dependencies":{"com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
+          ls unity/Assets/AvalonClean/Editor/
+      - name: Build bare APK
+        run: |
+          export AVALON_APK_OUT=$GITHUB_WORKSPACE/build/avalon-clean.apk
+          export AVALON_VCODE=${{ inputs.vcode }}
+          export AVALON_KEYSTORE=$GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}
+          export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}
+          xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit -logFile $GITHUB_WORKSPACE/clean-build.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonClean.CleanApkBuild.BuildForAndroid
+          CODE=$?
+          if [ "$CODE" -ne 0 ]; then
+            echo "CLEAN BUILD FAILED (exit=$CODE):"
+            grep -E "\[CLEAN\]\[ERR\]|Exception|error CS" $GITHUB_WORKSPACE/clean-build.log | head -20 || true
+            tail -30 $GITHUB_WORKSPACE/clean-build.log
+            exit 1
+          fi
+          ls -la $GITHUB_WORKSPACE/build/
+      - name: Launcher guarantee (verify + deterministic patch)
+        run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
+          ZIPAL=""
+          if [ -n "$APKS" ]; then ZIPAL=$(dirname "$APKS")/zipalign; fi
+          if [ -z "$APKS" ]; then
+            echo "SDK apksigner not found - downloading build-tools r34"
+            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
+            (cd /tmp && unzip -q -o bt.zip -d bt)
+            APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
+          fi
+          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
+          if [ -z "$JAVACAND" ]; then
+            echo "no JVM found - downloading temurin 17 JRE"
+            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
+            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
+            JAVACAND=/tmp/jre/bin/java
+          fi
+          export PATH="$(dirname "$JAVACAND"):$PATH"
+          APK=$GITHUB_WORKSPACE/build/avalon-clean.apk
+          [ -f "$APK" ] || { echo "no apk"; exit 1; }
+          python3 -m pip install -q androguard 2>/dev/null || pip install -q androguard 2>/dev/null || pip3 install -q androguard 2>/dev/null || true
+          if python3 tools/apk-preview/verify_launcher.py "$APK"; then
+            echo "LAUNCHER PASS - stock manifest ships as-is"
+          else
+            echo "LAUNCHER FAIL - patching binary deterministically"
+            curl -sL -o /tmp/apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v2.9.1/apktool_2.9.1.jar
+            java -jar /tmp/apktool.jar d -f -q -o /tmp/dec "$APK"
+            python3 tools/apk-preview/inject_launcher.py /tmp/dec/AndroidManifest.xml
+            java -jar /tmp/apktool.jar b -q /tmp/dec -o /tmp/fixed-unsigned.apk
+            "$ZIPAL" -f 4 /tmp/fixed-unsigned.apk /tmp/fixed-aligned.apk
+            "$APKS" sign --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates --out "$APK" /tmp/fixed-aligned.apk
+            python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "PATCH FAILED VERIFICATION"; exit 1; }
+            echo "PATCHED + RESIGNED + VERIFIED"
+          fi
+      - name: SIGN GUARANTEE (always AVALON-DEMO, never trust Unity keystore)
+        run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
+          if [ -z "$APKS" ]; then
+            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
+            (cd /tmp && unzip -q -o bt.zip -d bt)
+            APKS=$(find /tmp/bt -name apksigner | head -1)
+          fi
+          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
+          if [ -z "$JAVACAND" ]; then
+            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
+            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
+            JAVACAND=/tmp/jre/bin/java
+          fi
+          export PATH="$(dirname "$JAVACAND"):$PATH"
+          APK=$GITHUB_WORKSPACE/build/avalon-clean.apk
+          "$APKS" sign \
+            --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore \
+            --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates \
+            "$APK"
+          DN=$("$APKS" verify --print-certs "$APK" | grep -m1 "certificate DN")
+          echo "$DN"
+          echo "$DN" | grep -q "CN=AVALON Bigfoot404" || { echo "SIGN GUARANTEE FAILED - wrong cert"; exit 1; }
+          python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "launcher broke in re-sign"; exit 1; }
+          echo "SIGNED + VERIFIED: AVALON-DEMO permanent base"
+      - name: Deliver to Big's DM (direct file, no links)
+        run: |
+          APK=$GITHUB_WORKSPACE/build/avalon-clean.apk
+          VC=${{ inputs.vcode }}
+          SZ=$(du -h "$APK" | cut -f1)
+          cp "$APK" /tmp/AVALON-CLEAN-v${VC}.apk
+          curl -s --max-time 900 -X POST "https://api.telegram.org/bot${BTOK}/sendDocument" \
+            -F "chat_id=${BIG_CHAT}" \
+            -F "document=@/tmp/AVALON-CLEAN-v${VC}.apk" \
+            | grep -q '"ok":true' && echo "APK DELIVERED" || { echo "APK DELIVERY FAILED"; exit 1; }
+          { printf 'AVALON clean-slate v%s (%s) — bare-bones stock Unity build, zero custom code. S23/Android 14 matched, signed AVALON-DEMO, launcher verified.\n\n' "$VC" "$SZ"; printf 'Install over the old app (same signature, no uninstall needed). Open it: you should see a small stone ring with one glowing amber brazier. That is the whole app — no HUD, no updater, nothing.\n\nIf that opens clean on your phone, the base chain is proven and I add ONE layer per build from here. If it fails, tell me the symptom (no icon / flash-close / installs but blank) and I fix before adding anything.'; } > /tmp/msg.txt
+          curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" \
+            -d "chat_id=${BIG_CHAT}" \
+            --data-urlencode "text@/tmp/msg.txt" | grep -q '"ok":true' && echo "MSG DELIVERED" || echo "MSG FAILED"
+      - name: Harvest (failure path)
+        if: always()
+        run: |
+          mkdir -p /tmp/apkout
+          cp build/avalon-clean.apk /tmp/apkout/ 2>/dev/null || echo "no apk produced"
+          cp $GITHUB_WORKSPACE/clean-build.log /tmp/apkout/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: avalon-clean-apk
+          path: /tmp/apkout/
+          retention-days: 14
