@@ -63,8 +63,10 @@ jobs:
           export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
           export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}
           export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}
+          set +e
           xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit -logFile $GITHUB_WORKSPACE/bare-build.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonShell.BareBuild.Run
           CODE=$?
+          set -e
           echo "BARE BUILD EXIT: $CODE"
           if [ "$CODE" -ne 0 ]; then
             grep -E "\[BARE\]|error CS|Exception" $GITHUB_WORKSPACE/bare-build.log | head -30 || true
