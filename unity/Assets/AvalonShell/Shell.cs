@@ -140,8 +140,10 @@ namespace AvalonShell
             }
             catch (Exception e) { Debug.LogWarning("[SHELL] install: " + e.Message); }
 #endif
+            yield break; // keeps this a valid iterator in editor/standalone configs
         }
 
+#if UNITY_ANDROID && !UNITY_EDITOR
         int InstalledVersionCode()
         {
             try
@@ -154,7 +156,9 @@ namespace AvalonShell
             }
             catch (Exception e) { Debug.LogWarning("[SHELL] vc: " + e.Message); return -1; }
         }
+#endif
 
+#if UNITY_ANDROID && !UNITY_EDITOR
         void InstallApk(string path)
         {
             try
@@ -184,6 +188,7 @@ namespace AvalonShell
             }
             catch (Exception e) { Debug.LogWarning("[SHELL] install: " + e.Message); }
         }
+#endif
 
         void SetState(State s)
         {
@@ -201,10 +206,26 @@ namespace AvalonShell
         {
             var p = Panel(parent, "Title", new Color(0.051f, 0.055f, 0.063f, 0.97f));
             p.transform.Stretch();
-            Label(p.transform, "AVALON", 64, Hex(0xe6ddca), TextAnchor.MiddleCenter).rect().Stretch(p.transform);
+            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            if (bgSprite != null)
+            {
+                var bg = new GameObject("KeyArt");
+                bg.transform.SetParent(p.transform, false);
+                var bi = bg.AddComponent<Image>();
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.82f, 0.80f, 0.78f, 1f);
+                bi.rect().Stretch();
+                var shade = Panel(p.transform, "Shade", new Color(0.03f, 0.033f, 0.04f, 0.62f));
+                shade.transform.Stretch();
+            }
+            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.46f); title.rect().anchorMax = new Vector2(1, 0.72f);
+            var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
+            var rule = Panel(p.transform, "Rule", ruleCol);
+            var rrt = rule.rect();
+            rrt.anchorMin = new Vector2(0.30f, 0.455f); rrt.anchorMax = new Vector2(0.70f, 0.459f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
             var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            sub.rect().anchorMin = new Vector2(0, 0.40f); sub.rect().anchorMax = new Vector2(1, 0.52f);
-            var tag = Label(p.transform, "REVIEW BUILD — UNITY STAGE", 11, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+            sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
+            var tag = Label(p.transform, "ALPHA REVIEW — UNITY STAGE", 11, Hex(0x8a8578), TextAnchor.MiddleCenter);
             tag.rect().anchorMin = new Vector2(0, 0.06f); tag.rect().anchorMax = new Vector2(1, 0.12f);
             var enter = Btn(p.transform, "ENTER THE GATES", 16);
             var ert = enter.transform as RectTransform;
@@ -231,13 +252,25 @@ namespace AvalonShell
                 var card = Panel(p.transform, "card-" + cd.name, new Color(0.07f, 0.08f, 0.10f, 0.92f));
                 var crt = card.rect();
                 cardRects.Add(crt);
+                var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON");
+                if (art != null)
+                {
+                    var ai = new GameObject("art");
+                    ai.transform.SetParent(card.transform, false);
+                    var img = ai.AddComponent<Image>();
+                    img.sprite = art; img.preserveAspect = true; img.color = unlocked ? new Color(0.92f, 0.90f, 0.86f, 1f) : new Color(0.45f, 0.45f, 0.45f, 0.55f);
+                    img.rect().Stretch();
+                    var band = Panel(card.transform, "Band", new Color(0.03f, 0.033f, 0.04f, 0.80f));
+                    var bandRt = band.rect();
+                    bandRt.anchorMin = new Vector2(0, 0); bandRt.anchorMax = new Vector2(1, 0.44f); bandRt.offsetMin = Vector2.zero; bandRt.offsetMax = Vector2.zero;
+                }
                 var nm = Label(card.transform, cd.name.ToUpper(), 16, unlocked ? Hex(0xe6ddca) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
-                nm.rect().anchorMin = new Vector2(0, 0.78f); nm.rect().anchorMax = Vector2.one;
-                var ro = Label(card.transform, cd.role, 10, Hex(0xa3895a), TextAnchor.MiddleCenter);
-                ro.rect().anchorMin = new Vector2(0, 0.66f); ro.rect().anchorMax = new Vector2(1, 0.78f);
-                var bl = Label(card.transform, cd.blurb, 10, Hex(0x8a8578), TextAnchor.UpperCenter);
-                bl.rect().anchorMin = new Vector2(0.08f, 0.10f); bl.rect().anchorMax = new Vector2(0.92f, 0.66f);
-                var st = Label(card.transform, unlocked ? "FORGED" : "IN THE FORGE", 10, Hex(0x8a8578), TextAnchor.MiddleCenter);
+                nm.rect().anchorMin = new Vector2(0, 0.32f); nm.rect().anchorMax = new Vector2(1, 0.44f);
+                var ro = Label(card.transform, cd.role, 9, Hex(0xa3895a), TextAnchor.MiddleCenter);
+                ro.rect().anchorMin = new Vector2(0, 0.24f); ro.rect().anchorMax = new Vector2(1, 0.32f);
+                var bl = Label(card.transform, cd.blurb, 9, Hex(0x9a9588), TextAnchor.UpperCenter);
+                bl.rect().anchorMin = new Vector2(0.07f, 0.10f); bl.rect().anchorMax = new Vector2(0.93f, 0.24f);
+                var st = Label(card.transform, unlocked ? "FORGED" : "IN THE FORGE", 10, unlocked ? Hex(0xa3895a) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
                 st.rect().anchorMin = Vector2.zero; st.rect().anchorMax = new Vector2(1, 0.10f);
                 var b = card.AddComponent<Button>(); cardTints.Add(card.GetComponent<Image>());
                 var captured = cd;
@@ -488,7 +521,50 @@ namespace AvalonShell
             es.AddComponent<StandaloneInputModule>();
             return c;
         }
-        Font Font() { return Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf"); }
+        Font uiFont;
+        Font Font()
+        {
+            if (uiFont == null)
+            {
+                uiFont = Resources.Load<Font>("Fonts/Cinzel-Bold");
+                if (uiFont == null) uiFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            }
+            return uiFont;
+        }
+
+        // Canon art cache — Resources/Art staged by the build; null-guarded everywhere.
+        readonly Dictionary<string, Sprite> artCache = new Dictionary<string, Sprite>();
+        Sprite Art(string name)
+        {
+            if (artCache.ContainsKey(name)) return artCache[name];
+            var tex = Resources.Load<Texture2D>("Art/" + name);
+            Sprite s = null;
+            if (tex != null) s = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), tex.height);
+            artCache[name] = s;
+            return s;
+        }
+
+        // Rounded-rect sprite (runtime-generated) for game-feel buttons.
+        Sprite rounded;
+        Sprite Rounded()
+        {
+            if (rounded != null) return rounded;
+            int n = 48, r = 10;
+            var tex = new Texture2D(n, n, TextureFormat.RGBA32, false);
+            tex.filterMode = FilterMode.Bilinear;
+            var px = new Color32[n * n];
+            for (int y = 0; y < n; y++)
+                for (int x = 0; x < n; x++)
+                {
+                    float dx = x < r ? r - x : (x >= n - r ? x - (n - 1 - r) : 0);
+                    float dy = y < r ? r - y : (y >= n - r ? y - (n - 1 - r) : 0);
+                    bool inside = dx <= 0 || dy <= 0 || (dx * dx + dy * dy) <= r * r;
+                    px[y * n + x] = inside ? new Color32(255, 255, 255, 255) : new Color32(0, 0, 0, 0);
+                }
+            tex.SetPixels32(px); tex.Apply();
+            rounded = Sprite.Create(tex, new Rect(0, 0, n, n), new Vector2(0.5f, 0.5f), n, 0, SpriteMeshType.FullRect);
+            return rounded;
+        }
         GameObject Panel(Transform parent, string name, Color c)
         {
             var go = new GameObject(name);
@@ -507,7 +583,10 @@ namespace AvalonShell
         {
             var go = new GameObject("btn-" + txt);
             go.transform.SetParent(parent, false);
-            go.AddComponent<Image>().color = new Color(0.07f, 0.08f, 0.10f, 0.86f);
+            var img = go.AddComponent<Image>();
+            img.sprite = Rounded();
+            img.color = new Color(0.10f, 0.095f, 0.075f, 0.92f);
+            var imgRt = img.rect(); imgRt.offsetMin = new Vector2(4, 4); imgRt.offsetMax = new Vector2(-4, -4);
             var b = go.AddComponent<Button>();
             var t = Label(go.transform, txt, size, Hex(0xa3895a), TextAnchor.MiddleCenter);
             t.rect().Stretch(go.transform);

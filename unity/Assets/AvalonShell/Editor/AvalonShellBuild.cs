@@ -29,6 +29,14 @@ namespace AvalonShell
 
             // Copy forged prefabs into Resources (GUIDs preserved via .meta siblings)
             Directory.CreateDirectory("Assets/AvalonShell/Resources");
+            Directory.CreateDirectory("Assets/AvalonShell/Resources/Art");
+            foreach (var art in new[] { "CINEMATIC-TEASER-KEYART-CANON.png",
+                "CLASS-SOVEREIGN-CANON.png", "CLASS-RAVAGER-CANON.png", "CLASS-WARDEN-CANON.png",
+                "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png" })
+            {
+                var src = Path.Combine("../art/approved", art);
+                if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged art: " + art); }
+            }
             int staged = 0;
             foreach (var f in Directory.GetFiles("Assets/AvalonForge/Prefabs", "*.prefab"))
             {
