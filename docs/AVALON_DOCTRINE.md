@@ -16,7 +16,7 @@ Supersedes: the Giants & Sprites Doctrine (Sept 4), the Dragon-Kin Law, and all 
 
 4. **THE HOODED WAYS.** Gods who wish to walk among humans take the HOODED WANDERER aspect — human-scale, deep fitted hood, face lost in shadow except soft element-glow eye-points, mortal-passing armor (the locked Hooded Aspect Law). Merlin energy: the stranger at the crossroads may be the mountain.
 
-5. **ELEMENTAL POWERS = GIFTS.** Humans have no innate power. All elemental power comes as GIFTS from the gods: relics and blessings earned at shrines, lakes, and Gates. A sword from the lake is fire from the god. The relic system (Cold Lantern, etc.) is the entire power economy.
+5. **ELEMENTAL POWERS = GIFTS.** Humans have no innate power. All elemental power comes as GIFTS from the gods: relics and blessings earned at shrines, lakes, and Gates. A sword from the lake is fire from the god. The relic system (Cold Reliquary, etc.) is the entire power economy.
 
 6. **PILGRIMAGE = THE GRAIL QUEST.** The mortal-scale game is a pilgrimage: walk the old roads across a god's sleeping body, carry relic-light, heal the land, re-tie belief. The pilgrimage IS the campaign structure.
 
@@ -34,7 +34,7 @@ Supersedes: the Giants & Sprites Doctrine (Sept 4), the Dragon-Kin Law, and all 
 
 **You never BECOME the god. The god rises THROUGH you.**
 
-The player is a human champion-pilgrim. He earns relic-light by walking the pilgrimage; when the Gate Rite is performed, the god stands up THROUGH his champion — wearing the champion's earned faith — and vests him with his fire. Giant-scale gameplay = acting as the god's hand through his risen form, on the same map geometry (the ONE WORLD, TWO SCALES architecture and the Cold Lantern slice already implement this).
+The player is a human champion-pilgrim. He earns relic-light by walking the pilgrimage; when the Gate Rite is performed, the god stands up THROUGH his champion — wearing the champion's earned faith — and vests him with his fire. Giant-scale gameplay = acting as the god's hand through his risen form, on the same map geometry (the ONE WORLD, TWO SCALES architecture and the Cold Reliquary slice already implement this).
 
 ## THE HOLLOW = THE WASTELAND
 
@@ -50,7 +50,7 @@ The Arthurian blight, made structural:
 
 ## THE STAKES
 
-If belief dies everywhere, every god wakes as an Echo. The player's lantern is one point of true fire against that grey — every realm saved is proof the old roads still work.
+If belief dies everywhere, every god wakes as an Echo. The player's reliquary is one point of true fire against that grey — every realm saved is proof the old roads still work.
 
 ---
 
@@ -70,7 +70,7 @@ If belief dies everywhere, every god wakes as an Echo. The player's lantern is o
 | Tower Waves (giants holding Gates) | **GATE RITES** — god-waking events; the summit battles of each realm. |
 | Lesser drakes (proof of the Walking Age) | Unchanged — relics of the Walking Age, when gods walked openly. |
 | Aetherium | Unchanged as matter-substrate — now also understood as the gods' DREAM made substance. |
-| Relic system (Cold Lantern etc.) | Unchanged — now the primary power economy (gifts, not gear). |
+| Relic system (Cold Reliquary etc.) | Unchanged — now the primary power economy (gifts, not gear). |
 | Luminary pets (Emberling, lantern attire) | Unchanged — living bits of god-light given form; the pet-relic fusion canon stands. |
 | Faction names, deity names, Gate names | UNCHANGED — they fit the doctrine as-is. |
 
@@ -97,7 +97,7 @@ The whole game is one loop, six times over, rising in scale — with the Forgott
 | Role | Silhouette | Weapon kit | Skills (doctrine grammar) |
 |---|---|---|---|
 | **WARDEN** | blade pilgrim — frontline duelist | straight relic-coated blade | Ember Edge (god-fire coats the blade), Parry-Rite (perfect block stores faith), Vow Strike (charge attack vs Hollow elites) |
-| **KEEPER** | lantern-bearer — support/area control | shrine lantern + short blade | Light Radius (Hollow will not spawn in true light — the Witness mechanic), Hearth Blessing (heals + faith regen), Lantern Rite (portable relight — rekindles dead shrines/Gates) |
+| **KEEPER** | reliquary-bearer — support/area control | shrine lantern + short blade | Light Radius (Hollow will not spawn in true light — the Witness mechanic), Hearth Blessing (heals + faith regen), Reliquary Rite (portable relight — rekindles dead shrines/Gates) |
 | **WALKER** | scout of the old roads — speed/traversal | paired daggers or short bow | Mist-Read (sees thin places on the map), Road Dash (traversal burst), First-Footstep (backstrike opener) |
 | **SINGER** | faith-caster — hymns of the old roads | song-relic (bell/harp) or staff | Hymn of the Road (party buff), Verses of Waking (charges the Gate Rite faster), Silence-Break (stuns Hollow — their nightmare cannot hold a true song) |
 | **SMITH** | forge-prayer crafter — tank/utility | great hammer | Molten Strike (heavy AoE), Anvil Prayer (repairs/reinforces gear mid-pilgrimage), Bulwark Forge (deploys shrine-cover) |
@@ -110,8 +110,8 @@ Skill/ability law: every skill is a PRAYER or RITE in doctrine grammar (no sci-f
 Six layers, one rig. The same base human becomes any role, any region, any element:
 
 1. **BASE BODY** — one male + one female human base mesh (~30k tris, Mixamo-ready, weaponless T-pose per the locked base rules).
-2. **ROLE KIT** — armor silhouette per role (Warden mid plate, Keeper lamellar + lantern, Wayfarer leathers, Cantor robes + light mantle, Smith forge apron-plate, Vigil ranger set) — CLASS ARMOR LAW (Sept 7, Big: 'assassin type is leathers casters are some armor but robes').
-3. **FACTION STYLE SKIN** — the six canon armor cultures applied to any role kit: Forge-Iron, Storm-Steel, Grow-Plate, Lantern-Plate, Tide-Mail, Quarry-Plate.
+2. **ROLE KIT** — armor silhouette per role (Warden mid plate, Keeper lamellar + reliquary, Wayfarer leathers, Cantor robes + light mantle, Smith forge apron-plate, Vigil ranger set) — CLASS ARMOR LAW (Sept 7, Big: 'assassin type is leathers casters are some armor but robes').
+3. **FACTION STYLE SKIN** — the six canon armor cultures applied to any role kit: Forge-Iron, Storm-Steel, Grow-Plate, Reliquary-Plate, Tide-Mail, Quarry-Plate.
 4. **ELEMENT EMISSIVE LAYER** — the relic-gift glow (ember orange, storm blue, bloom gold, dusk white, tide teal, stone green) — SWAP THE GLOW, NOT THE MESH. The relic decides the element, so variation is a texture/emissive change, not new geometry.
 5. **WEAPON KITS** — role weapons × faction styles (modular props parented to the hand bone per the locked weapon rule).
 6. **COSMETICS** — cloaks, heraldry, weathering, hair, lantern styles — the identity layer (monetization lives HERE: sell identity, never power). 7. **WEAPON GATE-BLESSING** — per THE WEAPON-FACTION BOND law: every weapon carries its forging Gate (the god's temper); weapon-skill element = the weapon's faction, character-ability element = the pilgrim's pledged faction. See the Weapon-Faction Bond law below.
@@ -120,12 +120,12 @@ Output math: 1 base rig × 6 role kits × 6 faction skins × 6 glow layers = 216
 
 ---
 
-## THE HOODED HERO LAW + THE MARKED + THE LANTERN RITES + DREAM-MOTE PETS
+## THE HOODED HERO LAW + THE MARKED + THE RELIQUARY RITES + DREAM-MOTE PETS
 **Locked Sept 5, 2026, BudE404 ruling: "heroes stay hooded or helmed, we need why they were chosen, a better system for the rite or lantern, and a new style of pet to match."**
 
 ### THE HOODED HERO LAW
 
-Player heroes keep their faces hidden — deep hood or helm, always (the First Pilgrim headgear canon becomes the hero's helm options: embercowl, watch-helm, Living Crown, lantern-cage, fin-crown, crystal-crest).
+Player heroes keep their faces hidden — deep hood or helm, always (the First Pilgrim headgear canon becomes the hero's helm options: embercowl, watch-helm, Living Crown, reliquary-cage, fin-crown, crystal-crest).
 
 **Lore:** a pilgrim who takes the old roads performs the RITE OF THE PUT-AWAY FACE — they vow so deeply that the road is walked as NO ONE. Identity is surrendered to the pilgrimage; the road walks you. When the god rises through you, he does not wear your face — he wears your faith. The First Pilgrims' statues wear hoods because no one remembers their faces. Only their roads.
 
@@ -133,7 +133,7 @@ Player heroes keep their faces hidden — deep hood or helm, always (the First P
 
 ### THE MARKED — why they were chosen
 
-**The lantern does not choose the worthy. It lights where the god dreams of you.**
+**The reliquary does not choose the worthy. It lights where the god dreams of you.**
 
 A sleeping god's dream is vast — and sometimes the dream settles on ONE human: a person whose life matches the answer a wounded realm needs. A keeper of hearths. A walker of roads. A singer who will not stop. When the dream spots you, you are MARKED: relic-gifts light in your hands, the old roads open, and the pilgrimage calls. You are not chosen for being good — you are chosen for being THE SHAPE OF WHAT THE GOD NEEDS.
 
@@ -142,7 +142,7 @@ A sleeping god's dream is vast — and sometimes the dream settles on ONE human:
 - The Gate Rite works ONLY because the god has been dreaming of this person all along: the rite is not a spell, it is an ANSWERED DREAM.
 - Campaign hook: the antagonist logic — the Hollow/the Echo dreams too. A false waking wears a stolen dream.
 
-### THE LANTERN RITES v2 (reframed Sept 6 for THE LANTERN IS THE LUMINARIES law — the lantern is a LIVING being, never a planted/refilled tool; the four rites survive intact with living-flame grammar)
+### THE RELIQUARY RITES v2 (reframed Sept 6 for THE RELIQUARY IS THE LUMINARIES law — the reliquary is a LIVING being, never a planted/refilled tool; the four rites survive intact with living-flame grammar)
 
 The LUMINARY carries your faith beside you — ONE resource (LIGHT), three uses (power meter, Hollow protection, Gate-Rite charge):
 
@@ -153,7 +153,7 @@ The LUMINARY carries your faith beside you — ONE resource (LIGHT), three uses 
 
 ### DREAM-MOTE PETS (the new pet style to match the doctrine)
 
-Pets are no longer Luminarys — they are **DREAM-MOTES: tiny living fragments of the sleeping god's dream, drawn to the Marked.** Where the lantern goes, the dream follows. Each is a small real-animal shape made of the god's element (reverent, never mascot-cute):
+Pets are no longer Luminarys — they are **DREAM-MOTES: tiny living fragments of the sleeping god's dream, drawn to the Marked.** Where the reliquary goes, the dream follows. Each is a small real-animal shape made of the god's element (reverent, never mascot-cute):
 
 - **Ashfall: EMBER-FOX** — fox kit of ember and soot, sparks trailing.
 - **Skyrend: STORM-OWLET** — round owl of storm-slate, lightning veins in the wings.
@@ -180,10 +180,10 @@ The Luminary/lantern-attire pet designs are retired from doctrine (kept in art h
 "Weapons are tied to a faction so it will get that deity's effects in the skill tree build. Same with the character's abilities."
 
 ### 1. GOD-TEMPERED WEAPONS (the weapon-faction bond)
-Every weapon is forged or blessed at one of the six Gates — it carries **the god's temper** (a blacksmith's temper AND a god's temperament). A weapon's Gate is permanent: an ember-forged blade is an Ashfall relic forever. In the skill tree, the equipped weapon unlocks **its faction's WEAPON BRANCH**: the role's weapon skills re-render in that deity's element grammar. One Warden Vow Strike, six dreams: ember-coated (Ashfall), storm-charged (Skyrend), bloom-whipped (Everbloom), lantern-shadow (Duskmourn), tide-crashing (Marenth), stone-shattering (Stoneheart).
+Every weapon is forged or blessed at one of the six Gates — it carries **the god's temper** (a blacksmith's temper AND a god's temperament). A weapon's Gate is permanent: an ember-forged blade is an Ashfall relic forever. In the skill tree, the equipped weapon unlocks **its faction's WEAPON BRANCH**: the role's weapon skills re-render in that deity's element grammar. One Warden Vow Strike, six dreams: ember-coated (Ashfall), storm-charged (Skyrend), bloom-whipped (Everbloom), reliquary-shadow (Duskmourn), tide-crashing (Marenth), stone-shattering (Stoneheart).
 
 ### 2. THE PLEDGE (the character-ability bond)
-The pilgrim's own rites and abilities come from the god whose **Mark they carry** — the rune's faction is the pledged deity (set when the lantern lights / first Gate Rite). The PLEDGE BRANCH of the skill tree carries that deity's dream: character abilities, faith-economy rites, and the Gate-Rite charge all speak the pledged god's grammar.
+The pilgrim's own rites and abilities come from the god whose **Mark they carry** — the rune's faction is the pledged deity (set when the reliquary lights / first Gate Rite). The PLEDGE BRANCH of the skill tree carries that deity's dream: character abilities, faith-economy rites, and the Gate-Rite charge all speak the pledged god's grammar.
 
 ### 3. THE TREE (three lanes)
 1. **ROLE TRUNK** — role identity skills, faction-neutral (every skill is a prayer/rite, resource = FAITH).
@@ -205,7 +205,7 @@ Mirrors the one-armor law: ONE skill tree per role; weapon branches and pledge b
 ### 1. THE CLASS IS THE WEAPON — six classes, six weapons, six unique class trees
 No role-vs-weapon matrix — the weapon you carry IS your class and style. THE SIX DISCIPLINES (the locked role ladder, 1:1):
 - **WARDEN** — carries the OATHBLADE (relic-coated straight blade); duelist craft: edge-coating rites, Parry-Rite, Vow Strike
-- **KEEPER** — carries the RELIC LANTERN (shrine-lantern staff + short blade); light-craft: light radius, Hearth Blessing, Lantern Rite
+- **KEEPER** — carries the RELIQUARY (shrine-reliquary staff + short blade); light-craft: light radius, Hearth Blessing, Reliquary Rite
 - **WAYFARER** — carries the WAY-DAGGERS (paired road-daggers); scout craft: Mist-Read, Road Dash, First-Footstep
 - **CANTOR** — carries the BELL-STAFF (song-relic); hymn-craft: Hymn of the Road, Verses of Waking, Silence-Break
 - **SMITH** — carries the RITE HAMMER (great forge hammer); forge-craft: Molten Strike, Anvil Prayer, Bulwark Forge
@@ -217,13 +217,13 @@ The Mark (pledged faction) unlocks that deity's ABILITY TREE — six genuinely D
 - **Ashfall** — ember/hearth rites (fire that answers, forge-warmth wards)
 - **Skyrend** — squall rites (storm-calls, thunder-step)
 - **Everbloom** — bloom rites (growth snares, petal-song renewal)
-- **Duskmourn** — lantern-shadow rites (veil-walk, grave-light wards)
+- **Duskmourn** — reliquary-shadow rites (veil-walk, grave-light wards)
 - **Marenth** — tide rites (undertow pulls, pearl-shell aegis)
 - **Stoneheart** — bulwark rites (stone-skin, geode-ward shatter)
 Each ~10–12 abilities deep, prayer/rite grammar, FAITH resource; capstone per deity = a Gate-Rite-charging miracle.
 
 ### 3. THE BUILD MATH (deliberately limited)
-Build = Order tree + faction tree. **6 × 6 = 36 readable builds**, bounded content: ~72 class skills + ~66 faction abilities ≈ 138 skills total — a full game's worth, capped by design. A Blade pledged to Ashfall (ember-coated dueling) plays completely differently from a Blade pledged to Duskmourn (veil-lantern dueling): same craft, different dream.
+Build = Order tree + faction tree. **6 × 6 = 36 readable builds**, bounded content: ~72 class skills + ~66 faction abilities ≈ 138 skills total — a full game's worth, capped by design. A Blade pledged to Ashfall (ember-coated dueling) plays completely differently from a Blade pledged to Duskmourn (veil-reliquary dueling): same craft, different dream.
 
 ### 4. CHANGES vs the Weapon-Faction Bond (v1 retired)
 - The God's Temper (weapons forged at Gates carrying faction element) RETIRED as a build mechanic — weapons are neutral class craft. It survives as LORE ONLY for named/legendary weapons (cosmetic origin stories, collectible flavor — zero build complexity).
@@ -239,4 +239,4 @@ Re-pledging is **FREE and unlimited** — no token-gating, no cost, no cooldown 
 
 
 ### 7. THE ORDER NAMES — FINAL (Sept 5 2026, BudE404: 'I like wayfarer and cantor')
-The six classes are THE ORDERS: **Warden** (Oathblade), **Keeper** (Relic Lantern), **Wayfarer** (Way-Daggers), **Cantor** (Bell-Staff), **Smith** (Rite Hammer), **Vigil** (Gate-Shield). Every class is a vocation on the road; the weapon is the named rite-tool of that vocation. The rejected generic discipline names (Blade/Lantern/Dagger/Song/Hammer/Tower) are retired everywhere — ladder captions, prop names, UI, docs.
+The six classes are THE ORDERS: **Warden** (Oathblade), **Keeper** (Reliquary), **Wayfarer** (Way-Daggers), **Cantor** (Bell-Staff), **Smith** (Rite Hammer), **Vigil** (Gate-Shield). Every class is a vocation on the road; the weapon is the named rite-tool of that vocation. The rejected generic discipline names (Blade/Lantern/Dagger/Song/Hammer/Tower) are retired everywhere — ladder captions, prop names, UI, docs.

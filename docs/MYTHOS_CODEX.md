@@ -50,7 +50,7 @@
 |---|---|---|---|---|
 | MORVAINE ✦ | Bone Giant (M, warrior) | the Last Warden | DUSK BLADE — greatsword converted from the Duskscythe per the Weapon Chassis Law | THE OSSUARY PLAIN (ribcage hills, skull-ossuary city) |
 | SENNETH ✦ | Bone Giantess (F, caster) | the Lampkeeper | LANTERN STAFF — holds the last lights of the passed | THE QUIET VIGIL (bone-spire canyon, mirror-still lake) |
-| THE GLOAM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Last Road | gloom-blade, lantern-cage headgear | THE LANTERN WAYS (unlit lantern-processions) |
+| THE GLOAM-WARDEN ✦ | Sprite Champion (M, blade) | Warden of the Last Road | gloom-blade, reliquary-cage headgear | THE RELIQUARY WAYS (unlit lantern-processions) |
 | THE VEIL-KEEPER ✦ | Sprite Champion (F, staff) | Keeper of the Veil | gloom-staff | THE VEILED STAIR (stair-shrine into the gloom) |
 
 **F5 — MARENTH** 🌊 (realm: the Drowned Deep; glow: deep teal)
@@ -73,7 +73,7 @@
 1. **KEPT-PAIR INHERITANCE:** each faction's giant pair = the male Warden-role + female Caster-role deities of the founding roster (Vaelthorn/Vessamaine, Haeldor/Sylwenna, Thevraine/Mirielle, Morvaine/Senneth, Nerovane/Ylsanne, Grathwyn/Bergrune). Cut deities (Sorvath, Ozruv, Yrdis, Naeria, Corvan, Alveth, Uthrel, Ferran, Maruvak, Thuveth, Rhovarr, Dolvarr) are DEFERRED, not deleted — they return as NEW CHARACTERS when assassin/archer classes go live (Two-Role Lock).
 2. **SPRITE CHAMPIONS ARE TITLES, NOT BIRTH NAMES** — the greatest of each realm's sprite peoples, raised to exarch rank by their patron pair. Their true names are unwitnessed (lore-clean: titles only on all art, zero text law preserved).
 3. **SPRITE CHAMPION WEAPON LAW:** every Warden (male champion) wields the LOTR-craft BLADE; every Keeper (female champion) wields the elemental STAFF — mirroring the giant Gender-Role Binding at sprite scale. The PLAYER's sprite vessel keeps free class choice (blade/staff/twin blades/bow per the Weapon Chassis Law); champions are the fixed exemplars.
-4. **SPRITE HEADGEAR LAW (silhouette identity):** Ashfall = embercowl/kiln-helm, Skyrend = deep watch-cowl + watch-helm, Everbloom = Living Crown, Duskmourn = lantern-cage, Marenth = fin-crown, Stoneheart = crystal-crest. Factions read by SHAPE before color.
+4. **SPRITE HEADGEAR LAW (silhouette identity):** Ashfall = embercowl/kiln-helm, Skyrend = deep watch-cowl + watch-helm, Everbloom = Living Crown, Duskmourn = reliquary-cage, Marenth = fin-crown, Stoneheart = crystal-crest. Factions read by SHAPE before color.
 5. **GIANT LAWS carry as canon:** Primordial-Max anatomy ('never made — the element that decided to stand'), element-formed faces, Uniform Surface Law for giantesses (femininity by silhouette only), Empty Realm (inert dark cities; all light belongs to the god), element-forged weapons wielded bare-handed.
 6. **SPRITE ARMOR LAW:** Avalon human-craft (sweeping leaf-tip plates, fine mail, faction element-glow in the seams). Males: fey + manly. Females: mature high-priestess authority.
 7. **STAGE 2 WORLDS:** every deity has a personal domain (table above); all 24 world compositions rolled under the Stage 2 laws (locked anchor identity, wide frame, inert cities, distinct realm per deity).
@@ -115,7 +115,7 @@ Under the GIANTS & SPRITES doctrine + Two-Role Lock + Gender-Role Binding, each 
 | ASHFALL | VAELTHORN the Furnace-King (Crucible Blade) — domain: THE CINDERLANDS | VESSAMAINE the Kiln-Queen (Crucible Staff) — domain: THE EMBER GORGE | KILN-WARDEN — The Kiln Road | HEARTH-KEEPER — The Everhearth Vault | embercowl / kiln-helm |
 | SKYREND | HAELDOR the Thunder Oath (Skyfall Blade) — THE THUNDERSHIELD RANGE | SYLWENNA the Stormsight (Weather-Glass Staff) — THE CALM EYE | STORM-WARDEN — The Watchtower Coast | MATRIARCH — The Sky Mother's Shelf | deep cowl + watch-helm / cowl-veil |
 | EVERBLOOM | THEVRAINE the Evenhand (Living Scale) — THE VERDANT MARCH | MIRIELLE the Stillwater (Mirror Staff) — THE FLOWERDALE | BLOOM-WARDEN — The Seedkeep Gate | BLOOM-KEEPER — The Petal Shrine Terrace | Living Crown |
-| DUSKMOURN | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Lampkeeper (Lantern Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Lantern Ways | VEIL-KEEPER — The Veiled Stair | lantern-cage |
+| DUSKMOURN | MORVAINE the Last Warden (Dusk Blade) — THE OSSUARY PLAIN | SENNETH the Lampkeeper (Lantern Staff) — THE QUIET VIGIL | GLOAM-WARDEN — The Reliquary Ways | VEIL-KEEPER — The Veiled Stair | reliquary-cage |
 | MARENTH | NEROVANE the Undertow (Tidal Greatblade) — THE TIDEGATE COAST | YLSANNE the Mirrorfin (Mirrorfin Staff — grown coral, pearl-lens; recast to caster per the Gender-Role Binding) — THE DEEP HOLLOW | TIDE-WARDEN — The First Light Harbor | PEARL-KEEPER — The Moontide Shrine | fin-crown |
 | STONEHEART | GRATHWYN the Mountain Oath (Tectonic Blade) — THE ROOTSPINE GATE | BERGRUNE the Unmoved (Bulwark Staff, chassis conversion) — THE GEODE VAULTS | CRYSTAL-WARDEN — The Deep Roads | HEARTROOT-KEEPER — The Heartroot | crystal-crest |
 
@@ -158,7 +158,7 @@ Glow: pale crimson ghost-light. Materials: bone-pale granite, black-vein marble,
 |-------|---------|------|--------|-------------------|
 | Morvaine | the Last Warden | Warden | THE DUSKSCYTHE — cuts the last thread of light; never parried | Still-Form: edges blurred like a figure seen at last light |
 | Uthrel | the Quiet | Striker | TWIN BOUNDARY BLADES — one for each side of the line between here and after | Threshold-Plate: split down the middle into pale and dark halves, never touching |
-| Senneth | the Lampkeeper | Caster | THE LANTERN STAFF — a staff crowned with a lantern holding the final light of everyone who has passed; she carries them home | Ash-Relief: bone-pale plate with shallow niches, each holding a small ghost-flame |
+| Senneth | the Lampkeeper | Caster | THE RELIQUARY STAFF — a staff crowned with a lantern holding the final light of everyone who has passed; she carries them home | Ash-Relief: bone-pale plate with shallow niches, each holding a small ghost-flame |
 | Ferran | the Ferryman | Ranged | THE OAR-ARCS — paired crescent blades like oars; he rows souls across | Wake-Line: black water-lines flowing into pale stone, like a wake |
 
 ## F5 — WATER 🌊 Realm: **MARENTH** (the Drowned Deep — sunken world of pressure and pearl-light)

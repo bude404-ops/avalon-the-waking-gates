@@ -16,7 +16,7 @@
 - **ECHO:** The dark tower stays dark all season on the skyline. The keepers or the guilds quote the town ledger back at the pilgrim on every return visit.
 - **TRUTH-SLIVER:** The Gate doesn't give flame — it gives SEEDS. What the city does with them is the city's answer. (The FAITH economy, learned by carrying it.)
 
-### Q2 — "THE COLD LANTERN" (Emberhollow)
+### Q2 — "THE COLD RELIQUARY" (Emberhollow)
 - **The benchmark quest, canon already** (docs/QUEST_EXAMPLE_EMBERHOLLOW.md, doctrine-audited ✔): cold hearth mystery → the Erased Drake (T2) → the Rite of Rekindling → evacuate or hold the lanterns → the ledger records "The Night Emberhollow Rekindled" → the Gate Rite passage.
 - **TRUTH-SLIVER:** Worship can be EATEN before it reaches a god. (The Hollow, learned by being its target.)
 
@@ -35,7 +35,7 @@
 ### Q5 — "THE SILENCE'S MOUTH" (the charcoal forest)
 - **HOOK:** A Vigil road-warden has stood a crossroad watch for a month. Nothing crosses while he watches. He asks the pilgrim for relief — he wants to sleep. *(Want: rest. Lie: he stood the watch because the silence took his voice mid-hymn and he's afraid to stop guarding what he can no longer name. Cost: relief means someone else learns the mouth is under the crossroad.)*
 - **TRAIL:** The crossroad's milestone is a cover: beneath it, a fracture shaped like a throat. Grimlight motes (T1 anti-witness canon) swarm the dark. The trail reveals what the silence eats: NAMES spoken aloud.
-- **RITE:** The pilgrim speaks Emberhollow's dead names back into the throat — the lantern-honor recitation (a Duskmourn rite performed in Ashfall; rite-lore crosses regions by doing it).
+- **RITE:** The pilgrim speaks Emberhollow's dead names back into the throat — the reliquary-honor recitation (a Duskmourn rite performed in Ashfall; rite-lore crosses regions by doing it).
 - **CHOICE (two goods, chapter signature):** Spend the gathered FAITH to seal the throat NOW — the forest's voice returns — or BANK it for the Gate Rite and leave the forest hoarse until the finale. **Mechanical door: the finale's Gate Rite strength is measurably different either way.**
 - **ECHO:** The forest either sings at dawn or holds its breath. The relieved Vigil stands at the pilgrim's side from here on (roll-call entry earned).
 - **TRUTH-SLIVER:** The Hollow hates being named. (The enemy, learned by fighting its diet.)
@@ -64,7 +64,7 @@ The **Ashfall Depths** (procedural fracture dungeons) = **the Furnace King's fev
 - [x] Saga-sites walked, not read: vigil circle, tribute-reefs, drowned ledger
 - [x] Theology with teeth: heat-is-duty (Q1), oath-collection (Q3), the pantheon's shared ledgers (Q4)
 - [x] Codex unlocks AFTER deeds (trophy case)
-- [x] Cold Lantern benchmark integrated without rewrite
+- [x] Cold Reliquary benchmark integrated without rewrite
 **PILOT PASSES — the five remaining realms run on this template.**
 
 ---

@@ -29,5 +29,5 @@ Stoneheart rites are about **crystal as debt**: CRYSTAL SHARDS planted in enemie
 ## Stat pins (engine source of truth)
 - Shard: 5 damage on shatter; 5 max per enemy; 12s lifetime.
 - FAITH pool 100 base +10/tier; ult = only hard-cooldown rite.
-- Synergies: Vigil (rooted ult + shield = the Gate itself), Smith (SHARD MEND lifesteal loop on hammer arcs), Keeper (GEODE WARD reflect keeps the lantern lit).
+- Synergies: Vigil (rooted ult + shield = the Gate itself), Smith (SHARD MEND lifesteal loop on hammer arcs), Keeper (GEODE WARD reflect keeps the reliquary lit).
 - Visual budget: shard = small crystal prop/mote, spikes = ground decal + crystalline particle column (one shader), petrify = texture swap to stone material, quakes = camera shake (already built for Giant mode). No new meshes/skeletons.

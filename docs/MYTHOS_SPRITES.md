@@ -38,7 +38,7 @@ Abilities come from LEVELING; skins change NOTHING but looks (no pay-to-win, eve
 **Skin families (by rarity):**
 1. **FESTIVAL EDITIONS** (common) — festival-garland versions in each region's festival colors; sold at the region's festival season (time-limited rotation = event calendar for free).
 2. **MIMIC SKINS** (rare) — the sprite cosplays ITS REGION'S GIANT GOD in miniature: tiny raw-element anatomy echo, miniature element-forged crown-weapon, faction sigil. The Cinderwisp wears the Furnace-King's molten silhouette. Collectors' bait; faction pride purchases.
-3. **ARMOR PLATE SKINS** (rare) — the sprite wears its region's mortal armor style in miniature: Forge-Iron cinderwisp, Lantern-Plate gloamlamp. Regional pride purchases.
+3. **ARMOR PLATE SKINS** (rare) — the sprite wears its region's mortal armor style in miniature: Forge-Iron cinderwisp, Reliquary-Plate gloamlamp. Regional pride purchases.
 4. **VERSE SPRITES** (epic) — one per SONG verse collected; visual evolution: the sprite gains a musical note in its element. Purchasable only after the corresponding verse is earned (monetization that RESPECTS the lore — you buy the outfit, you still sing it).
 5. **ECHO-INVERSE** (legendary, NOT purchasable) — endgame reward: the sprite rendered in Hollow-inverse (a lantern-glow silhouette). The only way to get it is to finish the Empty Pedestal arc with a max-level sprite alive the whole time. Prestige, never money.
 

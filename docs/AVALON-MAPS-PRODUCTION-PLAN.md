@@ -6,9 +6,9 @@ same doctrine stack, the same generation engine (404-GEN), and the same verdict 
 
 ---
 
-## 1. MAP #1 — THE COLD LANTERN (ASHFALL)
+## 1. MAP #1 — THE COLD RELIQUARY (ASHFALL)
 
-Already fully designed: `docs/COLD_LANTERN_MAP_ARCHITECTURE.md` (the vertical-slice
+Already fully designed: `docs/COLD_RELIQUARY_MAP_ARCHITECTURE.md` (the vertical-slice
 design test — beat table, space taxonomy, two-scale payoff moments all locked).
 
 **First playable space = beats 1–4:**
@@ -17,9 +17,9 @@ design test — beat table, space taxonomy, two-scale payoff moments all locked)
 3. RUINED SHRINE — brazier rite, lore tablet, the Gate PULSE reveal (DISCOVERY)
 4. WATCHTOWER APPROACH — drake strafing set-piece lane (THREAT)
 
-Set in **ASHFALL** (oxide-red lantern hue, Ember King's realm) — which pairs the first
+Set in **ASHFALL** (oxide-red reliquary hue, Ember King's realm) — which pairs the first
 playable map with the **RAVAGER**, the first class through the character pipeline.
-**First playable demo = the Ravager walking the Cold Lantern map.** The two tracks
+**First playable demo = the Ravager walking the Cold Reliquary map.** The two tracks
 converge on one vertical slice.
 
 ## 2. PRODUCTION ROUTES (Unity-Only Law compliant, verified)
@@ -42,8 +42,8 @@ Same doctrine as the model viewer: he reviews in the APK, not GIFs. The live she
 gets a **walkable pilgrim-scale scene** of the Emberhollow stretch:
 - WASD + touch controls, third-person camera behind the character GLB
 - Procedural three.js terrain + megalithic props staged per the beat spec
-- Lantern-Region Aura lighting (cold desaturated ambient, oxide-red lantern glow as
-  the only rich source — Lantern-Region Aura Law)
+- Reliquary-Region Aura lighting (cold desaturated ambient, oxide-red lantern glow as
+  the only rich source — Reliquary-Region Aura Law)
 - Loads the current Aedan/Ravager model so the character pipeline output has a world
   to walk in
 - This is the FEEL check while the Unity build catches up — not the shipped game
@@ -60,7 +60,7 @@ gets a **walkable pilgrim-scale scene** of the Emberhollow stretch:
    Map 1 wins its verdict
 
 ## 5. THE SIX REALM MAPS (sequence after Map 1)
-Ashfall (Cold Lantern) → Skyrend (Sovereign start) → Stoneheart → Duskmourn →
+Ashfall (Cold Reliquary) → Skyrend (Sovereign start) → Stoneheart → Duskmourn →
 Marenth → Everbloom. Each realm's map follows the Gate Rite loop from the doctrine:
 arrival in a wounded land → pilgrimage → relight the Gates → the Rite wakes the god
 → the realm battle. Same map, two scales, every realm.

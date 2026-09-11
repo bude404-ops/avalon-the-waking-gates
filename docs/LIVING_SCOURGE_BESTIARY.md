@@ -18,7 +18,7 @@ Each realm's real wildlife, territorial and colored. These are the LIVING TWINS 
 
 ### 3. CONSTRUCTS — made things
 Shrine wards, golems, automata left by the faithful to guard what matters. 100% craft under the Craft-Intact Law — nothing hollow about them, ever. They obey old orders from dead masters.
-- Combat grammar: NO stagger, NO fear, slow telegraphed patterns; some are WARD-GATES — dungeon progress fights. Immune to the lantern soft-CC.
+- Combat grammar: NO stagger, NO fear, slow telegraphed patterns; some are WARD-GATES — dungeon progress fights. Immune to the reliquary soft-CC.
 - Tone: they don't hate you. They just won't let you pass. The saddest guard duty in a dead world.
 
 ## REGIONAL ROSTERS

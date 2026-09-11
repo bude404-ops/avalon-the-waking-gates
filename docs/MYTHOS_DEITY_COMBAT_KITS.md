@@ -56,7 +56,7 @@
 | Ashfall | KILN-WARDEN — forge-blade | HEARTH-KEEPER — ember-staff | embercowl / kiln-helm |
 | Skyrend | STORM-WARDEN — storm-blade | MATRIARCH — storm staff | deep cowl + watch-helm / cowl-veil + circlet |
 | Everbloom | BLOOM-WARDEN — bloom-blade | BLOOM-KEEPER — living-bloom staff | Living Crown |
-| Duskmourn | GLOAM-WARDEN — gloom-blade | VEIL-KEEPER — gloom-staff | lantern-cage |
+| Duskmourn | GLOAM-WARDEN — gloom-blade | VEIL-KEEPER — gloom-staff | reliquary-cage |
 | Marenth | TIDE-WARDEN — tide-blade | PEARL-KEEPER — pearl tide-staff | fin-crown |
 | Stoneheart | CRYSTAL-WARDEN — deep-road blade | HEARTROOT-KEEPER — heartroot staff | crystal-crest |
 

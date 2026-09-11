@@ -1,10 +1,10 @@
 # VFX SPECIFICATIONS — Phase 4 (post rigging/animation), per Big's production order
 
 ## Global laws that govern all VFX
-- TWO-LAYER LIGHT: cold desaturated ambient; the ONE rich light source per scene carries the color (Lantern-Region Aura Law).
-- LANTERN-REGION AURA: the Luminary's glow = the region's aura (Skyrend storm slate / Ashfall oxide red / Stoneheart bone grey / Duskmourn crimson / Marenth tide teal / Everbloom deep moss). Aedan/Skyrend = STORM SLATE.
+- TWO-LAYER LIGHT: cold desaturated ambient; the ONE rich light source per scene carries the color (Reliquary-Region Aura Law).
+- RELIQUARY-REGION AURA: the Luminary's glow = the region's aura (Skyrend storm slate / Ashfall oxide red / Stoneheart bone grey / Duskmourn crimson / Marenth tide teal / Everbloom deep moss). Aedan/Skyrend = STORM SLATE.
 - MUTED PALETTE: no saturated RGB bloom; effects read painterly, cold, serious — magic in Avalon is old and quiet, never neon.
-- FLAME IS NEVER SEEN UNVESSELLED (Lantern Law): no free-floating fire orbs; light lives in crafted vessels.
+- FLAME IS NEVER SEEN UNVESSELLED (Reliquary Law): no free-floating fire orbs; light lives in crafted vessels.
 
 ## Aedan Stormcrown (Sovereign, Skyrend) — flagship VFX set
 1. AURA: faint slate-grey shimmer on armor edges at low health/rage — shader: fresnel edge glow, storm-slate, 0.15 intensity floor.
@@ -15,7 +15,7 @@
 ## Per-class effect grammar (for the remaining Eleven — rolled after rigging standard locks)
 - Ravager/Ashfall: oxide-red ember drift on weapon impacts, ash kick-up.
 - Warden/Stoneheart: bone-grey dust shockwaves, glyph-carve ground rings.
-- Veilborn/Duskmourn: crimson mist step-trail, lantern light dies where he walks (Lantern Law inverse — Hollow adjacency).
+- Veilborn/Duskmourn: crimson mist step-trail, lantern light dies where he walks (Reliquary Law inverse — Hollow adjacency).
 - Weaver/Marenth: tide-teal thread ribbons on casts, wet-sheen reflections.
 - Wildborn/Everbloom: deep-moss spore motes, foliage regrowth footprint (anti-grind: cosmetic only).
 

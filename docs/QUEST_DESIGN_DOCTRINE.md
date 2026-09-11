@@ -9,7 +9,7 @@
 
 **If lore requires a menu, a codex entry, or a text panel to understand, the quest failed.**
 Every saga, theology, and god must be knowable through three delivery vehicles only:
-1. **WHAT THE QUEST MAKES YOU DO** (perform the rite, carry the lantern, refuse the offering)
+1. **WHAT THE QUEST MAKES YOU DO** (perform the rite, carry the reliquary, refuse the offering)
 2. **WHAT THE WORLD SHOWS YOU** (the town that changes when you choose, the god that wakes when you feed the Gate)
 3. **WHAT PEOPLE ASK OF YOU** (an NPC's request is a lore fragment wearing a job)
 
@@ -36,7 +36,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 ### 3. CHOICES THAT CLOSE DOORS — the Baldur's Gate 3 pillar
 **Choices are irreversible and world-visible.**
 - **THREE STATES, TRACKED:** every questline town holds three possible states (Ledger-clean / Wounded / Hollow-touched). Return visits show your choice in buildings, NPCs alive or gone, shrines lit or dark.
-- **THE LEDGER IS ALIVE:** the town's deed-ledger (canon from the Cold Lantern) records what the player did — and NPCs quote it back. Word travels between towns along the pilgrim roads.
+- **THE LEDGER IS ALIVE:** the town's deed-ledger (canon from the Cold Reliquary) records what the player did — and NPCs quote it back. Word travels between towns along the pilgrim roads.
 - **DOOR-CLOSING IS MECHANICAL:** closing the cantors' shrine closes their class-training in that region — visibly, on the map. No quest "fails"; every resolution redirects the world.
 - **THE GATE RITE REMEMBERS:** who stands with the player at a region's Gate Rite = who the player's choices left standing. The finale of each chapter is a roll call of the player's consequences.
 
@@ -46,7 +46,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
   - **Ashfall:** heat is duty — the forge must burn something, and the question is always *what*
   - **Skyrend:** the storm-reading — truth is told to your face, and oaths are sworn in the open rain
   - **Everbloom:** the harvest debt — every gift is borrowed; something is owed back to the Reach
-  - **Duskmourn:** the lantern-honor — the dead are owed light, and carrying it is the price of passage
+  - **Duskmourn:** the reliquary-honor — the dead are owed light, and carrying it is the price of passage
   - **Marenth:** the tide's accounting — everything lent returns, with interest, on the tide's schedule
   - **Stoneheart:** the unmoved promise — a vow made is terrain; break one and the ground remembers
 - **ORDER POLITICS:** the six Orders disagree — Smiths who think Wardens waste good steel on ceremony, Cantors who call Keepers relic-hoarders, Vigils who owe Wayfarers a road-debt. Quests put the player between them; picking an Order's side is picking a theology, and other Orders treat the pilgrim accordingly.
@@ -70,7 +70,7 @@ The world never explains itself. **NPCs don't exposition — they want things.**
 | 4 | **CHOICE** | Two goods / two evils, door-closing, tracked | The choice IS the mythology test (what do you believe about the god?) |
 | 5 | **ECHO** | The world changes visibly; the ledger records it; an NPC reflects it back | The player re-reads their own story in the world |
 
-**Cold Lantern audit against this grammar: HOOK (Mother Brackle's cold hearth) → TRAIL (the ash-road, the Erased Drake) → RITE (the Rite of Rekindling, performed) → CHOICE (evacuate the town or hold the lanterns; Brackle's last-lantern speech as the two-goods moment) → ECHO (the ledger records "The Night Emberhollow Rekindled"; the shrine rebuilds; the Kiln-Queen's silence hooks the next quest). ✔ The benchmark quest already runs the grammar — the doctrine codifies what made it work.**
+**Cold Reliquary audit against this grammar: HOOK (Mother Brackle's cold hearth) → TRAIL (the ash-road, the Erased Drake) → RITE (the Rite of Rekindling, performed) → CHOICE (evacuate the town or hold the lanterns; Brackle's last-lantern speech as the two-goods moment) → ECHO (the ledger records "The Night Emberhollow Rekindled"; the shrine rebuilds; the Kiln-Queen's silence hooks the next quest). ✔ The benchmark quest already runs the grammar — the doctrine codifies what made it work.**
 
 ---
 

@@ -34,7 +34,7 @@ Rule: GRAMMAR, NOT LIFTS — no real Arthurian names (no Arthur, Merlin, Avalon 
 ## IV. THE LANGUAGE LAW (all world text in Avalon idiom — BudE404: "make sure any language is in an Avalon-type theme")
 
 - **The gods never speak in words.** They speak in WEATHER, WARMTH, AND DREAM. Any god-voice in text is render-style poetry, never dialogue.
-- **Quest titles read as road-songs:** "The Lantern of Llynved," "What the Barrow Remembers," "The Mere-road East."
+- **Quest titles read as road-songs:** "The Reliquary of Llynved," "What the Barrow Remembers," "The Mere-road East."
 - **Road-folk oaths and blessings:** "may the road keep you," "light in the dark places," "the mere remembers."
 - **NPC names:** short, worn, road-folk — fully invented per the grammar. Sample pools:
   - Ashfall: Dwgan, Morys, Tegan, Hadwyn, Brannoc, Serryl

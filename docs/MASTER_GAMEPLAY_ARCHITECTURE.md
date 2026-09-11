@@ -1,6 +1,6 @@
 # MYTHOS GATES: ASCENSION — MASTER GAMEPLAY ARCHITECTURE (v1.0)
 ## The canonical unification of all design layers. Supersedes nothing — commands all of them.
-Sources: MYG_MAP_MISSION_ARCHITECTURE · COLD_LANTERN_MAP_ARCHITECTURE · GATE_MECHANICS_GAMEPLAY_LAYER · CORE_GAMEPLAY_STRUCTURE. Lore is untouchable and untouched.
+Sources: MYG_MAP_MISSION_ARCHITECTURE · COLD_RELIQUARY_MAP_ARCHITECTURE · GATE_MECHANICS_GAMEPLAY_LAYER · CORE_GAMEPLAY_STRUCTURE. Lore is untouchable and untouched.
 
 ---
 
@@ -81,12 +81,12 @@ The 12 mission structures, each mapped to form-pattern grammar (E=explore/sprite
 6. **GATE ACTIVATION** — E→A: the standard pre-ascension mission (charge, rite, cleanliness)
 7. **GATE DEFENSE** — M/A: structural waves, mid-fight thinning
 8. **CORRUPTION CLEANSING** — M+E: giant purges the field, WARDEN enters the vein-heart inside — the two-scale purge
-9. **GIANT MANIFESTATION** — E→M→E: the pure loop mission (Cold Lantern's middle)
+9. **GIANT MANIFESTATION** — E→M→E: the pure loop mission (Cold Reliquary's middle)
 10. **COLOSSAL DEFENSE** — A: protect a colossus under siege (allies CAN be colossi — the mythology's own beings)
 11. **BOSS HUNT** — E→A or M: two-scale boss law applies
-12. **MULTI-STAGE STORY** — the region climax: E→M→E→A (the Cold Lantern shape)
+12. **MULTI-STAGE STORY** — the region climax: E→M→E→A (the Cold Reliquary shape)
 
-**No two consecutive missions share the same form-pattern** — the campaign breathes between forms. **THE COLD LANTERN is the benchmark mission:** it runs E→G(bridge)→M(nest)→E(wreckage lore)→A(gate + battlefield + colossus) — every tier, both scales, one map. All new mission types are prototyped against its spine.
+**No two consecutive missions share the same form-pattern** — the campaign breathes between forms. **THE COLD RELIQUARY is the benchmark mission:** it runs E→G(bridge)→M(nest)→E(wreckage lore)→A(gate + battlefield + colossus) — every tier, both scales, one map. All new mission types are prototyped against its spine.
 
 ---
 
@@ -131,7 +131,7 @@ Power never comes from repeating content for numbers. The progression axes:
 
 - **Maps:** walked-first geography, dual-meaning landmarks (Map Architecture) ✦
 - **Dungeons:** sprite-depth with mandatory manifestation beats, region signature mechanics ✦
-- **Missions:** tier grammar, no repeated form-patterns, Cold Lantern benchmark ✦
+- **Missions:** tier grammar, no repeated form-patterns, Cold Reliquary benchmark ✦
 - **Combat:** precision verbs vs. spatial verbs — different interaction sets, one input language ✦
 - **Gates:** the tether — all manifestation flows through gate-state ✦
 - **Exploration:** discoveries that pay off at the other scale (recon payoff) ✦

@@ -67,8 +67,8 @@ Art law: "A herald is the element wearing the beast — the gods' primordial gra
 
 ## 9. LUMINARY (canon — Ashfall) — companion line
 - **Element:** living ember (faction-reskinnable: fire / lightning / bloom / mist / water / crystal)
-- **Body:** formed ENTIRELY of its element — molten-light skin, flame hair/wings, drift-sparks; wears the Cold Lantern (human-craft bronze, kept deliberately: made thing, named flame)
-- **Function:** pet-relic fusion — "the flame illuminates, the lantern it wears protects"; bare-flame vs lantern-donned = earned progress badge
+- **Body:** formed ENTIRELY of its element — molten-light skin, flame hair/wings, drift-sparks; wears the Cold Reliquary (human-craft bronze, kept deliberately: made thing, named flame)
+- **Function:** pet-relic fusion — "the flame illuminates, the reliquary it wears protects"; bare-flame vs lantern-donned = earned progress badge
 - **3D ref:** `art/concepts/sacred-heralds/3D-LUMINARY-CANON.png`
 - **3D notes:** smallest rig (hover bob + idle orbit animations); emissive-heavy material; lantern = separate mesh slot (attire toggle); faction reskin = element color + hair/wing texture swap on ONE mesh
 

@@ -11,7 +11,7 @@
 
 **THE HUMAN LAW (Avalon Doctrine, Sept 5 2026 — supersedes the Sprites Law and the Dragon-Kin Law): THE MORTALS OF MYTHOS ARE HUMANS.** Knights, pilgrims, villagers, smiths — human civilizations live on the sleeping gods' bodies, building their gate-towns and shrine-roads along the old ways. Humans have NO innate elemental power: all power comes as GIFTS from the gods — relics and blessings earned by pilgrimage (a sword from the lake is fire from the god). The old faith's legend-heroes are THE FIRST PILGRIMS (the 12 canonized Warden & Keeper designs, re-keyed): humans anointed so long by relic-light that the element stayed in their blood and bodies — statues of them stand in every gate-town. The deities who wish to walk among humans take the HOODED WANDERER aspect (the Hooded Aspect Law: deep fitted hood, face lost in shadow except element-glow eye-points, mortal-passing armor).
 
-Consequences: (a) Mortal-scale gameplay = the PILGRIMAGE (Grail-quest grammar: walk the old roads, carry relic-light, heal the land). (b) Belief is the world's engine: faith keeps the gods' dreams sweet; forgetting hollows them. (c) Human-scale characters use the standard humanoid rig pipeline — all armor styles (Forge-Iron, Storm-Steel, Grow-Plate, Lantern-Plate, Tide-Mail, Quarry-Plate) apply to human wearers unchanged. (d) Gate-town NPCs, pilgrims, priests, and champions are all human.
+Consequences: (a) Mortal-scale gameplay = the PILGRIMAGE (Grail-quest grammar: walk the old roads, carry relic-light, heal the land). (b) Belief is the world's engine: faith keeps the gods' dreams sweet; forgetting hollows them. (c) Human-scale characters use the standard humanoid rig pipeline — all armor styles (Forge-Iron, Storm-Steel, Grow-Plate, Reliquary-Plate, Tide-Mail, Quarry-Plate) apply to human wearers unchanged. (d) Gate-town NPCs, pilgrims, priests, and champions are all human.
 
 **THE GATES** — PULSE-POINTS of the sleeping gods (Avalon Doctrine): thin places where the god lies closest to the surface. The mist is thinnest there; the god's dream can be heard; his warmth rises through the stones. Not portals — the god is already here, underfoot. Six canon Gate-rings (Ember, Gale, Bloom, Dusk, Deep, Stone), each realm's quest = relight its Gates; the final GATE RITE at the heart-Gate WAKES THE GOD (giant-mode trigger). Structural integrity = FAITH, unchanged. Where belief dies, a Gate deadens — and the region's dream is exposed.
 
@@ -48,7 +48,7 @@ Each faction holds a REALM (beyond its Gate) and a MORTAL REGION (the Mythos lan
 - **Realm:** THE STILL — the quiet country: pale meadows under a moon that never sets, where everything finished waits politely.
 - **Mortal region:** THE DUSKMERE — black-water isles and willow-fens; undertakers, record-keepers, lantern-makers who believe light is a promise.
 - **Gate:** THE VEIL GATE — on the mirror-lake isle of Lanternhush.
-- **Towns:** LANTERNHUSH (gate-capital, lantern-niche shrines on every wall), LASTLIGHT (town of the death-guilds), VAILCREST (bone-white city of archives), HUSHFIELD (the quiet farms).
+- **Towns:** LANTERNHUSH (gate-capital, reliquary-niche shrines on every wall), LASTLIGHT (town of the death-guilds), VAILCREST (bone-white city of archives), HUSHFIELD (the quiet farms).
 - **Deities:** two Bone Giant colossi (raw bone-ash element; male = greatsword, female = staff). Mortals: humans (the Duskmourn lantern-folk).
 
 ### F5 — MARENTH (Water)
@@ -91,7 +91,7 @@ Mythos fauna are Aetherium-stable natural beings — not Hollow, not divine. Eac
 
 - **Colossi = THE GODS STANDING UP** (Avalon Doctrine): each deity's waking form is the land rising — a colossal bipedal giant of pure living element, zero armor, zero relic anchors. Combat = element-forged weapons per the Gender-Role Binding: male giants wield condensed-element GREATSWORDS, female giants wield condensed-element STAVES, both wielded bare-handed. Faction signatures on every colossal. Bipedal anatomy returns the colossi to the standard humanoid rig pipeline.
 - **THE HOODED WAYS**: the deity walking as a hooded wanderer at human scale — the stranger at the crossroads may be the mountain (Hooded Aspect Law).
-- **MORTAL CRAFT = DIVINE INFLUENCE LAW**: every region's architecture visibly echoes its faction (storm-vane weathervanes, crucible-core hearth towers, petal-crest rooflines, lantern-niche shrines, fin-buttresses, crystal crowns).
+- **MORTAL CRAFT = DIVINE INFLUENCE LAW**: every region's architecture visibly echoes its faction (storm-vane weathervanes, crucible-core hearth towers, petal-crest rooflines, reliquary-niche shrines, fin-buttresses, crystal crowns).
 - **FACTION SIGNATURES:** Fire = Crucible Core, Air = Storm Vanes, Life = Living Crest, Death = Reliquary Niches, Water = Fin Crown, Earth = Crystal Load.
 - **FAITH = infrastructure. HOLLOW = the tide that erases. TOWER WAVES = colossal event mode** (giants holding Gates against the Hollow Tide).
 
@@ -102,4 +102,4 @@ Mythos fauna are Aetherium-stable natural beings — not Hollow, not divine. Eac
 3. **THE LAYING DOWN** — the gods chose sleep: one by one they lay down and became the land — mountain ranges, moors, seafloors, the world's deep spine. The Gates rose where each sleeps closest. (Supersedes 'the Balancing' — the gods were not exiled; they slept.)
 4. **THE PILGRIMAGE AGE** — human civilizations grew along the old roads, on the gods' sleeping bodies; the First Pilgrims walked the roads with relic-light; faith flowed; peace held.
 5. **THE FORGETTING** — belief thinned in the far regions; the Forgotten's dream died first; the WASTELAND spread from that wound. Gates deadened; the Hollow Tide rose; Echoes began false-waking in the grey.
-6. **THE PRESENT** — the campaign begins: a human champion-pilgrim takes up the lantern and walks the old roads — relight the Gates, wake the gods, burn the Hollow off the land.
+6. **THE PRESENT** — the campaign begins: a human champion-pilgrim takes up the reliquary and walks the old roads — relight the Gates, wake the gods, burn the Hollow off the land.

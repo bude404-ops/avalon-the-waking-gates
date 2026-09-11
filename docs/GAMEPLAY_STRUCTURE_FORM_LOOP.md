@@ -1,7 +1,7 @@
 # MYTHOS GATES: ASCENSION — Gameplay Structure: THE FORM LOOP
 ## The player is BOTH a tiny Sprite and a primordial Giant God — the alternation IS the game
 
-Builds on: ONE WORLD—TWO SCALES (@e01be00d), Cold Lantern architecture (@51df2590), Gate gameplay layer (@130c4194). Lore unchanged — deities, Gates, Hollow, factions, belief-integrity all as established.
+Builds on: ONE WORLD—TWO SCALES (@e01be00d), Cold Reliquary architecture (@51df2590), Gate gameplay layer (@130c4194). Lore unchanged — deities, Gates, Hollow, factions, belief-integrity all as established.
 
 **The organizing principle:** Giant gameplay is a recurring gameplay PILLAR; Full Ascension is the spectacular climax; the Sprite is not the "real game" with giant cutscenes, and the Giant is not a spectacle you watch — BOTH are verbs the player owns.
 
@@ -64,13 +64,13 @@ Verbs: destroy walls, break bridges, crush structures, stamp craters, ignite ele
 
 Investigation · Rescue · Escort · Hunt · Shrine restoration · Gate activation · Gate defense · Corruption cleansing · Giant manifestation · Colossal defense · Boss hunt · Multi-stage story — and a mission may cross forms MULTIPLE times (sprite → glimpse → sprite → manifestation → sprite → ascension is a legal, encouraged shape).
 
-**Cold Lantern audit against the loop (benchmark mission):** beats 1–5 = EXPLORE/PROBLEM/CONNECTION (keeper → forest → drake threat → escort), beat 6–8 = ASCENSION (rite → battlefield → Echo of the Forgotten). It currently runs the loop ONCE at full depth — strong for a vertical slice. **Recommended addition for the shipped mission:** one MANIFESTATION mid-mission — when the evacuation column is overwhelmed at the road ambush, a 45-second manifestation clears the blockage, then dispersal, then the drake beat (the god's brief presence is why the drake flees the road — stitching the set-piece). This teaches tier 2 before the climax, so the Ascension lands as "more of a thing I've done" rather than a mode swap.
+**Cold Reliquary audit against the loop (benchmark mission):** beats 1–5 = EXPLORE/PROBLEM/CONNECTION (keeper → forest → drake threat → escort), beat 6–8 = ASCENSION (rite → battlefield → Echo of the Forgotten). It currently runs the loop ONCE at full depth — strong for a vertical slice. **Recommended addition for the shipped mission:** one MANIFESTATION mid-mission — when the evacuation column is overwhelmed at the road ambush, a 45-second manifestation clears the blockage, then dispersal, then the drake beat (the god's brief presence is why the drake flees the road — stitching the set-piece). This teaches tier 2 before the climax, so the Ascension lands as "more of a thing I've done" rather than a mode swap.
 
 ## 6. AFTER THE CAMPAIGN — SIX POST-CAMPAIGN MODES (no mandatory grinding)
 
 **Progression philosophy first:** vertical number-growth caps early and cheap; the long growth is HORIZONTAL — new abilities, new battlefield verbs, new mechanics, new regions, new bosses, new build combinations, cosmetic/status rewards, real achievements. Faith buys ABILITIES and ASCENSION CHARGES, never +stats. **Progression = becoming divine in more situations, not bigger numbers.**
 
-1. **DUNGEONS** — Explore → Discover → Fight → Puzzle → Manifest → Boss → Reward. Each elemental region has ONE signature system (mastery, not farming): Fire ruins = ember-light chain puzzles + spreading flame hazards; Frozen temples = heat management/ice-bridge creation; Storm sanctums = wind-current movement puzzles; Death crypts = lantern-light safe zones (Cold Lantern lore); Ancient forests = living-growth path manipulation; Celestial ruins = orientation/gravity chambers. Weekly curated seed + handcrafted rotation.
+1. **DUNGEONS** — Explore → Discover → Fight → Puzzle → Manifest → Boss → Reward. Each elemental region has ONE signature system (mastery, not farming): Fire ruins = ember-light chain puzzles + spreading flame hazards; Frozen temples = heat management/ice-bridge creation; Storm sanctums = wind-current movement puzzles; Death crypts = lantern-light safe zones (Cold Reliquary lore); Ancient forests = living-growth path manipulation; Celestial ruins = orientation/gravity chambers. Weekly curated seed + handcrafted rotation.
 
 2. **TOWER OF THE SIX GATES** — Sprite waves → Elite → Manifestation gate (tier-2 window per floor) → Colossal wave → Floor boss → next floor. Modifiers + environmental hazards; tests combat mastery, positioning, build, and efficient use of the giant windows. The timer discipline of manifestation is the skill here.
 

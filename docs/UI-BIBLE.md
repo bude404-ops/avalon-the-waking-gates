@@ -53,7 +53,7 @@ Bottom dock zone: 104px above nav (relic-dock, mode-card ride above the rail).
   CHARACTER screen (shared shell).
 - **CHARACTER** — hero art center 18%; stat rail left (VESSEL/FAITH bars + MIGHT/REACH);
   ability dock right (QUAKE/SURGE/VOLLEY with hold-tooltips); relic dock bottom (Mark,
-  Cold Lantern, Way-Daggers + one empty socket — relics are earned, never sold).
+  Cold Reliquary, Way-Daggers + one empty socket — relics are earned, never sold).
 - **RELICS** — same chamfered cards, EARNED·NEVER SOLD law on the header.
 - **CODEX** — six records; THE CINEMATICS deep-links to the story film. "Told in play."
 - **SETTINGS** — carved dials: cinematic camera, ember particles, stone voice (haptics),

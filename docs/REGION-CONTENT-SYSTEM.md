@@ -70,10 +70,10 @@ region's material:
 
 ## ROLLOUT ORDER (verdict-gated, like all content)
 
-1. **ASHFALL FIRST** — it pairs with the Cold Lantern map (Map #1) and the
+1. **ASHFALL FIRST** — it pairs with the Cold Reliquary map (Map #1) and the
    Ravager (first pipeline class): one region's full stack ships as the
    template. Ashfall's Origin Arc = the Ravager's opening (the class whose
-   home this is) while the Cold Lantern mission remains the design-test
+   home this is) while the Cold Reliquary mission remains the design-test
    pilgrimage ANY pilgrim can walk.
 2. Then per vertical-slice need: Skyrend (Sovereign pair), then the rest by
    realm-bible queue (Big can reorder anytime).
@@ -85,8 +85,8 @@ region's material:
 Anti-grind (no dailies/farming/FOMO), one-time dungeons, permanent world
 changes, cosmetic-only monetization, the Two Scales, MYTHIC WORLD LAW staging,
 no deity names/titles or 'elven' in generation prompts, runes only where canon
-allows (gate-rune the sole mark), Lantern-Region Aura colorways, and the
+allows (gate-rune the sole mark), Reliquary-Region Aura colorways, and the
 class↔realm binding fixed per Origin Law v2.
 
 *Status: framework locked. Ashfall region bible rolls next (sections 1–9),
-Cold Lantern mission as its pilgrimage spine.*
+Cold Reliquary mission as its pilgrimage spine.*

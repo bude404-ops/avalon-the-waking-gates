@@ -30,7 +30,7 @@ Arthurian bestiary tradition: Malory's Le Morte d'Arthur (Questing Beast), Welsh
 
 ## AVALON CREATURES — PER-REALM FAUNA ROLL (Sept 9, Big: 'build more fauna art for different types of creatures... fit the lore and for regions')
 
-Twelve new Avalon creatures — two per realm, realm-native designs on the neutral stone-and-mist staging law (no realm colorway/landmarks, zero script, unlit lanterns only). Rolled as a batch, p-hash clean across all 12 (min hamming 31). VERDICTS PENDING per creature — gallery labels each as an Avalon Creature with its home realm.
+Twelve new Avalon creatures — two per realm, realm-native designs on the neutral stone-and-mist staging law (no realm colorway/landmarks, zero script, unlit reliquaries only). Rolled as a batch, p-hash clean across all 12 (min hamming 31). VERDICTS PENDING per creature — gallery labels each as an Avalon Creature with its home realm.
 
 | Realm | Creature | File (pending verdict) |
 |---|---|---|
@@ -40,7 +40,7 @@ Twelve new Avalon creatures — two per realm, realm-native designs on the neutr
 | Ashfall | The Cinder Salamander — dog-sized living coal of the fissures | art/pending/ENEMY-FAUNA-ASHFALL-CINDER-SALAMANDER-NEUTRAL-V1.png |
 | Stoneheart | The Barrow Owl — pale death-omen owl of the burial cairns | art/pending/ENEMY-FAUNA-STONEHEART-BARROW-OWL-NEUTRAL-V1.png |
 | Stoneheart | The Hollowhorn — megalith-spiraled great ram of the cold high country | art/pending/ENEMY-FAUNA-STONEHEART-HOLLOWHORN-RAM-NEUTRAL-V1.png |
-| Duskmourn | The Dullahan's Steed — riderless black warhorse, dead unlit lantern on its harness | art/pending/ENEMY-FAUNA-DUSKMOURN-DULLAHAN-STEED-NEUTRAL-V1.png |
+| Duskmourn | The Dullahan's Steed — riderless black warhorse, dead unlit reliquary on its harness | art/pending/ENEMY-FAUNA-DUSKMOURN-DULLAHAN-STEED-NEUTRAL-V1.png |
 | Duskmourn | The Gloam Pooka — smoky half-undone crossroads shape-shifter | art/pending/ENEMY-FAUNA-DUSKMOURN-GLOAM-POOKA-NEUTRAL-V1.png |
 | Marenth | The Kelpie — drowned-weed water-horse of the pooling shallows | art/pending/ENEMY-FAUNA-MARENTH-KELPIE-NEUTRAL-V1.png |
 | Marenth | The Tide Strider — twice-human-height heron-horror of the grey shallows | art/pending/ENEMY-FAUNA-MARENTH-TIDE-STRIDER-NEUTRAL-V1.png |

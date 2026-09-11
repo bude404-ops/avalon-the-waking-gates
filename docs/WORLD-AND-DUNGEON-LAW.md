@@ -17,7 +17,7 @@ Dungeons are **NOT physically buried in the overworld terrain**. Each dungeon is
 - Every dungeon is a **one-time authored adventure** (anti-grind law holds): bespoke layout, bespoke encounter, bespoke reward. Replay is optional, never required.
 
 **Visual law:**
-- Each dungeon interior gets **its own full art direction and dramatic lighting** — cold two-layer light, the realm's aura colorway, and for Hollow sites the dead-lantern darkness (Lantern Law).
+- Each dungeon interior gets **its own full art direction and dramatic lighting** — cold two-layer light, the realm's aura colorway, and for Hollow sites the dead-reliquary darkness (Reliquary Law).
 - The overworld/dungeon **contrast is the visual payoff**: bright mythic overworld -> step through the gate -> the dark. The threshold moment is a designed beat, not a loading screen to hide.
 
 **Technical law (mobile-first):**

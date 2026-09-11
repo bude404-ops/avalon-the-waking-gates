@@ -13,11 +13,11 @@
 - **Contrast dynamics**: the teaser's job is ONE loud moment. Everything before it must be quiet. Quiet → loud → silence → title.
 - **Cut acceleration**: shots start at 3-4s, compress toward 1s at the peak, then a full-still title card. Never cut fast early.
 - **Sound**: braams are dead-cliché. Current standard = low sub-drone bed + diegetic-first foley (stone, wind, flame, breath) + one musical swell. Silence is the sharpest tool in the kit.
-- **VO discipline**: 3 lines max in a teaser (our "The Lantern Kindles" treatment already obeys this).
+- **VO discipline**: 3 lines max in a teaser (our "The Reliquary Kindles" treatment already obeys this).
 - **Mobile-first**: most viewers watch on a phone in 9:16 crop. Compose center-weighted; test the crop.
 
 ### AVALON FIT
-The locked treatment ("The Lantern Kindles") IS archetype 1 built with archetype 4 tooling. **Recommendation: keep it.** Phase the teaser program:
+The locked treatment ("The Reliquary Kindles") IS archetype 1 built with archetype 4 tooling. **Recommendation: keep it.** Phase the teaser program:
 - **Now**: stills + VO + sound design (6 storyboard frames + 7 approved cinematic stills = 13 shots of ammo, all canon-locked).
 - **After the 12-model Forge batch**: re-cut as in-engine capture (archetype 3) for launch-window trailer. Same structure, upgraded surface. No creative rework needed.
 
@@ -35,14 +35,14 @@ The industry has converged on **real-time in-engine cutscenes** (God of War 2018
 ### Player-respect requirements (our law stack already rules)
 - **Every cutscene skippable** (tap to skip, confirm on hold) + pausable. Anti-grind law: no unskippable exposition.
 - **Strategic-only cinematics** (already doctrine): cinematics fire at god-moments, realm crossings, gate openings — never for fetch quests.
-- **Environmental storytelling over exposition**: the world shows the lore (dead lanterns, Hollow sites); cutscenes never narrate what the world can show.
+- **Environmental storytelling over exposition**: the world shows the lore (dead reliquarys, Hollow sites); cutscenes never narrate what the world can show.
 - **Subtitle-first**: default on, no voice dub requirement for lore text (VO only at the highest beats).
 
 ### AVALON FIT — THE CUTSCENE BIBLE (recommended law)
 - **Real-time in-engine, always.** Letterbox bars drop in, 2.39:1 crop, gameplay renderer underneath.
 - **Two grammar tiers**: CLASSICAL film grammar as the workhorse; ONE-SHOT reserved for god moments — the Two-Scales law is the money shot: when the player *becomes* the god, the camera stays unbroken, no cut, primordial scale.
-- **Diegetic-first sound**: no score until a god or a gate appears. Lantern hum, wind, stone = the ambience.
-- **Light law holds**: cold desaturated base, the lantern the only warm source — cutscenes are no exception. Crimsons only in Duskmourn beats.
+- **Diegetic-first sound**: no score until a god or a gate appears. Reliquary hum, wind, stone = the ambience.
+- **Light law holds**: cold desaturated base, the reliquary the only warm source — cutscenes are no exception. Crimsons only in Duskmourn beats.
 - **In-world staging for NPC dialog**: quest talk happens in gameplay camera (tier 3), cutscene mode reserved for the mythic beats. This keeps cinematics rare and therefore huge.
 
 ### Unity implementation path (all inside the Tool Law)

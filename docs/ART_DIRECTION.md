@@ -14,7 +14,7 @@ Hand-painted painterly dark-fantasy, NOT photoreal film still, NOT cartoon. Five
 > HAND-PAINTED DARK-FANTASY GAME ART in a stylized painterly oil-render — visible brushwork, etched chisel-carved surfaces, cold blue-hour two-layer light, silhouette-first composition. NOT photoreal, NOT cartoon, NOT film still.
 
 ### NO ARTIFACT-MIMICRY LAW (Sept 7 2026, Big: 'I dont like when weapons or armor look like another artifact')
-Weapons and armor NEVER imitate the relic. The Luminary (Cold Lantern) is the ONE artifact in a pilgrim's frame — craft is craft, relic is relic. No lantern-shaped weapon heads, no cage-frame ornaments, no hollow light-waiting hoops, no relic-like trinkets anywhere on gear. Armor = honest corded metalwork, wool, leather; weapons read unmistakably as weapons. Canonized after the armor-grammar V1 proof's light-waiting hoop read as a second artifact (hoop concept RETIRED; Keeper flail re-rolled with a solid chiseled striking head, cage head retired).
+Weapons and armor NEVER imitate the relic. The Luminary (Cold Reliquary) is the ONE artifact in a pilgrim's frame — craft is craft, relic is relic. No lantern-shaped weapon heads, no cage-frame ornaments, no hollow light-waiting hoops, no relic-like trinkets anywhere on gear. Armor = honest corded metalwork, wool, leather; weapons read unmistakably as weapons. Canonized after the armor-grammar V1 proof's light-waiting hoop read as a second artifact (hoop concept RETIRED; Keeper flail re-rolled with a solid chiseled striking head, cage head retired).
 
 ## 2. THE GIANTS — PRIMORDIAL-MAX ANATOMY
 Deities render as colossal RAW ELEMENTAL GIANTS (100 ft): zero armor, pure living element. 'Never made — the element that decided to stand': half-conceived asymmetric anatomy (mountain-range mid-formation, zero human symmetry), eon-layered crust strata flaking to reveal the molten/elemental core, violent elemental arteries, constant element-shed, face half-emerged from the element, movement like geology. Awe-not-fear; worship declares divinity. PRIMORDIAL LAW (Big, Sept 7 ~10:14 PM: 'Do they need weapons? Also lets make them more primordial'): gods carry NO weapons, NO tools, NO made objects of any kind — craft is mortal, the god never made a thing; the element IS the weapon. SUPersedes the Gender-Role weapon binding (greatsword/staff retired). Gods render MORE PRIMORDIAL: barely-conceived forms, more mountain than man, mass fused with the ridge, crude half-fused stone club-hands, face barely surfaced, legs dissolving back into terrain, zero human symmetry. EXTENDED PRIMORDIAL LAW (Big, Sept 7 ~10:18 PM: 'make the faces less human and primordial aswell also they shouldnt have legs only torso and up from the ground as that is how the cinematic fights will be'): (1) GOD FACES are BARELY FACES — more crag than countenance: overhanging crag brow, ember-seam eye sockets, no clear nose, NO MOUTH, no expression, zero human facial proportions. NO-MOUTH LAW (Big, Sept 7 ~10:34 PM: 'I also like no mouth on them'): gods have NO mouth — ever. (3) HANDS LAW (Big, same msg: 'they need need hands tho but they should elemental like and primordial hands'): gods DO have hands — but PRIMORDIAL ELEMENTAL hands, never human: hand masses of raw strata and living element, fingers half-fused and incomplete, fewer than five, thick as fallen menhirs, molten seams in the knuckle cracks — geology that suggests a hand, not anatomy. Replaces the earlier crude club-stump arm-ends. (2) NO LEGS — gods render TORSO-AND-UP ONLY, rising straight out of the ground; the lower body IS the terrain (folded strata, scree, cliff-face). The god does not walk — this is the CINEMATIC BATTLE FORM: god fights are staged as terrain-up torsos, never full standing bodies. ELEMENT-PURITY LAW (Big, Sept 7 ~10:34 PM: 'I want them to be more pure form of their element so they are clearly distinct from other elements'): every god renders as the PURE FORM of their element — fire = pure molten lava/magma, storm = pure storm, tide = pure sea, etc. — unmistakably distinct from every other element at a glance; stone bodies are retired (a god of fire is not a rock giant with a glowing chest, he IS the fire). GODDESS FEMININE-STRUCTURE LAW (same ruling: 'the females all need a feminine structure with chest and hair'): goddesses keep the primordial law but their elemental mass reads FEMININE — distinct chest structure and elemental HAIR (flame-hair for fire, storm-hair, tide-hair, bloom-hair) — never humanized, the element shaped feminine. Governs all 6 goddess re-rolls.
@@ -25,7 +25,7 @@ Deities render as colossal RAW ELEMENTAL GIANTS (100 ft): zero armor, pure livin
 Mortals render as HUMANS (Avalon Doctrine): real human proportions, faction-palette human-craft armor and robes, element-touched glowing eyes on the Marked. Towns and craft build at mortal scale. Reference canon: ASHFALL-FIRE-GIANT-CANON.jpg (Vaelthorn).
 
 ## 4. THE WORLD — ORIGINAL SIX REGIONS
-All environment art draws from MYTHOS_WORLD_BIBLE.md locations only (Embermarch, Galeways, Bloomward, Duskmere, Saltreach, Quakeveins, Heartland + the six realms). Divine Influence grammar: mortal architecture echoes its faction's GIANT (crucible-core hearth towers, storm-vane weathervanes, petal-crest rooflines, lantern-niche shrines, fin-buttressed harbors, crystal-crowned quake-villages). Dragons appear ONLY as wild fauna.
+All environment art draws from MYTHOS_WORLD_BIBLE.md locations only (Embermarch, Galeways, Bloomward, Duskmere, Saltreach, Quakeveins, Heartland + the six realms). Divine Influence grammar: mortal architecture echoes its faction's GIANT (crucible-core hearth towers, storm-vane weathervanes, petal-crest rooflines, reliquary-niche shrines, fin-buttressed harbors, crystal-crowned quake-villages). Dragons appear ONLY as wild fauna.
 
 ## 5. STANDING LAWS (unchanged)
 - Unified faction palette: two base colors + one accent family; every glow source in an image reads as the same element.
@@ -42,7 +42,7 @@ The T1 Undone is the creepy benchmark. Its secret is NOT gore — it's SPECIFIC 
 ### THE SEVEN LAWS
 1. **EVERY HOLLOW HAS ONE ABSENCE** — each unit has ONE specific absence where their self used to be. T1 Undone = THE FACE (the self — v7 canon, Sept 7: Big retired the chest cavity, 'looks like a zombie'; the face void reads ERASED, never undead). The absence is filled with VOID BLACK (see law 8). Never gore, never organs, never exposed ribs (zombie read is banned).
 2. **NEAR-HUMAN PROPORTIONS, SLIGHTLY WRONG** — too thin, arms a touch too long, head tilted at a listening angle, knees slightly off. UNCANNY beats huge. Hollow are the erased, not beasts.
-3. **THE REMNANT** — each carries exactly ONE pristine, well-kept object from their life — the only un-worn thing in frame (the Mutefolk's cold lantern, the Champion's polished sword). Care in decay = wrongness.
+3. **THE REMNANT** — each carries exactly ONE pristine, well-kept object from their life — the only un-worn thing in frame (the Mutefolk's cold reliquary, the Champion's polished sword). Care in decay = wrongness.
 4. **NO GLOW, NO LIGHT OF THEIR OWN** — Hollow hold zero light. Any light in frame comes from OUTSIDE (pilgrim's Luminary, a distant Gate). They are things the light lands ON.
 5. **THE PAUSE** — posed mid-routine, mid-gesture, frozen mid-step like a stopped clock. Never mid-roar, never lunging. Predators roar; the erased just… continue.
 6. **CROWD WRONGNESS** — in groups: too evenly spaced, all facing one direction, like furniture. Never milling.
@@ -61,11 +61,11 @@ A Hollow creature is drained of ALL color — body, hide, scales, hair, cloth re
 | Unit | The Remnant | The Routine |
 |---|---|---|
 | T1 Undone | — (it has nothing left) | wanders, searching pockets |
-| T1 Mutefolk (lantern-lighter) | pristine COLD lantern | raises lantern to a lamp post that isn't there |
+| T1 Mutefolk (lantern-lighter) | pristine COLD reliquary | raises reliquary to a lamp post that isn't there |
 | T2 Unmade Champion | immaculate polished sword | guards a gate that leads nowhere |
 | T3 Furnace Brute | a keeper's tiny hammer on its belt | works a furnace that has been dead forever |
 | Erased Drake | a horse's bridle it still wears | circles a roost like it still guards eggs |
-| Echo | a copy of your own lantern, cold | copies the pilgrim's last gesture a half-second late |
+| Echo | a copy of your own reliquary, cold | copies the pilgrim's last gesture a half-second late |
 | Gate Worm | the gate key shape grown into its back | coils around a Gate, counting the stones |
 
 **(historical) pre-FACE-LAW absence map — RETIRED, kept for record only:**
@@ -87,7 +87,7 @@ All future Hollow art prompts carry: THE UNDONE STANDARD checklist (hole + remna
 **T1 UNDONE CANON = V8 SCENE — MASTER LOCKED (Sept 7 2026, Big: 'Approve the Canon art of the undone')** (art/approved/HOLLOW-T1-UNDONE-CANON-V8-SCENE.png — built from new-lore laws after Big ruled the old village scene OLD CANON and ordered a new creation; old canon + mislabeled A-pose duplicate purged in commit 7a8f154e):
 - Blue-hour village square: loom worker, chanting trio (all facing one way), two carriers — evenly spaced, frozen mid-routine
 - Void-black FACES (cold-violet charcoal, mist inside the absence only), intact weathered clothes, ZERO glow — light lands ON them
-- One pristine remnant: cold lantern at the stone shrine; stone kilns, smoke haze, broken caldera behind
+- One pristine remnant: cold reliquary at the stone shrine; stone kilns, smoke haze, broken caldera behind
 - The v7 A-pose sheets remain valid DESIGN SHEETS for the 3D pipeline; the V8 SCENE is the canon MASTER for all art + roster style-lock checks
 
 **v7 design (superseded as canon art, retained as design law):**
@@ -176,19 +176,19 @@ SUPERSEDES the NO-MOUTH LAW and the barely-face reading of EXTENDED PRIMORDIAL L
 
 ---
 
-## LANTERN-REGION AURA LAW (Big, Sept 8 ~10:47 PM)
+## RELIQUARY-REGION AURA LAW (Big, Sept 8 ~10:47 PM)
 
-**Big's words:** 'And the light in the lantern is the color aura for the region the character is in.'
+**Big's words:** 'And the light in the reliquary is the color aura for the region the character is in.'
 
-The light inside THE LANTERN (the Luminary — the one relic) renders in the COLOR AURA of whatever region the character is standing in. The lantern glow IS the region's signature:
+The light inside THE RELIQUARY (the Luminary — the one relic) renders in the COLOR AURA of whatever region the character is standing in. The lantern glow IS the region's signature:
 
 - SKYREND → storm slate
 - ASHFALL → oxide red
 - STONEHEART → bone grey
-- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (lantern glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes crimson realm-wide — staging, lanterns, gear accent language. Veilborn's class gear accent = CRIMSON (Big, Sept 8 ~11:49 PM: 'OK we will keep and go crimson') — the veil-whisper cloak and all Veilborn accent language shift from crimson to crimson; both locked Veilborn canon pieces get re-rolls under the new accent.
+- DUSKMOURN → CRIMSON AND BLACK — the official REGION COLORWAY (Big, Sept 8 ~11:32 PM: 'make the crimson and black the region color'): ambient = cold desaturated black, crimson = the only rich saturated source (reliquary glow, glyph-light, blood-light seams). The red/black Celtic death palette supersedes crimson realm-wide — staging, reliquaries, gear accent language. Veilborn's class gear accent = CRIMSON (Big, Sept 8 ~11:49 PM: 'OK we will keep and go crimson') — the veil-whisper cloak and all Veilborn accent language shift from crimson to crimson; both locked Veilborn canon pieces get re-rolls under the new accent.
 - MARENTH → tide teal
 - EVERBLOOM → deep moss
 
-**RELIQUARY PENDANT (vessel form, Big, Sept 11 ~1:54 AM):** the lantern-vessel is a PENDANT-SIZED reliquary, unique (one-of-a-kind mortal craft), holding the ESSENCE OF BELIEF from the deities, worn hanging from the Ravenkin's neck — and its glow IS the radiant light for players, rendered in the deity's essence color per the region table above. Full law in docs/MYTHOS_NPC_ROSTER.md (THE RAVENKIN).
+**RELIQUARY PENDANT (vessel form, Big, Sept 11 ~1:54 AM):** the reliquary-vessel is a PENDANT-SIZED reliquary, unique (one-of-a-kind mortal craft), holding the ESSENCE OF BELIEF from the deities, worn hanging from the Ravenkin's neck — and its glow IS the radiant light for players, rendered in the deity's essence color per the region table above. Full law in docs/MYTHOS_NPC_ROSTER.md (THE RAVENKIN).
 
-TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the lantern) — the amendment: the lantern's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the lantern glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a lantern appears. Gods carry no lantern (zero craft) — god staging unaffected.
+TWO-LAYER LIGHT holds (cold desaturated ambient world; the only rich light source is the reliquary) — the amendment: the reliquary's glow carries the regional hue instead of generic warm. The hidden realm accent (the gear whisper) and the reliquary glow share the same region color — they are one language. Governs the STAGE2 world-scene pass, in-engine lighting, and any future canon art where a lantern appears. Gods carry no lantern (zero craft) — god staging unaffected.

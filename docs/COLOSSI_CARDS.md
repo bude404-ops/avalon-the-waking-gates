@@ -8,7 +8,7 @@ Canon: v9 PRIMORDIAL 12-SET (kept Sept 5, 2026). Each colossus has its own art f
 ## VAELTHORN, the Sleeping King of the Ashfall — the Furnace-King
 **Faction:** Ashfall · **Realm:** The Ashfall · **Gate:** Ember Gate
 The first of the Twelve to be dreamed of again. Vaelthorn is the mountain that remembered it was a king — eon-layered basalt and shrine-crowned in obsidian monoliths, risen over the Ember Gate like a father standing over a hearth no one else could keep lit. Pilgrim offerings fused into his strata tell of centuries of unanswered prayers.
-*Rite line: When the lantern lights where he dreams, the Ember Gate opens, and the mere burns warm again.*
+*Rite line: When the reliquary lights where he dreams, the Ember Gate opens, and the mere burns warm again.*
 
 ## VESSAMAINE, the Sleeping Queen of the Ashfall — the Kiln-Queen
 **Faction:** Ashfall · **Realm:** The Ashfall · **Gate:** Ember Gate
@@ -37,8 +37,8 @@ The Weald's other answer. Mirielle's flowering-vine cascade and petal-shed are t
 
 ## MORVAINE, the Sleeping King of the Duskmourn — the Dusk-King
 **Faction:** Duskmourn · **Realm:** The Duskmourn · **Gate:** Barrow Gate
-A barrow that refused to stay buried. Morvaine's bone-pale chalk strata, shadow-ash plume, and barrow lantern-crown keep the moor's dead lit against the Hollow — the aspect of dusk that protects rather than mourns. Candle-shrines on his shoulders never went out, even when the prayers stopped.
-*Rite line: The lanterns on his crown are every grave-light he saved.*
+A barrow that refused to stay buried. Morvaine's bone-pale chalk strata, shadow-ash plume, and barrow reliquary-crown keep the moor's dead lit against the Hollow — the aspect of dusk that protects rather than mourns. Candle-shrines on his shoulders never went out, even when the prayers stopped.
+*Rite line: The reliquaries on his crown are every grave-light he saved.*
 
 ## SENNETH, the Sleeping Queen of the Duskmourn — the Barrow-Queen
 **Faction:** Duskmourn · **Realm:** The Duskmourn · **Gate:** Barrow Gate

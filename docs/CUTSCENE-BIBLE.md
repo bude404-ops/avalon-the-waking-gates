@@ -5,7 +5,7 @@
 All cutscenes render **in-engine, real-time**. Never pre-rendered, never outsourced CG. The gameplay renderer, the canon assets, the live lighting stack — one visual language from first frame to last. Cutscenes adapt to player state (gear, realm, time of day) because they ARE the game.
 
 ## LAW 2 — THE LETTERBOX SIGNAL
-Cinematic mode = letterbox bars drop in, camera crops to **2.39:1 widescreen**, gameplay HUD (the lantern) fades quiet. Bars up = gameplay; bars down = myth. The mode switch is the storytelling signal.
+Cinematic mode = letterbox bars drop in, camera crops to **2.39:1 widescreen**, gameplay HUD (the reliquary) fades quiet. Bars up = gameplay; bars down = myth. The mode switch is the storytelling signal.
 
 ## LAW 3 — TWO CAMERA TIERS
 - **CLASSICAL GRAMMAR** (the workhorse): authored shot/reverse-shot, establishing → coverage, film language. Used for realm crossings, gate openings, lore beats.
@@ -21,10 +21,10 @@ Every cutscene: tap-to-skip (hold to confirm), pausable, resumable. **No unskipp
 Cutscenes fire only at the mythic beats: god encounters, gate/seal events, realm first-crossings, campaign turning points. Never for fetch quests, never as tutorials. Rarity = weight.
 
 ## LAW 7 — SOUND: DIEGETIC-FIRST, NO PREMATURE SCORE
-Lantern hum, wind, stone, breath — the ambience carries cutscenes. **No orchestral score until a god or a gate appears.** When the music finally hits, it is earned. Silence stays the sharpest tool.
+Reliquary hum, wind, stone, breath — the ambience carries cutscenes. **No orchestral score until a god or a gate appears.** When the music finally hits, it is earned. Silence stays the sharpest tool.
 
 ## LAW 8 — THE LIGHT LAW HOLDS
-Cold desaturated base; the **lantern the only warm source** (Lantern-Region Aura hue per realm). Duskmourn beats alone may burn crimson. Cutscenes get no lighting exceptions — the two-layer law is the cinema.
+Cold desaturated base; the **lantern the only warm source** (Reliquary-Region Aura hue per realm). Duskmourn beats alone may burn crimson. Cutscenes get no lighting exceptions — the two-layer law is the cinema.
 
 ## LAW 9 — SUBTITLE-FIRST TEXT
 Lore text and dialog read clean without VO. Voice acting lives only at the highest beats (gods, campaign openers); subtitles default on everywhere.
@@ -37,4 +37,4 @@ Lore text and dialog read clean without VO. Voice acting lives only at the highe
 - **Zero new tools.** The cutscene capability rides free on Forge output.
 
 ## QC GATE
-Before any cutscene ships: bars drop clean, skip works mid-line, no score before its earned moment, lantern the only warm light, and the one-shot used ONLY where a god stands. If a beat can be told in-world instead — it must be.
+Before any cutscene ships: bars drop clean, skip works mid-line, no score before its earned moment, reliquary the only warm light, and the one-shot used ONLY where a god stands. If a beat can be told in-world instead — it must be.

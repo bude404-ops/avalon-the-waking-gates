@@ -7,7 +7,7 @@ Order of chapters (matches questline docs; cross-region consequence wiring noted
 1. ASHFALL — The Cold Mere (tutorial realm: Cinder Gate, rite-tool mastery)
 2. SKYREND — The Unread Sky
 3. EVERBLOOM — The Harvest Debt
-4. DUSKMOURN — The Lantern Ledger
+4. DUSKMOURN — The Reliquary Ledger
 5. MARENTH — The Tide's Accounting
 6. STONEHEART — The Unmoved Promise
 Each chapter = 5-6 quests + the Gate Rite finale (roll-call rite, T3 Echo duel, pilgrim-scale final phase). After all six: THE GATE CYCLE endgame in the Depths (procedural god-dream dungeons, relic-gift loot).
@@ -32,11 +32,11 @@ Arena grammar (Waking Siege + Stationary God laws): the Gate is the arena's hear
 | CINDER GATE | cracked shrine-stone circle | magma fissures, lava channels | ash dunes |
 | SQUALL GATE | storm-bell stone ring | lightning glass scars | wind-vanes, bell towers |
 | BLOOM GATE | living-root stone ring | vine snares, pollen banks | root ramparts |
-| DUSK GATE | lantern-shrine ring | mist concealment banks | votive braziers |
+| DUSK GATE | reliquary-shrine ring | mist concealment banks | votive braziers |
 | DEEP GATE | tide-marker ring on shallows | tide channels, whirlpools | sea-stacks, drowned ruins |
 | STONE GATE | monolith-stub ring | fault cracks, rolling boulders | strata terraces, geode outcrops |
 
-THE WOUND (T3 finale arena — ARENA-THE-WOUND-ECHO-v1.png): a grey de-colored plain where the paint itself gives out; the arch is built of ERODED PIECES OF ALL SIX GATES stacked into one impossible arch (the Hollow steals identity), zero glow anywhere; de-coloration rings spread outward; the only color in the frame is the pilgrim's lantern flame. This is the Echo of the Forgotten's rise point — matches echo-duel.html: stationary duel → drained field → the wound → THE NAMING.
+THE WOUND (T3 finale arena — ARENA-THE-WOUND-ECHO-v1.png): a grey de-colored plain where the paint itself gives out; the arch is built of ERODED PIECES OF ALL SIX GATES stacked into one impossible arch (the Hollow steals identity), zero glow anywhere; de-coloration rings spread outward; the only color in the frame is the pilgrim's reliquary flame. This is the Echo of the Forgotten's rise point — matches echo-duel.html: stationary duel → drained field → the wound → THE NAMING.
 
 ## BUILD SPECS
 - Arena scale: duel gap ~17 units between rise points (echo-duel.html tuning).

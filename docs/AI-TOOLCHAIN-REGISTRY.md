@@ -49,7 +49,7 @@ THE LAW: a tool qualifies ONLY if (1) it is part of Unity or its Asset Store, (2
 
 **LICENSE ANSWER:** Unity Personal (free) covers everything we need pre-revenue — Asset Store free packages and assets are commercial-legal on ALL tiers under the standard Asset Store EULA. No engine key gates any of this.
 
-**THE PRACTIONAL PIPELINE NOW:** canon 2D art (art direction + QC bar) → Asset Store models/rigs/anim packs (shortlisted by me against canon keys) → UModeler X in-editor customization (retint, restyle, kit edits) → Unity built-ins (lighting per Lantern-Region Aura Law, terrain, VFX, animation) → game.
+**THE PRACTIONAL PIPELINE NOW:** canon 2D art (art direction + QC bar) → Asset Store models/rigs/anim packs (shortlisted by me against canon keys) → UModeler X in-editor customization (retint, restyle, kit edits) → Unity built-ins (lighting per Reliquary-Region Aura Law, terrain, VFX, animation) → game.
 
 ---
 

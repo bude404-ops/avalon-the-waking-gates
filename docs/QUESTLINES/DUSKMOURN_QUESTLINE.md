@@ -1,6 +1,6 @@
-# DUSKMOURN — THE LANTERN LEDGER (Duskmourn chapter questline)
+# DUSKMOURN — THE RELIQUARY LEDGER (Duskmourn chapter questline)
 
-**Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the lantern-honor — the dead are owed light, and carrying it is the price of passage.
+**Written to the Quest Doctrine v1.0. Theology in play (shown, never told):** the reliquary-honor — the dead are owed light, and carrying it is the price of passage.
 **Chapter wound:** a town's dead have stopped accepting light — lanterns gutter when carried to graves, and the unlit rows spread.
 
 ### Q1 — "THE NICHE"
@@ -36,14 +36,14 @@
 - **TRUTH-SLIVER:** MORVAINE walks the town like a father checking the sleeping house. (Learned by keeping his pace.)
 
 ### Q5 — "THE BARROW GATE" (chapter finale)
-- **THE ROLL CALL:** the gravedigger, the Vigil, the page-keeper, the lantern-child — every light the pilgrim carried stands at the Gate, held.
+- **THE ROLL CALL:** the gravedigger, the Vigil, the page-keeper, the reliquary-child — every light the pilgrim carried stands at the Gate, held.
 - **THE RITE:** The pilgrim recites the chapter's CORRECTED LEDGER — every name the player's choices put right — back to the Gate.
-- **THE INTERRUPTION:** A **false lantern rises** — an Echo shaped like light that hollows what it touches (T3). Three phases; final phase drops to pilgrim scale inside the false light.
+- **THE INTERRUPTION:** A **false reliquary rises** — an Echo shaped like light that hollows what it touches (T3). Three phases; final phase drops to pilgrim scale inside the false light.
 - **THE WAKING:** MORVAINE WAKES THROUGH THE PILGRIM — the barrow-downs light like a circuit at once, and the unlit rows... the choice from Q4 stands in the brightness.
 - **TRUTH-SLIVER:** The realm of owed light was always one long kindness. (Learned by owing it.)
 
 ## SIDE HOOKS
-- **"The Lantern Road"** — carrying a niche-lamp between towns (the price of passage is carrying light for someone else — escort with a doctrine twist).
+- **"The Reliquary Road"** — carrying a niche-lamp between towns (the price of passage is carrying light for someone else — escort with a doctrine twist).
 - **"The Bell That Doesn't Toll"** — a Cantor asks why one barrow-bell stays silent (miniature mystery: a hero who asked to be unmourned).
 
 ## DEPTHS TIE-IN

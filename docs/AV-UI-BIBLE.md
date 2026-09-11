@@ -32,12 +32,12 @@ Genre-peer research distilled into AVALON's own canon UI system. Companion to `d
 ## THE AVALON UI SYSTEM — the synthesis
 Three laws, all canon-compliant (cold desaturated world, two-layer light, region colorways):
 
-### LAW 1 — THE LANTERN IS THE HUD
-The Lantern anchor is our signature HUD centerpiece (GoW has rage, we have BELIEF):
-- **Belief meter = the lantern's glow.** The meter is literally a lantern glyph that fills with light. Unlit → guttering → lit reads at a glance, no numbers in combat.
+### LAW 1 — THE RELIQUARY IS THE HUD
+The Reliquary anchor is our signature HUD centerpiece (GoW has rage, we have BELIEF):
+- **Belief meter = the reliquary's glow.** The meter is literally a lantern glyph that fills with light. Unlit → guttering → lit reads at a glance, no numbers in combat.
 - Health is a thin slate bar (Elden Ring line-weight) under the class crest, top-left.
 - Ability slots bottom-center, each a **gate-rune sigil** — sealed runes are unlit, unlocking = the rune ignites. Progression language = THE FLAME IS NEVER SEEN UNVESSELLED, even in UI.
-- Region aura colorways govern accents (storm slate / oxide red / bone grey / crimson / tide teal / deep moss) — lantern accent always matches home realm.
+- Region aura colorways govern accents (storm slate / oxide red / bone grey / crimson / tide teal / deep moss) — reliquary accent always matches home realm.
 
 ### LAW 2 — QUIET, ONE MESSAGE, FADE TO WORLD
 - GoW-style single message queue: one quest/journal/update line at a time, top-center, small serif caption, fades after 4s.

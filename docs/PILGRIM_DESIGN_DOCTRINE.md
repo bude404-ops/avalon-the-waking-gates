@@ -22,7 +22,7 @@ The road is walked as no one. Pilgrims are deep-hooded or helmed — face lost i
 ## ARMOR + RUNE LAW (BudE404: 'lose the elemental effects and go with a rune with the elemental effects')
 Armor = CLEAN Avalon human-craft plate — matte kiln-cured ceramic, sweeping leaf-tip pauldrons, layered curves, fine dark mail, weathered artisan finish — the honest handwork of mortal smiths. ZERO pervasive elemental glow in the material: no ember seams, no fissures of light, no heat shimmer. The element lives in ONE PLACE: the pilgrim's RUNE — the Mark, an ancient glowing elemental sigil set into the breastplate, carrying all the faction element's light alone (fire = oxide-red ember mark, storm = storm slate, etc.). Armor stays clean craft; the rune carries the element.
 
-## THE COLD LANTERN
+## THE COLD RELIQUARY
 The relic — black iron, single flame of the faction's element. Light = faith meter + Hollow protection; never sold. (Pet-relic fusion: the Luminary companion wears its lantern as attire.)
 
 ## THE ROLES (ladder pending verdicts)
@@ -71,11 +71,11 @@ Female variants of the six Orders are seductive and sexy through NATURAL BEAUTY 
 
 ## NO-LANTERN-PROP LAW (Sept 7 2026, Big: 'Remember the luminaries are also the relic so they shouldn't have a lantern in their art Canon')
 
-The Luminary IS the Cold Lantern relic (ONE COMPANION, TWO LIGHTS). It is a living being, never a tool or prop — so pilgrim canon art NEVER shows a carried/held metal lantern.
+The Luminary IS the Cold Reliquary relic (ONE COMPANION, TWO LIGHTS). It is a living being, never a tool or prop — so pilgrim canon art NEVER shows a carried/held metal lantern.
 
 - In art, the Luminary reads as LIVING LIGHT: a small warm flame-mote or ember-wisp hovering near the pilgrim's shoulder (companion, not equipment), or an ambient warm glow with no visible lamp
 - The flame's color mirrors the pilgrim's Mark element; it never touches or attaches to the gear
-- The Keeper's flail stays; the lantern is NOT a hand prop for any Order — the light is always the companion
+- The Keeper's flail stays; the reliquary is NOT a hand prop for any Order — the light is always the companion
 
 ## BODY-TYPE LAW (Sept 7 2026, Big: 'for sizes with classes I want different body types not just heights')
 

@@ -1,4 +1,4 @@
-# QUEST EXAMPLE — "THE COLD LANTERN" (Emberhollow, Ashfall)
+# QUEST EXAMPLE — "THE COLD RELIQUARY" (Emberhollow, Ashfall)
 **Worked example of the quest loop under THE AVALON DOCTRINE — swept Sept 5 2026 (mortals are humans; the player is a Marked pilgrim; the Gate Rite wakes the god through the pilgrim). Shows every system in play: dual-scale, the FAITH economy, Witness Zones, the Hollow Tide, and the Gate Rite handoff.**
 
 > **THE LOOP IN ONE LINE:** pilgrim-scale mystery builds FAITH by deed → FAITH fills the Gate → the GATE RITE wakes the god through the pilgrim for the Tower Wave climax.
@@ -6,7 +6,7 @@
 ---
 
 ## ACT 1 — THE HOOK (pilgrim mode)
-**Location:** EMBERHOLLOW, the shrine town in the charcoal forest. Player is a Marked pilgrim (hooded human craft, Cinder Roads plate, the hand-carved flame Mark on the breastplate, element-touched ember eyes, an emberling Luminary companion wearing the Cold Lantern attire).
+**Location:** EMBERHOLLOW, the shrine town in the charcoal forest. Player is a Marked pilgrim (hooded human craft, Cinder Roads plate, the hand-carved flame Mark on the breastplate, element-touched ember eyes, an emberling Luminary companion wearing the Cold Reliquary attire).
 
 The town's hearth-shrine — the perpetual flame every home lights its lantern from — has gone **cold**. Not burned out: *hollowed*. The flame is still there but casts no light and no warmth; ash falls UP from it. Old Mother Brackle (lantern-keeper NPC) won't say the god's name out loud anymore — when she tries, the sound goes missing. The pilgrim investigates at mortal scale: questioning the congregation, tracking ash that falls upward to its source, escorting frightened families to the town's Witness lanterns.
 
@@ -17,14 +17,14 @@ The trail leads to an old kiln-shrine outside town where an **Erased Drake** —
 
 Every deed echoes the FAITH meter — visible as a slow ember-tide rising in the Ember Gate on the horizon. By act's end the meter sits at the cap, but the Gate **won't open**: the Hollow has wrapped the town in a **silence-siege** — the local faith-stream itself is being dammed. Somewhere out in the charcoal forest, something is eating the worship before it reaches the Gate.
 
-**Mechanics on display:** ritual gameplay; Witness Zone defense loop (relight lanterns the Drake extinguishes, protect the watchers); FAITH streams working together (Protection from escorts, Rite from ceremonies); the pilgrim's emberling Luminary companion (pet-relic fusion: the Luminary wears the Cold Lantern attire, earned at the shrine — its light protects and illuminates); the silhouette of a **T3 enemy** for the first time — an ECHO OF THE FORGOTTEN (T3) — a god-shaped colossus standing up with no god inside, the Hollow's false waking — wading through the treeline at giant-scale. You cannot fight it. Not yet.
+**Mechanics on display:** ritual gameplay; Witness Zone defense loop (relight lanterns the Drake extinguishes, protect the watchers); FAITH streams working together (Protection from escorts, Rite from ceremonies); the pilgrim's emberling Luminary companion (pet-relic fusion: the Luminary wears the Cold Reliquary attire, earned at the shrine — its light protects and illuminates); the silhouette of a **T3 enemy** for the first time — an ECHO OF THE FORGOTTEN (T3) — a god-shaped colossus standing up with no god inside, the Hollow's false waking — wading through the treeline at giant-scale. You cannot fight it. Not yet.
 
 ## ACT 3 — THE GATE RITE (the handoff: pilgrim → GIANT)
 The evacuation of Emberhollow begins (escort families along the ash-road to Forgefall — PROTECTION faith at maximum weight). The Grimlight Colossus reaches the town. Lanterns die one by one. Mother Brackle gives the player the town's last lit lantern and speaks the words the silence had been eating — to the player, without knowing it:
 
 *"Vaelthorn. The Furnace-King. First fire that stood. See us — we are still burning."*
 
-**The FAITH cap breaks.** The Ember Gate opens over the caldera-crown of Forgefall — and the pilgrim raises the Cold Lantern and speaks the Rite — and **THE GATE RITE WAKES THE GOD THROUGH YOU: the caldera splits, Vaelthorn rises, and for this one passage the pilgrim is the god's vessel** — the Marked hand on the condensed-magma greatsword, a hundred feet of the world's first fire, striding across the Ashfall toward Emberhollow. The pilgrim was never the god; the pilgrim is the reason it wakes.
+**The FAITH cap breaks.** The Ember Gate opens over the caldera-crown of Forgefall — and the pilgrim raises the Cold Reliquary and speaks the Rite — and **THE GATE RITE WAKES THE GOD THROUGH YOU: the caldera splits, Vaelthorn rises, and for this one passage the pilgrim is the god's vessel** — the Marked hand on the condensed-magma greatsword, a hundred feet of the world's first fire, striding across the Ashfall toward Emberhollow. The pilgrim was never the god; the pilgrim is the reason it wakes.
 
 ## ACT 4 — THE TOWER WAVE (giant mode climax)
 Classic Tower Wave defense, colossal rules: **the god holds; the mortals survive.**

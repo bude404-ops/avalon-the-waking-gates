@@ -34,7 +34,7 @@ Build grammar: TALL STATUESQUE HOURGLASS, COMMANDING. Whisper accent: STORM SLAT
 - Bronze/dark-iron palette, heavily desaturated — muted, never shiny gold reads.
 - ONE whisper accent: storm slate, in cloak/mantle only.
 - Weathering texture on gear only (story-wear), never on skin.
-- Cold two-layer light for QC preview shots (cold ambient + one rich source). Final in-engine lighting per the Lantern-Region Aura Law when placed in Skyrend.
+- Cold two-layer light for QC preview shots (cold ambient + one rich source). Final in-engine lighting per the Reliquary-Region Aura Law when placed in Skyrend.
 
 ## STEP 5 — WEAPON PROP (SEPARATE — never parented to the rig by default)
 - Sovereign spear: leaf-shaped blade head (Celtic leaf-blade law), engraved dark-iron + bronze collar with knotwork, leather grip, carved wood shaft.

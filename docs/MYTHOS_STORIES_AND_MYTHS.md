@@ -37,7 +37,7 @@ The Galeways name every storm like a family member because one once carried the 
 The Bloom Gate opens once a year, and for that single day nothing in the Bloomward may be killed — hunter's permits void, grudges suspended, even the Thornhedge wardens stand down. The story: the Bloomward once nearly burned in a feud; the next spring, the petal-arches refused to open until every family had planted in each other's orchards. The peace held. The arches opened onto the Petalfall that still stands.
 **ART SCENE:** the Bloom Gate mid-opening — a wall of colossal petals unfurling over a crowded orchard plaza where old enemies hand each other saplings.
 
-### DUSKMOURN — "THE LANTERN LEDGER"
+### DUSKMOURN — "THE RELIQUARY LEDGER"
 The Duskmere keep a ledger of every soul they bury, and a lantern lit for each — the niche shrines of Lanternhush hold thousands. When a family line ends, its lantern is allowed to go out in a ceremony of thanks, not grief: "the light kept its promise; it reached the Still ahead of us." The lantern-makers' guild swears the first lantern was lit from the pale glow inside the Bone Giant's chest.
 **ART SCENE:** Lanternhush at night — a new niche being cut and lit while an old lantern's keeper bows beside it; a Bone Giant's silhouette on the far water.
 
@@ -70,9 +70,9 @@ The Bloom Gate opens on his word alone, and it has opened for every pilgrim equa
 Still water is not weak water — it is water that has already won. The Mirror Staff's frozen spring shows each pilgrim the day they were bravest, and Mirielle has never once refused to show it, even to cowards. The Everbloom swears no lie has ever been told within sight of her reflection.
 
 ### MORVAINE — "THE LAST WATCH"
-The Bone Giant rises at the Ossuary's edge each dusk — submergence travel along the shadow-roads, the folk never see him move — and the lantern-niches of the whole realm brighten as his shadow crosses them, like a father checking the sleeping-house. When a last light gutters, they say the Dusk Blade points to the door before anyone knocks. The Duskmourn folk do not fear him; they leave the gate open for him.
+The Bone Giant rises at the Ossuary's edge each dusk — submergence travel along the shadow-roads, the folk never see him move — and the reliquary-niches of the whole realm brighten as his shadow crosses them, like a father checking the sleeping-house. When a last light gutters, they say the Dusk Blade points to the door before anyone knocks. The Duskmourn folk do not fear him; they leave the gate open for him.
 
-### SENNETH — "THE LANTERN LEDGER"
+### SENNETH — "THE RELIQUARY LEDGER"
 Every lantern in Lanternhush is hers by oath — each one a final light she carries home in the crown of her staff. The Duskmourn folk believe the Lampkeeper knows every name in the Ledger by heart, and that the reason she never speaks is that the recitation never ends.
 
 ### NEROVANE — "THE TIDE'S ARGUMENT"

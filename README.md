@@ -23,7 +23,7 @@ A dark-fantasy action RPG set in the Ancient Mythic Age — a primordial world s
 
 **Engine doctrine:** Unity is THE engine (decided Sept 2026). Legacy Godot scaffolding is retired under `legacy-godot/` and stays for history only.
 
-**In-engine lighting law:** two-layer light — cold desaturated ambient, the lantern-flame (or one realm accent) the only rich source. Region colorways (Skyrend storm slate, Ashfall oxide red, Stoneheart bone grey, Duskmourn crimson-and-black, Marenth tide teal, Everbloom deep moss) are Unity lighting/post-processing settings, not art problems.
+**In-engine lighting law:** two-layer light — cold desaturated ambient, the reliquary-flame (or one realm accent) the only rich source. Region colorways (Skyrend storm slate, Ashfall oxide red, Stoneheart bone grey, Duskmourn crimson-and-black, Marenth tide teal, Everbloom deep moss) are Unity lighting/post-processing settings, not art problems.
 
 ---
 

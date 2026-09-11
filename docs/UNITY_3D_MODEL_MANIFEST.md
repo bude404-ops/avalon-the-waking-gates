@@ -64,7 +64,7 @@ QC GATE ADDITION: before any plate ships, its chestplate treatment must be unmis
 
 ## WEAPON PROP REFERENCE PLATES — V1 (Sept 9, Big: 'we need to make the weapons 3d reference sheets aswell with same view and only one model of it so its visually read')
 
-Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-GEN discipline as the class plates, each class's kit rendered as a single readable model (Veilborn's twin leaf-blades = one blade; Wildborn's paired claw gauntlets = one gauntlet). Zero script (knotwork/spiral patterns only, rune-law compliant), unlit Weaver lantern (Lantern Law), quiet realm-accent whisper per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
+Six weapon plates rolled — ONE weapon per plate, same neutral flat-light 404-GEN discipline as the class plates, each class's kit rendered as a single readable model (Veilborn's twin leaf-blades = one blade; Wildborn's paired claw gauntlets = one gauntlet). Zero script (knotwork/spiral patterns only, rune-law compliant), unlit Weaver lantern (Reliquary Law), quiet realm-accent whisper per class (storm slate / oxide red / bone grey / crimson / tide teal / deep moss).
 
 | Class | Weapon prop | Plate (pending verdict) |
 |---|---|---|
@@ -86,7 +86,7 @@ V1 superseded (studio-plate look, no scale read). V2 laws per Big's direction:
 1. **CANON-STYLE LAW** — weapon plates render in the SAME hand-painted dark-fantasy oil-paint style as the character canon art (painterly brushwork, muted desaturated palette, cold two-layer light) — never glossy studio-product photography.
 2. **WIELDER-SCALE LAW** — every weapon plate carries a faint translucent featureless grey SILHOUETTE of its class's wielder build at TRUE relative scale (Sovereign tall statuesque / Ravager tall broad / Warden stocky strong / Veilborn lean compact / Weaver slim spare / Wildborn athletic) so Unity attachment gets correct proportions: spear = wielder height; greatsword = ground-to-chest; warhammer haft = to shoulder, head = chest width; dagger = forearm length; lantern-staff = a full head taller than wielder; claw gauntlet = forearm-and-hand size. Silhouette never holds the weapon, no face, no hands.
 
-Files (art/pending/REF-SHEET-WEAPON-{CLASS}-V2.png): Sovereign leaf-blade spear / Ravager battered greatsword / Warden block-head banded warhammer / Veilborn single leaf-blade dagger (twin kit, one model) / Weaver gnarled lantern-staff (unlit, Lantern Law) / Wildborn single claw gauntlet (paired kit, one model). Zero script holds (knotwork/spiral patterns only). P-hash QC: first Warden V2 roll drifted into the greatsword silhouette (18/256 + 1.8% pixel-diff) — re-rolled with the no-blade block-head lock; final set min hamming 24/256. Verdicts pending.
+Files (art/pending/REF-SHEET-WEAPON-{CLASS}-V2.png): Sovereign leaf-blade spear / Ravager battered greatsword / Warden block-head banded warhammer / Veilborn single leaf-blade dagger (twin kit, one model) / Weaver gnarled lantern-staff (unlit, Reliquary Law) / Wildborn single claw gauntlet (paired kit, one model). Zero script holds (knotwork/spiral patterns only). P-hash QC: first Warden V2 roll drifted into the greatsword silhouette (18/256 + 1.8% pixel-diff) — re-rolled with the no-blade block-head lock; final set min hamming 24/256. Verdicts pending.
 
 ## WEAPON PROP REFERENCE PLATES — V2 (Sept 9, Big: 'Weapon need to be in same art style... and make so it will be proper sizes for the characters when we attach')
 

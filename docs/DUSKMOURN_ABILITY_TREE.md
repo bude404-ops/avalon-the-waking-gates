@@ -4,7 +4,7 @@
 > Resource: FAITH. Free re-pledge. Borrowed gloom — plain kit at rest.
 
 ## Dusk Doctrine
-Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that dim their strength and vision. The pilgrim is a lantern in the dark — weakening what approaches, healing by consuming sorrow.
+Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that dim their strength and vision. The pilgrim is a reliquary in the dark — weakening what approaches, healing by consuming sorrow.
 
 **Passive — Dusk-Kin:** +night vision; Gloom you apply lasts 3s longer.
 
@@ -24,7 +24,7 @@ Duskmourn rites are about **gloom as erosion**: enemies carry GLOOM stacks that 
 9. **BARROW MARK** — 20 FAITH. Ground rune: a circle of gloom — enemies inside are slowed 30% and their attacks have a 20% miss chance.
 
 ## Tier 4 — Capstone
-10. **WAKING LANTERN** — 35 FAITH, ultimate, 90s cooldown. 12s as the god's vessel: you become the lantern — all Gloom in a wide radius is pulled toward you (enemies dragged), enemies feared, allies wreathed in protective wisp-light. Ends with the light flaring — knockback + all consumed Gloom dealt as damage.
+10. **WAKING LANTERN** — 35 FAITH, ultimate, 90s cooldown. 12s as the god's vessel: you become the reliquary — all Gloom in a wide radius is pulled toward you (enemies dragged), enemies feared, allies wreathed in protective wisp-light. Ends with the light flaring — knockback + all consumed Gloom dealt as damage.
 
 ## Stat pins (engine source of truth)
 - Gloom: -4% enemy damage per stack, max 5; no DoT — erosion currency.

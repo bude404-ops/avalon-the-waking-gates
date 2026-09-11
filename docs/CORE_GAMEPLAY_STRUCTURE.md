@@ -1,7 +1,7 @@
 # MYTHOS GATES: ASCENSION — CORE GAMEPLAY STRUCTURE (v1)
 ## Both forms are the game. The loop is the game. Full Ascension is the climax.
 
-Built ON established lore (source of truth: docs/lore/MYTHOS_WORLD_LORE.md, GATE_MECHANICS_GAMEPLAY_LAYER.md, COLD_LANTERN_MAP_ARCHITECTURE.md — nothing here rewrites canon).
+Built ON established lore (source of truth: docs/lore/MYTHOS_WORLD_LORE.md, GATE_MECHANICS_GAMEPLAY_LAYER.md, COLD_RELIQUARY_MAP_ARCHITECTURE.md — nothing here rewrites canon).
 
 **THE SYNTHESIS (the one new idea):** the three tiers of Giant presence are the three degrees of Gate opening. The Gate layer already established that a deity's mortal manifestation is capped by its Gate's state — so:
 
@@ -54,7 +54,7 @@ One lore answer, three gameplay tiers. Frequency problem solved by canon, not by
 ---
 
 ## SPRITE VERB SET (the investigation kit)
-exploration · NPC dialog & investigation · personal combat w/ dodge+PARRY (parry = perfect-timing counter that refunds FAITH — skill feeds the divine economy) · environmental puzzles · secrets (lantern reveals) · lore discovery · rescue · rituals · faith-building · small-scale Hollow · scouting future battlefields (recon payoff)
+exploration · NPC dialog & investigation · personal combat w/ dodge+PARRY (parry = perfect-timing counter that refunds FAITH — skill feeds the divine economy) · environmental puzzles · secrets (reliquary reveals) · lore discovery · rescue · rituals · faith-building · small-scale Hollow · scouting future battlefields (recon payoff)
 
 ## GIANT VERB SET (the force-of-nature kit)
 **THE RULE: the Giant is NOT sprite stats ×100. The giant gets a different INTERACTION SET:**

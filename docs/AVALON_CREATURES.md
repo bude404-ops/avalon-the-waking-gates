@@ -1,6 +1,6 @@
 # AVALON CREATURES — World Fauna Roster
 
-In-game label: AVALON CREATURES (per Big, Sept 9). All fauna canon art follows the Enemy-Art Laws: neutral cold stone-and-mist staging, no realm colorway/landmarks in background, zero script/runes, lanterns (if any) unlit. Creature DESIGN carries its home realm's lore identity + whisper accent only.
+In-game label: AVALON CREATURES (per Big, Sept 9). All fauna canon art follows the Enemy-Art Laws: neutral cold stone-and-mist staging, no realm colorway/landmarks in background, zero script/runes, reliquaries (if any) unlit. Creature DESIGN carries its home realm's lore identity + whisper accent only.
 
 ## Canon Fauna (locked)
 | Creature | Home Realm | Notes |
@@ -30,4 +30,4 @@ Two per realm, full world coverage:
 | The Moss Stag | Everbloom | art/pending/ENEMY-FAUNA-EVERBLOOM-MOSS-STAG-NEUTRAL-V1.png |
 | The Briar Fox | Everbloom | art/pending/ENEMY-FAUNA-EVERBLOOM-BRIAR-FOX-NEUTRAL-V1.png |
 
-Lore-fit notes: the Twrch is the great hunt-boar of Celtic legend (Twrch Trwyth) with broken spearheads in its hide; the Dullahan's Steed carries an unlit dead lantern (Lantern Law); the Kelpie, Barrow Owl, and Moss Stag anchor each realm's Celtic identity. P-hash QC: full set unique (min hamming 31). Verdicts one at a time or batch Keep.
+Lore-fit notes: the Twrch is the great hunt-boar of Celtic legend (Twrch Trwyth) with broken spearheads in its hide; the Dullahan's Steed carries an unlit dead reliquary (Reliquary Law); the Kelpie, Barrow Owl, and Moss Stag anchor each realm's Celtic identity. P-hash QC: full set unique (min hamming 31). Verdicts one at a time or batch Keep.

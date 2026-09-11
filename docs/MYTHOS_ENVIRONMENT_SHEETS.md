@@ -31,9 +31,9 @@
 
 ## DUSKMOURN / THE DUSKMERE — art grammar
 **Palette:** black mirror-water, willow-fen green, bone-white stone, lantern-gold, low moon that never sets.
-**Architecture grammar:** LANTERN-PLATE pale stone with lantern-niche shrines cut into every wall — thousands of tiny votive windows; willow bridges, fen-causeways, mirror-lakes, mist.
+**Architecture grammar:** LANTERN-PLATE pale stone with reliquary-niche shrines cut into every wall — thousands of tiny votive windows; willow bridges, fen-causeways, mirror-lakes, mist.
 - **THE VEIL GATE (Lanternhush):** a bone-white arch on the mirror-lake isle, reflected perfectly in still water — the Gate and its twin.
-- **LANTERNHUSH:** isle-capital of niches — the walls are a ledger of lit lights; the lantern-makers' quarter glows all night; new niches being cut beside extinguished ones (the Lantern Ledger made architecture).
+- **LANTERNHUSH:** isle-capital of niches — the walls are a ledger of lit lights; the reliquary-makers' quarter glows all night; new niches being cut beside extinguished ones (the Reliquary Ledger made architecture).
 - **VAILCREST:** bone-white archive city — record-towers, scroll-bridges, the death-guilds' halls.
 - **SIGNATURE VISTA:** a lantern-procession crossing the fen at night — grave-hares leading, a Bone Giant's silhouette far out on the water, every window's niche burning.
 

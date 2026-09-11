@@ -1,6 +1,6 @@
 
 ## SHRINE-CROWN + WORLD-BODY + MODESTY LAWS (v2.1, Sept 5, 2026, BudE404)
-- **SHRINE-CROWN:** every colossus crown IS a shrine site — a megalithic shrine structure grown at the brow. Stoneheart = standing-stone trilithon ring (Stonehenge grammar); Ashfall = obsidian monolith ring with lit offering-braziers; Skyrend = storm-bell shrine ring; Everbloom = sacred grove ring; Duskmourn = barrow/lantern-grave ring; Marenth = sunken sea-shrine ring.
+- **SHRINE-CROWN:** every colossus crown IS a shrine site — a megalithic shrine structure grown at the brow. Stoneheart = standing-stone trilithon ring (Stonehenge grammar); Ashfall = obsidian monolith ring with lit offering-braziers; Skyrend = storm-bell shrine ring; Everbloom = sacred grove ring; Duskmourn = barrow/reliquary-grave ring; Marenth = sunken sea-shrine ring.
 - **WORLD-BODY:** the colossus body carries the living world — shrines, bell-towers, forests, villages, pilgrim-paths, ruins grown onto shoulders/arms/torso strata. Deepens 'the land IS the god'.
 - **MODESTY (v2.2 amendment, Sept 5 2026, BudE404: 'it doesn't look natural tho looks like armor placed over them'):** zero nudity — coverage via MATERIAL CONTINUITY, never worn armor. The torso IS raw geology: cliff-face strata shelves, natural outcrop ridges, cooled flowstone folds. NO armor vocabulary (breastplate/plate/armor/garment) anywhere in coverage prompts — armor words render placed objects. The body reads as continuous living rock so nothing reads as covered or uncovered. Censorship-safe.
 

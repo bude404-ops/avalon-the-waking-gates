@@ -28,12 +28,12 @@ is the living mock — every screen below is staged there as the pipeline ships 
 
 ### 3. In-Game HUD
 - **Top-left crest:** class name (cream) + LEVEL line + realm.
-- **Health bar:** slate fill `#6b788c`, label in-panel. The Ravenkin companion carries the lantern vessel — the game's relic-carrier (stages in the HUD art as the companion system ships).
+- **Health bar:** slate fill `#6b788c`, label in-panel. The Ravenkin companion carries the reliquary vessel — the game's relic-carrier (stages in the HUD art as the companion system ships).
 - **Belief meter (PROPOSED — Big's verdict pending):** bronze fill `#a3895a`, under health. Abilities draw on BELIEF, not stamina — restored through shrines, story choices, divine bonds; never ground out. Health stays physical.
-- **Top-right:** THE LANTERN — UNLIT (flame state per Lantern Law; alights when entrusted).
-- **Quest tracker:** under lantern — QUEST — <campaign arc> (Roman numeral).
+- **Top-right:** THE RELIQUARY — UNLIT (flame state per Reliquary Law; alights when entrusted).
+- **Quest tracker:** under reliquary — QUEST — <campaign arc> (Roman numeral).
 - **Ability bar:** 4 slots bottom-center, SEALED until skill trees ship.
-- **Region banner (future):** entering a realm splashes the realm name + colorway whisper (Lantern-Region Aura Law).
+- **Region banner (future):** entering a realm splashes the realm name + colorway whisper (Reliquary-Region Aura Law).
 - **Controls:** drag to orbit, pinch/scroll to zoom; IDLE/WALK review toggles stay until gameplay controls exist.
 - **CHARACTER button:** bottom-right → skill tab over the game view.
 
@@ -43,7 +43,7 @@ is the living mock — every screen below is staged there as the pipeline ships 
 - Future: tap a path → tree view; level-up gates unlock nodes (anti-grind law: no stat inflation, mastery/cosmetic).
 
 ### 5. Map (staged next)
-- Landmark map per realm (nine-section world structure): realm silhouette, landmark pins (Cinder Gate, shrine brazier, watchtower live for Cold Lantern slice).
+- Landmark map per realm (nine-section world structure): realm silhouette, landmark pins (Cinder Gate, shrine brazier, watchtower live for Cold Reliquary slice).
 
 ### 6. Relics (staged next)
 - Relic inventory: the Luminary line — meaningful artifacts only, never stat loot.
