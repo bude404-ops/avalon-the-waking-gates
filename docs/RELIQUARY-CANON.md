@@ -22,7 +22,7 @@ Related renames (repo-swept Sept 11): Reliquary Law (was Lantern Law) · Reliqua
   - STAGE2-DUSKMOURN-BRAZIER-WAYS-GLOAM-WARDEN-WORLD-CANON.png (Gloam Warden at waystation brazier)
   - STAGE2-DUSKMOURN-BRAZIER-WAYS-MYTHICWORLD-CANON.png (megalith avenue, votive brazier niches, crimson rune-glow)
   - SCENE-GLOAMBARROW-BRAZIERLEDGER-CANON.png (Brazierkeeper's ledger of grave-braziers, one gone dark)
-  Still pending Big's verdict: WEAPON-WEAVER-BRAZIER-STAFF-V2.png (clean-plate, iron brazier-cage head, unlit).
+  WEAPON-WEAVER-BRAZIER-STAFF-CANON.png CANON-LOCKED (Sept 11 blanket verdict: 'I already approved the verdicts' — clean-plate, iron brazier-cage head, unlit; V1 superseded to art/retired/).
 - Historical quotes from Big and retired/archive docs keep their original wording (records, not canon text).
 
 ## RENAMING LEDGER (repo-swept Sept 11)
