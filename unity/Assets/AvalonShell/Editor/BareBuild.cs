@@ -14,6 +14,7 @@ using UnityEditor.SceneManagement;
 using UnityEditor.Android;
 using UnityEditor.Build;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AvalonShell
 {
@@ -64,6 +65,12 @@ namespace AvalonShell
                 BuildStageScene(scene);
                 scenePath = "Assets/Scenes/Stage2.unity";
                 Debug.Log("[BARE] stage 2: 3D scene built (camera + ember cube + Spin + label)");
+            }
+            if (stage >= 3)
+            {
+                BuildHud();
+                scenePath = "Assets/Scenes/Stage3.unity";
+                Debug.Log("[BARE] stage 3: HUD canvas layered over the 3D scene");
             }
             EditorSceneManager.SaveScene(scene, scenePath);
 
@@ -121,6 +128,50 @@ namespace AvalonShell
             label.color = new Color(1f, 0.85f, 0.55f);
             var lr = labelObj.GetComponent<MeshRenderer>();
             if (lr == null) labelObj.AddComponent<MeshRenderer>();
+        }
+
+        // Stage 3: ugui HUD overlay over the 3D scene. Proves the Canvas layer
+        // renders + scales in both orientations (AutoRotation already set).
+        // Amber HUD on cold void - matches the AVALON shell law.
+        static void BuildHud()
+        {
+            var canvasObj = new GameObject("HudCanvas");
+            var canvas = canvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            var scaler = canvasObj.AddComponent<CanvasScaler>();
+            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+            scaler.referenceResolution = new Vector2(1080f, 1920f);
+            canvasObj.AddComponent<GraphicRaycaster>();
+
+            var font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
+            var amber = new Color(1f, 0.72f, 0.35f);
+            var dimAmber = new Color(0.85f, 0.55f, 0.25f);
+
+            var top = MakeHudText(canvasObj.transform, "AVALON // HUD ONLINE", font, 56, amber);
+            var rt = top.GetComponent<RectTransform>();
+            rt.anchorMin = new Vector2(0.5f, 1f); rt.anchorMax = new Vector2(0.5f, 1f);
+            rt.pivot = new Vector2(0.5f, 1f); rt.anchoredPosition = new Vector2(0f, -90f);
+            rt.sizeDelta = new Vector2(1000f, 80f);
+
+            var bottom = MakeHudText(canvasObj.transform, "STAGE 3 OF 4 - ENGINE + HUD", font, 42, dimAmber);
+            var rb = bottom.GetComponent<RectTransform>();
+            rb.anchorMin = new Vector2(0.5f, 0f); rb.anchorMax = new Vector2(0.5f, 0f);
+            rb.pivot = new Vector2(0.5f, 0f); rb.anchoredPosition = new Vector2(0f, 120f);
+            rb.sizeDelta = new Vector2(1000f, 70f);
+        }
+
+        static Text MakeHudText(Transform parent, string text, Font font, int size, Color color)
+        {
+            var go = new GameObject(text);
+            go.transform.SetParent(parent, false);
+            var t = go.AddComponent<Text>();
+            t.font = font;
+            t.fontSize = size;
+            t.color = color;
+            t.alignment = TextAnchor.MiddleCenter;
+            t.text = text;
+            return t;
         }
     }
 
