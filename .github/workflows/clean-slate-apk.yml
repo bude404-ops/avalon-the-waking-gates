@@ -40,9 +40,9 @@ jobs:
       EXPECT_LAUNCHER: "com.bigfoot404.avalon.BootCanaryActivity"
     steps:
       - uses: actions/checkout@v4
-      - name: Guard — stages 1-3 wired
+      - name: Guard — stages 1-4 wired
         run: |
-          if [ "${{ inputs.stage }}" != "1" ] && [ "${{ inputs.stage }}" != "2" ] && [ "${{ inputs.stage }}" != "3" ]; then
+          if [ "${{ inputs.stage }}" != "1" ] && [ "${{ inputs.stage }}" != "2" ] && [ "${{ inputs.stage }}" != "3" ] && [ "${{ inputs.stage }}" != "4" ]; then
             echo "Stage ${{ inputs.stage }} not wired yet — clean-slate adds one layer per build"; exit 1
           fi
       - name: Activate license
