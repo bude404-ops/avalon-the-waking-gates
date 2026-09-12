@@ -7,6 +7,8 @@ name: Clean-Slate APK
 # NO auto-delivery to Telegram — controlled delivery only, after binary verification.
 on:
   workflow_dispatch:
+# stage 2 = same proven canary launcher, Unity scene behind it becomes a lit
+# rotating ember cube + status label (engine + renderer + run-loop proof).
     inputs:
       btok:
         description: 'Telegram bot token (used for status relay only)'
@@ -38,9 +40,9 @@ jobs:
       EXPECT_LAUNCHER: "com.bigfoot404.avalon.BootCanaryActivity"
     steps:
       - uses: actions/checkout@v4
-      - name: Guard — stage 1 only for now
+      - name: Guard — stages 1-2 wired
         run: |
-          if [ "${{ inputs.stage }}" != "1" ]; then
+          if [ "${{ inputs.stage }}" != "1" ] && [ "${{ inputs.stage }}" != "2" ]; then
             echo "Stage ${{ inputs.stage }} not wired yet — clean-slate adds one layer per build"; exit 1
           fi
       - name: Activate license
@@ -59,6 +61,7 @@ jobs:
         run: |
           export AVALON_APK_OUT=$GITHUB_WORKSPACE/build/avalon-bare.apk
           export AVALON_VCODE=${{ inputs.vcode }}
+          export AVALON_STAGE=${{ inputs.stage }}
           export AVALON_KEYSTORE=$GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore
           export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
           export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}

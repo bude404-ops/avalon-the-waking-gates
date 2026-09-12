@@ -23,6 +23,8 @@ namespace AvalonShell
         {
             int vcode = 201;
             int.TryParse(Environment.GetEnvironmentVariable("AVALON_VCODE") ?? "201", out vcode);
+            int stage = 1;
+            int.TryParse(Environment.GetEnvironmentVariable("AVALON_STAGE") ?? "1", out stage);
             var outPath = Environment.GetEnvironmentVariable("AVALON_APK_OUT") ?? "build/avalon-bare.apk";
 
             // ---- Player settings: SM-S908U device profile ----
@@ -53,10 +55,16 @@ namespace AvalonShell
                 PlayerSettings.Android.keyaliasPass = "bigfoot404-gates";
             }
 
-            // ---- Bare scene: default camera + light, nothing else ----
+            // ---- Scene: stage 1 = bare, stage 2 = lit 3D scene (engine proof) ----
             var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
-            const string scenePath = "Assets/Scenes/Bare.unity";
+            string scenePath = "Assets/Scenes/Bare.unity";
             Directory.CreateDirectory("Assets/Scenes");
+            if (stage >= 2)
+            {
+                BuildStageScene(scene);
+                scenePath = "Assets/Scenes/Stage2.unity";
+                Debug.Log("[BARE] stage 2: 3D scene built (camera + ember cube + Spin + label)");
+            }
             EditorSceneManager.SaveScene(scene, scenePath);
 
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath)));
@@ -66,6 +74,53 @@ namespace AvalonShell
             if (s.result != UnityEditor.Build.Reporting.BuildResult.Succeeded)
                 EditorApplication.Exit(1);
             EditorApplication.Exit(0);
+        }
+
+        // Stage 2: a real lit 3D scene. Proves engine + renderer + run loop:
+        // Big taps RUN UNITY in the canary and should see a slowly rotating
+        // amber cube (fire-color law) on a dark void with a status label.
+        static void BuildStageScene(UnityEngine.SceneManagement.Scene scene)
+        {
+            foreach (var root in scene.GetRootGameObjects())
+            {
+                var cam = root.GetComponent<Camera>();
+                if (cam != null)
+                {
+                    cam.clearFlags = CameraClearFlags.SolidColor;
+                    cam.backgroundColor = new Color(0.04f, 0.04f, 0.06f); // cold dark void
+                    cam.transform.position = new Vector3(0f, 1.2f, 4f);
+                    cam.transform.LookAt(Vector3.zero);
+                }
+                var light = root.GetComponent<Light>();
+                if (light != null)
+                {
+                    light.type = LightType.Directional;
+                    light.intensity = 1.1f;
+                    light.transform.rotation = Quaternion.Euler(50f, -30f, 0f);
+                }
+            }
+
+            var cube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            cube.name = "EmberCube";
+            cube.transform.position = Vector3.zero;
+            cube.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            var shader = Shader.Find("Standard");
+            var mat = new Material(shader);
+            mat.color = new Color(1.0f, 0.45f, 0.10f); // amber-orange mortal fire
+            cube.GetComponent<Renderer>().sharedMaterial = mat;
+            cube.AddComponent<Spin>();
+
+            var labelObj = new GameObject("Label");
+            labelObj.transform.position = new Vector3(0f, 1.9f, 0f);
+            var label = labelObj.AddComponent<TextMesh>();
+            label.text = "AVALON STAGE 2 - ENGINE LIVE";
+            label.characterSize = 0.35f;
+            label.fontSize = 48;
+            label.anchor = TextAnchor.MiddleCenter;
+            label.alignment = TextAlignment.Center;
+            label.color = new Color(1f, 0.85f, 0.55f);
+            var lr = labelObj.GetComponent<MeshRenderer>();
+            if (lr == null) labelObj.AddComponent<MeshRenderer>();
         }
     }
 
