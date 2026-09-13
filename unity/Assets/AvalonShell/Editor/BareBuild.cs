@@ -183,6 +183,15 @@ namespace AvalonShell
 
         public void OnPostGenerateGradleAndroidProject(string gradlePath)
         {
+            // DIAGNOSTIC BUILDS ONLY. The canary hijacks MAIN/LAUNCHER — that is correct for
+            // clean-slate stage builds (AVALON_STAGE set) but WRONG for the real shell
+            // (AvalonShellBuild), which must open straight into the game via the stock
+            // UnityPlayerGameActivity (v208 lesson: canary leaked into the final APK).
+            if (string.IsNullOrEmpty(Environment.GetEnvironmentVariable("AVALON_STAGE")))
+            {
+                Debug.Log("[CANARY] AVALON_STAGE not set — real build, canary injection SKIPPED");
+                return;
+            }
             string act = "com.unity3d.player.UnityPlayerGameActivity";
 
             string[] manifests = Directory.GetFiles(gradlePath, "AndroidManifest.xml", SearchOption.AllDirectories);
