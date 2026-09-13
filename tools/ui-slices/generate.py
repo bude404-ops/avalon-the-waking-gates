@@ -10,11 +10,11 @@ New grammar sampled from the refs:
   labels     RGB (240,235,222) parchment-white, engraved bright
 
 Outputs (art/ui/):
-  SLAB-CARVED-V2.png   960x160  text-free carved slab (stretch-rendered behind
+  SLAB-CARVED.png   960x160  text-free carved slab (stretch-rendered behind
                                  runtime Cinzel labels — text stays crisp)
-  NICHE-FRAME-V2.png   320x420  warm dark stone niche frame, 9-slice border 14px,
+  NICHE-FRAME.png   320x420  warm dark stone niche frame, 9-slice border 14px,
                                  near-black interior (class portraits render inside)
-  HERO-AVALON-V2.png   the title ref's own painted AVALON lettering band, cropped
+  HERO-AVALON.png   the title ref's own painted AVALON lettering band, cropped
 """
 from PIL import Image, ImageFilter
 import numpy as np
@@ -112,9 +112,9 @@ def hero_crop(src):
 
 if __name__ == "__main__":
     title_src = REF_TITLE if os.path.exists(REF_TITLE) else os.path.join(ROOT, "art", "approved", "UI-MAIN-MENU-V2-CANON.png")
-    carve_slab().save(os.path.join(OUT, "SLAB-CARVED-V2.png"))
-    carve_niche().save(os.path.join(OUT, "NICHE-FRAME-V2.png"))
-    hero_crop(title_src).save(os.path.join(OUT, "HERO-AVALON-V2.png"))
-    for f in ["SLAB-CARVED-V2.png", "NICHE-FRAME-V2.png", "HERO-AVALON-V2.png"]:
+    carve_slab().save(os.path.join(OUT, "SLAB-CARVED.png"))
+    carve_niche().save(os.path.join(OUT, "NICHE-FRAME.png"))
+    hero_crop(title_src).save(os.path.join(OUT, "HERO-AVALON.png"))
+    for f in ["SLAB-CARVED.png", "NICHE-FRAME.png", "HERO-AVALON.png"]:
         p = os.path.join(OUT, f)
         print(f, Image.open(p).size, f"{os.path.getsize(p)//1024}KB")

@@ -446,18 +446,18 @@ namespace AvalonShell
             var slab = new GameObject("slab-" + txt);
             slab.transform.SetParent(parent, false);
             var edge = slab.AddComponent<Image>();
-            edge.sprite = Rounded(); edge.color = new Color(0.42f, 0.34f, 0.21f, 0.85f);
+            edge.sprite = Rounded(); edge.color = new Color(0.61f, 0.557f, 0.463f, 0.92f);   // v228 warm tan edge RGB 155,142,118
             var ert = edge.rect();
             ert.anchorMin = new Vector2(ax0, ay0); ert.anchorMax = new Vector2(ax1, ay1);
             ert.offsetMin = Vector2.zero; ert.offsetMax = Vector2.zero;
             var face = new GameObject("face");
             face.transform.SetParent(slab.transform, false);
             var fim = face.AddComponent<Image>();
-            fim.sprite = Rounded(); fim.color = new Color(0.078f, 0.105f, 0.121f, 0.96f);
+            fim.sprite = Rounded(); fim.color = new Color(0.224f, 0.216f, 0.196f, 0.96f);   // v228 ref face RGB 57,55,50
             fim.rect().Stretch();
             var frt = fim.rect();
             frt.anchorMin = new Vector2(0.035f, 0.11f); frt.anchorMax = new Vector2(0.965f, 0.89f);
-            var lbl = Label(slab.transform, txt, 15, Hex(0xc2a367), TextAnchor.MiddleCenter);
+            var lbl = Label(slab.transform, txt, 15, Hex(0xf0ebde), TextAnchor.MiddleCenter);   // v228 parchment letters RGB 240,235,222
             lbl.rect().Stretch();
             // v228 plate-quality: the baked carved slab — the plate's own stone + carved bevels
             // behind the engraved label (Bude, Sept 13: "menu works just need make the quality better")
@@ -723,7 +723,22 @@ GameObject BuildSelect(Transform parent)
             // carved slabs at the plate's 88-93% band. Responsive grid + dual wiring untouched.
             var p = Panel(parent, "Select", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
-            var overline = Label(p.transform, "AVALON", 16, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            // v228: Bude's new character-menu reference (Sept 13) IS the screen — painted
+            // showcase behind the real card grid; header lettering at the ref's own bands.
+            var bgSprite = Art("UI-CLASS-SELECT-V2-CANON");
+            if (bgSprite != null)
+            {
+                var bg = new GameObject("KeyArt");
+                bg.transform.SetParent(p.transform, false);
+                var bi = bg.AddComponent<Image>();
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = Color.white;
+                bi.raycastTarget = false;
+                bi.rect().Stretch();
+                var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.14f));
+                shade.transform.Stretch();
+                shade.GetComponent<Image>().raycastTarget = false;
+            }
+            var overline = Label(p.transform, "AVALON", 16, Hex(0xf0ebde), TextAnchor.MiddleCenter);
             overline.rect().anchorMin = new Vector2(0, 0.965f); overline.rect().anchorMax = new Vector2(1, 1.02f);
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 30, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
             head.rect().anchorMin = new Vector2(0, 0.875f); head.rect().anchorMax = new Vector2(1, 0.962f);
@@ -732,7 +747,7 @@ GameObject BuildSelect(Transform parent)
             {
                 var cd = CLASSES[i];
                 bool unlocked = ModelPrefab(cd.name) != null;
-                var niche = Panel(p.transform, "card-" + cd.name, new Color(0.42f, 0.34f, 0.21f, 0.80f));
+                var niche = Panel(p.transform, "card-" + cd.name, new Color(0.224f, 0.216f, 0.196f, 0.92f));   // v228 ref stone RGB 57,55,50
             var frameSprite = SlicedArt("NICHE-FRAME", 16f, 16f, 16f, 16f);
             if (frameSprite != null)
             {
@@ -741,7 +756,7 @@ GameObject BuildSelect(Transform parent)
             }
                 var crt = niche.rect();
                 cardRects.Add(crt);
-                var face = Panel(niche.transform, "Face", new Color(0.078f, 0.105f, 0.121f, 0.94f));
+                var face = Panel(niche.transform, "Face", new Color(0.063f, 0.063f, 0.059f, 0.94f));   // v228 ref interior
                 var frt = face.rect();
                 frt.anchorMin = new Vector2(0.018f, 0.018f); frt.anchorMax = new Vector2(0.982f, 0.982f); frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
                 var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON");
@@ -756,7 +771,7 @@ GameObject BuildSelect(Transform parent)
                     var bandRt = band.rect();
                     bandRt.anchorMin = new Vector2(0, 0); bandRt.anchorMax = new Vector2(1, 0.40f); bandRt.offsetMin = Vector2.zero; bandRt.offsetMax = Vector2.zero;
                 }
-                var nm = Label(niche.transform, cd.name.ToUpper(), 15, unlocked ? Hex(0xdcc38a) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+                var nm = Label(niche.transform, cd.name.ToUpper(), 15, unlocked ? Hex(0xf0ebde) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);   // v228 parchment letters
                 nm.rect().anchorMin = new Vector2(0, 0.22f); nm.rect().anchorMax = new Vector2(1, 0.38f);
                 var ro = Label(niche.transform, cd.role, 9, Hex(0xa3895a), TextAnchor.MiddleCenter);
                 ro.rect().anchorMin = new Vector2(0, 0.14f); ro.rect().anchorMax = new Vector2(1, 0.22f);
@@ -771,8 +786,8 @@ GameObject BuildSelect(Transform parent)
                 TapTo(crt, () => SelectCard(captured));
             }
 
-            CarvedBtn(p.transform, "BEGIN THE WAKENING", 0.26f, 0.62f, 0.065f, 0.125f, true, delegate { SetState(State.Game); });
-            CarvedBtn(p.transform, "BACK", 0.04f, 0.24f, 0.065f, 0.125f, true, delegate { SetState(State.Title); });
+            CarvedBtn(p.transform, "BEGIN THE WAKENING", 0.26f, 0.72f, 0.043f, 0.105f, true, delegate { SetState(State.Game); });   // v228: the ref's own BEGIN slab geometry
+            CarvedBtn(p.transform, "BACK", 0.04f, 0.24f, 0.043f, 0.105f, true, delegate { SetState(State.Title); });
             return p;
         }
 
