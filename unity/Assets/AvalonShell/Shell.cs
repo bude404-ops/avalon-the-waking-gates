@@ -459,6 +459,18 @@ namespace AvalonShell
             frt.anchorMin = new Vector2(0.035f, 0.11f); frt.anchorMax = new Vector2(0.965f, 0.89f);
             var lbl = Label(slab.transform, txt, 15, Hex(0xc2a367), TextAnchor.MiddleCenter);
             lbl.rect().Stretch();
+            // v228 plate-quality: the baked carved slab — the plate's own stone + carved bevels
+            // behind the engraved label (Bude, Sept 13: "menu works just need make the quality better")
+            var baked = Art("SLAB-CARVED");
+            if (baked != null)
+            {
+                fim.sprite = baked; fim.color = Color.white;
+                frt.anchorMin = Vector2.zero; frt.anchorMax = Vector2.one;
+                edge.color = new Color(0f, 0f, 0f, 0f);
+                var sh = lbl.AddComponent<Shadow>();
+                sh.effectColor = new Color(0.03f, 0.025f, 0.015f, 0.85f);
+                sh.effectDistance = new Vector2(0f, -1.5f);
+            }
             var b = slab.AddComponent<Button>();
             b.targetGraphic = fim;
             var cb = b.colors; cb.normalColor = new Color(1, 1, 1, 1); cb.highlightedColor = new Color(1.14f, 1.10f, 0.92f, 1);
@@ -469,6 +481,45 @@ namespace AvalonShell
             {
                 b.onClick.AddListener(() => act());
                 TapTo(ert, act);
+            }
+            return b;
+        }
+
+        // ---- v228 KEYART-ENGRAVED OPTION (Bude's new title-menu reference, Sept 13): the option
+        // list floats ENGRAVED over the painted keyart — thin bronze hairline rule above
+        // cream-bronze Cinzel lettering, no slab, no shelf. Press = ember-bright pulse.
+        // Same dual-path wiring law: Button.onClick AND TapRouter, both idempotent. ----
+        Button EngravedOption(Transform parent, string txt, float ax0, float ax1, float ay0, float ay1, bool live, System.Action act)
+        {
+            var go = new GameObject("opt-" + txt);
+            go.transform.SetParent(parent, false);
+            var grt = go.AddComponent<RectTransform>();
+            grt.anchorMin = new Vector2(ax0, ay0); grt.anchorMax = new Vector2(ax1, ay1);
+            grt.offsetMin = Vector2.zero; grt.offsetMax = Vector2.zero;
+
+            var rule = Panel(go.transform, "Rule", new Color(0.639f, 0.537f, 0.353f, 0.55f));
+            rule.GetComponent<Image>().raycastTarget = false;
+            var rrt = rule.rect();
+            rrt.anchorMin = new Vector2(0.06f, 0.82f); rrt.anchorMax = new Vector2(0.94f, 0.88f);
+            rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+
+            var lbl = Label(go.transform, txt, 19, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
+            lbl.rect().anchorMin = new Vector2(0f, 0.04f); lbl.rect().anchorMax = new Vector2(1f, 0.76f);
+
+            var b = go.AddComponent<Button>();
+            b.targetGraphic = lbl;
+            var cb = b.colors;
+            cb.normalColor = new Color(0.90f, 0.88f, 0.80f, 1f);
+            cb.highlightedColor = new Color(1.22f, 1.14f, 0.92f, 1f);
+            cb.pressedColor = new Color(1.45f, 1.30f, 0.95f, 1f);
+            cb.disabledColor = new Color(0.45f, 0.45f, 0.45f, 0.5f);
+            cb.fadeDuration = 0.12f;
+            b.colors = cb;
+            b.interactable = live;
+            if (live)
+            {
+                b.onClick.AddListener(() => { StartCoroutine(ZonePulse(grt)); act(); });
+                TapTo(grt, () => { StartCoroutine(ZonePulse(grt)); act(); });
             }
             return b;
         }
@@ -484,42 +535,26 @@ GameObject BuildTitle(Transform parent)
             var p = Panel(parent, "Title", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
 
-            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            // v228: Bude's new title-menu reference (Sept 13) IS the screen — the painted keyart
+            // carries its own AVALON logo and the option list floats engraved over the mist.
+            var bgSprite = Art("UI-MAIN-MENU-V2-CANON");
+            if (bgSprite == null) bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
             if (bgSprite != null)
             {
                 var bg = new GameObject("KeyArt");
                 bg.transform.SetParent(p.transform, false);
                 var bi = bg.AddComponent<Image>();
-                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.45f, 0.44f, 0.43f, 1f);
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(1f, 1f, 1f, 1f);
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
-                var shade = Panel(p.transform, "Shade", new Color(0.04f, 0.055f, 0.065f, 0.66f));
+                var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.16f));
                 shade.transform.Stretch();
                 shade.GetComponent<Image>().raycastTarget = false;
             }
 
-            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            title.rect().anchorMin = new Vector2(0, 0.885f); title.rect().anchorMax = new Vector2(1, 0.985f);
-            var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
-            var rule = Panel(p.transform, "Rule", ruleCol);
-            rule.GetComponent<Image>().raycastTarget = false;
-            var rrt = rule.rect();
-            rrt.anchorMin = new Vector2(0.30f, 0.815f); rrt.anchorMax = new Vector2(0.70f, 0.819f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
-            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            sub.rect().anchorMin = new Vector2(0, 0.77f); sub.rect().anchorMax = new Vector2(1, 0.815f);
-
-            var shelfEdge = Panel(p.transform, "ShelfEdge", new Color(0.42f, 0.34f, 0.21f, 0.55f));
-            var sert = shelfEdge.rect();
-            sert.anchorMin = new Vector2(0.235f, 0.085f); sert.anchorMax = new Vector2(0.765f, 0.475f); sert.offsetMin = Vector2.zero; sert.offsetMax = Vector2.zero;
-            shelfEdge.GetComponent<Image>().raycastTarget = false;
-            var shelf = Panel(shelfEdge.transform, "ShelfFace", new Color(0.055f, 0.075f, 0.086f, 0.88f));
-            shelf.transform.Stretch();
-            var shrt = shelf.rect();
-            shrt.anchorMin = new Vector2(0.012f, 0.03f); shrt.anchorMax = new Vector2(0.988f, 0.97f); shrt.offsetMin = Vector2.zero; shrt.offsetMax = Vector2.zero;
-            shelf.GetComponent<Image>().raycastTarget = false;
 
             bool hasSave = PlayerPrefs.HasKey("avalon.save");
-            CarvedBtn(p.transform, "CONTINUE", 0.30f, 0.70f, 0.415f, 0.465f, hasSave, delegate {
+            EngravedOption(p.transform, "CONTINUE", 0.30f, 0.70f, 0.415f, 0.465f, hasSave, delegate {
                 if (LoadSave())
                 {
                     LoadClass(chosen.name); UpdateQuestLine();
@@ -531,10 +566,10 @@ GameObject BuildTitle(Transform parent)
                     SetState(State.Game);
                 }
             });
-            CarvedBtn(p.transform, "NEW JOURNEY", 0.30f, 0.70f, 0.345f, 0.395f, true, delegate { SetState(State.Select); });
-            CarvedBtn(p.transform, "GATES", 0.30f, 0.70f, 0.275f, 0.325f, true, delegate { OpenMap(); });
-            CarvedBtn(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { panelAchievements.SetActive(true); });
-            CarvedBtn(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { panelSettings.SetActive(true); });
+            EngravedOption(p.transform, "NEW JOURNEY", 0.30f, 0.70f, 0.345f, 0.395f, true, delegate { SetState(State.Select); });
+            EngravedOption(p.transform, "GATES", 0.30f, 0.70f, 0.275f, 0.325f, true, delegate { OpenMap(); });
+            EngravedOption(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { panelAchievements.SetActive(true); });
+            EngravedOption(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { panelSettings.SetActive(true); });
 
 #if UNITY_ANDROID && !UNITY_EDITOR
             int stampVc = InstalledVersionCode();
@@ -698,6 +733,12 @@ GameObject BuildSelect(Transform parent)
                 var cd = CLASSES[i];
                 bool unlocked = ModelPrefab(cd.name) != null;
                 var niche = Panel(p.transform, "card-" + cd.name, new Color(0.42f, 0.34f, 0.21f, 0.80f));
+            var frameSprite = SlicedArt("NICHE-FRAME", 16f, 16f, 16f, 16f);
+            if (frameSprite != null)
+            {
+                var nIm = niche.GetComponent<Image>();
+                if (nIm != null) { nIm.sprite = frameSprite; nIm.type = Image.Type.Sliced; nIm.color = Color.white; }
+            }
                 var crt = niche.rect();
                 cardRects.Add(crt);
                 var face = Panel(niche.transform, "Face", new Color(0.078f, 0.105f, 0.121f, 0.94f));
@@ -740,7 +781,22 @@ GameObject BuildSelect(Transform parent)
             chosen = cd;
             for (int i = 0; i < CLASSES.Length; i++)
                 cardTints[i].color = (CLASSES[i] == cd) ? new Color(0.16f, 0.14f, 0.09f, 0.96f) : new Color(0.07f, 0.08f, 0.10f, 0.92f);
+            if (emberPulse != null) StopCoroutine(emberPulse);
+            emberCard = null;
+            for (int i = 0; i < CLASSES.Length; i++) if (CLASSES[i] == cd) emberCard = cardTints[i];
+            if (emberCard != null) emberPulse = StartCoroutine(EmberPulseRoutine());
             LoadClass(cd.name);
+        }
+
+        IEnumerator EmberPulseRoutine()
+        {
+            while (true)
+            {
+                yield return null;
+                if (emberCard == null) continue;
+                float p = 0.5f + 0.5f * Mathf.Sin(Time.time * 2.2f);
+                emberCard.color = new Color(0.16f + 0.05f * p, 0.14f + 0.035f * p, 0.09f + 0.02f * p, 0.96f);
+            }
         }
 
         // Responsive layout: portrait = 2 rows of 3 cards; landscape = 1 row of 6. Relayout on rotate.
@@ -1252,6 +1308,18 @@ GameObject BuildSelect(Transform parent)
 
         // Canon art cache — Resources/Art staged by the build; null-guarded everywhere.
         readonly Dictionary<string, Sprite> artCache = new Dictionary<string, Sprite>();
+        // v228: ember pulse on the selected class card
+        UnityEngine.UI.Image emberCard;
+        Coroutine emberPulse;
+        // v228: 9-slice sprite with a baked border (for the carved niche frame).
+        Sprite SlicedArt(string name, float bl, float bb, float br, float bt)
+        {
+            var tex = Resources.Load<Texture2D>("Art/" + name);
+            if (tex == null) return null;
+            return Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height),
+                new Vector2(0.5f, 0.5f), 100f, 0, SpriteMeshType.FullRect, new Vector4(bl, bb, br, bt));
+        }
+
         Sprite Art(string name)
         {
             if (artCache.ContainsKey(name)) return artCache[name];

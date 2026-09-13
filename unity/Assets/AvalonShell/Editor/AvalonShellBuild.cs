@@ -44,13 +44,18 @@ namespace AvalonShell
 
             Directory.CreateDirectory("Assets/AvalonShell/Resources/Art");
             foreach (var art in new[] { "MAP1-COLD-RELIQUARY-ASHFALL-CANON.png",
-                "UI-MAIN-MENU-CANON.png", "UI-CLASS-SELECT-CANON.png",
+                "UI-MAIN-MENU-CANON.png", "UI-MAIN-MENU-V2-CANON.jpg", "UI-CLASS-SELECT-CANON.png",
                 "CINEMATIC-TEASER-KEYART-CANON.png",
                 "CLASS-SOVEREIGN-CANON.png", "CLASS-RAVAGER-CANON.png", "CLASS-WARDEN-CANON.png",
                 "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png" })
             {
                 var src = Path.Combine("../art/approved", art);
                 if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged art: " + art); }
+            }
+            foreach (var art in new[] { "SLAB-CARVED.png", "NICHE-FRAME.png", "HERO-AVALON.png" })
+            {
+                var src = Path.Combine("../art/ui", art);
+                if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged ui art: " + art); }
             }
             int staged = 0;
             // GAMED-SET STAGING (v217): a .prefab alone is useless — it references its mesh FBX,
