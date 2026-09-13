@@ -34,7 +34,7 @@ namespace AvalonShell
 
         State state = State.Title;
         ClassDef chosen = CLASSES[0];
-        GameObject panelTitle, panelSelect, panelGame, panelSkills;
+        GameObject panelTitle, panelSelect, panelGame, panelSkills, panelMap;
         Camera cam; float camDist = 2.8f; float camYaw = 25f;
         Animator animator; GameObject model; Transform stagePivot;
         Text hudLine;
@@ -68,6 +68,7 @@ namespace AvalonShell
             panelTitle = BuildTitle(canvas.transform);
             panelSelect = BuildSelect(canvas.transform);
             panelGame = BuildGame(canvas.transform);
+            panelMap = BuildMap(canvas.transform);
             panelSkills = BuildSkills(canvas.transform);
             LayoutCards();
             SetState(State.Title);
@@ -396,6 +397,12 @@ namespace AvalonShell
             (bWalk.transform as RectTransform).anchoredPosition = new Vector2(56, 0);
             bWalk.onClick.AddListener(() => { if (animator) animator.CrossFade("walk", 0.25f); });
 
+            var bMap = Btn(p.transform, "MAP", 11);
+            (bMap.transform as RectTransform).anchorMin = new Vector2(0.995f, 0.02f); (bMap.transform as RectTransform).anchorMax = new Vector2(0.995f, 0.02f);
+            (bMap.transform as RectTransform).anchoredPosition = new Vector2(-270, 30);
+            (bMap.transform as RectTransform).sizeDelta = new Vector2(90, 36);
+            bMap.onClick.AddListener(() => panelMap.SetActive(!panelMap.activeSelf));
+
             var bTab = Btn(p.transform, "CHARACTER", 11);
             (bTab.transform as RectTransform).anchorMin = new Vector2(0.995f, 0.02f); (bTab.transform as RectTransform).anchorMax = new Vector2(0.995f, 0.02f);
             (bTab.transform as RectTransform).anchoredPosition = new Vector2(-90, 30);
@@ -438,6 +445,41 @@ namespace AvalonShell
             close.onClick.AddListener(() => panel.SetActive(false));
             panel.SetActive(false);
             return panel;
+        }
+
+        // ================= MAP =================
+        // Stage 5 of GAME-UI-LAYOUT: landmark map. Cold Reliquary slice live (approved canon plate);
+        // landmark pins land with the pin pass.
+        GameObject BuildMap(Transform parent)
+        {
+            var p = Panel(parent, "MapPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
+            p.transform.Stretch();
+            var head = Label(p.transform, "COLD RELIQUARY — ASHFALL", 15, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            head.rect().anchorMin = new Vector2(0, 1); head.rect().anchorMax = new Vector2(1, 1); head.rect().offsetMin = new Vector2(18, -48); head.rect().offsetMax = new Vector2(-18, -16);
+            var mapArt = Art("MAP1-COLD-RELIQUARY-ASHFALL-CANON");
+            if (mapArt != null)
+            {
+                var holder = new GameObject("MapArt");
+                holder.transform.SetParent(p.transform, false);
+                var img = holder.AddComponent<Image>();
+                img.sprite = mapArt; img.preserveAspect = true; img.color = new Color(0.95f, 0.94f, 0.92f, 1f);
+                img.rect().anchorMin = new Vector2(0.03f, 0.03f); img.rect().anchorMax = new Vector2(0.97f, 0.90f);
+                img.rect().offsetMin = Vector2.zero; img.rect().offsetMax = Vector2.zero;
+            }
+            else
+            {
+                var none = Label(p.transform, "THE GATES HAVE NOT DRAWN THIS PATH YET", 13, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+                none.rect().anchorMin = new Vector2(0.1f, 0.4f); none.rect().anchorMax = new Vector2(0.9f, 0.6f);
+            }
+            var sub = Label(p.transform, "QUEST PIN — LIGHT THE BRAZIER AT THE WAKING GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
+            sub.rect().anchorMin = new Vector2(0.03f, 0.0f); sub.rect().anchorMax = new Vector2(0.97f, 0.05f); sub.rect().offsetMin = new Vector2(8, 6); sub.rect().offsetMax = new Vector2(-8, 0);
+            var close = Btn(p.transform, "CLOSE", 11);
+            var crt = close.rect();
+            crt.anchorMin = new Vector2(1, 1); crt.anchorMax = new Vector2(1, 1); crt.pivot = new Vector2(1, 1);
+            crt.anchoredPosition = new Vector2(-10, -10); crt.sizeDelta = new Vector2(80, 32);
+            close.onClick.AddListener(() => p.SetActive(false));
+            p.SetActive(false);
+            return p;
         }
 
         // ================= model =================

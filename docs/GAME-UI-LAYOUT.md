@@ -44,8 +44,9 @@ is the living mock — every screen below is staged there as the pipeline ships 
 - Slots: SKILL PATH I–III, MASTER CLASS, DIVINE BOND, RELIC — sealed until progression ships.
 - Future: tap a path → tree view; level-up gates unlock nodes (anti-grind law: no stat inflation, mastery/cosmetic).
 
-### 5. Map (staged next)
-- Landmark map per realm (nine-section world structure): realm silhouette, landmark pins (Cinder Gate, shrine brazier, watchtower live for Cold Reliquary slice).
+### 5. Map (BUILT — map screen pass)
+- MAP button in the HUD opens the map screen: Cold Reliquary — Ashfall slice live (approved canon plate MAP1), quest pin line under the map.
+- Landmark pins (Cinder Gate, shrine brazier, watchtower) land with the pin pass; realm starter maps stage as each plate is approved.
 
 ### 6. Relics (staged next)
 - Relic inventory: the Luminary line — meaningful artifacts only, never stat loot.

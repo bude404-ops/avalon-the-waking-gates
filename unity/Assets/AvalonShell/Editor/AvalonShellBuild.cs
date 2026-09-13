@@ -30,7 +30,8 @@ namespace AvalonShell
             // Copy forged prefabs into Resources (GUIDs preserved via .meta siblings)
             Directory.CreateDirectory("Assets/AvalonShell/Resources");
             Directory.CreateDirectory("Assets/AvalonShell/Resources/Art");
-            foreach (var art in new[] { "CINEMATIC-TEASER-KEYART-CANON.png",
+            foreach (var art in new[] { "MAP1-COLD-RELIQUARY-ASHFALL-CANON.png",
+                "CINEMATIC-TEASER-KEYART-CANON.png",
                 "CLASS-SOVEREIGN-CANON.png", "CLASS-RAVAGER-CANON.png", "CLASS-WARDEN-CANON.png",
                 "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png" })
             {
