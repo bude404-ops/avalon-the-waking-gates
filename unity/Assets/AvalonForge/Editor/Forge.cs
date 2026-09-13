@@ -209,6 +209,15 @@ namespace AvalonForge
             Directory.CreateDirectory($"{Root}/Animators");
             var ctrl = AnimatorController.CreateAnimatorControllerAtPath(ctrlPath);
             var sm = ctrl.layers[0].stateMachine;
+            DumpAvatarMap(avatar, character + " CLASS", log);
+            {
+                var probe = FindClip("walk");
+                if (probe != null)
+                {
+                    var srcAvatars = AssetDatabase.LoadAllAssetsAtPath(AssetDatabase.GetAssetPath(probe)).OfType<Avatar>();
+                    foreach (var sav in srcAvatars) DumpAvatarMap(sav, "MOCAP-SRC", log);
+                }
+            }
             int statesBuilt = 0;
             foreach (var (state, prefix) in States)
             {
@@ -432,6 +441,20 @@ namespace AvalonForge
             AssetDatabase.FindAssets("t:Prefab", new[] { Prefabs })
                 .Select(p => AssetDatabase.GUIDToAssetPath(p))
                 .Where(p => p.EndsWith("-GAME.prefab"));
+
+        // v225.1 DIAGNOSTIC: dump the class avatar's humanoid bone map next to the mocap source's.
+        // v225 locked 96 position curves to zero yet the walk retarget STILL explodes (same 67x103x42
+        // bounds) while idle retargets clean — so the blowout is rotation/muscle-level. A mis-mapped
+        // human bone in the AUTO-MAPPED class avatar is the prime suspect: idle (near-bind) survives
+        // a wrong map; walk (big hips/leg drive) detonates it. Both maps now visible in every CI run.
+        static void DumpAvatarMap(Avatar av, string label, System.Text.StringBuilder log)
+        {
+            if (av == null) { Log(log, label + ": no avatar"); return; }
+            if (!av.isHuman) { Log(log, label + ": NOT humanoid"); return; }
+            var parts = new System.Collections.Generic.List<string>();
+            foreach (var h in av.humanDescription.human) parts.Add(h.humanName + "=" + h.boneName);
+            Log(log, label + " boneMap [" + parts.Count + "]: " + string.Join(", ", parts));
+        }
 
         // v225: THE CLASS-WALK FIX. The vaulted Aedan clips can still carry raw CMU capture-world
         // Hips translation (63dm travel + 15.7dm vertical). Retargeted onto class rigs it flings the
