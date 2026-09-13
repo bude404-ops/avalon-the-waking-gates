@@ -251,6 +251,14 @@ namespace AvalonShell
         }
 #endif
 
+        IEnumerator ZonePulse(RectTransform rt)
+        {
+            // v220: the slab visibly depresses — no more guessing whether a tap registered
+            if (rt == null) yield break;
+            for (float t = 0f; t < 1f; t += Time.deltaTime / 0.07f) { rt.localScale = Vector3.one * (1f - 0.05f * t); yield return null; }
+            for (float t = 0f; t < 1f; t += Time.deltaTime / 0.16f) { rt.localScale = Vector3.one * (0.95f + 0.05f * t); yield return null; }
+            rt.localScale = Vector3.one;
+        }
         IEnumerator PanelFlash(GameObject panel)
         {
             // v219: every screen change READS as a change — brief black wipe-in so a new
@@ -298,6 +306,7 @@ namespace AvalonShell
         // ================= canon plates as screens (Big, Sept 13: the update "isn't what it should be like") =================
         // The plates he approved ARE the UI — full-screen plate art with invisible tap zones over the carved options.
         readonly List<RectTransform> plates = new List<RectTransform>();
+        readonly List<Image> nicheFaces = new List<Image>();
         GameObject PlateScreen(Transform parent, string plateName)
         {
             var art = Art(plateName);
@@ -325,11 +334,27 @@ namespace AvalonShell
             rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
         }
 
-        Button PlateZone(Transform plate, string label, float x0, float x1, float y0, float y1, bool live, System.Action act)
+        Button PlateZone(Transform plate, string label, float x0, float x1, float y0, float y1, bool live, System.Action act, string vLabel = null)
         {
             var g = new GameObject("zone-" + label);
             g.transform.SetParent(plate, false);
             var im = g.AddComponent<Image>(); im.color = new Color(0, 0, 0, 0);   // invisible, raycastable
+            // ---- v220 REAL-UI LAW (Big: the menu must be actual UI styled from the plate, not the plate still) ----
+            if (vLabel != null)
+            {
+                var edge = new GameObject("edge");
+                edge.transform.SetParent(g.transform, false);
+                var ei = edge.AddComponent<Image>();
+                ei.sprite = Rounded(); ei.color = new Color(0.64f, 0.53f, 0.35f, 0.55f); ei.raycastTarget = false;
+                var ert = ei.rect(); ert.Stretch(); ert.offsetMin = new Vector2(-3, -3); ert.offsetMax = new Vector2(3, 3);
+                var face = new GameObject("face");
+                face.transform.SetParent(g.transform, false);
+                var fi = face.AddComponent<Image>();
+                fi.sprite = Rounded(); fi.color = new Color(0.115f, 0.125f, 0.15f, 0.94f); fi.raycastTarget = false;
+                fi.rect().Stretch();
+                var lt = Label(g.transform, vLabel, 15, Hex(0xd8c9a3), TextAnchor.MiddleCenter);
+                lt.rect().Stretch();
+            }
             var rt = im.rect();
             rt.anchorMin = new Vector2(x0, y0); rt.anchorMax = new Vector2(x1, y1);
             rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
@@ -341,7 +366,12 @@ namespace AvalonShell
             gi.sprite = MakeDiscSprite(false); gi.raycastTarget = false; gi.color = Color.white;
             var grt = gi.rect(); grt.Stretch(); grt.offsetMin = Vector2.zero; grt.offsetMax = Vector2.zero;
             var b = g.AddComponent<Button>();
-            b.targetGraphic = gi;
+            if (vLabel != null)
+            {
+                b.targetGraphic = g.transform.Find("face").GetComponent<Image>();
+                if (live && act != null) b.onClick.AddListener(() => StartCoroutine(ZonePulse(g.transform as RectTransform)));
+            }
+            else b.targetGraphic = gi;
             var cb = b.colors;
             cb.normalColor = new Color(1f, 0.78f, 0.45f, 0f);
             cb.highlightedColor = new Color(1f, 0.78f, 0.45f, 0.32f);
@@ -498,6 +528,15 @@ namespace AvalonShell
             {
                 titlePlateRt = plate.transform as RectTransform;
                 bool hasSave = PlayerPrefs.HasKey("avalon.save");
+                // v220 shelf: soft stone band mutes the plate's own carved list so the REAL buttons
+                // read as the menu (plate hero art above stays untouched)
+                var shelf = new GameObject("MenuShelf");
+                shelf.transform.SetParent(plate.transform, false);
+                var shi = shelf.AddComponent<Image>();
+                shi.sprite = Rounded(); shi.color = new Color(0.045f, 0.048f, 0.055f, 0.68f); shi.raycastTarget = false;
+                var shrt = shi.rect();
+                shrt.anchorMin = new Vector2(0.20f, 0.525f); shrt.anchorMax = new Vector2(0.80f, 0.905f);
+                shrt.offsetMin = Vector2.zero; shrt.offsetMax = Vector2.zero;
                 // Carved list, word-locked on the plate: CONTINUE ~58% / NEW JOURNEY ~65% / GATES ~72% / ACHIEVEMENTS ~78% / SETTINGS ~85%
                 PlateZone(plate.transform, "CONTINUE", 0.24f, 0.76f, 0.545f, 0.615f, hasSave, delegate {
                     if (LoadSave())
@@ -510,7 +549,7 @@ namespace AvalonShell
                         }
                         SetState(State.Game);
                     }
-                });
+                }, "CONTINUE");
                 // BUILD STAMP (Big's "same one" verdict Sept 13): every shell self-identifies on the title
                 // plate so there is never any doubt about which build is running. Muted, bottom-right,
                 // sits beside the plate's own baked version line — never covers carved art.
@@ -521,10 +560,10 @@ namespace AvalonShell
 #endif
                 var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
                 stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
-                PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); });
-                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { SetState(State.Select); });
-                PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null);
-                PlateZone(plate.transform, "SETTINGS", 0.24f, 0.76f, 0.822f, 0.885f, false, null);
+                PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); }, "NEW JOURNEY");
+                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { panelMap.SetActive(true); }, "GATES");
+                PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null, "ACHIEVEMENTS");
+                PlateZone(plate.transform, "SETTINGS", 0.24f, 0.76f, 0.822f, 0.885f, false, null, "SETTINGS");
                 return p;
             }
 
@@ -606,14 +645,19 @@ namespace AvalonShell
                     int r = i / 2, c = i % 2;
                     float x0 = 0.06f + c * 0.44f, x1 = x0 + 0.44f;
                     float y1 = 0.86f - r * 0.2533f, y0 = y1 - 0.2533f;
-                    PlateZone(plate.transform, "Niche-" + CLASSES[i].name, x0, x1, y0, y1, true, delegate {
+                    var zb = PlateZone(plate.transform, "Niche-" + CLASSES[i].name, x0, x1, y0, y1, true, delegate {
                         chosen = CLASSES[idx];
                         LoadClass(chosen.name);
                         if (selectReadout != null) selectReadout.text = chosen.name.ToUpper() + " \u2014 " + chosen.realm;
-                    });
+                        // v220: every niche face resets; the chosen one glows ember
+                        for (int k = 0; k < nicheFaces.Count; k++) nicheFaces[k].color = new Color(0.115f, 0.125f, 0.15f, 0.94f);
+                        if (idx < nicheFaces.Count) nicheFaces[idx].color = new Color(0.30f, 0.20f, 0.10f, 0.96f);
+                    }, CLASSES[i].name.ToUpper());
+                    var zface = zb.transform.Find("face");
+                    if (zface != null) nicheFaces.Add(zface.GetComponent<Image>());
                 }
-                PlateZone(plate.transform, "BEGIN", 0.24f, 0.62f, 0.900f, 0.965f, true, delegate { SetState(State.Game); });
-                PlateZone(plate.transform, "BACK", 0.00f, 0.26f, 0.945f, 0.995f, true, delegate { SetState(State.Title); });
+                PlateZone(plate.transform, "BEGIN", 0.24f, 0.62f, 0.900f, 0.965f, true, delegate { SetState(State.Game); }, "BEGIN THE WAKENING");
+                PlateZone(plate.transform, "BACK", 0.00f, 0.26f, 0.945f, 0.995f, true, delegate { SetState(State.Title); }, "BACK");
                 return p;
             }
 
