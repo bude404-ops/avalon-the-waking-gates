@@ -46,6 +46,7 @@ namespace AvalonShell
         GameObject storyCard;
         RectTransform titlePlateRt, selectPlateRt;   // the canon plates ARE the screens (Sept 13)
         Text selectReadout;
+        Canvas canvas;
         Vector3 walkTarget; bool hasWalkTarget; const float walkSpeed = 1.4f;
         bool maybeTap; Vector2 tapStart;
         int questStage = 0;                 // 0 reach the hearth, 1 carry (3 encounters), 2 to the gate, 3 complete
@@ -90,7 +91,7 @@ namespace AvalonShell
             Screen.autorotateToPortraitUpsideDown = false;
             wasPortrait = Screen.height > Screen.width;
 
-            var canvas = MakeCanvas();
+            canvas = MakeCanvas();
             canvasT = canvas.transform;
             panelTitle = BuildTitle(canvas.transform);
             panelSelect = BuildSelect(canvas.transform);
@@ -464,7 +465,7 @@ namespace AvalonShell
             sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
             // Carved stone option list, lower third, 2x2 — plate law: CONTINUE, NEW JOURNEY, GATES, SETTINGS.
             string[] menu = { "NEW JOURNEY", "GATES", "CONTINUE", "SETTINGS" };
-            bool hasSave = PlayerPrefs.HasKey("avalon.save");
+            bool hasSaveFallback = PlayerPrefs.HasKey("avalon.save");
             for (int i = 0; i < menu.Length; i++)
             {
                 var b = Btn(p.transform, menu[i], 14);
@@ -474,7 +475,7 @@ namespace AvalonShell
                 brt.sizeDelta = new Vector2(200, 46);
                 brt.anchoredPosition = new Vector2(-110 + col * 220, 96 - row * 56);
                 if (i == 0 || i == 1) b.onClick.AddListener(() => SetState(State.Select));           // NEW JOURNEY + GATES
-                else if (i == 2 && hasSave) b.onClick.AddListener(delegate {                          // CONTINUE — the Marked return
+                else if (i == 2 && hasSaveFallback) b.onClick.AddListener(delegate {                    // CONTINUE — the Marked return
                     if (LoadSave())
                     {
                         LoadClass(chosen.name); UpdateQuestLine();
