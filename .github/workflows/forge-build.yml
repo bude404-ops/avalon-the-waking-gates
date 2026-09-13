@@ -93,9 +93,7 @@ jobs:
         if: always()
         run: |
           mkdir -p /tmp/out
-          cp -r unity/Assets/AvalonForge/Prefabs /tmp/out/ 2>/dev/null || true
-          cp -r unity/Assets/AvalonForge/QCShots /tmp/out/ 2>/dev/null || true
-          cp -r unity/Assets/AvalonForge/Reports /tmp/out/ 2>/dev/null || true
+          cp -r unity/Assets/AvalonForge /tmp/out/ 2>/dev/null || true
           cp unity-editor.log /tmp/out/ 2>/dev/null || true
           find /tmp/out -type f | head -30
       - uses: actions/upload-artifact@v4

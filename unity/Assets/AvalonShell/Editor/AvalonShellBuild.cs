@@ -53,17 +53,29 @@ namespace AvalonShell
                 if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged art: " + art); }
             }
             int staged = 0;
-            // Guard: forged class prefabs don't exist until the forge lands (Sovereign-first law) —
-            // the shell runs fine on 2D canon art alone; skip silently when the folder is absent.
-            foreach (var f in (Directory.Exists("Assets/AvalonForge/Prefabs") ? Directory.GetFiles("Assets/AvalonForge/Prefabs", "*.prefab") : new string[0]))
+            // GAMED-SET STAGING (v217): a .prefab alone is useless — it references its mesh FBX,
+            // animator controller and mocap clips by GUID. Stage the FULL forge set:
+            //   Prefabs/*   -> Resources (so Resources.Load("<class>-GAME") finds it)
+            //   Generated / Animators / Mocap -> ModelAssets (pulled into the build by reference,
+            //   GUIDs preserved via .meta siblings)
+            // Guard: absent folders skip silently (Sovereign-first law — shell runs on canon art alone).
+            Action<string, string> Stage = (srcDir, dstDir) =>
             {
-                var name = Path.GetFileName(f);
-                File.Copy(f, "Assets/AvalonShell/Resources/" + name, true);
-                var meta = f + ".meta";
-                if (File.Exists(meta)) File.Copy(meta, "Assets/AvalonShell/Resources/" + name + ".meta", true);
-                staged++;
-                Debug.Log($"[SHELL] staged prefab: {name}");
-            }
+                if (!Directory.Exists(srcDir)) return;
+                Directory.CreateDirectory(dstDir);
+                foreach (var f in Directory.GetFiles(srcDir))
+                {
+                    if (f.EndsWith(".meta")) continue;
+                    File.Copy(f, dstDir + "/" + Path.GetFileName(f), true);
+                    if (File.Exists(f + ".meta")) File.Copy(f + ".meta", dstDir + "/" + Path.GetFileName(f) + ".meta", true);
+                    staged++;
+                    Debug.Log("[SHELL] staged model asset: " + srcDir + "/" + Path.GetFileName(f));
+                }
+            };
+            Stage("Assets/AvalonForge/Prefabs", "Assets/AvalonShell/Resources");
+            Stage("Assets/AvalonForge/Generated", "Assets/AvalonShell/ModelAssets");
+            Stage("Assets/AvalonForge/Animators", "Assets/AvalonShell/ModelAssets");
+            Stage("Assets/AvalonForge/Mocap", "Assets/AvalonShell/ModelAssets");
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
             // Scene: single bootstrap object
