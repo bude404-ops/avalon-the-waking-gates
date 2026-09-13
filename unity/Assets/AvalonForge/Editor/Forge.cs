@@ -315,16 +315,22 @@ namespace AvalonForge
                     var wrb = CombineBounds(renderers);
                     bool poseOk = sane(wrb.center) && sane(wrb.size) && wrb.size.y > 0.05f * height
                                   && wrb.size.y < 3f * height && wrb.center.magnitude < 10f * height;
-                    if (!poseOk)
+                    if (poseOk)
                     {
-                        Log(log, "WARN walk retarget collapsed (bounds " + wrb.center + " / " + wrb.size + ") — rebinding to visible pose");
+                        go.transform.position -= new Vector3(wrb.center.x, wrb.min.y, wrb.center.z);
+                    }
+                    else
+                    {
+                        // v223: the collapsed retarget CONTAMINATES the renderer bounds (67x103x42 on a
+                        // 1.95m rig) — any re-ground computed from them throws the model off-frame and
+                        // the shot renders black (v222's own fallback bug). Ground instead from the
+                        // PROVEN idle capture transform, zero bounds math.
+                        Log(log, "WARN walk retarget collapsed (bounds " + wrb.center + " / " + wrb.size + ") — recapturing at the proven idle grounding");
                         animator.Rebind();
-                        animator.Update(0f);
                         animator.Play("idle", 0, 0.4f);
                         animator.Update(0.01f);
-                        wrb = CombineBounds(renderers);
+                        go.transform.position = posBeforeWalk;
                     }
-                    go.transform.position -= new Vector3(wrb.center.x, wrb.min.y, wrb.center.z);
                     cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
                     var wtex = new Texture2D(720, 960, TextureFormat.RGBA32, false);
                     wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
@@ -336,11 +342,13 @@ namespace AvalonForge
                     }
                     if (content < 40)
                     {
-                        Log(log, "WARN walk frame rendered empty — falling back to bind-pose capture");
-                        animator.Rebind(); animator.Update(0f);
+                        // v223: same law — re-ground from the proven idle transform, never from
+                        // (possibly contaminated) renderer bounds.
+                        Log(log, "WARN walk frame rendered empty — recapturing idle pose at proven grounding");
+                        animator.Rebind();
+                        animator.Play("idle", 0, 0.4f);
+                        animator.Update(0.01f);
                         go.transform.position = posBeforeWalk;
-                        var brb = CombineBounds(renderers);
-                        go.transform.position -= new Vector3(brb.center.x, brb.min.y, brb.center.z);
                         cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
                         wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
                     }
