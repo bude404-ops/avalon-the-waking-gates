@@ -212,8 +212,9 @@ namespace AvalonForge
             int statesBuilt = 0;
             foreach (var (state, prefix) in States)
             {
-                var clip = FindClip(prefix);
-                if (clip == null) continue;
+                var clipRaw = FindClip(prefix);
+                if (clipRaw == null) continue;
+                var clip = InPlaceCopy(clipRaw, character, state, log);   // v225 ROOT-LOCK ENFORCEMENT
                 var st = sm.AddState(state, new Vector3(220f * statesBuilt, 0f));
                 st.motion = clip;
                 statesBuilt++;
@@ -223,6 +224,7 @@ namespace AvalonForge
             var anyState = sm.states.FirstOrDefault();
             if (!anyState.Equals(default(ChildAnimatorState))) sm.defaultState = anyState.state;
             animator.runtimeAnimatorController = ctrl;
+            animator.applyRootMotion = false;   // the shell drives locomotion via transform; clips animate limbs only
 
             // ---------- Stage 5: weapon socket ----------
             if (weapon != null)
@@ -430,6 +432,41 @@ namespace AvalonForge
             AssetDatabase.FindAssets("t:Prefab", new[] { Prefabs })
                 .Select(p => AssetDatabase.GUIDToAssetPath(p))
                 .Where(p => p.EndsWith("-GAME.prefab"));
+
+        // v225: THE CLASS-WALK FIX. The vaulted Aedan clips can still carry raw CMU capture-world
+        // Hips translation (63dm travel + 15.7dm vertical). Retargeted onto class rigs it flings the
+        // skeleton across capture coordinates — renderer bounds blew to 67x103x42 on a 1.95m rig
+        // (CI logs, Sept 13). CMU ROOT LOCK law enforced HERE, at forge time: every position curve
+        // (RootT / MotionT / m_LocalPosition) is locked to the bind convention (zero). Limbs carry
+        // the motion; the shell's locomotion owns the transform. If stripped == 0, the clip exposes
+        // no editable position curves and the walk failure is avatar-level, not root-level — the log
+        // line makes that split visible in CI.
+        static AnimationClip InPlaceCopy(AnimationClip src, string character, string state, System.Text.StringBuilder log)
+        {
+            var copy = UnityEngine.Object.Instantiate(src);
+            copy.name = src.name + "-IP";
+            int stripped = 0, failed = 0;
+            foreach (var b in AnimationUtility.GetCurveBindings(src))
+            {
+                string p = b.propertyName;
+                if (string.IsNullOrEmpty(p)) continue;
+                if (p.StartsWith("RootT") || p.StartsWith("MotionT") || p.StartsWith("m_LocalPosition"))
+                {
+                    try
+                    {
+                        var zero = new AnimationCurve(new Keyframe(0f, 0f), new Keyframe(Mathf.Max(0.01f, src.length), 0f));
+                        AnimationUtility.SetEditorCurve(copy, b, zero);
+                        stripped++;
+                    }
+                    catch { failed++; }
+                }
+            }
+            Log(log, $"Clip {src.name}: in-place root-lock — {stripped} position curves zeroed" + (failed > 0 ? $", {failed} not editable" : "") + (stripped == 0 && failed == 0 ? " (no position curves exposed — avatar-level suspect)" : ""));
+            string path = $"{Root}/Animators/{character}-{state}-IP.anim";
+            try { if (System.IO.File.Exists(path)) AssetDatabase.DeleteAsset(path); } catch { }
+            AssetDatabase.CreateAsset(copy, path);
+            return copy;
+        }
 
         static AnimationClip FindClip(string prefix)
         {
