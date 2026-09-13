@@ -1,10 +1,11 @@
 # AUTO-FORGE RUNBOOK — Operating the Pipeline (Big's seat)
 
-**FORGE PRIORITY LAW (Sept 11 ~6:35 PM ET, Big: 'Hold on the other class models until the sovereign is completed to final finish game quality'):**
-THE SOVEREIGN IS THE SINGLE ACTIVE FORGE TARGET. Bring the Sovereign (Aedan) to FINAL, FINISHED GAME QUALITY —
-mesh QC, rig polish, root-locked idle/walk mocap, materials, weapon socket, QC render, GAMED prefab, in-shell integration.
-ALL other class models (Ravager, Warden, Veilborn, Weaver, Wildborn — any batch already started) are HELD until Big
-rules the Sovereign done. Do not generate, rig, or forge any other class until then.
+**FORGE PRIORITY LAW — AMENDED (Sept 13 ~12:50 PM ET, Big: 'i also think we can start building the other 3d models, aedan isnt finished quality but is a good start to at least get the other 3d models made'):**
+The Sept 11 sovereign-only hold is RELAXED by its own author. The Sovereign (Aedan) continues toward FINAL, FINISHED
+GAME QUALITY in parallel, but the other class models are now AUTHORIZED to build down the zero-human chain.
+QUEUE ORDER: Ravager (turnaround plate exists) → Warden → Veilborn → Weaver → Wildborn — M variants first,
+F per class spec on request. Heights: Ravager 1.95 (broad) | Warden 1.75 | Veilborn 1.78 | Weaver 1.72 | Wildborn 1.82.
+Aedan's final-quality polish pass continues alongside; every model ships only after QC vs its canon key.
 
 
 **Doctrine:** docs/AVALON-UNITY-AUTOMATED-PIPELINE.md. Big generates + verdicts.
