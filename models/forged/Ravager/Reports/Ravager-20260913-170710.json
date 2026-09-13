@@ -1,0 +1,10 @@
+{
+  "character": "Ravager",
+  "input": "Assets/AvalonForge/Generated/Ravager-M.fbx",
+  "avatar_valid": true,
+  "states_built": 2,
+  "weapon": "none",
+  "prefab": "Assets/AvalonForge/Prefabs/Ravager-GAME.prefab",
+  "prefab_ok": true,
+  "log": "AUTO-FORGE run: character=Ravager input=Assets/AvalonForge/Generated/Ravager-M.fbx weapon=none height=1.95\nHumanoid avatar: OK (auto bone-mapped)\nNormalized: height 1.036 -> 1.95 (x1.882), centered on origin\nAnimator state 'idle' <- 07_01|idle_07_01\nAnimator state 'walk' <- 07_01|walk_07_01\nNo weapon — skipped (weapons are separate props per Weaponless Plate Law)\nQC render captured: Assets/AvalonForge/QCShots/Ravager-idle.png\nQC walk frame captured: Assets/AvalonForge/QCShots/Ravager-walk.png\nPrefab saved: Assets/AvalonForge/Prefabs/Ravager-GAME.prefab (OK)\n"
+}
