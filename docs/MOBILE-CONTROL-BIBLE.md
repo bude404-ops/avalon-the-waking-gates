@@ -40,3 +40,13 @@ Reference class: Genshin Impact / Zenless Zone Zero mobile (the proven mobile-fi
 - **Stage C**: BELIEVE button wired to the BELIEF meter + hit-stop + telegraph pass — full feel layer before the Mutefolk deploy so the enemies land in a system that already flows.
 
 All Unity built-ins (EventSystem drag handlers, Cinemachine) — zero Tool Law exceptions. CMU clips for any new anims (roll, run) per pipeline law.
+
+
+## 6. ABILITIES & FEEDBACK ADDENDUM (Big, Sept 13: "do we need to modify abilities and such to match it... damage numbers and stuff")
+- **DAMAGE NUMBERS: NO — already banned by the locked HUD law** (no numbers in combat, Sept 11 canon plate). Combat math lives under the hood; the screen never prints it. Floating damage text is the single most common AAA-console habit that breaks the canon's stark read — never ships.
+- **How damage is FELT instead:** hit-stop (~60ms) scales with the blow's weight; foes visibly stagger, flare corpse-light on hits, and their ember dims as they weaken — condition is READ, never counted. Heavy strikes get a longer hit-stop + a low drum thud (diegetic-first sound law).
+- **Abilities re-fit to the flow:** every class-lineage ability is one press on the BELIEVE button, fires at the soft/hard-locked target (no manual aim on mobile), wind-up is telegraphed, cooldown is the button's bronze fill sweep (never a number). BELIEF charges by deeds only (oath choices, waymark kindling) — the anti-grind soul.
+- **Progression stays hidden:** mastery/cosmetic growth per the Progression & Player-Respect Law — power exists, screens don't show it.
+
+## 7. STAGE A — SHIPPED (v215)
+Floating joystick (left half, spawns under thumb) + quick-tap walk orders + right-half camera orbit + 3s auto-follow behind the heading + pinch zoom. Procedural bronze-lip joystick (no asset, Tool Law). Combat cluster = Stage B.

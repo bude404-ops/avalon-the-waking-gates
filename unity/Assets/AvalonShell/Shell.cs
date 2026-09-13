@@ -48,6 +48,11 @@ namespace AvalonShell
         Text selectReadout;
         Canvas canvas;
         Vector3 walkTarget; bool hasWalkTarget; const float walkSpeed = 1.4f;
+        // MOBILE-CONTROL-BIBLE Stage A: floating joystick (left half) + camera split (right half)
+        int joyFinger = -1, camFinger = -1;
+        Vector2 joyOrigin; bool joyActive; Vector2 joyVec;
+        Image joyBaseImg, joyNubImg;
+        float lastCamDragT = -99f;
         bool maybeTap; Vector2 tapStart;
         int questStage = 0;                 // 0 reach the hearth, 1 carry (3 encounters), 2 to the gate, 3 complete
         bool[] met = new bool[3];
@@ -853,35 +858,66 @@ namespace AvalonShell
         Vector2 lastTouch0, lastTouch1; bool dragging;
         void Update()
         {
-            bool overUI = EventSystem.current != null &&
-                ((Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject()) ||
-                 (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)));
+            // ================= MOBILE-CONTROL-BIBLE Stage A: left = move, right = look =================
+            bool overUI = EventSystem.current != null;
             if (state == State.Game && model != null && storyCard == null)
             {
-                // tap (not drag) = walk order; drag stays orbit
-                if (Input.touchCount == 1 && !overUI)
+                EnsureJoystick();
+                float leftW = Screen.width * 0.5f;
+                // ---- touch: joystick (left half) / camera (right half) / quick-tap = walk order ----
+                for (int i = 0; i < Input.touchCount; i++)
                 {
-                    var t0 = Input.GetTouch(0);
-                    if (t0.phase == TouchPhase.Began) { maybeTap = true; tapStart = t0.position; }
-                    else if (t0.phase == TouchPhase.Moved && maybeTap && (t0.position - tapStart).sqrMagnitude > 500f) maybeTap = false;
-                    else if (t0.phase == TouchPhase.Ended && maybeTap) { TryWalkTo(t0.position); maybeTap = false; }
+                    var t = Input.GetTouch(i);
+                    bool uiHit = overUI && t.phase == TouchPhase.Began && EventSystem.current.IsPointerOverGameObject(t.fingerId);
+                    if (uiHit) continue;
+                    if (t.phase == TouchPhase.Began)
+                    {
+                        if (t.position.x < leftW && joyFinger == -1)
+                        {
+                            joyFinger = t.fingerId; joyOrigin = t.position; joyActive = false; tapStart = t.position; maybeTap = true;
+                        }
+                        else if (camFinger == -1) { camFinger = t.fingerId; lastTouch0 = t.position; dragging = true; }
+                    }
+                    else if (t.fingerId == joyFinger)
+                    {
+                        var d = t.position - joyOrigin;
+                        if (!joyActive && d.sqrMagnitude > 480f) { joyActive = true; maybeTap = false; hasWalkTarget = false; }
+                        if (joyActive)
+                        {
+                            joyVec = Vector2.ClampMagnitude(d / 95f, 1f);
+                            joyBaseImg.gameObject.SetActive(true);
+                            joyBaseImg.rect().anchoredPosition = joyOrigin / canvas.scaleFactor;
+                            joyNubImg.rect().anchoredPosition = joyVec * 60f;
+                        }
+                        if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled)
+                        {
+                            if (!joyActive && maybeTap) { TryWalkTo(t.position); maybeTap = false; }
+                            joyFinger = -1; joyActive = false; joyVec = Vector2.zero;
+                            if (joyBaseImg != null) joyBaseImg.gameObject.SetActive(false);
+                        }
+                    }
+                    else if (t.fingerId == camFinger)
+                    {
+                        if (t.phase == TouchPhase.Moved) { camYaw += (t.position.x - lastTouch0.x) * 0.4f; lastTouch0 = t.position; lastCamDragT = Time.time; }
+                        if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) { camFinger = -1; dragging = false; }
+                    }
                 }
-                else if (Input.GetMouseButtonDown(0) && !overUI) { maybeTap = true; tapStart = Input.mousePosition; }
-                else if (Input.GetMouseButton(0) && maybeTap && (((Vector2)Input.mousePosition) - tapStart).sqrMagnitude > 500f) maybeTap = false;
-                else if (Input.GetMouseButtonUp(0) && maybeTap) { TryWalkTo(Input.mousePosition); maybeTap = false; }
+                // ---- mouse fallback (editor/QA): quick click = walk, drag = orbit ----
+                if (Input.touchCount == 0)
+                {
+                    if (Input.GetMouseButtonDown(0) && !(overUI && EventSystem.current.IsPointerOverGameObject())) { maybeTap = true; tapStart = Input.mousePosition; dragging = true; lastTouch0 = Input.mousePosition; }
+                    else if (Input.GetMouseButton(0) && maybeTap && (((Vector2)Input.mousePosition) - tapStart).sqrMagnitude > 500f) maybeTap = false;
+                    else if (Input.GetMouseButton(0) && dragging) { camYaw += ((Vector2)Input.mousePosition - lastTouch0).x * 0.35f; lastTouch0 = Input.mousePosition; lastCamDragT = Time.time; }
+                    else if (Input.GetMouseButtonUp(0)) { if (maybeTap) { TryWalkTo(Input.mousePosition); maybeTap = false; } dragging = false; }
+                }
             }
-            else maybeTap = false;
-            if (Input.touchCount == 1 && !overUI)
+            else
             {
-                var t = Input.GetTouch(0);
-                if (t.phase == TouchPhase.Began) { dragging = true; lastTouch0 = t.position; }
-                else if (t.phase == TouchPhase.Moved && dragging) { camYaw += (t.position.x - lastTouch0.x) * 0.4f; lastTouch0 = t.position; }
-                else if (t.phase == TouchPhase.Ended) dragging = false;
+                maybeTap = false; joyFinger = -1; camFinger = -1; joyActive = false; joyVec = Vector2.zero;
+                if (joyBaseImg != null) joyBaseImg.gameObject.SetActive(false);
             }
-            else if (Input.GetMouseButtonDown(0) && !overUI) { dragging = true; lastTouch0 = Input.mousePosition; }
-            else if (Input.GetMouseButton(0) && dragging) { camYaw += ((Vector2)Input.mousePosition - lastTouch0).x * 0.35f; lastTouch0 = Input.mousePosition; }
-            else if (Input.GetMouseButtonUp(0)) dragging = false;
 
+            // pinch zoom (any two fingers) + wheel
             if (Input.touchCount == 2)
             {
                 var t0 = Input.GetTouch(0); var t1 = Input.GetTouch(1);
@@ -896,7 +932,30 @@ namespace AvalonShell
             // --- walking the route (root-locked walk clip carries the stride; transform carries the travel) ---
             if (state == State.Game && model != null)
             {
-                if (hasWalkTarget)
+                // --- Stage A: floating joystick drives the Sovereign (camera-relative, eased facing) ---
+                if (joyActive && joyVec.sqrMagnitude > 0.02f)
+                {
+                    hasWalkTarget = false;
+                    float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
+                    var fwd = new Vector3(-sy, 0, -cy);                                  // camera -> player forward
+                    var right = Vector3.Cross(fwd, Vector3.up);
+                    var dir = Vector3.ClampMagnitude(fwd * joyVec.y + right * joyVec.x, 1f);
+                    float spd = walkSpeed * 1.35f * Mathf.Clamp01(dir.magnitude);        // push full = run-read
+                    if (dir.sqrMagnitude > 0.02f)
+                    {
+                        model.transform.position += dir * (spd * Time.deltaTime);
+                        model.transform.rotation = Quaternion.Slerp(model.transform.rotation, Quaternion.LookRotation(dir), 10f * Time.deltaTime);
+                    }
+                    if (animator && !animator.GetCurrentAnimatorStateInfo(0).IsName("walk")) animator.CrossFade("walk", 0.2f);
+                    // auto-follow: after 3s without manual orbit, the camera eases behind the heading
+                    if (Time.time - lastCamDragT > 3f)
+                    {
+                        float wantYaw = Mathf.Atan2(-dir.x, -dir.z) * Mathf.Rad2Deg;
+                        float dyaw = Mathf.DeltaAngle(camYaw, wantYaw);
+                        camYaw += dyaw * Mathf.Clamp01(1.6f * Time.deltaTime);
+                    }
+                }
+                else if (hasWalkTarget)
                 {
                     var p = model.transform.position; var d = walkTarget - p; d.y = 0;
                     if (d.magnitude < 0.12f) { hasWalkTarget = false; if (animator) animator.CrossFade("idle", 0.25f); }
@@ -917,6 +976,51 @@ namespace AvalonShell
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
             cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
             cam.transform.LookAt(target);
+        }
+
+        // ================= floating joystick (Stage A) =================
+        Sprite MakeDiscSprite(bool ring)
+        {
+            int N = 128; var tex = new Texture2D(N, N, TextureFormat.RGBA32, false);
+            float c = (N - 1) * 0.5f;
+            for (int y = 0; y < N; y++) for (int x = 0; x < N; x++)
+            {
+                float r = Mathf.Sqrt((x - c) * (x - c) + (y - c) * (y - c)) / c;
+                Color col = new Color(0, 0, 0, 0);
+                if (ring)
+                {
+                    if (r < 0.44f) col = new Color(0.04f, 0.045f, 0.055f, 0.42f);          // dark slate fill
+                    else if (r < 0.50f) col = new Color(0.639f, 0.537f, 0.353f, 0.92f);    // bronze lip
+                }
+                else
+                {
+                    if (r < 0.42f) col = new Color(0.90f, 0.86f, 0.79f, 0.88f);            // cream nub
+                    else if (r < 0.50f) col = new Color(0.639f, 0.537f, 0.353f, 0.95f);    // bronze edge
+                }
+                tex.SetPixel(x, y, col);
+            }
+            tex.Apply();
+            return Sprite.Create(tex, new Rect(0, 0, N, N), new Vector2(0.5f, 0.5f), N / 0.5f * 0.5f);
+        }
+
+        void EnsureJoystick()
+        {
+            if (joyBaseImg != null) return;
+            var g = new GameObject("JoyBase");
+            g.transform.SetParent(canvas.transform, false);
+            joyBaseImg = g.AddComponent<Image>();
+            joyBaseImg.sprite = MakeDiscSprite(true); joyBaseImg.raycastTarget = false;
+            var brt = joyBaseImg.rect();
+            brt.anchorMin = brt.anchorMax = Vector2.zero; // pixel-pos driven
+            brt.sizeDelta = new Vector2(190, 190); brt.anchoredPosition = new Vector2(-500, -500);
+            var n = new GameObject("JoyNub");
+            n.transform.SetParent(g.transform, false);
+            joyNubImg = n.AddComponent<Image>();
+            joyNubImg.sprite = MakeDiscSprite(false); joyNubImg.raycastTarget = false;
+            var nrt = joyNubImg.rect();
+            nrt.anchorMin = nrt.anchorMax = new Vector2(0.5f, 0.5f);
+            nrt.sizeDelta = new Vector2(78, 78);
+            g.SetActive(false);
         }
 
         // ================= ui factory =================
