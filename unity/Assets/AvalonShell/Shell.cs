@@ -476,6 +476,11 @@ namespace AvalonShell
                         SetState(State.Game);
                     }
                 });
+                // BUILD STAMP (Big's "same one" verdict Sept 13): every shell self-identifies on the title
+                // plate so there is never any doubt about which build is running. Muted, bottom-right,
+                // sits beside the plate's own baked version line — never covers carved art.
+                var stampTxt = Label(p.transform, "SHELL v" + InstalledVersionCode() + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
+                stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
                 PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); });
                 PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { SetState(State.Select); });
                 PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null);

@@ -9,6 +9,8 @@ WWW="$(cd "$(dirname "$0")" && pwd)/app/assets/www"
 STAMP="$(date +%Y.%m.%d)-$(( $(date +%H) * 60 + $(date +%M) ))"
 
 [ -d "$PAGES/.git" ] || git clone "https://github.com/mcontwitter-glitch/avalon-3d-viewer.git" "$PAGES"
+git config --global user.name "BIGagent404" 2>/dev/null || true
+git config --global user.email "info@bigfoot404.biz" 2>/dev/null || true
 cd "$PAGES" && git pull -q origin main
 
 mkdir -p live/ui live/models live/art
