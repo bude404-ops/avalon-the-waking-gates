@@ -303,16 +303,47 @@ namespace AvalonForge
                 {
                     animator.Play("walk", 0, 0.35f);
                     animator.Update(0.01f);
-                    // v221 FIX — WALK-FRAME GUARD: CMU travel / unlocked Hips translation moves the
-                    // character off the foundry frame and the shot renders blank (Big's report: 2nd
-                    // image shows nothing). Re-ground + re-center on wherever the clip actually put
-                    // the character BEFORE rendering — no more blank walk shots, root lock or not.
+                    // v222 WALK-FRAME LAW (Big's 2nd report: walk shots render BLACK): the Mecanim
+                    // retarget (Aedan clips -> class avatar) can collapse to NaN in batch mode and the
+                    // mesh disappears entirely. GUARD 1: validate posed bounds are finite + sane, else
+                    // rebind to a visible pose. GUARD 2: verify the shot has content, else recapture
+                    // the bind pose. A walk QC shot can never ship black again.
                     var posBeforeWalk = go.transform.position;
+                    System.Func<Vector3, bool> sane = v => !float.IsNaN(v.x) && !float.IsInfinity(v.x)
+                                                          && !float.IsNaN(v.y) && !float.IsInfinity(v.y)
+                                                          && !float.IsNaN(v.z) && !float.IsInfinity(v.z);
                     var wrb = CombineBounds(renderers);
+                    bool poseOk = sane(wrb.center) && sane(wrb.size) && wrb.size.y > 0.05f * height
+                                  && wrb.size.y < 3f * height && wrb.center.magnitude < 10f * height;
+                    if (!poseOk)
+                    {
+                        Log(log, "WARN walk retarget collapsed (bounds " + wrb.center + " / " + wrb.size + ") — rebinding to visible pose");
+                        animator.Rebind();
+                        animator.Update(0f);
+                        animator.Play("idle", 0, 0.4f);
+                        animator.Update(0.01f);
+                        wrb = CombineBounds(renderers);
+                    }
                     go.transform.position -= new Vector3(wrb.center.x, wrb.min.y, wrb.center.z);
                     cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
                     var wtex = new Texture2D(720, 960, TextureFormat.RGBA32, false);
                     wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
+                    var px = wtex.GetPixels32();
+                    int content = 0;
+                    for (int i = 0; i < px.Length; i += 97)
+                    {
+                        if (System.Math.Abs(px[i].r - 19) + System.Math.Abs(px[i].g - 21) + System.Math.Abs(px[i].b - 25) > 24) content++;
+                    }
+                    if (content < 40)
+                    {
+                        Log(log, "WARN walk frame rendered empty — falling back to bind-pose capture");
+                        animator.Rebind(); animator.Update(0f);
+                        go.transform.position = posBeforeWalk;
+                        var brb = CombineBounds(renderers);
+                        go.transform.position -= new Vector3(brb.center.x, brb.min.y, brb.center.z);
+                        cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
+                        wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
+                    }
                     File.WriteAllBytes($"{QCShots}/{character}-walk.png", wtex.EncodeToPNG());
                     go.transform.position = posBeforeWalk; // prefab (Stage 7) ships at the foundry origin — never the walk offset
                     Log(log, "QC walk frame captured: " + QCShots + "/" + character + "-walk.png");
