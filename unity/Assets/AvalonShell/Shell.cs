@@ -262,17 +262,6 @@ namespace AvalonShell
 
         // ================= canon plates as screens (Big, Sept 13: the update "isn't what it should be like") =================
         // The plates he approved ARE the UI — full-screen plate art with invisible tap zones over the carved options.
-        // A square plate letterboxed into any orientation: the plate rect is fitted every frame.
-        void FitPlate(RectTransform rt, Sprite sp)
-        {
-            if (rt == null || sp == null) return;
-            var cs = canvas.GetComponent<RectTransform>().rect;
-            float side = Mathf.Min(cs.width, cs.height);
-            rt.anchorMin = new Vector2(0.5f - side / (2f * cs.width), 0.5f - side / (2f * cs.height));
-            rt.anchorMax = new Vector2(0.5f + side / (2f * cs.width), 0.5f + side / (2f * cs.height));
-            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
-        }
-
         readonly List<RectTransform> plates = new List<RectTransform>();
         GameObject PlateScreen(Transform parent, string plateName)
         {
