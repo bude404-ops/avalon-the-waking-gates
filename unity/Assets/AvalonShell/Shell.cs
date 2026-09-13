@@ -217,21 +217,33 @@ namespace AvalonShell
                 var shade = Panel(p.transform, "Shade", new Color(0.03f, 0.033f, 0.04f, 0.62f));
                 shade.transform.Stretch();
             }
-            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            title.rect().anchorMin = new Vector2(0, 0.46f); title.rect().anchorMax = new Vector2(1, 0.72f);
+            // MOCKUP menu-main: AVALON overline, hero = THE WAKING GATES, vertical menu left of center
+            var over = Label(p.transform, "AVALON", 15, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            over.rect().anchorMin = new Vector2(0, 0.64f); over.rect().anchorMax = new Vector2(1, 0.69f);
+            var title = Label(p.transform, "THE WAKING GATES", 46, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.51f); title.rect().anchorMax = new Vector2(1, 0.64f);
             var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
             var rule = Panel(p.transform, "Rule", ruleCol);
             var rrt = rule.rect();
-            rrt.anchorMin = new Vector2(0.30f, 0.455f); rrt.anchorMax = new Vector2(0.70f, 0.459f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
-            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
+            rrt.anchorMin = new Vector2(0.33f, 0.505f); rrt.anchorMax = new Vector2(0.67f, 0.509f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
             var tag = Label(p.transform, "ALPHA REVIEW — UNITY STAGE", 11, Hex(0x8a8578), TextAnchor.MiddleCenter);
             tag.rect().anchorMin = new Vector2(0, 0.06f); tag.rect().anchorMax = new Vector2(1, 0.12f);
-            var enter = Btn(p.transform, "ENTER THE GATES", 16);
-            var ert = enter.transform as RectTransform;
-            ert.anchorMin = new Vector2(0.5f, 0.22f); ert.anchorMax = new Vector2(0.5f, 0.22f);
-            ert.sizeDelta = new Vector2(280, 56);
-            enter.onClick.AddListener(() => SetState(State.Select));
+            // vertical menu per mockup: NEW GAME live (» marker), CONTINUE + SETTINGS sealed until saves/options ship
+            string[] menu = { "NEW GAME", "CONTINUE", "SETTINGS" };
+            for (int i = 0; i < menu.Length; i++)
+            {
+                bool live = i == 0;
+                var it = Label(p.transform, (live ? "»  " : "     ") + menu[i], 22, live ? Hex(0xe6ddca) : Hex(0x6f6a5e), TextAnchor.MiddleLeft);
+                float y = 0.385f - i * 0.075f;
+                it.rect().anchorMin = new Vector2(0.185f, y); it.rect().anchorMax = new Vector2(0.46f, y + 0.065f);
+                if (live)
+                {
+                    var b = it.gameObject.AddComponent<Button>();
+                    b.onClick.AddListener(() => SetState(State.Select));
+                }
+            }
+            var seal = Label(p.transform, "CONTINUE + SETTINGS SEAL WITH THE FULL GAME", 10, Hex(0x6f6a5e), TextAnchor.MiddleLeft);
+            seal.rect().anchorMin = new Vector2(0.185f, 0.09f); seal.rect().anchorMax = new Vector2(0.60f, 0.13f);
             return p;
         }
 
@@ -242,8 +254,8 @@ namespace AvalonShell
             p.transform.Stretch();
             var dim = Panel(p.transform, "Dim", new Color(0, 0, 0, 0.35f));
             dim.transform.Stretch();
-            var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
-            head.rect().anchorMin = new Vector2(0, 0.90f); head.rect().anchorMax = new Vector2(1, 0.99f);
+            var head = Label(p.transform, "CHOOSE YOUR PATH", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.74f); head.rect().anchorMax = new Vector2(1, 0.82f);
 
             for (int i = 0; i < CLASSES.Length; i++)
             {
@@ -277,14 +289,18 @@ namespace AvalonShell
                 b.onClick.AddListener(() => SelectCard(captured));
             }
 
-            var enter = Btn(p.transform, "BEGIN THE WAKENING", 14);
+            // MOCKUP class-select: SELECT + BACK side by side under the card strip
+            var enter = Btn(p.transform, "SELECT", 14);
             var ert = enter.transform as RectTransform;
-            ert.anchorMin = new Vector2(0.5f, 0.08f); ert.anchorMax = new Vector2(0.5f, 0.08f);
-            ert.sizeDelta = new Vector2(240, 48);
+            ert.anchorMin = new Vector2(0.5f, 0.11f); ert.anchorMax = new Vector2(0.5f, 0.11f);
+            ert.sizeDelta = new Vector2(150, 48);
+            ert.anchoredPosition = new Vector2(-88, 0);
             enter.onClick.AddListener(() => SetState(State.Game));
-            var back = Btn(p.transform, "BACK", 12);
+            var back = Btn(p.transform, "BACK", 14);
             var brt = back.transform as RectTransform;
-            brt.anchorMin = new Vector2(0.01f, 0.95f); brt.anchorMax = new Vector2(0.16f, 0.99f); brt.offsetMax = Vector2.zero; brt.offsetMin = Vector2.zero;
+            brt.anchorMin = new Vector2(0.5f, 0.11f); brt.anchorMax = new Vector2(0.5f, 0.11f);
+            brt.sizeDelta = new Vector2(150, 48);
+            brt.anchoredPosition = new Vector2(88, 0);
             back.onClick.AddListener(() => SetState(State.Title));
             return p;
         }
@@ -308,8 +324,8 @@ namespace AvalonShell
                 if (portrait) { row = i / 3; col = i % 3; }
                 else { row = 0; col = i; }
                 float cw = 1f / (portrait ? 3 : CLASSES.Length);
-                float yMax = portrait ? (row == 0 ? 0.94f : 0.44f) : 0.80f;
-                float yMin = portrait ? (row == 0 ? 0.50f : 0.02f) : 0.26f;
+                float yMax = portrait ? (row == 0 ? 0.94f : 0.44f) : 0.66f;
+                float yMin = portrait ? (row == 0 ? 0.50f : 0.02f) : 0.32f;
                 crt.anchorMin = new Vector2(cw * col + 0.008f, yMin);
                 crt.anchorMax = new Vector2(cw * (col + 1) - 0.008f, yMax);
             }
@@ -336,19 +352,19 @@ namespace AvalonShell
             hpBack.rect().anchorMin = new Vector2(0.01f, 0.885f); hpBack.rect().anchorMax = new Vector2(0.38f, 0.935f);
             var hpFill = Panel(hpBack.transform, "HPFill", new Color(0.42f, 0.47f, 0.55f, 0.95f));
             hpFill.rect().anchorMin = new Vector2(0.02f, 0.25f); hpFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
-            var hpLbl = Label(hpBack.transform, "HEALTH", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            var hpLbl = Label(hpBack.transform, "HEALTH  1480 / 1500", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             hpLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); hpLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); hpLbl.rect().offsetMin = new Vector2(8, 0);
             var spBack = Panel(p.transform, "SPBack", new Color(0.039f, 0.043f, 0.051f, 0.88f));
             spBack.rect().anchorMin = new Vector2(0.01f, 0.835f); spBack.rect().anchorMax = new Vector2(0.38f, 0.885f);
             var spFill = Panel(spBack.transform, "SPFill", new Color(0.64f, 0.54f, 0.35f, 0.95f));
             spFill.rect().anchorMin = new Vector2(0.02f, 0.25f); spFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
-            var spLbl = Label(spBack.transform, "BELIEF", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            var spLbl = Label(spBack.transform, "BELIEF  85 / 110", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             spLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); spLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); spLbl.rect().offsetMin = new Vector2(8, 0);
 
-            // HUD: quest tracker under the reliquary
+            // HUD: quest tracker BOTTOM-LEFT per mockup — Cold Reliquary quest line
             var quest = Panel(p.transform, "Quest", new Color(0.039f, 0.043f, 0.051f, 0.82f));
-            quest.rect().anchorMin = new Vector2(0.62f, 0.885f); quest.rect().anchorMax = new Vector2(0.99f, 0.935f);
-            var qLbl = Label(quest.transform, "QUEST — THE GATES AWAKEN (I)", 10, Hex(0xa3895a), TextAnchor.MiddleRight);
+            quest.rect().anchorMin = new Vector2(0.01f, 0.115f); quest.rect().anchorMax = new Vector2(0.38f, 0.175f);
+            var qLbl = Label(quest.transform, "QUEST — LIGHT THE BRAZIER AT THE WAKING GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
             qLbl.rect().Stretch(quest.transform); qLbl.rect().offsetMin = new Vector2(10, 0); qLbl.rect().offsetMax = new Vector2(-12, 0);
 
             // HUD top-right: reliquary (unlit)
