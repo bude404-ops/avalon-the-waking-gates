@@ -67,6 +67,18 @@ namespace AvalonShell
         readonly List<RectTransform> cardRects = new List<RectTransform>();
         bool wasPortrait;
 
+        // AVALON-LIT: real material asset staged by the build (its shader is
+        // reference-counted into the APK by the asset itself). Runtime Shader.Find
+        // returns null for stripped shaders -> missing material -> the v215
+        // pink/black boot screen. Never do that again.
+        static Material litMat;
+        Material Lit()
+        {
+            if (litMat == null) litMat = Resources.Load<Material>("AVALON-LIT");
+            return litMat;
+        }
+        Material Lit(Color c) { var m = Lit(); if (m == null) return null; m = Instantiate(m); m.color = c; return m; }
+
         void Start()
         {
             stagePivot = new GameObject("StagePivot").transform;
@@ -79,15 +91,21 @@ namespace AvalonShell
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.42f, 0.42f, 0.45f);
 
-            // --- The Cold Reliquary ground: cold slate floor for the route (collider for tap-to-walk) ---
-            var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
-            ground.name = "Ground"; ground.transform.position = Vector3.zero; ground.transform.localScale = new Vector3(4, 1, 4);
-            var gmat = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
-            if (gmat != null) { gmat.color = new Color(0.055f, 0.06f, 0.075f); ground.GetComponent<MeshRenderer>().material = gmat; }
-            // --- Waymarks: dark stone pillars, amber crown light (Fire-Color Law — mortal fire is natural amber) ---
-            MakeWaymark(hearthPos, "OathHearthMark");
-            for (int i = 0; i < encPos.Length; i++) MakeWaymark(encPos[i], "EncounterMark" + i);
-            MakeWaymark(gatePos, "CinderGateMark");
+            // --- world layer: armor-clad — a world-building failure must never
+            //     kill the title UI again (v215 pink/black boot lesson) ---
+            try
+            {
+                // The Cold Reliquary ground: cold slate floor for the route (collider for tap-to-walk)
+                var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+                ground.name = "Ground"; ground.transform.position = Vector3.zero; ground.transform.localScale = new Vector3(4, 1, 4);
+                var gmat = Lit(new Color(0.055f, 0.06f, 0.075f));
+                if (gmat != null) { ground.GetComponent<MeshRenderer>().material = gmat; ground.GetComponent<MeshRenderer>().enabled = gmat != null; }
+                // Waymarks: dark stone pillars, amber crown light (Fire-Color Law — mortal fire is natural amber)
+                MakeWaymark(hearthPos, "OathHearthMark");
+                for (int i = 0; i < encPos.Length; i++) MakeWaymark(encPos[i], "EncounterMark" + i);
+                MakeWaymark(gatePos, "CinderGateMark");
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] world layer failed (UI continues): " + e.Message); }
 
             Screen.orientation = ScreenOrientation.AutoRotation;
             Screen.autorotateToPortrait = true;
@@ -819,20 +837,18 @@ namespace AvalonShell
             var pillar = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
             pillar.name = name; pillar.transform.position = pos + new Vector3(0, 0.45f, 0);
             pillar.transform.localScale = new Vector3(0.22f, 0.45f, 0.22f);
-            var m = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
+            var m = Lit(new Color(0.08f, 0.085f, 0.10f));
             if (m != null)
             {
-                m.color = new Color(0.08f, 0.085f, 0.10f);
                 if (m.HasProperty("_EmissionColor")) { m.EnableKeyword("_EMISSION"); m.SetColor("_EmissionColor", new Color(0.0f, 0.0f, 0.0f)); }
                 pillar.GetComponent<MeshRenderer>().material = m;
             }
             var coal = GameObject.CreatePrimitive(PrimitiveType.Cube);
             coal.name = name + "Flame"; coal.transform.SetParent(pillar.transform, false);
             coal.transform.localPosition = new Vector3(0, 0.52f, 0); coal.transform.localScale = new Vector3(0.13f, 0.10f, 0.13f);
-            var fm = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
+            var fm = Lit(new Color(1f, 0.62f, 0.25f));
             if (fm != null)
             {
-                fm.color = new Color(1f, 0.62f, 0.25f);
                 if (fm.HasProperty("_EmissionColor")) { fm.EnableKeyword("_EMISSION"); fm.SetColor("_EmissionColor", new Color(1.9f, 0.85f, 0.2f)); }
                 coal.GetComponent<MeshRenderer>().material = fm;
             }

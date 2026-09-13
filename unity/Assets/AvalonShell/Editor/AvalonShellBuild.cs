@@ -29,6 +29,19 @@ namespace AvalonShell
 
             // Copy forged prefabs into Resources (GUIDs preserved via .meta siblings)
             Directory.CreateDirectory("Assets/AvalonShell/Resources");
+            Directory.CreateDirectory("Assets/AvalonShell/Resources");
+
+            // AVALON-LIT material asset — the ONLY sanctioned way to get a lit material at
+            // runtime: the asset's shader reference keeps Standard in the build (Shader.Find
+            // alone gets stripped -> v215 pink/black boot). Editor-time Shader.Find is safe.
+            var std = Shader.Find("Standard");
+            if (std == null) throw new Exception("[SHELL] FATAL: Standard shader not found in editor — cannot stage AVALON-LIT");
+            var lit = new Material(std);
+            lit.color = new Color(0.5f, 0.5f, 0.5f);
+            AssetDatabase.CreateAsset(lit, "Assets/AvalonShell/Resources/AVALON-LIT.mat");
+            AssetDatabase.SaveAssets();
+            Debug.Log("[SHELL] staged material: AVALON-LIT.mat (Standard included)");
+
             Directory.CreateDirectory("Assets/AvalonShell/Resources/Art");
             foreach (var art in new[] { "MAP1-COLD-RELIQUARY-ASHFALL-CANON.png",
                 "UI-MAIN-MENU-CANON.png", "UI-CLASS-SELECT-CANON.png",
