@@ -38,7 +38,9 @@ namespace AvalonShell
                 if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged art: " + art); }
             }
             int staged = 0;
-            foreach (var f in Directory.GetFiles("Assets/AvalonForge/Prefabs", "*.prefab"))
+            // Guard: forged class prefabs don't exist until the forge lands (Sovereign-first law) —
+            // the shell runs fine on 2D canon art alone; skip silently when the folder is absent.
+            foreach (var f in (Directory.Exists("Assets/AvalonForge/Prefabs") ? Directory.GetFiles("Assets/AvalonForge/Prefabs", "*.prefab") : new string[0]))
             {
                 var name = Path.GetFileName(f);
                 File.Copy(f, "Assets/AvalonShell/Resources/" + name, true);
@@ -82,7 +84,15 @@ namespace AvalonShell
             // customMainManifest API removed in Unity 6000.x — Assets/Plugins/Android/AndroidManifest.xml
             // (install-permission for self-update) is picked up automatically when present.
             PlayerSettings.Android.minSdkVersion = AndroidSdkVersions.AndroidApiLevel26;
-            PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARMv7 | AndroidArchitecture.ARM64;
+            PlayerSettings.Android.targetSdkVersion = (AndroidSdkVersions)34; // Android 14+ (S22 Ultra)
+            // PROVEN clean-slate profile (stages 1-4 verified on SM-S908U): IL2CPP + ARM64-only.
+            PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+            PlayerSettings.Android.targetArchitectures = AndroidArchitecture.ARM64;
+            // Orientation law: both portrait + landscape with responsive reflow
+            PlayerSettings.allowedAutorotateToPortrait = true;
+            PlayerSettings.allowedAutorotateToPortraitUpsideDown = true;
+            PlayerSettings.allowedAutorotateToLandscapeLeft = true;
+            PlayerSettings.allowedAutorotateToLandscapeRight = true;
 
             var scenes = new[] { scenePath };
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath)));

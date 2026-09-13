@@ -1,0 +1,140 @@
+name: Shell APK (Final)
+
+# AVALON FINAL SHELL BUILD — Big's order Sept 12: "finish up the apk, stage 3 was working properly, then we can continue with Aedan."
+# Assembles the REAL shell (Shell.cs v2: TITLE -> CHARACTER SELECT -> IN-GAME HUD + skill tab,
+# canon 2D art, self-updater) on the stack stages 1-4 PROVED on Big's S22 Ultra:
+# stock UnityPlayerGameActivity launcher + AppCompat theme, GLES3-only, IL2CPP/ARM64,
+# target 34, 4-way orientation, SIGN GUARANTEE. NO auto-delivery — controlled delivery only.
+on:
+  workflow_dispatch:
+# stage 2 = same proven canary launcher, Unity scene behind it becomes a lit
+# rotating ember cube + status label (engine + renderer + run-loop proof).
+    inputs:
+      btok:
+        description: 'Telegram bot token (used for status relay only)'
+        required: true
+      uuser:
+        description: 'Unity account email'
+        required: true
+      upass:
+        description: 'Unity account password'
+        required: true
+      vcode:
+        description: 'APK bundleVersionCode (final shell series: 208+)'
+        required: false
+        default: '208'
+
+jobs:
+  shell:
+    name: Final shell APK (SM-S908U profile)
+    runs-on: ubuntu-latest
+    container: unityci/editor:ubuntu-6000.5.11f1-android-3.2.2
+    timeout-minutes: 40
+    env:
+      BIG_CHAT: "7257834686"
+      BTOK: ${{ inputs.btok }}
+      EXPECT_LAUNCHER: "com.unity3d.player.UnityPlayerGameActivity"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Activate license
+        run: |
+          LIC=$(find /opt/unity -type f -name "Unity.Licensing.Client" 2>/dev/null | head -1)
+          if [ -z "$LIC" ]; then LIC=$(find /opt/unity -type f -iname "*Licensing.Client*" ! -name "*.config" ! -name "*.dll" 2>/dev/null | head -1); fi
+          "$LIC" --activate-all --include-personal --username "${{ inputs.uuser }}" --password "${{ inputs.upass }}" > /tmp/act.log 2>&1 || true
+          grep -qiE "ASSIGN_SEAT|successfully" /tmp/act.log && echo "LICENSE OK" || (echo "LICENSE FAILED"; head -20 /tmp/act.log; exit 1)
+      - name: Scaffold project (proven module manifest)
+        run: |
+          mkdir -p unity/ProjectSettings unity/Packages
+          printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
+          printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.physics":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.androidjni":"1.0.0"}}\n' > unity/Packages/manifest.json
+          ls unity/Assets/AvalonShell/
+      - name: Build final shell APK
+        run: |
+          export AVALON_APK_OUT=$GITHUB_WORKSPACE/build/avalon-shell.apk
+          export AVALON_VCODE=${{ inputs.vcode }}
+          export AVALON_KEYSTORE=$GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          export ANDROID_NDK_ROOT=${ANDROID_NDK_ROOT:-/opt/android/ndk}
+          export JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-17-openjdk-amd64}
+          set +e
+          ls -la /opt/unity/Editor/Unity || echo "UNITY BINARY MISSING"
+          xvfb-run -a /opt/unity/Editor/Unity -batchmode -quit -logFile $GITHUB_WORKSPACE/shell-build.log -projectPath $GITHUB_WORKSPACE/unity -executeMethod AvalonShell.AvalonShellBuild.BuildForAndroid 2>/tmp/unity-stderr.log
+          CODE=$?
+          set -e
+          echo "SHELL BUILD EXIT: $CODE"
+          echo "=== unity stderr ==="
+          head -50 /tmp/unity-stderr.log || echo "(no stderr)"
+          echo "=== shell-build.log (all matches) ==="
+          grep -E "\[BARE\]|error CS|Exception" $GITHUB_WORKSPACE/shell-build.log | head -30 || true
+          echo "=== shell-build.log head (first 30 lines) ==="
+          head -30 $GITHUB_WORKSPACE/shell-build.log || echo "(no shell-build.log)"
+          echo "=== shell-build.log tail (last 60 lines) ==="
+          tail -60 $GITHUB_WORKSPACE/shell-build.log || echo "(no shell-build.log)"
+          echo "=== log file stats ==="
+          ls -la $GITHUB_WORKSPACE/shell-build.log || echo "(log file missing)"
+          if [ "$CODE" -ne 0 ]; then
+            exit 1
+          fi
+          ls -la $GITHUB_WORKSPACE/build/
+      - name: Launcher guarantee (stock Unity 6 launcher expected)
+        run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APK=$GITHUB_WORKSPACE/build/avalon-shell.apk
+          [ -f "$APK" ] || { echo "no apk"; exit 1; }
+          python3 -m pip install -q androguard 2>/dev/null || true
+          if ! python3 tools/apk-preview/verify_launcher.py "$APK"; then
+            echo "LAUNCHER FAIL — stock UnityPlayerGameActivity not the enabled main activity."
+            exit 1
+          fi
+          echo "UNITY LAUNCHER VERIFIED"
+      - name: SIGN GUARANTEE (always AVALON-DEMO, never trust Unity keystore)
+        run: |
+          export ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-/opt/android/sdk}
+          APKS=$(find /usr/local/lib/android/sdk /opt/android/sdk -maxdepth 3 -name apksigner -path "*build-tools*" 2>/dev/null | sort -V | tail -1 || true)
+          ZIPAL=""
+          if [ -n "$APKS" ]; then ZIPAL=$(dirname "$APKS")/zipalign; fi
+          if [ -z "$APKS" ]; then
+            echo "SDK apksigner not found - downloading build-tools r34"
+            curl -sL -o /tmp/bt.zip https://dl.google.com/android/repository/build-tools_r34-linux.zip
+            (cd /tmp && unzip -q -o bt.zip -d bt)
+            APKS=$(find /tmp/bt -name apksigner | head -1); ZIPAL=$(dirname "$APKS")/zipalign
+          fi
+          JAVACAND=$(find /usr/lib/jvm /usr/java -name java -type f 2>/dev/null | head -1 || true)
+          if [ -z "$JAVACAND" ]; then
+            echo "no JVM found - downloading temurin 17 JRE"
+            curl -sL -o /tmp/jre.tar.gz "https://api.adoptium.net/v3/binary/latest/17/ga/linux/x64/jre/hotspot/normal/eclipse"
+            mkdir -p /tmp/jre && tar -xzf /tmp/jre.tar.gz -C /tmp/jre --strip-components=1
+            JAVACAND=/tmp/jre/bin/java
+          fi
+          export PATH="$(dirname "$JAVACAND"):$PATH"
+          echo "java: $(which java || echo missing)"
+          echo "apksigner: $APKS"
+          APK=$GITHUB_WORKSPACE/build/avalon-shell.apk
+          "$APKS" sign \
+            --ks $GITHUB_WORKSPACE/unity/AVALON-DEMO.keystore \
+            --ks-pass pass:bigfoot404-gates --ks-key-alias avalon --key-pass pass:bigfoot404-gates \
+            "$APK"
+          DN=$("$APKS" verify --print-certs "$APK" | grep -m1 "certificate DN")
+          echo "$DN"
+          echo "$DN" | grep -q "CN=AVALON Bigfoot404" || { echo "SIGN GUARANTEE FAILED - wrong cert"; exit 1; }
+          python3 tools/apk-preview/verify_launcher.py "$APK" || { echo "launcher broke in re-sign"; exit 1; }
+          echo "SIGNED + VERIFIED: AVALON-DEMO permanent base"
+      - name: Harvest APK
+        if: always()
+        run: |
+          mkdir -p /tmp/apkout && cp build/avalon-shell.apk /tmp/apkout/ 2>/dev/null || echo "no apk produced"
+          cp $GITHUB_WORKSPACE/shell-build.log /tmp/apkout/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: avalon-shell-v${{ inputs.vcode }}
+          path: /tmp/apkout/
+          retention-days: 14
+      - name: Relay status (status line only — controlled APK delivery stays with BIGagent404)
+        if: always()
+        run: |
+          if [ -f build/avalon-shell.apk ]; then
+            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=AVALON final shell build v${{ inputs.vcode }} ready in CI — signed + launcher verified. BIGagent404 handles delivery." || true
+          else
+            curl -s -X POST "https://api.telegram.org/bot${BTOK}/sendMessage" -d "chat_id=${BIG_CHAT}" --data-urlencode "text=AVALON final shell build v${{ inputs.vcode }} FAILED in CI — no APK produced, handling it." || true
+          fi
