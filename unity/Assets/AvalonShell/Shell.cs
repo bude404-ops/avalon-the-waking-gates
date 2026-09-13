@@ -123,6 +123,15 @@ namespace AvalonShell
             panelSkills = BuildSkills(canvas.transform);
             LayoutCards();
             SetState(State.Title);
+            // v219 INPUT PROBE: counts every raw touch Unity receives on the title screen.
+            // If this number moves when you tap, input is alive (tap zones then respond loudly);
+            // if it never moves, the input pipeline itself is dead on that device. Decisive either way.
+            probeLbl = Label(canvasT, "INPUT 0", 10, new Color(0.55f, 0.52f, 0.47f, 0.8f), TextAnchor.UpperLeft);
+            var plrt = probeLbl.rect();
+            plrt.anchorMin = new Vector2(0.005f, 0.985f); plrt.anchorMax = new Vector2(0.20f, 1.0f); plrt.offsetMin = Vector2.zero; plrt.offsetMax = Vector2.zero;
+            stateLbl = Label(canvasT, "TITLE", 10, new Color(0.55f, 0.52f, 0.47f, 0.8f), TextAnchor.UpperLeft);
+            var slrt = stateLbl.rect();
+            slrt.anchorMin = new Vector2(0.005f, 0.965f); slrt.anchorMax = new Vector2(0.20f, 0.982f); slrt.offsetMin = Vector2.zero; slrt.offsetMax = Vector2.zero;
             StartCoroutine(CheckForUpdate());
         }
 
@@ -242,12 +251,34 @@ namespace AvalonShell
         }
 #endif
 
+        IEnumerator PanelFlash(GameObject panel)
+        {
+            // v219: every screen change READS as a change — brief black wipe-in so a new
+            // screen never looks like the same still image (plates are full-frame by law)
+            var wipeGo = new GameObject("Wipe");
+            wipeGo.transform.SetParent(panel.transform, false);
+            var wi = wipeGo.AddComponent<Image>(); wi.color = new Color(0, 0, 0, 0.55f); wi.raycastTarget = false;
+            var wrt = wi.rect(); wrt.Stretch(); wrt.offsetMin = Vector2.zero; wrt.offsetMax = Vector2.zero;
+            wi.transform.SetAsLastSibling();
+            for (float t = 0f; t < 1f; t += Time.deltaTime / 0.30f)
+            {
+                wi.color = new Color(0, 0, 0, 0.55f * (1f - t));
+                yield return null;
+            }
+            Destroy(wipeGo);
+        }
         void SetState(State s)
         {
             state = s;
+            if (stateLbl != null) stateLbl.text = s.ToString().ToUpper() + " \u2022 TAP THE CARVED WORDS";
             panelTitle.SetActive(s == State.Title);
             panelSelect.SetActive(s == State.Select);
             panelGame.SetActive(s == State.Game);
+            if (s == State.Title || s == State.Select || s == State.Game)
+            {
+                var np = s == State.Title ? panelTitle : s == State.Select ? panelSelect : panelGame;
+                if (np != null && np.activeSelf) StartCoroutine(PanelFlash(np));
+            }
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
             if (s == State.Select) { if (selectPlateRt == null) SelectCard(chosen); else LoadClass(chosen.name); }
@@ -260,6 +291,10 @@ namespace AvalonShell
             }
         }
 
+        // ---- v219 DIAGNOSTIC: raw input probe + state readout (title only, muted, decisive on-device evidence) ----
+        int probeCount = 0;
+        Text probeLbl = null;
+        Text stateLbl = null;
         // ================= canon plates as screens (Big, Sept 13: the update "isn't what it should be like") =================
         // The plates he approved ARE the UI — full-screen plate art with invisible tap zones over the carved options.
         readonly List<RectTransform> plates = new List<RectTransform>();
@@ -309,11 +344,11 @@ namespace AvalonShell
             b.targetGraphic = gi;
             var cb = b.colors;
             cb.normalColor = new Color(1f, 0.78f, 0.45f, 0f);
-            cb.highlightedColor = new Color(1f, 0.78f, 0.45f, 0.14f);
-            cb.pressedColor = new Color(1f, 0.78f, 0.45f, 0.34f);
-            cb.selectedColor = new Color(1f, 0.78f, 0.45f, 0.08f);
+            cb.highlightedColor = new Color(1f, 0.78f, 0.45f, 0.32f);
+            cb.pressedColor = new Color(1f, 0.78f, 0.45f, 0.60f);
+            cb.selectedColor = new Color(1f, 0.78f, 0.45f, 0.22f);
             cb.disabledColor = new Color(1f, 1f, 1f, 0f);
-            cb.fadeDuration = 0.06f;
+            cb.fadeDuration = 0.15f;
             b.colors = cb;
             if (live && act != null) b.onClick.AddListener(() => act());
             else b.interactable = false;
@@ -904,6 +939,10 @@ namespace AvalonShell
         Vector2 lastTouch0, lastTouch1; bool dragging;
         void Update()
         {
+            // v219 raw input probe — counts touches BEFORE any UI raycast is involved
+            bool rawTap = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
+            if (!rawTap && Input.GetMouseButtonDown(0)) rawTap = true;
+            if (rawTap) { probeCount++; if (probeLbl != null) probeLbl.text = "INPUT " + probeCount; }
             // orientation flip: refit plates + relayout ONCE on change (was missing before)
             bool nowPortrait = Screen.height > Screen.width;
             if (nowPortrait != wasPortrait)
