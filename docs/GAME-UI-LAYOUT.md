@@ -32,7 +32,8 @@ is the living mock — every screen below is staged there as the pipeline ships 
 - **Health bar:** slate fill `#6b788c`, label in-panel. The Ravenkin companion carries the reliquary vessel — the game's relic-carrier (stages in the HUD art as the companion system ships).
 - **Belief meter (PROPOSED — Big's verdict pending):** bronze fill `#a3895a`, under health. Abilities draw on BELIEF, not stamina — restored through shrines, story choices, divine bonds; never ground out. Health stays physical.
 - **Top-right:** THE RELIQUARY — UNLIT (flame state per Reliquary Law; alights when entrusted).
-- **Quest tracker:** under reliquary — QUEST — <campaign arc> (Roman numeral).
+- **Quest tracker:** BOTTOM-LEFT per mockup — "QUEST — LIGHT THE BRAZIER AT THE WAKING GATE" (Cold Reliquary quest line).
+- **Numeric meters:** health + belief carry numeric readouts per mockup (demo 1480/1500, 85/110).
 - **Ability bar:** 4 slots bottom-center, SEALED until skill trees ship.
 - **Region banner (future):** entering a realm splashes the realm name + colorway whisper (Reliquary-Region Aura Law).
 - **Controls:** drag to orbit, pinch/scroll to zoom; IDLE/WALK review toggles stay until gameplay controls exist.
