@@ -936,8 +936,8 @@ namespace AvalonShell
                 if (joyActive && joyVec.sqrMagnitude > 0.02f)
                 {
                     hasWalkTarget = false;
-                    float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
-                    var fwd = new Vector3(-sy, 0, -cy);                                  // camera -> player forward
+                    float cyj = Mathf.Cos(camYaw * Mathf.Deg2Rad), syj = Mathf.Sin(camYaw * Mathf.Deg2Rad);
+                    var fwd = new Vector3(-syj, 0, -cyj);                                // camera -> player forward
                     var right = Vector3.Cross(fwd, Vector3.up);
                     var dir = Vector3.ClampMagnitude(fwd * joyVec.y + right * joyVec.x, 1f);
                     float spd = walkSpeed * 1.35f * Mathf.Clamp01(dir.magnitude);        // push full = run-read
