@@ -35,7 +35,7 @@ namespace AvalonShell
 
         State state = State.Title;
         ClassDef chosen = CLASSES[0];
-        GameObject panelTitle, panelSelect, panelGame, panelSkills, panelMap;
+        GameObject panelTitle, panelSelect, panelGame, panelSkills, panelMap, panelSettings, panelAchievements;
         Camera cam; float camDist = 2.8f; float camYaw = 25f;
         Animator animator; GameObject model; Transform stagePivot;
         Text hudLine;
@@ -44,8 +44,6 @@ namespace AvalonShell
 
         // ================= gameplay: THE COLD HEARTH OATH (Campaign I tutorial) =================
         GameObject storyCard;
-        RectTransform titlePlateRt, selectPlateRt;   // the canon plates ARE the screens (Sept 13)
-        Text selectReadout;
         Canvas canvas;
         Vector3 walkTarget; bool hasWalkTarget; const float walkSpeed = 1.4f;
         // MOBILE-CONTROL-BIBLE Stage A: floating joystick (left half) + camera split (right half)
@@ -120,6 +118,8 @@ namespace AvalonShell
             panelSelect = BuildSelect(canvas.transform);
             panelGame = BuildGame(canvas.transform);
             panelMap = BuildMap(canvas.transform);
+            panelSettings = BuildSettings(canvas.transform);
+            panelAchievements = BuildAchievements(canvas.transform);
             panelSkills = BuildSkills(canvas.transform);
             LayoutCards();
             SetState(State.Title);
@@ -278,7 +278,7 @@ namespace AvalonShell
         void SetState(State s)
         {
             state = s;
-            if (stateLbl != null) stateLbl.text = s.ToString().ToUpper() + " \u2022 TAP THE CARVED WORDS";
+            if (stateLbl != null) stateLbl.text = s.ToString().ToUpper();
             panelTitle.SetActive(s == State.Title);
             panelSelect.SetActive(s == State.Select);
             panelGame.SetActive(s == State.Game);
@@ -289,7 +289,7 @@ namespace AvalonShell
             }
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
-            if (s == State.Select) { if (selectPlateRt == null) SelectCard(chosen); else LoadClass(chosen.name); }
+            if (s == State.Select) SelectCard(chosen);
             if (s == State.Game && hudLine != null)
                 hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
             if (s == State.Game && questCard != null)
@@ -305,86 +305,8 @@ namespace AvalonShell
         Text stateLbl = null;
         // ================= canon plates as screens (Big, Sept 13: the update "isn't what it should be like") =================
         // The plates he approved ARE the UI — full-screen plate art with invisible tap zones over the carved options.
-        readonly List<RectTransform> plates = new List<RectTransform>();
-        readonly List<Image> nicheFaces = new List<Image>();
-        GameObject PlateScreen(Transform parent, string plateName)
-        {
-            var art = Art(plateName);
-            if (art == null) return null;
-            var g = new GameObject(plateName);
-            g.transform.SetParent(parent, false);
-            var img = g.AddComponent<Image>();
-            img.sprite = art; img.preserveAspect = false; img.raycastTarget = false;
-            var rt = img.rect(); rt.Stretch();
-            FitPlate(rt, art);
-            plates.Add(rt);
-            return g;
-        }
         // aspect-true fit: the canon plate letterboxes into any orientation — NEVER stretch
         // (Big, Sept 13: the screen must BE the plate, not a distorted image of it)
-        void FitPlate(RectTransform rt, Sprite art)
-        {
-            float pw = Screen.width, ph = Screen.height;
-            float sa = art.rect.width / art.rect.height;
-            float w, h;
-            if (pw / ph > sa) { h = ph; w = ph * sa; } else { w = pw; h = pw / sa; }
-            float ax0 = (pw - w) / (2f * pw), ay0 = (ph - h) / (2f * ph);
-            rt.anchorMin = new Vector2(ax0, ay0);
-            rt.anchorMax = new Vector2(1f - ax0, 1f - ay0);
-            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
-        }
-
-        Button PlateZone(Transform plate, string label, float x0, float x1, float y0, float y1, bool live, System.Action act, string vLabel = null)
-        {
-            var g = new GameObject("zone-" + label);
-            g.transform.SetParent(plate, false);
-            var im = g.AddComponent<Image>(); im.color = new Color(0, 0, 0, 0);   // invisible, raycastable
-            // ---- v220 REAL-UI LAW (Big: the menu must be actual UI styled from the plate, not the plate still) ----
-            if (vLabel != null)
-            {
-                var edge = new GameObject("edge");
-                edge.transform.SetParent(g.transform, false);
-                var ei = edge.AddComponent<Image>();
-                ei.sprite = Rounded(); ei.color = new Color(0.64f, 0.53f, 0.35f, 0.55f); ei.raycastTarget = false;
-                var ert = ei.rect(); ert.Stretch(); ert.offsetMin = new Vector2(-3, -3); ert.offsetMax = new Vector2(3, 3);
-                var face = new GameObject("face");
-                face.transform.SetParent(g.transform, false);
-                var fi = face.AddComponent<Image>();
-                fi.sprite = Rounded(); fi.color = new Color(0.115f, 0.125f, 0.15f, 0.94f); fi.raycastTarget = false;
-                fi.rect().Stretch();
-                var lt = Label(g.transform, vLabel, 15, Hex(0xd8c9a3), TextAnchor.MiddleCenter);
-                lt.rect().Stretch();
-            }
-            var rt = im.rect();
-            rt.anchorMin = new Vector2(x0, y0); rt.anchorMax = new Vector2(x1, y1);
-            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
-            // press feedback: soft amber pad glows under the thumb — invisible until touched,
-            // so the carved options visibly ANSWER (Big, Sept 13: the plate was reading as a dead image)
-            var glow = new GameObject("glow");
-            glow.transform.SetParent(g.transform, false);
-            var gi = glow.AddComponent<Image>();
-            gi.sprite = MakeDiscSprite(false); gi.raycastTarget = false; gi.color = Color.white;
-            var grt = gi.rect(); grt.Stretch(); grt.offsetMin = Vector2.zero; grt.offsetMax = Vector2.zero;
-            var b = g.AddComponent<Button>();
-            if (vLabel != null)
-            {
-                b.targetGraphic = g.transform.Find("face").GetComponent<Image>();
-                if (live && act != null) b.onClick.AddListener(() => StartCoroutine(ZonePulse(g.transform as RectTransform)));
-            }
-            else b.targetGraphic = gi;
-            var cb = b.colors;
-            cb.normalColor = new Color(1f, 0.78f, 0.45f, 0f);
-            cb.highlightedColor = new Color(1f, 0.78f, 0.45f, 0.32f);
-            cb.pressedColor = new Color(1f, 0.78f, 0.45f, 0.60f);
-            cb.selectedColor = new Color(1f, 0.78f, 0.45f, 0.22f);
-            cb.disabledColor = new Color(1f, 1f, 1f, 0f);
-            cb.fadeDuration = 0.15f;
-            b.colors = cb;
-            if (live && act != null) b.onClick.AddListener(() => act());
-            else b.interactable = false;
-            return b;
-        }
-
         // ================= quest: THE COLD HEARTH OATH (Campaign I, Kingdom Quest 1) =================
         // A dying forge-judge cannot pass sentence without a witness of standing.
         // You carry the hearth-coal across the gate-town: three encounters, each a CHOICE.
@@ -516,158 +438,215 @@ namespace AvalonShell
         }
 
         // ================= TITLE =================
-        GameObject BuildTitle(Transform parent)
+GameObject BuildTitle(Transform parent)
         {
+            // v224 GROUND-UP UI (Big, Sept 13: "redo the menu and ui... build it from ground up to
+            // be like the real game"): a REAL game menu drawn entirely in code. Keyart is a dimmed
+            // backdrop only — never the interface. Every option is a real button, wired twice
+            // (EventSystem + TapRouter raw-touch path) so the menu responds no matter what.
             var p = Panel(parent, "Title", new Color(0.051f, 0.055f, 0.063f, 0.97f));
             p.transform.Stretch();
 
-            // THE PLATE IS THE SCREEN (Sept 13): the approved UI-MAIN-MENU-CANON art IS the title screen —
-            // invisible tap zones over the plate's own carved option list, fitted square into any orientation.
-            var plate = PlateScreen(p.transform, "UI-MAIN-MENU-CANON");
-            if (plate != null)
-            {
-                titlePlateRt = plate.transform as RectTransform;
-                bool hasSave = PlayerPrefs.HasKey("avalon.save");
-                // v220 shelf: soft stone band mutes the plate's own carved list so the REAL buttons
-                // read as the menu (plate hero art above stays untouched)
-                var shelf = new GameObject("MenuShelf");
-                shelf.transform.SetParent(plate.transform, false);
-                var shi = shelf.AddComponent<Image>();
-                shi.sprite = Rounded(); shi.color = new Color(0.045f, 0.048f, 0.055f, 0.68f); shi.raycastTarget = false;
-                var shrt = shi.rect();
-                shrt.anchorMin = new Vector2(0.20f, 0.525f); shrt.anchorMax = new Vector2(0.80f, 0.905f);
-                shrt.offsetMin = Vector2.zero; shrt.offsetMax = Vector2.zero;
-                // Carved list, word-locked on the plate: CONTINUE ~58% / NEW JOURNEY ~65% / GATES ~72% / ACHIEVEMENTS ~78% / SETTINGS ~85%
-                PlateZone(plate.transform, "CONTINUE", 0.24f, 0.76f, 0.545f, 0.615f, hasSave, delegate {
-                    if (LoadSave())
-                    {
-                        LoadClass(chosen.name); UpdateQuestLine();
-                        if (faithUnlocked)
-                        {
-                            if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
-                            if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
-                        }
-                        SetState(State.Game);
-                    }
-                }, "CONTINUE");
-                // BUILD STAMP (Big's "same one" verdict Sept 13): every shell self-identifies on the title
-                // plate so there is never any doubt about which build is running. Muted, bottom-right,
-                // sits beside the plate's own baked version line — never covers carved art.
-#if UNITY_ANDROID && !UNITY_EDITOR
-                int stampVc = InstalledVersionCode();
-#else
-                int stampVc = 0;
-#endif
-                var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
-                stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
-                PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); }, "NEW JOURNEY");
-                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { OpenMap(); }, "GATES");
-                PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null, "ACHIEVEMENTS");
-                PlateZone(plate.transform, "SETTINGS", 0.24f, 0.76f, 0.822f, 0.885f, false, null, "SETTINGS");
-                return p;
-            }
-
-            // FALLBACK (plate not staged): coded interpretation of the canon plate
             var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
             if (bgSprite != null)
             {
                 var bg = new GameObject("KeyArt");
                 bg.transform.SetParent(p.transform, false);
                 var bi = bg.AddComponent<Image>();
-                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.82f, 0.80f, 0.78f, 1f);
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.60f, 0.58f, 0.56f, 1f);
+                bi.raycastTarget = false;
                 bi.rect().Stretch();
-                var shade = Panel(p.transform, "Shade", new Color(0.03f, 0.033f, 0.04f, 0.62f));
+                var shade = Panel(p.transform, "Shade", new Color(0.03f, 0.033f, 0.04f, 0.60f));
                 shade.transform.Stretch();
+                shade.GetComponent<Image>().raycastTarget = false;
+                var bottom = Panel(p.transform, "BottomFade", new Color(0.03f, 0.033f, 0.04f, 0.82f));
+                var brt = bottom.rect();
+                brt.anchorMin = new Vector2(0, 0); brt.anchorMax = new Vector2(1, 0.58f); brt.offsetMin = Vector2.zero; brt.offsetMax = Vector2.zero;
+                bottom.GetComponent<Image>().raycastTarget = false;
             }
-            // CANON PLATE UI-MAIN-MENU-CANON (Big, Sept 11: 'The title menu i like and want that to be how ours will be'):
-            // AVALON knotwork hero + THE WAKING GATES sub; carved stone option list lower third;
-            // version + copyright line at the plate's base.
-            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            title.rect().anchorMin = new Vector2(0, 0.46f); title.rect().anchorMax = new Vector2(1, 0.72f);
+
+            var title = Label(p.transform, "AVALON", 64, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.72f); title.rect().anchorMax = new Vector2(1, 0.92f);
             var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
             var rule = Panel(p.transform, "Rule", ruleCol);
+            rule.GetComponent<Image>().raycastTarget = false;
             var rrt = rule.rect();
-            rrt.anchorMin = new Vector2(0.30f, 0.455f); rrt.anchorMax = new Vector2(0.70f, 0.459f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
-            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
-            // Carved stone option list, lower third, 2x2 — plate law: CONTINUE, NEW JOURNEY, GATES, SETTINGS.
-            string[] menu = { "NEW JOURNEY", "GATES", "CONTINUE", "SETTINGS" };
-            bool hasSaveFallback = PlayerPrefs.HasKey("avalon.save");
-            for (int i = 0; i < menu.Length; i++)
-            {
-                var b = Btn(p.transform, menu[i], 14);
-                var brt = b.transform as RectTransform;
-                int row = i / 2, col = i % 2;
-                brt.anchorMin = new Vector2(0.5f, 0.10f); brt.anchorMax = new Vector2(0.5f, 0.10f);
-                brt.sizeDelta = new Vector2(200, 46);
-                brt.anchoredPosition = new Vector2(-110 + col * 220, 96 - row * 56);
-                if (i == 0 || i == 1) b.onClick.AddListener(() => SetState(State.Select));           // NEW JOURNEY + GATES
-                else if (i == 2 && hasSaveFallback) b.onClick.AddListener(delegate {                    // CONTINUE — the Marked return
-                    if (LoadSave())
+            rrt.anchorMin = new Vector2(0.30f, 0.70f); rrt.anchorMax = new Vector2(0.70f, 0.704f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+            var sub = Label(p.transform, "THE WAKING GATES", 16, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            sub.rect().anchorMin = new Vector2(0, 0.64f); sub.rect().anchorMax = new Vector2(1, 0.70f);
+
+            bool hasSave = PlayerPrefs.HasKey("avalon.save");
+            MenuBtn(p.transform, "NEW JOURNEY", true, delegate { SetState(State.Select); }, 0);
+            MenuBtn(p.transform, "CONTINUE", hasSave, delegate {
+                if (LoadSave())
+                {
+                    LoadClass(chosen.name); UpdateQuestLine();
+                    if (faithUnlocked)
                     {
-                        LoadClass(chosen.name); UpdateQuestLine();
-                        if (faithUnlocked)
-                        {
-                            if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
-                            if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
-                        }
-                        SetState(State.Game);
-                    } });
-                else b.interactable = false;                                                          // sealed until saves/options ship
-            }
-            var seal = Label(p.transform, "CONTINUE + SETTINGS SEAL UNTIL SAVES + OPTIONS SHIP", 9, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
-            seal.rect().anchorMin = new Vector2(0, 0.155f); seal.rect().anchorMax = new Vector2(1, 0.185f);
-            var ver = Label(p.transform, "V 0.2.11  © 2026 WAKING GATES, INC. ALL RIGHTS RESERVED.", 9, Hex(0x8a8578), TextAnchor.MiddleCenter);
+                        if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+                        if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+                    }
+                    SetState(State.Game);
+                }
+            }, 1);
+            MenuBtn(p.transform, "GATES", true, delegate { OpenMap(); }, 2);
+            MenuBtn(p.transform, "ACHIEVEMENTS", true, delegate { panelAchievements.SetActive(true); }, 3);
+            MenuBtn(p.transform, "SETTINGS", true, delegate { panelSettings.SetActive(true); }, 4);
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+            int stampVc = InstalledVersionCode();
+#else
+            int stampVc = 0;
+#endif
+            var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
+            stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
+            var ver = Label(p.transform, "V 0.2.11  \u00a9 2026 WAKING GATES, INC. ALL RIGHTS RESERVED.", 9, Hex(0x8a8578), TextAnchor.MiddleCenter);
             ver.rect().anchorMin = new Vector2(0, 0.005f); ver.rect().anchorMax = new Vector2(1, 0.04f);
             return p;
         }
 
-        // ================= SELECT =================
-        GameObject BuildSelect(Transform parent)
+        // a REAL menu button: wired twice — Button.onClick AND the TapRouter raw-touch path.
+        // Double-fire is idempotent for every menu action (state sets + panel toggles), so the
+        // redundancy is safe — and the menu works even if the EventSystem never fires on-device.
+        Button MenuBtn(Transform parent, string txt, bool live, System.Action act, int slot)
         {
-            var p = Panel(parent, "Select", new Color(0, 0, 0, 0));
-            p.transform.Stretch();
-
-            // THE PLATE IS THE SCREEN (Sept 13): UI-CLASS-SELECT-CANON art IS the select screen.
-            // Invisible niche zones over the plate's 2x3 grid + BEGIN THE WAKENING / BACK zones.
-            var plate = PlateScreen(p.transform, "UI-CLASS-SELECT-CANON");
-            if (plate != null)
+            var b = Btn(parent, txt, 15);
+            b.interactable = live;
+            var brt = b.transform as RectTransform;
+            brt.anchorMin = new Vector2(0.5f, 0.5f); brt.anchorMax = new Vector2(0.5f, 0.5f);
+            brt.sizeDelta = new Vector2(280, 46);
+            brt.anchoredPosition = new Vector2(0, 44 - slot * 56);
+            if (live)
             {
-                selectPlateRt = plate.transform as RectTransform;
-                // selection readout above the plate's BEGIN carving (bronze, plate-coord anchored)
-                var sel = Label(plate.transform, "TAP A CLASS", 16, Hex(0xa3895a), TextAnchor.MiddleCenter);
-                sel.rect().anchorMin = new Vector2(0.10f, 0.855f); sel.rect().anchorMax = new Vector2(0.90f, 0.895f);
-                selectReadout = sel;
-                // 2-col x 3-row niche band, plate coords y 0.10-0.86 x 0.06-0.94
-                for (int i = 0; i < CLASSES.Length && i < 6; i++)
-                {
-                    int idx = i;
-                    int r = i / 2, c = i % 2;
-                    float x0 = 0.06f + c * 0.44f, x1 = x0 + 0.44f;
-                    float y1 = 0.86f - r * 0.2533f, y0 = y1 - 0.2533f;
-                    var zb = PlateZone(plate.transform, "Niche-" + CLASSES[i].name, x0, x1, y0, y1, true, delegate {
-                        chosen = CLASSES[idx];
-                        LoadClass(chosen.name);
-                        if (selectReadout != null) selectReadout.text = chosen.name.ToUpper() + " \u2014 " + chosen.realm;
-                        // v220: every niche face resets; the chosen one glows ember
-                        for (int k = 0; k < nicheFaces.Count; k++) nicheFaces[k].color = new Color(0.115f, 0.125f, 0.15f, 0.94f);
-                        if (idx < nicheFaces.Count) nicheFaces[idx].color = new Color(0.30f, 0.20f, 0.10f, 0.96f);
-                    }, CLASSES[i].name.ToUpper());
-                    var zface = zb.transform.Find("face");
-                    if (zface != null) nicheFaces.Add(zface.GetComponent<Image>());
-                }
-                PlateZone(plate.transform, "BEGIN", 0.24f, 0.62f, 0.900f, 0.965f, true, delegate { SetState(State.Game); }, "BEGIN THE WAKENING");
-                PlateZone(plate.transform, "BACK", 0.00f, 0.26f, 0.945f, 0.995f, true, delegate { SetState(State.Title); }, "BACK");
-                return p;
+                b.onClick.AddListener(() => act());
+                TapTo(brt, act);
             }
+            return b;
+        }
 
-            // FALLBACK (plate not staged): coded interpretation
-            var dim = Panel(p.transform, "Dim", new Color(0, 0, 0, 0.35f));
-            dim.transform.Stretch();
-            var av = Label(p.transform, "AVALON", 14, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            av.rect().anchorMin = new Vector2(0, 0.96f); av.rect().anchorMax = new Vector2(1, 1.0f);
-            var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
-            head.rect().anchorMin = new Vector2(0, 0.885f); head.rect().anchorMax = new Vector2(1, 0.955f);
+        // ---- v224 TAPROUTER: raw-touch hit-testing, fully independent of the EventSystem ----
+        // Real games don't bet the menu on one input pipeline. Raw touches are hit-tested directly
+        // against registered rects every frame — a second, parallel path to every nav action.
+        class Tappable { public RectTransform rt; public System.Action act; public string name; }
+        readonly List<Tappable> tappables = new List<Tappable>();
+        int lastRouterFrame = -1; string lastRouterName = "";
+        void TapTo(RectTransform rt, System.Action act)
+        {
+            tappables.Add(new Tappable { rt = rt, act = act, name = rt.name });
+        }
+        void RunTaps()
+        {
+            int n = Input.touchCount;
+            for (int t = 0; t < n; t++)
+            {
+                if (Input.GetTouch(t).phase != TouchPhase.Began) continue;
+                FireAt(Input.GetTouch(t).position);
+            }
+            if (n == 0 && Input.GetMouseButtonDown(0)) FireAt((Vector2)Input.mousePosition);
+        }
+        void FireAt(Vector2 screenPos)
+        {
+            for (int i = tappables.Count - 1; i >= 0; i--)
+            {
+                var tp = tappables[i];
+                if (tp.rt == null || !tp.rt.gameObject.activeInHierarchy) continue;
+                if (RectTransformUtility.RectangleContainsScreenPoint(tp.rt, screenPos, null))
+                {
+                    int f = Time.frameCount;
+                    if (f == lastRouterFrame && tp.name == lastRouterName) return;
+                    lastRouterFrame = f; lastRouterName = tp.name;
+                    if (stateLbl != null) stateLbl.text = "TAP " + tp.name;
+                    tp.act();
+                    return;
+                }
+            }
+        }
+
+        // ---- SETTINGS (real options, wired) ----
+        GameObject BuildSettings(Transform parent)
+        {
+            var p = Panel(parent, "SettingsPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
+            p.transform.Stretch();
+            var head = Label(p.transform, "SETTINGS", 22, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.86f); head.rect().anchorMax = new Vector2(1, 0.98f);
+            var tb = Btn(p.transform, "INPUT PROBE: ON", 13);
+            var trt = tb.transform as RectTransform;
+            trt.anchorMin = new Vector2(0.5f, 0.5f); trt.anchorMax = new Vector2(0.5f, 0.5f);
+            trt.sizeDelta = new Vector2(300, 46); trt.anchoredPosition = new Vector2(0, 40);
+            float lastToggle = -1f;
+            System.Action toggle = delegate {
+                if (Time.time - lastToggle < 0.25f) return;   // double-path guard
+                lastToggle = Time.time;
+                if (probeLbl == null) return;
+                probeLbl.gameObject.SetActive(!probeLbl.gameObject.activeSelf);
+                var l = tb.GetComponentInChildren<Text>();
+                if (l != null) l.text = "INPUT PROBE: " + (probeLbl.gameObject.activeSelf ? "ON" : "OFF");
+            };
+            tb.onClick.AddListener(() => toggle());
+            TapTo(trt, toggle);
+            var note = Label(p.transform, "MORE OPTIONS SHIP WITH THE FULL GAME BUILD", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+            note.rect().anchorMin = new Vector2(0, 0.52f); note.rect().anchorMax = new Vector2(1, 0.58f);
+            var close = Btn(p.transform, "CLOSE", 12);
+            var crt = close.transform as RectTransform;
+            crt.anchorMin = new Vector2(0.5f, 0.5f); crt.anchorMax = new Vector2(0.5f, 0.5f);
+            crt.sizeDelta = new Vector2(140, 42); crt.anchoredPosition = new Vector2(0, -30);
+            close.onClick.AddListener(() => p.SetActive(false));
+            TapTo(crt, () => p.SetActive(false));
+            p.SetActive(false);
+            return p;
+        }
+
+        // ---- ACHIEVEMENTS (real progress from the save) ----
+        GameObject BuildAchievements(Transform parent)
+        {
+            var p = Panel(parent, "AchievementsPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
+            p.transform.Stretch();
+            var head = Label(p.transform, "ACHIEVEMENTS", 22, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.86f); head.rect().anchorMax = new Vector2(1, 0.98f);
+            string[] lines;
+            if (PlayerPrefs.HasKey("avalon.save"))
+            {
+                try
+                {
+                    var parts = PlayerPrefs.GetString("avalon.save").Split('|');
+                    int stage = int.Parse(parts[1]);
+                    string[] stageNames = { "THE COLD HEARTH OATH \u2014 UNBEGUN", "THE COLD HEARTH OATH \u2014 COAL IN HAND", "THE COLD HEARTH OATH \u2014 THE GATE AWAITS", "THE COLD HEARTH OATH \u2014 WITNESSED" };
+                    lines = new string[] {
+                        "MARKED CLASS \u2014 " + parts[0].ToUpper(),
+                        stageNames[System.Math.Min(stage, 3)],
+                        (stage >= 3 ? "BELIEF \u2014 ALIT" : "BELIEF \u2014 UNLIT"),
+                        "REALMS CROSSED \u2014 SKYREND",
+                    };
+                }
+                catch { lines = new string[] { "THE MARKS ARE UNREADABLE \u2014 BEGIN A JOURNEY" }; }
+            }
+            else lines = new string[] { "NO DEEDS YET \u2014 BEGIN A JOURNEY" };
+            for (int i = 0; i < lines.Length; i++)
+            {
+                var l = Label(p.transform, lines[i], 13, i == 1 && lines[i].Contains("WITNESSED") ? Hex(0xa3895a) : Hex(0xc8c2b2), TextAnchor.MiddleCenter);
+                l.rect().anchorMin = new Vector2(0.05f, 0.68f - i * 0.09f); l.rect().anchorMax = new Vector2(0.95f, 0.74f - i * 0.09f);
+            }
+            var close = Btn(p.transform, "CLOSE", 12);
+            var crt = close.transform as RectTransform;
+            crt.anchorMin = new Vector2(0.5f, 0.5f); crt.anchorMax = new Vector2(0.5f, 0.5f);
+            crt.sizeDelta = new Vector2(140, 42); crt.anchoredPosition = new Vector2(0, -30);
+            close.onClick.AddListener(() => p.SetActive(false));
+            TapTo(crt, () => p.SetActive(false));
+            p.SetActive(false);
+            return p;
+        }
+
+        // ================= SELECT =================
+GameObject BuildSelect(Transform parent)
+        {
+            // v224 GROUND-UP: real class-select screen — 2x3 (portrait 3x2) card grid, every card a
+            // real button (EventSystem + TapRouter), ember highlight on the chosen, real BEGIN/BACK.
+            var p = Panel(parent, "Select", new Color(0.043f, 0.047f, 0.055f, 0.97f));
+            p.transform.Stretch();
+            var head = Label(p.transform, "CHOOSE YOUR CLASS", 24, Hex(0xe6ddca), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.90f); head.rect().anchorMax = new Vector2(1, 0.99f);
+            var head2 = Label(p.transform, "AVALON \u2014 THE WAKING GATES", 11, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            head2.rect().anchorMin = new Vector2(0, 0.99f); head2.rect().anchorMax = new Vector2(1, 1.04f);
 
             for (int i = 0; i < CLASSES.Length; i++)
             {
@@ -699,21 +678,23 @@ namespace AvalonShell
                 var b = card.AddComponent<Button>(); cardTints.Add(card.GetComponent<Image>());
                 var captured = cd;
                 b.onClick.AddListener(() => SelectCard(captured));
+                TapTo(crt, () => SelectCard(captured));   // router: works even if the EventSystem is dead
             }
 
-            // Plate law: BEGIN THE WAKENING (Big's text ruling) + BACK
             var enter = Btn(p.transform, "BEGIN THE WAKENING", 14);
             var ert = enter.transform as RectTransform;
             ert.anchorMin = new Vector2(0.5f, 0.055f); ert.anchorMax = new Vector2(0.5f, 0.055f);
             ert.sizeDelta = new Vector2(230, 48);
             ert.anchoredPosition = new Vector2(-120, 0);
             enter.onClick.AddListener(() => SetState(State.Game));
+            TapTo(ert, () => SetState(State.Game));
             var back = Btn(p.transform, "BACK", 14);
             var brt = back.transform as RectTransform;
             brt.anchorMin = new Vector2(0.5f, 0.055f); brt.anchorMax = new Vector2(0.5f, 0.055f);
             brt.sizeDelta = new Vector2(120, 48);
             brt.anchoredPosition = new Vector2(105, 0);
             back.onClick.AddListener(() => SetState(State.Title));
+            TapTo(brt, () => SetState(State.Title));
             return p;
         }
 
@@ -1030,13 +1011,13 @@ namespace AvalonShell
             bool rawTap = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
             if (!rawTap && Input.GetMouseButtonDown(0)) rawTap = true;
             if (rawTap) { probeCount++; if (probeLbl != null) probeLbl.text = "INPUT " + probeCount; }
+            RunTaps();   // v224: raw-touch router — nav works even if the EventSystem is dead
             // orientation flip: refit plates + relayout ONCE on change (was missing before)
             bool nowPortrait = Screen.height > Screen.width;
             if (nowPortrait != wasPortrait)
             {
                 wasPortrait = nowPortrait;
                 if (canvas != null) LayoutCards();
-                foreach (var prt in plates) { var img = prt.GetComponent<Image>(); if (img != null && img.sprite != null) FitPlate(prt, img.sprite); }
             }
             // ================= MOBILE-CONTROL-BIBLE Stage A: left = move, right = look =================
             bool overUI = EventSystem.current != null;
@@ -1148,8 +1129,6 @@ namespace AvalonShell
                 }
                 QuestStations();
             }
-            if (titlePlateRt != null) FitPlate(titlePlateRt, Art("UI-MAIN-MENU-CANON"));
-            if (selectPlateRt != null) FitPlate(selectPlateRt, Art("UI-CLASS-SELECT-CANON"));
             var target = (state == State.Game && model != null)
                 ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
                 : new Vector3(0, camDist * 0.30f, 0);
