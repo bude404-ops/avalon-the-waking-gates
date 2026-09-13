@@ -38,6 +38,8 @@ namespace AvalonShell
         Camera cam; float camDist = 2.8f; float camYaw = 25f;
         Animator animator; GameObject model; Transform stagePivot;
         Text hudLine;
+        GameObject questCard;
+        Coroutine realmFade;
         Transform canvasT;
         readonly Dictionary<string, GameObject> loaded = new Dictionary<string, GameObject>();
         readonly List<Image> cardTints = new List<Image>();
@@ -200,6 +202,28 @@ namespace AvalonShell
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
             if (s == State.Select) SelectCard(chosen);
+            if (s == State.Game && questCard != null)
+            {
+                if (realmFade != null) StopCoroutine(realmFade);
+                realmFade = StartCoroutine(RealmCardFade());
+            }
+        }
+
+        // Law 3 region title card: 2.5s hold, 1s fade, then gone — the world takes over.
+        IEnumerator RealmCardFade()
+        {
+            var cg = questCard.GetComponent<CanvasGroup>();
+            if (cg == null) cg = questCard.AddComponent<CanvasGroup>();
+            questCard.SetActive(true);
+            cg.alpha = 1f;
+            yield return new WaitForSeconds(2.5f);
+            for (float t = 0; t < 1f; t += Time.deltaTime)
+            {
+                cg.alpha = 1f - t;
+                yield return null;
+            }
+            cg.alpha = 0f;
+            questCard.SetActive(false);
         }
 
         // ================= TITLE =================
@@ -218,33 +242,35 @@ namespace AvalonShell
                 var shade = Panel(p.transform, "Shade", new Color(0.03f, 0.033f, 0.04f, 0.62f));
                 shade.transform.Stretch();
             }
-            // MOCKUP menu-main: AVALON overline, hero = THE WAKING GATES, vertical menu left of center
-            var over = Label(p.transform, "AVALON", 15, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            over.rect().anchorMin = new Vector2(0, 0.64f); over.rect().anchorMax = new Vector2(1, 0.69f);
-            var title = Label(p.transform, "THE WAKING GATES", 46, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            title.rect().anchorMin = new Vector2(0, 0.51f); title.rect().anchorMax = new Vector2(1, 0.64f);
+            // CANON PLATE UI-MAIN-MENU-CANON (Big, Sept 11: 'The title menu i like and want that to be how ours will be'):
+            // AVALON knotwork hero + THE WAKING GATES sub; carved stone option list lower third;
+            // version + copyright line at the plate's base.
+            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.46f); title.rect().anchorMax = new Vector2(1, 0.72f);
             var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
             var rule = Panel(p.transform, "Rule", ruleCol);
             var rrt = rule.rect();
-            rrt.anchorMin = new Vector2(0.33f, 0.505f); rrt.anchorMax = new Vector2(0.67f, 0.509f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
-            var tag = Label(p.transform, "ALPHA REVIEW — UNITY STAGE", 11, Hex(0x8a8578), TextAnchor.MiddleCenter);
-            tag.rect().anchorMin = new Vector2(0, 0.06f); tag.rect().anchorMax = new Vector2(1, 0.12f);
-            // vertical menu per mockup: NEW GAME live (» marker), CONTINUE + SETTINGS sealed until saves/options ship
-            string[] menu = { "NEW GAME", "CONTINUE", "SETTINGS" };
+            rrt.anchorMin = new Vector2(0.30f, 0.455f); rrt.anchorMax = new Vector2(0.70f, 0.459f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
+            // Carved stone option list, lower third, 2x2 — plate law: CONTINUE, NEW JOURNEY, GATES, SETTINGS.
+            string[] menu = { "NEW JOURNEY", "GATES", "CONTINUE", "SETTINGS" };
             for (int i = 0; i < menu.Length; i++)
             {
-                bool live = i == 0;
-                var it = Label(p.transform, (live ? "»  " : "     ") + menu[i], 22, live ? Hex(0xe6ddca) : Hex(0x6f6a5e), TextAnchor.MiddleLeft);
-                float y = 0.385f - i * 0.075f;
-                it.rect().anchorMin = new Vector2(0.185f, y); it.rect().anchorMax = new Vector2(0.46f, y + 0.065f);
-                if (live)
-                {
-                    var b = it.gameObject.AddComponent<Button>();
-                    b.onClick.AddListener(() => SetState(State.Select));
-                }
+                var b = Btn(p.transform, menu[i], 14);
+                var brt = b.transform as RectTransform;
+                int row = i / 2, col = i % 2;
+                brt.anchorMin = new Vector2(0.5f, 0.10f); brt.anchorMax = new Vector2(0.5f, 0.10f);
+                brt.sizeDelta = new Vector2(200, 46);
+                brt.anchoredPosition = new Vector2(-110 + col * 220, 96 - row * 56);
+                bool journey = i == 0 || i == 1;   // NEW JOURNEY + GATES open the way; CONTINUE + SETTINGS seal
+                if (journey) b.onClick.AddListener(() => SetState(State.Select));
+                else b.interactable = false;
             }
-            var seal = Label(p.transform, "CONTINUE + SETTINGS SEAL WITH THE FULL GAME", 10, Hex(0x6f6a5e), TextAnchor.MiddleLeft);
-            seal.rect().anchorMin = new Vector2(0.185f, 0.09f); seal.rect().anchorMax = new Vector2(0.60f, 0.13f);
+            var seal = Label(p.transform, "CONTINUE + SETTINGS SEAL UNTIL SAVES + OPTIONS SHIP", 9, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+            seal.rect().anchorMin = new Vector2(0, 0.155f); seal.rect().anchorMax = new Vector2(1, 0.185f);
+            var ver = Label(p.transform, "V 0.2.11  © 2026 WAKING GATES, INC. ALL RIGHTS RESERVED.", 9, Hex(0x8a8578), TextAnchor.MiddleCenter);
+            ver.rect().anchorMin = new Vector2(0, 0.005f); ver.rect().anchorMax = new Vector2(1, 0.04f);
             return p;
         }
 
@@ -255,8 +281,12 @@ namespace AvalonShell
             p.transform.Stretch();
             var dim = Panel(p.transform, "Dim", new Color(0, 0, 0, 0.35f));
             dim.transform.Stretch();
-            var head = Label(p.transform, "CHOOSE YOUR PATH", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
-            head.rect().anchorMin = new Vector2(0, 0.74f); head.rect().anchorMax = new Vector2(1, 0.82f);
+            // CANON PLATE UI-CLASS-SELECT-CANON (Big, Sept 11: 'Nic yeah I like thay'):
+            // AVALON overline, CHOOSE YOUR CLASS header, knotwork niches, BEGIN THE WAKENING.
+            var av = Label(p.transform, "AVALON", 14, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            av.rect().anchorMin = new Vector2(0, 0.96f); av.rect().anchorMax = new Vector2(1, 1.0f);
+            var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.885f); head.rect().anchorMax = new Vector2(1, 0.955f);
 
             for (int i = 0; i < CLASSES.Length; i++)
             {
@@ -290,18 +320,18 @@ namespace AvalonShell
                 b.onClick.AddListener(() => SelectCard(captured));
             }
 
-            // MOCKUP class-select: SELECT + BACK side by side under the card strip
-            var enter = Btn(p.transform, "SELECT", 14);
+            // Plate law: BEGIN THE WAKENING (Big's text ruling) + BACK
+            var enter = Btn(p.transform, "BEGIN THE WAKENING", 14);
             var ert = enter.transform as RectTransform;
-            ert.anchorMin = new Vector2(0.5f, 0.11f); ert.anchorMax = new Vector2(0.5f, 0.11f);
-            ert.sizeDelta = new Vector2(150, 48);
-            ert.anchoredPosition = new Vector2(-88, 0);
+            ert.anchorMin = new Vector2(0.5f, 0.055f); ert.anchorMax = new Vector2(0.5f, 0.055f);
+            ert.sizeDelta = new Vector2(230, 48);
+            ert.anchoredPosition = new Vector2(-120, 0);
             enter.onClick.AddListener(() => SetState(State.Game));
             var back = Btn(p.transform, "BACK", 14);
             var brt = back.transform as RectTransform;
-            brt.anchorMin = new Vector2(0.5f, 0.11f); brt.anchorMax = new Vector2(0.5f, 0.11f);
-            brt.sizeDelta = new Vector2(150, 48);
-            brt.anchoredPosition = new Vector2(88, 0);
+            brt.anchorMin = new Vector2(0.5f, 0.055f); brt.anchorMax = new Vector2(0.5f, 0.055f);
+            brt.sizeDelta = new Vector2(120, 48);
+            brt.anchoredPosition = new Vector2(105, 0);
             back.onClick.AddListener(() => SetState(State.Title));
             return p;
         }
@@ -325,8 +355,8 @@ namespace AvalonShell
                 if (portrait) { row = i / 3; col = i % 3; }
                 else { row = 0; col = i; }
                 float cw = 1f / (portrait ? 3 : CLASSES.Length);
-                float yMax = portrait ? (row == 0 ? 0.94f : 0.44f) : 0.66f;
-                float yMin = portrait ? (row == 0 ? 0.50f : 0.02f) : 0.32f;
+                float yMax = portrait ? (row == 0 ? 0.86f : 0.36f) : 0.72f;
+                float yMin = portrait ? (row == 0 ? 0.42f : 0.12f) : 0.28f;
                 crt.anchorMin = new Vector2(cw * col + 0.008f, yMin);
                 crt.anchorMax = new Vector2(cw * (col + 1) - 0.008f, yMax);
             }
@@ -353,20 +383,33 @@ namespace AvalonShell
             hpBack.rect().anchorMin = new Vector2(0.01f, 0.885f); hpBack.rect().anchorMax = new Vector2(0.38f, 0.935f);
             var hpFill = Panel(hpBack.transform, "HPFill", new Color(0.42f, 0.47f, 0.55f, 0.95f));
             hpFill.rect().anchorMin = new Vector2(0.02f, 0.25f); hpFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
-            var hpLbl = Label(hpBack.transform, "HEALTH  1480 / 1500", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            var hpLbl = Label(hpBack.transform, "HEALTH", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             hpLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); hpLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); hpLbl.rect().offsetMin = new Vector2(8, 0);
             var spBack = Panel(p.transform, "SPBack", new Color(0.039f, 0.043f, 0.051f, 0.88f));
             spBack.rect().anchorMin = new Vector2(0.01f, 0.835f); spBack.rect().anchorMax = new Vector2(0.38f, 0.885f);
             var spFill = Panel(spBack.transform, "SPFill", new Color(0.64f, 0.54f, 0.35f, 0.95f));
             spFill.rect().anchorMin = new Vector2(0.02f, 0.25f); spFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
-            var spLbl = Label(spBack.transform, "BELIEF  85 / 110", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            var spLbl = Label(spBack.transform, "BELIEF", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             spLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); spLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); spLbl.rect().offsetMin = new Vector2(8, 0);
 
-            // HUD: quest tracker BOTTOM-LEFT per mockup — Cold Reliquary quest line
-            var quest = Panel(p.transform, "Quest", new Color(0.039f, 0.043f, 0.051f, 0.82f));
-            quest.rect().anchorMin = new Vector2(0.01f, 0.115f); quest.rect().anchorMax = new Vector2(0.38f, 0.175f);
-            var qLbl = Label(quest.transform, "QUEST — LIGHT THE BRAZIER AT THE WAKING GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
-            qLbl.rect().Stretch(quest.transform); qLbl.rect().offsetMin = new Vector2(10, 0); qLbl.rect().offsetMax = new Vector2(-12, 0);
+            // HUD quest line TOP-CENTER per canon plate (REACH THE FIRST GATE) + Law 2 one-line queue
+            var qLbl = Label(p.transform, "REACH THE FIRST GATE", 12, Hex(0xe6ddca), TextAnchor.MiddleCenter);
+            qLbl.rect().anchorMin = new Vector2(0.30f, 0.955f); qLbl.rect().anchorMax = new Vector2(0.70f, 0.99f);
+            // Region title card (Law 3): SKYREND + epigraph + accent underline, fades 2.5s after entering
+            var realmCard = Panel(p.transform, "RealmCard", new Color(0, 0, 0, 0));
+            var rcrt = realmCard.rect();
+            rcrt.anchorMin = new Vector2(0.20f, 0.78f); rcrt.anchorMax = new Vector2(0.80f, 0.95f);
+            var realmName = Label(realmCard.transform, "SKYREND", 34, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            realmName.rect().anchorMin = new Vector2(0, 0.42f); realmName.rect().anchorMax = new Vector2(1, 1f);
+            var epigraph = Label(realmCard.transform, "The gate remembers who lit the flame.", 12, Hex(0x8a8578), TextAnchor.MiddleCenter);
+            epigraph.rect().anchorMin = new Vector2(0, 0.24f); epigraph.rect().anchorMax = new Vector2(1, 0.42f);
+            var slate = new Color(0.45f, 0.53f, 0.66f, 0.85f);   // storm-slate accent (Skyrend)
+            var underline = Panel(realmCard.transform, "Underline", slate);
+            var urt = underline.rect();
+            urt.anchorMin = new Vector2(0.40f, 0.19f); urt.anchorMax = new Vector2(0.60f, 0.22f); urt.offsetMin = Vector2.zero; urt.offsetMax = Vector2.zero;
+            realmCard.AddComponent<CanvasGroup>();
+            var realmCardObj = realmCard;
+            questCard = realmCardObj;
 
             // HUD top-right: reliquary (unlit)
             var lantern = Panel(p.transform, "Lantern", new Color(0.039f, 0.043f, 0.051f, 0.88f));
@@ -471,7 +514,7 @@ namespace AvalonShell
                 var none = Label(p.transform, "THE GATES HAVE NOT DRAWN THIS PATH YET", 13, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
                 none.rect().anchorMin = new Vector2(0.1f, 0.4f); none.rect().anchorMax = new Vector2(0.9f, 0.6f);
             }
-            var sub = Label(p.transform, "QUEST PIN — LIGHT THE BRAZIER AT THE WAKING GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
+            var sub = Label(p.transform, "QUEST PIN — REACH THE FIRST GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
             sub.rect().anchorMin = new Vector2(0.03f, 0.0f); sub.rect().anchorMax = new Vector2(0.97f, 0.05f); sub.rect().offsetMin = new Vector2(8, 6); sub.rect().offsetMax = new Vector2(-8, 0);
             var close = Btn(p.transform, "CLOSE", 11);
             var crt = close.rect();
