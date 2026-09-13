@@ -12,6 +12,9 @@ is the living mock — every screen below is staged there as the pipeline ships 
 
 ## Screens
 
+### 0. PLATE-AS-SCREEN LAW (Sept 13, Big: the coded interpretation "isn't what it should be like")
+The approved plates ARE the screens: UI-MAIN-MENU-CANON.png and UI-CLASS-SELECT-CANON.png load full-frame as the actual Title + Class Select (square-fit letterboxed into any orientation), with INVISIBLE tap zones over the plate's own carved options. No code-drawn reinterpretation of the plates. HUD stays live-rendered (gameplay view) but follows the HUD plate layout.
+
 ### 1. Boot / Title — TITLE MENU LAW v1 (LOCKED, Big Sept 11: 'The title menu i like and want that to be how ours will be')
 - Governing plate: UI-MAIN-MENU-CANON.png. "AVALON" engraved knotwork hero, "THE WAKING GATES" sub, Gate-in-storm-fog key art behind, mist over UI edges.
 - Carved stone option list, lower third: CONTINUE, NEW JOURNEY, GATES, SETTINGS (bronze knotwork borders, no modern flat-glass).

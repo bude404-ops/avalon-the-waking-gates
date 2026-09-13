@@ -44,6 +44,8 @@ namespace AvalonShell
 
         // ================= gameplay: THE COLD HEARTH OATH (Campaign I tutorial) =================
         GameObject storyCard;
+        RectTransform titlePlateRt, selectPlateRt;   // the canon plates ARE the screens (Sept 13)
+        Text selectReadout;
         Vector3 walkTarget; bool hasWalkTarget; const float walkSpeed = 1.4f;
         bool maybeTap; Vector2 tapStart;
         int questStage = 0;                 // 0 reach the hearth, 1 carry (3 encounters), 2 to the gate, 3 complete
@@ -224,7 +226,7 @@ namespace AvalonShell
             panelGame.SetActive(s == State.Game);
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
-            if (s == State.Select) SelectCard(chosen);
+            if (s == State.Select) { if (selectPlateRt == null) SelectCard(chosen); else LoadClass(chosen.name); }
             if (s == State.Game && hudLine != null)
                 hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
             if (s == State.Game && questCard != null)
@@ -232,6 +234,46 @@ namespace AvalonShell
                 if (realmFade != null) StopCoroutine(realmFade);
                 realmFade = StartCoroutine(RealmCardFade());
             }
+        }
+
+        // ================= canon plates as screens (Big, Sept 13: the update "isn't what it should be like") =================
+        // The plates he approved ARE the UI — full-screen plate art with invisible tap zones over the carved options.
+        // A square plate letterboxed into any orientation: the plate rect is fitted every frame.
+        void FitPlate(RectTransform rt, Sprite sp)
+        {
+            if (rt == null || sp == null) return;
+            var cs = canvas.GetComponent<RectTransform>().rect;
+            float side = Mathf.Min(cs.width, cs.height);
+            rt.anchorMin = new Vector2(0.5f - side / (2f * cs.width), 0.5f - side / (2f * cs.height));
+            rt.anchorMax = new Vector2(0.5f + side / (2f * cs.width), 0.5f + side / (2f * cs.height));
+            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
+        }
+
+        GameObject PlateScreen(Transform parent, string plateName)
+        {
+            var art = Art(plateName);
+            if (art == null) return null;
+            var g = new GameObject(plateName);
+            g.transform.SetParent(parent, false);
+            var img = g.AddComponent<Image>();
+            img.sprite = art; img.preserveAspect = false; img.raycastTarget = false;
+            var rt = img.rect(); rt.Stretch();
+            return g;
+        }
+
+        Button PlateZone(Transform plate, string label, float x0, float x1, float y0, float y1, bool live, System.Action act)
+        {
+            var g = new GameObject("zone-" + label);
+            g.transform.SetParent(plate, false);
+            var im = g.AddComponent<Image>(); im.color = new Color(0, 0, 0, 0);   // invisible, raycastable
+            var rt = im.rect();
+            rt.anchorMin = new Vector2(x0, y0); rt.anchorMax = new Vector2(x1, y1);
+            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
+            var b = g.AddComponent<Button>();
+            b.targetGraphic = im;
+            if (live && act != null) b.onClick.AddListener(() => act());
+            else b.interactable = false;
+            return b;
         }
 
         // ================= quest: THE COLD HEARTH OATH (Campaign I, Kingdom Quest 1) =================
@@ -369,6 +411,35 @@ namespace AvalonShell
         {
             var p = Panel(parent, "Title", new Color(0.051f, 0.055f, 0.063f, 0.97f));
             p.transform.Stretch();
+
+            // THE PLATE IS THE SCREEN (Sept 13): the approved UI-MAIN-MENU-CANON art IS the title screen —
+            // invisible tap zones over the plate's own carved option list, fitted square into any orientation.
+            var plate = PlateScreen(p.transform, "UI-MAIN-MENU-CANON");
+            if (plate != null)
+            {
+                titlePlateRt = plate.transform as RectTransform;
+                bool hasSave = PlayerPrefs.HasKey("avalon.save");
+                // Carved list, word-locked on the plate: CONTINUE ~58% / NEW JOURNEY ~65% / GATES ~72% / ACHIEVEMENTS ~78% / SETTINGS ~85%
+                PlateZone(plate.transform, "CONTINUE", 0.24f, 0.76f, 0.545f, 0.615f, hasSave, delegate {
+                    if (LoadSave())
+                    {
+                        LoadClass(chosen.name); UpdateQuestLine();
+                        if (faithUnlocked)
+                        {
+                            if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+                            if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+                        }
+                        SetState(State.Game);
+                    }
+                });
+                PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); });
+                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { SetState(State.Select); });
+                PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null);
+                PlateZone(plate.transform, "SETTINGS", 0.24f, 0.76f, 0.822f, 0.885f, false, null);
+                return p;
+            }
+
+            // FALLBACK (plate not staged): coded interpretation of the canon plate
             var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
             if (bgSprite != null)
             {
@@ -428,10 +499,38 @@ namespace AvalonShell
         {
             var p = Panel(parent, "Select", new Color(0, 0, 0, 0));
             p.transform.Stretch();
+
+            // THE PLATE IS THE SCREEN (Sept 13): UI-CLASS-SELECT-CANON art IS the select screen.
+            // Invisible niche zones over the plate's 2x3 grid + BEGIN THE WAKENING / BACK zones.
+            var plate = PlateScreen(p.transform, "UI-CLASS-SELECT-CANON");
+            if (plate != null)
+            {
+                selectPlateRt = plate.transform as RectTransform;
+                // selection readout above the plate's BEGIN carving (bronze, plate-coord anchored)
+                var sel = Label(plate.transform, "TAP A CLASS", 16, Hex(0xa3895a), TextAnchor.MiddleCenter);
+                sel.rect().anchorMin = new Vector2(0.10f, 0.855f); sel.rect().anchorMax = new Vector2(0.90f, 0.895f);
+                selectReadout = sel;
+                // 2-col x 3-row niche band, plate coords y 0.10-0.86 x 0.06-0.94
+                for (int i = 0; i < CLASSES.Length && i < 6; i++)
+                {
+                    int idx = i;
+                    int r = i / 2, c = i % 2;
+                    float x0 = 0.06f + c * 0.44f, x1 = x0 + 0.44f;
+                    float y1 = 0.86f - r * 0.2533f, y0 = y1 - 0.2533f;
+                    PlateZone(plate.transform, "Niche-" + CLASSES[i].name, x0, x1, y0, y1, true, delegate {
+                        chosen = CLASSES[idx];
+                        LoadClass(chosen.name);
+                        if (selectReadout != null) selectReadout.text = chosen.name.ToUpper() + " \u2014 " + chosen.realm;
+                    });
+                }
+                PlateZone(plate.transform, "BEGIN", 0.24f, 0.62f, 0.900f, 0.965f, true, delegate { SetState(State.Game); });
+                PlateZone(plate.transform, "BACK", 0.00f, 0.26f, 0.945f, 0.995f, true, delegate { SetState(State.Title); });
+                return p;
+            }
+
+            // FALLBACK (plate not staged): coded interpretation
             var dim = Panel(p.transform, "Dim", new Color(0, 0, 0, 0.35f));
             dim.transform.Stretch();
-            // CANON PLATE UI-CLASS-SELECT-CANON (Big, Sept 11: 'Nic yeah I like thay'):
-            // AVALON overline, CHOOSE YOUR CLASS header, knotwork niches, BEGIN THE WAKENING.
             var av = Label(p.transform, "AVALON", 14, Hex(0xa3895a), TextAnchor.MiddleCenter);
             av.rect().anchorMin = new Vector2(0, 0.96f); av.rect().anchorMax = new Vector2(1, 1.0f);
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 26, Hex(0xe6ddca), TextAnchor.MiddleCenter);
@@ -809,6 +908,8 @@ namespace AvalonShell
                 }
                 QuestStations();
             }
+            if (titlePlateRt != null) FitPlate(titlePlateRt, Art("UI-MAIN-MENU-CANON"));
+            if (selectPlateRt != null) FitPlate(selectPlateRt, Art("UI-CLASS-SELECT-CANON"));
             var target = (state == State.Game && model != null)
                 ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
                 : new Vector3(0, camDist * 0.30f, 0);
