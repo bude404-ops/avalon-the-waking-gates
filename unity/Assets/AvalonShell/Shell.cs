@@ -721,7 +721,7 @@ GameObject BuildSelect(Transform parent)
                 ro.rect().anchorMin = new Vector2(0, 0.14f); ro.rect().anchorMax = new Vector2(1, 0.22f);
                 var st = Label(niche.transform, unlocked ? "FORGED" : "IN THE FORGE", 9, unlocked ? Hex(0xa3895a) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
                 st.rect().anchorMin = new Vector2(0, 0.04f); st.rect().anchorMax = new Vector2(1, 0.12f);
-                var b = niche.AddComponent<Button>(); b.targetGraphic = face;
+                var b = niche.AddComponent<Button>(); b.targetGraphic = face.GetComponent<Image>();
                 var cb = b.colors; cb.highlightedColor = new Color(1.12f, 1.08f, 0.9f, 1); cb.pressedColor = new Color(0.75f, 0.65f, 0.42f, 1);
                 b.colors = cb;
                 cardTints.Add(face.GetComponent<Image>());
