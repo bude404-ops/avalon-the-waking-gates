@@ -307,12 +307,14 @@ namespace AvalonForge
                     // character off the foundry frame and the shot renders blank (Big's report: 2nd
                     // image shows nothing). Re-ground + re-center on wherever the clip actually put
                     // the character BEFORE rendering — no more blank walk shots, root lock or not.
+                    var posBeforeWalk = go.transform.position;
                     var wrb = CombineBounds(renderers);
                     go.transform.position -= new Vector3(wrb.center.x, wrb.min.y, wrb.center.z);
                     cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
                     var wtex = new Texture2D(720, 960, TextureFormat.RGBA32, false);
                     wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
                     File.WriteAllBytes($"{QCShots}/{character}-walk.png", wtex.EncodeToPNG());
+                    go.transform.position = posBeforeWalk; // prefab (Stage 7) ships at the foundry origin — never the walk offset
                     Log(log, "QC walk frame captured: " + QCShots + "/" + character + "-walk.png");
                 }
                 catch (System.Exception ex) { Log(log, "WARN walk frame failed: " + ex.Message); }
