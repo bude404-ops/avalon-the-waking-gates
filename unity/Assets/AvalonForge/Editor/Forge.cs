@@ -205,6 +205,30 @@ namespace AvalonForge
             var animator = go.GetComponent<Animator>() ?? go.AddComponent<Animator>();
             animator.avatar = avatar;
 
+            // v228 MOCAP IMPORT FIX (THE walk detonation fix): the AEDAN mocap FBXes ship without
+            // import metas, so CI imports them animationType=Generic — NO humanoid source avatar
+            // (the v225.1 MOCAP-SRC dump printed nothing). A Generic clip plays as RAW bone curves
+            // that bind case-insensitively onto the class rig (Hips->hips, Spine->spine, Head->head)
+            // and capture-world leftovers detonate the walk; idle survives only because its
+            // leftovers are small. Forcing Human builds the mocap source avatar so the retarget is
+            // muscle-space (true Mecanim retarget — the class rig never sees raw capture curves).
+            // Verified live: the MOCAP-SRC dump below must now print a boneMap, not "no avatar".
+            if (AssetDatabase.IsValidFolder(Mocap))
+            {
+                foreach (var fbx in AssetDatabase.FindAssets("t:AnimationClip", new[] { Mocap })
+                             .Select(g => AssetDatabase.GUIDToAssetPath(g)).Distinct().ToList())
+                {
+                    var mi = AssetImporter.GetAtPath(fbx) as ModelImporter;
+                    if (mi == null) continue;
+                    if (mi.animationType != ModelImporterAnimationType.Human)
+                    {
+                        Log(log, "Mocap import fix: forcing Human on " + System.IO.Path.GetFileName(fbx) + " (was " + mi.animationType + ")");
+                        mi.animationType = ModelImporterAnimationType.Human;
+                        mi.SaveAndReimport();
+                    }
+                }
+            }
+
             string ctrlPath = $"{Root}/Animators/{character}.controller";
             Directory.CreateDirectory($"{Root}/Animators");
             var ctrl = AnimatorController.CreateAnimatorControllerAtPath(ctrlPath);
