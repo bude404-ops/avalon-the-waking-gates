@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Networking;
@@ -40,6 +41,18 @@ namespace AvalonShell
         Text hudLine;
         GameObject questCard;
         Coroutine realmFade;
+
+        // ================= gameplay: THE COLD HEARTH OATH (Campaign I tutorial) =================
+        GameObject storyCard;
+        Vector3 walkTarget; bool hasWalkTarget; const float walkSpeed = 1.4f;
+        bool maybeTap; Vector2 tapStart;
+        int questStage = 0;                 // 0 reach the hearth, 1 carry (3 encounters), 2 to the gate, 3 complete
+        bool[] met = new bool[3];
+        bool faithUnlocked; System.Collections.Generic.List<string> choices = new System.Collections.Generic.List<string>();
+        Text questLine, beliefLbl; RectTransform beliefFill;
+        Vector3 hearthPos = new Vector3(0, 0, 7);
+        Vector3[] encPos = { new Vector3(-6, 0, 2), new Vector3(6, 0, -3), new Vector3(-2, 0, -8) };
+        Vector3 gatePos = new Vector3(0, 0, -13);
         Transform canvasT;
         readonly Dictionary<string, GameObject> loaded = new Dictionary<string, GameObject>();
         readonly List<Image> cardTints = new List<Image>();
@@ -57,6 +70,16 @@ namespace AvalonShell
             MakeLight(new Color(0.45f, 0.53f, 0.66f), 0.9f, new Vector3(-1.5f, 2.2f, -3)).name = "RimLight";
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = new Color(0.42f, 0.42f, 0.45f);
+
+            // --- The Cold Reliquary ground: cold slate floor for the route (collider for tap-to-walk) ---
+            var ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            ground.name = "Ground"; ground.transform.position = Vector3.zero; ground.transform.localScale = new Vector3(4, 1, 4);
+            var gmat = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
+            if (gmat != null) { gmat.color = new Color(0.055f, 0.06f, 0.075f); ground.GetComponent<MeshRenderer>().material = gmat; }
+            // --- Waymarks: dark stone pillars, amber crown light (Fire-Color Law — mortal fire is natural amber) ---
+            MakeWaymark(hearthPos, "OathHearthMark");
+            for (int i = 0; i < encPos.Length; i++) MakeWaymark(encPos[i], "EncounterMark" + i);
+            MakeWaymark(gatePos, "CinderGateMark");
 
             Screen.orientation = ScreenOrientation.AutoRotation;
             Screen.autorotateToPortrait = true;
@@ -202,11 +225,126 @@ namespace AvalonShell
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
             if (s == State.Select) SelectCard(chosen);
+            if (s == State.Game && hudLine != null)
+                hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
             if (s == State.Game && questCard != null)
             {
                 if (realmFade != null) StopCoroutine(realmFade);
                 realmFade = StartCoroutine(RealmCardFade());
             }
+        }
+
+        // ================= quest: THE COLD HEARTH OATH (Campaign I, Kingdom Quest 1) =================
+        // A dying forge-judge cannot pass sentence without a witness of standing.
+        // You carry the hearth-coal across the gate-town: three encounters, each a CHOICE.
+        // The town changes off who you crossed. Ends with the Mark ceremony + Faith unlock.
+        void QuestStations()
+        {
+            if (storyCard != null || model == null) return;
+            var p = model.transform.position;
+            if (questStage == 0 && Near(p, hearthPos))
+                OpenStory("THE OATH-HEARTH",
+                    "The forge-judge\u2019s coal waits on the oath-hearth \u2014 it burns without fuel.\n\nA dying man\u2019s sentence rides on your carrying it to the Cinder Gate. The gate-town will test you on the way.",
+                    new string[] { "TAKE THE COAL" },
+                    new System.Action[] { delegate { questStage = 1; choices.Add("coal-taken"); SaveGame(); UpdateQuestLine(); } });
+            else if (questStage == 1)
+            {
+                if (!met[0] && Near(p, encPos[0]))
+                    OpenStory("THE GILDED HAND",
+                        "A guildman steps from the ash-glass, palms open.\n\n\u201cSet the coal down, friend. There\u2019s more silver in this than a judge\u2019s favor.\u201d",
+                        new string[] { "TAKE HIS SILVER", "REFUSE" },
+                        new System.Action[] {
+                            delegate { met[0] = true; choices.Add("silver-taken"); SaveGame(); UpdateQuestLine(); },
+                            delegate { met[0] = true; choices.Add("guild-refused"); SaveGame(); UpdateQuestLine(); } });
+                else if (!met[1] && Near(p, encPos[1]))
+                    OpenStory("THE ENFORCER",
+                        "The guild\u2019s enforcer bars the road, iron cudgel loose in his hand.\n\n\u201cThe coal goes no further.\u201d",
+                        new string[] { "STAND YOUR GROUND", "TAKE THE LONG WAY" },
+                        new System.Action[] {
+                            delegate { met[1] = true; choices.Add("stood-ground"); SaveGame(); UpdateQuestLine(); },
+                            delegate { met[1] = true; choices.Add("long-way"); SaveGame(); UpdateQuestLine(); } });
+                else if (!met[2] && Near(p, encPos[2]))
+                    OpenStory("THE WIDOW\u2019S PLEA",
+                        "A widow kneels in the cinders, hearth long cold.\n\n\u201cOne ember. For my children. The judge will never miss it.\u201d",
+                        new string[] { "GIVE THE EMBER", "KEEP THE COAL WHOLE" },
+                        new System.Action[] {
+                            delegate { met[2] = true; choices.Add("ember-given"); SaveGame(); UpdateQuestLine(); },
+                            delegate { met[2] = true; choices.Add("coal-whole"); SaveGame(); UpdateQuestLine(); } });
+                else if (met[0] && met[1] && met[2]) { questStage = 2; UpdateQuestLine(); }
+            }
+            else if (questStage == 2 && Near(p, gatePos))
+                OpenStory("THE CINDER GATE \u2014 THE MARK",
+                    "The gate\u2019s brazier takes the coal, and the flame steadies.\n\nThe judge\u2019s sentence is witnessed. The gate remembers you now: ONE OF THE MARKED.\n\nYour choices live in the town behind you \u2014 silver, ground, and ember all leave marks.\n\nCODEX UNLOCKED: THE COLD HEARTH OATH",
+                    new string[] { "RECEIVE THE MARK" },
+                    new System.Action[] { delegate { CompleteQuest(); } });
+        }
+
+        void CompleteQuest()
+        {
+            questStage = 3; faithUnlocked = true; SaveGame(); UpdateQuestLine();
+            if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+            if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+        }
+
+        void UpdateQuestLine()
+        {
+            if (questLine == null) return;
+            if (questStage == 0) questLine.text = "THE COLD HEARTH OATH \u2014 REACH THE OATH-HEARTH";
+            else if (questStage == 1) questLine.text = "CARRY THE COAL \u2014 THE GATE-TOWN TESTS YOU (" + ((met[0] ? 1 : 0) + (met[1] ? 1 : 0) + (met[2] ? 1 : 0)) + "/3)";
+            else if (questStage == 2) questLine.text = "CARRY THE COAL TO THE CINDER GATE";
+            else questLine.text = "THE OATH IS WITNESSED \u2014 ONE OF THE MARKED";
+        }
+
+        // ================= story cards =================
+        // 2D FOR WHAT IS MYTH (UI Design System): encounters + choices live as dark slate story cards.
+        void OpenStory(string title, string body, string[] labels, System.Action[] acts)
+        {
+            if (storyCard != null) return;
+            hasWalkTarget = false; if (animator) animator.CrossFade("idle", 0.2f);
+            var p = Panel(canvas.transform, "StoryCard", new Color(0.035f, 0.039f, 0.047f, 0.96f));
+            p.transform.Stretch();
+            var ruleCol = Hex(0xa3895a); ruleCol.a = 0.9f;
+            var topRule = Panel(p.transform, "Rule", ruleCol);
+            topRule.rect().anchorMin = new Vector2(0.2f, 0.86f); topRule.rect().anchorMax = new Vector2(0.8f, 0.864f);
+            var h = Label(p.transform, title, 22, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            h.rect().anchorMin = new Vector2(0.05f, 0.77f); h.rect().anchorMax = new Vector2(0.95f, 0.86f);
+            var b = Label(p.transform, body, 14, Hex(0xc8c2b2), TextAnchor.UpperCenter);
+            b.rect().anchorMin = new Vector2(0.08f, 0.30f); b.rect().anchorMax = new Vector2(0.92f, 0.75f);
+            for (int i = 0; i < labels.Length; i++)
+            {
+                var btn = Btn(p.transform, labels[i], 13);
+                var brt = btn.transform as RectTransform;
+                brt.anchorMin = new Vector2(0.5f, 0.06f); brt.anchorMax = new Vector2(0.5f, 0.06f);
+                brt.sizeDelta = new Vector2(300, 46);
+                brt.anchoredPosition = new Vector2(0, 24 + i * 58);
+                var act = acts[i];
+                btn.onClick.AddListener(() => { UnityEngine.Object.Destroy(storyCard); storyCard = null; if (act != null) act(); });
+            }
+            storyCard = p;
+        }
+
+        void SaveGame()
+        {
+            string metS = (met[0] ? "1" : "0") + (met[1] ? "1" : "0") + (met[2] ? "1" : "0");
+            string chS = string.Join(";", choices.ToArray());
+            PlayerPrefs.SetString("avalon.save", chosen.name + "|" + questStage + "|" + metS + "|" + chS);
+            PlayerPrefs.Save();
+        }
+
+        bool LoadSave()
+        {
+            if (!PlayerPrefs.HasKey("avalon.save")) return false;
+            try
+            {
+                var parts = PlayerPrefs.GetString("avalon.save").Split('|');
+                var cd = CLASSES.FirstOrDefault(c => c.name == parts[0]);
+                if (cd == null) return false;
+                chosen = cd; questStage = int.Parse(parts[1]);
+                if (parts[2].Length >= 3) { met[0] = parts[2][0] == '1'; met[1] = parts[2][1] == '1'; met[2] = parts[2][2] == '1'; }
+                choices = new System.Collections.Generic.List<string>((parts.Length > 3 && parts[3].Length > 0) ? parts[3].Split(';') : new string[0]);
+                faithUnlocked = questStage == 3;
+                return true;
+            } catch { return false; }
         }
 
         // Law 3 region title card: 2.5s hold, 1s fade, then gone — the world takes over.
@@ -255,6 +393,7 @@ namespace AvalonShell
             sub.rect().anchorMin = new Vector2(0, 0.39f); sub.rect().anchorMax = new Vector2(1, 0.45f);
             // Carved stone option list, lower third, 2x2 — plate law: CONTINUE, NEW JOURNEY, GATES, SETTINGS.
             string[] menu = { "NEW JOURNEY", "GATES", "CONTINUE", "SETTINGS" };
+            bool hasSave = PlayerPrefs.HasKey("avalon.save");
             for (int i = 0; i < menu.Length; i++)
             {
                 var b = Btn(p.transform, menu[i], 14);
@@ -263,9 +402,19 @@ namespace AvalonShell
                 brt.anchorMin = new Vector2(0.5f, 0.10f); brt.anchorMax = new Vector2(0.5f, 0.10f);
                 brt.sizeDelta = new Vector2(200, 46);
                 brt.anchoredPosition = new Vector2(-110 + col * 220, 96 - row * 56);
-                bool journey = i == 0 || i == 1;   // NEW JOURNEY + GATES open the way; CONTINUE + SETTINGS seal
-                if (journey) b.onClick.AddListener(() => SetState(State.Select));
-                else b.interactable = false;
+                if (i == 0 || i == 1) b.onClick.AddListener(() => SetState(State.Select));           // NEW JOURNEY + GATES
+                else if (i == 2 && hasSave) b.onClick.AddListener(delegate {                          // CONTINUE — the Marked return
+                    if (LoadSave())
+                    {
+                        LoadClass(chosen.name); UpdateQuestLine();
+                        if (faithUnlocked)
+                        {
+                            if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+                            if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+                        }
+                        SetState(State.Game);
+                    } });
+                else b.interactable = false;                                                          // sealed until saves/options ship
             }
             var seal = Label(p.transform, "CONTINUE + SETTINGS SEAL UNTIL SAVES + OPTIONS SHIP", 9, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
             seal.rect().anchorMin = new Vector2(0, 0.155f); seal.rect().anchorMax = new Vector2(1, 0.185f);
@@ -389,12 +538,16 @@ namespace AvalonShell
             spBack.rect().anchorMin = new Vector2(0.01f, 0.835f); spBack.rect().anchorMax = new Vector2(0.38f, 0.885f);
             var spFill = Panel(spBack.transform, "SPFill", new Color(0.64f, 0.54f, 0.35f, 0.95f));
             spFill.rect().anchorMin = new Vector2(0.02f, 0.25f); spFill.rect().anchorMax = new Vector2(0.98f, 0.75f);
-            var spLbl = Label(spBack.transform, "BELIEF", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
+            var spLbl = Label(spBack.transform, faithUnlocked ? "BELIEF" : "BELIEF \u2014 SEALED", 9, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             spLbl.rect().anchorMin = new Vector2(0.02f, 0.25f); spLbl.rect().anchorMax = new Vector2(0.98f, 0.75f); spLbl.rect().offsetMin = new Vector2(8, 0);
+            beliefLbl = spLbl; beliefFill = spFill.rect();
+            if (faithUnlocked) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+            else beliefFill.anchorMax = new Vector2(0.06f, 0.75f);
 
             // HUD quest line TOP-CENTER per canon plate (REACH THE FIRST GATE) + Law 2 one-line queue
-            var qLbl = Label(p.transform, "REACH THE FIRST GATE", 12, Hex(0xe6ddca), TextAnchor.MiddleCenter);
-            qLbl.rect().anchorMin = new Vector2(0.30f, 0.955f); qLbl.rect().anchorMax = new Vector2(0.70f, 0.99f);
+            var qLbl = Label(p.transform, "THE COLD HEARTH OATH \u2014 REACH THE OATH-HEARTH", 12, Hex(0xe6ddca), TextAnchor.MiddleCenter);
+            qLbl.rect().anchorMin = new Vector2(0.24f, 0.955f); qLbl.rect().anchorMax = new Vector2(0.76f, 0.99f);
+            questLine = qLbl; UpdateQuestLine();
             // Region title card (Law 3): SKYREND + epigraph + accent underline, fades 2.5s after entering
             var realmCard = Panel(p.transform, "RealmCard", new Color(0, 0, 0, 0));
             var rcrt = realmCard.rect();
@@ -428,18 +581,6 @@ namespace AvalonShell
             }
 
             // debug controls + character tab
-            var bIdle = Btn(p.transform, "IDLE", 12);
-            (bIdle.transform as RectTransform).sizeDelta = new Vector2(100, 38);
-            (bIdle.transform as RectTransform).anchorMin = new Vector2(0.5f, 0.13f); (bIdle.transform as RectTransform).anchorMax = new Vector2(0.5f, 0.13f);
-            (bIdle.transform as RectTransform).anchoredPosition = new Vector2(-56, 0);
-            bIdle.onClick.AddListener(() => { if (animator) animator.CrossFade("idle", 0.25f); });
-
-            var bWalk = Btn(p.transform, "WALK", 12);
-            (bWalk.transform as RectTransform).sizeDelta = new Vector2(100, 38);
-            (bWalk.transform as RectTransform).anchorMin = new Vector2(0.5f, 0.13f); (bWalk.transform as RectTransform).anchorMax = new Vector2(0.5f, 0.13f);
-            (bWalk.transform as RectTransform).anchoredPosition = new Vector2(56, 0);
-            bWalk.onClick.AddListener(() => { if (animator) animator.CrossFade("walk", 0.25f); });
-
             var bMap = Btn(p.transform, "MAP", 11);
             (bMap.transform as RectTransform).anchorMin = new Vector2(0.995f, 0.02f); (bMap.transform as RectTransform).anchorMax = new Vector2(0.995f, 0.02f);
             (bMap.transform as RectTransform).anchoredPosition = new Vector2(-270, 30);
@@ -567,13 +708,69 @@ namespace AvalonShell
             if (hudLine != null) hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 " + Mathf.RoundToInt(b.size.y * 100) + " CM \u2022 FORGE MODEL";
         }
 
-        // ================= frame: orbit =================
+        // ================= gameplay: waymarks =================
+        void MakeWaymark(Vector3 pos, string name)
+        {
+            var pillar = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            pillar.name = name; pillar.transform.position = pos + new Vector3(0, 0.45f, 0);
+            pillar.transform.localScale = new Vector3(0.22f, 0.45f, 0.22f);
+            var m = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
+            if (m != null)
+            {
+                m.color = new Color(0.08f, 0.085f, 0.10f);
+                if (m.HasProperty("_EmissionColor")) { m.EnableKeyword("_EMISSION"); m.SetColor("_EmissionColor", new Color(0.0f, 0.0f, 0.0f)); }
+                pillar.GetComponent<MeshRenderer>().material = m;
+            }
+            var coal = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            coal.name = name + "Flame"; coal.transform.SetParent(pillar.transform, false);
+            coal.transform.localPosition = new Vector3(0, 0.52f, 0); coal.transform.localScale = new Vector3(0.13f, 0.10f, 0.13f);
+            var fm = new Material(Shader.Find("Standard") ?? Shader.Find("Universal Render Pipeline/Lit"));
+            if (fm != null)
+            {
+                fm.color = new Color(1f, 0.62f, 0.25f);
+                if (fm.HasProperty("_EmissionColor")) { fm.EnableKeyword("_EMISSION"); fm.SetColor("_EmissionColor", new Color(1.9f, 0.85f, 0.2f)); }
+                coal.GetComponent<MeshRenderer>().material = fm;
+            }
+            var l = new GameObject(name + "Light"); l.transform.position = pos + new Vector3(0, 1.1f, 0);
+            var light = l.AddComponent<Light>(); light.type = LightType.Point; light.color = new Color(1f, 0.62f, 0.25f);
+            light.range = 4f; light.intensity = 0.9f;
+        }
+
+        bool Near(Vector3 a, Vector3 b) { return (a - b).sqrMagnitude < 3.2f; }
+
+        void TryWalkTo(Vector2 screen)
+        {
+            var ray = cam.ScreenPointToRay(new Vector3(screen.x, screen.y, 0));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 80f) && hit.collider != null && hit.collider.name == "Ground")
+            {
+                var p = hit.point;
+                if (new Vector2(p.x, p.z).sqrMagnitude < 320f) { walkTarget = p; hasWalkTarget = true; }
+            }
+        }
+
+        // ================= frame: orbit + walk =================
         Vector2 lastTouch0, lastTouch1; bool dragging;
         void Update()
         {
             bool overUI = EventSystem.current != null &&
                 ((Input.GetMouseButtonDown(0) && EventSystem.current.IsPointerOverGameObject()) ||
                  (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)));
+            if (state == State.Game && model != null && storyCard == null)
+            {
+                // tap (not drag) = walk order; drag stays orbit
+                if (Input.touchCount == 1 && !overUI)
+                {
+                    var t0 = Input.GetTouch(0);
+                    if (t0.phase == TouchPhase.Began) { maybeTap = true; tapStart = t0.position; }
+                    else if (t0.phase == TouchPhase.Moved && maybeTap && (t0.position - tapStart).sqrMagnitude > 500f) maybeTap = false;
+                    else if (t0.phase == TouchPhase.Ended && maybeTap) { TryWalkTo(t0.position); maybeTap = false; }
+                }
+                else if (Input.GetMouseButtonDown(0) && !overUI) { maybeTap = true; tapStart = Input.mousePosition; }
+                else if (Input.GetMouseButton(0) && maybeTap && (((Vector2)Input.mousePosition) - tapStart).sqrMagnitude > 500f) maybeTap = false;
+                else if (Input.GetMouseButtonUp(0) && maybeTap) { TryWalkTo(Input.mousePosition); maybeTap = false; }
+            }
+            else maybeTap = false;
             if (Input.touchCount == 1 && !overUI)
             {
                 var t = Input.GetTouch(0);
@@ -596,7 +793,25 @@ namespace AvalonShell
             else if (Input.touchCount != 2) { lastTouch0 = default; lastTouch1 = default; }
             camDist = Mathf.Clamp(camDist * (1f - Input.GetAxis("Mouse ScrollWheel")), 0.5f, 12f);
 
-            var target = new Vector3(0, camDist * 0.30f, 0);
+            // --- walking the route (root-locked walk clip carries the stride; transform carries the travel) ---
+            if (state == State.Game && model != null)
+            {
+                if (hasWalkTarget)
+                {
+                    var p = model.transform.position; var d = walkTarget - p; d.y = 0;
+                    if (d.magnitude < 0.12f) { hasWalkTarget = false; if (animator) animator.CrossFade("idle", 0.25f); }
+                    else
+                    {
+                        if (animator && !animator.GetCurrentAnimatorStateInfo(0).IsName("walk")) animator.CrossFade("walk", 0.2f);
+                        model.transform.position = p + d.normalized * (walkSpeed * Time.deltaTime);
+                        model.transform.rotation = Quaternion.Slerp(model.transform.rotation, Quaternion.LookRotation(d), 8f * Time.deltaTime);
+                    }
+                }
+                QuestStations();
+            }
+            var target = (state == State.Game && model != null)
+                ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
+                : new Vector3(0, camDist * 0.30f, 0);
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
             cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
             cam.transform.LookAt(target);

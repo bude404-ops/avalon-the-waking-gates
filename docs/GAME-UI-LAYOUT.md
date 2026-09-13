@@ -37,7 +37,7 @@ is the living mock — every screen below is staged there as the pipeline ships 
 - **Region title card (Law 3):** on entering game — "SKYREND" + epigraph "The gate remembers who lit the flame." + storm-slate underline, 2.5s hold then fade.
 - **Ability bar:** 4 slots bottom-center, SEALED until skill trees ship.
 - **Region banner (future):** entering a realm splashes the realm name + colorway whisper (Reliquary-Region Aura Law).
-- **Controls:** drag to orbit, pinch/scroll to zoom; IDLE/WALK review toggles stay until gameplay controls exist.
+- **Controls (GAMEPLAY LAYER 1 — tap-to-walk, Cold Reliquary slice):** tap the ground = walk order (Sovereign walks the route via the root-locked walk clip); drag = orbit; pinch/scroll = zoom. IDLE/WALK review toggles RETIRED.
 - **CHARACTER button:** bottom-right → skill tab over the game view.
 
 ### 4. Character / Skill Tab
