@@ -254,7 +254,7 @@ namespace AvalonForge
                 var cam = camGo.AddComponent<Camera>();
                 cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
                 cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
-                cam.transform.position = new Vector3(height * 0.22f, height * 0.5f, -frDist);
+                cam.transform.position = new Vector3(height * 0.22f, height * 0.5f, frDist);   // v221 FIX: front of character (meshes face +Z; -Z side saw the back)
                 cam.transform.LookAt(new Vector3(0f, height * 0.5f, 0f));
                 cam.fieldOfView = 45f;
 
@@ -303,6 +303,12 @@ namespace AvalonForge
                 {
                     animator.Play("walk", 0, 0.35f);
                     animator.Update(0.01f);
+                    // v221 FIX — WALK-FRAME GUARD: CMU travel / unlocked Hips translation moves the
+                    // character off the foundry frame and the shot renders blank (Big's report: 2nd
+                    // image shows nothing). Re-ground + re-center on wherever the clip actually put
+                    // the character BEFORE rendering — no more blank walk shots, root lock or not.
+                    var wrb = CombineBounds(renderers);
+                    go.transform.position -= new Vector3(wrb.center.x, wrb.min.y, wrb.center.z);
                     cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
                     var wtex = new Texture2D(720, 960, TextureFormat.RGBA32, false);
                     wtex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); wtex.Apply();
