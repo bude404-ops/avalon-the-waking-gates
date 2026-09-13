@@ -437,6 +437,45 @@ namespace AvalonShell
             questCard.SetActive(false);
         }
 
+        // ---- v226 PLATE-STYLE RESTYLE (Big, Sept 13: "take the style and layouts of the reference
+        // images and apply that to ours"): the canon plates' carved-stone grammar as REAL UI.
+        // Stone slab (dark #141c1f face) inside a bronze hairline edge, engraved bronze Cinzel
+        // label, plate-faithful anchor fractions — and the v224 dual-path wiring untouched. ----
+        Button CarvedBtn(Transform parent, string txt, float ax0, float ax1, float ay0, float ay1, bool live, System.Action act)
+        {
+            // bronze hairline edge (outer slab)
+            var slab = new GameObject("slab-" + txt);
+            slab.transform.SetParent(parent, false);
+            var edge = slab.AddComponent<Image>();
+            edge.sprite = Rounded(); edge.color = new Color(0.42f, 0.34f, 0.21f, 0.85f);   // dark bronze edge
+            var ert = edge.rect();
+            ert.anchorMin = new Vector2(ax0, ay0); ert.anchorMax = new Vector2(ax1, ay1);
+            ert.offsetMin = Vector2.zero; ert.offsetMax = Vector2.zero;
+            // stone face (inner)
+            var face = new GameObject("face");
+            face.transform.SetParent(slab.transform, false);
+            var fim = face.AddComponent<Image>();
+            fim.sprite = Rounded(); fim.color = new Color(0.078f, 0.105f, 0.121f, 0.96f);  // #141c1f stone
+            fim.rect().Stretch();
+            var frt = fim.rect();
+            frt.anchorMin = new Vector2(0.035f, 0.11f); frt.anchorMax = new Vector2(0.965f, 0.89f);
+            // engraved bronze label
+            var lbl = Label(slab.transform, txt, 15, Hex(0xc2a367), TextAnchor.MiddleCenter);
+            lbl.rect().Stretch();
+            var b = slab.AddComponent<Button>();
+            b.targetGraphic = fim;
+            var cb = b.colors; cb.normalColor = new Color(1, 1, 1, 1); cb.highlightedColor = new Color(1.14f, 1.10f, 0.92f, 1);
+            cb.pressedColor = new Color(0.72f, 0.62f, 0.40f, 1); cb.disabledColor = new Color(0.55f, 0.55f, 0.55f, 0.5f);
+            b.colors = cb;
+            b.interactable = live;
+            if (live)
+            {
+                b.onClick.AddListener(() => act());
+                TapTo(ert, act);
+            }
+            return b;
+        }
+
         // ================= TITLE =================
 GameObject BuildTitle(Transform parent)
         {
@@ -1288,4 +1327,211 @@ GameObject BuildSelect(Transform parent)
         public static RectTransform Stretch(this Text t)
         { var r = t.rect(); r.anchorMin = Vector2.zero; r.anchorMax = Vector2.one; r.offsetMin = Vector2.zero; r.offsetMax = Vector2.zero; return r; }
     }
-}
+}GameObject BuildTitle(Transform parent)
+        {
+            // v226: the UI-MAIN-MENU-CANON plate's style + LAYOUT on the v224 real-UI chassis.
+            // AVALON hero at the plate's 7-11% band, carved option slats at the plate's carved-list
+            // positions (CONTINUE 58 / NEW JOURNEY 65 / GATES 72 / ACHIEVEMENTS 78 / SETTINGS 85,
+            // top-fraction), stone shelf behind the list, bronze engraved labels. Fully real,
+            // fully dual-wired — the plate is the style reference, never the screen.
+            var p = Panel(parent, "Title", new Color(0.055f, 0.078f, 0.090f, 1f));
+            p.transform.Stretch();
+
+            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            if (bgSprite != null)
+            {
+                var bg = new GameObject("KeyArt");
+                bg.transform.SetParent(p.transform, false);
+                var bi = bg.AddComponent<Image>();
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.45f, 0.44f, 0.43f, 1f);
+                bi.raycastTarget = false;
+                bi.rect().Stretch();
+                var shade = Panel(p.transform, "Shade", new Color(0.04f, 0.055f, 0.065f, 0.66f));
+                shade.transform.Stretch();
+                shade.GetComponent<Image>().raycastTarget = false;
+            }
+
+            // AVALON hero — plate band 6.6-11.3% (anchor y = 1 - 0.115 .. 1 - 0.066)
+            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.885f); title.rect().anchorMax = new Vector2(1, 0.985f);
+            // rule + sub — plate band 17.6-22.7%
+            var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
+            var rule = Panel(p.transform, "Rule", ruleCol);
+            rule.GetComponent<Image>().raycastTarget = false;
+            var rrt = rule.rect();
+            rrt.anchorMin = new Vector2(0.30f, 0.815f); rrt.anchorMax = new Vector2(0.70f, 0.819f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            sub.rect().anchorMin = new Vector2(0, 0.77f); sub.rect().anchorMax = new Vector2(1, 0.815f);
+
+            // stone shelf behind the carved list (plate's lower-third band)
+            var shelfEdge = Panel(p.transform, "ShelfEdge", new Color(0.42f, 0.34f, 0.21f, 0.55f));
+            var sert = shelfEdge.rect();
+            sert.anchorMin = new Vector2(0.235f, 0.085f); sert.anchorMax = new Vector2(0.765f, 0.475f); sert.offsetMin = Vector2.zero; sert.offsetMax = Vector2.zero;
+            shelfEdge.GetComponent<Image>().raycastTarget = false;
+            var shelf = Panel(shelfEdge.transform, "ShelfFace", new Color(0.055f, 0.075f, 0.086f, 0.88f));
+            shelf.transform.Stretch();
+            var shrt = shelf.rect();
+            shrt.anchorMin = new Vector2(0.012f, 0.03f); shrt.anchorMax = new Vector2(0.988f, 0.97f); shrt.offsetMin = Vector2.zero; shrt.offsetMax = Vector2.zero;
+            shelf.GetComponent<Image>().raycastTarget = false;
+
+            bool hasSave = PlayerPrefs.HasKey("avalon.save");
+            // carved slats at the plate's own option positions (top-fraction -> anchor)
+            CarvedBtn(p.transform, "CONTINUE", 0.30f, 0.70f, 0.415f, 0.465f, hasSave, delegate {
+                if (LoadSave())
+                {
+                    LoadClass(chosen.name); UpdateQuestLine();
+                    if (faithUnlocked)
+                    {
+                        if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+                        if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+                    }
+                    SetState(State.Game);
+                }
+            });
+            CarvedBtn(p.transform, "NEW JOURNEY", 0.30f, 0.70f, 0.345f, 0.395f, true, delegate { SetState(State.Select); });
+            CarvedBtn(p.transform, "GATES", 0.30f, 0.70f, 0.275f, 0.325f, true, delegate { OpenMap(); });
+            CarvedBtn(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { panelAchievements.SetActive(true); });
+            CarvedBtn(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { panelSettings.SetActive(true); });
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+            int stampVc = InstalledVersionCode();
+#else
+            int stampVc = 0;
+#endif
+            var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
+            stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
+            var ver = Label(p.transform, "V 0.2.11  \u00a9 2026 WAKING GATES, INC. ALL RIGHTS RESERVED.", 9, Hex(0x8a8578), TextAnchor.MiddleCenter);
+            ver.rect().anchorMin = new Vector2(0, 0.005f); ver.rect().anchorMax = new Vector2(1, 0.04f);
+            return p;
+        }GameObject BuildSelect(Transform parent)
+        {
+            // v226: the UI-CLASS-SELECT-CANON plate's style + LAYOUT on the real-UI chassis.
+            // AVALON overline at the plate's 2% band, CHOOSE YOUR CLASS at 7-9%, class cards as
+            // carved stone niches (bronze-framed, art inside, bronze name band), BEGIN + BACK as
+            // carved slabs at the plate's 88-93% band. Responsive grid + dual wiring untouched.
+            var p = Panel(parent, "Select", new Color(0.055f, 0.078f, 0.090f, 1f));
+            p.transform.Stretch();
+            var overline = Label(p.transform, "AVALON", 16, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            overline.rect().anchorMin = new Vector2(0, 0.965f); overline.rect().anchorMax = new Vector2(1, 1.02f);
+            var head = Label(p.transform, "CHOOSE YOUR CLASS", 30, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.875f); head.rect().anchorMax = new Vector2(1, 0.962f);
+
+            for (int i = 0; i < CLASSES.Length; i++)
+            {
+                var cd = CLASSES[i];
+                bool unlocked = ModelPrefab(cd.name) != null;
+                // carved niche: bronze frame + stone face
+                var niche = Panel(p.transform, "card-" + cd.name, new Color(0.42f, 0.34f, 0.21f, 0.80f));
+                var crt = niche.rect();
+                cardRects.Add(crt);
+                var face = Panel(niche.transform, "Face", new Color(0.078f, 0.105f, 0.121f, 0.94f));
+                var frt = face.rect();
+                frt.anchorMin = new Vector2(0.018f, 0.018f); frt.anchorMax = new Vector2(0.982f, 0.982f); frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
+                var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON");
+                if (art != null)
+                {
+                    var ai = new GameObject("art");
+                    ai.transform.SetParent(face.transform, false);
+                    var img = ai.AddComponent<Image>();
+                    img.sprite = art; img.preserveAspect = true; img.color = unlocked ? new Color(0.92f, 0.90f, 0.86f, 1f) : new Color(0.45f, 0.45f, 0.45f, 0.55f);
+                    img.rect().Stretch();
+                    var band = Panel(face.transform, "Band", new Color(0.043f, 0.055f, 0.063f, 0.88f));
+                    var bandRt = band.rect();
+                    bandRt.anchorMin = new Vector2(0, 0); bandRt.anchorMax = new Vector2(1, 0.40f); bandRt.offsetMin = Vector2.zero; bandRt.offsetMax = Vector2.zero;
+                }
+                var nm = Label(niche.transform, cd.name.ToUpper(), 15, unlocked ? Hex(0xdcc38a) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+                nm.rect().anchorMin = new Vector2(0, 0.22f); nm.rect().anchorMax = new Vector2(1, 0.38f);
+                var ro = Label(niche.transform, cd.role, 9, Hex(0xa3895a), TextAnchor.MiddleCenter);
+                ro.rect().anchorMin = new Vector2(0, 0.14f); ro.rect().anchorMax = new Vector2(1, 0.22f);
+                var st = Label(niche.transform, unlocked ? "FORGED" : "IN THE FORGE", 9, unlocked ? Hex(0xa3895a) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+                st.rect().anchorMin = new Vector2(0, 0.04f); st.rect().anchorMax = new Vector2(1, 0.12f);
+                var b = niche.AddComponent<Button>(); b.targetGraphic = face;
+                var cb = b.colors; cb.highlightedColor = new Color(1.12f, 1.08f, 0.9f, 1); cb.pressedColor = new Color(0.75f, 0.65f, 0.42f, 1);
+                b.colors = cb;
+                cardTints.Add(face.GetComponent<Image>());
+                var captured = cd;
+                b.onClick.AddListener(() => SelectCard(captured));
+                TapTo(crt, () => SelectCard(captured));
+            }
+
+            // plate band 87.5-93.4%: BEGIN THE WAKENING + BACK as carved slabs
+            CarvedBtn(p.transform, "BEGIN THE WAKENING", 0.26f, 0.62f, 0.065f, 0.125f, true, delegate { SetState(State.Game); });
+            CarvedBtn(p.transform, "BACK", 0.04f, 0.24f, 0.065f, 0.125f, true, delegate { SetState(State.Title); });
+            return p;
+        }GameObject BuildTitle(Transform parent)
+        {
+            // v226: the UI-MAIN-MENU-CANON plate's style + LAYOUT on the v224 real-UI chassis.
+            // AVALON hero at the plate's 7-11% band, carved option slats at the plate's carved-list
+            // positions (CONTINUE 58 / NEW JOURNEY 65 / GATES 72 / ACHIEVEMENTS 78 / SETTINGS 85,
+            // top-fraction), stone shelf behind the list, bronze engraved labels. Fully real,
+            // fully dual-wired — the plate is the style reference, never the screen.
+            var p = Panel(parent, "Title", new Color(0.055f, 0.078f, 0.090f, 1f));
+            p.transform.Stretch();
+
+            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            if (bgSprite != null)
+            {
+                var bg = new GameObject("KeyArt");
+                bg.transform.SetParent(p.transform, false);
+                var bi = bg.AddComponent<Image>();
+                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(0.45f, 0.44f, 0.43f, 1f);
+                bi.raycastTarget = false;
+                bi.rect().Stretch();
+                var shade = Panel(p.transform, "Shade", new Color(0.04f, 0.055f, 0.065f, 0.66f));
+                shade.transform.Stretch();
+                shade.GetComponent<Image>().raycastTarget = false;
+            }
+
+            // AVALON hero — plate band 6.6-11.3% (anchor y = 1 - 0.115 .. 1 - 0.066)
+            var title = Label(p.transform, "AVALON", 72, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            title.rect().anchorMin = new Vector2(0, 0.885f); title.rect().anchorMax = new Vector2(1, 0.985f);
+            // rule + sub — plate band 17.6-22.7%
+            var ruleCol = Hex(0xa3895a); ruleCol.a = 0.85f;
+            var rule = Panel(p.transform, "Rule", ruleCol);
+            rule.GetComponent<Image>().raycastTarget = false;
+            var rrt = rule.rect();
+            rrt.anchorMin = new Vector2(0.30f, 0.815f); rrt.anchorMax = new Vector2(0.70f, 0.819f); rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+            var sub = Label(p.transform, "THE WAKING GATES", 18, Hex(0xa3895a), TextAnchor.MiddleCenter);
+            sub.rect().anchorMin = new Vector2(0, 0.77f); sub.rect().anchorMax = new Vector2(1, 0.815f);
+
+            // stone shelf behind the carved list (plate's lower-third band)
+            var shelfEdge = Panel(p.transform, "ShelfEdge", new Color(0.42f, 0.34f, 0.21f, 0.55f));
+            var sert = shelfEdge.rect();
+            sert.anchorMin = new Vector2(0.235f, 0.085f); sert.anchorMax = new Vector2(0.765f, 0.475f); sert.offsetMin = Vector2.zero; sert.offsetMax = Vector2.zero;
+            shelfEdge.GetComponent<Image>().raycastTarget = false;
+            var shelf = Panel(shelfEdge.transform, "ShelfFace", new Color(0.055f, 0.075f, 0.086f, 0.88f));
+            shelf.transform.Stretch();
+            var shrt = shelf.rect();
+            shrt.anchorMin = new Vector2(0.012f, 0.03f); shrt.anchorMax = new Vector2(0.988f, 0.97f); shrt.offsetMin = Vector2.zero; shrt.offsetMax = Vector2.zero;
+            shelf.GetComponent<Image>().raycastTarget = false;
+
+            bool hasSave = PlayerPrefs.HasKey("avalon.save");
+            // carved slats at the plate's own option positions (top-fraction -> anchor)
+            CarvedBtn(p.transform, "CONTINUE", 0.30f, 0.70f, 0.415f, 0.465f, hasSave, delegate {
+                if (LoadSave())
+                {
+                    LoadClass(chosen.name); UpdateQuestLine();
+                    if (faithUnlocked)
+                    {
+                        if (beliefFill != null) beliefFill.anchorMax = new Vector2(0.60f, 0.75f);
+                        if (beliefLbl != null) beliefLbl.text = "BELIEF \u2014 ALIT";
+                    }
+                    SetState(State.Game);
+                }
+            });
+            CarvedBtn(p.transform, "NEW JOURNEY", 0.30f, 0.70f, 0.345f, 0.395f, true, delegate { SetState(State.Select); });
+            CarvedBtn(p.transform, "GATES", 0.30f, 0.70f, 0.275f, 0.325f, true, delegate { OpenMap(); });
+            CarvedBtn(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { panelAchievements.SetActive(true); });
+            CarvedBtn(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { panelSettings.SetActive(true); });
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+            int stampVc = InstalledVersionCode();
+#else
+            int stampVc = 0;
+#endif
+            var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
+            stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
+            var ver = Label(p.transform, "V 0.2.11  \u00a9 2026 WAKING GATES, INC. ALL RIGHTS RESERVED.", 9, Hex(0x8a8578), TextAnchor.MiddleCenter);
+            ver.rect().anchorMin = new Vector2(0, 0.005f); ver.rect().anchorMax = new Vector2(1, 0.04f);
+            return p;
+        }
