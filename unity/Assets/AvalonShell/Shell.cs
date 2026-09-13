@@ -273,6 +273,7 @@ namespace AvalonShell
             rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
         }
 
+        readonly List<RectTransform> plates = new List<RectTransform>();
         GameObject PlateScreen(Transform parent, string plateName)
         {
             var art = Art(plateName);
@@ -282,7 +283,22 @@ namespace AvalonShell
             var img = g.AddComponent<Image>();
             img.sprite = art; img.preserveAspect = false; img.raycastTarget = false;
             var rt = img.rect(); rt.Stretch();
+            FitPlate(rt, art);
+            plates.Add(rt);
             return g;
+        }
+        // aspect-true fit: the canon plate letterboxes into any orientation — NEVER stretch
+        // (Big, Sept 13: the screen must BE the plate, not a distorted image of it)
+        void FitPlate(RectTransform rt, Sprite art)
+        {
+            float pw = Screen.width, ph = Screen.height;
+            float sa = art.rect.width / art.rect.height;
+            float w, h;
+            if (pw / ph > sa) { h = ph; w = ph * sa; } else { w = pw; h = pw / sa; }
+            float ax0 = (pw - w) / (2f * pw), ay0 = (ph - h) / (2f * ph);
+            rt.anchorMin = new Vector2(ax0, ay0);
+            rt.anchorMax = new Vector2(1f - ax0, 1f - ay0);
+            rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
         }
 
         Button PlateZone(Transform plate, string label, float x0, float x1, float y0, float y1, bool live, System.Action act)
@@ -293,8 +309,23 @@ namespace AvalonShell
             var rt = im.rect();
             rt.anchorMin = new Vector2(x0, y0); rt.anchorMax = new Vector2(x1, y1);
             rt.offsetMin = Vector2.zero; rt.offsetMax = Vector2.zero;
+            // press feedback: soft amber pad glows under the thumb — invisible until touched,
+            // so the carved options visibly ANSWER (Big, Sept 13: the plate was reading as a dead image)
+            var glow = new GameObject("glow");
+            glow.transform.SetParent(g.transform, false);
+            var gi = glow.AddComponent<Image>();
+            gi.sprite = MakeDiscSprite(false); gi.raycastTarget = false; gi.color = Color.white;
+            var grt = gi.rect(); grt.Stretch(); grt.offsetMin = Vector2.zero; grt.offsetMax = Vector2.zero;
             var b = g.AddComponent<Button>();
-            b.targetGraphic = im;
+            b.targetGraphic = gi;
+            var cb = b.colors;
+            cb.normalColor = new Color(1f, 0.78f, 0.45f, 0f);
+            cb.highlightedColor = new Color(1f, 0.78f, 0.45f, 0.14f);
+            cb.pressedColor = new Color(1f, 0.78f, 0.45f, 0.34f);
+            cb.selectedColor = new Color(1f, 0.78f, 0.45f, 0.08f);
+            cb.disabledColor = new Color(1f, 1f, 1f, 0f);
+            cb.fadeDuration = 0.06f;
+            b.colors = cb;
             if (live && act != null) b.onClick.AddListener(() => act());
             else b.interactable = false;
             return b;
@@ -874,6 +905,14 @@ namespace AvalonShell
         Vector2 lastTouch0, lastTouch1; bool dragging;
         void Update()
         {
+            // orientation flip: refit plates + relayout ONCE on change (was missing before)
+            bool nowPortrait = Screen.height > Screen.width;
+            if (nowPortrait != wasPortrait)
+            {
+                wasPortrait = nowPortrait;
+                if (canvas != null) LayoutCards();
+                foreach (var prt in plates) { var img = prt.GetComponent<Image>(); if (img != null && img.sprite != null) FitPlate(prt, img.sprite); }
+            }
             // ================= MOBILE-CONTROL-BIBLE Stage A: left = move, right = look =================
             bool overUI = EventSystem.current != null;
             if (state == State.Game && model != null && storyCard == null)
