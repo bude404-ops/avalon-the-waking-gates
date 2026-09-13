@@ -14,16 +14,33 @@
   .here { position:absolute; width:14px; height:14px; border-radius:50%; background:#a3895a; box-shadow:0 0 0 4px rgba(163,137,90,.25), 0 0 18px rgba(163,137,90,.8); animation:pulse 2.2s infinite; }
   @keyframes pulse { 0%,100%{ box-shadow:0 0 0 3px rgba(163,137,90,.25), 0 0 14px rgba(163,137,90,.8);} 50%{ box-shadow:0 0 0 7px rgba(163,137,90,.12), 0 0 24px rgba(163,137,90,1);} }
   .thumbs { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; max-width:720px; margin:18px auto 0; }
-  .th { position:relative; border:1px solid #22242b; }
+  .th { position:relative; border:1px solid #22242b; cursor:pointer; }
   .th img { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; filter:saturate(.8) brightness(.85); }
   .th span { position:absolute; left:0; right:0; bottom:0; padding:16px 8px 6px; font-size:10px; letter-spacing:.24em; background:linear-gradient(transparent, rgba(6,7,9,.92)); color:#e6ddca; }
   .th.here { border-color:#8a6f3c; }
   .back { display:block; text-align:center; margin-top:28px; color:#8a8578; font-size:12px; letter-spacing:.22em; text-decoration:none; }
   .back:hover { color:#a3895a; }
   .foot { text-align:center; margin-top:16px; font-size:10px; letter-spacing:.28em; color:#5d584e; }
+  /* ---- realm detail (plate-as-screen) ---- */
+  #realm-view { position:fixed; inset:0; background:#0a0b0d; display:none; flex-direction:column; z-index:40; }
+  #realm-view.show { display:flex; }
+  .plate-wrap { position:relative; flex:1; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .plate-wrap img { max-width:100%; max-height:100%; object-fit:contain; }
+  .rv-head { position:absolute; top:0; left:0; right:0; text-align:center; padding:18px 12px 14px; pointer-events:none; }
+  .rv-kicker { font-size:10px; letter-spacing:.34em; color:#8a8578; }
+  .rv-name { font-size:24px; letter-spacing:.26em; margin-top:4px; text-shadow:0 2px 14px rgba(0,0,0,.9); }
+  .rv-epi { font-size:11px; letter-spacing:.18em; font-style:italic; color:#8a8578; margin-top:8px; text-shadow:0 2px 10px rgba(0,0,0,.9); }
+  .rv-sub { font-size:9px; letter-spacing:.3em; color:#6f6a5e; margin-top:6px; }
+  .rv-gates { position:absolute; left:0; right:0; bottom:0; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; padding:14px 12px 22px; }
+  .gate { border:1px solid #33353d; background:rgba(10,11,13,.82); color:#e6ddca; font-family:inherit; font-size:10px; letter-spacing:.24em; padding:10px 14px; cursor:pointer; }
+  .gate:hover { border-color:#8a6f3c; color:#a3895a; }
+  .gate small { display:block; letter-spacing:.14em; color:#6f6a5e; font-size:8px; margin-top:3px; }
+  .rv-back { position:absolute; top:14px; left:14px; z-index:2; }
+  .rv-back a { color:#8a8578; text-decoration:none; font-size:11px; letter-spacing:.22em; border:1px solid #33353d; background:rgba(10,11,13,.82); padding:8px 12px; }
 </style>
 </head>
 <body>
+<div id="world-view">
 <div class="kicker">THE WORLD OF AVALON</div>
 <h1>THE SIX REALMS</h1>
 <div class="map">
@@ -51,7 +68,7 @@
       <text x="255" y="166">THE STORM MARCHES</text>
       <text x="555" y="186">THE CINDERLANDS</text>
       <text x="470" y="306">THE DEEP ROADS</text>
-      <text x="230" y="306">THE LANTERN WAYS</text>
+      <text x="230" y="306">THE BRAZIER-WAYS</text>
       <text x="160" y="156">THE TIDE VERGES</text>
       <text x="520" y="136">THE EVER-BLOOM</text>
     </g>
@@ -63,19 +80,72 @@
       <path d="M175 160 Q210 120 240 140" fill="none"/>
       <path d="M530 130 Q545 145 548 162" fill="none"/>
     </g>
-    <circle cx="255" cy="182" r="5" fill="#a3895a" opacity=".9"/>
+    <circle cx="555" cy="170" r="5" fill="#a3895a" opacity=".9"/>
   </svg>
-  <div class="here" style="left:calc(34.6% - 7px); top:calc(41.6% - 7px);"></div>
+  <div class="here" style="left:calc(77.1% - 7px); top:calc(40.5% - 7px);"></div>
 </div>
 <div class="thumbs">
-  <div class="th here"><img src="../art/STAGE2-SKYREND-CALM-EYE-WORLD-V2-CANON.png" alt=""><span>SKYREND &mdash; HERE</span></div>
-  <div class="th"><img src="../art/STAGE2-ASHFALL-CINDERLANDS-WORLD-V2-CANON.png" alt=""><span>ASHFALL</span></div>
-  <div class="th"><img src="../art/STAGE2-STONEHEART-ROOTSPINE-MYTHICWORLD-V1-CANON.png" alt=""><span>STONEHEART</span></div>
-  <div class="th"><img src="../art/STAGE2-DUSKMOURN-LANTERN-WAYS-WORLD-V2-CANON.png" alt=""><span>DUSKMOURN</span></div>
-  <div class="th"><img src="../art/STAGE2-MARENTH-DEEP-HOLLOW-WORLD-V2-CANON.png" alt=""><span>MARENTH</span></div>
-  <div class="th"><img src="../art/STAGE2-EVERBLOOM-FLOWERDALE-WORLD-V2-CANON.png" alt=""><span>EVERBLOOM</span></div>
+  <div class="th here" data-realm="ASHFALL"><img src="../art/MAP1-COLD-RELIQUARY-ASHFALL-CANON.png" alt=""><span>ASHFALL &mdash; HERE</span></div>
+  <div class="th" data-realm="SKYREND"><img src="../art/REALM-SKYREND-STARTER-MAP-V1.png" alt=""><span>SKYREND</span></div>
+  <div class="th" data-realm="STONEHEART"><img src="../art/REALM-STONEHEART-STARTER-MAP-V1.png" alt=""><span>STONEHEART</span></div>
+  <div class="th" data-realm="DUSKMOURN"><img src="../art/REALM-DUSKMOURN-STARTER-MAP-V1.png" alt=""><span>DUSKMOURN</span></div>
+  <div class="th" data-realm="MARENTH"><img src="../art/REALM-MARENTH-STARTER-MAP-V1.png" alt=""><span>MARENTH</span></div>
+  <div class="th" data-realm="EVERBLOOM"><img src="../art/REALM-EVERBLOOM-STARTER-MAP-V1.png" alt=""><span>EVERBLOOM</span></div>
 </div>
-<a class="back" href="ui-index.html">&#9666; INTERFACE BUILD</a>
+<a class="back" href="ui-index.html">&#9664; INTERFACE BUILD</a>
 <div class="foot">FOG LIFTS AS THE JOURNEY WAKES</div>
+</div>
+
+<div id="realm-view">
+  <div class="rv-back"><a href="#" onclick="closeRealm(); return false;">&#9664; THE SIX REALMS</a></div>
+  <div class="plate-wrap">
+    <img id="realm-plate" src="" alt="">
+    <div class="rv-head">
+      <div class="rv-kicker">THE REALM OF</div>
+      <div class="rv-name" id="realm-name"></div>
+      <div class="rv-epi" id="realm-epi"></div>
+      <div class="rv-sub" id="realm-sub"></div>
+    </div>
+    <div class="rv-gates" id="realm-gates"></div>
+  </div>
+</div>
+
+<script>
+const REALMS = {
+  ASHFALL:   { plate:"../art/MAP1-COLD-RELIQUARY-ASHFALL-CANON.png", name:"ASHFALL", epi:"The gate remembers who lit the flame.", sub:"THE CINDERLANDS &mdash; THE COLD RELIQUARY", here:true,
+               gates:[["SKYREND","THE STORM MARCHES"],["STONEHEART","THE DEEP ROADS"],["EVERBLOOM","THE EVER-BLOOM"]] },
+  SKYREND:   { plate:"../art/REALM-SKYREND-STARTER-MAP-V1.png", name:"SKYREND", epi:"The storm keeps its own ledger.", sub:"THE STORM MARCHES",
+               gates:[["ASHFALL","THE CINDERLANDS"],["STONEHEART","THE DEEP ROADS"],["MARENTH","THE TIDE VERGES"],["DUSKMOURN","THE BRAZIER-WAYS"]] },
+  STONEHEART:{ plate:"../art/REALM-STONEHEART-STARTER-MAP-V1.png", name:"STONEHEART", epi:"The deep roads hold what the surface forgot.", sub:"THE DEEP ROADS",
+               gates:[["SKYREND","THE STORM MARCHES"],["ASHFALL","THE CINDERLANDS"]] },
+  DUSKMOURN: { plate:"../art/REALM-DUSKMOURN-STARTER-MAP-V1.png", name:"DUSKMOURN", epi:"The brazier-ways burn for those who carried them.", sub:"THE BRAZIER-WAYS",
+               gates:[["SKYREND","THE STORM MARCHES"]] },
+  MARENTH:   { plate:"../art/REALM-MARENTH-STARTER-MAP-V1.png", name:"MARENTH", epi:"The tide keeps what the deep forgives.", sub:"THE TIDE VERGES",
+               gates:[["SKYREND","THE STORM MARCHES"]] },
+  EVERBLOOM: { plate:"../art/REALM-EVERBLOOM-STARTER-MAP-V1.png", name:"EVERBLOOM", epi:"The bloom answers the patient.", sub:"THE EVER-BLOOM",
+               gates:[["ASHFALL","THE CINDERLANDS"]] }
+};
+function openRealm(key){
+  const r = REALMS[key]; if(!r) return;
+  document.getElementById("realm-plate").src = r.plate;
+  document.getElementById("realm-name").innerHTML = r.name + (r.here ? " &mdash; HERE" : "");
+  document.getElementById("realm-epi").innerHTML = "&ldquo;" + r.epi + "&rdquo;";
+  document.getElementById("realm-sub").innerHTML = r.sub;
+  const g = document.getElementById("realm-gates"); g.innerHTML = "";
+  r.gates.forEach(([to, region]) => {
+    const b = document.createElement("button"); b.className = "gate";
+    b.innerHTML = "GATE &rarr; " + to + "<small>" + region + "</small>";
+    b.onclick = () => openRealm(to);
+    g.appendChild(b);
+  });
+  document.getElementById("realm-view").classList.add("show");
+  document.body.style.overflow = "hidden";
+}
+function closeRealm(){
+  document.getElementById("realm-view").classList.remove("show");
+  document.body.style.overflow = "";
+}
+document.querySelectorAll(".th").forEach(t => t.addEventListener("click", () => openRealm(t.dataset.realm)));
+</script>
 </body>
 </html>
