@@ -12,13 +12,14 @@ is the living mock — every screen below is staged there as the pipeline ships 
 
 ## Screens
 
-### 1. Boot / Title
-- "AVALON" hero title, "THE WAKING GATES" sub.
-- ENTER THE GATES → Character Select.
-- Tag: REVIEW BUILD — UNITY STAGE.
-- Future: SETTINGS + CREDITS stubs when audio/options exist.
+### 1. Boot / Title — TITLE MENU LAW v1 (LOCKED, Big Sept 11: 'The title menu i like and want that to be how ours will be')
+- Governing plate: UI-MAIN-MENU-CANON.png. "AVALON" engraved knotwork hero, "THE WAKING GATES" sub, Gate-in-storm-fog key art behind, mist over UI edges.
+- Carved stone option list, lower third: CONTINUE, NEW JOURNEY, GATES, SETTINGS (bronze knotwork borders, no modern flat-glass).
+- NEW JOURNEY + GATES → Character Select; CONTINUE + SETTINGS sealed until saves/options ship.
+- Version + copyright line at the plate base: "V 0.2.11 © 2026 WAKING GATES, INC. ALL RIGHTS RESERVED." (bump per versionCode).
 
 ### 2. Character Select — CLASS SELECT LAW v1 (LOCKED, Big Sept 11)
+- AVALON overline top, "CHOOSE YOUR CLASS" header (per plate).
 - Six class niches in a carved stone-knotwork frame (UI-CLASS-SELECT-CANON.png governs): portrait-first 2-col x 3-row grid, actual canon class art in the niches, selected niche bronze-lipped.
 - Locked classes show "IN THE FORGE"; forged classes show "FORGED" (bronze).
 - Card: class name / role line (bronze) / lore blurb (grey) / realm pairing:
@@ -30,10 +31,10 @@ is the living mock — every screen below is staged there as the pipeline ships 
 ### 3. In-Game HUD
 - **Top-left crest:** class name (cream) + LEVEL line + realm.
 - **Health bar:** slate fill `#6b788c`, label in-panel. The Ravenkin companion carries the reliquary vessel — the game's relic-carrier (stages in the HUD art as the companion system ships).
-- **Belief meter (PROPOSED — Big's verdict pending):** bronze fill `#a3895a`, under health. Abilities draw on BELIEF, not stamina — restored through shrines, story choices, divine bonds; never ground out. Health stays physical.
+- **Belief meter:** bronze fill `#a3895a`, under health. NO numbers in combat — reliquary-glow read per AV-UI-BIBLE Law 1. Abilities draw on BELIEF, not stamina — restored through shrines, story choices, divine bonds; never ground out. Health stays physical, also numeral-free.
 - **Top-right:** THE RELIQUARY — UNLIT (flame state per Reliquary Law; alights when entrusted).
-- **Quest tracker:** BOTTOM-LEFT per mockup — "QUEST — LIGHT THE BRAZIER AT THE WAKING GATE" (Cold Reliquary quest line).
-- **Numeric meters:** health + belief carry numeric readouts per mockup (demo 1480/1500, 85/110).
+- **Quest line TOP-CENTER per canon plate:** "REACH THE FIRST GATE" (Law 2 — one line, single queue).
+- **Region title card (Law 3):** on entering game — "SKYREND" + epigraph "The gate remembers who lit the flame." + storm-slate underline, 2.5s hold then fade.
 - **Ability bar:** 4 slots bottom-center, SEALED until skill trees ship.
 - **Region banner (future):** entering a realm splashes the realm name + colorway whisper (Reliquary-Region Aura Law).
 - **Controls:** drag to orbit, pinch/scroll to zoom; IDLE/WALK review toggles stay until gameplay controls exist.
