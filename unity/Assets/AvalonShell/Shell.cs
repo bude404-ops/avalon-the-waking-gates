@@ -561,7 +561,7 @@ namespace AvalonShell
                 var stampTxt = Label(p.transform, "SHELL v" + stampVc + " \u2022 " + System.DateTime.Now.ToString("MMM d"), 11, new Color(0.72f, 0.66f, 0.55f, 0.85f), TextAnchor.UpperRight);
                 stampTxt.rect().anchorMin = new Vector2(0.78f, 0.012f); stampTxt.rect().anchorMax = new Vector2(0.995f, 0.030f);
                 PlateZone(plate.transform, "NEW-JOURNEY", 0.24f, 0.76f, 0.615f, 0.690f, true, delegate { SetState(State.Select); }, "NEW JOURNEY");
-                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { panelMap.SetActive(true); }, "GATES");
+                PlateZone(plate.transform, "GATES", 0.24f, 0.76f, 0.690f, 0.758f, true, delegate { OpenMap(); }, "GATES");
                 PlateZone(plate.transform, "ACHIEVEMENTS", 0.24f, 0.76f, 0.758f, 0.822f, false, null, "ACHIEVEMENTS");
                 PlateZone(plate.transform, "SETTINGS", 0.24f, 0.76f, 0.822f, 0.885f, false, null, "SETTINGS");
                 return p;
@@ -817,7 +817,7 @@ namespace AvalonShell
             (bMap.transform as RectTransform).anchorMin = new Vector2(0.995f, 0.02f); (bMap.transform as RectTransform).anchorMax = new Vector2(0.995f, 0.02f);
             (bMap.transform as RectTransform).anchoredPosition = new Vector2(-270, 30);
             (bMap.transform as RectTransform).sizeDelta = new Vector2(90, 36);
-            bMap.onClick.AddListener(() => panelMap.SetActive(!panelMap.activeSelf));
+            bMap.onClick.AddListener(() => { if (panelMap.activeSelf) panelMap.SetActive(false); else OpenMap(); });
 
             var bTab = Btn(p.transform, "CHARACTER", 11);
             (bTab.transform as RectTransform).anchorMin = new Vector2(0.995f, 0.02f); (bTab.transform as RectTransform).anchorMax = new Vector2(0.995f, 0.02f);
@@ -863,6 +863,44 @@ namespace AvalonShell
             return panel;
         }
 
+        // ---- v221 PIN PASS: myth-veiled map pins ----
+        static readonly (string site, string veiled, string trueName, Vector2 at, int revealStage)[] MAP_PINS = new (string, string, string, Vector2, int)[] {
+            ("OATH-HEARTH",   "A COLD LIGHT IN THE MIST",     "OATH-HEARTH",    new Vector2(0.18f, 0.22f), 1),
+            ("GATE-TOWN",     "SHAPES GATHER IN THE FOG",     "THE GATE-TOWN",  new Vector2(0.50f, 0.46f), 2),
+            ("FIRST-GATE",    "AN UNLIT SHAPE, FAR OFF",      "THE FIRST GATE", new Vector2(0.82f, 0.72f), 3),
+        };
+        System.Collections.Generic.List<GameObject> mapPins;
+
+        void OpenMap()
+        {
+            if (mapPins != null)
+                for (int i = 0; i < mapPins.Count; i++)
+                    if (mapPins[i] != null)
+                    {
+                        bool disc = questStage >= MAP_PINS[i].revealStage;
+                        mapPins[i].transform.Find("Name").GetComponent<UnityEngine.UI.Text>().text = disc ? MAP_PINS[i].trueName : MAP_PINS[i].veiled;
+                        var img = mapPins[i].GetComponent<UnityEngine.UI.Image>();
+                        var c = img.color; c.r = disc ? 0.86f : 0.42f; c.g = disc ? 0.62f : 0.39f; c.b = disc ? 0.28f : 0.30f; img.color = c;
+                    }
+            panelMap.SetActive(true);
+        }
+
+        GameObject BuildMapPin(Transform mapRoot, int i)
+        {
+            var pin = Panel(mapRoot, "Pin-" + MAP_PINS[i].site, new Color(0.42f, 0.39f, 0.30f, 0.95f));
+            var prt = pin.transform as RectTransform;
+            var at = MAP_PINS[i].at;
+            float px = 0.03f + at.x * 0.94f, py = 0.03f + at.y * 0.87f;
+            prt.anchorMin = new Vector2(px, py); prt.anchorMax = new Vector2(px, py);
+            prt.sizeDelta = new Vector2(22, 22); prt.localEulerAngles = new Vector3(0, 0, 45);
+            var nm = Label(pin.transform, MAP_PINS[i].trueName, 10, Hex(0xd8c9a3), TextAnchor.UpperCenter);
+            nm.name = "Name";
+            nm.rect().localEulerAngles = new Vector3(0, 0, -45);
+            nm.rect().anchorMin = new Vector2(0, -0.4f); nm.rect().anchorMax = new Vector2(0, -0.4f);
+            nm.rect().sizeDelta = new Vector2(220, 30); nm.rect().anchoredPosition = new Vector2(0, -4);
+            return pin;
+        }
+
         // ================= MAP =================
         // Stage 5 of GAME-UI-LAYOUT: landmark map. Cold Reliquary slice live (approved canon plate);
         // landmark pins land with the pin pass.
@@ -887,6 +925,11 @@ namespace AvalonShell
                 var none = Label(p.transform, "THE GATES HAVE NOT DRAWN THIS PATH YET", 13, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
                 none.rect().anchorMin = new Vector2(0.1f, 0.4f); none.rect().anchorMax = new Vector2(0.9f, 0.6f);
             }
+            mapPins = new System.Collections.Generic.List<GameObject>();
+            for (int i = 0; i < MAP_PINS.Length; i++) mapPins.Add(BuildMapPin(p.transform, i));
+            // v221 PIN PASS — myth-veiled landmark pins (build-order item 3):
+            // discovered sites show their true names; undiscovered ones stay VEILED
+            // (knowledge = unlock — the WORLD-AND-DUNGEON-LAW discovery doctrine).
             var sub = Label(p.transform, "QUEST PIN — REACH THE FIRST GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
             sub.rect().anchorMin = new Vector2(0.03f, 0.0f); sub.rect().anchorMax = new Vector2(0.97f, 0.05f); sub.rect().offsetMin = new Vector2(8, 6); sub.rect().offsetMax = new Vector2(-8, 0);
             var close = Btn(p.transform, "CLOSE", 11);
