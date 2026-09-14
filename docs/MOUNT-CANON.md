@@ -104,3 +104,18 @@ the mount becomes the KEY to hazard-gated mythic-pocket dungeons (knowledge = un
   no-flying law — a flying mount opens mountain-peak / sky dungeons. Awaiting his ruling.
 Mounted combat law unchanged (dismount to fight); abilities are traversal, not combat.
 Status: PROPOSED — locks when Bude rules.
+
+
+## MOUNT VERDICT v3 (Bude, Sept 14 2026) — the riding set
+Bude's rulings on the mythic set: Everbloom fox -> BOAR; Ashfall bear LOSES the antlers;
+Skyrend bull -> STORM-WOLF (a creature that belongs to a storm region); EVERY mount wears
+a CELTIC SADDLE (tooled leather knotwork, bronze ring fittings, wool blanket) so each
+reads rideable and in-game. Locked set (art/pending/MOUNT-V3-*):
+- ASHFALL — Ember-Seamed Bear-Guardian (no antlers)
+- STONEHEART — Golem Ram
+- MARENTH — Drowned-Titan Strider
+- DUSKMOURN — Smoke-Horse
+- EVERBLOOM — Briar Boar
+- SKYREND — Storm-Wolf
+Six types: bear / ram / wading bird / horse / boar / wolf — all distinct. No flying, no
+mounted combat, one questline per realm mount, Celtic saddles = the in-game read.
