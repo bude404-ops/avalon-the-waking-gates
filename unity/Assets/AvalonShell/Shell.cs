@@ -305,6 +305,9 @@ namespace AvalonShell
         Sprite mistTitleBg;
         Sprite mistSelectBg;
         Sprite mistFog;
+        Sprite carvedSlab;
+        Sprite nicheFrameSpr;
+        Sprite drawnMapSpr;
         RectTransform mistTitleScroll;
         RectTransform mistTitleScroll2;
         RectTransform mistSelectScroll;
@@ -405,6 +408,205 @@ namespace AvalonShell
                 return sp;
             }
             catch (Exception e) { Debug.LogError("[SHELL] mist strip failed: " + e.Message); return null; }
+        }
+
+        // v230 FOUNDATION SLAB — the engraved button face, drawn in code: dark stone with
+        // vertical grain, top-lit gradient, hairline bronze border, carved inner bevel.
+        Sprite CarvedSlab()
+        {
+            try
+            {
+                int W = 256, H = 64;
+                var tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[W * H];
+                var stone = new Color(0.224f, 0.216f, 0.196f, 1f);   // v228 ref face
+                var bronze = new Color(0.639f, 0.541f, 0.357f, 1f);
+                for (int y = 0; y < H; y++)
+                {
+                    float ty = (float)y / (H - 1);
+                    for (int x = 0; x < W; x++)
+                    {
+                        var c = stone;
+                        c *= 1f + 0.05f * Hash01(5u, x) + 0.04f * Hash01(6u, x + y * 3);   // grain
+                        c *= Mathf.Lerp(0.82f, 1.06f, ty);                               // bottom dark, top lit
+                        float bx = Mathf.Min(x, W - 1 - x), by = Mathf.Min(y, H - 1 - y);
+                        float b = Mathf.Min(bx, by);
+                        if (b < 1.5f) c = Color.Lerp(c, bronze, 1f - b / 1.5f);          // hairline bronze border
+                        if (by > 1.5f && by < 3.5f) c *= 0.88f;                          // carved bevel top
+                        if (by > H - 4.5f && by < H - 2.5f) c *= 1.07f;                  // carved bevel bottom
+                        px[y * W + x] = c;
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, W, H), new Vector2(0.5f, 0.5f), 128f);
+                sp.name = "CarvedSlab";
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] carved slab failed: " + e.Message); return null; }
+        }
+
+        // v230 FOUNDATION FRAME — the class-card niche, drawn in code as a 9-sliced sprite:
+        // bronze band with thickened corners + faint inner hairline over dark stone.
+        Sprite NicheFrameSpr()
+        {
+            try
+            {
+                int S = 64;
+                var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[S * S];
+                var stone = new Color(0.224f, 0.216f, 0.196f, 0.92f);
+                var bronze = new Color(0.639f, 0.541f, 0.357f, 1f);
+                for (int y = 0; y < S; y++)
+                {
+                    for (int x = 0; x < S; x++)
+                    {
+                        var c = stone;
+                        float bx = Mathf.Min(x, S - 1 - x), by = Mathf.Min(y, S - 1 - y);
+                        float b = Mathf.Min(bx, by);
+                        float cb = Mathf.Max(bx, by);
+                        float band = (b < 3f) ? 1f - b / 3f : 0f;
+                        if (cb < 6f) band = Mathf.Max(band, 1f - cb / 6f);                       // corner accents
+                        if (b < 5f && cb >= 6f) band = Mathf.Max(band, 0.35f * (1f - b / 5f));     // inner hairline
+                        px[y * S + x] = Color.Lerp(c, bronze, band);
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, S, S), new Vector2(0.5f, 0.5f), 128f, 0u, SpriteMeshType.FullRect, new Vector4(16, 16, 16, 16));
+                sp.name = "NicheFrame";
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] niche frame failed: " + e.Message); return null; }
+        }
+
+        // v230 FOUNDATION MAP FIELD — the Cold Reliquary map, drawn in code: dark slate grain,
+        // bronze-ink contours, double hairline border, the old road rising to the gate glyph.
+        Sprite DrawnMap()
+        {
+            try
+            {
+                int W = 512, H = 512;
+                var tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[W * H];
+                var slate = new Color(0.078f, 0.075f, 0.066f, 1f);
+                var ink = new Color(0.55f, 0.49f, 0.37f, 1f);
+                for (int y = 0; y < H; y++)
+                {
+                    float y01 = (float)y / (H - 1);
+                    for (int x = 0; x < W; x++)
+                    {
+                        float x01 = (float)x / (W - 1);
+                        var c = slate * (1f + 0.05f * Hash01(31u, x * 7 + y));   // grain
+                        c *= Mathf.Lerp(0.92f, 1.05f, y01);                      // top-lit
+                        for (int L = 0; L < 3; L++)                              // faint bronze contours
+                        {
+                            float hgt = 0.15f + 0.12f * L + 0.06f * Ridge(77u + (uint)L, x01);
+                            if (Mathf.Abs(y01 - hgt) < 0.006f) c = Color.Lerp(c, ink * 0.5f, 0.35f);
+                        }
+                        float bxx = Mathf.Min(x01, 1 - x01), byy = Mathf.Min(y01, 1 - y01);
+                        float b = Mathf.Min(bxx, byy);
+                        if (b < 0.006f || (b > 0.012f && b < 0.016f)) c = Color.Lerp(c, ink * 0.8f, 0.8f);   // border
+                        float t = Mathf.Clamp01((x01 - 0.12f) * 1.15f);                                        // old road
+                        float py = 0.16f + 0.10f * Mathf.Sin(t * 6.283f) + 0.55f * t - 0.08f * t * t;
+                        if (Mathf.Abs(y01 - py) < 0.010f && x01 > 0.12f && x01 < 0.86f) c = Color.Lerp(c, ink, 0.85f);
+                        float gx = x01 - 0.88f, gy = y01 - 0.60f;                                              // gate glyph
+                        float gd = Mathf.Sqrt(gx * gx + gy * gy);
+                        if (gd < 0.055f && gd > 0.038f) c = Color.Lerp(c, ink, 0.9f);
+                        if (gd <= 0.038f) c = Color.Lerp(c, ink * 0.4f, 0.5f);
+                        px[y * W + x] = c;
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, W, H), new Vector2(0.5f, 0.5f), 128f);
+                sp.name = "DrawnMap";
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] drawn map failed: " + e.Message); return null; }
+        }
+
+        // v230 FOUNDATION CLASS MARKS — each class gets a code-drawn heraldic sigil in bronze
+        // over its own tinted mist (per Bude: characters based on the reference STYLE, built
+        // real from the foundation — no pasted portraits in the menus).
+        Sprite ClassSigil(int idx)
+        {
+            try
+            {
+                int S = 128;
+                var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[S * S];
+                var tints = new Color[] {
+                    new Color(0.16f, 0.19f, 0.23f, 1f), new Color(0.23f, 0.14f, 0.10f, 1f),
+                    new Color(0.20f, 0.17f, 0.12f, 1f), new Color(0.17f, 0.15f, 0.21f, 1f),
+                    new Color(0.13f, 0.18f, 0.14f, 1f), new Color(0.19f, 0.16f, 0.13f, 1f) };
+                var tint = tints[idx % tints.Length];
+                var bronze = new Color(0.78f, 0.66f, 0.44f, 1f);
+                for (int y = 0; y < S; y++)
+                {
+                    for (int x = 0; x < S; x++)
+                    {
+                        float fx = (x + 0.5f) / S * 2f - 1f, fy = (y + 0.5f) / S * 2f - 1f;
+                        var c = tint;
+                        float r = Mathf.Sqrt(fx * fx + fy * fy);
+                        c *= Mathf.Lerp(1.08f, 0.55f, Mathf.Clamp01(r * 0.75f));                 // misty vignette
+                        c *= 1f + 0.06f * Hash01((uint)(idx * 13 + 1), x);
+                        bool on = false;
+                        switch (idx)
+                        {
+                            case 0:   // SOVEREIGN — crown of three prongs over a base bar
+                                on = (Mathf.Abs(fy - 0.02f) < 0.05f && Mathf.Abs(fx) < 0.44f)
+                                  || (Mathf.Abs(fx + 0.26f) < 0.05f && fy > 0.02f && fy < 0.34f)
+                                  || (Mathf.Abs(fx) < 0.05f && fy > 0.02f && fy < 0.42f)
+                                  || (Mathf.Abs(fx - 0.26f) < 0.05f && fy > 0.02f && fy < 0.34f);
+                                break;
+                            case 1:   // RAVAGER — twin crossed strokes
+                                on = r < 0.55f && (Mathf.Abs(fx - fy) < 0.06f || Mathf.Abs(fx + fy) < 0.06f);
+                                break;
+                            case 2:   // WARDEN — three shield bands
+                                {
+                                    for (int k = 0; k < 3; k++)
+                                    {
+                                        float cy = 0.28f - k * 0.24f;
+                                        if (Mathf.Abs(fy - cy) < 0.045f && Mathf.Abs(fx) < 0.40f - Mathf.Abs(fy - cy) * 2.5f) on = true;
+                                    }
+                                }
+                                break;
+                            case 3:   // VEILBORN — crescent veil
+                                {
+                                    float r2 = Mathf.Sqrt((fx - 0.06f) * (fx - 0.06f) + fy * fy);
+                                    on = r2 > 0.20f && r2 < 0.34f && r > 0.22f;
+                                }
+                                break;
+                            case 4:   // WEAVER — thread-star: cross + ring
+                                on = ((Mathf.Abs(fx) < 0.035f || Mathf.Abs(fy) < 0.035f) && r < 0.30f)
+                                  || (r > 0.34f && r < 0.375f);
+                                break;
+                            case 5:   // WILDBORN — three claw arcs
+                                {
+                                    float[] ks = { -0.26f, 0f, 0.26f };
+                                    for (int k = 0; k < 3; k++)
+                                    {
+                                        float d = Mathf.Sqrt((fx - ks[k]) * (fx - ks[k]) + (fy + 0.18f) * (fy + 0.18f));
+                                        if (Mathf.Abs(d - 0.32f) < 0.035f && fy < 0.16f) on = true;
+                                    }
+                                }
+                                break;
+                            default:
+                                on = r < 0.30f && r > 0.22f;
+                                break;
+                        }
+                        if (on) c = bronze;
+                        px[y * S + x] = c;
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, S, S), new Vector2(0.5f, 0.5f), 128f);
+                sp.name = "ClassSigil-" + idx;
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] class sigil failed: " + e.Message); return null; }
         }
 
         // ---- v229 REBUILD-THE-LOOK: alive-menu machinery (cascade fade + keyart drift) ----
@@ -635,7 +837,7 @@ namespace AvalonShell
             lbl.rect().Stretch();
             // v228 plate-quality: the baked carved slab — the plate's own stone + carved bevels
             // behind the engraved label (Bude, Sept 13: "menu works just need make the quality better")
-            var baked = Art("SLAB-CARVED");
+            var baked = carvedSlab ?? (carvedSlab = CarvedSlab());   // v230 foundation slab
             if (baked != null)
             {
                 fim.sprite = baked; fim.color = Color.white;
@@ -981,7 +1183,7 @@ GameObject BuildSelect(Transform parent)
                 var cd = CLASSES[i];
                 bool unlocked = ModelPrefab(cd.name) != null;
                 var niche = Panel(p.transform, "card-" + cd.name, new Color(0.224f, 0.216f, 0.196f, 0.92f));   // v228 ref stone RGB 57,55,50
-            var frameSprite = SlicedArt("NICHE-FRAME", 16f, 16f, 16f, 16f);
+            var frameSprite = nicheFrameSpr ?? (nicheFrameSpr = NicheFrameSpr());   // v230 foundation frame
             if (frameSprite != null)
             {
                 var nIm = niche.GetComponent<Image>();
@@ -992,7 +1194,7 @@ GameObject BuildSelect(Transform parent)
                 var face = Panel(niche.transform, "Face", new Color(0.063f, 0.063f, 0.059f, 0.94f));   // v228 ref interior
                 var frt = face.rect();
                 frt.anchorMin = new Vector2(0.018f, 0.018f); frt.anchorMax = new Vector2(0.982f, 0.982f); frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
-                var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON");
+                var art = ClassSigil(i);   // v230 foundation class mark — no pasted portraits
                 if (art != null)
                 {
                     var ai = new GameObject("art");
@@ -1232,7 +1434,7 @@ GameObject BuildSelect(Transform parent)
             p.transform.Stretch();
             var head = Label(p.transform, "COLD RELIQUARY — ASHFALL", 15, Hex(0xe6ddca), TextAnchor.MiddleLeft);
             head.rect().anchorMin = new Vector2(0, 1); head.rect().anchorMax = new Vector2(1, 1); head.rect().offsetMin = new Vector2(18, -48); head.rect().offsetMax = new Vector2(-18, -16);
-            var mapArt = Art("MAP1-COLD-RELIQUARY-ASHFALL-CANON");
+            var mapArt = drawnMapSpr ?? (drawnMapSpr = DrawnMap());   // v230 foundation map field
             if (mapArt != null)
             {
                 var holder = new GameObject("MapArt");
