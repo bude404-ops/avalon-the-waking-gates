@@ -182,3 +182,16 @@ wolf). Mounted combat ban unchanged. Same joystick law, mounts change speed/abil
 Stage C hold unchanged: no Tier 2 generation/rigging/forging until the Sovereign is
 ruled done and Stage B controls land. These plates are the approved art the forge
 targets when it unlocks.
+
+## LEDGER NOTE (Sept 14, presented to Bude on request)
+The canonical ledger as presented: Tier 1 = one generic per realm (any class, realm
+questline). Tier 2 = one legend per class (class arc + world exploration), plus the
+proposed WORLD legendary (Drowned-Titan Strider, exploration-earned, Marenth-first).
+REALM-ECHO LAW for Tier 2: class legends are styled to the CLASS first; each carries
+exactly ONE realm echo so it feels born somewhere (drake->Ashfall lava, turtle->
+Stoneheart stone, panther->Duskmourn mist, stag->Everbloom glyphs, mammoth->Skyrend
+storm plains); the Griffin is the sole realm-free legend (the king's wing belongs to
+the sky). ALTERNATES: the earlier V3 mythic set (Ember-Seamed Bear, Golem Ram,
+Drowned-Titan Strider, Smoke-Horse, Briar Boar, Storm-Wolf) stays vaulted as per-class
+alternates — Bude may swap any class slot to its V3 beast or request re-rolls; mixed
+rosters are valid. Final Tier 2 roster locks on his per-class verdicts.
