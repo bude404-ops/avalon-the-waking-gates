@@ -73,3 +73,17 @@ No two realm mounts share a type of creature — each is a distinct animal famil
 - EVERBLOOM — Briar-Fox (canine, briar-vine antlers)
 - SKYREND — Thunder-Aurochs (bovine, lightning-veined horns) [replaces the Storm-Hart]
 V1 deer-family rolls (Ash-Elk, deer-pooka, Storm-Hart) superseded. Mocks: art/pending/MOUNT-*-MOCK.png.
+
+
+## MYTHIC-MOUNT LAW (Bude, Sept 14 2026)
+The mounts are NOT normal animals with region effects — they are MYTHOLOGICAL BEINGS of
+their realms: impossible anatomy, legendary presence, each one a walking legend (v2 mock
+set, art/pending/MOUNT-V2-*):
+- ASHFALL — Ember-Seamed Bear-Guardian (charcoal-plated hide, ember seams, branch-antler crown)
+- STONEHEART — Golem Ram (carved granite horns with rune seams, living-stone fleece, gem eyes)
+- MARENTH — Drowned-Titan Strider (temple-bronze scales, tattered sail crest, flooded halls)
+- DUSKMOURN — Smoke-Horse (smoke hooves, branch antlers, mask face, crimson rune-light)
+- EVERBLOOM — Briar Spirit (wooden mask face, thorn-vine tail with blooms, green fireflies)
+- SKYREND — Storm-Bull (storm-cloud spiral horns laced with lightning)
+Six distinct creature types law still holds; no flying, no mounted combat, one questline
+per realm mount. V1 'animal + glow' mocks superseded.
