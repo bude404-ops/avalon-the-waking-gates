@@ -319,35 +319,59 @@ namespace AvalonShell
         {
             try
             {
-                int W = 512, H = 256;
+                int W = 1024, H = 512;
                 var tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
                 tex.wrapMode = TextureWrapMode.Clamp;
-                var skyTop = new Color(0.045f, 0.075f, 0.105f, 1f);   // deep blue-teal zenith
-                var skyLow = new Color(0.335f, 0.415f, 0.465f, 1f);   // pale misty horizon
+                var zen = new Color(0.035f, 0.058f, 0.082f, 1f);    // zenith: deep blue-teal
+                var mid = new Color(0.10f, 0.155f, 0.19f, 1f);       // mid sky
+                var hor = new Color(0.36f, 0.44f, 0.49f, 1f);       // horizon: pale mist
+                var glow = new Color(0.62f, 0.60f, 0.52f, 1f);     // warm light at the horizon source
+                float lx = 0.68f;
                 var px = new Color[W * H];
                 for (int y = 0; y < H; y++)
                 {
                     float t01 = (float)y / (H - 1);          // 0 = bottom, 1 = top
-                    var sky = Color.Lerp(skyLow, skyTop, t01);
+                    var sky = t01 < 0.5f ? Color.Lerp(hor, mid, t01 / 0.5f) : Color.Lerp(mid, zen, (t01 - 0.5f) / 0.5f);
                     for (int x = 0; x < W; x++)
                     {
                         float x01 = (float)x / (W - 1);
                         var c = sky;
-                        // horizon glow band
-                        c = Color.Lerp(c, skyLow * 1.30f, Mathf.Exp(-Mathf.Pow((t01 - 0.52f) / 0.055f, 2f)) * 0.55f);
-                        // three ridgelines: far = pale mist, near = dark silhouette
-                        float[] bases = { 0.50f, 0.38f, 0.235f };
-                        float[] darks = { 0.34f, 0.62f, 0.96f };
-                        for (int L = 0; L < 3; L++)
+                        // horizon bloom + warm light source
+                        float bandG = Mathf.Exp(-Mathf.Pow((t01 - 0.50f) / 0.045f, 2f));
+                        c = Color.Lerp(c, hor * 1.30f, bandG * 0.50f);
+                        float srcG = Mathf.Exp(-Mathf.Pow((x01 - lx) / 0.16f, 2f)) * Mathf.Exp(-Mathf.Pow((t01 - 0.50f) / 0.10f, 2f));
+                        c = Color.Lerp(c, glow, srcG * 0.55f);
+                        // god rays fanning up from the light source
+                        if (t01 > 0.50f && x01 > 0.25f && x01 < 0.95f)
                         {
-                            float hgt = bases[L] + 0.085f * Ridge(seed + (uint)L, x01);
+                            float ang = Mathf.Atan2(t01 - 0.50f, x01 - lx);
+                            float rays = Mathf.Pow(Mathf.Max(0f, Mathf.Sin(ang * 24f + (float)seed * 0.05f)), 6f);
+                            float fall = Mathf.Exp(-Mathf.Pow((t01 - 0.50f) / 0.22f, 2f)) * Mathf.Exp(-Mathf.Abs(x01 - lx) / 0.30f);
+                            c = Color.Lerp(c, glow * 1.15f, rays * fall * 0.22f);
+                        }
+                        // five domain-warped ridgelines with atmospheric haze (v231 painterly depth)
+                        for (int L = 0; L < 5; L++)
+                        {
+                            float f = (float)L / 4f;   // 0 = far, 1 = near
+                            float warp = 0.10f * (Ridge(seed + 91u + (uint)L, x01 * 0.7f) - 0.5f);
+                            float hgt = 0.185f + 0.29f * f + 0.10f * (1f - f) * Ridge(seed + (uint)L, x01 + warp) + 0.045f * f * Ridge(seed + 17u + (uint)L, x01 * 2.1f);
                             if (t01 < hgt)
                             {
-                                float edge = Mathf.Clamp01((hgt - t01) / 0.045f);   // soft mist fade at ridge tops
-                                var rc = Color.Lerp(skyLow * 1.32f, skyTop * 0.16f, darks[L]);
+                                float edge = Mathf.Clamp01((hgt - t01) / 0.030f);
+                                var rc = Color.Lerp(c * 1.06f, zen * 0.20f, f);
+                                rc = Color.Lerp(rc, hor, (1f - f) * 0.45f);   // haze lifts far ridges into the sky
                                 c = Color.Lerp(c, rc, edge);
                             }
+                            else if (t01 < hgt + 0.012f)
+                            {
+                                c = Color.Lerp(c, hor * 1.15f, 0.25f);         // mist line riding each ridge top
+                            }
                         }
+                        // vignette + film grain
+                        float vx = x01 - 0.5f, vy = t01 - 0.5f;
+                        float vig = Mathf.Clamp01(1f - 1.15f * Mathf.Sqrt(vx * vx + vy * vy) / 0.72f);
+                        c *= 0.80f + 0.20f * vig;
+                        c *= 1f + 0.025f * (Hash01(45u, x * 3 + y * 7) - 0.5f);
                         px[y * W + x] = c;
                     }
                 }
@@ -397,8 +421,8 @@ namespace AvalonShell
                     for (int x = 0; x < W; x++)
                     {
                         float x01 = (float)x / (W - 1);
-                        float n = 0.30f + 0.70f * Ridge(seed, x01 * 0.35f + 0.10f) * Ridge(seed + 7u, x01 * 0.8f);
-                        float a = vy * n * 0.75f;
+                        float n = 0.38f + 0.62f * (0.6f * Ridge(seed, x01 * 1.6f) + 0.4f * Ridge(seed + 13u, x01 * 0.55f));   // v231 big soft blobs
+                        float a = vy * n * 0.62f;
                         px[y * W + x] = new Color(0.78f, 0.845f, 0.90f, a);
                     }
                 }
@@ -435,6 +459,9 @@ namespace AvalonShell
                         if (b < 1.5f) c = Color.Lerp(c, bronze, 1f - b / 1.5f);          // hairline bronze border
                         if (by > 1.5f && by < 3.5f) c *= 0.88f;                          // carved bevel top
                         if (by > H - 4.5f && by < H - 2.5f) c *= 1.07f;                  // carved bevel bottom
+                        if (ty > 0.85f) c *= 1.045f;                                     // v231 top sheen band
+                        if (ty < 0.10f) c *= 0.93f;                                      // v231 bottom shadow band
+                        c *= 0.95f + 0.05f * Hash01(9u, (int)(x * 0.62f + y));             // v231 faint scratches
                         px[y * W + x] = c;
                     }
                 }
@@ -533,25 +560,27 @@ namespace AvalonShell
         {
             try
             {
-                int S = 128;
+                int S = 128, SS = S * 2;   // v231: 2x2 supersampled — smooth heraldic edges
                 var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
                 tex.wrapMode = TextureWrapMode.Clamp;
                 var px = new Color[S * S];
+                var hi = new Color[SS * SS];
                 var tints = new Color[] {
                     new Color(0.16f, 0.19f, 0.23f, 1f), new Color(0.23f, 0.14f, 0.10f, 1f),
                     new Color(0.20f, 0.17f, 0.12f, 1f), new Color(0.17f, 0.15f, 0.21f, 1f),
                     new Color(0.13f, 0.18f, 0.14f, 1f), new Color(0.19f, 0.16f, 0.13f, 1f) };
                 var tint = tints[idx % tints.Length];
                 var bronze = new Color(0.78f, 0.66f, 0.44f, 1f);
-                for (int y = 0; y < S; y++)
+                for (int y = 0; y < SS; y++)
                 {
-                    for (int x = 0; x < S; x++)
+                    for (int x = 0; x < SS; x++)
                     {
-                        float fx = (x + 0.5f) / S * 2f - 1f, fy = (y + 0.5f) / S * 2f - 1f;
+                        float fx = (x + 0.5f) / SS * 2f - 1f, fy = (y + 0.5f) / SS * 2f - 1f;
                         var c = tint;
                         float r = Mathf.Sqrt(fx * fx + fy * fy);
                         c *= Mathf.Lerp(1.08f, 0.55f, Mathf.Clamp01(r * 0.75f));                 // misty vignette
-                        c *= 1f + 0.06f * Hash01((uint)(idx * 13 + 1), x);
+                        c *= 1f + 0.06f * Hash01((uint)(idx * 13 + 1), x >> 1);
+                        c = Color.Lerp(c, bronze * 0.9f, Mathf.Exp(-r * r * 3.2f) * 0.16f);      // v231 warm halo behind the mark
                         bool on = false;
                         switch (idx)
                         {
@@ -598,6 +627,14 @@ namespace AvalonShell
                                 break;
                         }
                         if (on) c = bronze;
+                        hi[y * SS + x] = c;
+                    }
+                }
+                for (int y = 0; y < S; y++)
+                {
+                    for (int x = 0; x < S; x++)
+                    {
+                        var c = (hi[(2 * y) * SS + (2 * x)] + hi[(2 * y) * SS + (2 * x) + 1] + hi[(2 * y + 1) * SS + (2 * x)] + hi[(2 * y + 1) * SS + (2 * x) + 1]) * 0.25f;
                         px[y * S + x] = c;
                     }
                 }
@@ -873,14 +910,40 @@ namespace AvalonShell
             grt.anchorMin = new Vector2(ax0, ay0); grt.anchorMax = new Vector2(ax1, ay1);
             grt.offsetMin = Vector2.zero; grt.offsetMax = Vector2.zero;
 
-            var rule = Panel(go.transform, "Rule", new Color(0.639f, 0.537f, 0.353f, 0.55f));
+            // v231 ENGRAVING QUALITY: the rule gets a soft glow bed + faceted diamond end-caps,
+            // the letters get carved depth below + warm sheen above — like the reference's engraving.
+            var glowR = Panel(go.transform, "RuleGlow", new Color(0.639f, 0.537f, 0.353f, 0.16f));
+            glowR.GetComponent<Image>().raycastTarget = false;
+            var grt2 = glowR.rect();
+            grt2.anchorMin = new Vector2(0.045f, 0.795f); grt2.anchorMax = new Vector2(0.955f, 0.905f);
+            grt2.offsetMin = Vector2.zero; grt2.offsetMax = Vector2.zero;
+            var rule = Panel(go.transform, "Rule", new Color(0.639f, 0.537f, 0.353f, 0.62f));
             rule.GetComponent<Image>().raycastTarget = false;
             var rrt = rule.rect();
             rrt.anchorMin = new Vector2(0.06f, 0.82f); rrt.anchorMax = new Vector2(0.94f, 0.88f);
             rrt.offsetMin = Vector2.zero; rrt.offsetMax = Vector2.zero;
+            for (int e = 0; e < 2; e++)
+            {
+                var cap = new GameObject("cap" + e);
+                cap.transform.SetParent(go.transform, false);
+                var ci = cap.AddComponent<Image>();
+                ci.color = new Color(0.70f, 0.60f, 0.42f, 0.85f);
+                ci.raycastTarget = false;
+                var crt = ci.rect();
+                crt.anchorMin = new Vector2(e == 0 ? 0.055f : 0.945f, 0.845f);
+                crt.anchorMax = new Vector2(e == 0 ? 0.055f : 0.945f, 0.845f);
+                crt.sizeDelta = new Vector2(5f, 5f);
+                crt.localEulerAngles = new Vector3(0f, 0f, 45f);
+            }
 
-            var lbl = Label(go.transform, txt, 19, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
+            var lbl = Label(go.transform, txt, 21, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
             lbl.rect().anchorMin = new Vector2(0f, 0.04f); lbl.rect().anchorMax = new Vector2(1f, 0.76f);
+            var carve = lbl.gameObject.AddComponent<UnityEngine.UI.Shadow>();
+            carve.effectColor = new Color(0.04f, 0.035f, 0.025f, 0.90f);
+            carve.effectDistance = new Vector2(1.2f, -1.8f);
+            var sheen = lbl.gameObject.AddComponent<UnityEngine.UI.Shadow>();
+            sheen.effectColor = new Color(0.85f, 0.78f, 0.62f, 0.22f);
+            sheen.effectDistance = new Vector2(-0.8f, 1.0f);
 
             var cg = go.AddComponent<CanvasGroup>();   // v229: cascade fade hook
             cg.alpha = 1f;
@@ -956,22 +1019,30 @@ GameObject BuildTitle(Transform parent)
             shade.transform.Stretch();
             shade.GetComponent<Image>().raycastTarget = false;
 
-            // v229: the AVALON title is REAL lettering now — pale silver Cinzel, letterspaced,
-            // sitting at the reference's own 6-16% band, with a soft dark halo for legibility.
+            // v231 PAINTERLY LETTERING: the title reads like the reference's painted logo —
+            // three stacked real Cinzel layers: dark carved extrude below, pale sheen above,
+            // the silver face on top. Beveled depth, zero baked pixels.
             var logoGo = new GameObject("TitleLogo");
             logoGo.transform.SetParent(p.transform, false);
             var lrt = logoGo.AddComponent<RectTransform>();
             lrt.anchorMin = new Vector2(0f, 0.840f); lrt.anchorMax = new Vector2(1f, 0.935f);
             lrt.offsetMin = Vector2.zero; lrt.offsetMax = Vector2.zero;
             var lcg = logoGo.AddComponent<CanvasGroup>();
-            var logoTxt = logoGo.AddComponent<Text>();
-            logoTxt.font = Font(); logoTxt.text = "A V A L O N"; logoTxt.fontSize = 46;
-            logoTxt.color = new Color(0.875f, 0.905f, 0.925f, 1f);
-            logoTxt.alignment = TextAnchor.MiddleCenter;
-            logoTxt.raycastTarget = false;
-            var halo = logoGo.AddComponent<UnityEngine.UI.Shadow>();
-            halo.effectColor = new Color(0.02f, 0.03f, 0.05f, 0.55f);
-            halo.effectDistance = new Vector2(2.5f, -2.5f);
+            GameObject TitleLayer(string nm, Color col, Vector2 off)
+            {
+                var g = new GameObject(nm);
+                g.transform.SetParent(logoGo.transform, false);
+                var rt = g.AddComponent<RectTransform>();
+                rt.anchorMin = Vector2.zero; rt.anchorMax = Vector2.one;
+                rt.offsetMin = off; rt.offsetMax = off;
+                var t = g.AddComponent<Text>();
+                t.font = Font(); t.text = "A V A L O N"; t.fontSize = 52;
+                t.color = col; t.alignment = TextAnchor.MiddleCenter; t.raycastTarget = false;
+                return g;
+            }
+            TitleLayer("Extrude", new Color(0.045f, 0.065f, 0.09f, 1f), new Vector2(2.5f, -3f));   // carved depth
+            TitleLayer("Sheen", new Color(0.95f, 0.97f, 1.0f, 0.30f), new Vector2(-1f, 1.2f));      // top light
+            TitleLayer("Face", new Color(0.87f, 0.90f, 0.925f, 1f), Vector2.zero);                 // silver face
             titleLogoCg = lcg;   // v229 cascade head
 
 
