@@ -467,7 +467,7 @@ namespace AvalonShell
                 fim.sprite = baked; fim.color = Color.white;
                 frt.anchorMin = Vector2.zero; frt.anchorMax = Vector2.one;
                 edge.color = new Color(0f, 0f, 0f, 0f);
-                var sh = lbl.AddComponent<Shadow>();
+                var sh = lbl.gameObject.AddComponent<Shadow>();   // CS1061 fix: Shadow goes on the label GameObject, not the Text component
                 sh.effectColor = new Color(0.03f, 0.025f, 0.015f, 0.85f);
                 sh.effectDistance = new Vector2(0f, -1.5f);
             }
