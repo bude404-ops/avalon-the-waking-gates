@@ -153,3 +153,32 @@ classes will gain access to the legendary mounts for questing and world explorin
 * Every mount remains a TRAVERSAL KEY (abilities law unchanged): generics carry plain
   riding speed; legendaries carry the hazard-gated traversal (lava-walk, seabed-walk,
   mist-pass, thorn-path, storm-ride, FLIGHT for the Griffin).
+
+## TIER 2 — CLASS-BONDED LEGENDARY MOUNTS (Bude ruled YES, Sept 14 2026: "And also create the legendary mounts")
+The two-tier system from CREATURE-BIBLE is LAW. Tier 2 = one legendary beast per CLASS,
+woken by that class's own campaign arc (D&D paladin-steed archetype: the mount is a bond
+earned by the arc, never purchased). Tier 1 realm riding set unchanged; Tier 2 legends
+sit above it in prestige and power. Each wears a class-heraldry Celtic saddle — the bond
+made visible.
+
+Roster (first roll, art/pending/MOUNT-T2-*, awaiting Bude's like/change per beast):
+- SOVEREIGN — THE GRIFFIN (flagship): bronze-crowned beak, ember-barred pale-silver
+  plumage, storm-tested wings. FLIGHT IS LAW: the Griffin flies — supersedes the v1
+  no-flying law. Flight balanced by hazard, not ban: storm winds (Skyrend weather),
+  sky predators, dismount-to-fight unchanged. Opens mountain-peak + sky dungeons.
+- RAVAGER — EMBER-DRAKE (wingless): volcanic charcoal hide with amber magma seams,
+  brutal horned predator. Bude's own read ("ravager is a lava inspired creature").
+- WARDEN — BULWARK TURTLE: bastion shell with fortress battlement ridges and ward-stone
+  runes; slow, unbreakable, the wall that walks.
+- VEILBORN — GLOAM-PANTHER: smoke-fade shadow-cat, half-mist, silent ghost read.
+- WEAVER — GLYPHWOOD STAG: engraved bronze-branch antlers with warm ember-light glyph
+  buds; the belief-bond made flesh.
+- WILDBORN — PRIMAL MAMMOTH: colossal shaggy tusked titan; the wild's oldest heart.
+
+Laws: NO OTHER class flies in Tier 2 v1 (Griffin is the sole wing — flight stays
+prestige). Tier 2 creature families are distinct from Tier 1 (griffin / drake / turtle /
+cat / deer-family-stag / mammoth vs Tier 1's bear / ram / wading bird / horse / boar /
+wolf). Mounted combat ban unchanged. Same joystick law, mounts change speed/abilities.
+Stage C hold unchanged: no Tier 2 generation/rigging/forging until the Sovereign is
+ruled done and Stage B controls land. These plates are the approved art the forge
+targets when it unlocks.

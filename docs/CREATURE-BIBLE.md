@@ -66,4 +66,5 @@ griffins for the sovereign")
 
 ## STATUS
 Principles 1-4, 6-8: adopted design law. Tier 2 class-bonded legends + Griffin flight:
-PROPOSED — awaiting Bude's ruling (he introduced the Griffin-for-Sovereign idea twice).
+RULED YES by Bude (Sept 14: 'And also create the legendary mounts') — Tier 2 roster
+rolled (art/pending/MOUNT-T2-*), law in MOUNT-CANON.md. Awaiting his like/change per beast.
