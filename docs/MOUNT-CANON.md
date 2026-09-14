@@ -385,3 +385,21 @@ for the quests and stuff they will do"
 * Quality-bar law + unique-trait law + quest/dungeon-key mapping all unchanged.
 * Plates vaulted: art/pending/t2-sovereign-storm-drake.png, t2-warden-granite-drake.png,
   t2-veilborn-gloam-wyrm.png, t2-wildborn-briar-wyrm.png. AWAITING verdicts.
+
+## MOUNT-CANON v13 — Storm-Drake LOCKED; full-frame re-rolls + Tide-DRAKE variant (Bude, Sept 14 2026 ~10:15 PM)
+Bude: "reroll them, some are cutoff in the image, the storm drake was a keep, and need
+to see tide as a drake"
+
+* LOCKED: SOVEREIGN (SKYREND) — STORM-DRAKE · FLIGHT (approved as-rolled). Second
+  legendary locked alongside EMBER-DRAKE.
+* FULL-FRAME PLATE LAW: every plate shows the entire beast head-to-tail inside the
+  frame with clear margin — no cropping/cutoff.
+* Re-rolled to full-frame: GRANITE-DRAKE (Warden/Stoneheart), GLOAM-WYRM
+  (Veilborn/Duskmourn), BRIAR-WYRM (Wildborn/Everbloom). Plates:
+  art/pending/t2-warden-granite-drake-v2.png, t2-veilborn-gloam-wyrm-v2.png,
+  t2-wildborn-briar-wyrm-v2.png.
+* WEAVER (MARENTH) open question: TIDE-WYRM (locked v11) vs new TIDE-DRAKE variant
+  (four paddle limbs + finned tail, current-ride; art/pending/t2-weaver-tide-drake-A.png)
+  — Bude judging wyrm vs drake for the Tidewright.
+* LOCKED so far: Ember-Drke (Ravager), Storm-Drake (Sovereign), Tide-Wyrm (Weaver,
+  pending his drake-vs-wyrm call). AWAITING verdicts on the 3 re-rolls + tide form pick.
