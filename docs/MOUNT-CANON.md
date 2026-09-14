@@ -298,3 +298,24 @@ mounts I think you have regions mixed up for classes as well"
   realm) — both stay vaulted as per-class alternates on request.
   New trait plates: art/pending/t2-drowned-strider.png, art/pending/t2-briar-boar.png.
   Unique-trait law, work-saddle law, fire-color law, Stage C hold all unchanged.
+
+## MOUNT-CANON v9 — STRIDER + BOAR OUT OF MOUNTS; LEGENDARY REVIEW PASS (Bude, Sept 14 2026)
+Bude: "I think we remove the strider and boar as mounts from tier 1 so only horses,
+then let's go through the legendaries and see who needs fixed"
+
+* REMOVALS: DROWNED-TITAN STRIDER + BRIAR BOAR are OUT of the mount roster (both tiers).
+  Neither reads as a rideable mount. Both stay in the vault as WORLD MYTHIC FAUNA
+  (the strider wades the drowned ruins of Marenth; the boar tears through the
+  Everbloom briars — set dressing / quest creatures, never saddled).
+* TIER 1 = HORSES-ONLY LAW (final): six horses, one per realm, physical-trait R3 set.
+* TIER 2 standing roster entering the review pass:
+    SOVEREIGN (SKYREND)    — GRIFFIN         · FLIGHT          (locked flagship)
+    RAVAGER   (ASHFALL)    — EMBER-DRAKE    · MAGMA-SWIM
+    WARDEN    (STONEHEART) — BULWARK TURTLE · DEEP-FORD SWIM
+    VEILBORN  (DUSKMOURN)  — GLOAM-PANTHER  · MIST-PHASE
+  OPEN SLOTS: WEAVER (MARENTH) + WILDBORN (EVERBLOOM).
+  PROPOSAL on the table: GLYPHWOOD STAG returns as WILDBORN's Everbloom legendary
+  (thorn-path; plate already rolled — its realm was always Everbloom). WEAVER's
+  Marenth legendary = fresh roll, candidates offered to Bude ( hippocamp
+  UNDERTOW-RIDE favored / tide-wyrm / kelp-crowned sea-drake ).
+  Awaiting Bude's per-plate like/fix verdicts.
