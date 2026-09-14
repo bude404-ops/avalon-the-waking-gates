@@ -343,3 +343,21 @@ the tidewright"
 * PENDING: Wildborn (Everbloom) Glyphwood Stag proposal still awaiting verdict.
   All rulings provisional until Bude's per-plate like/fix. Unique-trait law intact:
   flight / magma-swim / earth-swim / barrow-pass / undertow-ride or current-ride — no overlaps.
+
+## MOUNT-CANON v11 — verdict round 2: TIDE-WYRM locked; QUALITY-BAR re-roll (Bude, Sept 14 2026 ~9:30 PM)
+Bude: "I like the tide wyrm as the option but it needs a better picture — it's out of
+the water too much — the others need to be different and on par with the tide wyrm
+and ember drake"
+
+* WEAVER LOCKED: TIDE-WYRM · CURRENT-RIDE is the Tidewright's legendary (hippocamp
+  candidate retired to vault). R2 plate law: mostly SUBMERGED — only head, neck and
+  crest ridge above the waterline, current visibly bulging along the submerged body.
+* QUALITY-BAR LAW (Ember-Drke + Tide-Wyrm set the bar): every legendary plate shows
+  the beast DEEP INSIDE its element mid-traversal — trait in action, never posing.
+  All four re-rolled to the bar:
+    GRIFFIN v3      — IN FLIGHT banking through the storm (saddle-and-wing law held)
+    GOLEM RAM v2    — deep in the earth-swim dive, most of its mass inside the cliff
+    SHROUD-HOUND v2 — almost fully through the barrow door, only hindquarters outside
+    TIDE-WYRM v2   — mostly submerged in the racing current
+* PENDING: Bude's verdicts on the four v2 plates + Wildborn/Everbloom Glyphwood Stag
+  proposal. Ember-Drke + Tide-Wyrm = the two locked legendaries so far.
