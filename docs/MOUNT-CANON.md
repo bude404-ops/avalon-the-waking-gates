@@ -260,3 +260,41 @@ Bude: "the horses need to be effected by the region with traits they in tho" +
   Distinct from the world legendary Drowned-Titan Strider's SEABED-WALK (kept unique).
   R2 plates (vaulted art/pending/t2-*-r2) show each trait IN ACTION.
   Stage C hold, mounted-combat ban, joystick law unchanged. Awaiting verdicts per plate.
+
+## MOUNT-CANON v8 — PHYSICAL-TRAIT HORSES + CLASS-REALM ALIGNMENT (Bude's correction, Sept 14 2026)
+Bude: "I meant physical traits of their region for the horses and with the legendary
+mounts I think you have regions mixed up for classes as well"
+
+* TIER 1 — PHYSICAL-TRAIT LAW: the horses carry NATURAL PHYSICAL traits their region
+  bred into them — no glow, no magic, no dissolving bodies. R3 plates (art/pending/t1-*-r3):
+    ASHFALL    — short heat-shedding ash coat, thick calloused hide w/ healed ember-scar
+                 marks, wide flat hooves for cracked lava rock
+    STONEHEART — massive dense bone, broad splayed sure-footed hooves for granite ledges,
+                 thick double coat, powerful short climbing neck
+    MARENTH    — waterproof oily coat, kelp tangled in the heavy mane, strong broad
+                 wading chest, salt-lined hide
+    DUSKMOURN  — huge barrel chest + oversized lungs for misty air, dense
+                 sound-dampening shag, hooded gloom-adapted eyes
+    EVERBLOOM  — camouflage-dappled moss-hued coat, thorn-toughened hide with healed
+                 scar lines, undergrowth-pushing build
+    SKYREND    — low wind-hardened build, rain-shedding double coat, iron-hard hooves
+                 for wet rock, close-cropped wind-whipped mane
+
+* TIER 2 — CLASS-REALM ALIGNMENT FIX: roster now follows the LOCKED class-realm bible
+  (docs/CHARACTER-NAMES.md + GAME-UI-LAYOUT.md: Sovereign→Skyrend, Ravager→Ashfall,
+  Warden→Stoneheart, Veilborn→Duskmourn, Weaver→MARENTH, Wildborn→EVERBLOOM).
+  The v6/v7 mapping wrongly gave Weaver an Everbloom stag and Wildborn a Skyrend
+  mammoth. CORRECTED ROSTER (six classes, six home realms, no overlaps):
+    SOVEREIGN (SKYREND)    — GRIFFIN           · FLIGHT (locked flagship, now properly
+                                                    realm-bound: the king's own realm is the sky)
+    RAVAGER   (ASHFALL)    — EMBER-DRAKE      · MAGMA-SWIM
+    WARDEN    (STONEHEART) — BULWARK TURTLE   · DEEP-FORD SWIM
+    VEILBORN  (DUSKMOURN)  — GLOAM-PANTHER    · MIST-PHASE
+    WEAVER    (MARENTH)    — DROWNED-TITAN STRIDER · SEABED-WALK (promoted from the
+                             proposed 'world legendary' to Weaver's class legendary)
+    WILDBORN  (EVERBLOOM)  — BRIAR BOAR       · THORN-PATH (from the V3 vault, its
+                             rightful realm restored)
+  GLYPHWOOD STAG + PRIMAL MAMMOTH retire from the roster (each sat on another class's
+  realm) — both stay vaulted as per-class alternates on request.
+  New trait plates: art/pending/t2-drowned-strider.png, art/pending/t2-briar-boar.png.
+  Unique-trait law, work-saddle law, fire-color law, Stage C hold all unchanged.
