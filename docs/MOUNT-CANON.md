@@ -62,3 +62,14 @@ realm-neutral bestiary laws when their canon keys roll.
 - Mounted vs. on-foot dismount animation ceremony (how AVALON handles it cinematically).
 - Mount persistence (does the beast wait where you left it / return to waystation).
 - Whether waystation braziers act as mount-summon points.
+
+
+## SIX-CREATURE-TYPES LAW (Bude, Sept 14 2026)
+No two realm mounts share a type of creature — each is a distinct animal family:
+- ASHFALL — Cinderbear (ursine, ember-fissured hide) [replaces the Ash-Elk]
+- STONEHEART — Boulder Ram (caprine, granite curled horns)
+- MARENTH — Tide-Strider (avian, long-legged wader)
+- DUSKMOURN — Gloam-Pooka horse-form (equine, smoke mane, crimson rune-light) [replaces the deer-form]
+- EVERBLOOM — Briar-Fox (canine, briar-vine antlers)
+- SKYREND — Thunder-Aurochs (bovine, lightning-veined horns) [replaces the Storm-Hart]
+V1 deer-family rolls (Ash-Elk, deer-pooka, Storm-Hart) superseded. Mocks: art/pending/MOUNT-*-MOCK.png.
