@@ -319,3 +319,27 @@ then let's go through the legendaries and see who needs fixed"
   Marenth legendary = fresh roll, candidates offered to Bude ( hippocamp
   UNDERTOW-RIDE favored / tide-wyrm / kelp-crowned sea-drake ).
   Awaiting Bude's per-plate like/fix verdicts.
+
+## MOUNT-CANON v10 — LEGENDARY VERDICT ROUND 1 (Bude, Sept 14 2026 ~8:15 PM)
+Bude's verdicts: "Griffin needs rework so saddle makes sense with the wings, I like the
+ember drake, others need to be different, and I'd like to see the 2 as visuals for
+the tidewright"
+
+* LOCKED: RAVAGER (ASHFALL) — EMBER-DRAKE · MAGMA-SWIM — approved as-is. First Tier 2
+  legendary locked.
+* REWORKED: SOVEREIGN (SKYREND) — GRIFFIN · FLIGHT — SADDLE-AND-WING LAW: saddle sits
+  on the lion loins AFT of the wing roots; girth/straps route low around the belly,
+  never touching wing joints or feathers. R2 plate (art/pending/t2-griffin-r2-saddle.png).
+* REPLACED: WARDEN (STONEHEART) — BULWARK TURTLE retired (vaulted) — replaced by
+  GOLEM RAM · EARTH-SWIM (titanic granite ram, bronze-veined horns, swims THROUGH
+  solid rock like water; V3 Golem Ram lineage restored at legendary scale).
+  Plate art/pending/t2-warden-golem-ram.png.
+* REPLACED: VEILBORN (DUSKMOURN) — GLOAM-PANTHER retired (vaulted) — replaced by
+  SHROUD-HOUND · BARROW-PASS (colossal funerary hound that walks through sealed
+  barrow doors + grave mist with its rider). Plate art/pending/t2-veilborn-shroud-hound.png.
+* WEAVER (MARENTH) — both candidates rolled as visuals for the Tidewright's pick:
+  A) BRINEHART HIPPOCAMP · UNDERTOW-RIDE (art/pending/t2-weaver-hippocamp-A.png)
+  B) TIDE-WYRM · CURRENT-RIDE (art/pending/t2-weaver-tidewyrm-B.png)
+* PENDING: Wildborn (Everbloom) Glyphwood Stag proposal still awaiting verdict.
+  All rulings provisional until Bude's per-plate like/fix. Unique-trait law intact:
+  flight / magma-swim / earth-swim / barrow-pass / undertow-ride or current-ride — no overlaps.
