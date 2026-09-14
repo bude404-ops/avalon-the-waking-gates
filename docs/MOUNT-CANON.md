@@ -361,3 +361,27 @@ and ember drake"
     TIDE-WYRM v2   — mostly submerged in the racing current
 * PENDING: Bude's verdicts on the four v2 plates + Wildborn/Everbloom Glyphwood Stag
   proposal. Ember-Drke + Tide-Wyrm = the two locked legendaries so far.
+
+## MOUNT-CANON v12 — DRAKE/WYRM FAMILY RULING (Bude proposal, Sept 14 2026 ~9:45 PM)
+Bude: "maybe we make them all drakes or wyrms but influenced by region and abilities
+for the quests and stuff they will do"
+
+* UNIFIED FAMILY LAW (PROPOSED, awaiting Bude's per-plate verdicts): ALL Tier 2
+  legendaries are drakes or wyrms — one mythic family, six regional variants, each
+  carrying the unique traversal ability that keys its quest/dungeon line.
+  Roster (3 drakes + 3 wyrms):
+    SOVEREIGN (SKYREND)    — STORM-DRAKE   · FLIGHT      (the ONLY winged one of the six)
+    RAVAGER   (ASHFALL)    — EMBER-DRAKE  · MAGMA-SWIM  (LOCKED, unchanged)
+    WARDEN    (STONEHEART) — GRANITE-DRAKE· EARTH-SWIM
+    VEILBORN  (DUSKMOURN)  — GLOAM-WYRM   · BARROW-PASS
+    WEAVER    (MARENTH)    — TIDE-WYRM    · CURRENT-RIDE (LOCKED, unchanged)
+    WILDBORN  (EVERBLOOM)  — BRIAR-WYRM   · THORN-PATH
+* RETIRED to vault (superseded by the family ruling): Griffin + Saddle-and-Wing law,
+  Golem Ram, Shroud-Hound, Glyphwood Stag (as a mount), Brineheart Hippocamp.
+  Wildborn slot now filled by the Briar-Wyrm.
+* Drake = heavyset winged/limbed variant (storm, ember, granite); Wyrm = serpentine
+  limbless variant (gloam, tide, briar). Celtic heraldry saddles: drakes = loins
+  behind wing roots where winged; wyrms = neck ridge behind the head.
+* Quality-bar law + unique-trait law + quest/dungeon-key mapping all unchanged.
+* Plates vaulted: art/pending/t2-sovereign-storm-drake.png, t2-warden-granite-drake.png,
+  t2-veilborn-gloam-wyrm.png, t2-wildborn-briar-wyrm.png. AWAITING verdicts.
