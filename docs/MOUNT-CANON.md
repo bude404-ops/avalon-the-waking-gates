@@ -195,3 +195,38 @@ the sky). ALTERNATES: the earlier V3 mythic set (Ember-Seamed Bear, Golem Ram,
 Drowned-Titan Strider, Smoke-Horse, Briar Boar, Storm-Wolf) stays vaulted as per-class
 alternates — Bude may swap any class slot to its V3 beast or request re-rolls; mixed
 rosters are valid. Final Tier 2 roster locks on his per-class verdicts.
+
+## MOUNT-CANON v6 — TIER 1 HORSES + TIER 2 REGION-DEEP (Bude's ruling, Sept 14 2026)
+Bude: "making the tier 1 mounts horses but in the regions style and effects and the
+legendary ones can be epic ones but we need to work on them better to be more unique
+with their region"
+
+* TIER 1 — HORSES-OF-THE-REALMS LAW: one HORSE per realm, every realm, each wearing its
+  region's style and effects. SUPERSEDES the v5 Tier-1 natural-fauna roster (Cinder
+  Elk, Cliff Ibex, Gloam Mule, Mossback Tapir, Storm Muskox retired; Kelp-Mane Drift
+  Horse retained — already equine). Roster (plates vaulted art/pending/t1-*):
+    ASHFALL   — CINDER-ASH HORSE (charcoal hide, ember-flecked coat, ash mane)
+    STONEHEART— GRANITE-MOSS HORSE (granite-grey hide, moss patches, bronze rune-brand)
+    MARENTH   — KELP-MANE DRIFT HORSE (salt-stained, kelp-woven wet mane, barnacle hooves)
+    DUSKMOURN — MIST-SHAG HORSE (moth-grey shag, mist at the hocks, crimson rune-glow)
+    EVERBLOOM — MOSSBACK BLOOM HORSE (moss spine, blooms in the mane, thorn-vine braids)
+    SKYREND   — RAIN-SHAG STORM HORSE (rain-slick storm coat, wind-torn mane)
+  All Tier 1 horses wear the plain work-saddle (tooled leather + bronze fittings).
+  Region aura stays MAGIC-LIGHT-ONLY (fire-color law holds: Ashfall fire burns natural
+  amber; crimson only on Duskmourn rune-light).
+
+* TIER 2 — REGION-DEEP LAW: legendaries re-rolled so each beast reads as BORN OF ITS
+  REALM FIRST (region identity deep, not one echo) with the class bond carried by the
+  heraldry rig. Reworked roster (plates vaulted art/pending/t2-*, awaiting verdicts):
+    RAVAGER  — EMBER-DRAKE: wingless drake, magma seams pulsing through cracked
+               charcoal hide — Ashfall-deep
+    WARDEN   — BULWARK TURTLE: bastion shell with fortress battlement ridges, bronze
+               ward-runes — Stoneheart-deep
+    VEILBORN — GLOAM-PANTHER: half-smoke shadow-cat, crimson rune-glimmer — Duskmourn-deep
+    WEAVER   — GLYPHWOOD STAG: bark-grain hide, bronze-branch antlers blooming glyph-buds
+               — Everbloom-deep
+    WILDBORN — PRIMAL MAMMOTH: storm-shaggy titan, lightning-rimmed wet hide — Skyrend-deep
+  GRIFFIN stays LOCKED as the realm-free flagship (the king's wing belongs to the sky);
+  a region-deep Griffin variant available on request. World legendary Drowned-Titan
+  Strider (Marenth) unchanged — already region-deep by design.
+  Stage C hold unchanged; mounted-combat ban + joystick + traversal-key laws unchanged.
