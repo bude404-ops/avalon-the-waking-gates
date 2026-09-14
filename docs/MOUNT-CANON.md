@@ -87,3 +87,20 @@ set, art/pending/MOUNT-V2-*):
 - SKYREND — Storm-Bull (storm-cloud spiral horns laced with lightning)
 Six distinct creature types law still holds; no flying, no mounted combat, one questline
 per realm mount. V1 'animal + glow' mocks superseded.
+
+
+## MOUNT ABILITIES — TRAVERSAL POWERS (PROPOSED, Bude Sept 14 2026)
+Bude's question: "are we able to make them fly, swim etc in game? ... add depth to what
+they are and add unique gameplay" — YES. Each mount carries a REALM TRAVERSAL POWER, and
+the mount becomes the KEY to hazard-gated mythic-pocket dungeons (knowledge = unlock).
+- ASHFALL — Ember-Seamed Bear-Guardian: walks lava fields; ember-hide shelters the rider
+  through lava falls. (Bude's lava-shield example.)
+- STONEHEART — Golem Ram: shatters / steps through stone barriers, climbs sheer faces.
+- MARENTH — Drowned-Titan Strider: walks the seabed into flooded dungeon halls.
+- DUSKMOURN — Smoke-Horse: passes through mist-walls and shadow gates.
+- EVERBLOOM — Briar Spirit: grows a living path through thorn barriers.
+- SKYREND — Storm-Bull: rides storm currents, leaps sky-chasms.
+- FLIGHT (open question, Bude's Griffin-for-Sovereign idea): would supersede the v1
+  no-flying law — a flying mount opens mountain-peak / sky dungeons. Awaiting his ruling.
+Mounted combat law unchanged (dismount to fight); abilities are traversal, not combat.
+Status: PROPOSED — locks when Bude rules.
