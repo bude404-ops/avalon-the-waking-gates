@@ -119,3 +119,37 @@ reads rideable and in-game. Locked set (art/pending/MOUNT-V3-*):
 - SKYREND — Storm-Wolf
 Six types: bear / ram / wading bird / horse / boar / wolf — all distinct. No flying, no
 mounted combat, one questline per realm mount, Celtic saddles = the in-game read.
+
+---
+## MOUNT-CANON v5 — TWO-TIER LAW (LOCKED, Bude's ruling Sept 14 2026)
+Bude: "Ok yes but we need to make generic mounts then for each realm that fits and the
+classes will gain access to the legendary mounts for questing and world exploring"
+
+* TIER 1 — GENERIC REALM MOUNTS (one per realm, all NEW rolls): realm-fitting everyday
+  riding beasts — natural fauna, NOT mythic. Any class can earn any realm's generic
+  mount via that realm's questline. Same laws: same joystick, speed only, dismount to
+  fight. Six distinct animal families (six-creature-types law applies per tier):
+    Ashfall — CINDER ELK (volcanic highland elk, charcoal hide, ember-flecked)
+    Stoneheart — CLIFF IBEX (stone-grey, sure-hooved)
+    Marenth — KELP-MANE DRIFT HORSE (sea-worn, salt-stained)
+    Duskmourn — GLOAM MULE (moth-grey, mist-shag)
+    Everbloom — MOSSBACK TAPIR (moss-backed, pale blooms)
+    Skyrend — STORM MUSKOX (rain-shag, thunder-horned)
+  Generic plates = saddled (simple tooled leather + bronze fittings) — the everyday
+  work-saddle, plainer than the legendary knotwork rigs.
+
+* TIER 2 — LEGENDARY MOUNTS (the mythic set graduates here): class-earned through
+  questing + world exploration. LOCKED: Sovereign = GRIFFIN (flight flagship, sky
+  dungeons, hazard-balanced). PROPOSED mapping for the V3 mythic set (Bude verdicts
+  per class):
+    Ravager  <- Ashfall EMBER-SEAMED BEAR-GUARDIAN (lava berserker fit)
+    Warden   <- Stoneheart GOLEM RAM (wall-of-defense fit)
+    Veilborn <- Duskmourn SMOKE-HORSE (ghost ride fit)
+    Weaver   <- Everbloom BRIAR BOAR (thorn-loom fit)
+    Wildborn <- Skyrend STORM-WOLF (wild predator fit)
+  Seventh legendary: Marenth DROWNED-TITAN STRIDER — proposed as the WORLD legendary,
+  earned by deep exploration (found in Marenth first), not class-bound.
+
+* Every mount remains a TRAVERSAL KEY (abilities law unchanged): generics carry plain
+  riding speed; legendaries carry the hazard-gated traversal (lava-walk, seabed-walk,
+  mist-pass, thorn-path, storm-ride, FLIGHT for the Griffin).
