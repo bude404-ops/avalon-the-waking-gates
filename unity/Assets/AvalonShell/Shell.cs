@@ -301,6 +301,112 @@ namespace AvalonShell
             }
         }
 
+        // ---- v230 CODE-DRAWN WORLD: generated menu backdrops + fog strips (no pasted art) ----
+        Sprite mistTitleBg;
+        Sprite mistSelectBg;
+        Sprite mistFog;
+        RectTransform mistTitleScroll;
+        RectTransform mistTitleScroll2;
+        RectTransform mistSelectScroll;
+
+        // v230: the menu sky, drawn in code at boot — deep teal gradient, horizon glow band,
+        // three procedural ridgelines (far = pale mist, near = dark silhouette), value-noise
+        // shapes, soft ridge-top mist fade. In the reference's style and design; zero pasted pixels.
+        Sprite MistBackdrop(uint seed)
+        {
+            try
+            {
+                int W = 512, H = 256;
+                var tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var skyTop = new Color(0.045f, 0.075f, 0.105f, 1f);   // deep blue-teal zenith
+                var skyLow = new Color(0.335f, 0.415f, 0.465f, 1f);   // pale misty horizon
+                var px = new Color[W * H];
+                for (int y = 0; y < H; y++)
+                {
+                    float t01 = (float)y / (H - 1);          // 0 = bottom, 1 = top
+                    var sky = Color.Lerp(skyLow, skyTop, t01);
+                    for (int x = 0; x < W; x++)
+                    {
+                        float x01 = (float)x / (W - 1);
+                        var c = sky;
+                        // horizon glow band
+                        c = Color.Lerp(c, skyLow * 1.30f, Mathf.Exp(-Mathf.Pow((t01 - 0.52f) / 0.055f, 2f)) * 0.55f);
+                        // three ridgelines: far = pale mist, near = dark silhouette
+                        float[] bases = { 0.50f, 0.38f, 0.235f };
+                        float[] darks = { 0.34f, 0.62f, 0.96f };
+                        for (int L = 0; L < 3; L++)
+                        {
+                            float hgt = bases[L] + 0.085f * Ridge(seed + (uint)L, x01);
+                            if (t01 < hgt)
+                            {
+                                float edge = Mathf.Clamp01((hgt - t01) / 0.045f);   // soft mist fade at ridge tops
+                                var rc = Color.Lerp(skyLow * 1.32f, skyTop * 0.16f, darks[L]);
+                                c = Color.Lerp(c, rc, edge);
+                            }
+                        }
+                        px[y * W + x] = c;
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, W, H), new Vector2(0.5f, 0.5f), 128f);
+                sp.name = "MistBackdrop-" + seed;
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] mist backdrop failed: " + e.Message); return null; }
+        }
+
+        // v230: value-noise ridgeline 0..1 — hash-based, smooth-interpolated octaves
+        float Ridge(uint seed, float x01)
+        {
+            float sum = 0f, amp = 1f, freq = 2.6f, norm = 0f;
+            for (int o = 0; o < 4; o++)
+            {
+                float t = x01 * freq; int i = (int)t; float ft = t - i;
+                float a = Hash01(seed, i), b = Hash01(seed, i + 1);
+                float sm = ft * ft * (3f - 2f * ft);
+                sum += (a + (b - a) * sm) * amp; norm += amp;
+                amp *= 0.5f; freq *= 2.13f;
+            }
+            return sum / norm;
+        }
+
+        float Hash01(uint seed, int x)
+        {
+            uint n = (uint)(x * 374761393) ^ seed;
+            n = (n ^ (n >> 13)) * 1274126177u;
+            return ((n ^ (n >> 16)) & 0xFFFF) / 65535f;
+        }
+
+        // v230: soft horizontal fog band sprite — drifting translucent mist for the alive sky
+        Sprite MistStrip(uint seed)
+        {
+            try
+            {
+                int W = 256, H = 64;
+                var tex = new Texture2D(W, H, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[W * H];
+                for (int y = 0; y < H; y++)
+                {
+                    float ty = (float)y / (H - 1);
+                    float vy = Mathf.Sin(ty * Mathf.PI);                    // band envelope
+                    for (int x = 0; x < W; x++)
+                    {
+                        float x01 = (float)x / (W - 1);
+                        float n = 0.30f + 0.70f * Ridge(seed, x01 * 0.35f + 0.10f) * Ridge(seed + 7u, x01 * 0.8f);
+                        float a = vy * n * 0.75f;
+                        px[y * W + x] = new Color(0.78f, 0.845f, 0.90f, a);
+                    }
+                }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, W, H), new Vector2(0.5f, 0.5f), 128f);
+                sp.name = "MistStrip-" + seed;
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] mist strip failed: " + e.Message); return null; }
+        }
+
         // ---- v229 REBUILD-THE-LOOK: alive-menu machinery (cascade fade + keyart drift) ----
         RectTransform titleKeyArt;
         RectTransform selectKeyArt;
@@ -347,6 +453,22 @@ namespace AvalonShell
                     titleKeyArt.localScale = new Vector3(d, d, 1f);
                 if (selectKeyArt != null && panelSelect != null && panelSelect.activeInHierarchy)
                     selectKeyArt.localScale = new Vector3(d, d, 1f);
+                // v230: constructed fog drifts — slow sinusoidal wander, no seams, always alive
+                if (mistTitleScroll != null)
+                {
+                    float w = mistTitleScroll.rect.width;
+                    mistTitleScroll.anchoredPosition = new Vector2(Mathf.Sin(Time.time * 0.043f) * w * 0.06f, Mathf.Sin(Time.time * 0.027f) * 12f);
+                }
+                if (mistTitleScroll2 != null)
+                {
+                    float w2 = mistTitleScroll2.rect.width;
+                    mistTitleScroll2.anchoredPosition = new Vector2(Mathf.Sin(Time.time * 0.031f + 2.1f) * w2 * 0.05f, Mathf.Sin(Time.time * 0.019f) * 9f);
+                }
+                if (mistSelectScroll != null)
+                {
+                    float w3 = mistSelectScroll.rect.width;
+                    mistSelectScroll.anchoredPosition = new Vector2(Mathf.Sin(Time.time * 0.037f) * w3 * 0.06f, 0f);
+                }
                 yield return null;
             }
         }
@@ -590,28 +712,47 @@ GameObject BuildTitle(Transform parent)
             var p = Panel(parent, "Title", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
 
-            // v229 REBUILD-THE-LOOK (Bude, Sept 14: "you pasted the reference image in the menu,
-            // you didn't rebuild it so it looked like it"): the reference painting is the STYLE + LAYOUT
-            // spec — its baked-in logo/lettering is ERASED from the staged CLEAN art, and every menu
-            // element is REAL UI drawn over the clean mist: Cinzel title lettering at the ref's own
-            // 6-16% band, engraved options at the ref's own list positions, staggered fade-in cascade,
-            // slow keyart breathing drift. Nothing baked, nothing pasted.
-            var bgSprite = Art("UI-MAIN-MENU-V2-CLEAN");
-            if (bgSprite == null) bgSprite = Art("UI-MAIN-MENU-V2-CANON");   // last-resort fallback only
-            if (bgSprite == null) bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            // v230 CODE-DRAWN WORLD (Bude's verdict, Sept 14: "taking it as an example not
+            // actually use it and build a proper one in that style and design"): the reference
+            // image is OUT of the build entirely — no pasted backdrop anywhere. The menu world is
+            // GENERATED AT BOOT in code, in the reference's style: deep teal sky gradient, three
+            // procedural misty ridgelines, horizon glow band, drifting fog strips for the alive
+            // feel. Real Cinzel title + engraved options float over constructed pixels only.
+            var bgSprite = mistTitleBg ?? (mistTitleBg = MistBackdrop(7u));
             if (bgSprite != null)
             {
-                var bg = new GameObject("KeyArt");
+                var bg = new GameObject("SkyWorld");
                 bg.transform.SetParent(p.transform, false);
                 var bi = bg.AddComponent<Image>();
-                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(1f, 1f, 1f, 1f);
+                bi.sprite = bgSprite; bi.color = Color.white;
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
-                titleKeyArt = bg.GetComponent<RectTransform>();   // v229 drift target
-                var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.16f));
-                shade.transform.Stretch();
-                shade.GetComponent<Image>().raycastTarget = false;
+                titleKeyArt = bg.GetComponent<RectTransform>();   // breathing target
             }
+            // drifting fog strips — the constructed sky is never frozen
+            var fog = mistFog ?? (mistFog = MistStrip(21u));
+            if (fog != null)
+            {
+                var fg = new GameObject("FogDrift");
+                fg.transform.SetParent(p.transform, false);
+                var fi = fg.AddComponent<Image>();
+                fi.sprite = fog; fi.color = new Color(1f, 1f, 1f, 0.42f);
+                fi.preserveAspect = false; fi.raycastTarget = false;
+                var frt = fi.rect(); frt.anchorMin = new Vector2(-0.15f, 0.30f); frt.anchorMax = new Vector2(1.15f, 0.62f);
+                frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
+                mistTitleScroll = frt;   // drift target
+                var fg2 = new GameObject("FogDriftLow");
+                fg2.transform.SetParent(p.transform, false);
+                var fi2 = fg2.AddComponent<Image>();
+                fi2.sprite = fog; fi2.color = new Color(1f, 1f, 1f, 0.30f);
+                fi2.raycastTarget = false;
+                var f2rt = fi2.rect(); f2rt.anchorMin = new Vector2(-0.15f, 0.08f); f2rt.anchorMax = new Vector2(1.15f, 0.34f);
+                f2rt.offsetMin = Vector2.zero; f2rt.offsetMax = Vector2.zero;
+                mistTitleScroll2 = f2rt;
+            }
+            var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.16f));
+            shade.transform.Stretch();
+            shade.GetComponent<Image>().raycastTarget = false;
 
             // v229: the AVALON title is REAL lettering now — pale silver Cinzel, letterspaced,
             // sitting at the reference's own 6-16% band, with a soft dark halo for legibility.
@@ -802,25 +943,34 @@ GameObject BuildSelect(Transform parent)
             // carved slabs at the plate's 88-93% band. Responsive grid + dual wiring untouched.
             var p = Panel(parent, "Select", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
-            // v229 REBUILD-THE-LOOK: the V2 select reference had cards + buttons PAINTED IN, so
-            // pasting it doubled the UI. Retired as a screen — the clean approved teaser keyart is
-            // the backdrop, and the REAL card grid / header / BEGIN / BACK (already built to the
-            // V2 reference's own geometry) carry the layout.
-            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
-            if (bgSprite == null) bgSprite = Art("UI-MAIN-MENU-V2-CLEAN");
+            // v230 CODE-DRAWN WORLD: no pasted art here either — the select backdrop is a
+            // second generated mist world (own seed), with the real card grid over it.
+            var bgSprite = mistSelectBg ?? (mistSelectBg = MistBackdrop(11u));
             if (bgSprite != null)
             {
-                var bg = new GameObject("KeyArt");
+                var bg = new GameObject("SkyWorld");
                 bg.transform.SetParent(p.transform, false);
                 var bi = bg.AddComponent<Image>();
-                bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = Color.white;
+                bi.sprite = bgSprite; bi.color = Color.white;
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
-                selectKeyArt = bi.rect();   // v229 drift target
-                var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.14f));
-                shade.transform.Stretch();
-                shade.GetComponent<Image>().raycastTarget = false;
+                selectKeyArt = bi.rect();   // breathing target
             }
+            var fogS = mistFog ?? (mistFog = MistStrip(21u));
+            if (fogS != null)
+            {
+                var fg = new GameObject("FogDrift");
+                fg.transform.SetParent(p.transform, false);
+                var fi = fg.AddComponent<Image>();
+                fi.sprite = fogS; fi.color = new Color(1f, 1f, 1f, 0.36f);
+                fi.raycastTarget = false;
+                var frt = fi.rect(); frt.anchorMin = new Vector2(-0.15f, 0.12f); frt.anchorMax = new Vector2(1.15f, 0.42f);
+                frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
+                mistSelectScroll = frt;
+            }
+            var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.14f));
+            shade.transform.Stretch();
+            shade.GetComponent<Image>().raycastTarget = false;
             var overline = Label(p.transform, "AVALON", 16, Hex(0xf0ebde), TextAnchor.MiddleCenter);
             overline.rect().anchorMin = new Vector2(0, 0.965f); overline.rect().anchorMax = new Vector2(1, 1.02f);
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 30, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
