@@ -230,3 +230,33 @@ with their region"
   a region-deep Griffin variant available on request. World legendary Drowned-Titan
   Strider (Marenth) unchanged — already region-deep by design.
   Stage C hold unchanged; mounted-combat ban + joystick + traversal-key laws unchanged.
+
+## MOUNT-CANON v7 — REGION-EFFECTED HORSES + LEGENDARY TRAITS (Bude's ruling, Sept 14 2026)
+Bude: "the horses need to be effected by the region with traits they in tho" +
+"the legendary mounts need a unique trait of flight, swimming or something"
+
+* TIER 1 — REGION-EFFECTED LAW: the realm leaves its traits ON the horse — the effect
+  is in the hide/body, not just the scenery. R2 plates (vaulted art/pending/t1-*-r2):
+    ASHFALL   — magma-crack veins glowing along legs + flank, ember-smoke breath
+    STONEHEART— living granite hide, moss grown into the back, solid stone hooves,
+                bronze rune-veins (magic light only)
+    MARENTH   — permanently wet salt hide, kelp-fin mane, gill-groove neck, barnacle hooves
+    DUSKMOURN — mane/tail dissolve into actual mist, body half-vapor at edges,
+                crimson rune-glimmer (magic light only)
+    EVERBLOOM — moss blanket on spine, blooms growing out of the mane, thorn-vine braids
+    SKYREND   — storm-cloud dappled hide, static-crackling wet mane, lightning at hooves
+  Work-saddle law + fire-color law unchanged.
+
+* TIER 2 — UNIQUE TRAIT LAW: every legendary carries exactly ONE unique traversal
+  trait, no two shared — the trait IS the dungeon key (hazard-gated pockets).
+    SOVEREIGN — GRIFFIN: FLIGHT (sole wing, LOCKED, realm-free flagship)
+    RAVAGER   — EMBER-DRAKE: MAGMA-SWIM (swims lava like water)
+    WARDEN    — BULWARK TURTLE: DEEP-FORD SWIM (crosses any water, unsinkable)
+    VEILBORN  — GLOAM-PANTHER: MIST-PHASE (walks through mist/shadow walls)
+    WEAVER    — GLYPHWOOD STAG: THORN-PATH (briars bloom open before it)
+    WILDBORN  — PRIMAL MAMMOTH: STORM-BREAKER (wades any storm flood, unstoppable)
+  Each trait rolls its own hazard-gated mythic-pocket dungeon family: magma-veins,
+  deep fords, mist-veils, blackbriar mazes, storm flood-planes, sky dungeons.
+  Distinct from the world legendary Drowned-Titan Strider's SEABED-WALK (kept unique).
+  R2 plates (vaulted art/pending/t2-*-r2) show each trait IN ACTION.
+  Stage C hold, mounted-combat ban, joystick law unchanged. Awaiting verdicts per plate.
