@@ -117,6 +117,8 @@ namespace AvalonShell
             panelTitle = BuildTitle(canvas.transform);
             panelSelect = BuildSelect(canvas.transform);
             panelGame = BuildGame(canvas.transform);
+            moteImgs = new System.Collections.Generic.List<UnityEngine.UI.Image>();
+            moteSeed = new System.Collections.Generic.List<float>();
             panelMap = BuildMap(canvas.transform);
             panelSettings = BuildSettings(canvas.transform);
             panelAchievements = BuildAchievements(canvas.transform);
@@ -308,6 +310,10 @@ namespace AvalonShell
         Sprite carvedSlab;
         Sprite nicheFrameSpr;
         Sprite drawnMapSpr;
+        Sprite borderFrame;
+        Sprite moteSpr;
+        System.Collections.Generic.List<UnityEngine.UI.Image> moteImgs;
+        System.Collections.Generic.List<float> moteSeed;
         RectTransform mistTitleScroll;
         RectTransform mistTitleScroll2;
         RectTransform mistSelectScroll;
@@ -644,6 +650,201 @@ namespace AvalonShell
                 return sp;
             }
             catch (Exception e) { Debug.LogError("[SHELL] class sigil failed: " + e.Message); return null; }
+        }
+
+        // ================= v232 AAA DESIGN SYSTEM =================
+        // Bude's AAA mandate (Sept 14 2026): one centralized visual system — the same
+        // materials, borders, headings, icons and motion on EVERY screen. Composition >
+        // hierarchy > materials > lighting > animation > interaction > polish.
+        // Codified in docs/AAA-UI-BIBLE.md.
+
+        void OpenPanel(GameObject go)
+        {
+            go.SetActive(true);
+            StartCoroutine(PanelIn(go));
+        }
+
+        System.Collections.IEnumerator PanelIn(GameObject go)
+        {
+            var rt = go.transform as RectTransform;
+            var cg = go.GetComponent<CanvasGroup>();
+            if (cg == null) cg = go.AddComponent<CanvasGroup>();
+            float t = 0f;
+            while (t < 0.30f)
+            {
+                t += Time.unscaledDeltaTime;
+                float k = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01(t / 0.30f));
+                cg.alpha = k;
+                float sc = 0.94f + 0.06f * k;
+                rt.localScale = new Vector3(sc, sc, 1f);
+                yield return null;
+            }
+            rt.localScale = Vector3.one;
+            cg.alpha = 1f;
+        }
+
+        // Heading style: engraved Cinzel with carve + sheen (shared hierarchy).
+        Text Heading(Transform parent, string title)
+        {
+            var t = Label(parent, title, 17, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
+            var carve = t.gameObject.AddComponent<UnityEngine.UI.Shadow>();
+            carve.effectColor = new Color(0.03f, 0.028f, 0.02f, 0.9f);
+            carve.effectDistance = new Vector2(1f, -1.5f);
+            var sheen = t.gameObject.AddComponent<UnityEngine.UI.Shadow>();
+            sheen.effectColor = new Color(0.85f, 0.78f, 0.62f, 0.20f);
+            sheen.effectDistance = new Vector2(-0.7f, 0.9f);
+            return t;
+        }
+
+        // Border-only 9-sliced frame: transparent interior, bronze hairline, corner diamonds.
+        Sprite BorderFrameSpr()
+        {
+            try
+            {
+                int S = 64;
+                var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[S * S];
+                var bronze = new Color(0.639f, 0.541f, 0.357f, 1f);
+                var none = new Color(0f, 0f, 0f, 0f);
+                for (int y = 0; y < S; y++)
+                    for (int x = 0; x < S; x++)
+                    {
+                        float bx = Mathf.Min(x, S - 1 - x), by = Mathf.Min(y, S - 1 - y);
+                        float b = Mathf.Min(bx, by);
+                        float cb = Mathf.Max(bx, by);
+                        float band = (b < 2.5f) ? 1f - b / 2.5f : 0f;
+                        if (cb < 5.5f) band = Mathf.Max(band, 1f - cb / 5.5f);
+                        if (b < 8f && cb >= 5.5f) band = Mathf.Max(band, 0.30f * (1f - b / 8f));
+                        px[y * S + x] = Color.Lerp(none, bronze, band);
+                    }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, S, S), new Vector2(0.5f, 0.5f), 128f, 0u, SpriteMeshType.FullRect, new Vector4(16, 16, 16, 16));
+                sp.name = "BorderFrame";
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] border frame failed: " + e.Message); return null; }
+        }
+
+        // Shared panel chrome: dark glass base + bronze sliced border + engraved heading.
+        // Every menu/submenu wears THIS — the centralized visual language of the shell.
+        GameObject PanelChrome(Transform parent, string title)
+        {
+            var shell = Panel(parent, "Chrome-" + title, new Color(0.043f, 0.047f, 0.055f, 0.965f));
+            shell.transform.Stretch();
+            var fr = new GameObject("Frame");
+            fr.transform.SetParent(shell.transform, false);
+            var fi = fr.AddComponent<Image>();
+            var frame = borderFrame ?? (borderFrame = BorderFrameSpr());
+            if (frame != null) { fi.sprite = frame; fi.type = Image.Type.Sliced; }
+            fi.raycastTarget = false;
+            fi.rect().Stretch();
+            var head = Heading(shell.transform, title);
+            head.rect().anchorMin = new Vector2(0f, 0.885f); head.rect().anchorMax = new Vector2(1f, 0.965f);
+            head.rect().offsetMin = Vector2.zero; head.rect().offsetMax = Vector2.zero;
+            return shell;
+        }
+
+        // Custom code-drawn glyphs — no placeholder symbols anywhere.
+        Sprite IconSprite(string name)
+        {
+            try
+            {
+                int S = 64;
+                var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[S * S];
+                var bronze = new Color(0.796f, 0.694f, 0.478f, 1f);
+                var none = new Color(0f, 0f, 0f, 0f);
+                for (int y = 0; y < S; y++)
+                    for (int x = 0; x < S; x++)
+                    {
+                        float fx = (x + 0.5f) / S * 2f - 1f, fy = (y + 0.5f) / S * 2f - 1f;
+                        bool on = false;
+                        if (name == "close")
+                            on = Mathf.Abs(Mathf.Abs(fx) - Mathf.Abs(fy)) < 0.14f && Mathf.Abs(fx) + Mathf.Abs(fy) < 1.15f;
+                        else if (name == "back")
+                            on = (Mathf.Abs(fy + fx * 0.9f) < 0.14f || Mathf.Abs(fy - fx * 0.9f) < 0.14f) && fx > -0.85f && fx < 0.2f && Mathf.Abs(fy) < 0.85f;
+                        else if (name == "map")
+                        {
+                            float bx = Mathf.Abs(fx), by = Mathf.Abs(fy);
+                            on = (bx > 0.62f && bx < 0.82f && by < 0.78f) || (by > 0.62f && by < 0.82f && bx < 0.78f) || Mathf.Abs(fx + fy) < 0.10f;
+                        }
+                        px[y * S + x] = on ? bronze : none;
+                    }
+                tex.SetPixels(px); tex.Apply();
+                var sp = Sprite.Create(tex, new Rect(0, 0, S, S), new Vector2(0.5f, 0.5f), 64f);
+                sp.name = "Icon-" + name;
+                return sp;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] icon failed: " + e.Message); return null; }
+        }
+
+        // Shared close control: carved button + custom glyph, dual-wired.
+        Button CloseBtn(GameObject panel)
+        {
+            var close = Btn(panel.transform, "CLOSE", 12);
+            var crt = close.transform as RectTransform;
+            crt.anchorMin = new Vector2(0.5f, 0.5f); crt.anchorMax = new Vector2(0.5f, 0.5f);
+            crt.sizeDelta = new Vector2(150, 42); crt.anchoredPosition = new Vector2(0, -60);
+            var ic = new GameObject("Icon");
+            ic.transform.SetParent(close.transform, false);
+            var ii = ic.AddComponent<Image>();
+            var isp = IconSprite("close");
+            if (isp != null) ii.sprite = isp;
+            ii.raycastTarget = false;
+            var irt = ii.rect();
+            irt.anchorMin = new Vector2(0.06f, 0.2f); irt.anchorMax = new Vector2(0.06f, 0.2f);
+            irt.sizeDelta = new Vector2(20f, 20f); irt.anchoredPosition = new Vector2(10f, 0f);
+            close.onClick.AddListener(() => panel.SetActive(false));
+            TapTo(crt, () => panel.SetActive(false));
+            return close;
+        }
+
+        // Ember motes: soft atmospheric particles drifting up through the menus.
+        Sprite MoteSprite()
+        {
+            if (moteSpr != null) return moteSpr;
+            try
+            {
+                int S = 16;
+                var tex = new Texture2D(S, S, TextureFormat.RGBA32, false);
+                tex.wrapMode = TextureWrapMode.Clamp;
+                var px = new Color[S * S];
+                for (int y = 0; y < S; y++)
+                    for (int x = 0; x < S; x++)
+                    {
+                        float fx = (x + 0.5f) / S * 2f - 1f, fy = (y + 0.5f) / S * 2f - 1f;
+                        float r = Mathf.Sqrt(fx * fx + fy * fy);
+                        px[y * S + x] = new Color(0.92f, 0.72f, 0.45f, Mathf.Exp(-r * r * 3.5f) * 0.85f);
+                    }
+                tex.SetPixels(px); tex.Apply();
+                moteSpr = Sprite.Create(tex, new Rect(0, 0, S, S), new Vector2(0.5f, 0.5f), 16f);
+                moteSpr.name = "Mote";
+                return moteSpr;
+            }
+            catch (Exception e) { Debug.LogError("[SHELL] mote failed: " + e.Message); return null; }
+        }
+
+        void SeedMotes(GameObject host, int n, uint seed)
+        {
+            if (moteImgs == null || MoteSprite() == null) return;
+            var rnd = new System.Random((int)seed);
+            for (int i = 0; i < n; i++)
+            {
+                var g = new GameObject("mote");
+                g.transform.SetParent(host.transform, false);
+                var im = g.AddComponent<Image>();
+                im.sprite = MoteSprite(); im.raycastTarget = false;
+                var rt = im.rect();
+                float ax = (float)rnd.NextDouble();
+                rt.anchorMin = new Vector2(ax, 0f); rt.anchorMax = new Vector2(ax, 0f);
+                float sz = 4f + 7f * (float)rnd.NextDouble();
+                rt.sizeDelta = new Vector2(sz, sz);
+                rt.anchoredPosition = new Vector2(0f, (float)rnd.NextDouble() * 500f);
+                moteImgs.Add(im);
+                moteSeed.Add(0.8f + 2.4f * (float)rnd.NextDouble() + ax);
+            }
         }
 
         // ---- v229 REBUILD-THE-LOOK: alive-menu machinery (cascade fade + keyart drift) ----
@@ -1044,6 +1245,7 @@ GameObject BuildTitle(Transform parent)
             TitleLayer("Sheen", new Color(0.95f, 0.97f, 1.0f, 0.30f), new Vector2(-1f, 1.2f));      // top light
             TitleLayer("Face", new Color(0.87f, 0.90f, 0.925f, 1f), Vector2.zero);                 // silver face
             titleLogoCg = lcg;   // v229 cascade head
+            SeedMotes(p, 14, 3u);   // v232: ember motes through the title mist
 
 
             bool hasSave = PlayerPrefs.HasKey("avalon.save");
@@ -1061,8 +1263,8 @@ GameObject BuildTitle(Transform parent)
             });
             EngravedOption(p.transform, "NEW JOURNEY", 0.30f, 0.70f, 0.345f, 0.395f, true, delegate { SetState(State.Select); });
             EngravedOption(p.transform, "GATES", 0.30f, 0.70f, 0.275f, 0.325f, true, delegate { OpenMap(); });
-            EngravedOption(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { panelAchievements.SetActive(true); });
-            EngravedOption(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { panelSettings.SetActive(true); });
+            EngravedOption(p.transform, "ACHIEVEMENTS", 0.30f, 0.70f, 0.205f, 0.255f, true, delegate { OpenPanel(panelAchievements); });
+            EngravedOption(p.transform, "SETTINGS", 0.30f, 0.70f, 0.135f, 0.185f, true, delegate { OpenPanel(panelSettings); });
 
 #if UNITY_ANDROID && !UNITY_EDITOR
             int stampVc = InstalledVersionCode();
@@ -1136,10 +1338,7 @@ GameObject BuildTitle(Transform parent)
         // ---- SETTINGS (real options, wired) ----
         GameObject BuildSettings(Transform parent)
         {
-            var p = Panel(parent, "SettingsPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
-            p.transform.Stretch();
-            var head = Label(p.transform, "SETTINGS", 22, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            head.rect().anchorMin = new Vector2(0, 0.86f); head.rect().anchorMax = new Vector2(1, 0.98f);
+            var p = PanelChrome(parent, "SETTINGS");   // v232: shared AAA chrome
             var tb = Btn(p.transform, "INPUT PROBE: ON", 13);
             var trt = tb.transform as RectTransform;
             trt.anchorMin = new Vector2(0.5f, 0.5f); trt.anchorMax = new Vector2(0.5f, 0.5f);
@@ -1157,12 +1356,7 @@ GameObject BuildTitle(Transform parent)
             TapTo(trt, toggle);
             var note = Label(p.transform, "MORE OPTIONS SHIP WITH THE FULL GAME BUILD", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
             note.rect().anchorMin = new Vector2(0, 0.52f); note.rect().anchorMax = new Vector2(1, 0.58f);
-            var close = Btn(p.transform, "CLOSE", 12);
-            var crt = close.transform as RectTransform;
-            crt.anchorMin = new Vector2(0.5f, 0.5f); crt.anchorMax = new Vector2(0.5f, 0.5f);
-            crt.sizeDelta = new Vector2(140, 42); crt.anchoredPosition = new Vector2(0, -30);
-            close.onClick.AddListener(() => p.SetActive(false));
-            TapTo(crt, () => p.SetActive(false));
+            CloseBtn(p);   // v232: shared close control
             p.SetActive(false);
             return p;
         }
@@ -1170,10 +1364,7 @@ GameObject BuildTitle(Transform parent)
         // ---- ACHIEVEMENTS (real progress from the save) ----
         GameObject BuildAchievements(Transform parent)
         {
-            var p = Panel(parent, "AchievementsPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
-            p.transform.Stretch();
-            var head = Label(p.transform, "ACHIEVEMENTS", 22, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
-            head.rect().anchorMin = new Vector2(0, 0.86f); head.rect().anchorMax = new Vector2(1, 0.98f);
+            var p = PanelChrome(parent, "ACHIEVEMENTS");   // v232: shared AAA chrome
             string[] lines;
             if (PlayerPrefs.HasKey("avalon.save"))
             {
@@ -1197,12 +1388,7 @@ GameObject BuildTitle(Transform parent)
                 var l = Label(p.transform, lines[i], 13, i == 1 && lines[i].Contains("WITNESSED") ? Hex(0xa3895a) : Hex(0xc8c2b2), TextAnchor.MiddleCenter);
                 l.rect().anchorMin = new Vector2(0.05f, 0.68f - i * 0.09f); l.rect().anchorMax = new Vector2(0.95f, 0.74f - i * 0.09f);
             }
-            var close = Btn(p.transform, "CLOSE", 12);
-            var crt = close.transform as RectTransform;
-            crt.anchorMin = new Vector2(0.5f, 0.5f); crt.anchorMax = new Vector2(0.5f, 0.5f);
-            crt.sizeDelta = new Vector2(140, 42); crt.anchoredPosition = new Vector2(0, -30);
-            close.onClick.AddListener(() => p.SetActive(false));
-            TapTo(crt, () => p.SetActive(false));
+            CloseBtn(p);   // v232: shared close control
             p.SetActive(false);
             return p;
         }
@@ -1228,6 +1414,7 @@ GameObject BuildSelect(Transform parent)
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
                 selectKeyArt = bi.rect();   // breathing target
+                SeedMotes(p, 10, 5u);   // v232: ember motes on select too
             }
             var fogS = mistFog ?? (mistFog = MistStrip(21u));
             if (fogS != null)
@@ -1477,7 +1664,7 @@ GameObject BuildSelect(Transform parent)
                         var img = mapPins[i].GetComponent<UnityEngine.UI.Image>();
                         var c = img.color; c.r = disc ? 0.86f : 0.42f; c.g = disc ? 0.62f : 0.39f; c.b = disc ? 0.28f : 0.30f; img.color = c;
                     }
-            panelMap.SetActive(true);
+            OpenPanel(panelMap);   // v232: cinematic entrance on every screen
         }
 
         GameObject BuildMapPin(Transform mapRoot, int i)
@@ -1501,10 +1688,7 @@ GameObject BuildSelect(Transform parent)
         // landmark pins land with the pin pass.
         GameObject BuildMap(Transform parent)
         {
-            var p = Panel(parent, "MapPanel", new Color(0.043f, 0.047f, 0.055f, 0.97f));
-            p.transform.Stretch();
-            var head = Label(p.transform, "COLD RELIQUARY — ASHFALL", 15, Hex(0xe6ddca), TextAnchor.MiddleLeft);
-            head.rect().anchorMin = new Vector2(0, 1); head.rect().anchorMax = new Vector2(1, 1); head.rect().offsetMin = new Vector2(18, -48); head.rect().offsetMax = new Vector2(-18, -16);
+            var p = PanelChrome(parent, "THE GATES — COLD RELIQUARY");   // v232: shared AAA chrome
             var mapArt = drawnMapSpr ?? (drawnMapSpr = DrawnMap());   // v230 foundation map field
             if (mapArt != null)
             {
@@ -1527,11 +1711,7 @@ GameObject BuildSelect(Transform parent)
             // (knowledge = unlock — the WORLD-AND-DUNGEON-LAW discovery doctrine).
             var sub = Label(p.transform, "QUEST PIN — REACH THE FIRST GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
             sub.rect().anchorMin = new Vector2(0.03f, 0.0f); sub.rect().anchorMax = new Vector2(0.97f, 0.05f); sub.rect().offsetMin = new Vector2(8, 6); sub.rect().offsetMax = new Vector2(-8, 0);
-            var close = Btn(p.transform, "CLOSE", 11);
-            var crt = close.rect();
-            crt.anchorMin = new Vector2(1, 1); crt.anchorMax = new Vector2(1, 1); crt.pivot = new Vector2(1, 1);
-            crt.anchoredPosition = new Vector2(-10, -10); crt.sizeDelta = new Vector2(80, 32);
-            close.onClick.AddListener(() => p.SetActive(false));
+            CloseBtn(p);   // v232: shared close control (was text-only, single-wired)
             p.SetActive(false);
             return p;
         }
@@ -1626,6 +1806,22 @@ GameObject BuildSelect(Transform parent)
             if (!rawTap && Input.GetMouseButtonDown(0)) rawTap = true;
             if (rawTap) { probeCount++; if (probeLbl != null) probeLbl.text = "INPUT " + probeCount; }
             RunTaps();   // v224: raw-touch router — nav works even if the EventSystem is dead
+            // v232: ember mote drift — sway + rise + alpha pulse, wrap at screen top
+            if (moteImgs != null)
+            {
+                float dt = Time.unscaledDeltaTime;
+                float top = Screen.height / (canvas != null ? canvas.scaleFactor : 1f) + 60f;
+                for (int i = 0; i < moteImgs.Count; i++)
+                {
+                    if (moteImgs[i] == null) continue;
+                    var rt = moteImgs[i].rect();
+                    rt.anchoredPosition += new Vector2(Mathf.Sin(Time.unscaledTime * 0.5f + moteSeed[i]) * 9f * dt, 22f * moteSeed[i] * dt);
+                    if (rt.anchoredPosition.y > top) rt.anchoredPosition = new Vector2(rt.anchoredPosition.x, -30f);
+                    var c = moteImgs[i].color;
+                    c.a = 0.30f + 0.28f * (0.5f + 0.5f * Mathf.Sin(Time.unscaledTime * (0.7f + moteSeed[i] * 0.25f) + i));
+                    moteImgs[i].color = c;
+                }
+            }
             // orientation flip: refit plates + relayout ONCE on change (was missing before)
             bool nowPortrait = Screen.height > Screen.width;
             if (nowPortrait != wasPortrait)
