@@ -44,7 +44,7 @@ namespace AvalonShell
 
             Directory.CreateDirectory("Assets/AvalonShell/Resources/Art");
             foreach (var art in new[] { "MAP1-COLD-RELIQUARY-ASHFALL-CANON.png",
-                "UI-MAIN-MENU-CANON.png", "UI-MAIN-MENU-V2-CANON.jpg", "UI-CLASS-SELECT-CANON.png", "UI-CLASS-SELECT-V2-CANON.png",
+                "UI-MAIN-MENU-CANON.png", "UI-MAIN-MENU-V2-CANON.jpg", "UI-MAIN-MENU-V2-CLEAN.jpg", "UI-CLASS-SELECT-CANON.png", "UI-CLASS-SELECT-V2-CANON.png",
                 "CINEMATIC-TEASER-KEYART-CANON.png",
                 "CLASS-SOVEREIGN-CANON.png", "CLASS-RAVAGER-CANON.png", "CLASS-WARDEN-CANON.png",
                 "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png" })

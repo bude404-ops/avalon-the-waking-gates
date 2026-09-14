@@ -123,6 +123,8 @@ namespace AvalonShell
             panelSkills = BuildSkills(canvas.transform);
             LayoutCards();
             SetState(State.Title);
+            StartCoroutine(TitleIntro());     // v229 alive-menu cascade
+            StartCoroutine(KeyArtDrift());    // v229 keyart breathing
             // v219 INPUT PROBE: counts every raw touch Unity receives on the title screen.
             // If this number moves when you tap, input is alive (tap zones then respond loudly);
             // if it never moves, the input pipeline itself is dead on that device. Decisive either way.
@@ -296,6 +298,56 @@ namespace AvalonShell
             {
                 if (realmFade != null) StopCoroutine(realmFade);
                 realmFade = StartCoroutine(RealmCardFade());
+            }
+        }
+
+        // ---- v229 REBUILD-THE-LOOK: alive-menu machinery (cascade fade + keyart drift) ----
+        RectTransform titleKeyArt;
+        RectTransform selectKeyArt;
+        CanvasGroup titleLogoCg;
+        readonly System.Collections.Generic.List<CanvasGroup> titleOptCgs = new System.Collections.Generic.List<CanvasGroup>();
+
+        // v229: staggered fade-in — the title logo rises first, then each engraved option
+        // cascades in over the mist. Replays on every return to the title so the menu always
+        // reads as living UI, never a still image.
+        IEnumerator TitleIntro()
+        {
+            while (true)
+            {
+                if (panelTitle == null) { yield break; }
+                while (!panelTitle.activeInHierarchy) yield return null;
+                if (titleLogoCg != null) titleLogoCg.alpha = 0f;
+                for (int i = 0; i < titleOptCgs.Count; i++) if (titleOptCgs[i] != null) titleOptCgs[i].alpha = 0f;
+                float t0 = Time.time;
+                float LOGO_DUR = 0.55f, OPT_DUR = 0.35f, STAG = 0.13f;
+                float total = LOGO_DUR + STAG * titleOptCgs.Count + OPT_DUR + 0.1f;
+                while ((Time.time - t0) < total)
+                {
+                    if (panelTitle == null || !panelTitle.activeInHierarchy) break;
+                    float el = Time.time - t0;
+                    if (titleLogoCg != null) titleLogoCg.alpha = Mathf.Clamp01(el / LOGO_DUR);
+                    for (int i = 0; i < titleOptCgs.Count; i++)
+                        if (titleOptCgs[i] != null)
+                            titleOptCgs[i].alpha = Mathf.Clamp01((el - LOGO_DUR * 0.6f - STAG * (i + 1)) / OPT_DUR);
+                    yield return null;
+                }
+                if (titleLogoCg != null) titleLogoCg.alpha = 1f;
+                for (int i = 0; i < titleOptCgs.Count; i++) if (titleOptCgs[i] != null) titleOptCgs[i].alpha = 1f;
+                while (panelTitle != null && panelTitle.activeInHierarchy) yield return null;
+            }
+        }
+
+        // v229: slow breathing drift on the menu keyart — the painted backdrop is never frozen.
+        IEnumerator KeyArtDrift()
+        {
+            while (true)
+            {
+                float d = 1f + 0.012f * (0.5f + 0.5f * Mathf.Sin(Time.time * 0.22f));
+                if (titleKeyArt != null && panelTitle != null && panelTitle.activeInHierarchy)
+                    titleKeyArt.localScale = new Vector3(d, d, 1f);
+                if (selectKeyArt != null && panelSelect != null && panelSelect.activeInHierarchy)
+                    selectKeyArt.localScale = new Vector3(d, d, 1f);
+                yield return null;
             }
         }
 
@@ -506,6 +558,8 @@ namespace AvalonShell
             var lbl = Label(go.transform, txt, 19, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
             lbl.rect().anchorMin = new Vector2(0f, 0.04f); lbl.rect().anchorMax = new Vector2(1f, 0.76f);
 
+            var cg = go.AddComponent<CanvasGroup>();   // v229: cascade fade hook
+            cg.alpha = 1f;
             var b = go.AddComponent<Button>();
             b.targetGraphic = lbl;
             var cb = b.colors;
@@ -521,6 +575,7 @@ namespace AvalonShell
                 b.onClick.AddListener(() => { StartCoroutine(ZonePulse(grt)); act(); });
                 TapTo(grt, () => { StartCoroutine(ZonePulse(grt)); act(); });
             }
+            if (titleOptCgs != null) titleOptCgs.Add(go.GetComponent<CanvasGroup>());   // v229 cascade registry
             return b;
         }
 
@@ -535,9 +590,14 @@ GameObject BuildTitle(Transform parent)
             var p = Panel(parent, "Title", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
 
-            // v228: Bude's new title-menu reference (Sept 13) IS the screen — the painted keyart
-            // carries its own AVALON logo and the option list floats engraved over the mist.
-            var bgSprite = Art("UI-MAIN-MENU-V2-CANON");
+            // v229 REBUILD-THE-LOOK (Bude, Sept 14: "you pasted the reference image in the menu,
+            // you didn't rebuild it so it looked like it"): the reference painting is the STYLE + LAYOUT
+            // spec — its baked-in logo/lettering is ERASED from the staged CLEAN art, and every menu
+            // element is REAL UI drawn over the clean mist: Cinzel title lettering at the ref's own
+            // 6-16% band, engraved options at the ref's own list positions, staggered fade-in cascade,
+            // slow keyart breathing drift. Nothing baked, nothing pasted.
+            var bgSprite = Art("UI-MAIN-MENU-V2-CLEAN");
+            if (bgSprite == null) bgSprite = Art("UI-MAIN-MENU-V2-CANON");   // last-resort fallback only
             if (bgSprite == null) bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
             if (bgSprite != null)
             {
@@ -547,10 +607,29 @@ GameObject BuildTitle(Transform parent)
                 bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = new Color(1f, 1f, 1f, 1f);
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
+                titleKeyArt = bg.GetComponent<RectTransform>();   // v229 drift target
                 var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.16f));
                 shade.transform.Stretch();
                 shade.GetComponent<Image>().raycastTarget = false;
             }
+
+            // v229: the AVALON title is REAL lettering now — pale silver Cinzel, letterspaced,
+            // sitting at the reference's own 6-16% band, with a soft dark halo for legibility.
+            var logoGo = new GameObject("TitleLogo");
+            logoGo.transform.SetParent(p.transform, false);
+            var lrt = logoGo.AddComponent<RectTransform>();
+            lrt.anchorMin = new Vector2(0f, 0.840f); lrt.anchorMax = new Vector2(1f, 0.935f);
+            lrt.offsetMin = Vector2.zero; lrt.offsetMax = Vector2.zero;
+            var lcg = logoGo.AddComponent<CanvasGroup>();
+            var logoTxt = logoGo.AddComponent<Text>();
+            logoTxt.font = Font(); logoTxt.text = "A V A L O N"; logoTxt.fontSize = 46;
+            logoTxt.color = new Color(0.875f, 0.905f, 0.925f, 1f);
+            logoTxt.alignment = TextAnchor.MiddleCenter;
+            logoTxt.raycastTarget = false;
+            var halo = logoGo.AddComponent<UnityEngine.UI.Shadow>();
+            halo.effectColor = new Color(0.02f, 0.03f, 0.05f, 0.55f);
+            halo.effectDistance = new Vector2(2.5f, -2.5f);
+            titleLogoCg = lcg;   // v229 cascade head
 
 
             bool hasSave = PlayerPrefs.HasKey("avalon.save");
@@ -723,9 +802,12 @@ GameObject BuildSelect(Transform parent)
             // carved slabs at the plate's 88-93% band. Responsive grid + dual wiring untouched.
             var p = Panel(parent, "Select", new Color(0.055f, 0.078f, 0.090f, 1f));
             p.transform.Stretch();
-            // v228: Bude's new character-menu reference (Sept 13) IS the screen — painted
-            // showcase behind the real card grid; header lettering at the ref's own bands.
-            var bgSprite = Art("UI-CLASS-SELECT-V2-CANON");
+            // v229 REBUILD-THE-LOOK: the V2 select reference had cards + buttons PAINTED IN, so
+            // pasting it doubled the UI. Retired as a screen — the clean approved teaser keyart is
+            // the backdrop, and the REAL card grid / header / BEGIN / BACK (already built to the
+            // V2 reference's own geometry) carry the layout.
+            var bgSprite = Art("CINEMATIC-TEASER-KEYART-CANON");
+            if (bgSprite == null) bgSprite = Art("UI-MAIN-MENU-V2-CLEAN");
             if (bgSprite != null)
             {
                 var bg = new GameObject("KeyArt");
@@ -734,6 +816,7 @@ GameObject BuildSelect(Transform parent)
                 bi.sprite = bgSprite; bi.preserveAspect = true; bi.color = Color.white;
                 bi.raycastTarget = false;
                 bi.rect().Stretch();
+                selectKeyArt = bi.rect();   // v229 drift target
                 var shade = Panel(p.transform, "Shade", new Color(0.02f, 0.03f, 0.04f, 0.14f));
                 shade.transform.Stretch();
                 shade.GetComponent<Image>().raycastTarget = false;
