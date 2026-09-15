@@ -487,3 +487,23 @@ saddleless rerolls"
   nature made visible), head resting low. Anti-cobra law holds (no hood, no upright
   strike). Plate: art/pending/t2-veilborn-gloam-wyrm-v4.jpg.
 * Tier 2 roster now pending ONLY the Gloam-Wyrm verdict.
+
+## MOUNT-CANON v19 — REGION-DEEP FUSION LAW + Gloam-Wyrm v5 (Bude, Sept 15 2026 ~7:10 PM)
+Bude: "We need to make the gloam wyrm fit the region more"
+
+* REGION-DEEP FUSION LAW (Tier 2 legendaries): each legendary must WEAR its realm
+  physically on the body — realm materials, textures and growths in the hide/scales,
+  not just realm scenery around it. Same doctrine the Tier 1 horses got in v8
+  (physical region traits), now explicit for the six legendaries.
+* GLOAM-WYRM v5 delivered — v4 armored-legless-drake build KEPT (anti-snake +
+  anti-cobra laws hold: heavyset salamander build, broad flat plated skull, short
+  thick tail, head LOW) with Duskmourn fused INTO the body: scales read as weathered
+  cracked GRAVESTONE SLATE, pale grave-lichen + dark moss on the spine plates,
+  bone-pale segmented underbelly like stacked burial slabs, cold gloam mist seeping
+  from the armor seams, faint spectral crimson rune-light only in the deep plate
+  cracks (magic-light law), and the BARROW-PASS trait shown mid-traversal — forebody
+  passing through the sealed stone door of a barrow mound among leaning gravestones.
+* Plate: art/pending/t2-veilborn-gloam-wyrm-v5.jpg. Full-frame + zero-gear laws held.
+* AWAITING: Bude's verdict on the v5 — it is the only open Tier 2 slot. The other
+  five legendaries may take region-deep fusion touch-ups on request once the Gloam
+  verdict lands.
