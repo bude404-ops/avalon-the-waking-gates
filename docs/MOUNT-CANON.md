@@ -435,3 +435,32 @@ saddle when paired with wings wouldnt function properly"
   t2-weaver-tide-drake-clean.png.
 * LOCKED: Ember-Drke, Storm-Drke (their plates predate this law; re-rolls offered if
   wanted). AWAITING: verdicts on the 4 clean plates + Weaver tide-form call.
+
+## MOUNT-CANON v16 — VERDICTS + STAND-ON RIDING LAW (Bude, Sept 14 2026 ~9:45 PM)
+Bude: "Keep all except the gloam wyrm I dont like the cobra look also lets make sure
+the other 2 dont have saddles that we already save and we will have them just stand on
+them when they ride so no saddles just reigns i think when they are riding"
+
+* VERDICTS on the v15 clean plates: GRANITE-DRAKE LOCKED (Warden/Stoneheart),
+  BRIAR-WYRM LOCKED (Wildborn/Everbloom), TIDE-DRAKE LOCKED (Weaver/Marenth) — keeping
+  the Tide-Drake resolves the Weaver tide-form call: TIDE-DRAKE is the Weaver's mount
+  (the Tide-Wyrm v2 plate stays vaulted as an alternate).
+* GLOAM-WYRM v2 REJECTED — "cobra look". v3 re-roll delivered with an explicit
+  anti-cobra law: head resting LOW at ground level, no raised hood, no flared neck, no
+  upright strike posture — a resting wyrm among gravestones
+  (art/pending/t2-veilborn-gloam-wyrm-v3.jpg).
+* STAND-ON RIDING LAW (supersedes ALL saddle law, incl. the v15 rigging-stage carryover):
+  riders NEVER sit a saddle. They STAND on the mount's back bareback, holding REINS —
+  reins are the only riding gear in the world. Drakes: rider stands behind the wing
+  roots / shoulder crest. Wyrms: rider stands behind the neck ridge on the thick of the
+  body. No saddle ever enters plates, rigs, or game assets; the rigging stage proves
+  stand-stance + rein anchor points on the 3D model.
+* EMBER-DRAKE + STORM-DRAKE: their locked plates predate the saddleless law and carry
+  saddles — saddleless re-rolls delivered per Bude's request
+  (art/pending/t2-ravager-ember-drake-saddleless.jpg,
+  t2-sovereign-storm-drake-saddleless.jpg). Their LOCK status carries to the new plates
+  unless Bude flags otherwise.
+* TIER 2 ROSTER (pending only the Gloam-Wyrm verdict): Sovereign/Storm-Drake (flight),
+  Ravager/Ember-Drake (magma-swim), Warden/Granite-Drake (earth-swim),
+  Veilborn/Gloam-Wyrm (barrow-pass), Weaver/Tide-Drake (current-ride),
+  Wildborn/Briar-Wyrm (thorn-path).
