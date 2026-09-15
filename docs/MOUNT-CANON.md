@@ -417,3 +417,21 @@ Bude: "really them without them doing abilities"
   t2-wildborn-briar-wyrm-rest.png, t2-weaver-tide-drake-rest.png.
 * AWAITING: Bude's verdicts on the 4 at-rest plates + the Weaver tide-form call
   (Tide-Wyrm locked vs Tide-Drake candidate).
+
+## MOUNT-CANON v15 — SADDLELESS PLATE LAW (Bude, Sept 14 2026 ~10:45 PM)
+Bude: "the saddle is making the images render weird and not as whole bodies and the
+saddle when paired with wings wouldnt function properly"
+
+* SADDLELESS PLATE LAW: concept plates show the PURE creature — zero gear, no saddle,
+  no straps, no tack. Saddles distorted the whole-body render, and a saddle behind a
+  wing pair reads non-functional.
+* Saddle design moves to the RIGGING STAGE (Unity/404-GEN): mounted and proven against
+  the actual 3D model where wing-root clearance and seat fit can be verified — never
+  baked into 2D plates again. The old drake/wyrm saddle laws (loins-behind-wings,
+  neck-ridge) become RIGGING guidance, not plate law.
+* Clean re-rolls delivered (at-rest + full-frame + zero gear): GRANITE-DRAKE,
+  GLOAM-WYRM, BRIAR-WYRM, TIDE-DRAKE. Plates: art/pending/t2-warden-granite-drake-clean.png,
+  t2-veilborn-gloam-wyrm-clean.png, t2-wildborn-briar-wyrm-clean.png,
+  t2-weaver-tide-drake-clean.png.
+* LOCKED: Ember-Drke, Storm-Drke (their plates predate this law; re-rolls offered if
+  wanted). AWAITING: verdicts on the 4 clean plates + Weaver tide-form call.
