@@ -464,3 +464,13 @@ them when they ride so no saddles just reigns i think when they are riding"
   Ravager/Ember-Drake (magma-swim), Warden/Granite-Drake (earth-swim),
   Veilborn/Gloam-Wyrm (barrow-pass), Weaver/Tide-Drake (current-ride),
   Wildborn/Briar-Wyrm (thorn-path).
+
+## MOUNT-CANON v17 — SADDLE SCOPE CLARIFICATION (Bude, Sept 14 2026 ~9:55 PM)
+Bude: "Saddles can exist on horses and such just not on the legendary mounts"
+
+* The STAND-ON RIDING LAW (v16) applies to TIER 2 LEGENDARY MOUNTS ONLY — the six
+  drakes/wyrms. On legendaries: no saddle ever; rider stands bareback, reins only.
+* TIER 1 HORSES and standard fauna ride CLASSICALLY — saddled normally (the v6/v8
+  tooled work-saddles stand). Nothing about Tier 1 changes.
+* Plate law unchanged: legendary plates stay pure creature / zero gear; Tier 1 plates
+  keep their saddles.
