@@ -474,3 +474,16 @@ Bude: "Saddles can exist on horses and such just not on the legendary mounts"
   tooled work-saddles stand). Nothing about Tier 1 changes.
 * Plate law unchanged: legendary plates stay pure creature / zero gear; Tier 1 plates
   keep their saddles.
+
+## MOUNT-CANON v18 — Gloam-Wyrm v4 + saddleless locks (Bude, Sept 14 2026 ~10:05 PM)
+Bude: "Gloam wyrm needs reworked to not look likea giant snake and keep the two
+saddleless rerolls"
+
+* EMBER-DRAKE + STORM-DRAKE saddleless re-rolls LOCKED (v16 re-rolls confirmed kept).
+* GLOAM-WYRM v3 rejected — still reads "giant snake". v4 delivered with the
+  ANTI-SNAKE LAW: the body reads as a heavyset legless ARMORED drake, not a serpent —
+  thick salamander-like build, broad flat plated skull with bone crest, raised spine
+  armor plates, short thick tail, mist seeping from the armor seams (its barrow-pass
+  nature made visible), head resting low. Anti-cobra law holds (no hood, no upright
+  strike). Plate: art/pending/t2-veilborn-gloam-wyrm-v4.jpg.
+* Tier 2 roster now pending ONLY the Gloam-Wyrm verdict.
