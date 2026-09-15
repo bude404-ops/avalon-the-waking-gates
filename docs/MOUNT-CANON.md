@@ -403,3 +403,17 @@ to see tide as a drake"
   — Bude judging wyrm vs drake for the Tidewright.
 * LOCKED so far: Ember-Drke (Ravager), Storm-Drake (Sovereign), Tide-Wyrm (Weaver,
   pending his drake-vs-wyrm call). AWAITING verdicts on the 3 re-rolls + tide form pick.
+
+## MOUNT-CANON v14 — AT-REST PLATES (Bude, Sept 14 2026 ~10:30 PM)
+Bude: "really them without them doing abilities"
+
+* AT-REST PLATE MODE: pending beasts re-rolled as the creatures themselves — at rest,
+  natural pose in their home realm, NO ability action mid-traversal. Design-read
+  plates; the ability-action plates remain the quality-bar reference for in-game.
+* Re-rolled at rest (full-frame law held): GRANITE-DRAKE on a mountain ledge,
+  GLOAM-WYRM coiled in the grave mist, BRIAR-WYRM coiled in the forest clearing,
+  TIDE-DRAKE at rest on the tideline ruins.
+* Plates: art/pending/t2-warden-granite-drake-rest.png, t2-veilborn-gloam-wyrm-rest.png,
+  t2-wildborn-briar-wyrm-rest.png, t2-weaver-tide-drake-rest.png.
+* AWAITING: Bude's verdicts on the 4 at-rest plates + the Weaver tide-form call
+  (Tide-Wyrm locked vs Tide-Drake candidate).
