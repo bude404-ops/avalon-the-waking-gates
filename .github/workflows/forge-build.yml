@@ -53,7 +53,11 @@ jobs:
           mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge/Generated
           printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
           printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.androidjni":"1.0.0","com.unity.modules.physics":"1.0.0"}}\n' > unity/Packages/manifest.json
-          cp "${{ inputs.inputf }}" "unity/Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx" && echo "STAGED: ${{ inputs.inputf }}"
+          SRC="${{ inputs.inputf }}"
+          DST="unity/Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx"
+          if [ -n "$SRC" ] && [ "$(readlink -f "$SRC" 2>/dev/null)" != "$(readlink -f "$DST" 2>/dev/null)" ]; then cp "$SRC" "$DST"; fi
+          test -f "$DST" || { echo "STAGE FAILED: $DST missing and inputf '$SRC' not found"; exit 1; }
+          echo "STAGED: $DST"
       - name: Run Forge
         id: forge
         run: |
@@ -125,7 +129,11 @@ jobs:
           mkdir -p unity/ProjectSettings unity/Packages unity/Assets/AvalonForge/Generated
           printf 'm_EditorVersion: 6000.5.11f1\nm_EditorVersionWithRevision: 6000.5.11f1 (xxxxxxxxxxxx)\n' > unity/ProjectSettings/ProjectVersion.txt
           printf '{"dependencies":{"com.unity.ugui":"2.0.0","com.unity.modules.animation":"1.0.0","com.unity.modules.imgui":"1.0.0","com.unity.modules.jsonserialize":"1.0.0","com.unity.modules.uielements":"1.0.0","com.unity.modules.ui":"1.0.0","com.unity.modules.physics":"1.0.0","com.unity.modules.unitywebrequest":"1.0.0","com.unity.modules.androidjni":"1.0.0"}}\n' > unity/Packages/manifest.json
-          cp "${{ inputs.inputf }}" "unity/Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx" && echo "STAGED: ${{ inputs.inputf }}"
+          SRC="${{ inputs.inputf }}"
+          DST="unity/Assets/AvalonForge/Generated/${{ inputs.character }}-M.fbx"
+          if [ -n "$SRC" ] && [ "$(readlink -f "$SRC" 2>/dev/null)" != "$(readlink -f "$DST" 2>/dev/null)" ]; then cp "$SRC" "$DST"; fi
+          test -f "$DST" || { echo "STAGE FAILED: $DST missing and inputf '$SRC' not found"; exit 1; }
+          echo "STAGED: $DST"
       - name: Run Forge (prefab + animator)
         run: |
           set +e
