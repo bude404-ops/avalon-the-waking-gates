@@ -2390,9 +2390,9 @@ GameObject BuildSelect(Transform parent)
                     }
                     else if (t.fingerId == camFinger)
                     {
-                        // v236: drag-right = look-right (the standard), 0.15deg/px base (was a twitchy 0.4),
+                        // v237: drag rate halved again to 0.08deg/px — Bude: swing must match joystick feel; plus max-swing cap below so flicks cannot whip the view.
                         // user speed multiplier + invert from Settings, accumulated into the eased target.
-                        if (t.phase == TouchPhase.Moved) { camYawT -= (t.position.x - lastTouch0.x) * 0.15f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = t.position; lastCamDragT = Time.time; }
+                        if (t.phase == TouchPhase.Moved) { camYawT -= (t.position.x - lastTouch0.x) * 0.08f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = t.position; lastCamDragT = Time.time; }
                         if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) { camFinger = -1; dragging = false; }
                     }
                 }
@@ -2401,7 +2401,7 @@ GameObject BuildSelect(Transform parent)
                 {
                     if (Input.GetMouseButtonDown(0) && !(overUI && EventSystem.current.IsPointerOverGameObject())) { maybeTap = true; tapStart = Input.mousePosition; dragging = true; lastTouch0 = Input.mousePosition; }
                     else if (Input.GetMouseButton(0) && maybeTap && (((Vector2)Input.mousePosition) - tapStart).sqrMagnitude > 500f) maybeTap = false;
-                    else if (Input.GetMouseButton(0) && dragging) { camYawT -= ((Vector2)Input.mousePosition - lastTouch0).x * 0.12f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = Input.mousePosition; lastCamDragT = Time.time; }
+                    else if (Input.GetMouseButton(0) && dragging) { camYawT -= ((Vector2)Input.mousePosition - lastTouch0).x * 0.08f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = Input.mousePosition; lastCamDragT = Time.time; }
                     else if (Input.GetMouseButtonUp(0)) { if (maybeTap) { TryWalkTo(Input.mousePosition); maybeTap = false; } dragging = false; }
                 }
             }
@@ -2451,7 +2451,7 @@ GameObject BuildSelect(Transform parent)
                     {
                         float wantYaw = Mathf.Atan2(-dir.x, -dir.z) * Mathf.Rad2Deg;
                         float dyaw = Mathf.DeltaAngle(camYawT, wantYaw);
-                        camYawT += dyaw * Mathf.Clamp01(1.6f * Time.deltaTime);
+                        camYawT += dyaw * Mathf.Clamp01(1.2f * Time.deltaTime); // v237: gentler pull-behind
                     }
                 }
                 else if (hasWalkTarget)
@@ -2475,7 +2475,8 @@ GameObject BuildSelect(Transform parent)
                 ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
                 : new Vector3(0, camDist * 0.30f, 0);
             // v236: the swing itself is eased — drags set a target yaw, the view glides to it
-            camYaw = Mathf.LerpAngle(camYaw, camYawT, Mathf.Clamp01(10f * Time.deltaTime));
+            camYaw = Mathf.MoveTowardsAngle(camYaw, camYawT, 140f * Time.deltaTime);
+            camYaw = Mathf.LerpAngle(camYaw, camYawT, Mathf.Clamp01(6f * Time.deltaTime)); // v237: capped swing + soft settle
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
             cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
             cam.transform.LookAt(target);

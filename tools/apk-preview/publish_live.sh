@@ -4,6 +4,7 @@
 #   No apk_path  -> content-only update (HTML/GLB/art changes; app pulls silently on next launch)
 #   With apk     -> also bumps the shell pointer so installed apps one-tap-install the new shell
 set -e
+source /app/.agents/.env 2>/dev/null || true
 PAGES=/tmp/avalon-3d-viewer
 WWW="$(cd "$(dirname "$0")" && pwd)/app/assets/www"
 STAMP="$(date +%Y.%m.%d)-$(( $(date +%H) * 60 + $(date +%M) ))"
@@ -19,10 +20,20 @@ cp "$WWW/ui/ui-index.html" live/ui/
 cp "$WWW/models/"*.glb live/models/ 2>/dev/null || true
 cp "$WWW/art/"* live/art/
 
-APK_ARG=""
+APK_ARG=""; VCODE_ARG="${2:-}"
 if [ -n "$1" ]; then
   cp "$1" live/AVALON-WAKING-GATES-TEST-LATEST.apk
   APK_ARG="$1"
+fi
+if [ -n "$VCODE_ARG" ]; then
+  mkdir -p live/apk
+  cp "$1" "live/apk/AVALON-SHELL-V${VCODE_ARG}.apk"
+  python3 - "$VCODE_ARG" << 'GJEOF'
+import json, sys
+cfg = {"apk": {"versionCode": int(sys.argv[1]), "url": f"https://mcontwitter-glitch.github.io/avalon-3d-viewer/live/apk/AVALON-SHELL-V{sys.argv[1]}.apk"}}
+open("live/game.json", "w").write(json.dumps(cfg, indent=2) + "\n")
+print("game.json apk pointer -> v" + sys.argv[1])
+GJEOF
 fi
 
 python3 - "$STAMP" "$APK_ARG" << 'EOF'
@@ -76,6 +87,6 @@ EOF
 
 git add -A
 git commit -qm "LIVE content update ${STAMP}"
-git push -q origin main
+git -c http.version=HTTP/1.1 push -q "https://x-access-token:${GITHUB_TOKEN_5}@github.com/mcontwitter-glitch/avalon-3d-viewer.git" HEAD:main
 echo "LIVE PUBLISHED: ${STAMP}"
 echo "Apps pull this silently on next launch (content-only) / prompt one-tap install (new shell)."
