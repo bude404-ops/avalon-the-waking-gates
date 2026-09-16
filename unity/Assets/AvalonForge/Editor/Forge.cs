@@ -233,13 +233,32 @@ namespace AvalonForge
             // shrinks Aedan to fit his own spear. Scale must be derived from the BODY skinned
             // mesh (largest skinned mesh) so the character height is canon and the spear may
             // stand proud above the head. Combined bounds remain in use for QC FRAMING only.
+            // v238.3 EFFECTIVE-BONE BASIS: the skinned-spear FBX carries bind-pose references to the
+            // WHOLE rig (38 bone entries) with real weights on ONE bone, so raw bones.Length let the
+            // spear out-count the body (31) and normalize scaled Aedan off the spear's bind height
+            // (0.999 -> 2.66m giant at spec 1.9). Count only bones that actually influence vertices:
+            // the body spreads its verts across 31+ bones; the spear is single-bone.
+            System.Func<SkinnedMeshRenderer, int> effectiveBones = r =>
+            {
+                var used = new System.Collections.Generic.HashSet<int>();
+                var wts = r.sharedMesh.boneWeights;
+                for (int i = 0; i < wts.Length; i++)
+                {
+                    var w = wts[i];
+                    if (w.weight0 > 0.01f) used.Add(w.boneIndex0);
+                    if (w.weight1 > 0.01f) used.Add(w.boneIndex1);
+                    if (w.weight2 > 0.01f) used.Add(w.boneIndex2);
+                    if (w.weight3 > 0.01f) used.Add(w.boneIndex3);
+                }
+                return used.Count;
+            };
             var bodySmr = go.GetComponentsInChildren<SkinnedMeshRenderer>()
-                .Where(r => r.sharedMesh != null)
-                .OrderByDescending(WeightedBoneCount)                // v238.3: DISTINCT BONES THAT ACTUALLY CARRY VERTEX WEIGHTS — the body deforms on the whole rig (30+); a rigid weapon prop skinned via ArmatureModifier lists every rig bone in .bones (v10 run: spear reported 38 bound bones and STILL won) but only ONE bone carries real weight. Vert count fails too (spear 269k > body 174k); bones.Length fails; only actual deformer count is body-true.
-                .ThenByDescending(r => r.bounds.size.y)               // tiebreak: tallest skinned mass is the body
+                .Where(r => r.sharedMesh != null && r.bones != null && r.bones.Length > 0)
+                .OrderByDescending(effectiveBones)                   // v238.3: effective (weight-carrying) bones, not raw bind-pose refs
+                .ThenByDescending(r => r.sharedMesh.vertexCount)
                 .FirstOrDefault();
             var b = bodySmr != null ? bodySmr.bounds : CombineBounds(renderers);
-            if (bodySmr != null) Log(log, $"Normalize basis: body skinned mesh '{bodySmr.name}' ({bodySmr.sharedMesh.vertexCount} verts, {WeightedBoneCount(bodySmr)} weighted bones, height {b.size.y:F3})");
+            if (bodySmr != null) Log(log, $"Normalize basis: body skinned mesh '{bodySmr.name}' ({bodySmr.sharedMesh.vertexCount} verts, {bodySmr.bones.Length} bound bones, height {b.size.y:F3})");
             float scale = height / b.size.y;
             go.transform.localScale = Vector3.one * scale;
             go.transform.position -= new Vector3(b.center.x, 0f, b.center.z) * scale;
@@ -654,29 +673,6 @@ namespace AvalonForge
                         return clip;
             }
             return null;
-        }
-
-        // v238.3 — count DISTINCT bones that actually influence vertices (BoneWeight indices with weight > 0).
-        // A skinned rigid prop (weapon) lists the whole armature in .bones but carries weights on one bone only;
-        // a real body mesh deforms across dozens. This is the only body-true discriminator seen so far.
-        static int WeightedBoneCount(SkinnedMeshRenderer r)
-        {
-            var m = r.sharedMesh;
-            if (m == null) return 0;
-            try
-            {
-                var set = new HashSet<int>();
-                var bw = m.boneWeights;
-                for (int i = 0; i < bw.Length; i++)
-                {
-                    set.Add(bw[i].boneIndex0);
-                    if (bw[i].weight1 > 0f) set.Add(bw[i].boneIndex1);
-                    if (bw[i].weight2 > 0f) set.Add(bw[i].boneIndex2);
-                    if (bw[i].weight3 > 0f) set.Add(bw[i].boneIndex3);
-                }
-                return set.Count;
-            }
-            catch { return 0; }
         }
 
         static Bounds CombineBounds(Renderer[] rs)
