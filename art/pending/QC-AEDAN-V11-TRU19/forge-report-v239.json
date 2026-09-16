@@ -1,0 +1,10 @@
+{
+  "character": "Sovereign",
+  "input": "Assets/AvalonForge/Generated/Sovereign-M.fbx",
+  "avatar_valid": false,
+  "states_built": 2,
+  "weapon": "none",
+  "prefab": "Assets/AvalonForge/Prefabs/Sovereign-GAME.prefab",
+  "prefab_ok": true,
+  "log": "AUTO-FORGE run: character=Sovereign input=Assets/AvalonForge/Generated/Sovereign-M.fbx weapon=none height=1.9\nGeneric rig: OK (raw bone-curve clips bind by Mixamo bone name)\nNormalize basis: body skinned mesh 'AedanBody' (193316 verts, 19 weighted bones, height 1.015)\nNormalized: height 1.015 -> 1.9 (x1.872), centered on origin\nSovereign CLASS: no avatar\nClip 07_01|idle_07_01: in-place root-lock — 96 position curves zeroed\nAnimator state 'idle' <- Sovereign-idle-IP\nClip 07_01|walk_07_01: in-place root-lock — 96 position curves zeroed\nAnimator state 'walk' <- Sovereign-walk-IP\nNo weapon — skipped (weapons are separate props per Weaponless Plate Law)\nQC render captured: Assets/AvalonForge/QCShots/Sovereign-idle.png\nQC content check: 12.4 % of sampled pixels carry the model\nQC silhouette: 267x713px, aspect 0.37\nQC silhouette: bbox 264x708px, w/h=0.37 (humanoid full-body ~0.25-0.55)\nWARN walk retarget collapsed (bounds (18.78, 0.22, -16.75) / (111.06, 63.85, 140.06)) — recapturing at the proven idle grounding\nQC walk frame captured: Assets/AvalonForge/QCShots/Sovereign-walk.png\nMaterials restored for prefab save\nPrefab saved: Assets/AvalonForge/Prefabs/Sovereign-GAME.prefab (OK)\n"
+}
