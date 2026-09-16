@@ -101,9 +101,9 @@ namespace AvalonForge
 
                 var animator = go.GetComponent<Animator>();
                 if (animator == null) gates.Add("FAIL no Animator");
-                else if (animator.avatar == null || !animator.avatar.isValid || !animator.avatar.isHuman)
-                    gates.Add("FAIL avatar invalid/not humanoid");
-                else gates.Add("PASS avatar humanoid");
+                else if (animator.runtimeAnimatorController == null)
+                    gates.Add("FAIL no animator controller");
+                else gates.Add("PASS animator " + (animator.avatar != null && animator.avatar.isHuman ? "humanoid" : "generic (bone-name clips)"));
 
                 var b = CombineBounds(go.GetComponentsInChildren<Renderer>());
                 if (b.size.y < 1.4f || b.size.y > 2.2f) gates.Add($"FAIL height {b.size.y:F2}m out of class band");
@@ -176,21 +176,53 @@ namespace AvalonForge
 
             AssetDatabase.ImportAsset(input, ImportAssetOptions.ForceUpdate);
 
-            // ---------- Stage 3: Humanoid rig ----------
+            // ---------- Stage 3: rig ----------
+            // v239 GENERIC-RIG LAW (Bude: 'even the image you sent of the sovereign is a ball
+            // dome'): the Human import path builds a Mecanim muscle-space avatar whose idle
+            // RETARGET collapses the skinned mesh to a ball at the hips in batch mode (verified:
+            // the FBX is a healthy 174k-vert humanoid with 31 Mixamo-named bones in Blender —
+            // the mesh only balls inside Unity's humanoid retarget). GENERIC import plays the
+            // mocap clips as RAW bone curves bound BY NAME (mocap + class rig share Mixamo
+            // bone names) — no muscle space, no retarget, no collapse. Idle plays, limbs follow.
             var importer = AssetImporter.GetAtPath(input) as ModelImporter;
             if (importer != null)
             {
-                importer.animationType = ModelImporterAnimationType.Human;
+                importer.animationType = ModelImporterAnimationType.Generic;
                 importer.SaveAndReimport();
             }
-            var avatar = AssetDatabase.LoadAllAssetsAtPath(input).OfType<Avatar>().FirstOrDefault();
             var srcPrefab = AssetDatabase.LoadAssetAtPath<GameObject>(input);
-            if (avatar == null || !avatar.isValid || srcPrefab == null)
-            { Fail(log, "No valid humanoid rig. Run UModeler X auto-rig on the 404-GEN mesh first (runbook step 2), then re-run Forge."); return; }
-            Log(log, "Humanoid avatar: OK (auto bone-mapped)");
+            if (srcPrefab == null)
+            { Fail(log, "Input not importable as a prefab. Regenerate the model, then re-run Forge."); return; }
+            Avatar avatar = null;   // generic rigs carry no Mecanim avatar — animator runs on bone-name bindings
+            Log(log, "Generic rig: OK (raw bone-curve clips bind by Mixamo bone name)");
 
             var go = (GameObject)PrefabUtility.InstantiatePrefab(srcPrefab);
             go.name = character;
+
+            // ---------- Stage 1.5: junk-primitive strip ----------
+            // v238: rigging helpers (markers, snap targets) sometimes survive into the
+            // export — a 1.9m helper sphere dwarfed the real 0.9m character and the QC
+            // frame became a ball dome (Bude: 'even the image you sent of the sovereign
+            // is a ball dome'). Low-vertex, near-spherical meshes are junk: strip them
+            // from the forge instance BEFORE normalization so bounds reflect the body.
+            var junkFilters = go.GetComponentsInChildren<MeshFilter>(true);
+            foreach (var jf in junkFilters)
+            {
+                var m = jf.sharedMesh;
+                if (m == null || m.vertexCount == 0 || m.vertexCount > 300) continue;
+                var verts = m.vertices; var c = m.bounds.center;
+                float meanR = 0f;
+                for (int i = 0; i < verts.Length; i++) meanR += (verts[i] - c).magnitude;
+                meanR /= verts.Length; if (meanR <= 0.0001f) continue;
+                float sd = 0f;
+                for (int i = 0; i < verts.Length; i++) { float d = (verts[i] - c).magnitude - meanR; sd += d * d; }
+                float cv = Mathf.Sqrt(sd / verts.Length) / meanR; // radius coefficient of variation
+                if (cv < 0.30f)
+                {
+                    Log(log, $"Stripped junk primitive '{jf.name}' ({m.vertexCount} verts, radius-cv {cv:F2})");
+                    Object.DestroyImmediate(jf.gameObject);
+                }
+            }
 
             // ---------- Stage 2: normalize ----------
             var renderers = go.GetComponentsInChildren<Renderer>();
@@ -203,7 +235,7 @@ namespace AvalonForge
 
             // ---------- Stage 4: Animator ----------
             var animator = go.GetComponent<Animator>() ?? go.AddComponent<Animator>();
-            animator.avatar = avatar;
+            if (avatar != null) animator.avatar = avatar;   // null on the generic path — animator binds clips by bone name
 
             // v228 MOCAP IMPORT FIX (THE walk detonation fix): the AEDAN mocap FBXes ship without
             // import metas, so CI imports them animationType=Generic — NO humanoid source avatar
@@ -220,10 +252,10 @@ namespace AvalonForge
                 {
                     var mi = AssetImporter.GetAtPath(fbx) as ModelImporter;
                     if (mi == null) continue;
-                    if (mi.animationType != ModelImporterAnimationType.Human)
+                    if (mi.animationType != ModelImporterAnimationType.Generic)
                     {
-                        Log(log, "Mocap import fix: forcing Human on " + System.IO.Path.GetFileName(fbx) + " (was " + mi.animationType + ")");
-                        mi.animationType = ModelImporterAnimationType.Human;
+                        Log(log, "Mocap import fix: forcing Generic on " + System.IO.Path.GetFileName(fbx) + " (was " + mi.animationType + ") — bone-curve clips for the v239 generic class rig");
+                        mi.animationType = ModelImporterAnimationType.Generic;
                         mi.SaveAndReimport();
                     }
                 }
@@ -350,6 +382,29 @@ namespace AvalonForge
                         Fail(log, "QC idle frame is BLANK — model not visible (mesh or material import failed). Prefab NOT saved.");
                         return;
                     }
+                    // v239 BALL-SILHOUETTE GUARD: a radially-symmetric blob means the skin
+                    // collapsed to a clump (the v238 armed-V7 'ball dome' — Bude caught it).
+                    // A full-body humanoid frame is tall and narrow: content bbox w/h ~0.25-0.55.
+                    // Anything > 0.7 FAILS the forge — a ball can never pass as QC again.
+                    int sMinY = int.MaxValue, sMaxY = 0, sMinX = int.MaxValue, sMaxX = 0;
+                    for (int yy = 0; yy < 960; yy += 4)
+                        for (int xx = 0; xx < 720; xx += 4)
+                        {
+                            var pp = qpx[yy * 720 + xx];
+                            if (pp.r > 30 || pp.g > 30 || pp.b > 30)
+                            {
+                                if (yy < sMinY) sMinY = yy; if (yy > sMaxY) sMaxY = yy;
+                                if (xx < sMinX) sMinX = xx; if (xx > sMaxX) sMaxX = xx;
+                            }
+                        }
+                    float sBw = sMaxX - sMinX, sBh = sMaxY - sMinY;
+                    float sAspect = sBh > 0 ? sBw / sBh : 0f;
+                    Log(log, "QC silhouette: bbox " + sBw.ToString("F0") + "x" + sBh.ToString("F0") + "px, w/h=" + sAspect.ToString("F2") + " (humanoid full-body ~0.25-0.55)");
+                    if (vis >= 0.02f && sAspect > 0.7f)
+                    {
+                        Fail(log, "QC silhouette is a BALL/DOME (w/h=" + sAspect.ToString("F2") + ") — skinned mesh collapsed (rig/retarget failure). Prefab NOT saved.");
+                        return;
+                    }
                 }
 
                 // ---- WALK FRAME (finish-quality: prove retargeted mocap mid-stride) ----
@@ -446,7 +501,7 @@ namespace AvalonForge
             LastReportPath = $"{Reports}/{character}-{DateTime.Now:yyyyMMdd-HHmmss}.json";
             File.WriteAllText(LastReportPath,
                 "{\n  \"character\": \"" + character + "\",\n  \"input\": \"" + input +
-                "\",\n  \"avatar_valid\": " + (avatar.isValid ? "true" : "false") +
+                "\",\n  \"avatar_valid\": " + (avatar != null && avatar.isValid ? "true" : "false") +
                 ",\n  \"states_built\": " + statesBuilt +
                 ",\n  \"weapon\": \"" + (weapon ?? "none") +
                 "\",\n  \"prefab\": \"" + prefabPath +
