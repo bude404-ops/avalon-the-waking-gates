@@ -2083,7 +2083,7 @@ GameObject BuildSelect(Transform parent)
             }
             Bounds b = rends.Length > 0 ? rends[0].bounds : new Bounds(Vector3.zero, Vector3.one);
             foreach (var r in rends) b.Encapsulate(r.bounds);
-            camDist = Mathf.Max(b.size.y, 0.1f) * 1.55f;
+            camDist = Mathf.Max(b.size.y, 0.1f) * 2.6f;   // v239: pull back to real third-person distance (Bude: camera inside the model)
             if (animator != null) animator.CrossFade("idle", 0f);
             if (hudLine != null) hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 " + Mathf.RoundToInt(b.size.y * 100) + " CM \u2022 FORGE MODEL";
         }
@@ -2439,11 +2439,11 @@ GameObject BuildSelect(Transform parent)
                 var t0 = Input.GetTouch(0); var t1 = Input.GetTouch(1);
                 float d1 = Vector2.Distance(t0.position, t1.position);
                 float d0 = Vector2.Distance(lastTouch0, lastTouch1);
-                if (lastTouch0 != default && d0 > 1f) camDist = Mathf.Clamp(camDist * (d0 / d1), 0.5f, 12f);
+                if (lastTouch0 != default && d0 > 1f) { float cmin = (state == State.Game) ? 1.6f : 0.5f; float cmax = (state == State.Game) ? 14f : 12f; camDist = Mathf.Clamp(camDist * (d0 / d1), cmin, cmax); }   // v239: no camera-inside-model zooms
                 lastTouch0 = t0.position; lastTouch1 = t1.position;
             }
             else if (Input.touchCount != 2) { lastTouch0 = default; lastTouch1 = default; }
-            camDist = Mathf.Clamp(camDist * (1f - Input.GetAxis("Mouse ScrollWheel")), 0.5f, 12f);
+            { float cmin = (state == State.Game) ? 1.6f : 0.5f; float cmax = (state == State.Game) ? 14f : 12f; camDist = Mathf.Clamp(camDist * (1f - Input.GetAxis("Mouse ScrollWheel")), cmin, cmax); }
 
             // --- walking the route (root-locked walk clip carries the stride; transform carries the travel) ---
             if (state == State.Game && model != null)
@@ -2494,13 +2494,14 @@ GameObject BuildSelect(Transform parent)
                         encLights[i].intensity = 1.15f + 0.45f * (0.5f + 0.5f * Mathf.Sin(Time.time * 2.2f + i * 2.1f));
             }
             var target = (state == State.Game && model != null)
-                ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
+                ? model.transform.position + new Vector3(0, camDist * 0.42f, 0)   // v239: chest-level look point
                 : new Vector3(0, camDist * 0.30f, 0);
             // v236: the swing itself is eased — drags set a target yaw, the view glides to it
             camYaw = Mathf.MoveTowardsAngle(camYaw, camYawT, 140f * Time.deltaTime);
             camYaw = Mathf.LerpAngle(camYaw, camYawT, Mathf.Clamp01(6f * Time.deltaTime)); // v237: capped swing + soft settle
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
-            cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
+            float camElev = (state == State.Game) ? 0.55f : 0.15f;   // v239: gameplay sits high, looking down ~30deg
+            cam.transform.position = target + new Vector3(sy, camElev, cy) * camDist;
             cam.transform.LookAt(target);
         }
 
