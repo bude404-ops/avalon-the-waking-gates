@@ -70,10 +70,6 @@ namespace AvalonShell
         readonly List<RectTransform> cardRects = new List<RectTransform>();
         bool wasPortrait;
         // ================= v234 READABILITY PASS (Bude's test verdict: 'can't even tell what's happening') =================
-        GameObject beacon; RectTransform beaconRt; Image beaconDot; Text beaconLbl;
-        float questPulseT = -99f; bool hintsShown; Text hintLbl;
-        readonly List<Light> wayLights = new List<Light>();
-        readonly List<Vector3> wayLightPos = new List<Vector3>();
 
         // AVALON-LIT: real material asset staged by the build (its shader is
         // reference-counted into the APK by the asset itself). Runtime Shader.Find
@@ -323,7 +319,6 @@ namespace AvalonShell
             // v234: first-entry control hints, one time per session
             if (s == State.Game && hintRow != null && !hintsDone)
             { hintsDone = true; if (hintFade == null) hintFade = StartCoroutine(HintChipsFade()); }
-            if (s == State.Game && !hintsShown) { hintsShown = true; StartCoroutine(HintFade()); }   // v234
             if (s == State.Game && questCard != null)
             {
                 if (realmFade != null) StopCoroutine(realmFade);
@@ -1004,7 +999,6 @@ namespace AvalonShell
         void UpdateQuestLine()
         {
             if (questLine == null) return;
-            questPulseT = Time.time;   // v234: the quest line flares amber when it changes
             if (questStage == 0) questLine.text = "THE COLD HEARTH OATH \u2014 REACH THE OATH-HEARTH";
             else if (questStage == 1) questLine.text = "CARRY THE COAL \u2014 THE GATE-TOWN TESTS YOU (" + ((met[0] ? 1 : 0) + (met[1] ? 1 : 0) + (met[2] ? 1 : 0)) + "/3)";
             else if (questStage == 2) questLine.text = "CARRY THE COAL TO THE CINDER GATE";
@@ -1751,25 +1745,6 @@ GameObject BuildSelect(Transform parent)
             hudLine = Label(p.transform, "", 10, Hex(0x8a8578), TextAnchor.MiddleRight);
             hudLine.rect().anchorMin = new Vector2(0.4f, 0.905f); hudLine.rect().anchorMax = new Vector2(0.99f, 0.94f);
 
-            // v234 OBJECTIVE BEACON — the ember-glint that always shows the way (readability law)
-            beacon = new GameObject("Beacon");
-            beacon.transform.SetParent(p.transform, false);
-            beaconDot = beacon.AddComponent<Image>();
-            beaconDot.sprite = MakeDiscSprite(false); beaconDot.raycastTarget = false;
-            beaconDot.color = new Color(1f, 0.72f, 0.38f, 0.95f);
-            beaconRt = beacon.rect();
-            beaconRt.anchorMin = beaconRt.anchorMax = new Vector2(0f, 0f);
-            beaconRt.pivot = new Vector2(0.5f, 0.5f);
-            beaconRt.sizeDelta = new Vector2(20, 20);
-            beaconLbl = Label(beacon.transform, "", 11, Hex(0xe6ddca), TextAnchor.MiddleCenter);
-            var blrt = beaconLbl.rect();
-            blrt.anchorMin = new Vector2(-6f, -3.2f); blrt.anchorMax = new Vector2(7f, -1.0f);
-            blrt.offsetMin = Vector2.zero; blrt.offsetMax = Vector2.zero;
-            beacon.SetActive(false);
-            // v234 CONTROL HINTS — one line, first game entry, fades itself away
-            hintLbl = Label(p.transform, "HOLD LEFT \u2014 MOVE   \u00b7   DRAG RIGHT \u2014 LOOK   \u00b7   TAP GROUND \u2014 WALK", 11, Hex(0xa3895a), TextAnchor.MiddleCenter);
-            hintLbl.rect().anchorMin = new Vector2(0.15f, 0.115f); hintLbl.rect().anchorMax = new Vector2(0.85f, 0.155f);
-            hintLbl.gameObject.SetActive(false);
             return p;
         }
 
@@ -1937,7 +1912,6 @@ GameObject BuildSelect(Transform parent)
             var l = new GameObject(name + "Light"); l.transform.position = pos + new Vector3(0, 1.1f, 0);
             var light = l.AddComponent<Light>(); light.type = LightType.Point; light.color = new Color(1f, 0.62f, 0.25f);
             light.range = 4f; light.intensity = 0.9f;
-            wayLights.Add(light); wayLightPos.Add(pos);   // v234: active-objective pulse registry
         }
 
         // ================= v233 ENVIRONMENT PASS — The Skyrend Glade =================
@@ -2318,51 +2292,6 @@ GameObject BuildSelect(Transform parent)
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
             cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
             cam.transform.LookAt(target);
-        }
-
-        // ---- v234 READABILITY: quest target + on-screen ember beacon + control hints ----
-        Vector3 QuestTargetPos(out string nm)
-        {
-            nm = null;
-            if (questStage == 0) { nm = "THE OATH-HEARTH"; return hearthPos; }
-            if (questStage == 1)
-            {
-                var p = model != null ? model.transform.position : Vector3.zero;
-                float best = float.MaxValue; int bi = -1;
-                for (int i = 0; i < encPos.Length; i++)
-                    if (!met[i]) { float d = (encPos[i] - p).sqrMagnitude; if (d < best) { best = d; bi = i; } }
-                if (bi >= 0) { nm = "THE GATE-TOWN"; return encPos[bi]; }
-                nm = "THE CINDER GATE"; return gatePos;
-            }
-            if (questStage == 2) { nm = "THE CINDER GATE"; return gatePos; }
-            return Vector3.zero;
-        }
-        void UpdateBeacon()
-        {
-            if (beacon == null || beaconRt == null) return;
-            string nm; var tp = QuestTargetPos(out nm);
-            bool show = state == State.Game && model != null && storyCard == null && !string.IsNullOrEmpty(nm);
-            if (!show) { if (beacon.activeSelf) beacon.SetActive(false); return; }
-            if (!beacon.activeSelf) beacon.SetActive(true);
-            var p = model.transform.position;
-            beaconLbl.text = nm + "\n" + Mathf.RoundToInt(Vector3.Distance(p, tp)) + " PACES";
-            var vp = cam.WorldToViewportPoint(tp + new Vector3(0, 1.35f, 0));
-            float vx = vp.x, vy = vp.y;
-            if (vp.z < 0f) { vx = 1f - vx; vy = -0.02f; }   // behind camera: point down at the turn-back edge
-            vx = Mathf.Clamp(vx, 0.06f, 0.94f); vy = Mathf.Clamp(vy, 0.14f, 0.84f);
-            beaconRt.anchoredPosition = new Vector2(vx * Screen.width / canvas.scaleFactor, vy * Screen.height / canvas.scaleFactor);
-            float pu = 20f * (1f + 0.16f * Mathf.Sin(Time.unscaledTime * 3.2f));   // ember breathing
-            beaconRt.sizeDelta = new Vector2(pu, pu);
-        }
-        IEnumerator HintFade()
-        {
-            if (hintLbl == null) yield break;
-            hintLbl.gameObject.SetActive(true);
-            var c = hintLbl.color; hintLbl.color = new Color(c.r, c.g, c.b, 0f);
-            for (float t = 0; t < 1f; t += Time.deltaTime) { hintLbl.color = new Color(c.r, c.g, c.b, t); yield return null; }
-            yield return new WaitForSeconds(6.5f);
-            for (float t = 0; t < 1f; t += Time.deltaTime) { hintLbl.color = new Color(c.r, c.g, c.b, 1f - t); yield return null; }
-            hintLbl.gameObject.SetActive(false);
         }
 
         // ================= floating joystick (Stage A) =================
