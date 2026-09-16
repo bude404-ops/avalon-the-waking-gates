@@ -277,6 +277,8 @@ namespace AvalonForge
 
             // ---------- Stage 6: QC ----------
             bool hasGraphics = SystemInfo.graphicsDeviceType != GraphicsDeviceType.Null;
+            // v238: hoisted so the post-QC restore (outside this block) can see it
+            System.Collections.Generic.List<UnityEngine.Material[]> savedMats = null;
             if (hasGraphics)
             {
                 Directory.CreateDirectory(QCShots);
@@ -301,7 +303,7 @@ namespace AvalonForge
                 // (Stage 7) ships with them — the QC foundry material is throwaway and
                 // serialized as an EMPTY slot if it leaks into the save (the v233-v237
                 // invisible-Sovereign bug: model loads, renderer has no material, draws nothing).
-                var savedMats = renderers.Select(r => r.sharedMaterials).ToList();
+                savedMats = renderers.Select(r => r.sharedMaterials).ToList();
                 foreach (var rd in renderers) rd.sharedMaterial = qcMat;
 
                 var keyGo = new GameObject("QC-KeyLight");
@@ -428,7 +430,7 @@ namespace AvalonForge
 
             // v238 MATERIAL-RESTORE: put the model's real materials back before the prefab
             // save — Stage 7 must serialize the imported materials, never the throwaway.
-            if (hasGraphics)
+            if (savedMats != null)
             {
                 for (int ri = 0; ri < renderers.Length && ri < savedMats.Count; ri++)
                     renderers[ri].sharedMaterials = savedMats[ri];
