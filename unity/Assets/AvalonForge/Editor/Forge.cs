@@ -338,7 +338,47 @@ namespace AvalonForge
                 w.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
                 Log(log, $"Weapon socketed under {hand.name}");
             }
-            else Log(log, "No weapon — skipped (weapons are separate props per Weaponless Plate Law)");
+            else
+            {
+                // ---------- Stage 5B: EMBEDDED-WEAPON HAND SOCKET (Bude, Sept 16: 'the spear isnt in his hand at all — make sure the 3d model has proper rigging and sizing hand socket') ----------
+                // Unity's FBX import keeps degrading weapon-in-rig bindings: bone-parented meshes drop silently,
+                // ArmatureModifier skins float at raw bind coords instead of following the hand. The canon game
+                // pattern is a RIGID PROP ON A HAND SOCKET: bake the embedded weapon mesh out of skinning at bind
+                // pose (the Blender surgery already gripped it shaft-through-fist at bind), then parent it to the
+                // RightHand bone with world pose kept. The prop then rides the bone forever and cannot detach.
+                var embedded = go.GetComponentsInChildren<SkinnedMeshRenderer>(true)
+                    .Where(r => r.sharedMesh != null && r != bodySmr && IsWeaponMeshName(r.name))
+                    .ToList();
+                if (embedded.Count == 0)
+                {
+                    Log(log, "No weapon — skipped (weapons are separate props per Weaponless Plate Law)");
+                }
+                else
+                {
+                    var hand = FindHand(go.transform);
+                    if (hand == null)
+                    {
+                        Log(log, "WARN: embedded weapon mesh present but no right-hand bone found — left skinned (socket NOT built)");
+                    }
+                    else foreach (var wsmr in embedded)
+                    {
+                        var baked = new Mesh { name = wsmr.sharedMesh.name + "-SOCKETBAKE" };
+                        wsmr.BakeMesh(baked);   // bind-pose deformed state in renderer-local space = the surgery grip
+                        var prop = new GameObject(wsmr.name + "-SOCKET");
+                        var pf = prop.AddComponent<MeshFilter>();
+                        pf.sharedMesh = baked;
+                        var prnd = prop.AddComponent<MeshRenderer>();
+                        prnd.sharedMaterials = wsmr.sharedMaterials;
+                        // place the prop exactly where the skinned mesh rendered at bind, then re-parent to the hand
+                        // bone KEEPING world pose — grip through the fist preserved, prop follows the bone forever.
+                        prop.transform.SetPositionAndRotation(wsmr.transform.position, wsmr.transform.rotation);
+                        var smrScale = wsmr.transform.localScale;
+                        prop.transform.SetParent(hand, true);
+                        Log(log, $"WEAPON SOCKET: '{wsmr.name}' baked rigid ({baked.vertexCount} verts, smr localScale {smrScale.x:F3}/{smrScale.y:F3}/{smrScale.z:F3}) and parented to hand bone '{hand.name}' world-keep — bind grip preserved");
+                        UnityEngine.Object.DestroyImmediate(wsmr.gameObject);
+                    }
+                }
+            }
 
             // ---------- Stage 6: QC ----------
             bool hasGraphics = SystemInfo.graphicsDeviceType != GraphicsDeviceType.Null;
@@ -690,6 +730,38 @@ namespace AvalonForge
                         return clip;
             }
             return null;
+        }
+
+        // v238.4 — is this mesh an embedded weapon prop (not the body)? Name-based, conservative.
+        static bool IsWeaponMeshName(string n)
+        {
+            if (string.IsNullOrEmpty(n)) return false;
+            var s = n.ToLowerInvariant();
+            return s.Contains("spear") || s.Contains("sword") || s.Contains("axe") || s.Contains("blade")
+                || s.Contains("dagger") || s.Contains("staff") || s.Contains("weapon") || s.Contains("bow");
+        }
+
+        // v238.3 — count DISTINCT bones that actually influence vertices (BoneWeight indices with weight > 0).
+        // A skinned rigid prop (weapon) lists the whole armature in .bones but carries weights on one bone only;
+        // a real body mesh deforms across dozens. This is the only body-true discriminator seen so far.
+        static int WeightedBoneCount(SkinnedMeshRenderer r)
+        {
+            var m = r.sharedMesh;
+            if (m == null) return 0;
+            try
+            {
+                var set = new HashSet<int>();
+                var bw = m.boneWeights;
+                for (int i = 0; i < bw.Length; i++)
+                {
+                    set.Add(bw[i].boneIndex0);
+                    if (bw[i].weight1 > 0f) set.Add(bw[i].boneIndex1);
+                    if (bw[i].weight2 > 0f) set.Add(bw[i].boneIndex2);
+                    if (bw[i].weight3 > 0f) set.Add(bw[i].boneIndex3);
+                }
+                return set.Count;
+            }
+            catch { return 0; }
         }
 
         static Bounds CombineBounds(Renderer[] rs)
