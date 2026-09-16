@@ -56,6 +56,11 @@ namespace AvalonShell
         bool[] met = new bool[3];
         bool faithUnlocked; System.Collections.Generic.List<string> choices = new System.Collections.Generic.List<string>();
         Text questLine, beliefLbl; RectTransform beliefFill;
+        // v234 GAMEPLAY-READABILITY (Bude, Sept 16: 'The in game UI needs cleaned up aswell as
+        // gameplay because I cant even tell whats happing'): objective beacon + control hints
+        // + HUD cleanup + encounter telegraphs.
+        Image beaconImg; Text beaconLbl; GameObject hintRow; Coroutine hintFade; bool hintsDone;
+        readonly List<Light> encLights = new List<Light>();
         Vector3 hearthPos = new Vector3(0, 0, 7);
         Vector3[] encPos = { new Vector3(-6, 0, 2), new Vector3(6, 0, -3), new Vector3(-2, 0, -8) };
         Vector3 gatePos = new Vector3(0, 0, -13);
@@ -101,6 +106,12 @@ namespace AvalonShell
                 // Waymarks: dark stone pillars, amber crown light (Fire-Color Law — mortal fire is natural amber)
                 MakeWaymark(hearthPos, "OathHearthMark");
                 for (int i = 0; i < encPos.Length; i++) MakeWaymark(encPos[i], "EncounterMark" + i);
+                // v234: encounter sites read as PLACES OF MOMENT — brighter, wider, pulsing amber
+                for (int i = 0; i < encPos.Length; i++)
+                {
+                    var lg = GameObject.Find("EncounterMark" + i + "Light");
+                    if (lg != null) { var li = lg.GetComponent<Light>(); li.range = 5.5f; li.intensity = 1.2f; encLights.Add(li); }
+                }
                 MakeWaymark(gatePos, "CinderGateMark");
                 MakeCinderGate(gatePos);      // v233: the gate becomes a real broken arch
                 EnvironmentPass();           // v233 ENVIRONMENT PASS — the Skyrend Glade
@@ -285,6 +296,9 @@ namespace AvalonShell
         {
             state = s;
             if (stateLbl != null) stateLbl.text = s.ToString().ToUpper();
+            // v234 CLEANUP: raw-input probe + state readout are TITLE diagnostics — never in gameplay
+            if (probeLbl != null) probeLbl.gameObject.SetActive(s == State.Title);
+            if (stateLbl != null) stateLbl.gameObject.SetActive(s == State.Title);
             panelTitle.SetActive(s == State.Title);
             panelSelect.SetActive(s == State.Select);
             panelGame.SetActive(s == State.Game);
@@ -298,6 +312,9 @@ namespace AvalonShell
             if (s == State.Select) SelectCard(chosen);
             if (s == State.Game && hudLine != null)
                 hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
+            // v234: first-entry control hints, one time per session
+            if (s == State.Game && hintRow != null && !hintsDone)
+            { hintsDone = true; if (hintFade == null) hintFade = StartCoroutine(HintChipsFade()); }
             if (s == State.Game && questCard != null)
             {
                 if (realmFade != null) StopCoroutine(realmFade);
@@ -982,6 +999,76 @@ namespace AvalonShell
             else if (questStage == 1) questLine.text = "CARRY THE COAL \u2014 THE GATE-TOWN TESTS YOU (" + ((met[0] ? 1 : 0) + (met[1] ? 1 : 0) + (met[2] ? 1 : 0)) + "/3)";
             else if (questStage == 2) questLine.text = "CARRY THE COAL TO THE CINDER GATE";
             else questLine.text = "THE OATH IS WITNESSED \u2014 ONE OF THE MARKED";
+            if (state == State.Game) StartCoroutine(QuestPulse());   // v234: the quest line flashes amber on change
+        }
+
+        // ---- v234: quest line pulse — flash amber, settle back to cream ----
+        IEnumerator QuestPulse()
+        {
+            if (questLine == null) yield break;
+            var from = new Color(0.96f, 0.78f, 0.42f);
+            for (float t = 0; t < 1f; t += Time.deltaTime / 1.2f)
+            { questLine.color = Color.Lerp(from, Hex(0xe6ddca), t); yield return null; }
+            questLine.color = Hex(0xe6ddca);
+        }
+
+        // ---- v234: first-entry hint chips — fade in, hold ~7s, vanish at first movement ----
+        IEnumerator HintChipsFade()
+        {
+            var cg = hintRow.GetComponent<CanvasGroup>();
+            cg.alpha = 0f; hintRow.SetActive(true);
+            for (float t = 0; t < 1f; t += Time.deltaTime * 3f) { cg.alpha = t; yield return null; }
+            cg.alpha = 1f;
+            float born = Time.time;
+            while (Time.time - born < 7f && !joyActive && !hasWalkTarget) yield return null;
+            for (float t = 0; t < 1f; t += Time.deltaTime * 2f) { cg.alpha = 1f - t; yield return null; }
+            hintRow.SetActive(false); hintFade = null;
+        }
+
+        // ---- v234: where does the quest lead right now? ----
+        Vector3? QuestTarget()
+        {
+            if (questStage == 0) return hearthPos;
+            if (questStage == 1)
+            {
+                Vector3? best = null; float bd = float.MaxValue;
+                for (int i = 0; i < encPos.Length; i++)
+                    if (!met[i])
+                    {
+                        float d = (encPos[i] - model.transform.position).sqrMagnitude;
+                        if (d < bd) { bd = d; best = encPos[i]; }
+                    }
+                return best;
+            }
+            if (questStage == 2) return gatePos;
+            return null;
+        }
+
+        // ---- v234: the amber way-finder — projected over the target, clamped to the screen edge ----
+        void UpdateBeacon()
+        {
+            if (beaconImg == null) return;
+            var tp = (storyCard == null && model != null && state == State.Game) ? QuestTarget() : (Vector3?)null;
+            bool show = tp != null;
+            beaconImg.gameObject.SetActive(show);
+            if (beaconLbl != null) beaconLbl.gameObject.SetActive(show);
+            if (!show) return;
+            var sp = cam.WorldToScreenPoint(tp.Value + new Vector3(0, 1.5f, 0));
+            float sc = canvas.scaleFactor;
+            float w = Screen.width / sc, h = Screen.height / sc;
+            var pos = new Vector2(sp.x / sc, sp.y / sc);
+            if (sp.z < 0f) pos = new Vector2(w * 0.5f - pos.x, h * 0.5f - pos.y);   // behind camera: mirror to the near edge
+            float mx = 34f, my = 52f;
+            pos.x = Mathf.Clamp(pos.x, mx, w - mx);
+            pos.y = Mathf.Clamp(pos.y, my + 30f, h - my - 30f);
+            beaconImg.rect().anchoredPosition = pos + new Vector2(0f, 16f);
+            string qn = questStage == 0 ? "OATH-HEARTH" : questStage == 2 ? "CINDER GATE" : "THE TESTS";
+            float dist = Vector2.Distance(new Vector2(tp.Value.x, tp.Value.z),
+                                          new Vector2(model.transform.position.x, model.transform.position.z));
+            beaconLbl.rect().anchoredPosition = pos;
+            beaconLbl.text = qn + " \u00B7 " + Mathf.Max(1, Mathf.RoundToInt(dist)) + " paces";
+            var bc = beaconImg.color; bc.a = 0.70f + 0.30f * (0.5f + 0.5f * Mathf.Sin(Time.time * 3f));
+            beaconImg.color = bc;
         }
 
         // ================= story cards =================
@@ -1581,20 +1668,56 @@ GameObject BuildSelect(Transform parent)
             questCard = realmCardObj;
 
             // HUD top-right: reliquary (unlit)
-            var lantern = Panel(p.transform, "Lantern", new Color(0.039f, 0.043f, 0.051f, 0.88f));
+            var lantern = Panel(p.transform, "Lantern", new Color(0.039f, 0.043f, 0.051f, 0.72f));
             var lrt = lantern.rect();
-            lrt.anchorMin = new Vector2(0.62f, 0.94f); lrt.anchorMax = new Vector2(0.99f, 0.99f);
-            Label(lantern.transform, "THE RELIQUARY — UNLIT", 11, Hex(0x8a8578), TextAnchor.MiddleRight).rect().Stretch(lantern.transform);
+            lrt.anchorMin = new Vector2(0.70f, 0.945f); lrt.anchorMax = new Vector2(0.99f, 0.985f);
+            Label(lantern.transform, "THE RELIQUARY \u2014 UNLIT", 10, Hex(0x8a8578), TextAnchor.MiddleRight).rect().Stretch(lantern.transform);
 
-            // ability bar bottom-center: 4 sealed slots
+            // ability bar bottom-center: v234 CLEANUP — quiet rune slots (no SEALED text spam)
             for (int i = 0; i < 4; i++)
             {
                 var slot = Panel(p.transform, "ab" + i, new Color(0.07f, 0.08f, 0.10f, 0.92f));
                 var srt = slot.rect();
                 srt.anchorMin = new Vector2(0.5f + (i - 1.5f) * 0.09f, 0.02f);
                 srt.anchorMax = new Vector2(0.5f + (i - 0.5f) * 0.09f, 0.10f);
-                Label(slot.transform, "SEALED", 9, Hex(0x6f6a5e), TextAnchor.MiddleCenter).rect().Stretch(slot.transform);
+                var gem = Panel(slot.transform, "gem" + i, new Color(0.64f, 0.54f, 0.35f, 0.40f));
+                var grt = gem.rect();
+                grt.anchorMin = grt.anchorMax = new Vector2(0.5f, 0.5f);
+                grt.sizeDelta = new Vector2(14, 14);
+                grt.localRotation = Quaternion.Euler(0, 0, 45f);
             }
+
+            // v234 OBJECTIVE BEACON — the amber way-finder: floats over the current quest
+            // target (hearth -> encounters -> gate), with name + distance. You always know where to go.
+            var bgo = Panel(p.transform, "Beacon", new Color(0.95f, 0.72f, 0.30f, 0.95f));
+            var brt = bgo.rect();
+            brt.anchorMin = brt.anchorMax = Vector2.zero;
+            brt.sizeDelta = new Vector2(15, 15);
+            brt.localRotation = Quaternion.Euler(0, 0, 45f);
+            beaconImg = bgo.GetComponent<Image>();
+            var blbl = Label(p.transform, "", 9, Hex(0xd8c4aa), TextAnchor.UpperCenter);
+            var blrt = blbl.rect();
+            blrt.anchorMin = blrt.anchorMax = Vector2.zero;
+            blrt.sizeDelta = new Vector2(240, 26);
+            beaconLbl = blbl;
+            bgo.SetActive(false); blbl.gameObject.SetActive(false);
+
+            // v234 CONTROL HINTS — three chips on first entry, fade once you move
+            var hr = Panel(p.transform, "HintRow", new Color(0, 0, 0, 0));
+            var hrt = hr.rect();
+            hrt.anchorMin = new Vector2(0.5f, 0.13f); hrt.anchorMax = new Vector2(0.5f, 0.13f);
+            hrt.sizeDelta = new Vector2(620, 34);
+            string[] hintTxt = { "DRAG LEFT \u2014 MOVE", "DRAG RIGHT \u2014 LOOK", "TAP GROUND \u2014 WALK" };
+            for (int i = 0; i < hintTxt.Length; i++)
+            {
+                var chip = Panel(hr.transform, "hint" + i, new Color(0.039f, 0.043f, 0.051f, 0.85f));
+                var crt = chip.rect();
+                crt.anchorMin = new Vector2(i / 3f, 0f); crt.anchorMax = new Vector2((i + 1) / 3f, 1f);
+                crt.offsetMin = new Vector2(2, 0); crt.offsetMax = new Vector2(-2, 0);
+                Label(chip.transform, hintTxt[i], 10, Hex(0xc8c4bc), TextAnchor.MiddleCenter).rect().Stretch(chip.transform);
+            }
+            hr.AddComponent<CanvasGroup>();
+            hintRow = hr; hr.SetActive(false);
 
             // debug controls + character tab
             var bMap = Btn(p.transform, "MAP", 11);
@@ -2153,6 +2276,10 @@ GameObject BuildSelect(Transform parent)
                     }
                 }
                 QuestStations();
+                UpdateBeacon();   // v234: the amber way-finder
+                for (int i = 0; i < encLights.Count; i++)
+                    if (encLights[i] != null)
+                        encLights[i].intensity = 1.15f + 0.45f * (0.5f + 0.5f * Mathf.Sin(Time.time * 2.2f + i * 2.1f));
             }
             var target = (state == State.Game && model != null)
                 ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
