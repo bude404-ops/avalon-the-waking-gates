@@ -382,6 +382,30 @@ namespace AvalonForge
                         Fail(log, "QC idle frame is BLANK — model not visible (mesh or material import failed). Prefab NOT saved.");
                         return;
                     }
+
+                    // v238 DOME GUARD: a humanoid silhouette is TALL (width/height <= ~0.7).
+                    // A radially-symmetric dome (the junk-helper-sphere bug: content aspect
+                    // ~0.95) means a primitive or collapsed mesh swallowed the frame — the
+                    // shot "has content" but is NOT the character. Fail instead of shipping
+                    // a ball and calling it Aedan.
+                    int minX = tex.width, maxX = 0, minY = tex.height, maxY = 0;
+                    for (int qi = 0; qi < qpx.Length; qi++)
+                    {
+                        if (qpx[qi].r > 30 || qpx[qi].g > 30 || qpx[qi].b > 30)
+                        {
+                            int xx = qi % tex.width, yy = qi / tex.width;
+                            if (xx < minX) minX = xx; if (xx > maxX) maxX = xx;
+                            if (yy < minY) minY = yy; if (yy > maxY) maxY = yy;
+                        }
+                    }
+                    float bw = maxX - minX + 1, bh = maxY - minY + 1;
+                    float aspect = bh > 0 ? bw / bh : 1f;
+                    Log(log, $"QC silhouette: {bw:F0}x{bh:F0}px, aspect {aspect:F2}");
+                    if (aspect > 0.80f)
+                    {
+                        Fail(log, $"QC silhouette is NOT humanoid (aspect {aspect:F2} — a dome/blob, not a character). Junk primitive or collapsed mesh. Prefab NOT saved.");
+                        return;
+                    }
                     // v239 BALL-SILHOUETTE GUARD: a radially-symmetric blob means the skin
                     // collapsed to a clump (the v238 armed-V7 'ball dome' — Bude caught it).
                     // A full-body humanoid frame is tall and narrow: content bbox w/h ~0.25-0.55.
