@@ -227,7 +227,18 @@ namespace AvalonForge
             // ---------- Stage 2: normalize ----------
             var renderers = go.GetComponentsInChildren<Renderer>();
             if (renderers.Length == 0) { Fail(log, "No renderers on model."); return; }
-            var b = CombineBounds(renderers);
+            // v238.1 BODY-TRUE NORMALIZE (Bude: 'Spear needs to be attached to aedan' — root cause:
+            // the spear is now a SKINNED mesh on the class rig, so it is part of the model; but a
+            // spear held tip-up spans TALLER than the character. Normalizing on combined bounds
+            // shrinks Aedan to fit his own spear. Scale must be derived from the BODY skinned
+            // mesh (largest skinned mesh) so the character height is canon and the spear may
+            // stand proud above the head. Combined bounds remain in use for QC FRAMING only.
+            var bodySmr = go.GetComponentsInChildren<SkinnedMeshRenderer>()
+                .Where(r => r.sharedMesh != null)
+                .OrderByDescending(r => r.sharedMesh.vertexCount)
+                .FirstOrDefault();
+            var b = bodySmr != null ? bodySmr.bounds : CombineBounds(renderers);
+            if (bodySmr != null) Log(log, $"Normalize basis: body skinned mesh '{bodySmr.name}' ({bodySmr.sharedMesh.vertexCount} verts, height {b.size.y:F3})");
             float scale = height / b.size.y;
             go.transform.localScale = Vector3.one * scale;
             go.transform.position -= new Vector3(b.center.x, 0f, b.center.z) * scale;
