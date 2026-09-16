@@ -152,13 +152,13 @@ namespace AvalonShell
                     var an = staged2.GetComponentInChildren<Animator>();
                     if (an != null) { an.applyRootMotion = false; an.Play("idle", 0, 0f); an.Update(0.02f); }
 
-                    var lit = new Material(Shader.Find("Universal Render Pipeline/Lit") != null
+                    var proofLit = new Material(Shader.Find("Universal Render Pipeline/Lit") != null
                         ? Shader.Find("Universal Render Pipeline/Lit") : Shader.Find("Standard"));
                     foreach (var r in staged2.GetComponentsInChildren<Renderer>(true))
                     {
                         var mats = r.sharedMaterials;
                         bool patch = false;
-                        for (int i = 0; i < mats.Length; i++) if (mats[i] == null) { mats[i] = lit; patch = true; }
+                        for (int i = 0; i < mats.Length; i++) if (mats[i] == null) { mats[i] = proofLit; patch = true; }
                         if (patch) r.sharedMaterials = mats;
                     }
 
@@ -199,7 +199,7 @@ namespace AvalonShell
                     UnityEngine.Object.DestroyImmediate(staged2);
                     UnityEngine.Object.DestroyImmediate(camGo);
                     UnityEngine.Object.DestroyImmediate(lightGo);
-                    UnityEngine.Object.DestroyImmediate(lit);
+                    UnityEngine.Object.DestroyImmediate(proofLit);
                 }
                 else Debug.LogWarning("[SHELL][PROOF] Sovereign-GAME prefab not found in Resources — no proof shots");
             }
