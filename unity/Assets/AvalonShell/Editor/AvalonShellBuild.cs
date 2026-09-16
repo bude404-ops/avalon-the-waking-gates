@@ -128,6 +128,83 @@ namespace AvalonShell
             PlayerSettings.allowedAutorotateToLandscapeLeft = true;
             PlayerSettings.allowedAutorotateToLandscapeRight = true;
 
+            // ================= v240 GAME-PROOF SHOTS =================
+            // Bude's v239 verdict: "the spear isnt in his hand at all". The forge QC (editor render)
+            // showed the spear, and the mesh string IS in the APK data — so the only honest proof
+            // left is a render from the GAME side: load the STAGED Resources prefab the exact way
+            // the game does at runtime, frame it with the v239 gameplay camera, and capture it.
+            // These shots + the renderer inventory go into the artifact so no one trusts my word —
+            // they trust the build's own eyes.
+            try
+            {
+                var proofDir = "Assets/AvalonShell/ProofShots";
+                Directory.CreateDirectory(proofDir);
+                var staged2 = UnityEngine.Object.Instantiate(Resources.Load<GameObject>("Sovereign-GAME"));
+                if (staged2 != null)
+                {
+                    var inv = staged2.GetComponentsInChildren<Renderer>(true)
+                        .Select(r => r.GetType().Name + ":" + r.name).Distinct().ToList();
+                    File.WriteAllText(proofDir + "/renderer-inventory.txt",
+                        "GAME-SIDE RENDERER INVENTORY (staged Resources prefab)\n" + string.Join("\n", inv));
+                    Debug.Log("[SHELL][PROOF] renderer inventory: " + string.Join(", ", inv));
+
+                    foreach (var smr in staged2.GetComponentsInChildren<SkinnedMeshRenderer>(true)) smr.updateWhenOffscreen = true;
+                    var an = staged2.GetComponentInChildren<Animator>();
+                    if (an != null) { an.applyRootMotion = false; an.Play("idle", 0, 0f); an.Update(0.02f); }
+
+                    var lit = new Material(Shader.Find("Universal Render Pipeline/Lit") != null
+                        ? Shader.Find("Universal Render Pipeline/Lit") : Shader.Find("Standard"));
+                    foreach (var r in staged2.GetComponentsInChildren<Renderer>(true))
+                    {
+                        var mats = r.sharedMaterials;
+                        bool patch = false;
+                        for (int i = 0; i < mats.Length; i++) if (mats[i] == null) { mats[i] = lit; patch = true; }
+                        if (patch) r.sharedMaterials = mats;
+                    }
+
+                    var b = new Bounds(Vector3.zero, Vector3.one);
+                    var rs = staged2.GetComponentsInChildren<Renderer>(true);
+                    if (rs.Length > 0) { b = rs[0].bounds; foreach (var r in rs) b.Encapsulate(r.bounds); }
+                    var height = Mathf.Max(b.size.y, 0.1f);
+                    var camGo = new GameObject("ProofCam");
+                    var cam = camGo.AddComponent<Camera>();
+                    cam.clearFlags = CameraClearFlags.SolidColor;
+                    cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
+                    var look = new Vector3(0f, height * 0.55f, 0f);                       // chest
+                    var dist = height * 2.6f;                                              // v239 gameplay distance
+                    var elev = height * 0.55f;                                             // ~30 deg look-down
+                    camGo.transform.position = new Vector3(0f, look.y + elev, -dist);
+                    camGo.transform.LookAt(look);
+                    var lightGo = new GameObject("ProofLight");
+                    var dl = lightGo.AddComponent<Light>(); dl.type = LightType.Directional;
+                    lightGo.transform.rotation = Quaternion.Euler(40f, -35f, 0f);
+                    lightGo.transform.position = new Vector3(3f, 5f, -4f);
+
+                    var rt = new RenderTexture(720, 1280, 24);
+                    cam.targetTexture = rt; RenderTexture.active = rt; cam.Render();
+                    var tex = new Texture2D(720, 1280, TextureFormat.RGBA32, false);
+                    tex.ReadPixels(new Rect(0, 0, 720, 1280), 0, 0); tex.Apply();
+                    File.WriteAllBytes(proofDir + "/game-proof-idle.png", tex.EncodeToPNG());
+
+                    if (an != null && an.runtimeAnimatorController != null)
+                    {
+                        bool hasWalk = false;
+                        foreach (var s in an.runtimeAnimatorController.animationClips) if (s.name.ToLower().Contains("walk")) hasWalk = true;
+                        try { an.Play("walk", 0, 0.35f); an.Update(0.02f); } catch { }
+                        RenderTexture.active = rt; cam.Render();
+                        tex.ReadPixels(new Rect(0, 0, 720, 1280), 0, 0); tex.Apply();
+                        File.WriteAllBytes(proofDir + "/game-proof-walk.png", tex.EncodeToPNG());
+                    }
+                    Debug.Log("[SHELL][PROOF] game-side proof shots captured: " + proofDir);
+                    UnityEngine.Object.DestroyImmediate(staged2);
+                    UnityEngine.Object.DestroyImmediate(camGo);
+                    UnityEngine.Object.DestroyImmediate(lightGo);
+                    UnityEngine.Object.DestroyImmediate(lit);
+                }
+                else Debug.LogWarning("[SHELL][PROOF] Sovereign-GAME prefab not found in Resources — no proof shots");
+            }
+            catch (Exception ex) { Debug.LogWarning("[SHELL][PROOF] proof render failed (non-blocking): " + ex.Message); }
+
             var scenes = new[] { scenePath };
             Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(outPath)));
             var report = BuildPipeline.BuildPlayer(scenes, outPath, BuildTarget.Android, BuildOptions.None);

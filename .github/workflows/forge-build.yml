@@ -238,6 +238,9 @@ jobs:
         run: |
           mkdir -p /tmp/apkout && cp build/avalon-unity-shell.apk /tmp/apkout/ 2>/dev/null || echo "no apk produced"
           cp $GITHUB_WORKSPACE/shell-build.log /tmp/apkout/ 2>/dev/null || true
+          # v240 GAME-PROOF: the shell build's own render of the staged model in gameplay framing
+          cp unity/Assets/AvalonShell/ProofShots/game-proof-*.png /tmp/apkout/ 2>/dev/null || echo "no proof shots"
+          cp unity/Assets/AvalonShell/ProofShots/renderer-inventory.txt /tmp/apkout/ 2>/dev/null || true
       - uses: actions/upload-artifact@v4
         if: always()
         with:

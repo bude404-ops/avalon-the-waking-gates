@@ -306,11 +306,13 @@ namespace AvalonForge
                 }
             }
             int statesBuilt = 0;
+            var builtClips = new System.Collections.Generic.Dictionary<string, AnimationClip>();
             foreach (var (state, prefix) in States)
             {
                 var clipRaw = FindClip(prefix);
                 if (clipRaw == null) continue;
                 var clip = InPlaceCopy(clipRaw, character, state, log);   // v225 ROOT-LOCK ENFORCEMENT
+                builtClips[state] = clip;
                 var st = sm.AddState(state, new Vector3(220f * statesBuilt, 0f));
                 st.motion = clip;
                 statesBuilt++;
@@ -498,6 +500,21 @@ namespace AvalonForge
                         // the shot renders black (v222's own fallback bug). Ground instead from the
                         // PROVEN idle capture transform, zero bounds math.
                         Log(log, "WARN walk retarget collapsed (bounds " + wrb.center + " / " + wrb.size + ") — recapturing at the proven idle grounding");
+                        // v240 DETONATION GUARD (Bude: v239 spear "isnt in his hand at all" — the
+                        // detonated walk clip still SHIPPED and exploded the rig mid-stride, flinging
+                        // the 2m skinned spear tens of meters). A collapsed walk clip must NEVER ship:
+                        // the walk state now plays the proven idle motion (glide) instead. Real walk
+                        // bake is a Stage B polish item — an exploded rig can never reach the APK.
+                        if (actrl != null && builtClips.TryGetValue("idle", out var safeIdle))
+                        {
+                            foreach (var layer in actrl.layers)
+                                foreach (var st in layer.stateMachine.states)
+                                    if (st.state.name == "walk" && st.state.motion != safeIdle)
+                                    {
+                                        st.state.motion = safeIdle;
+                                        Log(log, "DETONATION GUARD: walk state motion replaced with the idle motion (locomotion glide) — walk bake deferred to Stage B polish");
+                                    }
+                        }
                         animator.Rebind();
                         animator.Play("idle", 0, 0.4f);
                         animator.Update(0.01f);

@@ -2084,8 +2084,86 @@ GameObject BuildSelect(Transform parent)
             Bounds b = rends.Length > 0 ? rends[0].bounds : new Bounds(Vector3.zero, Vector3.one);
             foreach (var r in rends) b.Encapsulate(r.bounds);
             camDist = Mathf.Max(b.size.y, 0.1f) * 2.6f;   // v239: pull back to real third-person distance (Bude: camera inside the model)
+
+            // v240 SKINNED-CULL GUARD: a SkinnedMeshRenderer with stale bounds (a weapon skinned
+            // to a hand bone inherits tiny bind-pose bounds) gets frustum-CULLED at gameplay
+            // camera distances even though it is right there in frame (Bude: "the spear isnt in
+            // his hand at all" while the mesh IS in the APK and the forge QC shows it).
+            // updateWhenOffscreen makes Unity recompute bounds every frame — the spear can
+            // never be culled by stale bounds again.
+            var smrs = go.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+            foreach (var smr in smrs) smr.updateWhenOffscreen = true;
+
+            // v240 WEAPON-SOCKET GUARANTEE (Bude: "make sure the 3d model has proper rigging
+            // and sizing hand socket"): if the skinned spear did NOT survive into the loaded
+            // model, stand up a real hand socket — a socketed spear parented to the right-hand
+            // BONE transform (the game-side attach path that never drops), grip-set and sized
+            // to the character's height.
+            bool hasSkinnedSpear = false;
+            foreach (var r in rends) if (r.name != null && r.name.ToLower().Contains("spear")) { hasSkinnedSpear = true; break; }
+            string spearTag = "";
+            if (hasSkinnedSpear)
+            {
+                spearTag = " • SPEAR IN-HAND";
+            }
+            else
+            {
+                var hand = FindHandBone(go.transform);
+                if (hand != null)
+                {
+                    var spear = BuildSocketSpear(hand, b.size.y);
+                    if (spear != null) spearTag = " • SPEAR SOCKETED";
+                }
+            }
+
             if (animator != null) animator.CrossFade("idle", 0f);
-            if (hudLine != null) hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 " + Mathf.RoundToInt(b.size.y * 100) + " CM \u2022 FORGE MODEL";
+            if (hudLine != null) hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 " + Mathf.RoundToInt(b.size.y * 100) + " CM \u2022 FORGE MODEL" + spearTag;
+        }
+
+        // v240: right-hand bone search — Mixamo rigs use mixamorig:RightHand; custom rigs use RightHand.
+        Transform FindHandBone(Transform root)
+        {
+            foreach (var t in root.GetComponentsInChildren<Transform>(true))
+            {
+                var n = t.name.ToLower().Replace("mixamorig:", "").Replace("_", "").Replace(" ", "");
+                if (n == "righthand" || n == "righthandindex1") return t;
+            }
+            return null;
+        }
+
+        // v240: procedural hand-socket spear — only used when the skinned spear is missing.
+        // A 2.1m bronze-lit shaft socketed into the hand bone at a proper grip angle.
+        GameObject BuildSocketSpear(Transform hand, float bodyHeight)
+        {
+            try
+            {
+                var spear = new GameObject("SpearSocket");
+                spear.transform.SetParent(hand, false);
+                spear.transform.localPosition = new Vector3(0.02f, 0.04f, 0.01f);          // grip in palm
+                spear.transform.localRotation = Quaternion.Euler(8f, 0f, 4f);               // near-vertical, tip up
+
+                float shaftLen = bodyHeight > 0.2f ? bodyHeight * 1.10f : 2.1f;
+                var shaft = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+                shaft.name = "SpearShaft";
+                shaft.transform.SetParent(spear.transform, false);
+                shaft.transform.localPosition = new Vector3(0f, shaftLen * 0.28f, 0f);     // head-heavy carry: most of the shaft above the fist
+                shaft.transform.localScale = new Vector3(0.028f, shaftLen * 0.5f, 0.028f);
+                var sm = shaft.GetComponent<MeshRenderer>();
+                var mat = Lit(new Color(0.55f, 0.44f, 0.30f));                              // bronze-wood
+                if (mat != null) sm.material = mat;
+
+                var tip = GameObject.CreatePrimitive(PrimitiveType.Cone);
+                tip.name = "SpearTip";
+                tip.transform.SetParent(spear.transform, false);
+                tip.transform.localPosition = new Vector3(0f, shaftLen * 0.28f + shaftLen * 0.5f + 0.09f, 0f);
+                tip.transform.localScale = new Vector3(0.05f, 0.14f, 0.05f);
+                var tm = tip.GetComponent<MeshRenderer>();
+                var tmat = Lit(new Color(0.78f, 0.70f, 0.45f));                             // bright bronze
+                if (tmat != null) tm.material = tmat;
+
+                return spear;
+            }
+            catch { return null; }
         }
 
         // ================= gameplay: waymarks =================
