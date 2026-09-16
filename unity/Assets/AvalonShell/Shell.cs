@@ -1715,9 +1715,9 @@ GameObject BuildSelect(Transform parent)
             for (int i = 0; i < hintTxt.Length; i++)
             {
                 var chip = Panel(hr.transform, "hint" + i, new Color(0.039f, 0.043f, 0.051f, 0.85f));
-                var crt = chip.rect();
-                crt.anchorMin = new Vector2(i / 3f, 0f); crt.anchorMax = new Vector2((i + 1) / 3f, 1f);
-                crt.offsetMin = new Vector2(2, 0); crt.offsetMax = new Vector2(-2, 0);
+                var chrt = chip.rect();
+                chrt.anchorMin = new Vector2(i / 3f, 0f); chrt.anchorMax = new Vector2((i + 1) / 3f, 1f);
+                chrt.offsetMin = new Vector2(2, 0); chrt.offsetMax = new Vector2(-2, 0);
                 Label(chip.transform, hintTxt[i], 10, Hex(0xc8c4bc), TextAnchor.MiddleCenter).rect().Stretch(chip.transform);
             }
             hr.AddComponent<CanvasGroup>();
