@@ -47,7 +47,9 @@ namespace AvalonShell
                 "UI-MAIN-MENU-CANON.png", "UI-MAIN-MENU-V2-CANON.jpg", "UI-MAIN-MENU-V2-CLEAN.jpg", "UI-CLASS-SELECT-CANON.png", "UI-CLASS-SELECT-V2-CANON.png",
                 "CINEMATIC-TEASER-KEYART-CANON.png",
                 "CLASS-SOVEREIGN-CANON.png", "CLASS-RAVAGER-CANON.png", "CLASS-WARDEN-CANON.png",
-                "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png" })
+                "CLASS-VEILBORN-CANON.png", "CLASS-WEAVER-CANON.png", "CLASS-WILDBORN-CANON.png",
+                "CLASS-SOVEREIGN-F-CANON.png", "CLASS-RAVAGER-F-CANON.png", "CLASS-WARDEN-F-CANON.png",
+                "CLASS-VEILBORN-F-CANON.png", "CLASS-WEAVER-F-CANON.png", "CLASS-WILDBORN-F-CANON.png" })
             {
                 var src = Path.Combine("../art/approved", art);
                 if (File.Exists(src)) { File.Copy(src, "Assets/AvalonShell/Resources/Art/" + art, true); Debug.Log("[SHELL] staged art: " + art); }

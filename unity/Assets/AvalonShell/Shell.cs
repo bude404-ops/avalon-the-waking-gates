@@ -37,6 +37,14 @@ namespace AvalonShell
         ClassDef chosen = CLASSES[0];
         GameObject panelTitle, panelSelect, panelGame, panelSkills, panelMap, panelSettings, panelAchievements;
         Camera cam; float camDist = 2.8f; float camYaw = 25f;
+        // v236 (Bude: 'joystick...backwards with the left and right' + 'swings view too quickly' +
+        // 'use the settings other game styles use'): eased camera target + user control settings.
+        float camYawT = 25f;        // drag target — the view eases toward it (smoothed swing)
+        float camSpeed = 1f;        // Settings: camera sensitivity multiplier
+        bool invCamX = false;       // Settings: invert look X
+        bool invMoveX = false;      // Settings: invert move X
+        bool autoFollow = true;     // Settings: auto-follow camera recenter
+        bool chosenFemale = false;  // v236: F variant picked on the class grid (side-by-side cards)
         Animator animator; GameObject model; Transform stagePivot;
         Text hudLine;
         GameObject questCard;
@@ -134,6 +142,11 @@ namespace AvalonShell
             moteImgs = new System.Collections.Generic.List<UnityEngine.UI.Image>();
             moteSeed = new System.Collections.Generic.List<float>();
             panelMap = BuildMap(canvas.transform);
+            // v236: control settings load (Settings panel writes these; camera + joystick read them)
+            camSpeed = PlayerPrefs.GetFloat("avalon.camspd", 1f);
+            invCamX = PlayerPrefs.GetInt("avalon.invcam", 0) == 1;
+            invMoveX = PlayerPrefs.GetInt("avalon.invmove", 0) == 1;
+            autoFollow = PlayerPrefs.GetInt("avalon.autofollow", 1) == 1;
             panelSettings = BuildSettings(canvas.transform);
             panelAchievements = BuildAchievements(canvas.transform);
             panelSkills = BuildSkills(canvas.transform);
@@ -313,7 +326,7 @@ namespace AvalonShell
             }
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
-            if (s == State.Select) SelectCard(chosen);
+            if (s == State.Select) SelectCard(chosen, chosenFemale);
             if (s == State.Game && model == null) LoadClass(chosen.name);   // v235: never enter a dead world
             if (s == State.Game && hudLine != null)
                 hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
@@ -1108,7 +1121,7 @@ namespace AvalonShell
         {
             string metS = (met[0] ? "1" : "0") + (met[1] ? "1" : "0") + (met[2] ? "1" : "0");
             string chS = string.Join(";", choices.ToArray());
-            PlayerPrefs.SetString("avalon.save", chosen.name + "|" + questStage + "|" + metS + "|" + chS);
+            PlayerPrefs.SetString("avalon.save", chosen.name + (chosenFemale ? "-F" : "") + "|" + questStage + "|" + metS + "|" + chS);   // v236: gender rides the save
             PlayerPrefs.Save();
         }
 
@@ -1118,7 +1131,10 @@ namespace AvalonShell
             try
             {
                 var parts = PlayerPrefs.GetString("avalon.save").Split('|');
-                var cd = CLASSES.FirstOrDefault(c => c.name == parts[0]);
+                // v236: "-F" suffix on the saved class name carries the female pick
+                chosenFemale = parts[0].EndsWith("-F");
+                var cname = chosenFemale ? parts[0].Substring(0, parts[0].Length - 2) : parts[0];
+                var cd = CLASSES.FirstOrDefault(c => c.name == cname);
                 if (cd == null) return false;
                 chosen = cd; questStage = int.Parse(parts[1]);
                 if (parts[2].Length >= 3) { met[0] = parts[2][0] == '1'; met[1] = parts[2][1] == '1'; met[2] = parts[2][2] == '1'; }
@@ -1433,23 +1449,88 @@ GameObject BuildTitle(Transform parent)
         GameObject BuildSettings(Transform parent)
         {
             var p = PanelChrome(parent, "SETTINGS");   // v232: shared AAA chrome
-            var tb = Btn(p.transform, "INPUT PROBE: ON", 13);
+            float lastAny = -1f;   // shared double-path guard
+
+            // v236 (Bude: 'are we able to research and use the settings other game styles use'):
+            // the standard third-person mobile control options — sensitivity stepper,
+            // invert toggles, auto-follow — applied live and saved to the device.
+            var head = Label(p.transform, "CONTROLS", 15, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            head.rect().anchorMin = new Vector2(0, 0.84f); head.rect().anchorMax = new Vector2(1, 0.94f);
+
+            // ---- CAMERA SPEED (0.5x - 2.0x; 1.0x = the new, slower AAA default swing) ----
+            var csL = Label(p.transform, "CAMERA SPEED", 12, Hex(0xd8c4aa), TextAnchor.MiddleLeft);
+            csL.rect().anchorMin = new Vector2(0.07f, 0.74f); csL.rect().anchorMax = new Vector2(0.55f, 0.82f);
+            var csVal = Label(p.transform, camSpeed.ToString("0.00") + "\u00D7", 13, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
+            csVal.name = "camspdVal";
+            csVal.rect().anchorMin = new Vector2(0.60f, 0.74f); csVal.rect().anchorMax = new Vector2(0.80f, 0.82f);
+            System.Action<float> bumpSpd = delegate(float d) {
+                if (Time.time - lastAny < 0.2f) return; lastAny = Time.time;
+                camSpeed = Mathf.Clamp(camSpeed + d, 0.5f, 2f);
+                PlayerPrefs.SetFloat("avalon.camspd", camSpeed); PlayerPrefs.Save();
+                csVal.text = camSpeed.ToString("0.00") + "\u00D7";
+            };
+            var bMinus = Btn(p.transform, "\u2212", 14);
+            var mrt = bMinus.transform as RectTransform;
+            mrt.anchorMin = mrt.anchorMax = new Vector2(0.86f, 0.78f); mrt.sizeDelta = new Vector2(48, 40); mrt.anchoredPosition = Vector2.zero;
+            bMinus.onClick.AddListener(() => bumpSpd(-0.25f));
+            TapTo(mrt, () => bumpSpd(-0.25f));
+            var bPlus = Btn(p.transform, "+", 14);
+            var prt = bPlus.transform as RectTransform;
+            prt.anchorMin = prt.anchorMax = new Vector2(0.96f, 0.78f); prt.sizeDelta = new Vector2(48, 40); prt.anchoredPosition = Vector2.zero;
+            bPlus.onClick.AddListener(() => bumpSpd(0.25f));
+            TapTo(prt, () => bumpSpd(0.25f));
+
+            // ---- toggle rows (tapped option = standard / inverted-off defaults) ----
+            var rowY = new float[] { 0.62f, 0.50f, 0.38f };
+            var rowTitles = new string[] { "INVERT LOOK X", "INVERT MOVE X", "AUTO-FOLLOW CAMERA" };
+            System.Action refreshToggles = delegate {
+                for (int i = 0; i < 3; i++)
+                {
+                    var b = p.transform.Find("toggle" + i);
+                    if (b == null) continue;
+                    var t = b.GetComponentInChildren<Text>();
+                    bool on = i == 0 ? invCamX : i == 1 ? invMoveX : autoFollow;
+                    if (t != null) t.text = rowTitles[i] + "  \u2014  " + (on ? "ON" : "OFF");
+                }
+            };
+            for (int i = 0; i < 3; i++)
+            {
+                int idx = i;
+                var tb2 = Btn(p.transform, rowTitles[i] + "  \u2014  ???", 12);
+                tb2.name = "toggle" + idx;
+                var trt2 = tb2.transform as RectTransform;
+                trt2.anchorMin = new Vector2(0.10f, rowY[idx]); trt2.anchorMax = new Vector2(0.90f, rowY[idx] + 0.09f);
+                trt2.offsetMin = Vector2.zero; trt2.offsetMax = Vector2.zero; trt2.sizeDelta = Vector2.zero;
+                System.Action toggleRow = delegate {
+                    if (Time.time - lastAny < 0.2f) return; lastAny = Time.time;
+                    if (idx == 0) { invCamX = !invCamX; PlayerPrefs.SetInt("avalon.invcam", invCamX ? 1 : 0); }
+                    if (idx == 1) { invMoveX = !invMoveX; PlayerPrefs.SetInt("avalon.invmove", invMoveX ? 1 : 0); }
+                    if (idx == 2) { autoFollow = !autoFollow; PlayerPrefs.SetInt("avalon.autofollow", autoFollow ? 1 : 0); }
+                    PlayerPrefs.Save();
+                    refreshToggles();
+                };
+                tb2.onClick.AddListener(() => toggleRow());
+                TapTo(trt2, toggleRow);
+            }
+            refreshToggles();
+
+            // ---- input probe (QA, kept from the earlier build) ----
+            var tb = Btn(p.transform, "INPUT PROBE: ON", 12);
             var trt = tb.transform as RectTransform;
-            trt.anchorMin = new Vector2(0.5f, 0.5f); trt.anchorMax = new Vector2(0.5f, 0.5f);
-            trt.sizeDelta = new Vector2(300, 46); trt.anchoredPosition = new Vector2(0, 40);
-            float lastToggle = -1f;
-            System.Action toggle = delegate {
-                if (Time.time - lastToggle < 0.25f) return;   // double-path guard
-                lastToggle = Time.time;
+            trt.anchorMin = new Vector2(0.10f, 0.24f); trt.anchorMax = new Vector2(0.90f, 0.33f);
+            trt.offsetMin = Vector2.zero; trt.offsetMax = Vector2.zero; trt.sizeDelta = Vector2.zero;
+            System.Action toggleProbe = delegate {
+                if (Time.time - lastAny < 0.2f) return; lastAny = Time.time;
                 if (probeLbl == null) return;
                 probeLbl.gameObject.SetActive(!probeLbl.gameObject.activeSelf);
                 var l = tb.GetComponentInChildren<Text>();
                 if (l != null) l.text = "INPUT PROBE: " + (probeLbl.gameObject.activeSelf ? "ON" : "OFF");
             };
-            tb.onClick.AddListener(() => toggle());
-            TapTo(trt, toggle);
-            var note = Label(p.transform, "MORE OPTIONS SHIP WITH THE FULL GAME BUILD", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
-            note.rect().anchorMin = new Vector2(0, 0.52f); note.rect().anchorMax = new Vector2(1, 0.58f);
+            tb.onClick.AddListener(() => toggleProbe());
+            TapTo(trt, toggleProbe);
+
+            var note = Label(p.transform, "APPLIES INSTANTLY " + EM + " SAVED ON THIS DEVICE", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+            note.rect().anchorMin = new Vector2(0, 0.06f); note.rect().anchorMax = new Vector2(1, 0.16f);
             CloseBtn(p);   // v232: shared close control
             p.SetActive(false);
             return p;
@@ -1530,11 +1611,15 @@ GameObject BuildSelect(Transform parent)
             var head = Label(p.transform, "CHOOSE YOUR CLASS", 30, Hex(0xf0e6cf), TextAnchor.MiddleCenter);
             head.rect().anchorMin = new Vector2(0, 0.875f); head.rect().anchorMax = new Vector2(1, 0.962f);
 
-            for (int i = 0; i < CLASSES.Length; i++)
+            // v236 (Bude: 'show the female characters aswell side by side for the classes'):
+            // every class gets TWO cards — male and female variants side by side, F canon plates
+            // staged from the vault (CLASS-<NAME>-F-CANON).
+            for (int gi = 0; gi < CLASSES.Length * 2; gi++)
             {
-                var cd = CLASSES[i];
-                bool unlocked = ModelPrefab(cd.name) != null;
-                var niche = Panel(p.transform, "card-" + cd.name, new Color(0.224f, 0.216f, 0.196f, 0.92f));   // v228 ref stone RGB 57,55,50
+                int ci = gi / 2; bool female = (gi % 2) == 1;
+                var cd = CLASSES[ci];
+                bool unlocked = ModelPrefab(female ? cd.name + "-F" : cd.name) != null;
+                var niche = Panel(p.transform, "card-" + cd.name + (female ? "-F" : ""), new Color(0.224f, 0.216f, 0.196f, 0.92f));   // v228 ref stone RGB 57,55,50
             var frameSprite = nicheFrameSpr ?? (nicheFrameSpr = NicheFrameSpr());   // v230 foundation frame
             if (frameSprite != null)
             {
@@ -1546,10 +1631,10 @@ GameObject BuildSelect(Transform parent)
                 var face = Panel(niche.transform, "Face", new Color(0.063f, 0.063f, 0.059f, 0.94f));   // v228 ref interior
                 var frt = face.rect();
                 frt.anchorMin = new Vector2(0.018f, 0.018f); frt.anchorMax = new Vector2(0.982f, 0.982f); frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
-                // v235 (Bude: class select "needs to be created like the actual reference art and of our
-                // characters"): each card now carries OUR canon character plate — the CLASS-<NAME>-CANON
+                // v235: each card carries OUR canon character plate — the CLASS-<NAME>-CANON
                 // art staged into Resources/Art — with the code-drawn sigil as fallback only.
-                var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON"); if (art == null) art = ClassSigil(i);
+                // v236: female cards carry the CLASS-<NAME>-F-CANON plate.
+                var art = Art(female ? "CLASS-" + cd.name.ToUpper() + "-F-CANON" : "CLASS-" + cd.name.ToUpper() + "-CANON"); if (art == null) art = ClassSigil(ci);
                 if (art != null)
                 {
                     var ai = new GameObject("art");
@@ -1562,6 +1647,8 @@ GameObject BuildSelect(Transform parent)
                     var bandRt = band.rect();
                     bandRt.anchorMin = new Vector2(0, 0); bandRt.anchorMax = new Vector2(1, 0.40f); bandRt.offsetMin = Vector2.zero; bandRt.offsetMax = Vector2.zero;
                 }
+                var chip = Label(niche.transform, female ? "F" : "M", 10, Hex(0xd8c4aa), TextAnchor.MiddleCenter);
+                chip.rect().anchorMin = new Vector2(0.78f, 0.70f); chip.rect().anchorMax = new Vector2(0.97f, 0.95f);
                 var nm = Label(niche.transform, cd.name.ToUpper(), 15, unlocked ? Hex(0xf0ebde) : Hex(0x6f6a5e), TextAnchor.MiddleCenter);   // v228 parchment letters
                 nm.rect().anchorMin = new Vector2(0, 0.22f); nm.rect().anchorMax = new Vector2(1, 0.38f);
                 var ro = Label(niche.transform, cd.role, 9, Hex(0xa3895a), TextAnchor.MiddleCenter);
@@ -1572,9 +1659,9 @@ GameObject BuildSelect(Transform parent)
                 var cb = b.colors; cb.highlightedColor = new Color(1.12f, 1.08f, 0.9f, 1); cb.pressedColor = new Color(0.75f, 0.65f, 0.42f, 1);
                 b.colors = cb;
                 cardTints.Add(face.GetComponent<Image>());
-                var captured = cd;
-                b.onClick.AddListener(() => SelectCard(captured));
-                TapTo(crt, () => SelectCard(captured));
+                var captured = cd; bool capF = female;
+                b.onClick.AddListener(() => SelectCard(captured, capF));
+                TapTo(crt, () => SelectCard(captured, capF));
             }
 
             CarvedBtn(p.transform, "BEGIN THE WAKENING", 0.26f, 0.72f, 0.043f, 0.105f, true, delegate { SetState(State.Game); });   // v228: the ref's own BEGIN slab geometry
@@ -1582,14 +1669,16 @@ GameObject BuildSelect(Transform parent)
             return p;
         }
 
-        void SelectCard(ClassDef cd)
+        void SelectCard(ClassDef cd, bool female)
         {
-            chosen = cd;
-            for (int i = 0; i < CLASSES.Length; i++)
-                cardTints[i].color = (CLASSES[i] == cd) ? new Color(0.16f, 0.14f, 0.09f, 0.96f) : new Color(0.07f, 0.08f, 0.10f, 0.92f);
+            chosen = cd; chosenFemale = female;
+            int ci = System.Array.IndexOf(CLASSES, cd);
+            for (int i = 0; i < cardTints.Count; i++)
+                cardTints[i].color = (i / 2 == ci && (i % 2 == 1) == female) ? new Color(0.16f, 0.14f, 0.09f, 0.96f) : new Color(0.07f, 0.08f, 0.10f, 0.92f);
             if (emberPulse != null) StopCoroutine(emberPulse);
             emberCard = null;
-            for (int i = 0; i < CLASSES.Length; i++) if (CLASSES[i] == cd) emberCard = cardTints[i];
+            for (int i = 0; i < cardTints.Count; i++)
+                if (i / 2 == ci && (i % 2 == 1) == female) emberCard = cardTints[i];
             if (emberCard != null) emberPulse = StartCoroutine(EmberPulseRoutine());
             LoadClass(cd.name);
         }
@@ -1605,19 +1694,24 @@ GameObject BuildSelect(Transform parent)
             }
         }
 
-        // Responsive layout: portrait = 2 rows of 3 cards; landscape = 1 row of 6. Relayout on rotate.
+        // v236: 12-card grid — every class shows M + F side by side. Portrait = 3 cols x 4 rows
+        // (each class's pair stacked in one column, classes left->right); landscape = 6 cols x 2
+        // rows (M row, F row, aligned per class). Relayout on rotate.
         void LayoutCards()
         {
             bool portrait = Screen.height > Screen.width;
-            for (int i = 0; i < cardRects.Count && i < CLASSES.Length; i++)
+            int cols = portrait ? 3 : 6, rows = portrait ? 4 : 2;
+            float top = 0.86f, bottom = portrait ? 0.12f : 0.16f;
+            float chh = (top - bottom) / rows;
+            float cw = 1f / cols;
+            for (int i = 0; i < cardRects.Count; i++)
             {
                 var crt = cardRects[i];
-                int row, col;
-                if (portrait) { row = i / 3; col = i % 3; }
-                else { row = 0; col = i; }
-                float cw = 1f / (portrait ? 3 : CLASSES.Length);
-                float yMax = portrait ? (row == 0 ? 0.86f : 0.36f) : 0.72f;
-                float yMin = portrait ? (row == 0 ? 0.42f : 0.12f) : 0.28f;
+                int c = i / 2, g = i % 2;                 // card order: class-major, M then F
+                int col = portrait ? (c % 3) : c;
+                int row = portrait ? ((c / 3) * 2 + g) : g;
+                float yMax = top - chh * row;
+                float yMin = yMax - chh + 0.012f;
                 crt.anchorMin = new Vector2(cw * col + 0.008f, yMin);
                 crt.anchorMax = new Vector2(cw * (col + 1) - 0.008f, yMax);
             }
@@ -1923,7 +2017,9 @@ GameObject BuildSelect(Transform parent)
         {
             foreach (var kv in loaded) kv.Value.SetActive(kv.Key == cls);
             if (loaded.ContainsKey(cls)) { BindModel(loaded[cls]); return; }
-            var prefab = ModelPrefab(cls);
+            // v236: female pick resolves the F model first; until the F forge ships, the
+            // bronze placeholder body stands in (controls/camera/quest stay live).
+            var prefab = ModelPrefab(chosenFemale ? cls + "-F" : cls);
             if (prefab == null)
             {
                 // v235: no staged forge model for this class yet — stand up a bronze placeholder body
@@ -1937,7 +2033,7 @@ GameObject BuildSelect(Transform parent)
                 if (pm != null && ph.GetComponent<MeshRenderer>() != null) ph.GetComponent<MeshRenderer>().sharedMaterial = pm;
                 loaded[cls] = ph;
                 BindModel(ph);
-                if (hudLine != null) hudLine.text = cls.ToUpper() + " — FORGE MODEL PENDING • PLACEHOLDER BODY";
+                if (hudLine != null) hudLine.text = cls.ToUpper() + (chosenFemale ? " — F VARIANT" : "") + " — FORGE MODEL PENDING • PLACEHOLDER BODY";
                 return;
             }
             if (hudLine != null) hudLine.text = "LOADING " + prefab.name.ToUpper() + " • FORGE MODEL";
@@ -2294,7 +2390,9 @@ GameObject BuildSelect(Transform parent)
                     }
                     else if (t.fingerId == camFinger)
                     {
-                        if (t.phase == TouchPhase.Moved) { camYaw += (t.position.x - lastTouch0.x) * 0.4f; lastTouch0 = t.position; lastCamDragT = Time.time; }
+                        // v236: drag-right = look-right (the standard), 0.15deg/px base (was a twitchy 0.4),
+                        // user speed multiplier + invert from Settings, accumulated into the eased target.
+                        if (t.phase == TouchPhase.Moved) { camYawT -= (t.position.x - lastTouch0.x) * 0.15f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = t.position; lastCamDragT = Time.time; }
                         if (t.phase == TouchPhase.Ended || t.phase == TouchPhase.Canceled) { camFinger = -1; dragging = false; }
                     }
                 }
@@ -2303,7 +2401,7 @@ GameObject BuildSelect(Transform parent)
                 {
                     if (Input.GetMouseButtonDown(0) && !(overUI && EventSystem.current.IsPointerOverGameObject())) { maybeTap = true; tapStart = Input.mousePosition; dragging = true; lastTouch0 = Input.mousePosition; }
                     else if (Input.GetMouseButton(0) && maybeTap && (((Vector2)Input.mousePosition) - tapStart).sqrMagnitude > 500f) maybeTap = false;
-                    else if (Input.GetMouseButton(0) && dragging) { camYaw += ((Vector2)Input.mousePosition - lastTouch0).x * 0.35f; lastTouch0 = Input.mousePosition; lastCamDragT = Time.time; }
+                    else if (Input.GetMouseButton(0) && dragging) { camYawT -= ((Vector2)Input.mousePosition - lastTouch0).x * 0.12f * camSpeed * (invCamX ? -1f : 1f); lastTouch0 = Input.mousePosition; lastCamDragT = Time.time; }
                     else if (Input.GetMouseButtonUp(0)) { if (maybeTap) { TryWalkTo(Input.mousePosition); maybeTap = false; } dragging = false; }
                 }
             }
@@ -2334,8 +2432,12 @@ GameObject BuildSelect(Transform parent)
                     hasWalkTarget = false;
                     float cyj = Mathf.Cos(camYaw * Mathf.Deg2Rad), syj = Mathf.Sin(camYaw * Mathf.Deg2Rad);
                     var fwd = new Vector3(-syj, 0, -cyj);                                // camera -> player forward
-                    var right = Vector3.Cross(fwd, Vector3.up);
-                    var dir = Vector3.ClampMagnitude(fwd * joyVec.y + right * joyVec.x, 1f);
+                    // v236 FIX (Bude: 'joystick controls are backwards with the left and right'):
+                    // Unity's screen-right for a camera facing -Z is Cross(up, fwd) — the old
+                    // Cross(fwd, up) yielded world +X, which reads LEFT on screen. Inverted.
+                    var right = Vector3.Cross(Vector3.up, fwd);
+                    var mv = new Vector2(invMoveX ? -joyVec.x : joyVec.x, joyVec.y);   // Settings: invert move X
+                    var dir = Vector3.ClampMagnitude(fwd * mv.y + right * mv.x, 1f);
                     float spd = walkSpeed * 1.35f * Mathf.Clamp01(dir.magnitude);        // push full = run-read
                     if (dir.sqrMagnitude > 0.02f)
                     {
@@ -2344,11 +2446,12 @@ GameObject BuildSelect(Transform parent)
                     }
                     if (animator && !animator.GetCurrentAnimatorStateInfo(0).IsName("walk")) animator.CrossFade("walk", 0.2f);
                     // auto-follow: after 3s without manual orbit, the camera eases behind the heading
-                    if (Time.time - lastCamDragT > 3f)
+                    // v236: Settings toggle + drives the eased target (camYawT), not the raw yaw
+                    if (autoFollow && Time.time - lastCamDragT > 3f)
                     {
                         float wantYaw = Mathf.Atan2(-dir.x, -dir.z) * Mathf.Rad2Deg;
-                        float dyaw = Mathf.DeltaAngle(camYaw, wantYaw);
-                        camYaw += dyaw * Mathf.Clamp01(1.6f * Time.deltaTime);
+                        float dyaw = Mathf.DeltaAngle(camYawT, wantYaw);
+                        camYawT += dyaw * Mathf.Clamp01(1.6f * Time.deltaTime);
                     }
                 }
                 else if (hasWalkTarget)
@@ -2371,6 +2474,8 @@ GameObject BuildSelect(Transform parent)
             var target = (state == State.Game && model != null)
                 ? model.transform.position + new Vector3(0, camDist * 0.30f, 0)
                 : new Vector3(0, camDist * 0.30f, 0);
+            // v236: the swing itself is eased — drags set a target yaw, the view glides to it
+            camYaw = Mathf.LerpAngle(camYaw, camYawT, Mathf.Clamp01(10f * Time.deltaTime));
             float cy = Mathf.Cos(camYaw * Mathf.Deg2Rad), sy = Mathf.Sin(camYaw * Mathf.Deg2Rad);
             cam.transform.position = target + new Vector3(sy, 0.15f, cy) * camDist;
             cam.transform.LookAt(target);
