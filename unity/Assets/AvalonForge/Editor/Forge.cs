@@ -220,7 +220,7 @@ namespace AvalonForge
                 if (cv < 0.30f)
                 {
                     Log(log, $"Stripped junk primitive '{jf.name}' ({m.vertexCount} verts, radius-cv {cv:F2})");
-                    Object.DestroyImmediate(jf.gameObject);
+                    UnityEngine.Object.DestroyImmediate(jf.gameObject);
                 }
             }
 
