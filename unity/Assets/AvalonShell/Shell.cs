@@ -82,7 +82,7 @@ namespace AvalonShell
             stagePivot = new GameObject("StagePivot").transform;
             cam = gameObject.AddComponent<Camera>();
             cam.backgroundColor = Hex(CANON_BG); cam.clearFlags = CameraClearFlags.SolidColor;
-            cam.fieldOfView = 40f; cam.nearClipPlane = 0.01f; cam.farClipPlane = 60f;
+            cam.fieldOfView = 40f; cam.nearClipPlane = 0.01f; cam.farClipPlane = 170f;
             MakeLight(new Color(0.87f, 0.90f, 0.95f), 2.1f, new Vector3(2, 3, 3)).name = "KeyLight";
             MakeLight(new Color(0.68f, 0.73f, 0.80f), 0.8f, new Vector2(-2, -2.5f)).name = "FillLight";
             MakeLight(new Color(0.45f, 0.53f, 0.66f), 0.9f, new Vector3(-1.5f, 2.2f, -3)).name = "RimLight";
@@ -102,6 +102,8 @@ namespace AvalonShell
                 MakeWaymark(hearthPos, "OathHearthMark");
                 for (int i = 0; i < encPos.Length; i++) MakeWaymark(encPos[i], "EncounterMark" + i);
                 MakeWaymark(gatePos, "CinderGateMark");
+                MakeCinderGate(gatePos);      // v233: the gate becomes a real broken arch
+                EnvironmentPass();           // v233 ENVIRONMENT PASS — the Skyrend Glade
             }
             catch (Exception e) { Debug.LogError("[SHELL] world layer failed (UI continues): " + e.Message); }
 
@@ -1782,6 +1784,219 @@ GameObject BuildSelect(Transform parent)
             var l = new GameObject(name + "Light"); l.transform.position = pos + new Vector3(0, 1.1f, 0);
             var light = l.AddComponent<Light>(); light.type = LightType.Point; light.color = new Color(1f, 0.62f, 0.25f);
             light.range = 4f; light.intensity = 0.9f;
+        }
+
+        // ================= v233 ENVIRONMENT PASS — The Skyrend Glade =================
+        // Bude's verdict on the v232 Stage A test (Sept 15): "nothings is actually playable
+        // or really visual to even tell its like a patchy Minecraft". Fair — the menus have
+        // been the focus while the walkable world was a bare test slate. This pass gives the
+        // glade a real environment, ALL code-drawn (ground-up law, zero pasted art):
+        // art-directed gradient sky, exponential mist, far ridgelines, mid hill mounds, a
+        // pine forest ring, scattered stones — and the Cinder Gate rebuilt as a landmark.
+        // Quest route positions stay untouched: hearth, encounters and gate all keep the
+        // flat glade floor they were authored on.
+        void EnvironmentPass()
+        {
+            var rng = new System.Random(20260915);
+
+            // --- SKY: six-sided skybox from a generated vertical gradient (the keyart's
+            //     dark blue-teal mist). Falls back silently to the solid bg if the shader
+            //     was stripped — a sky failure never takes the world down. ---
+            try
+            {
+                var skyShader = Shader.Find("Skybox/6 Sided");
+                if (skyShader != null)
+                {
+                    var side = GradientTex(new Color(0.032f, 0.050f, 0.068f), new Color(0.105f, 0.175f, 0.215f), 96);
+                    var cap = SolidTex(new Color(0.032f, 0.050f, 0.068f), 8);
+                    var under = SolidTex(new Color(0.065f, 0.10f, 0.12f), 8);
+                    var sky = new Material(skyShader);
+                    sky.SetTexture("_FrontTex", side); sky.SetTexture("_BackTex", side);
+                    sky.SetTexture("_LeftTex", side); sky.SetTexture("_RightTex", side);
+                    sky.SetTexture("_UpTex", cap); sky.SetTexture("_DownTex", under);
+                    RenderSettings.skybox = sky;
+                    cam.clearFlags = CameraClearFlags.Skybox;
+                }
+            }
+            catch (Exception e) { Debug.LogWarning("[SHELL] sky pass skipped: " + e.Message); }
+
+            // --- MIST: exponential fog is the world's depth language ---
+            RenderSettings.fog = true;
+            RenderSettings.fogMode = FogMode.Exponential;
+            RenderSettings.fogDensity = 0.013f;
+            RenderSettings.fogColor = new Color(0.055f, 0.088f, 0.108f);
+            RenderSettings.ambientLight = new Color(0.38f, 0.42f, 0.47f);
+
+            // --- OUTER FLOOR: the slate runs out to the hills so the glade never floats.
+            //     No collider — tap-to-walk stays on the glade's own Ground. ---
+            var outer = GameObject.CreatePrimitive(PrimitiveType.Plane);
+            outer.name = "OuterFloor";
+            outer.transform.position = new Vector3(0, -0.03f, 0);
+            outer.transform.localScale = new Vector3(40, 1, 40);
+            var om = Lit(new Color(0.045f, 0.056f, 0.072f));
+            if (om != null) outer.GetComponent<MeshRenderer>().material = om;
+            Destroy(outer.GetComponent<Collider>());
+
+            // --- FOREST RING: dark pines closing the glade, with the gate vista left open
+            //     so the far ridgelines read through the arch (the realm reveals its depth) ---
+            for (int i = 0; i < 54; i++)
+            {
+                float ang = (i / 54f) * Mathf.PI * 2f + ((float)rng.NextDouble() - 0.5f) * 0.12f;
+                float rad = 17f + 26f * (float)rng.NextDouble();
+                var p = new Vector3(Mathf.Sin(ang) * rad, 0f, Mathf.Cos(ang) * rad);
+                if (p.z < -12f && Mathf.Abs(p.x) < 13f) continue;   // gate vista corridor
+                if (p.z > 4f && Mathf.Abs(p.x) < 7f) continue;        // hearth breathing room
+                MakePine(p, 0.85f + 1.5f * (float)rng.NextDouble(), rng);
+            }
+
+            // --- STONES: a few hunched slabs at the glade rim ---
+            for (int i = 0; i < 9; i++)
+            {
+                float ang = (float)rng.NextDouble() * Mathf.PI * 2f;
+                float rad = 12.5f + 6.5f * (float)rng.NextDouble();
+                var rock = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                rock.name = "Stone";
+                rock.transform.position = new Vector3(Mathf.Sin(ang) * rad, 0.10f, Mathf.Cos(ang) * rad);
+                float sc = 0.5f + 0.9f * (float)rng.NextDouble();
+                rock.transform.localScale = new Vector3(sc, 0.34f * sc, 0.85f * sc);
+                rock.transform.rotation = Quaternion.Euler((float)rng.NextDouble() * 8f, (float)rng.NextDouble() * 360f, (float)rng.NextDouble() * 7f);
+                var rm = Lit(new Color(0.072f, 0.083f, 0.098f));
+                if (rm != null) rock.GetComponent<MeshRenderer>().material = rm;
+                Destroy(rock.GetComponent<Collider>());
+            }
+
+            // --- HILL MOUNDS: mid relief ringing the glade ---
+            for (int i = 0; i < 10; i++)
+            {
+                float ang = (i / 10f) * Mathf.PI * 2f + 0.31f;
+                float rad = 36f + 15f * (float)rng.NextDouble();
+                var hill = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                hill.name = "Hill";
+                hill.transform.position = new Vector3(Mathf.Sin(ang) * rad, -2.6f - 2.2f * (float)rng.NextDouble(), Mathf.Cos(ang) * rad);
+                float w = 20f + 15f * (float)rng.NextDouble();
+                hill.transform.localScale = new Vector3(w, 10f + 7f * (float)rng.NextDouble(), w);
+                var hm = Lit(new Color(0.048f, 0.073f, 0.088f));
+                if (hm != null) hill.GetComponent<MeshRenderer>().material = hm;
+                Destroy(hill.GetComponent<Collider>());
+            }
+
+            // --- FAR RIDGELINES: the keyart's misty mountain silhouettes, two depth rings ---
+            for (int ring = 0; ring < 2; ring++)
+            {
+                for (int i = 0; i < 16; i++)
+                {
+                    float ang = (i / 16f) * Mathf.PI * 2f + (ring == 0 ? 0f : 0.196f);
+                    float rad = ring == 0 ? 95f : 132f;
+                    var peak = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                    peak.name = "Ridge" + ring;
+                    peak.transform.position = new Vector3(Mathf.Sin(ang) * rad, -7f, Mathf.Cos(ang) * rad);
+                    float w = 28f + 24f * (float)rng.NextDouble();
+                    peak.transform.localScale = new Vector3(w, 28f + 20f * (float)rng.NextDouble(), w);
+                    var pm = Lit(ring == 0 ? new Color(0.062f, 0.098f, 0.122f) : new Color(0.055f, 0.09f, 0.113f));
+                    if (pm != null) peak.GetComponent<MeshRenderer>().material = pm;
+                    Destroy(peak.GetComponent<Collider>());
+                }
+            }
+        }
+
+        // A dark pine: trunk + three rounded bough tiers. Reads as a tree, not a block.
+        void MakePine(Vector3 p, float h, System.Random rng)
+        {
+            var pine = new GameObject("Pine");
+            pine.transform.position = p;
+            pine.transform.rotation = Quaternion.Euler(0f, (float)rng.NextDouble() * 360f, 0f);
+            var trunk = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            trunk.name = "Trunk"; trunk.transform.SetParent(pine.transform, false);
+            trunk.transform.localPosition = new Vector3(0, 0.32f * h, 0);
+            trunk.transform.localScale = new Vector3(0.10f * h, 0.32f * h, 0.10f * h);
+            var tm = Lit(new Color(0.088f, 0.074f, 0.060f));
+            if (tm != null) trunk.GetComponent<MeshRenderer>().material = tm;
+            for (int k = 0; k < 3; k++)
+            {
+                var bough = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                bough.name = "Bough" + k; bough.transform.SetParent(pine.transform, false);
+                float f = 0.42f + 0.29f * k;                        // up the tree each tier
+                float r = (1f - 0.26f * k) * 0.60f * h;             // narrowing crown
+                bough.transform.localPosition = new Vector3(0, (0.50f + f) * 0.62f * h, 0);
+                bough.transform.localScale = new Vector3(r * 2f, (0.40f - 0.07f * k) * h + 0.22f, r * 2f);
+                float j = ((float)rng.NextDouble() - 0.5f) * 0.02f;
+                var bm = Lit(new Color(0.058f + j, 0.108f + j * 0.5f, 0.108f + j * 0.3f));
+                if (bm != null) bough.GetComponent<MeshRenderer>().material = bm;
+                Destroy(bough.GetComponent<Collider>());
+            }
+        }
+
+        // The Cinder Gate, rebuilt as a proper mythic-pocket landmark: a broken arch of
+        // dark standing stones with one lintel half fallen, and a faint storm-rune seam
+        // (Skyrend aura lives on magic light only — the brazier's amber is mortal fire).
+        void MakeCinderGate(Vector3 at)
+        {
+            var gate = new GameObject("CinderGate");
+            gate.transform.position = at;
+            Color stone = new Color(0.082f, 0.096f, 0.112f);
+            Action<string, Vector3, Vector3> slab = (nm, lp, sc) =>
+            {
+                var g = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                g.name = nm; g.transform.SetParent(gate.transform, false);
+                g.transform.localPosition = lp; g.transform.localScale = sc;
+                var m = Lit(stone);
+                if (m != null) g.GetComponent<MeshRenderer>().material = m;
+                Destroy(g.GetComponent<Collider>());
+            };
+            var left = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            left.name = "LeftPillar"; left.transform.SetParent(gate.transform, false);
+            left.transform.localPosition = new Vector3(-1.55f, 1.5f, 0);
+            left.transform.localScale = new Vector3(0.52f, 1.5f, 0.52f);
+            var lpm = Lit(stone); if (lpm != null) left.GetComponent<MeshRenderer>().material = lpm;
+            Destroy(left.GetComponent<Collider>());
+            var right = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
+            right.name = "RightPillar"; right.transform.SetParent(gate.transform, false);
+            right.transform.localPosition = new Vector3(1.55f, 1.5f, 0);
+            right.transform.localScale = new Vector3(0.52f, 1.5f, 0.52f);
+            var rpm = Lit(stone); if (rpm != null) right.GetComponent<MeshRenderer>().material = rpm;
+            Destroy(right.GetComponent<Collider>());
+            slab("Lintel", new Vector3(-0.45f, 3.10f, 0f), new Vector3(2.9f, 0.55f, 1.0f));
+            var fallen = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            fallen.name = "FallenHalf"; fallen.transform.SetParent(gate.transform, false);
+            fallen.transform.localPosition = new Vector3(2.1f, 0.26f, 1.5f);
+            fallen.transform.localRotation = Quaternion.Euler(16f, 38f, 12f);
+            fallen.transform.localScale = new Vector3(1.9f, 0.5f, 0.9f);
+            var fpm = Lit(stone); if (fpm != null) fallen.GetComponent<MeshRenderer>().material = fpm;
+            Destroy(fallen.GetComponent<Collider>());
+            // the storm-rune seam in the lintel — magic light, cold and faint
+            var rune = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            rune.name = "StormRune"; rune.transform.SetParent(gate.transform, false);
+            rune.transform.localPosition = new Vector3(-0.45f, 3.10f, 0.53f);
+            rune.transform.localScale = new Vector3(2.4f, 0.09f, 0.06f);
+            var rm2 = Lit(new Color(0.55f, 0.68f, 0.85f));
+            if (rm2 != null)
+            {
+                if (rm2.HasProperty("_EmissionColor")) { rm2.EnableKeyword("_EMISSION"); rm2.SetColor("_EmissionColor", new Color(0.28f, 0.40f, 0.60f)); }
+                rune.GetComponent<MeshRenderer>().material = rm2;
+            }
+            Destroy(rune.GetComponent<Collider>());
+            var l2 = new GameObject("GateRuneLight"); l2.transform.position = at + new Vector3(0, 3.1f, 0.7f);
+            var lr = l2.AddComponent<Light>(); lr.type = LightType.Point; lr.color = new Color(0.55f, 0.68f, 0.85f); lr.range = 5f; lr.intensity = 0.65f;
+        }
+
+        // Generated gradient / solid textures for the skybox faces (no baked art anywhere).
+        Texture2D GradientTex(Color top, Color bottom, int size)
+        {
+            var t = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            for (int y = 0; y < size; y++)
+            {
+                var c = Color.Lerp(bottom, top, (float)y / (size - 1));
+                for (int x = 0; x < size; x++) t.SetPixel(x, y, c);
+            }
+            t.Apply(); return t;
+        }
+
+        Texture2D SolidTex(Color c, int size)
+        {
+            var t = new Texture2D(size, size, TextureFormat.RGBA32, false);
+            for (int i = 0; i < size; i++)
+                for (int j = 0; j < size; j++) t.SetPixel(i, j, c);
+            t.Apply(); return t;
         }
 
         bool Near(Vector3 a, Vector3 b) { return (a - b).sqrMagnitude < 3.2f; }
