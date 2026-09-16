@@ -2152,16 +2152,54 @@ GameObject BuildSelect(Transform parent)
                 var mat = Lit(new Color(0.55f, 0.44f, 0.30f));                              // bronze-wood
                 if (mat != null) sm.material = mat;
 
-                var tip = GameObject.CreatePrimitive(PrimitiveType.Cone);
-                tip.name = "SpearTip";
-                tip.transform.SetParent(spear.transform, false);
-                tip.transform.localPosition = new Vector3(0f, shaftLen * 0.28f + shaftLen * 0.5f + 0.09f, 0f);
-                tip.transform.localScale = new Vector3(0.05f, 0.14f, 0.05f);
-                var tm = tip.GetComponent<MeshRenderer>();
-                var tmat = Lit(new Color(0.78f, 0.70f, 0.45f));                             // bright bronze
-                if (tmat != null) tm.material = tmat;
+                var tip = MakeConeGameObject("SpearTip", 0.05f, 0.14f);
+                if (tip != null)
+                {
+                    tip.transform.SetParent(spear.transform, false);
+                    tip.transform.localPosition = new Vector3(0f, shaftLen * 0.28f + shaftLen * 0.5f + 0.09f, 0f);
+                    var tm = tip.GetComponent<MeshRenderer>();
+                    var tmat = Lit(new Color(0.78f, 0.70f, 0.45f));                         // bright bronze
+                    if (tmat != null && tm != null) tm.material = tmat;
+                }
 
                 return spear;
+            }
+            catch { return null; }
+        }
+
+        // v240b: Unity has no PrimitiveType.Cone — build an 8-sided cone mesh (bright spearhead).
+        GameObject MakeConeGameObject(string name, float radius, float height)
+        {
+            try
+            {
+                var go = new GameObject(name);
+                var mf = go.AddComponent<MeshFilter>();
+                var mr = go.AddComponent<MeshRenderer>();
+                var m = new Mesh();
+                int seg = 8;
+                var verts = new Vector3[2 * seg + 2];
+                var tris = new int[seg * 3 + seg * 3];
+                verts[0] = new Vector3(0f, height * 0.5f, 0f);            // apex
+                verts[1] = new Vector3(0f, -height * 0.5f, 0f);          // base center
+                for (int i = 0; i < seg; i++)
+                {
+                    float a = (i / (float)seg) * Mathf.PI * 2f;
+                    verts[2 + i] = new Vector3(Mathf.Cos(a) * radius, -height * 0.5f, Mathf.Sin(a) * radius);
+                    verts[2 + seg + i] = new Vector3(Mathf.Cos(a) * radius, height * 0.5f, 0f); // upper ring (welded tip)
+                }
+                int t = 0;
+                for (int i = 0; i < seg; i++)
+                {
+                    int a = 2 + i, b = 2 + (i + 1) % seg;
+                    tris[t++] = 0; tris[t++] = b; tris[t++] = a;         // side fan from apex
+                    tris[t++] = 1; tris[t++] = a; tris[t++] = b;          // base fan
+                }
+                m.vertices = verts;
+                m.triangles = tris;
+                m.RecalculateNormals();
+                m.RecalculateBounds();
+                mf.mesh = m;
+                return go;
             }
             catch { return null; }
         }
