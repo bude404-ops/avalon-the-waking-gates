@@ -323,7 +323,7 @@ namespace AvalonForge
                 var cam = camGo.AddComponent<Camera>();
                 cam.clearFlags = CameraClearFlags.SolidColor; // dark neutral stage, no skybox wash
                 cam.backgroundColor = new Color(0.075f, 0.082f, 0.098f);
-                cam.transform.position = new Vector3(height * 0.22f, height * 0.5f, frDist);   // v221 FIX: front of character (meshes face +Z; -Z side saw the back)
+                cam.transform.position = new Vector3(height * 0.22f, height * 0.5f, -frDist);  // v238 FIX (Bude: 'Can you turn him around he is facing backwards'): Mixamo generic-rig imports face Unity -Z, so the front is on the -Z side. +Z (v221 humanoid-era assumption) photographed the back.
                 cam.transform.LookAt(new Vector3(0f, height * 0.5f, 0f));
                 cam.fieldOfView = 45f;
 
