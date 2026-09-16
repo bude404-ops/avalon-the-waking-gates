@@ -1529,7 +1529,7 @@ GameObject BuildTitle(Transform parent)
             tb.onClick.AddListener(() => toggleProbe());
             TapTo(trt, toggleProbe);
 
-            var note = Label(p.transform, "APPLIES INSTANTLY " + EM + " SAVED ON THIS DEVICE", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
+            var note = Label(p.transform, "APPLIES INSTANTLY \u2014 SAVED ON THIS DEVICE", 10, Hex(0x6f6a5e), TextAnchor.MiddleCenter);
             note.rect().anchorMin = new Vector2(0, 0.06f); note.rect().anchorMax = new Vector2(1, 0.16f);
             CloseBtn(p);   // v232: shared close control
             p.SetActive(false);
