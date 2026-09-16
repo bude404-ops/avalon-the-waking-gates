@@ -314,6 +314,7 @@ namespace AvalonShell
             if (s != State.Game && panelSkills.activeSelf) panelSkills.SetActive(false);
             if (s == State.Title && model != null) foreach (var kv in loaded) kv.Value.SetActive(false);
             if (s == State.Select) SelectCard(chosen);
+            if (s == State.Game && model == null) LoadClass(chosen.name);   // v235: never enter a dead world
             if (s == State.Game && hudLine != null)
                 hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 TAP THE GROUND TO WALK";
             // v234: first-entry control hints, one time per session
@@ -1545,7 +1546,10 @@ GameObject BuildSelect(Transform parent)
                 var face = Panel(niche.transform, "Face", new Color(0.063f, 0.063f, 0.059f, 0.94f));   // v228 ref interior
                 var frt = face.rect();
                 frt.anchorMin = new Vector2(0.018f, 0.018f); frt.anchorMax = new Vector2(0.982f, 0.982f); frt.offsetMin = Vector2.zero; frt.offsetMax = Vector2.zero;
-                var art = ClassSigil(i);   // v230 foundation class mark — no pasted portraits
+                // v235 (Bude: class select "needs to be created like the actual reference art and of our
+                // characters"): each card now carries OUR canon character plate — the CLASS-<NAME>-CANON
+                // art staged into Resources/Art — with the code-drawn sigil as fallback only.
+                var art = Art("CLASS-" + cd.name.ToUpper() + "-CANON"); if (art == null) art = ClassSigil(i);
                 if (art != null)
                 {
                     var ai = new GameObject("art");
@@ -1554,6 +1558,7 @@ GameObject BuildSelect(Transform parent)
                     img.sprite = art; img.preserveAspect = true; img.color = unlocked ? new Color(0.92f, 0.90f, 0.86f, 1f) : new Color(0.45f, 0.45f, 0.45f, 0.55f);
                     img.rect().Stretch();
                     var band = Panel(face.transform, "Band", new Color(0.043f, 0.055f, 0.063f, 0.88f));
+                    if (art != null) band.GetComponent<Image>().raycastTarget = false;   // v235: portraits never block taps
                     var bandRt = band.rect();
                     bandRt.anchorMin = new Vector2(0, 0); bandRt.anchorMax = new Vector2(1, 0.40f); bandRt.offsetMin = Vector2.zero; bandRt.offsetMax = Vector2.zero;
                 }
@@ -1745,6 +1750,13 @@ GameObject BuildSelect(Transform parent)
             hudLine = Label(p.transform, "", 10, Hex(0x8a8578), TextAnchor.MiddleRight);
             hudLine.rect().anchorMin = new Vector2(0.4f, 0.905f); hudLine.rect().anchorMax = new Vector2(0.99f, 0.94f);
 
+            // v235 INPUT FIX (Bude: "couldn't use any controls to move around"): the game panel is a
+            // full-screen transparent Image and Unity Image.raycastTarget defaults to TRUE — every world
+            // touch registered as a UI hit and got skipped, killing joystick/tap-walk/camera outright.
+            // Only interactive controls keep raycasts; everything decorative passes touches through.
+            foreach (var g in p.GetComponentsInChildren<Graphic>(true))
+                if (g.GetComponentInParent<Button>() == null) g.raycastTarget = false;
+
             return p;
         }
 
@@ -1782,6 +1794,37 @@ GameObject BuildSelect(Transform parent)
             ("FIRST-GATE",    "AN UNLIT SHAPE, FAR OFF",      "THE FIRST GATE", new Vector2(0.82f, 0.72f), 3),
         };
         System.Collections.Generic.List<GameObject> mapPins;
+        GameObject mapYouPin;      // v235: the player's own amber position marker
+        UnityEngine.UI.Image mapRoute;   // v235: live dotted quest route YOU -> current objective
+
+        // v235 MAP PASS: world -> map fraction (Cold Reliquary slice, pins laid on the same plane)
+        Vector2 WorldToMapFrac(Vector3 w)
+        {
+            float mx = Mathf.Clamp(0.5f + w.x * 0.035f, 0.06f, 0.94f);
+            float my = Mathf.Clamp(0.46f - w.z * 0.025f, 0.06f, 0.86f);
+            return new Vector2(mx, my);
+        }
+
+        void AimQuestRoute()
+        {
+            if (mapRoute == null || mapYouPin == null) return;
+            int ti = questStage >= 3 ? -1 : Mathf.Clamp(questStage, 0, MAP_PINS.Length - 1);   // stage 3 = oath done, no route
+            mapRoute.gameObject.SetActive(ti >= 0);
+            if (ti < 0) return;
+            var root = panelMap.transform as RectTransform;
+            Vector2 youFrac, tgtFrac;
+            var yr = mapYouPin.transform as RectTransform;
+            youFrac = yr.anchorMin; tgtFrac = MAP_PINS[ti].at;
+            Vector2 pa = new Vector2(youFrac.x * root.rect.width, youFrac.y * root.rect.height);
+            Vector2 pb = new Vector2(tgtFrac.x * root.rect.width, tgtFrac.y * root.rect.height);
+            var d = pb - pa; float len = d.magnitude;
+            var rt = mapRoute.rect();
+            // NOTE: Vector2/Vector2 is not a Unity operator (CS0019) — convert midpoint back to a fraction manually
+            rt.anchorMin = rt.anchorMax = new Vector2((pa.x + pb.x) * 0.5f / root.rect.width, (pa.y + pb.y) * 0.5f / root.rect.height);
+            rt.anchoredPosition = Vector2.zero;
+            rt.sizeDelta = new Vector2(Mathf.Max(len - 30f, 10f), 3f);
+            rt.localEulerAngles = new Vector3(0, 0, Mathf.Atan2(d.y, d.x) * Mathf.Rad2Deg);
+        }
 
         void OpenMap()
         {
@@ -1794,6 +1837,17 @@ GameObject BuildSelect(Transform parent)
                         var img = mapPins[i].GetComponent<UnityEngine.UI.Image>();
                         var c = img.color; c.r = disc ? 0.86f : 0.42f; c.g = disc ? 0.62f : 0.39f; c.b = disc ? 0.28f : 0.30f; img.color = c;
                     }
+            // v235 MAP PASS: amber YOU marker tracks the player's live position
+            if (mapYouPin != null)
+            {
+                var wp = model != null ? model.transform.position : new Vector3(0, 0, 7);
+                var f = WorldToMapFrac(wp);
+                var yr = mapYouPin.transform as RectTransform;
+                yr.anchorMin = yr.anchorMax = f;
+                var yl = yr.Find("YouLbl");
+                if (yl != null) yl.GetComponent<UnityEngine.UI.Text>().text = "YOU \u2014 " + chosen.realm;
+            }
+            AimQuestRoute();
             OpenPanel(panelMap);   // v232: cinematic entrance on every screen
         }
 
@@ -1836,11 +1890,29 @@ GameObject BuildSelect(Transform parent)
             }
             mapPins = new System.Collections.Generic.List<GameObject>();
             for (int i = 0; i < MAP_PINS.Length; i++) mapPins.Add(BuildMapPin(p.transform, i));
+            // v235 MAP PASS: player position marker (amber diamond, larger than site pins) + quest route
+            mapYouPin = Panel(p.transform, "YouPin", new Color(0.95f, 0.72f, 0.38f, 0.98f));
+            var yrt = mapYouPin.transform as RectTransform;
+            yrt.sizeDelta = new Vector2(26, 26); yrt.localEulerAngles = new Vector3(0, 0, 45);
+            var yLbl = Label(mapYouPin.transform, "YOU", 9, Hex(0xffe9c4), TextAnchor.LowerCenter);
+            yLbl.name = "YouLbl";
+            yLbl.rect().localEulerAngles = new Vector3(0, 0, -45);
+            yLbl.rect().anchorMin = new Vector2(0, 1.15f); yLbl.rect().anchorMax = new Vector2(1, 1.15f);
+            yLbl.rect().sizeDelta = new Vector2(150, 24);
+            var routeGo = new GameObject("QuestRoute");
+            routeGo.transform.SetParent(p.transform, false);
+            mapRoute = routeGo.AddComponent<Image>();
+            mapRoute.color = new Color(0.95f, 0.72f, 0.38f, 0.50f);
+            var qrt = mapRoute.rect(); qrt.anchorMin = qrt.anchorMax = new Vector2(0.5f, 0.45f); qrt.sizeDelta = new Vector2(0, 3);
+            mapRoute.raycastTarget = false;
             // v221 PIN PASS — myth-veiled landmark pins (build-order item 3):
             // discovered sites show their true names; undiscovered ones stay VEILED
             // (knowledge = unlock — the WORLD-AND-DUNGEON-LAW discovery doctrine).
             var sub = Label(p.transform, "QUEST PIN — REACH THE FIRST GATE", 10, Hex(0xa3895a), TextAnchor.MiddleLeft);
             sub.rect().anchorMin = new Vector2(0.03f, 0.0f); sub.rect().anchorMax = new Vector2(0.97f, 0.05f); sub.rect().offsetMin = new Vector2(8, 6); sub.rect().offsetMax = new Vector2(-8, 0);
+            // v235 legend: what the pins mean
+            var leg = Label(p.transform, "\u25C6 AMBER = YOU & OBJECTIVE    \u25C6 BRIGHT = DISCOVERED    \u25C6 DIM = VEILED", 9, Hex(0x8a8578), TextAnchor.MiddleLeft);
+            leg.rect().anchorMin = new Vector2(0.03f, 0.0f); leg.rect().anchorMax = new Vector2(0.97f, 0.045f); leg.rect().offsetMin = new Vector2(8, 22); leg.rect().offsetMax = new Vector2(-8, 0);
             CloseBtn(p);   // v232: shared close control (was text-only, single-wired)
             p.SetActive(false);
             return p;
@@ -1854,8 +1926,18 @@ GameObject BuildSelect(Transform parent)
             var prefab = ModelPrefab(cls);
             if (prefab == null)
             {
-                model = null; animator = null;
-                if (hudLine != null) hudLine.text = "NO MODEL STAGED — FORGE OUTPUT MISSING (" + cls.ToUpper() + ")";
+                // v235: no staged forge model for this class yet — stand up a bronze placeholder body
+                // so gameplay stays ALIVE (controls + camera + quest all need model != null).
+                var ph = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+                ph.name = cls + "-PLACEHOLDER";
+                ph.transform.SetParent(stagePivot, false);
+                ph.transform.localPosition = Vector3.zero;
+                ph.transform.localScale = new Vector3(0.45f, 0.9f, 0.45f); ph.transform.position += new Vector3(0, 0.9f, 0);
+                var pm = Lit(new Color(0.24f, 0.19f, 0.12f));
+                if (pm != null && ph.GetComponent<MeshRenderer>() != null) ph.GetComponent<MeshRenderer>().sharedMaterial = pm;
+                loaded[cls] = ph;
+                BindModel(ph);
+                if (hudLine != null) hudLine.text = cls.ToUpper() + " — FORGE MODEL PENDING • PLACEHOLDER BODY";
                 return;
             }
             if (hudLine != null) hudLine.text = "LOADING " + prefab.name.ToUpper() + " • FORGE MODEL";
