@@ -297,6 +297,11 @@ namespace AvalonForge
                 var qcMat = new UnityEngine.Material(Shader.Find("Universal Render Pipeline/Lit") ?? Shader.Find("Standard"));
                 qcMat.name = "QC-Foundry";
                 qcMat.color = ClassRead(character); // cold class primary — readable, never white
+                // v238 MATERIAL-SNAPSHOT: remember the model's real materials so the prefab
+                // (Stage 7) ships with them — the QC foundry material is throwaway and
+                // serialized as an EMPTY slot if it leaks into the save (the v233-v237
+                // invisible-Sovereign bug: model loads, renderer has no material, draws nothing).
+                var savedMats = renderers.Select(r => r.sharedMaterials).ToList();
                 foreach (var rd in renderers) rd.sharedMaterial = qcMat;
 
                 var keyGo = new GameObject("QC-KeyLight");
@@ -324,6 +329,26 @@ namespace AvalonForge
                 tex.ReadPixels(new Rect(0, 0, 720, 960), 0, 0); tex.Apply();
                 File.WriteAllBytes($"{QCShots}/{character}-idle.png", tex.EncodeToPNG());
                 Log(log, "QC render captured: " + QCShots + "/" + character + "-idle.png");
+
+                // v238 BLANK-QC GUARD: a foundry frame that is ~all background means the
+                // mesh/material pipeline failed. FAIL the forge — never save the prefab and
+                // never let a black frame pass as a QC shot again (Bude: 'Model isnt showing
+                // in the image you sent').
+                {
+                    var qpx = tex.GetPixels32(); int lit = 0, samples = 0;
+                    for (int qi = 0; qi < qpx.Length; qi += 16)
+                    {
+                        samples++;
+                        if (qpx[qi].r > 30 || qpx[qi].g > 30 || qpx[qi].b > 30) lit++;   // bg is ~rgb(19,21,25)
+                    }
+                    float vis = samples > 0 ? (float)lit / samples : 0f;
+                    Log(log, $"QC content check: {vis:P1} of sampled pixels carry the model");
+                    if (vis < 0.02f)
+                    {
+                        Fail(log, "QC idle frame is BLANK — model not visible (mesh or material import failed). Prefab NOT saved.");
+                        return;
+                    }
+                }
 
                 // ---- WALK FRAME (finish-quality: prove retargeted mocap mid-stride) ----
                 bool hasWalkState = false;
@@ -400,6 +425,15 @@ namespace AvalonForge
                 UnityEngine.Object.DestroyImmediate(rimGo);
             }
             else Log(log, "QC render skipped (-nographics) — structural QC only");
+
+            // v238 MATERIAL-RESTORE: put the model's real materials back before the prefab
+            // save — Stage 7 must serialize the imported materials, never the throwaway.
+            if (hasGraphics)
+            {
+                for (int ri = 0; ri < renderers.Length && ri < savedMats.Count; ri++)
+                    renderers[ri].sharedMaterials = savedMats[ri];
+                Log(log, "Materials restored for prefab save");
+            }
 
             // ---------- Stage 7: prefab ----------
             string prefabPath = $"{Prefabs}/{character}-GAME.prefab";

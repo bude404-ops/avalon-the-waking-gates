@@ -2059,6 +2059,28 @@ GameObject BuildSelect(Transform parent)
             model = go;
             animator = go.GetComponentInChildren<Animator>();
             var rends = go.GetComponentsInChildren<Renderer>();
+
+            // v238 INVISIBLE-MODEL GUARD: a renderer with an empty material slot draws
+            // NOTHING (the v233-v237 Sovereign bug — the forge saved the QC throwaway
+            // material into the prefab as a null slot, so Aedan loaded but was invisible).
+            // Any null slot gets the lit bronze fallback so the character is ALWAYS visible.
+            {
+                var fb = new Material[1];
+                for (int ri = 0; ri < rends.Length; ri++)
+                {
+                    var mats = rends[ri].sharedMaterials;
+                    if (mats == null || mats.Length == 0)
+                    {
+                        fb[0] = Lit(new Color(0.60f, 0.50f, 0.32f));   // bronze-lit fallback
+                        if (fb[0] != null) rends[ri].sharedMaterials = fb;
+                        continue;
+                    }
+                    bool patched = false;
+                    for (int mi = 0; mi < mats.Length; mi++)
+                        if (mats[mi] == null) { mats[mi] = Lit(new Color(0.60f, 0.50f, 0.32f)); patched = true; }
+                    if (patched) rends[ri].sharedMaterials = mats;
+                }
+            }
             Bounds b = rends.Length > 0 ? rends[0].bounds : new Bounds(Vector3.zero, Vector3.one);
             foreach (var r in rends) b.Encapsulate(r.bounds);
             camDist = Mathf.Max(b.size.y, 0.1f) * 1.55f;

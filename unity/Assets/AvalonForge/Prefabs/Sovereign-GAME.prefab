@@ -60,10 +60,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8587957429975158382, guid: 9d9472d37372418e0b6577120b2e23b2, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9d9472d37372418e0b6577120b2e23b2, type: 3}
       propertyPath: m_Name
       value: Sovereign-GAME
