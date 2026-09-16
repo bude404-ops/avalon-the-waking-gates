@@ -507,3 +507,23 @@ Bude: "We need to make the gloam wyrm fit the region more"
 * AWAITING: Bude's verdict on the v5 — it is the only open Tier 2 slot. The other
   five legendaries may take region-deep fusion touch-ups on request once the Gloam
   verdict lands.
+
+## MOUNT-CANON v20 — GLOAM-WYRM LOCKED — TIER 2 ROSTER COMPLETE (Bude, Sept 15 2026 ~11 PM)
+Bude: "keep the gloam wyrm"
+
+* GLOAM-WYRM v5 LOCKED (Veilborn/Duskmourn, barrow-pass). The v5 build is the canon
+  plate: heavyset armored legless drake (anti-snake + anti-cobra laws hold), head LOW,
+  Duskmourn fused into the body — weathered cracked gravestone-slate scales, pale
+  grave-lichen + dark moss on spine plates, bone-pale stacked-slab underbelly, cold
+  gloam mist from armor seams, spectral crimson rune-light only in deep plate cracks
+  (magic-light law), forebody mid-traversal through a sealed barrow door
+  (art/pending/t2-veilborn-gloam-wyrm-v5.jpg).
+* TIER 2 ROSTER COMPLETE — all six legendaries LOCKED:
+  Sovereign/STORM-DRAKE (flight) · Ravager/EMBER-DRAKE (magma-swim) ·
+  Warden/GRANITE-DRAKE (earth-swim) · Veilborn/GLOAM-WYRM (barrow-pass) ·
+  Weaver/TIDE-DRAKE (current-ride) · Wildborn/BRIAR-WYRM (thorn-path).
+* Stand-on riding law holds on all six (reins only, zero saddles; v17 scope: legendaries
+  only, Tier 1 horses keep classic saddles). Region-deep fusion law now satisfied by the
+  Gloam-Wyrm; the other five may take region-deep fusion touch-ups on Bude's request.
+* Stage C hold unchanged: no mount generation/rigging/forging until the Sovereign is
+  ruled final-quality and Stage B combat controls are approved.
