@@ -199,6 +199,13 @@ namespace AvalonForge
             var go = (GameObject)PrefabUtility.InstantiatePrefab(srcPrefab);
             go.name = character;
 
+            // v241 ROOT-ORIENTATION PIN (Bude: 'the aedan image is upside down and backwards'):
+            // the v240 forge saved the model root at IDENTITY (the FBX re-import rebake dropped
+            // the -90X axis correction every device-good prefab since v221 carried), rendering
+            // Aedan flipped prone. Pin the exact device-verified correction explicitly so the
+            // prefab save is deterministic regardless of importer axis state: -90 about X.
+            go.transform.localRotation = new Quaternion(-0.7071068f, 0f, 0f, 0.7071068f);
+
             // ---------- Stage 1.5: junk-primitive strip ----------
             // v238: rigging helpers (markers, snap targets) sometimes survive into the
             // export — a 1.9m helper sphere dwarfed the real 0.9m character and the QC
