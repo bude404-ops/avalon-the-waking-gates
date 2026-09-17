@@ -1,0 +1,3 @@
+GAME-SIDE RENDERER INVENTORY (staged Resources prefab)
+MeshRenderer:SovereignSpear-SOCKET
+SkinnedMeshRenderer:AedanBody
