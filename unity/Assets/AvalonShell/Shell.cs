@@ -46,6 +46,10 @@ namespace AvalonShell
         bool autoFollow = true;     // Settings: auto-follow camera recenter
         bool chosenFemale = false;  // v236: F variant picked on the class grid (side-by-side cards)
         Animator animator; GameObject model; Transform stagePivot;
+        // v241 DEVICE-DIAG (Bude's v240 report: white-gray void on his phone where the
+        // editor QC stills show the styled dark world): on-screen stats panel so ONE
+        // screenshot from his phone tells us GPU/API/material/light/renderer truth.
+        string diagTxt; float diagNext; int diagFrames; string diagForge = "no-forge";
         Text hudLine;
         GameObject questCard;
         Coroutine realmFade;
@@ -84,10 +88,25 @@ namespace AvalonShell
         // returns null for stripped shaders -> missing material -> the v215
         // pink/black boot screen. Never do that again.
         static Material litMat;
+        static Material litFallback;
+        // v241: a null AVALON-LIT on-device silently leaves every mesh on Unity's default
+        // light-gray material (the white-void look). Guard: build a runtime fallback and
+        // report it loudly on the diag panel instead of a silent default-material world.
         Material Lit()
         {
             if (litMat == null) litMat = Resources.Load<Material>("AVALON-LIT");
-            return litMat;
+            if (litMat == null && litFallback == null)
+            {
+                var sh = Shader.Find("Standard");
+                if (sh == null) sh = Shader.Find("Universal Render Pipeline/Lit");
+                if (sh == null) sh = Shader.Find("Legacy Shaders/Diffuse");
+                if (sh != null)
+                {
+                    litFallback = new Material(sh);
+                    Debug.LogWarning("[SHELL][DIAG] AVALON-LIT missing on-device - fallback: " + sh.name);
+                }
+            }
+            return litMat ?? litFallback;
         }
         Material Lit(Color c) { var m = Lit(); if (m == null) return null; m = Instantiate(m); m.color = c; return m; }
 
@@ -2116,6 +2135,7 @@ GameObject BuildSelect(Transform parent)
                 }
             }
 
+            diagForge = smrs.Length + " SMR" + spearTag;
             if (animator != null) animator.CrossFade("idle", 0f);
             if (hudLine != null) hudLine.text = chosen.name.ToUpper() + " — " + chosen.realm + " \u2022 " + Mathf.RoundToInt(b.size.y * 100) + " CM \u2022 FORGE MODEL" + spearTag;
         }
@@ -2458,8 +2478,53 @@ GameObject BuildSelect(Transform parent)
 
         // ================= frame: orbit + walk =================
         Vector2 lastTouch0, lastTouch1; bool dragging;
+        string BuildDiag(int fps)
+        {
+            try
+            {
+                var sb = new System.Text.StringBuilder();
+                sb.AppendLine("GPU " + SystemInfo.graphicsDeviceName);
+                sb.AppendLine("API " + SystemInfo.graphicsDeviceVersion);
+                sb.AppendLine(Screen.width + "x" + Screen.height + " " + Screen.orientation + "  fps " + fps);
+                var lm = Lit();
+                sb.AppendLine("MAT " + (litMat != null ? ("AVALON-LIT OK " + litMat.shader.name)
+                    : (litFallback != null ? ("FALLBACK " + litFallback.shader.name) : "NULL")));
+                sb.AppendLine("LIGHTS " + FindObjectsOfType<Light>().Length + "  AMB " + RenderSettings.ambientLight);
+                int mrVis = 0, mrAll = 0;
+                foreach (var r in FindObjectsOfType<MeshRenderer>()) { mrAll++; if (r.isVisible) mrVis++; }
+                sb.AppendLine("MESH " + mrVis + "/" + mrAll + " vis  FOG " + RenderSettings.fog + " " + RenderSettings.fogDensity.ToString("F3"));
+                if (cam != null)
+                    sb.AppendLine("CAM " + cam.clearFlags + " pos " + cam.transform.position.ToString("F1")
+                        + " bg #" + ColorUtility.ToHtmlStringRGB(cam.backgroundColor));
+                else sb.AppendLine("CAM null");
+                sb.AppendLine("SKY " + (RenderSettings.skybox != null ? RenderSettings.skybox.name : "none"));
+                if (model != null)
+                    sb.AppendLine("MODEL " + model.name + " act " + model.activeInHierarchy
+                        + " scale " + model.transform.localScale.ToString("F2") + " pos " + model.transform.position.ToString("F1"));
+                else sb.AppendLine("MODEL null");
+                foreach (var s in FindObjectsOfType<SkinnedMeshRenderer>())
+                    sb.AppendLine("SMR " + s.name + " vis " + s.isVisible + " b " + s.bounds.size.ToString("F1"));
+                sb.AppendLine("FORGE " + diagForge);
+                return sb.ToString();
+            }
+            catch (Exception e) { return "DIAG ERR " + e.Message; }
+        }
+
+        void OnGUI()
+        {
+            if (diagTxt == null) return;
+            var st = new GUIStyle(GUI.skin.label) { fontSize = 16 };
+            st.normal.textColor = new Color(0.92f, 0.86f, 0.72f);
+            var rect = new Rect(10, Screen.height * 0.30f, Screen.width * 0.72f, 22f * 12);
+            GUI.Box(new Rect(rect.x - 6, rect.y - 6, rect.width + 12, rect.height + 12), "");
+            GUI.Label(rect, diagTxt, st);
+        }
+
         void Update()
         {
+            // v241 DEVICE-DIAG refresh (1 Hz)
+            diagFrames++;
+            if (Time.unscaledTime >= diagNext) { diagNext = Time.unscaledTime + 1f; diagTxt = BuildDiag(diagFrames); diagFrames = 0; }
             // v219 raw input probe — counts touches BEFORE any UI raycast is involved
             bool rawTap = Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began;
             if (!rawTap && Input.GetMouseButtonDown(0)) rawTap = true;
